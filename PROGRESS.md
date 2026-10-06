@@ -63,3 +63,12 @@
 - 調整為可由完整pred鏈還原舊v04資訊的表示方式，未取消quota/dominance中的前綴用量條件，未修改現行演算法或實作。
 - 修改說明與報告前核對重點：`docs/presentation_1007_definition_revision_v01.md`。
 - 保留原有8秒／12秒到達結果及aggregate模型界線，未進行效能比較或新實驗。
+
+## 可設定拓樸的實驗入口（2026-10-06）
+
+- 新增 `src/experiments/`：JSON案例、CSV contacts、輸入檢查、逐包執行與JSON／CSV結果輸出。
+- 可以替換節點與各自buffer、contact方向／時窗／速率／延遲／剩餘資料量、bundle請求與固定處理順序，以及時間格點與horizon。
+- 保留原有v04搜尋核心；Label輸出提供 `(c,A,s,pred)`，內部仍保留現有資源用量cache，不擅自更換演算法。
+- 有解時使用獨立完整排程及獨立提交核對，另可對小案例啟用完整搜尋比對；發現差異立即保存反例並停止後續處理。
+- 新增兩個可編輯範例與 `docs/experiment_framework_v01.md`，34項測試通過；PPT案例8／12秒、半秒格點案例7/2秒，均與完整搜尋一致。
+- 未執行大規模效能比較、未加入transmission calendar或實際網路傳送模擬。

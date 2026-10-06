@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "name": "ppt_two_bundle_walkthrough",
+  "description": "1007簡報的兩包案例；bundles陣列順序即規劃順序",
+  "units": {"time": "s", "data": "MB", "rate": "MB/s"},
+  "time_step": "1",
+  "horizon": "12",
+  "nodes": [
+    {"id": "X", "buffer": "4"},
+    {"id": "A", "buffer": "4"},
+    {"id": "B", "buffer": "4"},
+    {"id": "C", "buffer": "4"},
+    {"id": "D", "buffer": "4"}
+  ],
+  "contacts_file": "walkthrough_contacts.csv",
+  "bundles": [
+    {"id": "bundle1", "source": "X", "destination": "D", "release": "0", "size": "4"},
+    {"id": "bundle2", "source": "A", "destination": "D", "release": "1", "size": "4"}
+  ]
+}

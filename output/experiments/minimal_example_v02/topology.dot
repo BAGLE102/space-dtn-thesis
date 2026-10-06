@@ -1,0 +1,8 @@
+digraph contact_topology {
+  rankdir=LR;
+  "地面站" [label="地面站 / buffer=4 MB"];
+  "中繼衛星" [label="中繼衛星 / buffer=4 MB"];
+  "目的衛星" [label="目的衛星 / buffer=4 MB"];
+  "地面站" -> "中繼衛星" [label="up [0,1) r=4, delay=1/2, R=4"];
+  "中繼衛星" -> "目的衛星" [label="forward [2,3) r=4, delay=1/2, R=4"];
+}

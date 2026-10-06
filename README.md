@@ -29,6 +29,24 @@
 
 ## 執行驗證
 
+### 可替換拓樸的實驗入口
+
+不必修改搜尋程式；改 JSON 的 nodes、bundles、時間格點，或 CSV 的 contacts 即可：
+
+```sh
+python -m src.experiments --config configs/walkthrough.json
+```
+
+小案例可加 `--oracle` 與獨立完整搜尋比對；加 `--validate-only` 可先檢查設定。預設建立新的輸出資料夾，保存路徑、每跳時間、Label與Q事件紀錄。
+
+- [操作說明與欄位定義](docs/experiment_framework_v01.md)
+- [PPT兩包案例設定](configs/walkthrough.json)及[contact表](configs/walkthrough_contacts.csv)
+- [中文節點與半秒格點範例](configs/minimal.json)
+
+仍使用原有finite-grid／aggregate容量搜尋核心，尚未加入鏈路傳輸時段衝突檢查或實際網路傳送模擬。
+
+### 單元測試
+
 從專案根目錄執行（已在 Python 3.12 驗證；核心搜尋與單元測試使用標準函式庫）：
 
 ```sh
@@ -47,8 +65,11 @@ python -m unittest discover -s tests -v
 |---|---|
 | docs/ | 研究筆記、定義、正確性論證、歷史版本 |
 | src/validation/ | 搜尋原型、獨立完整搜尋、驗證工具 |
+| src/experiments/ | 可設定案例的匯入、執行與結果輸出 |
+| configs/ | 可替換的JSON／CSV拓樸與bundle設定 |
 | tests/ | 單元測試 |
 | output/validation/ | 已保存的測試資料、結果與反例 |
+| output/experiments/ | 每次案例執行的輸入、路徑、Label與資源紀錄 |
 | output/presentations/ | 簡報及逐頁圖片 |
 | figures/ | 研究圖解 |
 

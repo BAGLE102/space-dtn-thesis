@@ -1,0 +1,4 @@
+﻿bundle,id,c,A,s,pred,node,is_source_label,active,processed
+request1,L0,,0,,,地面站,True,True,True
+request1,L1,up,3/2,0,L0,中繼衛星,False,True,True
+request1,L2,forward,7/2,2,L1,目的衛星,False,True,False
