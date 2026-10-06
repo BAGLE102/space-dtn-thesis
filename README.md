@@ -8,6 +8,7 @@
 
 - [進度與下一步](PROGRESS.md)
 - [更新紀錄](CHANGELOG.md)
+- [集中式 DTN 架構與研究假設](docs/centralized_dtn_architecture_v01.md)
 - [現行演算法 v04](docs/sequential_label_setting_v04.md)
 - [模型範圍與版本差異](docs/current_algorithm_snapshot_v01.md)
 - [正確性驗證總結](docs/algorithm_validation_summary_v01.md)
