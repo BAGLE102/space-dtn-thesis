@@ -14,6 +14,7 @@
 - 新增 `formal_problem_algorithm_definition_v01.md`，統一現行問題名稱、系統假設、參數、決策變數、可行性限制、label、extension、dominance、單包搜尋與逐包更新流程。
 - 定義只對應現行 finite-grid／aggregate-quota v04；沒有加入 transmission calendar，也沒有改動演算法或既有實作。
 - 明確將 `U` 定義為 contact-indexed 非負用量向量，區分核心 state、路徑重建資料、全域 query context 與尚未實作的 calendar 狀態。
+- 完成 `整包路由_問題參數與演算法定義_v01.pptx`：20 頁，沿用中正大學模板與標楷體，含 4 張可編輯符號表、時間軸、buffer 曲線、extension、dominance、queue、完整流程與 transmission calendar 反例；每頁均附講稿。
 
 ## 已完成
 
@@ -38,7 +39,7 @@
 
 ## 接下來依序處理
 
-- [ ] 統一現行問題定義、符號、公式、虛擬碼與簡報入口；明確標記舊版。
+- [x] 統一現行問題定義、符號、公式、虛擬碼與簡報入口；明確標記舊版。
 - [ ] 與指導老師確認第一階段是否採有限時間格點＋aggregate quota。
 - [ ] 文獻對照並收斂論文貢獻，不能把使用 Label Setting 本身當作新穎性。
 - [ ] 與指導老師確認採批次規劃或中央線上規劃，以及 bundle 的固定處理順序。

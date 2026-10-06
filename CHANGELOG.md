@@ -2,6 +2,10 @@
 
 ## 2026-10-06
 
+- 新增 20 頁「問題、參數與演算法定義」簡報，沿用中正大學模板與標楷體。
+- 簡報包含可編輯符號表、單跳時間軸、逐 byte buffer 圖、Label／U、Extension、Dominance、Queue、逐包預約流程與 aggregate quota 反例；每頁附繁體中文講稿。
+- PPTX 結構、版面、字型、原生表格與重新匯入檢查皆通過；逐頁渲染後未偵測文字溢出。
+
 - 新增現行研究問題、參數與演算法正式定義，作為論文方法章與後續簡報的統一入口。
 - 統一 aggregate quota、buffer 占用、label、extension、dominance、objective、queue、termination 及 sequential reservation 的語意。
 - 明確標記 transmission calendar 為尚未實作的模型邊界；未修改 v04 演算法、驗證程式或 PPT。
