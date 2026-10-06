@@ -1,0 +1,46 @@
+[
+  {
+    "id": "CE-EARLY",
+    "scope": "invalid simplification, not frozen v04",
+    "definition": "delete later label solely because arrival is later",
+    "evidence": "oracle_results.json / 04_late_label",
+    "candidate_fix": "retain frozen waiting feasibility test"
+  },
+  {
+    "id": "CE-GRID-01",
+    "scope": "continuous-time completeness outside grid guarantee",
+    "definition": "enumerate s only in delta*Z",
+    "evidence": "counterexample_grid_continuous.json",
+    "grid_arrival": "4",
+    "continuous_optimum": "7/2",
+    "candidate_fix": "derive exact feasible departure regions; not implemented"
+  },
+  {
+    "id": "CE-CALENDAR-01",
+    "scope": "calendar scheduling outside aggregate model",
+    "window": [
+      0,
+      6
+    ],
+    "rate": 1,
+    "residual_quota": 3,
+    "size": 2,
+    "busy": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "maximum_free_duration": 1,
+    "definition": "quota/window do not check busy intervals",
+    "candidate_fix": "add fixed busy calendar and continuous-free-interval test; not implemented"
+  }
+]

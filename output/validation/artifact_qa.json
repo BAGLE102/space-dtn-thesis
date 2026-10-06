@@ -1,0 +1,13 @@
+{
+  "documents": 10,
+  "figures": 9,
+  "figure_dimensions": [
+    2560,
+    1440
+  ],
+  "local_links_ok": true,
+  "frozen_hashes_unchanged": true,
+  "oracle_queries_matched": 15,
+  "visual_inspection": "contact sheet and full-size step 07 inspected; corrected arc-label alignment and font fallback",
+  "algorithm_unchanged": true
+}

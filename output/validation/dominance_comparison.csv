@@ -1,0 +1,16 @@
+﻿Case,Bundle,Arrival OFF,Arrival ON,Enqueued OFF,Enqueued ON,Created OFF,Created ON,Expanded OFF,Expanded ON,Pruned ON,Same optimal value,Same route
+01_unique,bundle,3,3,3,3,3,3,2,2,0,True,True
+02_multiple,bundle,3,3,4,4,4,4,2,2,0,True,True
+03_no_route,bundle,,,2,2,2,2,2,2,0,True,True
+04_late_label,bundle,10,10,6,4,6,5,4,3,1,True,True
+05_prunable,bundle,5,5,7,3,7,5,4,2,2,True,True
+06_sequential_walkthrough,bundle1,8,8,4,4,4,4,2,2,0,True,True
+06_sequential_walkthrough,bundle2,12,12,7,5,7,6,5,4,1,True,True
+07_finish_at_end_nonzero_delay,bundle,3,3,2,2,2,2,1,1,0,True,True
+08_receive_overflow,bundle,,,1,1,1,1,1,1,0,True,True
+09_sender_drain_overflow,bundle,,,1,1,1,1,1,1,0,True,True
+10_source_equals_destination,bundle,0,0,1,1,1,1,0,0,0,True,True
+11_source_full,bundle,,,0,0,0,0,0,0,0,True,True
+12_cycle_needed,bundle,6,6,4,4,4,4,3,3,0,True,True
+13_quota_reuse,bundle,,,3,3,3,3,3,3,0,True,True
+14_destination_event_peak,bundle,,,1,1,1,1,1,1,0,True,True

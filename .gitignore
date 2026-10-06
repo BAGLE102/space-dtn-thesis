@@ -1,0 +1,25 @@
+# Local working files and caches
+/tmp/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+~$*
+
+# Credentials and machine configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+
+# Original papers, local source material, duplicate download archives
+*.pdf
+*.zip
+/papers/
+/attachments/

@@ -1,0 +1,742 @@
+{
+  "classification": "model-boundary witness, not frozen-grid defect",
+  "runs": [
+    {
+      "delta": "1",
+      "input": {
+        "name": "CE_grid_vs_continuous",
+        "contacts": [
+          {
+            "id": "a",
+            "u": "A",
+            "v": "B",
+            "start": "0",
+            "end": "3",
+            "rate": "4",
+            "delay": "0",
+            "quota": "4"
+          },
+          {
+            "id": "b",
+            "u": "B",
+            "v": "D",
+            "start": "2",
+            "end": "4",
+            "rate": "4",
+            "delay": "0",
+            "quota": "4"
+          }
+        ],
+        "bundles": [
+          {
+            "id": "bundle",
+            "source": "A",
+            "dest": "D",
+            "g": "0",
+            "size": "4"
+          }
+        ],
+        "buffers": {
+          "A": "4",
+          "B": "5",
+          "D": "4"
+        },
+        "horizon": "4",
+        "background": {
+          "B": [
+            [
+              [
+                "0",
+                "1",
+                "4",
+                "4"
+              ],
+              [
+                "1",
+                "3",
+                "4",
+                "0"
+              ]
+            ]
+          ]
+        },
+        "expected": null,
+        "delta": "1"
+      },
+      "proposed": {
+        "arrival": "4",
+        "hops": [
+          [
+            "a",
+            "2"
+          ],
+          [
+            "b",
+            "3"
+          ]
+        ],
+        "labels": {
+          "L0": {
+            "id": "L0",
+            "v": "A",
+            "a": "0",
+            "usage": {},
+            "pred": null,
+            "hop": null,
+            "active": true,
+            "processed": true
+          },
+          "L1": {
+            "id": "L1",
+            "v": "B",
+            "a": "3",
+            "usage": {
+              "a": "4"
+            },
+            "pred": "L0",
+            "hop": [
+              "a",
+              "2"
+            ],
+            "active": true,
+            "processed": true
+          },
+          "L2": {
+            "id": "L2",
+            "v": "D",
+            "a": "4",
+            "usage": {
+              "a": "4",
+              "b": "4"
+            },
+            "pred": "L1",
+            "hop": [
+              "b",
+              "3"
+            ],
+            "active": true,
+            "processed": false
+          }
+        },
+        "trace": [
+          {
+            "event": "POP",
+            "queue_before": [
+              "L0"
+            ],
+            "selected": "L0",
+            "queue_after": []
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "a",
+            "queue_before": [],
+            "temporal": true,
+            "quota": true,
+            "s": "0",
+            "f": "1",
+            "h": "0",
+            "arrival": "1",
+            "sender_peak": "4",
+            "sender_peak_time": "0",
+            "receiver_peak": "8",
+            "receiver_peak_time": "1",
+            "reason": "BUFFER",
+            "queue_after": []
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "a",
+            "queue_before": [],
+            "temporal": true,
+            "quota": true,
+            "s": "1",
+            "f": "2",
+            "h": "1",
+            "arrival": "2",
+            "sender_peak": "4",
+            "sender_peak_time": "0",
+            "receiver_peak": "6",
+            "receiver_peak_time": "2",
+            "reason": "BUFFER",
+            "queue_after": []
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "a",
+            "queue_before": [],
+            "temporal": true,
+            "quota": true,
+            "s": "2",
+            "f": "3",
+            "h": "2",
+            "arrival": "3",
+            "sender_peak": "4",
+            "sender_peak_time": "0",
+            "receiver_peak": "4",
+            "receiver_peak_time": "3",
+            "reason": "PASS",
+            "new_label": "L1",
+            "removed": [],
+            "queue_after": [
+              "L1"
+            ]
+          },
+          {
+            "event": "POP",
+            "queue_before": [
+              "L1"
+            ],
+            "selected": "L1",
+            "queue_after": []
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L1",
+            "contact": "b",
+            "queue_before": [],
+            "temporal": true,
+            "quota": true,
+            "s": "3",
+            "f": "4",
+            "h": "3",
+            "arrival": "4",
+            "sender_peak": "4",
+            "sender_peak_time": "3",
+            "receiver_peak": "4",
+            "receiver_peak_time": "4",
+            "reason": "PASS",
+            "new_label": "L2",
+            "removed": [],
+            "queue_after": [
+              "L2"
+            ]
+          },
+          {
+            "event": "GOAL",
+            "queue_before": [
+              "L2"
+            ],
+            "selected": "L2",
+            "queue_after": []
+          }
+        ],
+        "stats": {
+          "created": 3,
+          "enqueued": 3,
+          "expanded": 2,
+          "pruned_new": 0,
+          "pruned_old": 0
+        }
+      },
+      "oracle": {
+        "arrival": "4",
+        "hops": [
+          [
+            "a",
+            "2"
+          ],
+          [
+            "b",
+            "3"
+          ]
+        ],
+        "feasible_schedules": [
+          {
+            "hops": [
+              [
+                "a",
+                "2"
+              ],
+              [
+                "b",
+                "3"
+              ]
+            ],
+            "arrival": "4"
+          }
+        ],
+        "paths_considered": 1,
+        "schedules_considered": 6,
+        "rejection_counts": {
+          "BUFFER": 4,
+          "TIMING": 1
+        },
+        "rejection_witnesses": {
+          "BUFFER": {
+            "hops": [
+              [
+                "a",
+                "0"
+              ],
+              [
+                "b",
+                "2"
+              ]
+            ],
+            "check": {
+              "feasible": false,
+              "reason": "BUFFER",
+              "node": "B",
+              "time": "1",
+              "value": "8",
+              "limit": "5"
+            }
+          },
+          "TIMING": {
+            "hops": [
+              [
+                "a",
+                "2"
+              ],
+              [
+                "b",
+                "2"
+              ]
+            ],
+            "check": {
+              "feasible": false,
+              "reason": "TIMING"
+            }
+          }
+        },
+        "depth_bound": 4
+      }
+    },
+    {
+      "delta": "1/2",
+      "input": {
+        "name": "CE_grid_vs_continuous",
+        "contacts": [
+          {
+            "id": "a",
+            "u": "A",
+            "v": "B",
+            "start": "0",
+            "end": "3",
+            "rate": "4",
+            "delay": "0",
+            "quota": "4"
+          },
+          {
+            "id": "b",
+            "u": "B",
+            "v": "D",
+            "start": "2",
+            "end": "4",
+            "rate": "4",
+            "delay": "0",
+            "quota": "4"
+          }
+        ],
+        "bundles": [
+          {
+            "id": "bundle",
+            "source": "A",
+            "dest": "D",
+            "g": "0",
+            "size": "4"
+          }
+        ],
+        "buffers": {
+          "A": "4",
+          "B": "5",
+          "D": "4"
+        },
+        "horizon": "4",
+        "background": {
+          "B": [
+            [
+              [
+                "0",
+                "1",
+                "4",
+                "4"
+              ],
+              [
+                "1",
+                "3",
+                "4",
+                "0"
+              ]
+            ]
+          ]
+        },
+        "expected": null,
+        "delta": "1/2"
+      },
+      "proposed": {
+        "arrival": "7/2",
+        "hops": [
+          [
+            "a",
+            "3/2"
+          ],
+          [
+            "b",
+            "5/2"
+          ]
+        ],
+        "labels": {
+          "L0": {
+            "id": "L0",
+            "v": "A",
+            "a": "0",
+            "usage": {},
+            "pred": null,
+            "hop": null,
+            "active": true,
+            "processed": true
+          },
+          "L1": {
+            "id": "L1",
+            "v": "B",
+            "a": "5/2",
+            "usage": {
+              "a": "4"
+            },
+            "pred": "L0",
+            "hop": [
+              "a",
+              "3/2"
+            ],
+            "active": true,
+            "processed": true
+          },
+          "L2": {
+            "id": "L2",
+            "v": "B",
+            "a": "3",
+            "usage": {
+              "a": "4"
+            },
+            "pred": "L0",
+            "hop": [
+              "a",
+              "2"
+            ],
+            "active": false,
+            "processed": false
+          },
+          "L3": {
+            "id": "L3",
+            "v": "D",
+            "a": "7/2",
+            "usage": {
+              "a": "4",
+              "b": "4"
+            },
+            "pred": "L1",
+            "hop": [
+              "b",
+              "5/2"
+            ],
+            "active": true,
+            "processed": false
+          },
+          "L4": {
+            "id": "L4",
+            "v": "D",
+            "a": "4",
+            "usage": {
+              "a": "4",
+              "b": "4"
+            },
+            "pred": "L1",
+            "hop": [
+              "b",
+              "3"
+            ],
+            "active": false,
+            "processed": false
+          }
+        },
+        "trace": [
+          {
+            "event": "POP",
+            "queue_before": [
+              "L0"
+            ],
+            "selected": "L0",
+            "queue_after": []
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "a",
+            "queue_before": [],
+            "temporal": true,
+            "quota": true,
+            "s": "0",
+            "f": "1",
+            "h": "0",
+            "arrival": "1",
+            "sender_peak": "4",
+            "sender_peak_time": "0",
+            "receiver_peak": "8",
+            "receiver_peak_time": "1",
+            "reason": "BUFFER",
+            "queue_after": []
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "a",
+            "queue_before": [],
+            "temporal": true,
+            "quota": true,
+            "s": "1/2",
+            "f": "3/2",
+            "h": "1/2",
+            "arrival": "3/2",
+            "sender_peak": "4",
+            "sender_peak_time": "0",
+            "receiver_peak": "7",
+            "receiver_peak_time": "3/2",
+            "reason": "BUFFER",
+            "queue_after": []
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "a",
+            "queue_before": [],
+            "temporal": true,
+            "quota": true,
+            "s": "1",
+            "f": "2",
+            "h": "1",
+            "arrival": "2",
+            "sender_peak": "4",
+            "sender_peak_time": "0",
+            "receiver_peak": "6",
+            "receiver_peak_time": "2",
+            "reason": "BUFFER",
+            "queue_after": []
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "a",
+            "queue_before": [],
+            "temporal": true,
+            "quota": true,
+            "s": "3/2",
+            "f": "5/2",
+            "h": "3/2",
+            "arrival": "5/2",
+            "sender_peak": "4",
+            "sender_peak_time": "0",
+            "receiver_peak": "5",
+            "receiver_peak_time": "5/2",
+            "reason": "PASS",
+            "new_label": "L1",
+            "removed": [],
+            "queue_after": [
+              "L1"
+            ]
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "a",
+            "queue_before": [
+              "L1"
+            ],
+            "temporal": true,
+            "quota": true,
+            "s": "2",
+            "f": "3",
+            "h": "2",
+            "arrival": "3",
+            "sender_peak": "4",
+            "sender_peak_time": "0",
+            "receiver_peak": "4",
+            "receiver_peak_time": "3",
+            "reason": "PASS",
+            "new_label": "L2",
+            "dominated_by": [
+              "L1"
+            ],
+            "queue_after": [
+              "L1"
+            ]
+          },
+          {
+            "event": "POP",
+            "queue_before": [
+              "L1"
+            ],
+            "selected": "L1",
+            "queue_after": []
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L1",
+            "contact": "b",
+            "queue_before": [],
+            "temporal": true,
+            "quota": true,
+            "s": "5/2",
+            "f": "7/2",
+            "h": "5/2",
+            "arrival": "7/2",
+            "sender_peak": "5",
+            "sender_peak_time": "5/2",
+            "receiver_peak": "4",
+            "receiver_peak_time": "7/2",
+            "reason": "PASS",
+            "new_label": "L3",
+            "removed": [],
+            "queue_after": [
+              "L3"
+            ]
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L1",
+            "contact": "b",
+            "queue_before": [
+              "L3"
+            ],
+            "temporal": true,
+            "quota": true,
+            "s": "3",
+            "f": "4",
+            "h": "3",
+            "arrival": "4",
+            "sender_peak": "5",
+            "sender_peak_time": "5/2",
+            "receiver_peak": "4",
+            "receiver_peak_time": "4",
+            "reason": "PASS",
+            "new_label": "L4",
+            "dominated_by": [
+              "L3"
+            ],
+            "queue_after": [
+              "L3"
+            ]
+          },
+          {
+            "event": "GOAL",
+            "queue_before": [
+              "L3"
+            ],
+            "selected": "L3",
+            "queue_after": []
+          }
+        ],
+        "stats": {
+          "created": 5,
+          "enqueued": 3,
+          "expanded": 2,
+          "pruned_new": 2,
+          "pruned_old": 0
+        }
+      },
+      "oracle": {
+        "arrival": "7/2",
+        "hops": [
+          [
+            "a",
+            "3/2"
+          ],
+          [
+            "b",
+            "5/2"
+          ]
+        ],
+        "feasible_schedules": [
+          {
+            "hops": [
+              [
+                "a",
+                "3/2"
+              ],
+              [
+                "b",
+                "5/2"
+              ]
+            ],
+            "arrival": "7/2"
+          },
+          {
+            "hops": [
+              [
+                "a",
+                "3/2"
+              ],
+              [
+                "b",
+                "3"
+              ]
+            ],
+            "arrival": "4"
+          },
+          {
+            "hops": [
+              [
+                "a",
+                "2"
+              ],
+              [
+                "b",
+                "3"
+              ]
+            ],
+            "arrival": "4"
+          }
+        ],
+        "paths_considered": 1,
+        "schedules_considered": 15,
+        "rejection_counts": {
+          "BUFFER": 9,
+          "TIMING": 3
+        },
+        "rejection_witnesses": {
+          "BUFFER": {
+            "hops": [
+              [
+                "a",
+                "0"
+              ],
+              [
+                "b",
+                "2"
+              ]
+            ],
+            "check": {
+              "feasible": false,
+              "reason": "BUFFER",
+              "node": "B",
+              "time": "1",
+              "value": "8",
+              "limit": "5"
+            }
+          },
+          "TIMING": {
+            "hops": [
+              [
+                "a",
+                "3/2"
+              ],
+              [
+                "b",
+                "2"
+              ]
+            ],
+            "check": {
+              "feasible": false,
+              "reason": "TIMING"
+            }
+          }
+        },
+        "depth_bound": 4
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+﻿Case,Bundle,Proposed Feasible,Oracle Feasible,Proposed Arrival,Oracle Arrival,Match,Oracle paths,Oracle schedules
+01_unique,bundle,True,True,3,3,True,1,1
+02_multiple,bundle,True,True,3,3,True,2,2
+03_no_route,bundle,False,False,,,True,1,1
+04_late_label,bundle,True,True,10,10,True,1,7
+05_prunable,bundle,True,True,5,5,True,1,3
+06_sequential_walkthrough,bundle1,True,True,8,8,True,2,2
+06_sequential_walkthrough,bundle2,True,True,12,12,True,6,8
+07_finish_at_end_nonzero_delay,bundle,True,True,3,3,True,1,1
+08_receive_overflow,bundle,False,False,,,True,1,1
+09_sender_drain_overflow,bundle,False,False,,,True,1,1
+10_source_equals_destination,bundle,True,True,0,0,True,1,1
+11_source_full,bundle,False,False,,,True,1,1
+12_cycle_needed,bundle,True,True,6,6,True,6,6
+13_quota_reuse,bundle,False,False,,,True,6,55986
+14_destination_event_peak,bundle,False,False,,,True,1,1

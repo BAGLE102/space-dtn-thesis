@@ -1,0 +1,23 @@
+{
+  "python_executable": "C:\\Users\\聖克里斯多福\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "root": "C:\\Users\\聖克里斯多福\\Desktop\\碩士",
+  "source_unchanged": true,
+  "frozen_files_checked": 22,
+  "arithmetic": "fractions.Fraction",
+  "tests": 18,
+  "queries": 15,
+  "performance_benchmarks": false,
+  "algorithm_changes": false,
+  "code_files": {
+    "src\\validation\\build_report.py": "00587cc3e4440b43cedd7d19443dda29a9b2c6539a5f5389859811a9df12a2e8",
+    "src\\validation\\build_walkthrough.py": "9b81e5b7362fff685378c43fe0e5575974df27e947234f62dae6a1d1c4a2aeb7",
+    "src\\validation\\compare_dominance.py": "edff83b680c8f71e9156b5b9a34b03d55e8a91ec711e599778efb2b72ba93e17",
+    "src\\validation\\compare_oracle.py": "437c57b56e5d189980967ff8efd56c3fff587521c84d5fe42a455205e86db759",
+    "src\\validation\\exhaustive_oracle.py": "f67901ac6f7588d3cdb52634b785b819ca2b8f04674571893d7ffa9d8d603245",
+    "src\\validation\\model.py": "3d58a41ac479aa8af2fbbf93c6d2dcd672e750ea3433ce0a9eb43f290f99653c",
+    "src\\validation\\proposed_v04.py": "7c3172a194630d2667b1acd1da16824db6baad4b6eb6445d53a24746b90cec3c",
+    "src\\validation\\render_figures.py": "31811d46325a3676337d48961238f5e1c3b114e58257974babe3481c98299979",
+    "src\\validation\\validation_cases.py": "263bf95fe33f77874d235b7866b2b78776776f70945cd2413e7772ff69f7dc98",
+    "src\\validation\\__init__.py": "03ac91ede0fcb1538c5a099c3fe2faf1fdeb6579b1bad5a9f77a2e762e935d59"
+  }
+}

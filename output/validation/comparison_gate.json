@@ -1,0 +1,7 @@
+{
+  "status": "PASS_FINITE_CASES",
+  "queries": 15,
+  "algorithm_changed": false,
+  "timing_benchmarks": false,
+  "continuous_optimality": false
+}

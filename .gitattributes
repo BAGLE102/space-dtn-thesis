@@ -1,0 +1,4 @@
+# Preserve exact bytes: frozen validation records contain SHA-256 hashes.
+* -text
+*.png binary
+*.pptx binary
