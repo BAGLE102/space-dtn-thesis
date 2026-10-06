@@ -45,6 +45,8 @@ python -m src.experiments --config configs/walkthrough.json
 
 仍使用原有finite-grid／aggregate容量搜尋核心，尚未加入鏈路傳輸時段衝突檢查或實際網路傳送模擬。
 
+PPT拓樸的[執行報告](output/experiments/ppt_topology_run_20261006/report/report.md)提供兩包路徑、每跳時間與buffer檢查。可在路由完成後，用`python -m src.experiments.report --run 執行結果資料夾`做排程重播與輸出路徑圖；這是事後檢查，不改搜尋規則。
+
 ### 單元測試
 
 從專案根目錄執行（已在 Python 3.12 驗證；核心搜尋與單元測試使用標準函式庫）：

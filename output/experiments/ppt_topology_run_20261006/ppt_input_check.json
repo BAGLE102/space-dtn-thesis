@@ -1,0 +1,9 @@
+{
+  "source": "output/presentations/1007_定義更新版_v02_20261006.pptx",
+  "sha256": "7736bad0b0eebf3da17f8709d5f865d8d04b4380d47dc851713f59693a81f540",
+  "contact_table_match": true,
+  "bundle_source_destination_release_match": true,
+  "bundle_size_match": true,
+  "node_buffer_match": true,
+  "extended_parameters_source": "configs/walkthrough_contacts.csv; matches existing frozen walkthrough input"
+}

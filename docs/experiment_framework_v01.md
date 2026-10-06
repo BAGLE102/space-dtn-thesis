@@ -143,3 +143,19 @@ Q事件中的`queue_before`與`queue_after`記錄label ID；對照同檔的`labe
 - 未執行大型實驗或效能比較。
 
 下一步先自行複製設定檔改一個小拓樸，再考慮批次參數實驗或獨立傳送過程模擬器。
+
+## 8. 輸出路徑圖與排程重播
+
+已有路由結果後，可執行：
+
+```powershell
+python -m src.experiments.report --run output/experiments/ppt_topology_run_20261006 --positions configs/walkthrough_positions.json
+```
+
+在該次執行的`report/`產生路徑CSV、事件CSV、buffer峰值及事件前後占用、同contact傳輸時段重疊檢查，以及各包路徑PNG／SVG和全部節點buffer圖。該資料夾不能已存在。
+
+省略`--positions`時，以圓形配置節點；座標JSON只控制繪圖，不影響路由。`--no-figures`可只產生數值結果；PNG／SVG繪圖另需matplotlib，本機使用既有的`tmp/validation_plot_dependencies`，沒有改動系統Python或新增套件。
+
+重播直接依完整路徑與發送時間，以精確分段線性占用和事件左右極限計算，沿用既有事件峰值約定。它沒有使用SimPy或實際BP網路。事件表是時刻紀錄，排序不代表新的同時事件資源處理規則。
+
+同模型排程或buffer檢查失敗會保存資料並停止；同contact時段重疊會記為模型界線診斷，不會偷偷移動發送時間或更改演算法。這個案例的事後重疊檢查不代表搜尋核心已支援transmission calendar；仍未檢查共用radio互斥。

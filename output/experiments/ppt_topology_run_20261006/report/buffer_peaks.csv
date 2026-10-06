@@ -1,0 +1,6 @@
+﻿node,peak,peak_time,limit,within_limit
+X,4,0,4,True
+A,4,1,4,True
+B,4,3,4,True
+C,0,0,4,True
+D,4,8,4,True
