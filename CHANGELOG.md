@@ -2,6 +2,10 @@
 
 ## 2026-10-06
 
+- 新增現行研究問題、參數與演算法正式定義，作為論文方法章與後續簡報的統一入口。
+- 統一 aggregate quota、buffer 占用、label、extension、dominance、objective、queue、termination 及 sequential reservation 的語意。
+- 明確標記 transmission calendar 為尚未實作的模型邊界；未修改 v04 演算法、驗證程式或 PPT。
+
 - 新增全面研究 audit，包含模型、正確性、外部效度、baseline 公平性、文獻版本、參數、PPT 與程式一致性。
 - 保存唯讀盤點與 PPT 文字／備註證據，以及兩包重複占用同一 contact 時段的最小重現案例。
 - 本輪僅執行該案例的兩次單包搜尋，未修改研究演算法／程式／PPT，未重跑整套測試或進行大型實驗。

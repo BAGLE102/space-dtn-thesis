@@ -9,6 +9,12 @@
 - 此反例否定實際無衝突排程的外推，未推翻已明限 aggregate grid 的同模型命題。未修改演算法、程式、PPT、既有驗證結果或 comparison gate；未進行效能比較或大型實驗。
 - 下一個討論優先處理 claim／calendar 範圍，以及逐 byte buffer 釋放與目標 BPA／CLA 的關係；候選修正尚未採用。
 
+## 正式定義整理（2026-10-06）
+
+- 新增 `formal_problem_algorithm_definition_v01.md`，統一現行問題名稱、系統假設、參數、決策變數、可行性限制、label、extension、dominance、單包搜尋與逐包更新流程。
+- 定義只對應現行 finite-grid／aggregate-quota v04；沒有加入 transmission calendar，也沒有改動演算法或既有實作。
+- 明確將 `U` 定義為 contact-indexed 非負用量向量，區分核心 state、路徑重建資料、全域 query context 與尚未實作的 calendar 狀態。
+
 ## 已完成
 
 - [x] 現行 v04：有限時間格點、aggregate quota、有限 buffer、逐包資源預約。
