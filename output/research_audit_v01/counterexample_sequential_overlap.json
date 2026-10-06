@@ -1,0 +1,453 @@
+{
+  "id": "AUDIT-CALENDAR-02",
+  "classification": "model-boundary counterexample, NOT a frozen-grid correctness mismatch",
+  "case": {
+    "name": "AUDIT_CALENDAR_02",
+    "contacts": [
+      {
+        "id": "c",
+        "u": "A",
+        "v": "D",
+        "start": "0",
+        "end": "4",
+        "rate": "1",
+        "delay": "0",
+        "quota": "4"
+      }
+    ],
+    "bundles": [
+      {
+        "id": "b1",
+        "source": "A",
+        "dest": "D",
+        "g": "0",
+        "size": "2"
+      },
+      {
+        "id": "b2",
+        "source": "A",
+        "dest": "D",
+        "g": "0",
+        "size": "2"
+      }
+    ],
+    "buffers": {
+      "A": "4",
+      "D": "4"
+    },
+    "horizon": "4",
+    "background": {},
+    "expected": null,
+    "delta": "1"
+  },
+  "observed": [
+    {
+      "bundle": {
+        "id": "b1",
+        "source": "A",
+        "dest": "D",
+        "g": "0",
+        "size": "2"
+      },
+      "quota_before": {
+        "c": "4"
+      },
+      "background_before": {},
+      "result": {
+        "arrival": "2",
+        "hops": [
+          [
+            "c",
+            "0"
+          ]
+        ],
+        "labels": {
+          "L0": {
+            "id": "L0",
+            "v": "A",
+            "a": "0",
+            "usage": {},
+            "pred": null,
+            "hop": null,
+            "active": true,
+            "processed": true
+          },
+          "L1": {
+            "id": "L1",
+            "v": "D",
+            "a": "2",
+            "usage": {
+              "c": "2"
+            },
+            "pred": "L0",
+            "hop": [
+              "c",
+              "0"
+            ],
+            "active": true,
+            "processed": false
+          },
+          "L2": {
+            "id": "L2",
+            "v": "D",
+            "a": "3",
+            "usage": {
+              "c": "2"
+            },
+            "pred": "L0",
+            "hop": [
+              "c",
+              "1"
+            ],
+            "active": false,
+            "processed": false
+          },
+          "L3": {
+            "id": "L3",
+            "v": "D",
+            "a": "4",
+            "usage": {
+              "c": "2"
+            },
+            "pred": "L0",
+            "hop": [
+              "c",
+              "2"
+            ],
+            "active": false,
+            "processed": false
+          }
+        },
+        "trace": [
+          {
+            "event": "POP",
+            "queue_before": [
+              "L0"
+            ],
+            "selected": "L0",
+            "queue_after": []
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "c",
+            "queue_before": [],
+            "temporal": true,
+            "quota": true,
+            "s": "0",
+            "f": "2",
+            "h": "0",
+            "arrival": "2",
+            "sender_peak": "2",
+            "sender_peak_time": "0",
+            "receiver_peak": "2",
+            "receiver_peak_time": "2",
+            "reason": "PASS",
+            "new_label": "L1",
+            "removed": [],
+            "queue_after": [
+              "L1"
+            ]
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "c",
+            "queue_before": [
+              "L1"
+            ],
+            "temporal": true,
+            "quota": true,
+            "s": "1",
+            "f": "3",
+            "h": "1",
+            "arrival": "3",
+            "sender_peak": "2",
+            "sender_peak_time": "0",
+            "receiver_peak": "2",
+            "receiver_peak_time": "3",
+            "reason": "PASS",
+            "new_label": "L2",
+            "dominated_by": [
+              "L1"
+            ],
+            "queue_after": [
+              "L1"
+            ]
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "c",
+            "queue_before": [
+              "L1"
+            ],
+            "temporal": true,
+            "quota": true,
+            "s": "2",
+            "f": "4",
+            "h": "2",
+            "arrival": "4",
+            "sender_peak": "2",
+            "sender_peak_time": "0",
+            "receiver_peak": "2",
+            "receiver_peak_time": "4",
+            "reason": "PASS",
+            "new_label": "L3",
+            "dominated_by": [
+              "L1"
+            ],
+            "queue_after": [
+              "L1"
+            ]
+          },
+          {
+            "event": "GOAL",
+            "queue_before": [
+              "L1"
+            ],
+            "selected": "L1",
+            "queue_after": []
+          }
+        ],
+        "stats": {
+          "created": 4,
+          "enqueued": 2,
+          "expanded": 1,
+          "pruned_new": 2,
+          "pruned_old": 0
+        }
+      }
+    },
+    {
+      "bundle": {
+        "id": "b2",
+        "source": "A",
+        "dest": "D",
+        "g": "0",
+        "size": "2"
+      },
+      "quota_before": {
+        "c": "2"
+      },
+      "background_before": {
+        "A": [
+          [
+            [
+              "0",
+              "0",
+              "2",
+              "2"
+            ],
+            [
+              "0",
+              "2",
+              "2",
+              "0"
+            ]
+          ]
+        ],
+        "D": [
+          [
+            [
+              "0",
+              "2",
+              "0",
+              "2"
+            ]
+          ]
+        ]
+      },
+      "result": {
+        "arrival": "2",
+        "hops": [
+          [
+            "c",
+            "0"
+          ]
+        ],
+        "labels": {
+          "L0": {
+            "id": "L0",
+            "v": "A",
+            "a": "0",
+            "usage": {},
+            "pred": null,
+            "hop": null,
+            "active": true,
+            "processed": true
+          },
+          "L1": {
+            "id": "L1",
+            "v": "D",
+            "a": "2",
+            "usage": {
+              "c": "2"
+            },
+            "pred": "L0",
+            "hop": [
+              "c",
+              "0"
+            ],
+            "active": true,
+            "processed": false
+          },
+          "L2": {
+            "id": "L2",
+            "v": "D",
+            "a": "3",
+            "usage": {
+              "c": "2"
+            },
+            "pred": "L0",
+            "hop": [
+              "c",
+              "1"
+            ],
+            "active": false,
+            "processed": false
+          },
+          "L3": {
+            "id": "L3",
+            "v": "D",
+            "a": "4",
+            "usage": {
+              "c": "2"
+            },
+            "pred": "L0",
+            "hop": [
+              "c",
+              "2"
+            ],
+            "active": false,
+            "processed": false
+          }
+        },
+        "trace": [
+          {
+            "event": "POP",
+            "queue_before": [
+              "L0"
+            ],
+            "selected": "L0",
+            "queue_after": []
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "c",
+            "queue_before": [],
+            "temporal": true,
+            "quota": true,
+            "s": "0",
+            "f": "2",
+            "h": "0",
+            "arrival": "2",
+            "sender_peak": "4",
+            "sender_peak_time": "0",
+            "receiver_peak": "4",
+            "receiver_peak_time": "2",
+            "reason": "PASS",
+            "new_label": "L1",
+            "removed": [],
+            "queue_after": [
+              "L1"
+            ]
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "c",
+            "queue_before": [
+              "L1"
+            ],
+            "temporal": true,
+            "quota": true,
+            "s": "1",
+            "f": "3",
+            "h": "1",
+            "arrival": "3",
+            "sender_peak": "4",
+            "sender_peak_time": "0",
+            "receiver_peak": "3",
+            "receiver_peak_time": "2",
+            "reason": "PASS",
+            "new_label": "L2",
+            "dominated_by": [
+              "L1"
+            ],
+            "queue_after": [
+              "L1"
+            ]
+          },
+          {
+            "event": "EXTEND",
+            "selected": "L0",
+            "contact": "c",
+            "queue_before": [
+              "L1"
+            ],
+            "temporal": true,
+            "quota": true,
+            "s": "2",
+            "f": "4",
+            "h": "2",
+            "arrival": "4",
+            "sender_peak": "4",
+            "sender_peak_time": "0",
+            "receiver_peak": "2",
+            "receiver_peak_time": "2",
+            "reason": "PASS",
+            "new_label": "L3",
+            "dominated_by": [
+              "L1"
+            ],
+            "queue_after": [
+              "L1"
+            ]
+          },
+          {
+            "event": "GOAL",
+            "queue_before": [
+              "L1"
+            ],
+            "selected": "L1",
+            "queue_after": []
+          }
+        ],
+        "stats": {
+          "created": 4,
+          "enqueued": 2,
+          "expanded": 1,
+          "pruned_new": 2,
+          "pruned_old": 0
+        }
+      }
+    }
+  ],
+  "aggregate_final_quota": {
+    "c": "0"
+  },
+  "physical_link_check": {
+    "both_transmissions": [
+      0,
+      2
+    ],
+    "sum_rate_MBps": 2,
+    "contact_rate_MBps": 1,
+    "conflict": true,
+    "feasible_serial_alternative": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "second_arrival_in_serial_alternative": 4
+  },
+  "algorithm_modified": false,
+  "large_experiment": false
+}

@@ -1,0 +1,1854 @@
+{
+  "date": "2026-10-06",
+  "base_commit": "63c0c0c653c28a6a768cd591bba7c41aa0a293c1",
+  "method": "Static audit; no solver or test suite rerun",
+  "tracked_files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 109,
+      "sha256": "835872cc7d158b550ead5bbbfb9d4c2199d2d2cd795b623101481e7c4804601d"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 349,
+      "sha256": "fae28569771342f74242a295eb112270e7763ac60c09c720f280cef3e3b20eed"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1828,
+      "sha256": "b1b166abdc22e3ca7339bb7d3d184e8564cd07d30f6fad5208bc176c0186c82d",
+      "lines": 25
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1368,
+      "sha256": "e26bbb30b0e69a955aa9fb005dc91d9a7a0f275381e10c2aabbdd65351900fc9",
+      "lines": 20
+    },
+    {
+      "path": "PROGRESS.md",
+      "bytes": 2557,
+      "sha256": "21fcbf01b8463495569c62bd4d978291e6cf55aa28cf780bf84f60920ec0eb9c",
+      "lines": 43
+    },
+    {
+      "path": "README.md",
+      "bytes": 2837,
+      "sha256": "b42894b3f9321e5cc7c7322b5411d47ce79235d0a7ea0005b98ecbbe2de23b9c",
+      "lines": 56
+    },
+    {
+      "path": "docs/algorithm_design_v02.md",
+      "bytes": 4283,
+      "sha256": "de8ef0f3134991e536d94f3da9cf2b1a69c25d9fb5df7c0aab2d17fb8873d964",
+      "lines": 57
+    },
+    {
+      "path": "docs/algorithm_design_v03.md",
+      "bytes": 4330,
+      "sha256": "224cc11a36f2265d70f3d6c733b890552c298158e6cecad075e12d6dac7cf6ea",
+      "lines": 87
+    },
+    {
+      "path": "docs/algorithm_explanation_zh_tw_v01.md",
+      "bytes": 3227,
+      "sha256": "607360fdd73bfb85e1221d1b0df9a1d7f54eef97b3ae62b8bbe42719792e8284",
+      "lines": 50
+    },
+    {
+      "path": "docs/algorithm_pseudocode_v01.md",
+      "bytes": 10593,
+      "sha256": "e1376f411ae1ae03ff26a2670966d2e59c737eac1ee4d3da27c0a143265fb393",
+      "lines": 264
+    },
+    {
+      "path": "docs/algorithm_pseudocode_v02.md",
+      "bytes": 4006,
+      "sha256": "f2fd79f23a438cf00198edad98452051a83fec79d2e3e22826fda71f27450eb7",
+      "lines": 90
+    },
+    {
+      "path": "docs/algorithm_symbols_and_equations_v01.md",
+      "bytes": 16317,
+      "sha256": "4dd0860337e4a8302e465cfe95dacc42b335719c923af69d02573e68514dbe89",
+      "lines": 471
+    },
+    {
+      "path": "docs/algorithm_validation_summary_v01.md",
+      "bytes": 4295,
+      "sha256": "5f64b51beadf753bc6fcb31c1a28c3745456f9f539ba7fe76fe1e5250276701e",
+      "lines": 62
+    },
+    {
+      "path": "docs/algorithm_walkthrough_plan_v02.md",
+      "bytes": 2494,
+      "sha256": "1453d86ac0cba6ae6b1cbd9d0ceafabd0151d4b840b19ad9a994e2ec402ed5f6",
+      "lines": 28
+    },
+    {
+      "path": "docs/algorithm_walkthrough_v01.md",
+      "bytes": 13480,
+      "sha256": "46ead75608b7285c5f8fbc888a29205b7874945e1320596744c65a95bb3ef667",
+      "lines": 329
+    },
+    {
+      "path": "docs/buffer_model_v03.md",
+      "bytes": 3440,
+      "sha256": "93e0696c13d584758406a898b0c9995c9bb414a2299869b29b6589a71d7b7573",
+      "lines": 64
+    },
+    {
+      "path": "docs/centralized_dtn_architecture_v01.md",
+      "bytes": 13157,
+      "sha256": "c5914c90775181b159e5fe481015ab15e1155b3061bab0a5dd10916875fb4316",
+      "lines": 187
+    },
+    {
+      "path": "docs/current_algorithm_snapshot_v01.md",
+      "bytes": 3593,
+      "sha256": "22c5c822042a1573a4895fab962b37d8fb82c9199ac61089f2cbc966fd66e090",
+      "lines": 51
+    },
+    {
+      "path": "docs/dominance_correctness_review_v01.md",
+      "bytes": 2962,
+      "sha256": "22eb8486989e74d2b53e8f162a1ec3264617d0a6e3dbfe590d93132a538add91",
+      "lines": 34
+    },
+    {
+      "path": "docs/dominance_examples_v01.md",
+      "bytes": 2542,
+      "sha256": "367655a368640aa121867192c08501a6909be3245228aa4598aec5a2fda123cc",
+      "lines": 37
+    },
+    {
+      "path": "docs/dominance_rule_v02.md",
+      "bytes": 4222,
+      "sha256": "f45ae9029ce275c787312d9a42d50c8d5fc2804788d9b5a80b319690c8595ca6",
+      "lines": 56
+    },
+    {
+      "path": "docs/extension_correctness_review_v01.md",
+      "bytes": 3434,
+      "sha256": "1dc1dfbcd397e8619dc51a4347f385ba090d65e7bf97acd18f32664bb56a4f79",
+      "lines": 38
+    },
+    {
+      "path": "docs/extension_rule_v02.md",
+      "bytes": 2448,
+      "sha256": "5841b5186e39af1575c748631ed5cb052db12596e7b1be4d5ff3bd07a09ce368",
+      "lines": 40
+    },
+    {
+      "path": "docs/label_design_v02.md",
+      "bytes": 3010,
+      "sha256": "788f24a60256706bb5e8962d52d1f0ee3bf5bf488a7bf4d05a725da0e7596adf",
+      "lines": 34
+    },
+    {
+      "path": "docs/new_ppt_outline_v02.md",
+      "bytes": 13704,
+      "sha256": "95bd9758c4c8e46a21467670cb51e7de91ccdeaa44d0b52e9b456b666cc93fa1",
+      "lines": 347
+    },
+    {
+      "path": "docs/oracle_validation_v01.md",
+      "bytes": 6897,
+      "sha256": "000164337711abe3b1015afdf1dad3151ec9669d6c92f155d2078fb021fb31c2",
+      "lines": 109
+    },
+    {
+      "path": "docs/paper_method_mapping_v01.md",
+      "bytes": 10878,
+      "sha256": "813e7820a2fbf378d9e6324a4407c586ff56a2f610152003183ad88e460908eb",
+      "lines": 91
+    },
+    {
+      "path": "docs/phase1_deliverables_v02.md",
+      "bytes": 5608,
+      "sha256": "adb30a0317f6cf8bfdbdf3c5e49fbad346fd67057189e075a54bd2ca55b51cef",
+      "lines": 67
+    },
+    {
+      "path": "docs/ppt_storyline_revision_v03.md",
+      "bytes": 3374,
+      "sha256": "5ce5bdb670ab1b4467ace44c498bfea58c9691a2c7522798f0a42528a3368256",
+      "lines": 51
+    },
+    {
+      "path": "docs/previous_ppt_review_v01.md",
+      "bytes": 7371,
+      "sha256": "aaaaf325a9652218b600883468ace2018927a36245309c454ce9b3b21d482bd4",
+      "lines": 47
+    },
+    {
+      "path": "docs/problem_formulation_v02.md",
+      "bytes": 6232,
+      "sha256": "03f6d49ac394307e8723475fbfab99be9592b3358ee90213d4a6912429fe0fa1",
+      "lines": 98
+    },
+    {
+      "path": "docs/research_extension_recommendation_v01.md",
+      "bytes": 10483,
+      "sha256": "4a4e2e5be23edea0465f3021034da01337134f2b31c80c85d482253e0a980eef",
+      "lines": 137
+    },
+    {
+      "path": "docs/research_scope_v03.md",
+      "bytes": 5511,
+      "sha256": "ce1ee10b2961a653e8ac70b1e3a25fe22890d1c0b7cde1ed7474bfab81b2998a",
+      "lines": 76
+    },
+    {
+      "path": "docs/reviewer_assessment_v02.md",
+      "bytes": 6017,
+      "sha256": "a65678c4204018b4a20b52e6b667f910496344006b898223abdbe70f464ac961",
+      "lines": 69
+    },
+    {
+      "path": "docs/search_completeness_review_v01.md",
+      "bytes": 4010,
+      "sha256": "b530bf3c2b5722dce91967069079b472a5e1184c6d7368d971c37283a21d07ed",
+      "lines": 39
+    },
+    {
+      "path": "docs/sequential_label_setting_v04.md",
+      "bytes": 10707,
+      "sha256": "72442de101c461dbe78491c2c711f109747815d1a29cd26e9b330c7821a0dc36",
+      "lines": 169
+    },
+    {
+      "path": "docs/small_topology_v02.md",
+      "bytes": 3600,
+      "sha256": "95b6d297b92184db68e80969889c694a66ebe3d428ea8f35c545e1a2f04dce0e",
+      "lines": 61
+    },
+    {
+      "path": "docs/template_inspection_v01.md",
+      "bytes": 1948,
+      "sha256": "3ca00533ef94b75a5c417f42800b7854e7b1bc726ee371fc19eaf817a36bc048",
+      "lines": 23
+    },
+    {
+      "path": "docs/terminology_zh_tw_v01.md",
+      "bytes": 8394,
+      "sha256": "9dab5475e43d58970136430f77ad237b00e88c991e3a627cbf7dce8cf8c5ecb0",
+      "lines": 89
+    },
+    {
+      "path": "docs/transmission_calendar_gap_v01.md",
+      "bytes": 2716,
+      "sha256": "0b3be6e5d1d0ef4701ede35762b938e7ff405f58942f4c3ba5fec8deae482dc3",
+      "lines": 32
+    },
+    {
+      "path": "docs/transmission_time_claim_review_v01.md",
+      "bytes": 4121,
+      "sha256": "4348e3336340c3c2d1e3e7f2c7643c0c0947a09f8c73068503537451a103c975",
+      "lines": 65
+    },
+    {
+      "path": "docs/validation_case_catalog_v01.md",
+      "bytes": 9601,
+      "sha256": "8d6648c1de1e7b06534b072b21f14be6edd750c4919eacf6cdf832feea27f6f4",
+      "lines": 396
+    },
+    {
+      "path": "figures/algorithm_walkthrough/README.md",
+      "bytes": 783,
+      "sha256": "e2cbc3c64062137d1c461aa4cbf3004b27f1f3e8302d725d933e2cf53f499b14",
+      "lines": 17
+    },
+    {
+      "path": "figures/algorithm_walkthrough/step_00_topology.png",
+      "bytes": 249395,
+      "sha256": "bff0b545e9be44019ff382dbe1f24a8d82fb64e8b8049d8fbe2a2381a03ce0ef"
+    },
+    {
+      "path": "figures/algorithm_walkthrough/step_01_source_label.png",
+      "bytes": 239477,
+      "sha256": "3e6cc170aff55d0d321bd8f06793a3a0b834a99ed4bb56edd7c6b4a980a4cc2d"
+    },
+    {
+      "path": "figures/algorithm_walkthrough/step_02_first_extension.png",
+      "bytes": 244724,
+      "sha256": "e1241354a5006149c5b9113771c24be2b27114ea1d683557a71d03db35086885"
+    },
+    {
+      "path": "figures/algorithm_walkthrough/step_03_feasibility_check.png",
+      "bytes": 269180,
+      "sha256": "ab0666256a9ef327f7e8bda440d01249ba4e61ba0d855d8b921ef5d5e67c0813"
+    },
+    {
+      "path": "figures/algorithm_walkthrough/step_04_dominance.png",
+      "bytes": 268437,
+      "sha256": "236e2efdf71c7889a9a1292b3f8712e35899a4c26ba6d2819f65bd52b32078e9"
+    },
+    {
+      "path": "figures/algorithm_walkthrough/step_05_bundle1_route.png",
+      "bytes": 268135,
+      "sha256": "e7810bfa64f8446f4fea3fd2f940dc6ad6d0cdd06a6887235bbafb63fdfe67d0"
+    },
+    {
+      "path": "figures/algorithm_walkthrough/step_06_resource_update.png",
+      "bytes": 264202,
+      "sha256": "5961ce9542a51b7f2f636dd9e7eb5726dfed0c7b0f91228f872697f6a3de888a"
+    },
+    {
+      "path": "figures/algorithm_walkthrough/step_07_bundle2_search.png",
+      "bytes": 320084,
+      "sha256": "e484cc8a6b0509f7f8a60c5340e5b53d7b608f97284058e71bd5f185e4ad2e7b"
+    },
+    {
+      "path": "figures/algorithm_walkthrough/step_08_final_state.png",
+      "bytes": 299815,
+      "sha256": "f55dcf125b0467b618fbcf30c7a46e746e58d16bcc4999ca4235ee7a39de0078"
+    },
+    {
+      "path": "figures/algorithm_walkthrough/walkthrough_contact_sheet.png",
+      "bytes": 261986,
+      "sha256": "ba78247c33e99cab7021fa30c4a88ffcd1d3fbe8d14d9d186c879e29e7c7e997"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_01.png",
+      "bytes": 124811,
+      "sha256": "9b16076387f06dfdec22bfa92d51c365a5125c9b2f421e20b543344c8ebddf2d"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_02.png",
+      "bytes": 128799,
+      "sha256": "e77c4b97a680da1b3f433948dd394e9c85492ad6472aaa3ceca3c9952bf13388"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_03.png",
+      "bytes": 135586,
+      "sha256": "25a076fd676fcea743cab32e1d05ed368bb7ee0ce0545597ec3492c4a2540b7d"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_04.png",
+      "bytes": 142235,
+      "sha256": "26d46185535f6d799314d69d7f9e9f009902acdec5d0c877d24dbc08735718a0"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_05.png",
+      "bytes": 146113,
+      "sha256": "d6be234b60c772085b5efde6584a5a4c576a57b92eb7fd4d7f443170bbf3991c"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_06.png",
+      "bytes": 144826,
+      "sha256": "8f5a118123266058c2f45474ec2528f87242c63fe5e13035b03340d5d88e7a29"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_07.png",
+      "bytes": 144896,
+      "sha256": "09e336f6dcf223550014b46ab0402bf23b057094e43d519a37a15318e8f6f06f"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_08.png",
+      "bytes": 144340,
+      "sha256": "b7eec4893854ba9218f4048faa86ee2fbe296c96a758ee80dc57711ea5b42415"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_09.png",
+      "bytes": 142185,
+      "sha256": "a909fc44fa17cdcf1506e2d632ebf8fe44d79d89a13c33ff80261ed04e31d462"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_10.png",
+      "bytes": 150400,
+      "sha256": "290bf1ca5742a01a528e5b41dd222486175f4aaaf74d5e0cebabaaccd491040c"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_11.png",
+      "bytes": 153529,
+      "sha256": "b01db4f45fb6dc118dd6e53c879ad9bf90f648507f340414f39c56e3293cbb1d"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_12.png",
+      "bytes": 142880,
+      "sha256": "107a995b9959b48107c6307694c9657b101b985c21cde9d08f9d855131776cf3"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_13.png",
+      "bytes": 146616,
+      "sha256": "97622edb6fcc6ae98eddc89e7265abd47c56453e60611884da8a6259bb66c47f"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_14.png",
+      "bytes": 145071,
+      "sha256": "2ca050b1ee58b302998a673e93d65749d16dd7e5085d58f55bd2e16778e06810"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_15.png",
+      "bytes": 144425,
+      "sha256": "415cf270d496575a59ade1a9c6ef624edca75aafa9901c1d94a49963b0378986"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_16.png",
+      "bytes": 102616,
+      "sha256": "64fbacc0ca9b8887df4434dd8734f58a31b284d636cd768784d7cb21616db16b"
+    },
+    {
+      "path": "output/presentations/圖解版逐頁圖/diagram_17.png",
+      "bytes": 143186,
+      "sha256": "fd449b7aebca1ed9591e664be2338c7fe4a8c06f9b9abf4bc7a9334653942dbe"
+    },
+    {
+      "path": "output/presentations/整包路由_Label_Setting_圖解版_v01.pptx",
+      "bytes": 258525,
+      "sha256": "20bea58b1789c16c6660fc56c4e9b255d2f2478f20e93c7851e3801e6412b962"
+    },
+    {
+      "path": "output/presentations/整包路由_Label_Setting_圖解版_v02_中央架構與Q-U觀察.pptx",
+      "bytes": 272770,
+      "sha256": "1f515b748e254ed75283a904c27aa86656832cf2a43c13e064d530c7ca615d14"
+    },
+    {
+      "path": "output/presentations/整包路由_Label_Setting_研究進度_20261005.pptx",
+      "bytes": 248141,
+      "sha256": "416370c3f941c5e7148cef677f5c6db554d3cc6a298b5350ee008b2894907136"
+    },
+    {
+      "path": "output/presentations/整包路由_Label_Setting_逐步詳解_v02.pptx",
+      "bytes": 316901,
+      "sha256": "d99af9ded773040f4c1c419cb4766d0cd25eefb6f117f13d13d7768c6fdcd989"
+    },
+    {
+      "path": "output/validation/artifact_qa.json",
+      "bytes": 343,
+      "sha256": "c3716bf85f5a7c432a553d4fd39d7e742bb7f7e55301205ee944db7f34c352d2",
+      "lines": 13
+    },
+    {
+      "path": "output/validation/comparison_gate.json",
+      "bytes": 152,
+      "sha256": "828a6e9058afb97a1e43a03dbe2550ba9921ff7cb765f650f3f41b8b9afdbaff",
+      "lines": 7
+    },
+    {
+      "path": "output/validation/counterexample_grid_continuous.json",
+      "bytes": 17243,
+      "sha256": "3b4d826b0fffe324e9037dfeaa0afb5339bbf9352f9f43c4b90819412735ad96",
+      "lines": 742
+    },
+    {
+      "path": "output/validation/counterexamples_index.json",
+      "bytes": 1183,
+      "sha256": "f86dfd008a3f58386e03016bd0dae25815416d4e73ab377f5c5141afaf54c08d",
+      "lines": 46
+    },
+    {
+      "path": "output/validation/dominance_comparison.csv",
+      "bytes": 975,
+      "sha256": "f150def719cfb60e93718c6ac71857a23498b237daac67f7452d1e0dac9b1681",
+      "lines": 16
+    },
+    {
+      "path": "output/validation/dominance_results.json",
+      "bytes": 110073,
+      "sha256": "57f9d1ffdf1624f50d6ab17805be97332dcdc33675ae16ce1bb42acbfa8d9884",
+      "lines": 4945
+    },
+    {
+      "path": "output/validation/frozen_document_hashes.json",
+      "bytes": 2230,
+      "sha256": "e715a8a251c00b0245183e422268fa573e02ed9fb9f237908bf30ef5a3411387",
+      "lines": 24
+    },
+    {
+      "path": "output/validation/frozen_sequential_label_setting_v04.md",
+      "bytes": 10707,
+      "sha256": "72442de101c461dbe78491c2c711f109747815d1a29cd26e9b330c7821a0dc36",
+      "lines": 169
+    },
+    {
+      "path": "output/validation/oracle_comparison.csv",
+      "bytes": 882,
+      "sha256": "d1553434a11043b2503e7914b24aeeed20e018e8a9384ba3a0187d2da6f345f0",
+      "lines": 16
+    },
+    {
+      "path": "output/validation/oracle_results.json",
+      "bytes": 92309,
+      "sha256": "3a63b81f6c2f349b32ed319a7017fba6f8f094eed8eeee13105ed04633dbc2ca",
+      "lines": 4493
+    },
+    {
+      "path": "output/validation/reproducibility.json",
+      "bytes": 1528,
+      "sha256": "5988e0d3219aa288e47a2964d3119f9b45e456f7fcd61f9de93694ef5db8e703",
+      "lines": 23
+    },
+    {
+      "path": "output/validation/test_results.txt",
+      "bytes": 2292,
+      "sha256": "d9fb82a220ce0cfd83727d1aaab87038d0726bb5c55bc6dab46b887f73bf09fe",
+      "lines": 23
+    },
+    {
+      "path": "output/validation/walkthrough_input.json",
+      "bytes": 1867,
+      "sha256": "9928f57bbdb20de7d82278afa3dc1f973ba7aa228707033e2c3c749819437f8e",
+      "lines": 115
+    },
+    {
+      "path": "output/validation/walkthrough_trace.json",
+      "bytes": 19498,
+      "sha256": "7cee934f2a85979ba3f1a68ab279554e14d766a79a351201eba72fbe230611b8",
+      "lines": 905
+    },
+    {
+      "path": "src/validation/__init__.py",
+      "bytes": 78,
+      "sha256": "03ac91ede0fcb1538c5a099c3fe2faf1fdeb6579b1bad5a9f77a2e762e935d59",
+      "lines": 1
+    },
+    {
+      "path": "src/validation/build_report.py",
+      "bytes": 14517,
+      "sha256": "00587cc3e4440b43cedd7d19443dda29a9b2c6539a5f5389859811a9df12a2e8",
+      "lines": 165
+    },
+    {
+      "path": "src/validation/build_walkthrough.py",
+      "bytes": 8962,
+      "sha256": "9b81e5b7362fff685378c43fe0e5575974df27e947234f62dae6a1d1c4a2aeb7",
+      "lines": 120
+    },
+    {
+      "path": "src/validation/compare_dominance.py",
+      "bytes": 2533,
+      "sha256": "edff83b680c8f71e9156b5b9a34b03d55e8a91ec711e599778efb2b72ba93e17",
+      "lines": 41
+    },
+    {
+      "path": "src/validation/compare_oracle.py",
+      "bytes": 3974,
+      "sha256": "437c57b56e5d189980967ff8efd56c3fff587521c84d5fe42a455205e86db759",
+      "lines": 72
+    },
+    {
+      "path": "src/validation/exhaustive_oracle.py",
+      "bytes": 7345,
+      "sha256": "f67901ac6f7588d3cdb52634b785b819ca2b8f04674571893d7ffa9d8d603245",
+      "lines": 167
+    },
+    {
+      "path": "src/validation/model.py",
+      "bytes": 4093,
+      "sha256": "3d58a41ac479aa8af2fbbf93c6d2dcd672e750ea3433ce0a9eb43f290f99653c",
+      "lines": 108
+    },
+    {
+      "path": "src/validation/proposed_v04.py",
+      "bytes": 6007,
+      "sha256": "7c3172a194630d2667b1acd1da16824db6baad4b6eb6445d53a24746b90cec3c",
+      "lines": 112
+    },
+    {
+      "path": "src/validation/render_figures.py",
+      "bytes": 9068,
+      "sha256": "9d5c385cf4eba8c228c731fb2c434331283fc9bb20943c66cc6b8e46b60def29",
+      "lines": 115
+    },
+    {
+      "path": "src/validation/validation_cases.py",
+      "bytes": 3592,
+      "sha256": "263bf95fe33f77874d235b7866b2b78776776f70945cd2413e7772ff69f7dc98",
+      "lines": 63
+    },
+    {
+      "path": "tests/test_dominance.py",
+      "bytes": 2249,
+      "sha256": "361c0b303d8e22cbdc3fcee246310e7cf8d2ec0cebdf90f50808650949ee8819",
+      "lines": 44
+    },
+    {
+      "path": "tests/test_extension.py",
+      "bytes": 2466,
+      "sha256": "c4127dd5ddc508de1bf12a6681fc00b76231f6cc1c4fcd871401141b0bcba3b1",
+      "lines": 46
+    },
+    {
+      "path": "tests/test_oracle_consistency.py",
+      "bytes": 1790,
+      "sha256": "a64a1914369b3284fdcba0019b87766cab42a717e5b407634964218d612feee3",
+      "lines": 36
+    },
+    {
+      "path": "tests/test_sequential_bundle_update.py",
+      "bytes": 1699,
+      "sha256": "eb38c53e7ea59ecdc2ce2f86a361c51b9314754fd9446661f077e4ced703f6e3",
+      "lines": 35
+    }
+  ],
+  "case_parameters": [
+    {
+      "case": "01_unique",
+      "nodes": 3,
+      "contacts": 2,
+      "bundles": 1,
+      "rates": [
+        "4"
+      ],
+      "durations": [
+        "1"
+      ],
+      "delays": [
+        "0"
+      ],
+      "quotas": [
+        "4"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "02_multiple",
+      "nodes": 3,
+      "contacts": 3,
+      "bundles": 1,
+      "rates": [
+        "4"
+      ],
+      "durations": [
+        "1"
+      ],
+      "delays": [
+        "0"
+      ],
+      "quotas": [
+        "4"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "03_no_route",
+      "nodes": 3,
+      "contacts": 2,
+      "bundles": 1,
+      "rates": [
+        "4"
+      ],
+      "durations": [
+        "1"
+      ],
+      "delays": [
+        "0"
+      ],
+      "quotas": [
+        "3",
+        "4"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "04_late_label",
+      "nodes": 3,
+      "contacts": 2,
+      "bundles": 1,
+      "rates": [
+        "4"
+      ],
+      "durations": [
+        "1",
+        "7"
+      ],
+      "delays": [
+        "0"
+      ],
+      "quotas": [
+        "4"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "05_prunable",
+      "nodes": 3,
+      "contacts": 2,
+      "bundles": 1,
+      "rates": [
+        "4"
+      ],
+      "durations": [
+        "1",
+        "3"
+      ],
+      "delays": [
+        "0"
+      ],
+      "quotas": [
+        "4"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "06_sequential_walkthrough",
+      "nodes": 5,
+      "contacts": 8,
+      "bundles": 2,
+      "rates": [
+        "4"
+      ],
+      "durations": [
+        "1",
+        "2"
+      ],
+      "delays": [
+        "0",
+        "1"
+      ],
+      "quotas": [
+        "2",
+        "4",
+        "8"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "07_finish_at_end_nonzero_delay",
+      "nodes": 2,
+      "contacts": 1,
+      "bundles": 1,
+      "rates": [
+        "4"
+      ],
+      "durations": [
+        "1"
+      ],
+      "delays": [
+        "2"
+      ],
+      "quotas": [
+        "4"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "08_receive_overflow",
+      "nodes": 2,
+      "contacts": 1,
+      "bundles": 1,
+      "rates": [
+        "4"
+      ],
+      "durations": [
+        "1"
+      ],
+      "delays": [
+        "0"
+      ],
+      "quotas": [
+        "4"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "09_sender_drain_overflow",
+      "nodes": 2,
+      "contacts": 1,
+      "bundles": 1,
+      "rates": [
+        "2"
+      ],
+      "durations": [
+        "2"
+      ],
+      "delays": [
+        "0"
+      ],
+      "quotas": [
+        "4"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "10_source_equals_destination",
+      "nodes": 1,
+      "contacts": 0,
+      "bundles": 1,
+      "rates": [],
+      "durations": [],
+      "delays": [],
+      "quotas": [],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "11_source_full",
+      "nodes": 2,
+      "contacts": 1,
+      "bundles": 1,
+      "rates": [
+        "4"
+      ],
+      "durations": [
+        "1"
+      ],
+      "delays": [
+        "0"
+      ],
+      "quotas": [
+        "4"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "12_cycle_needed",
+      "nodes": 3,
+      "contacts": 3,
+      "bundles": 1,
+      "rates": [
+        "4"
+      ],
+      "durations": [
+        "1"
+      ],
+      "delays": [
+        "0"
+      ],
+      "quotas": [
+        "4"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "13_quota_reuse",
+      "nodes": 3,
+      "contacts": 3,
+      "bundles": 1,
+      "rates": [
+        "4"
+      ],
+      "durations": [
+        "1",
+        "6"
+      ],
+      "delays": [
+        "0"
+      ],
+      "quotas": [
+        "4"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    },
+    {
+      "case": "14_destination_event_peak",
+      "nodes": 2,
+      "contacts": 1,
+      "bundles": 1,
+      "rates": [
+        "4"
+      ],
+      "durations": [
+        "1"
+      ],
+      "delays": [
+        "0"
+      ],
+      "quotas": [
+        "4"
+      ],
+      "sizes": [
+        "4"
+      ],
+      "buffers": [
+        "4"
+      ],
+      "horizon": "12",
+      "delta": "1"
+    }
+  ],
+  "ppt_text_and_notes": [
+    {
+      "path": "output/presentations/整包路由_Label_Setting_圖解版_v01.pptx",
+      "parts": [
+        {
+          "part": "ppt/slides/slide1.xml",
+          "text": "圖解：一個標籤如何往下走 | 1 | 每一頁只追蹤一個動作；圖上的 Q 是尚待處理的標籤。 | 取出標籤 | (v, a, U) | 選 contact | 列舉時刻 s | 時間、容量 | Buffer 檢查 | 支配判斷 | 保留或刪除 | 失敗：拒絕這次延伸 | 通過：加入 Q | 藍：嘗試　綠：保留　紅叉：拒絕　橘：前包占用"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide1.xml",
+          "text": "投影片重點： | • 取出最早到達的標籤 | • 逐一嘗試 contact 與發送時間 | • 檢查通過後比較支配並加入佇列 | 講者備註： | 藍色表示嘗試中，綠色表示通過或選定，紅色與叉號表示拒絕，橘色表示前一包的預約。全部文字使用標楷體。此圖解仍限格點與aggregate quota模型，沒有修改算法。 | 一句話重點：每一頁只追蹤一個動作；圖上的 Q 是尚待處理的標籤。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide2.xml",
+          "text": "01　固定拓樸與兩包需求 | 2 | 第一包 X→D（g=0）；第二包 A→D（g=1），依序搜尋。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 每包 4 MB，傳一跳需要 1 秒 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 秒 | 各節點 buffer 上限 4 MB"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide2.xml",
+          "text": "投影片重點： | • 01　固定拓樸與兩包需求 | • 第一包 X→D（g=0）；第二包 A→D（g=1），依序搜尋。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | S=4 MB，各節點M=4 MB，所有r=4 MB/s，Δ=1秒、T=12秒。每跳傳輸時間S/r=1秒。c2、c5、c6延遲1秒，其餘0。 | 一句話重點：第一包 X→D（g=0）；第二包 A→D（g=1），依序搜尋。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide3.xml",
+          "text": "02　第一包：X 經 c1 到 B | 3 | c1：0+4≤4；X 與 B 的占用峰值都為 4 MB，因此建立 L₁。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | c1：發送與接收都在 2～3 秒 | X 等待 | X 發送 | B 接收 | 0 | 1 | 2 | 3 | 4 | 秒 | L₁ = (B, 3, {c1:4}) | Q 原本 | [L₀(X,0)] → 取出 L₀ | Q 更新 | [L₁(B,3)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide3.xml",
+          "text": "投影片重點： | • 02　第一包：X 經 c1 到 B | • c1：0+4≤4；X 與 B 的占用峰值都為 4 MB，因此建立 L₁。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 初始化L0=(X,0,{})，取出後Q空。c1 s=2 f=3 h=2 a′=3，建立L1=(B,3,{c1:4})。 | 一句話重點：c1：0+4≤4；X 與 B 的占用峰值都為 4 MB，因此建立 L₁。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide4.xml",
+          "text": "03　第一包：在 B 比較 c2、c5 | 4 | 兩條路徑都可行。先保留 D 的第 8 秒與第 12 秒標籤。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 發送完成後，還要傳播 1 秒 | c2 發送 | D 接收 | c5 發送 | D 接收 | 6 | 8 | 10 | 12 | 秒 | L₂：D,8　　L₃：D,12 | Q 原本 | [L₁(B,3)] → 取出 L₁ | Q 更新 | [L₂(D,8), L₃(D,12)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide4.xml",
+          "text": "投影片重點： | • 03　第一包：在 B 比較 c2、c5 | • 兩條路徑都可行。先保留 D 的第 8 秒與第 12 秒標籤。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 取出L1。c2s6f7h7a8建立L2；c5s10f11h11a12建立L3。兩者sender/receiver峰值4，quota皆0+4≤4。L2不能支配L3，因c2用量4>0。 | 一句話重點：兩條路徑都可行。先保留 D 的第 8 秒與第 12 秒標籤。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide5.xml",
+          "text": "04　第一包：選路並預約 Buffer | 5 | 取出 L₂，選定 c1→c2；R[c1]、R[c2] 扣為 0。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 0 | 4 | 占用量（MB） | 上限 4 | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 秒 | B：橘線是第一包已預約占用 | 接收 ↗　等待 ─　發送 ↘ | Q 原本 | [L₂(D,8), L₃(D,12)] | Q 更新 | 取出 L₂(D,8) → 第一包結束"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide5.xml",
+          "text": "投影片重點： | • 04　第一包：選路並預約 Buffer | • 取出 L₂，選定 c1→c2；R[c1]、R[c2] 扣為 0。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 路徑回溯L2←L1←L0。B在2～3接收、3～6等待、6～7送出。D7～8接收後釋放。完整路徑驗證後才更新R、O。 | 一句話重點：取出 L₂，選定 c1→c2；R[c1]、R[c2] 扣為 0。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide6.xml",
+          "text": "05　第二包：先試 c3，早到 B | 6 | 1～2 秒接收可行，因此保留 L₁；能否繼續等待，要下一跳才檢查。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | B 在第 2 秒剛好收到整包 | 第二包接收 | 第一包接收 | 第一包等待 | 0 | 2 | 4 | 6 | 秒 | L₁ = (B, 2, {c3:4}) | Q 原本 | [L₀(A,1)] → 取出 L₀ | Q 更新 | [L₁(B,2)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide6.xml",
+          "text": "投影片重點： | • 05　第二包：先試 c3，早到 B | • 1～2 秒接收可行，因此保留 L₁；能否繼續等待，要下一跳才檢查。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 第二包重新L0=(A,1,{})；c3s1f2h1a2。t2第一包在B占用0，因此接收完成可行。峰值4。 | 一句話重點：1～2 秒接收可行，因此保留 L₁；能否繼續等待，要下一跳才檢查。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide7.xml",
+          "text": "06　第二包：c4 可以晚一點出發 | 7 | c4 的窗口為 7～9 秒，整包需 1 秒，所以起始時間只有 7 或 8。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 同一條 c4，兩個發送選擇 | c4 窗口 | 選 s=7 | 選 s=8 | 6 | 7 | 8 | 9 | 10 | 秒 | L₂：B,8　　L₃：B,9（候選） | Q 原本 | [L₁(B,2)] | Q 更新 | [L₁(B,2), L₂(B,8)]；L₃ 待比較"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide7.xml",
+          "text": "投影片重點： | • 06　第二包：c4 可以晚一點出發 | • c4 的窗口為 7～9 秒，整包需 1 秒，所以起始時間只有 7 或 8。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 仍展開L0。s7建立L2B8；s8候選L3B9。兩者容量0+4≤8，兩端峰值4。此頁L3尚待支配判斷，不列入Q。 | 一句話重點：c4 的窗口為 7～9 秒，整包需 1 秒，所以起始時間只有 7 或 8。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide8.xml",
+          "text": "07　支配圖解：保留 L₂，刪除 L₃ | 8 | L₂ 能等到第 9 秒，且 U₂=U₃，因此可以取代 L₃。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | L₂：B,8 | L₃：B,9 | 持有 4 MB 等待 1 秒 | O_B(t)=0，總占用 4≤4 | c4 用量相同：都是 4 MB | Q 原本 | [L₁(B,2), L₂(B,8)] ＋ 候選 L₃ | Q 更新 | [L₁(B,2), L₂(B,8)]；刪除 L₃"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide8.xml",
+          "text": "投影片重點： | • 07　支配圖解：保留 L₂，刪除 L₃ | • L₂ 能等到第 9 秒，且 U₂=U₃，因此可以取代 L₃。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 8≤9；O_B(t)+4=4≤4 forall[8,9]；兩者c4使用4MB其他0。L3不入列。早到L1不能支配L2，因等待超限且c3用量較多。 | 一句話重點：L₂ 能等到第 9 秒，且 U₂=U₃，因此可以取代 L₃。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide9.xml",
+          "text": "08　第二包：c6 到 C，重新排序 | 9 | L₄ 雖然建立得較晚，但到達時間是 3 秒，排在 L₂ 的 8 秒前面。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | A 發送 | C 接收 | 0 | 1 | 2 | 3 | 4 | 秒 | Q 依到達時間，不依編號 | L₁ | B,2 | L₄ | C,3 | L₂ | B,8 | Q 原本 | [L₁(B,2), L₂(B,8)] | Q 更新 | [L₁(B,2), L₄(C,3), L₂(B,8)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide9.xml",
+          "text": "投影片重點： | • 08　第二包：c6 到 C，重新排序 | • L₄ 雖然建立得較晚，但到達時間是 3 秒，排在 L₂ 的 8 秒前面。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | c6s1f2δ1h2a3；U[c6]=4。無C標籤支配，入列。L0所有contacts展開完成。 | 一句話重點：L₄ 雖然建立得較晚，但到達時間是 3 秒，排在 L₂ 的 8 秒前面。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide10.xml",
+          "text": "09　取出 L₁：c2 已被第一包用完 | 10 | 容量 0<4，直接拒絕 c2；時間與 buffer 檢查未執行。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | c2：第一包已使用 4 MB | 新 bundle：4 MB | contact 剩餘：0 MB | 0 < 4，整包放不下 | Q 原本 | [L₁(B,2), L₄(C,3), L₂(B,8)] | Q 更新 | 取出 L₁；留下 [L₄(C,3), L₂(B,8)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide10.xml",
+          "text": "投影片重點： | • 09　取出 L₁：c2 已被第一包用完 | • 容量 0<4，直接拒絕 c2；時間與 buffer 檢查未執行。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 取出L1B2，Q剩L4C3L2B8。c2R0。 | 一句話重點：容量 0<4，直接拒絕 c2；時間與 buffer 檢查未執行。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide11.xml",
+          "text": "10　早到 B：等待 c5 會超過上限 | 11 | 第 3 秒：第一包 4 MB ＋ 第二包 4 MB ＝ 8 MB，超過上限。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 橘：第一包　藍：本包　紅：合計 | 0 | 4 | 8 | 占用量（MB） | 上限 4 | 2 | 4 | 6 | 8 | 10 | 12 | 秒 | L₁ 在第 2 秒能接收，卻不能等到 10 秒 | Q 原本 | [L₄(C,3), L₂(B,8)] | Q 更新 | 不建立新標籤，Q 不變"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide11.xml",
+          "text": "投影片重點： | • 10　早到 B：等待 c5 會超過上限 | • 第 3 秒：第一包 4 MB ＋ 第二包 4 MB ＝ 8 MB，超過上限。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | L1經c5s10f11a12，時間與quota通過；sender峰值8@3拒絕，receiver峰值4。藍線本候選在B等待/送出，橘線第一包，紅線總和。 | 一句話重點：第 3 秒：第一包 4 MB ＋ 第二包 4 MB ＝ 8 MB，超過上限。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide12.xml",
+          "text": "11　取出 L₄：c7 容量只有 2 MB | 12 | 不可分割的 4 MB bundle，不能只送其中 2 MB。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | c7：剩餘容量不足 | 新 bundle：4 MB | contact 剩餘：2 MB | 2 < 4，整包放不下 | Q 原本 | [L₄(C,3), L₂(B,8)] | Q 更新 | 取出 L₄；留下 [L₂(B,8)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide12.xml",
+          "text": "投影片重點： | • 11　取出 L₄：c7 容量只有 2 MB | • 不可分割的 4 MB bundle，不能只送其中 2 MB。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 取出L4C3。c7R2，容量失敗，時間buffer未執行。 | 一句話重點：不可分割的 4 MB bundle，不能只送其中 2 MB。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide13.xml",
+          "text": "12　同一個 L₄：c8 已經來不及 | 13 | 最早可發送是 3 秒，但最晚必須在 2 秒起送，沒有可用時刻。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | c8 容量足夠，時間卻不夠 | c8 窗口 | C 完整收到 | 最快也只能 | 1 | 2 | 3 | 4 | 5 | 秒 | 3～4 秒的傳送超出窗口 | Q 原本 | [L₂(B,8)] | Q 更新 | 沒有新標籤，Q 不變"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide13.xml",
+          "text": "投影片重點： | • 12　同一個 L₄：c8 已經來不及 | • 最早可發送是 3 秒，但最晚必須在 2 秒起送，沒有可用時刻。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | c8R4通過；firstmax(3,2)=3>last3−4/4=2。c8窗口[2,3)。紅色3～4是假設從到達時間起送，超出窗口，非可行排程。 | 一句話重點：最早可發送是 3 秒，但最晚必須在 2 秒起送，沒有可用時刻。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide14.xml",
+          "text": "13　取出晚到 B 的 L₂：先試 c2 | 14 | c2 仍為 0 MB，直接拒絕；接著嘗試 c5。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 同一節點 B，以第 8 秒標籤再展開 | 新 bundle：4 MB | contact 剩餘：0 MB | 0 < 4，整包放不下 | Q 原本 | [L₂(B,8)] | Q 更新 | 取出 L₂，Q=[]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide14.xml",
+          "text": "投影片重點： | • 13　取出晚到 B 的 L₂：先試 c2 | • c2 仍為 0 MB，直接拒絕；接著嘗試 c5。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 取出L2B8，Q空。c2先因容量拒絕；時間也已過但未執行時間檢查。不能將B整個節點標為已處理而跳過此標籤。 | 一句話重點：c2 仍為 0 MB，直接拒絕；接著嘗試 c5。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide15.xml",
+          "text": "14　晚到 B：可以等到 c5 再發送 | 15 | B 在 8～10 秒持有 4 MB，10～11 秒逐 byte 釋放，全程不超限。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 橘：第一包　綠：第二包選定安排 | 0 | 4 | 占用量（MB） | 上限 4 | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 秒 | L₅ = (D,12,{c4:4,c5:4}) | Q 原本 | [] | Q 更新 | [L₅(D,12)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide15.xml",
+          "text": "投影片重點： | • 14　晚到 B：可以等到 c5 再發送 | • B 在 8～10 秒持有 4 MB，10～11 秒逐 byte 釋放，全程不超限。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | L2c5s10f11h11a12；quota0+4≤4，sender4，receiver4。建立L5D12U{c4:4,c5:4}。 | 一句話重點：B 在 8～10 秒持有 4 MB，10～11 秒逐 byte 釋放，全程不超限。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide16.xml",
+          "text": "15　取出目的地：沿前驅回溯 | 16 | 選定 A→B→D，第 12 秒完整到達；驗證後才更新資源。 | L₀ | A,1 | L₂ | B,8 | L₅ | D,12 | c4：7～8 秒 | c5：10～11 秒 | pred 回溯方向 | R[c4]：8→4 MB　　　R[c5]：4→0 MB"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide16.xml",
+          "text": "投影片重點： | • 取出L5目的地標籤 | • 沿pred找到L2與L0 | • 反轉後得到c4、c5與發送時刻 | 講者備註： | 回溯L5←L2←L0，不經被拒絕的L1與L4，也不經被支配的L3。Q[L5]取出後空。 | 一句話重點：選定 A→B→D，第 12 秒完整到達；驗證後才更新資源。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide17.xml",
+          "text": "16　兩包都接受後：B 的合計占用 | 17 | 兩包的占用錯開，B 的合計峰值為 4 MB。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 橘：第一包　綠：第二包 | 0 | 4 | 占用量（MB） | 上限 4 | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 秒 | 第一包 8 秒到 D；第二包 12 秒到 D | R（c1～c8）=(0,0,4,4,0,4,2,4) MB"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide17.xml",
+          "text": "投影片重點： | • 16　兩包都接受後：B 的合計占用 | • 兩包的占用錯開，B 的合計峰值為 4 MB。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 第一包c1c2arrival8，第二包c4c5arrival12。兩包在B的曲線在7秒相接且都為0，未重複計量。更新R按c1～c8為0,0,4,4,0,4,2,4。此只支持本案例與目前模型。 | 一句話重點：兩包的占用錯開，B 的合計峰值為 4 MB。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        }
+      ]
+    },
+    {
+      "path": "output/presentations/整包路由_Label_Setting_圖解版_v02_中央架構與Q-U觀察.pptx",
+      "parts": [
+        {
+          "part": "ppt/slides/slide1.xml",
+          "text": "圖解：一個標籤如何往下走 | 1 | 每一頁只追蹤一個動作；圖上的 Q 是尚待處理的標籤。 | 取出標籤 | (v, a, U) | 選 contact | 列舉時刻 s | 時間、容量 | Buffer 檢查 | 支配判斷 | 保留或刪除 | 失敗：拒絕這次延伸 | 通過：加入 Q | 藍：嘗試　綠：保留　紅叉：拒絕　橘：前包占用"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide1.xml",
+          "text": "投影片重點： | • 取出最早到達的標籤 | • 逐一嘗試 contact 與發送時間 | • 檢查通過後比較支配並加入佇列 | 講者備註： | 藍色表示嘗試中，綠色表示通過或選定，紅色與叉號表示拒絕，橘色表示前一包的預約。全部文字使用標楷體。此圖解仍限格點與aggregate quota模型，沒有修改算法。 | 一句話重點：每一頁只追蹤一個動作；圖上的 Q 是尚待處理的標籤。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide2.xml",
+          "text": "研究環境：中央規劃、節點執行 | 已知 contact 與 bundle 請求 | Contact plan | Bundle requests | 中央規劃器 | 路由計算 | 傳送排程 | 資源預約 | 相關節點 | 保存 bundle | 依局部排程轉送 | 中央端維護全域 R_c 與 O_v(t) | 節點只取得與自己相關的 contact 與傳送指令 | A 路徑接受後更新資源狀態，再以更新後的狀態替 B 搜尋 | 全域決策集中在中央端，節點負責實際 store-and-forward。 | 2"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide2.xml",
+          "text": "投影片重點： | • 中央規劃器保存完整 contact plan 與資源預約狀態。 | • 節點只需取得與自己有關的局部排程，不必保存全網動態狀態。 | • 路由計算與實際轉送是兩個不同階段。 | 資料依據：RFC 9171 說明 BPv7 不規定 route computation algorithm；NASA HDTN 文件顯示路由可動態計算或預先提供。 | Takeaway：集中式規劃是本研究的系統假設，不是所有 DTN 的強制架構。"
+        },
+        {
+          "part": "ppt/slides/slide3.xml",
+          "text": "目前版本的研究範圍 | 現行 v04 | 後續擴充 | ✓ 中央端逐包處理 | ✓ 不可分割 bundle | ✓ 完整 transmission delay | ✓ Aggregate quota | ✓ 逐 byte buffer 占用 | ✓ 有限時間格點上的最早到達 | ○ Transmission calendar | ○ 連續時間搜尋 | ○ 多包聯合最佳化 | ○ 動態 contact 中斷 | ○ 控制訊息成本 | ○ 分散式資源同步 | 目前結論只適用於左側明列的模型 | 本次報告說明已完成的模型，尚未把 aggregate quota 當成 transmission calendar。 | 3"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide3.xml",
+          "text": "投影片重點： | • 左側是目前演算法與驗證真正涵蓋的範圍。 | • 右側項目尚未完成，不能在報告中宣稱已解決。 | • Aggregate quota 只記錄累積可用資料量，不能排除同一 contact 的時段重疊。 | Takeaway：本次報告的結論必須限制在有限時間格點與 aggregate quota 模型。"
+        },
+        {
+          "part": "ppt/slides/slide4.xml",
+          "text": "Q 與 U 的讀法 | L = (v, a, U) | 目前節點 v | 完整到達時間 a | 本候選路徑用量 U | 例：L₂=(B,8,U={c4:4}) | 表示候選路徑到 B 的時間是 8 秒，且目前只在 c4 使用 4 MB；未列出的 contacts 用量皆為 0。 | Q 依 a 由小到大排列，內容是尚待取出與延伸的 labels。 | 後續每一頁都會列出 Q 的完整 labels，直接觀察 U 如何隨路徑延伸。 | 4"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide4.xml",
+          "text": "投影片重點： | • U[c] 是目前這一個候選 label 所代表路徑，在 contact c 已使用的累積資料量。 | • U 不是先前 bundles 的全域預約表，也不是 buffer 占用。 | • Q 保存尚待取出與延伸的 labels，並依完整到達時間 a 排序。 | • 每個 bundle 開始搜尋時，label 編號與 U 都重新初始化。 | Takeaway：閱讀後續投影片時，同時看 Q、節點、到達時間與 U。"
+        },
+        {
+          "part": "ppt/slides/slide5.xml",
+          "text": "01　固定拓樸與兩包需求 | 5 | 第一包 X→D（g=0）；第二包 A→D（g=1），依序搜尋。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 每包 4 MB，傳一跳需要 1 秒 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 秒 | 各節點 buffer 上限 4 MB"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide5.xml",
+          "text": "投影片重點： | • 01　固定拓樸與兩包需求 | • 第一包 X→D（g=0）；第二包 A→D（g=1），依序搜尋。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | S=4 MB，各節點M=4 MB，所有r=4 MB/s，Δ=1秒、T=12秒。每跳傳輸時間S/r=1秒。c2、c5、c6延遲1秒，其餘0。 | 一句話重點：第一包 X→D（g=0）；第二包 A→D（g=1），依序搜尋。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide6.xml",
+          "text": "02　第一包：X 經 c1 到 B | 6 | c1：0+4≤4；X 與 B 的占用峰值都為 4 MB，因此建立 L₁。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | c1：發送與接收都在 2～3 秒 | X 等待 | X 發送 | B 接收 | 0 | 1 | 2 | 3 | 4 | 秒 | L₁ = (B, 3, {c1:4}) | Q 原本 | [L₀(X,0,U=∅)] → 取出 L₀ | Q 更新 | [L₁(B,3,U={c1:4})]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide6.xml",
+          "text": "投影片重點： | • 02　第一包：X 經 c1 到 B | • c1：0+4≤4；X 與 B 的占用峰值都為 4 MB，因此建立 L₁。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 初始化L0=(X,0,{})，取出後Q空。c1 s=2 f=3 h=2 a′=3，建立L1=(B,3,{c1:4})。 | 一句話重點：c1：0+4≤4；X 與 B 的占用峰值都為 4 MB，因此建立 L₁。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide7.xml",
+          "text": "03　第一包：在 B 比較 c2、c5 | 7 | 兩條路徑都可行。先保留 D 的第 8 秒與第 12 秒標籤。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 發送完成後，還要傳播 1 秒 | c2 發送 | D 接收 | c5 發送 | D 接收 | 6 | 8 | 10 | 12 | 秒 | L₂：D,8　　L₃：D,12 | Q 原本 | [L₁(B,3,U={c1:4})] → 取出 L₁ | Q 更新 | [L₂(D,8,U={c1:4,c2:4}), L₃(D,12,U={c1:4,c5:4})]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide7.xml",
+          "text": "投影片重點： | • 03　第一包：在 B 比較 c2、c5 | • 兩條路徑都可行。先保留 D 的第 8 秒與第 12 秒標籤。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 取出L1。c2s6f7h7a8建立L2；c5s10f11h11a12建立L3。兩者sender/receiver峰值4，quota皆0+4≤4。L2不能支配L3，因c2用量4>0。 | 一句話重點：兩條路徑都可行。先保留 D 的第 8 秒與第 12 秒標籤。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide8.xml",
+          "text": "04　第一包：選路並預約 Buffer | 8 | 取出 L₂，選定 c1→c2；R[c1]、R[c2] 扣為 0。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 0 | 4 | 占用量（MB） | 上限 4 | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 秒 | B：橘線是第一包已預約占用 | 接收 ↗　等待 ─　發送 ↘ | Q 原本 | [L₂(D,8,U={c1:4,c2:4}), L₃(D,12,U={c1:4,c5:4})] | Q 更新 | 取出 L₂(D,8,U={c1:4,c2:4}) → 第一包結束"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide8.xml",
+          "text": "投影片重點： | • 04　第一包：選路並預約 Buffer | • 取出 L₂，選定 c1→c2；R[c1]、R[c2] 扣為 0。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 路徑回溯L2←L1←L0。B在2～3接收、3～6等待、6～7送出。D7～8接收後釋放。完整路徑驗證後才更新R、O。 | 一句話重點：取出 L₂，選定 c1→c2；R[c1]、R[c2] 扣為 0。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide9.xml",
+          "text": "05　第二包：先試 c3，早到 B | 9 | 1～2 秒接收可行，因此保留 L₁；能否繼續等待，要下一跳才檢查。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | B 在第 2 秒剛好收到整包 | 第二包接收 | 第一包接收 | 第一包等待 | 0 | 2 | 4 | 6 | 秒 | L₁ = (B, 2, {c3:4}) | Q 原本 | [L₀(A,1,U=∅)] → 取出 L₀ | Q 更新 | [L₁(B,2,U={c3:4})]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide9.xml",
+          "text": "投影片重點： | • 05　第二包：先試 c3，早到 B | • 1～2 秒接收可行，因此保留 L₁；能否繼續等待，要下一跳才檢查。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 第二包重新L0=(A,1,{})；c3s1f2h1a2。t2第一包在B占用0，因此接收完成可行。峰值4。 | 一句話重點：1～2 秒接收可行，因此保留 L₁；能否繼續等待，要下一跳才檢查。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide10.xml",
+          "text": "06　第二包：c4 可以晚一點出發 | 10 | c4 的窗口為 7～9 秒，整包需 1 秒，所以起始時間只有 7 或 8。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 同一條 c4，兩個發送選擇 | c4 窗口 | 選 s=7 | 選 s=8 | 6 | 7 | 8 | 9 | 10 | 秒 | L₂：B,8　　L₃：B,9（候選） | Q 原本 | [L₁(B,2,U={c3:4})] | Q 更新 | [L₁(B,2,U={c3:4}), L₂(B,8,U={c4:4})]；L₃ 待比較"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide10.xml",
+          "text": "投影片重點： | • 06　第二包：c4 可以晚一點出發 | • c4 的窗口為 7～9 秒，整包需 1 秒，所以起始時間只有 7 或 8。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 仍展開L0。s7建立L2B8；s8候選L3B9。兩者容量0+4≤8，兩端峰值4。此頁L3尚待支配判斷，不列入Q。 | 一句話重點：c4 的窗口為 7～9 秒，整包需 1 秒，所以起始時間只有 7 或 8。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide11.xml",
+          "text": "07　支配圖解：保留 L₂，刪除 L₃ | 11 | L₂ 能等到第 9 秒，且 U₂=U₃，因此可以取代 L₃。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | L₂：B,8 | L₃：B,9 | 持有 4 MB 等待 1 秒 | O_B(t)=0，總占用 4≤4 | c4 用量相同：都是 4 MB | Q 原本 | [L₁(B,2,U={c3:4}), L₂(B,8,U={c4:4})] ＋ L₃(B,9,U={c4:4}) | Q 更新 | [L₁(B,2,U={c3:4}), L₂(B,8,U={c4:4})]；刪除 L₃"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide11.xml",
+          "text": "投影片重點： | • 07　支配圖解：保留 L₂，刪除 L₃ | • L₂ 能等到第 9 秒，且 U₂=U₃，因此可以取代 L₃。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 8≤9；O_B(t)+4=4≤4 forall[8,9]；兩者c4使用4MB其他0。L3不入列。早到L1不能支配L2，因等待超限且c3用量較多。 | 一句話重點：L₂ 能等到第 9 秒，且 U₂=U₃，因此可以取代 L₃。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide12.xml",
+          "text": "08　第二包：c6 到 C，重新排序 | 12 | L₄ 雖然建立得較晚，但到達時間是 3 秒，排在 L₂ 的 8 秒前面。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | A 發送 | C 接收 | 0 | 1 | 2 | 3 | 4 | 秒 | Q 依到達時間，不依編號 | L₁ | B,2 | L₄ | C,3 | L₂ | B,8 | Q 原本 | [L₁(B,2,U={c3:4}), L₂(B,8,U={c4:4})] | Q 更新 | [L₁(B,2,U={c3:4}), L₄(C,3,U={c6:4}), L₂(B,8,U={c4:4})]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide12.xml",
+          "text": "投影片重點： | • 08　第二包：c6 到 C，重新排序 | • L₄ 雖然建立得較晚，但到達時間是 3 秒，排在 L₂ 的 8 秒前面。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | c6s1f2δ1h2a3；U[c6]=4。無C標籤支配，入列。L0所有contacts展開完成。 | 一句話重點：L₄ 雖然建立得較晚，但到達時間是 3 秒，排在 L₂ 的 8 秒前面。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide13.xml",
+          "text": "09　取出 L₁：c2 已被第一包用完 | 13 | 容量 0<4，直接拒絕 c2；時間與 buffer 檢查未執行。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | c2：第一包已使用 4 MB | 新 bundle：4 MB | contact 剩餘：0 MB | 0 < 4，整包放不下 | Q 原本 | [L₁(B,2,U={c3:4}), L₄(C,3,U={c6:4}), L₂(B,8,U={c4:4})] | Q 更新 | 取出 L₁；留下 [L₄(C,3,U={c6:4}), L₂(B,8,U={c4:4})]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide13.xml",
+          "text": "投影片重點： | • 09　取出 L₁：c2 已被第一包用完 | • 容量 0<4，直接拒絕 c2；時間與 buffer 檢查未執行。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 取出L1B2，Q剩L4C3L2B8。c2R0。 | 一句話重點：容量 0<4，直接拒絕 c2；時間與 buffer 檢查未執行。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide14.xml",
+          "text": "10　早到 B：等待 c5 會超過上限 | 14 | 第 3 秒：第一包 4 MB ＋ 第二包 4 MB ＝ 8 MB，超過上限。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 橘：第一包　藍：本包　紅：合計 | 0 | 4 | 8 | 占用量（MB） | 上限 4 | 2 | 4 | 6 | 8 | 10 | 12 | 秒 | L₁ 在第 2 秒能接收，卻不能等到 10 秒 | Q 原本 | [L₄(C,3,U={c6:4}), L₂(B,8,U={c4:4})] | Q 更新 | 不建立新標籤；Q 仍為 [L₄(C,3,U={c6:4}), L₂(B,8,U={c4:4})]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide14.xml",
+          "text": "投影片重點： | • 10　早到 B：等待 c5 會超過上限 | • 第 3 秒：第一包 4 MB ＋ 第二包 4 MB ＝ 8 MB，超過上限。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | L1經c5s10f11a12，時間與quota通過；sender峰值8@3拒絕，receiver峰值4。藍線本候選在B等待/送出，橘線第一包，紅線總和。 | 一句話重點：第 3 秒：第一包 4 MB ＋ 第二包 4 MB ＝ 8 MB，超過上限。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide15.xml",
+          "text": "11　取出 L₄：c7 容量只有 2 MB | 15 | 不可分割的 4 MB bundle，不能只送其中 2 MB。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | c7：剩餘容量不足 | 新 bundle：4 MB | contact 剩餘：2 MB | 2 < 4，整包放不下 | Q 原本 | [L₄(C,3,U={c6:4}), L₂(B,8,U={c4:4})] | Q 更新 | 取出 L₄；留下 [L₂(B,8,U={c4:4})]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide15.xml",
+          "text": "投影片重點： | • 11　取出 L₄：c7 容量只有 2 MB | • 不可分割的 4 MB bundle，不能只送其中 2 MB。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 取出L4C3。c7R2，容量失敗，時間buffer未執行。 | 一句話重點：不可分割的 4 MB bundle，不能只送其中 2 MB。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide16.xml",
+          "text": "12　同一個 L₄：c8 已經來不及 | 16 | 最早可發送是 3 秒，但最晚必須在 2 秒起送，沒有可用時刻。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | c8 容量足夠，時間卻不夠 | c8 窗口 | C 完整收到 | 最快也只能 | 1 | 2 | 3 | 4 | 5 | 秒 | 3～4 秒的傳送超出窗口 | Q 原本 | [L₂(B,8,U={c4:4})] | Q 更新 | 沒有新標籤；Q 仍為 [L₂(B,8,U={c4:4})]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide16.xml",
+          "text": "投影片重點： | • 12　同一個 L₄：c8 已經來不及 | • 最早可發送是 3 秒，但最晚必須在 2 秒起送，沒有可用時刻。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | c8R4通過；firstmax(3,2)=3>last3−4/4=2。c8窗口[2,3)。紅色3～4是假設從到達時間起送，超出窗口，非可行排程。 | 一句話重點：最早可發送是 3 秒，但最晚必須在 2 秒起送，沒有可用時刻。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide17.xml",
+          "text": "13　取出晚到 B 的 L₂：先試 c2 | 17 | c2 仍為 0 MB，直接拒絕；接著嘗試 c5。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 同一節點 B，以第 8 秒標籤再展開 | 新 bundle：4 MB | contact 剩餘：0 MB | 0 < 4，整包放不下 | Q 原本 | [L₂(B,8,U={c4:4})] | Q 更新 | 取出 L₂(B,8,U={c4:4})，Q=[]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide17.xml",
+          "text": "投影片重點： | • 13　取出晚到 B 的 L₂：先試 c2 | • c2 仍為 0 MB，直接拒絕；接著嘗試 c5。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 取出L2B8，Q空。c2先因容量拒絕；時間也已過但未執行時間檢查。不能將B整個節點標為已處理而跳過此標籤。 | 一句話重點：c2 仍為 0 MB，直接拒絕；接著嘗試 c5。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide18.xml",
+          "text": "14　晚到 B：可以等到 c5 再發送 | 18 | B 在 8～10 秒持有 4 MB，10～11 秒逐 byte 釋放，全程不超限。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 橘：第一包　綠：第二包選定安排 | 0 | 4 | 占用量（MB） | 上限 4 | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 秒 | L₅ = (D,12,{c4:4,c5:4}) | Q 原本 | [] | Q 更新 | [L₅(D,12,U={c4:4,c5:4})]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide18.xml",
+          "text": "投影片重點： | • 14　晚到 B：可以等到 c5 再發送 | • B 在 8～10 秒持有 4 MB，10～11 秒逐 byte 釋放，全程不超限。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | L2c5s10f11h11a12；quota0+4≤4，sender4，receiver4。建立L5D12U{c4:4,c5:4}。 | 一句話重點：B 在 8～10 秒持有 4 MB，10～11 秒逐 byte 釋放，全程不超限。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide19.xml",
+          "text": "15　取出目的地：沿前驅回溯 | 19 | 選定 A→B→D，第 12 秒完整到達；驗證後才更新資源。 | L₀ | A,1 | L₂ | B,8 | L₅ | D,12 | c4：7～8 秒 | c5：10～11 秒 | pred 回溯方向 | R[c4]：8→4 MB　　　R[c5]：4→0 MB"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide19.xml",
+          "text": "投影片重點： | • 取出L5目的地標籤 | • 沿pred找到L2與L0 | • 反轉後得到c4、c5與發送時刻 | 講者備註： | 回溯L5←L2←L0，不經被拒絕的L1與L4，也不經被支配的L3。Q[L5]取出後空。 | 一句話重點：選定 A→B→D，第 12 秒完整到達；驗證後才更新資源。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide20.xml",
+          "text": "16　兩包都接受後：B 的合計占用 | 20 | 兩包的占用錯開，B 的合計峰值為 4 MB。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 橘：第一包　綠：第二包 | 0 | 4 | 占用量（MB） | 上限 4 | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 秒 | 第一包 8 秒到 D；第二包 12 秒到 D | R（c1～c8）=(0,0,4,4,0,4,2,4) MB"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide20.xml",
+          "text": "投影片重點： | • 16　兩包都接受後：B 的合計占用 | • 兩包的占用錯開，B 的合計峰值為 4 MB。 | • 依既有 trace 圖解，不修改演算法 | 講者備註： | 第一包c1c2arrival8，第二包c4c5arrival12。兩包在B的曲線在7秒相接且都為0，未重複計量。更新R按c1～c8為0,0,4,4,0,4,2,4。此只支持本案例與目前模型。 | 一句話重點：兩包的占用錯開，B 的合計峰值為 4 MB。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        }
+      ]
+    },
+    {
+      "path": "output/presentations/整包路由_Label_Setting_研究進度_20261005.pptx",
+      "parts": [
+        {
+          "part": "ppt/slides/slide1.xml",
+          "text": "考慮緩衝區占用的整包路由 | 1 | 目前範圍：離散時間、剩餘可分配資料量與逐 byte 緩衝區占用。 | Label Setting 演算法與正確性驗證 | • 整包傳輸與傳輸時間 | • 前一包預約後續節點的緩衝區 | • 兩包逐步範例與驗證結果"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide1.xml",
+          "text": "投影片重點： | • 依序處理不可分割的 bundle | • 以 Label Setting 搜尋最早完整到達路徑 | • 研究進度與演算法正確性驗證 | 講者備註： | 本簡報說明目前版本，不主張已完成連續時間或實際傳輸排程的完整解法。 | 一句話重點：目前範圍：離散時間、剩餘可分配資料量與逐 byte 緩衝區占用。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide2.xml",
+          "text": "研究問題 | 2 | 目標：找出滿足容量與緩衝區限制的最早完整到達路徑。 | • bundle 不可分割，單次傳輸須完成整包 | • 通訊機會有開始、結束與剩餘容量 | • 前一包選定路徑後，會占用沿途緩衝區"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide2.xml",
+          "text": "投影片重點： | • bundle 不可分割，單次傳輸須完成整包 | • 通訊機會有開始、結束與剩餘容量 | • 前一包選定路徑後，會占用沿途緩衝區 | 講者備註： | bundle 在此指完整資料單位；本版本每次搜尋一包，依固定順序處理多包。最早到達指最後一個 byte 抵達目的地。 | 一句話重點：目標：找出滿足容量與緩衝區限制的最早完整到達路徑。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide3.xml",
+          "text": "目前採用的研究設定 | 3 | 緩衝區限制需要檢查整段接收、等待與發送期間。 | • 單包不可分割；完整接收後才能轉送 | • 逐 byte 接收，逐 byte 釋放已送出的資料 | • 先前接受的路徑形成既有占用 Oᵥ(t) | • 傳輸起始時間限定在間隔 Δ 的時間格點"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide3.xml",
+          "text": "投影片重點： | • 單包不可分割；完整接收後才能轉送 | • 逐 byte 接收，逐 byte 釋放已送出的資料 | • 先前接受的路徑形成既有占用 Oᵥ(t) | • 傳輸起始時間限定在間隔 Δ 的時間格點 | 講者備註： | 每個節點具有固定上限 Mᵥ。S 為本包大小，速率固定且為正；不保留已送出資料副本，不考慮無線電競爭。接觸邊界、S/r、傳播延遲等與格點對齊；規劃範圍為有限 T。 | 一句話重點：緩衝區限制需要檢查整段接收、等待與發送期間。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide4.xml",
+          "text": "依序處理與單包搜尋 | 4 | 候選路徑不先占用資源；只有接受的完整路徑會預約資源。 | • 讀取本次剩餘資料量 R 與既有占用 O(t) | • 本次搜尋中，所有候選路徑共用相同資源資料 | • 選定完整路徑後，才更新 R 與 O(t) | • 下一包使用更新後的資料重新搜尋"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide4.xml",
+          "text": "投影片重點： | • 讀取本次剩餘資料量 R 與既有占用 O(t) | • 本次搜尋中，所有候選路徑共用相同資源資料 | • 選定完整路徑後，才更新 R 與 O(t) | • 下一包使用更新後的資料重新搜尋 | 講者備註： | 本版本不會為了後續 bundle 回頭修改已接受的路徑，因此不主張多包整體最優。搜尋期間 R 與 O 固定不表示未來時間的占用不變，而是既有預約函數不被候選路徑改寫。 | 一句話重點：候選路徑不先占用資源；只有接受的完整路徑會預約資源。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide5.xml",
+          "text": "標籤記錄哪些資訊？ | 5 | 標籤 L = (v, a, U)；不能只用節點與到達時間判斷。 | L = (v, a, U) | • v：目前所在節點 | • a：本包完整抵達 v 的時間 | • U[c]：此候選路徑已使用 contact c 的資料量"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide5.xml",
+          "text": "投影片重點： | • v：目前所在節點 | • a：本包完整抵達 v 的時間 | • U[c]：此候選路徑已使用 contact c 的資料量 | 講者備註： | 另保留前一個標籤、所用 contact 與發送起始時間供路徑回溯。U 用於檢查候選路徑重複經過同一 contact 時的容量；目前模型允許循環，並未強制簡單路徑。 | 一句話重點：標籤 L = (v, a, U)；不能只用節點與到達時間判斷。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide6.xml",
+          "text": "標籤延伸：時間與容量 | 6 | 每個可用 contact，都要檢查各個符合條件的格點起始時間 s。 | • s ≥ max(a, contact 開始時間) | • f = s + S/r ≤ contact 結束時間 | • a′ = f + δ ≤ T | • U[c] + S ≤ R[c] | S：資料量　r：速率　δ：傳播延遲　T：規劃截止時間"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide6.xml",
+          "text": "投影片重點： | • s ≥ max(a, contact 開始時間) | • f = s + S/r ≤ contact 結束時間 | • a′ = f + δ ≤ T | • U[c] + S ≤ R[c] | 講者備註： | s 為發送開始，f 為發送完成，δ 為傳播延遲，接收開始 h=s+δ，完整到達 a′=f+δ。S 與 R 用相同資料單位；r 為每秒資料量。只滿足剩餘容量，仍不代表能在 contact 結束前完成整包傳輸。 | 一句話重點：每個可用 contact，都要檢查各個符合條件的格點起始時間 s。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide7.xml",
+          "text": "標籤延伸：緩衝區檢查 | 7 | 檢查的是隨時間變化的占用量，不是只比較 S 與 buffer 上限。 | • 發送端等待：bᵤ(t) = S，a ≤ t ≤ s | • 發送端傳送：bᵤ(t) = S − r(t−s)，s ≤ t ≤ f | • 接收端接收：bᵥ(t) = r(t−h)，h ≤ t ≤ a′ | • 兩端皆須滿足 O(t) + b(t) ≤ M | h = s + δ：接收開始時間；M：節點 buffer 容量上限"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide7.xml",
+          "text": "投影片重點： | • 發送端等待：bᵤ(t) = S，a ≤ t ≤ s | • 發送端傳送：bᵤ(t) = S − r(t−s)，s ≤ t ≤ f | • 接收端接收：bᵥ(t) = r(t−h)，h ≤ t ≤ a′ | • 兩端皆須滿足 O(t) + b(t) ≤ M | 講者備註： | h=s+δ。O 是先前接受之 bundle 的占用，b 是本候選 bundle 的占用。分段線性模型須檢查區段端點、斜率改變處與事件左右極限。目的地收到最後一個 byte 時，仍先檢查到達峰值，再交付並釋放。來源生成時亦須檢查 O_source(g)+S≤M_source。 | 一句話重點：檢查的是隨時間變化的占用量，不是只比較 S 與 buffer 上限。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide8.xml",
+          "text": "支配規則：何時可以刪除？ | 8 | 三項都成立，才可用 L₁ 取代 L₂ 繼續搜尋。 | • 兩個標籤位於同一節點：a₁ ≤ a₂ | • 等待期間：Oᵥ(t) + S ≤ Mᵥ，∀t ∈ [a₁,a₂] | • 所有 contact：U₁[c] ≤ U₂[c] | 僅「較早到達」不足以構成支配。"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide8.xml",
+          "text": "投影片重點： | • 兩個標籤位於同一節點：a₁ ≤ a₂ | • 等待期間：Oᵥ(t) + S ≤ Mᵥ，∀t ∈ [a₁,a₂] | • 所有 contact：U₁[c] ≤ U₂[c] | 講者備註： | 此為充分條件，可能保留部分其實可刪除的標籤。理由：L₁ 可先等到 a₂，再照搬 L₂ 的後續發送時刻；等待可行且已用容量不更多，所以後續不會變差。「刪除後不影響最佳解」限本版本模型，並非任何更複雜設定都成立。 | 一句話重點：三項都成立，才可用 L₁ 取代 L₂ 繼續搜尋。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide9.xml",
+          "text": "Label Setting 搜尋流程 | 9 | 固定的是標籤的處理順序，不是每個節點只處理一次。 | • 取出完整到達時間最早的有效標籤 | • 延伸各 contact，列舉格點發送時刻 | • 通過時間、容量與緩衝區檢查後，檢查支配 | • 目的地標籤取出即結束；佇列空則無格點可行解"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide9.xml",
+          "text": "投影片重點： | • 取出完整到達時間最早的有效標籤 | • 延伸各 contact，列舉格點發送時刻 | • 通過時間、容量與緩衝區檢查後，檢查支配 | • 目的地標籤取出即結束；佇列空則無格點可行解 | 講者備註： | 新標籤為 (v,a′,U+S e_c)。使用到達時間排序的優先佇列；已被支配失效的標籤取出後跳過。同時間以穩定識別碼排序。列舉發生在每次延伸時：逐一試 contact 和格點起始時間。正的整包傳输时间与有限格點使搜尋有限。 | 一句話重點：固定的是標籤的處理順序，不是每個節點只處理一次。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide10.xml",
+          "text": "步驟 0：範例拓樸與兩包需求 | 10 | 固定先處理第一包，再處理第二包。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 箭頭：可用的通訊方向 | • S = 4 MB；buffer = 4 MB | • 第一包 X → D：第 0 秒生成 | • 第二包 A → D：第 1 秒生成"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide10.xml",
+          "text": "投影片重點： | • 每包 S = 4 MB；所有 buffer = 4 MB | • 第一包：X → D，生成時間 0 秒 | • 第二包：A → D，生成時間 1 秒 | 講者備註： | 所有 contact 速率為 4 MB/s，每跳發送需 1 秒；Δ=1 秒，T=12 秒。圖中 c1～c8 對應附錄 contact 表。綠線表示當頁強調的路徑，不表示其餘通訊機會消失。 | 一句話重點：固定先處理第一包，再處理第二包。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide11.xml",
+          "text": "步驟 1：建立第一包起始標籤 | 11 | 來源生成時也要先確認 buffer 容量。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 箭頭：可用的通訊方向 | • 起始標籤：L₀ = (X, 0, 0) | • 來源 buffer：0 + 4 ≤ 4 MB | • 由 X 的 c1 尋找可用起始時間"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide11.xml",
+          "text": "投影片重點： | • 起始標籤：L₀ = (X, 0, 0) | • 來源 buffer：0 + 4 ≤ 4 MB | • 由 X 的 c1 尋找可用起始時間 | 講者備註： | 起始標籤的所有 U[c] 為 0。第一包搜尋前沒有其他已接受路徑的占用。c1 的通訊時段為 [2,3]，所以本包必須在 X 等到第 2 秒。 | 一句話重點：來源生成時也要先確認 buffer 容量。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide12.xml",
+          "text": "步驟 2：第一包延伸至 B | 12 | 本包在 B 接收期間，占用量由 0 增至 4 MB。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 箭頭：可用的通訊方向 | • c1：第 2～3 秒發送 | • B 於第 3 秒完整接收 | • 新標籤：B，a = 3；U[c1] = 4"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide12.xml",
+          "text": "投影片重點： | • c1：第 2～3 秒發送 | • B 於第 3 秒完整接收 | • 新標籤：B，a = 3；U[c1] = 4 | 講者備註： | c1 的傳播延遲為 0 秒，剩餘資料量為 4 MB。X 在 0～2 秒持有整包，2～3 秒逐 byte 釋放；B 在 2～3 秒逐 byte 接收。 | 一句話重點：本包在 B 接收期間，占用量由 0 增至 4 MB。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide13.xml",
+          "text": "步驟 3：第一包的兩條後續路徑 | 13 | 優先佇列會先取出第 8 秒到達目的地的標籤。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 箭頭：可用的通訊方向 | • c2：6～7 秒發送；8 秒到達 | • c5：10～11 秒發送；12 秒到達 | • 兩條候選路徑都通過檢查"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide13.xml",
+          "text": "投影片重點： | • 經 c2：第 6～7 秒發送，8 秒到 D | • 經 c5：第 10～11 秒發送，12 秒到 D | • 兩條候選路徑皆通過限制檢查 | 講者備註： | c2 與 c5 的傳播延遲均為 1 秒。兩個目的地標籤的已用容量向量不同：前者使用 c2，後者使用 c5，故不能僅依到達時間套用三條件支配規則。 | 一句話重點：優先佇列會先取出第 8 秒到達目的地的標籤。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide14.xml",
+          "text": "步驟 4：選定第一包路徑 | 14 | 搜尋得到完整路徑後，再進行資源更新。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 箭頭：可用的通訊方向 | • 路徑 X → B → D（c1、c2） | • 最早完整到達：第 8 秒 | • 回溯各跳的發送時刻"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide14.xml",
+          "text": "投影片重點： | • 選定 X → B → D，使用 c1、c2 | • 最早完整到達：第 8 秒 | • 由目的地標籤回溯各跳發送時刻 | 講者備註： | 目的地第 8 秒標籤被優先佇列取出，因此依此格點模型可停止。第 12 秒候選沒有被本支配規則刪除，也不影響終止判定；不要把最早取出與支配刪除混為一談。 | 一句話重點：搜尋得到完整路徑後，再進行資源更新。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide15.xml",
+          "text": "步驟 5：第一包預約 B 的 buffer | 15 | 更新後：R[c1] = R[c2] = 0；此占用曲線成為第二包的 Oᴮ(t)。 | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 0 | 2 | 4 | 占用量（MB） | 時間（秒） | 容量上限 4 MB | B：第一包占用量"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide15.xml",
+          "text": "投影片重點： | • 2～3 秒：接收，0 → 4 MB | • 3～6 秒：等待，維持 4 MB | • 6～7 秒：發送，4 → 0 MB | 講者備註： | 這條折線是 B 隨時間的緩衝區占用量，不是網路連線或資料傳輸速率。第一包確定後才寫入 O。來源 X 與目的地 D 也有各自占用曲線。 | 一句話重點：更新後：R[c1] = R[c2] = 0；此占用曲線成為第二包的 Oᴮ(t)。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide16.xml",
+          "text": "步驟 6：第二包保留不同到達時間 | 16 | 較早抵達 B 的標籤，未必有可行的後續路徑。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 箭頭：可用的通訊方向 | • c3：第 2 秒到 B | • c4：第 8 或 9 秒到 B | • c6：第 3 秒到 C"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide16.xml",
+          "text": "投影片重點： | • 經 c3：B 於第 2 秒完整接收 | • 經 c4：B 可於第 8 或 9 秒完整接收 | • 經 c6：C 於第 3 秒完整接收 | 講者備註： | c3 於 1～2 秒發送；c4 可於 7～8 秒或 8～9 秒發送；c6 於 1～2 秒發送，傳播延遲 1 秒。各次接收本身可行，仍須在後續延伸時檢查等待期間的 buffer。 | 一句話重點：較早抵達 B 的標籤，未必有可行的後續路徑。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide17.xml",
+          "text": "步驟 7：不可行分支與支配刪除 | 17 | 早到分支因等待失敗；晚到兩標籤中僅保留必要者。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 箭頭：可用的通訊方向 | • 早到 B：等待會超過 4 MB | • 經 C：c7 容量不足，c8 已逾時 | • B：第 8 秒標籤支配第 9 秒"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide17.xml",
+          "text": "投影片重點： | • B 的第 2 秒標籤：等待會超過 4 MB | • C 的分支：c7 容量不足；c8 來不及 | • B 的第 8 秒標籤可支配第 9 秒標籤 | 講者備註： | B 第 2 秒標籤不能走 c2，因其剩餘容量已為 0；若等至 c5，第 2.5 秒占用為本包 4 加第一包 2，總計 6 MB 超限。C 的 c7 剩餘 2 MB，小於整包 4；c8 最晚需第 2 秒起送，但本包第 3 秒才到 C。B 第 8 與 9 秒標籤皆用 c4、容量向量相同，8～9 秒 O_B=0，故前者可支配後者。 | 一句話重點：早到分支因等待失敗；晚到兩標籤中僅保留必要者。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide18.xml",
+          "text": "步驟 8：第二包選定替代路徑 | 18 | 第一包的預約，使第二包改走較晚的通訊機會。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 箭頭：可用的通訊方向 | • 路徑 A → B → D（c4、c5） | • 發送：c4 於 7～8 秒； | c5 於 10～11 秒 | • 完整到達 D：第 12 秒"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide18.xml",
+          "text": "投影片重點： | • 選定 A → B → D，使用 c4、c5 | • c4：第 7～8 秒；c5：第 10～11 秒 | • 完整到達 D：第 12 秒 | 講者備註： | 第二包選定後，R[c4] 由 8 降為 4，R[c5] 由 4 降為 0。B 的第二包占用為 7～8 秒由 0 增至 4、8～10 秒保持 4、10～11 秒減至 0；兩包合計峰值為 4 MB。若沒有第一包預約，第二包可用 c3、c2 於第 8 秒到達。本例顯示順序影響，並不是多包整體最佳性的證明。 | 一句話重點：第一包的預約，使第二包改走較晚的通訊機會。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide19.xml",
+          "text": "如何驗證目前版本？ | 19 | 驗證程式必須採用相同模型，才能判斷演算法是否出錯。 | • 保留原演算法定義，固定測試輸入 | • 獨立列舉路徑與格點發送時刻，作為比較答案 | • 比較可行性與最早完整到達時間 | • 另外關閉支配刪除，檢查答案是否改變"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide19.xml",
+          "text": "投影片重點： | • 保留原演算法定義，固定測試輸入 | • 獨立列舉路徑與格點發送時刻，作為比較答案 | • 比較可行性與最早完整到達時間 | • 另外關閉支配刪除，檢查答案是否改變 | 講者備註： | 獨立列舉驗證程式不是直接重跑同一搜尋流程。它為小案例列舉路徑和時刻安排，檢查完整路徑，再比較答案。這些結果支持測試範圍內的一致性，不能取代一般性證明。原始輸出在 output/validation/oracle_comparison.csv 與 dominance_comparison.csv。 | 一句話重點：驗證程式必須採用相同模型，才能判斷演算法是否出錯。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide20.xml",
+          "text": "驗證結果與適用範圍 | 20 | 目前未找到同一離散時間模型內的失敗案例；尚非所有輸入的正確性證明。 | • 14 個人工案例，共 15 次單包查詢 | • 15 次查詢與獨立列舉答案全部一致 | • 18 項單元測試通過 | • 啟用／停用支配刪除，15 次答案相同"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide20.xml",
+          "text": "投影片重點： | • 14 個人工案例，共 15 次單包查詢 | • 15 次查詢與獨立列舉答案全部一致 | • 18 項單元測試通過 | • 啟用／停用支配刪除，15 次答案相同 | 講者備註： | 一個依序處理案例包含兩包，所以 14 個案例對應 15 次查詢。覆蓋無路徑、較晚標籤、接收與發送超限、來源容量、循環、contact 重複使用與目的地事件峰值等。結果來自既有驗證輸出；此簡報製作沒有新增效能測試或修改演算法。 | 一句話重點：目前未找到同一離散時間模型內的失敗案例；尚非所有輸入的正確性證明。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide21.xml",
+          "text": "支配刪除的觀察結果 | 21 | 下一階段才適合評估更大規模的時間與記憶體成本。 | 案例 | 停用支配 | 啟用支配 | 最佳到達 | 可刪除標籤案例 | 7 | 3 | 5 秒 | 兩包範例：第二包 | 7 | 5 | 12 秒 | 指標：加入優先佇列的標籤數"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide21.xml",
+          "text": "投影片重點： | • 比較指標：加入優先佇列的標籤數 | • 刪除部分標籤後，最早到達時間相同 | • 這些數字是小案例觀察，尚非效能結論 | 講者備註： | 數字取自 output/validation/dominance_comparison.csv；加入佇列、建立標籤、展開標籤是不同指標，本頁只使用加入佇列數，不混用。未做執行時間或記憶體基準測試。 | 一句話重點：下一階段才適合評估更大規模的時間與記憶體成本。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide22.xml",
+          "text": "限制一：格點最早 ≠ 連續時間最早 | 22 | 現有結果只支持離散時間版本，不能直接宣稱連續時間最佳。 | • Δ = 1 秒時，最佳完整到達為 4 秒 | • 允許非整數起始時刻，可於 3.5 秒到達 | • 緩衝區門檻可能產生新的非整數時刻 | 連續時間 3.5 秒     ／     整數格點 4 秒"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide22.xml",
+          "text": "投影片重點： | • Δ = 1 秒時，最佳完整到達為 4 秒 | • 允許非整數起始時刻，可於 3.5 秒到達 | • 緩衝區門檻可能產生新的非整數時刻 | 講者備註： | 反例：S=4，A→B 時段 [0,3]、B→D 時段 [2,4]，速率皆 4，延遲皆 0；M_B=5。既有 O_B 在 0～1 秒為 4，1～3 秒為 6−2t，3 秒後為 0。A 於 1.5～2.5 秒送出，B 於 2.5～3.5 秒轉送即可達 3.5；整數格點最早於 4 到達。此為模型範圍差異，不是同格點演算法的失敗。來源 counterexample_grid_continuous.json。 | 一句話重點：現有結果只支持離散時間版本，不能直接宣稱連續時間最佳。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide23.xml",
+          "text": "限制二：總容量不等於可排入整包 | 23 | 加入已排定傳輸時段表之前，不能保證實際鏈路排程可行。 | • contact 長 6 秒；剩餘總容量 3 MB | • 速率 1 MB/s，新 bundle 需連續傳送 2 秒 | • 空檔各只有 1 秒，無法排入整包 | 空檔 | 0 | 已占用 | 1 | 空檔 | 2 | 已占用 | 3 | 空檔 | 4 | 已占用 | 5 | 6 秒"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide23.xml",
+          "text": "投影片重點： | • contact 長 6 秒；剩餘總容量 3 MB | • 速率 1 MB/s，新 bundle 需連續傳送 2 秒 | • 空檔各只有 1 秒，無法排入整包 | 講者備註： | 反例的忙碌時段為 [1,2]、[3,4]、[5,6]；空檔 [0,1]、[2,3]、[4,5]。雖總剩餘 3 MB≥2 MB，卻無連續 2 秒可用。現版本只檢查剩餘可分配資料量，不檢查忙碌時段。這是模型限制；未擅自加入傳輸時段表或修改演算法。 | 一句話重點：加入已排定傳輸時段表之前，不能保證實際鏈路排程可行。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide24.xml",
+          "text": "目前結論與下一步 | 24 | 先界定並證明目前模型，再決定擴充範圍與效能比較。 | • 已建立：時間、整包容量與逐 byte buffer 檢查 | • 已驗證：小型格點案例與支配刪除的一致性 | • 待補：一般性證明與連續時間候選時刻 | • 後續擴充：已排定傳輸時段表；需另行確認修正"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide24.xml",
+          "text": "投影片重點： | • 已建立：時間、整包容量與逐 byte buffer 檢查 | • 已驗證：小型格點案例與支配刪除的一致性 | • 待補：一般性證明與連續時間候選時刻 | • 後續擴充：已排定傳輸時段表；需另行確認修正 | 講者備註： | 延伸檢查與支配充分條件已有論證方向；整體正確性需要清楚列出有限格點、事件處理、狀態資訊、無副本及固定資源等前提。若後續找到同模型反例，應保留案例、定位定義或判別式錯誤，停止後續效能比較，只提出候選修正供確認。 | 一句話重點：先界定並證明目前模型，再決定擴充範圍與效能比較。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide25.xml",
+          "text": "附錄：範例 Contact Plan | 25 | 同一拓樸可以有多個不同時段的 contact。 | ID | 方向 | 時段 | δ（秒） | R（MB） | c1 | X → B | 2～3 | 0 | 4 | c2 | B → D | 6～7 | 1 | 4 | c3 | A → B | 1～2 | 0 | 4 | c4 | A → B | 7～9 | 0 | 8 | c5 | B → D | 10～11 | 1 | 4 | c6 | A → C | 1～2 | 1 | 4 | c7 | C → D | 4～5 | 0 | 2 | c8 | C → D | 2～3 | 0 | 4"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide25.xml",
+          "text": "投影片重點： | • 速率皆為 4 MB/s；時間單位為秒 | • δ 為傳播延遲；R 為搜尋前剩餘資料量 | • 固定順序：第一包 X→D，再處理第二包 A→D | 講者備註： | 本表為第一包搜尋前的原始資料。所有 buffer 上限 4 MB，每包大小 4 MB，Δ=1 秒。資料來源 output/validation/walkthrough_input.json。 | 一句話重點：同一拓樸可以有多個不同時段的 contact。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        }
+      ]
+    },
+    {
+      "path": "output/presentations/整包路由_Label_Setting_逐步詳解_v02.pptx",
+      "parts": [
+        {
+          "part": "ppt/slides/slide1.xml",
+          "text": "考慮緩衝區占用的整包路由 | 1 | 目前範圍：離散時間、剩餘可分配資料量與逐 byte 緩衝區占用。 | Label Setting 演算法與正確性驗證 | • 整包傳輸與傳輸時間 | • 前一包預約後續節點的緩衝區 | • 兩包逐步範例與驗證結果"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide1.xml",
+          "text": "投影片重點： | • 依序處理不可分割的 bundle | • 以 Label Setting 搜尋最早完整到達路徑 | • 研究進度與演算法正確性驗證 | 講者備註： | 本簡報說明目前版本，不主張已完成連續時間或實際傳輸排程的完整解法。 | 一句話重點：目前範圍：離散時間、剩餘可分配資料量與逐 byte 緩衝區占用。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide2.xml",
+          "text": "研究問題 | 2 | 目標：找出滿足容量與緩衝區限制的最早完整到達路徑。 | • bundle 不可分割，單次傳輸須完成整包 | • 通訊機會有開始、結束與剩餘容量 | • 前一包選定路徑後，會占用沿途緩衝區"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide2.xml",
+          "text": "投影片重點： | • bundle 不可分割，單次傳輸須完成整包 | • 通訊機會有開始、結束與剩餘容量 | • 前一包選定路徑後，會占用沿途緩衝區 | 講者備註： | bundle 在此指完整資料單位；本版本每次搜尋一包，依固定順序處理多包。最早到達指最後一個 byte 抵達目的地。 | 一句話重點：目標：找出滿足容量與緩衝區限制的最早完整到達路徑。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide3.xml",
+          "text": "目前採用的研究設定 | 3 | 緩衝區限制需要檢查整段接收、等待與發送期間。 | • 單包不可分割；完整接收後才能轉送 | • 逐 byte 接收，逐 byte 釋放已送出的資料 | • 先前接受的路徑形成既有占用 Oᵥ(t) | • 傳輸起始時間限定在間隔 Δ 的時間格點"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide3.xml",
+          "text": "投影片重點： | • 單包不可分割；完整接收後才能轉送 | • 逐 byte 接收，逐 byte 釋放已送出的資料 | • 先前接受的路徑形成既有占用 Oᵥ(t) | • 傳輸起始時間限定在間隔 Δ 的時間格點 | 講者備註： | 每個節點具有固定上限 Mᵥ。S 為本包大小，速率固定且為正；不保留已送出資料副本，不考慮無線電競爭。接觸邊界、S/r、傳播延遲等與格點對齊；規劃範圍為有限 T。 | 一句話重點：緩衝區限制需要檢查整段接收、等待與發送期間。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide4.xml",
+          "text": "依序處理與單包搜尋 | 4 | 候選路徑不先占用資源；只有接受的完整路徑會預約資源。 | • 讀取本次剩餘資料量 R 與既有占用 O(t) | • 本次搜尋中，所有候選路徑共用相同資源資料 | • 選定完整路徑後，才更新 R 與 O(t) | • 下一包使用更新後的資料重新搜尋"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide4.xml",
+          "text": "投影片重點： | • 讀取本次剩餘資料量 R 與既有占用 O(t) | • 本次搜尋中，所有候選路徑共用相同資源資料 | • 選定完整路徑後，才更新 R 與 O(t) | • 下一包使用更新後的資料重新搜尋 | 講者備註： | 本版本不會為了後續 bundle 回頭修改已接受的路徑，因此不主張多包整體最優。搜尋期間 R 與 O 固定不表示未來時間的占用不變，而是既有預約函數不被候選路徑改寫。 | 一句話重點：候選路徑不先占用資源；只有接受的完整路徑會預約資源。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide5.xml",
+          "text": "標籤記錄哪些資訊？ | 5 | 標籤 L = (v, a, U)；不能只用節點與到達時間判斷。 | L = (v, a, U) | • v：目前所在節點 | • a：本包完整抵達 v 的時間 | • U[c]：此候選路徑已使用 contact c 的資料量"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide5.xml",
+          "text": "投影片重點： | • v：目前所在節點 | • a：本包完整抵達 v 的時間 | • U[c]：此候選路徑已使用 contact c 的資料量 | 講者備註： | 另保留前一個標籤、所用 contact 與發送起始時間供路徑回溯。U 用於檢查候選路徑重複經過同一 contact 時的容量；目前模型允許循環，並未強制簡單路徑。 | 一句話重點：標籤 L = (v, a, U)；不能只用節點與到達時間判斷。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide6.xml",
+          "text": "標籤延伸：時間與容量 | 6 | 每個可用 contact，都要檢查各個符合條件的格點起始時間 s。 | • s ≥ max(a, contact 開始時間) | • f = s + S/r ≤ contact 結束時間 | • a′ = f + δ ≤ T | • U[c] + S ≤ R[c] | S：資料量　r：速率　δ：傳播延遲　T：規劃截止時間"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide6.xml",
+          "text": "投影片重點： | • s ≥ max(a, contact 開始時間) | • f = s + S/r ≤ contact 結束時間 | • a′ = f + δ ≤ T | • U[c] + S ≤ R[c] | 講者備註： | s 為發送開始，f 為發送完成，δ 為傳播延遲，接收開始 h=s+δ，完整到達 a′=f+δ。S 與 R 用相同資料單位；r 為每秒資料量。只滿足剩餘容量，仍不代表能在 contact 結束前完成整包傳輸。 | 一句話重點：每個可用 contact，都要檢查各個符合條件的格點起始時間 s。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide7.xml",
+          "text": "標籤延伸：緩衝區檢查 | 7 | 檢查的是隨時間變化的占用量，不是只比較 S 與 buffer 上限。 | • 發送端等待：bᵤ(t) = S，a ≤ t ≤ s | • 發送端傳送：bᵤ(t) = S − r(t−s)，s ≤ t ≤ f | • 接收端接收：bᵥ(t) = r(t−h)，h ≤ t ≤ a′ | • 兩端皆須滿足 O(t) + b(t) ≤ M | h = s + δ：接收開始時間；M：節點 buffer 容量上限"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide7.xml",
+          "text": "投影片重點： | • 發送端等待：bᵤ(t) = S，a ≤ t ≤ s | • 發送端傳送：bᵤ(t) = S − r(t−s)，s ≤ t ≤ f | • 接收端接收：bᵥ(t) = r(t−h)，h ≤ t ≤ a′ | • 兩端皆須滿足 O(t) + b(t) ≤ M | 講者備註： | h=s+δ。O 是先前接受之 bundle 的占用，b 是本候選 bundle 的占用。分段線性模型須檢查區段端點、斜率改變處與事件左右極限。目的地收到最後一個 byte 時，仍先檢查到達峰值，再交付並釋放。來源生成時亦須檢查 O_source(g)+S≤M_source。 | 一句話重點：檢查的是隨時間變化的占用量，不是只比較 S 與 buffer 上限。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide8.xml",
+          "text": "支配規則：何時可以刪除？ | 8 | 三項都成立，才可用 L₁ 取代 L₂ 繼續搜尋。 | • 兩個標籤位於同一節點：a₁ ≤ a₂ | • 等待期間：Oᵥ(t) + S ≤ Mᵥ，∀t ∈ [a₁,a₂] | • 所有 contact：U₁[c] ≤ U₂[c] | 僅「較早到達」不足以構成支配。"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide8.xml",
+          "text": "投影片重點： | • 兩個標籤位於同一節點：a₁ ≤ a₂ | • 等待期間：Oᵥ(t) + S ≤ Mᵥ，∀t ∈ [a₁,a₂] | • 所有 contact：U₁[c] ≤ U₂[c] | 講者備註： | 此為充分條件，可能保留部分其實可刪除的標籤。理由：L₁ 可先等到 a₂，再照搬 L₂ 的後續發送時刻；等待可行且已用容量不更多，所以後續不會變差。「刪除後不影響最佳解」限本版本模型，並非任何更複雜設定都成立。 | 一句話重點：三項都成立，才可用 L₁ 取代 L₂ 繼續搜尋。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide9.xml",
+          "text": "Label Setting 搜尋流程 | 9 | 固定的是標籤的處理順序，不是每個節點只處理一次。 | • 取出完整到達時間最早的有效標籤 | • 延伸各 contact，列舉格點發送時刻 | • 通過時間、容量與緩衝區檢查後，檢查支配 | • 目的地標籤取出即結束；佇列空則無格點可行解"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide9.xml",
+          "text": "投影片重點： | • 取出完整到達時間最早的有效標籤 | • 延伸各 contact，列舉格點發送時刻 | • 通過時間、容量與緩衝區檢查後，檢查支配 | • 目的地標籤取出即結束；佇列空則無格點可行解 | 講者備註： | 新標籤為 (v,a′,U+S e_c)。使用到達時間排序的優先佇列；已被支配失效的標籤取出後跳過。同時間以穩定識別碼排序。列舉發生在每次延伸時：逐一試 contact 和格點起始時間。正的整包傳输时间与有限格點使搜尋有限。 | 一句話重點：固定的是標籤的處理順序，不是每個節點只處理一次。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide10.xml",
+          "text": "符號表：輸入與資源 | 10 | R、U、O 分別描述不同資源狀態，不能混用。 | 符號 | 定義 | 單位 | S ／ r_c | 整包大小 ／ contact 傳輸速率 | MB ／ MB/s | α_c ／ ω_c | 發送窗口開始 ／ 結束時間 | 秒 | δ_c | 傳播延遲 | 秒 | R_c ／ M_v | 剩餘可分配資料量 ／ buffer 上限 | MB | O_v(t) | 先前已接受 bundles 的既有占用 | MB | Δ ／ T | 格點間隔 ／ 規劃截止時間 | 秒"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide10.xml",
+          "text": "投影片重點： | • S 是整包大小，r 是傳輸速率 | • R 是 contact 剩餘資料量，M 是節點容量 | • O(t) 是前面已接受路徑的占用 | 講者備註： | 使用本次符號表的 α、ω 取代開始、結束的長文字。表內時間單位為秒，資料量單位為 MB。 | 一句話重點：R、U、O 分別描述不同資源狀態，不能混用。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide11.xml",
+          "text": "符號表：標籤與單跳時間 | 11 | 發送完成 f 與完整到達 a′ 相差傳播延遲 δ。 | 符號 | 定義 | L = (v, a, U) | 目前節點、完整到達時間、各 contact 已用量 | U[c] | 本候選路徑對 contact c 的累積資料量 | s ／ f | 發送開始 ／ 發送完成 | h ／ a′ | 接收開始 ／ 接收完成 | Q | 依完整到達時間 a 排序的優先佇列 | pred | 前一個標籤的識別碼，用來回溯路徑"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide11.xml",
+          "text": "投影片重點： | • a 是現在節點的完整到達時間 | • s、f 描述發送，h、a′ 描述接收 | • U 只記錄本候選路徑的使用量 | 講者備註： | o、d、g 分別為來源、目的地、生成時間。每個標籤保存 pred、contact、s，供回溯。Q 依 a 遞增排序。 | 一句話重點：發送完成 f 與完整到達 a′ 相差傳播延遲 δ。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide12.xml",
+          "text": "虛擬碼 1：初始化與取出標籤 | 12 | 目的地標籤從 Q 取出時才結束。 | 01　輸入 b=(o,d,g,S)、C、R、M、O、Δ、T | 02　若 O_o(g)+S > M_o，回報格點上無解 | 03　建立 L₀=(o,g,0)，加入 Q 與標籤紀錄 | 04　while Q 非空： | 05　　 L ← 取出 a 最小的標籤 | 06　　 若 L 已失效，跳過 | 07　　 若 L.v=d，回溯並回傳路徑 | 08　　 否則開始延伸 L 的各個 outgoing contact"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide12.xml",
+          "text": "投影片重點： | • 01　輸入 b=(o,d,g,S)、C、R、M、O、Δ、T | • 02　若 O_o(g)+S > M_o，回報格點上無解 | • 03　建立 L₀=(o,g,0)，加入 Q 與標籤紀錄 | • 04　while Q 非空： | 講者備註： | 同 a 依建立序號排序。來源等於目的地時，也要先做來源容量檢查。每個標籤處理一次，但同一節點可以保留多個標籤。 | 一句話重點：目的地標籤從 Q 取出時才結束。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide13.xml",
+          "text": "虛擬碼 2：列舉與延伸 | 13 | 「列舉」發生在第 09 行選 contact，以及第 12 行選時刻。 | 09　對 L 的每個 outgoing contact c： | 10　　 若 U[c]+S > R[c]，跳過 c | 11　　 first=max(a,α_c)，last=ω_c−S/r_c | 12　　 對 s=first, first+Δ, …, last： | 13　　　　 計算 f=s+S/r_c、h=s+δ_c、a′=f+δ_c | 14　　　　 若 a′>T，跳過此 s | 15　　　　 檢查發送端與接收端的整段 buffer 占用 | 16　　　　 全部通過才建立 N=(v_c,a′,U+S·e_c)"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide13.xml",
+          "text": "投影片重點： | • 09　對 L 的每個 outgoing contact c： | • 10　　 若 U[c]+S > R[c]，跳過 c | • 11　　 first=max(a,α_c)，last=ω_c−S/r_c | • 12　　 對 s=first, first+Δ, …, last： | 講者備註： | 輸入與格點對齊，所以 first 已在格點上。first>last 時無候選時刻。單跳發送必須連續完成整包；時間檢查及容量檢查皆通過仍可能因 buffer 拒絕。 | 一句話重點：「列舉」發生在第 09 行選 contact，以及第 12 行選時刻。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide14.xml",
+          "text": "虛擬碼 3：支配與入列 | 14 | 先判斷舊標籤是否支配 N，再處理 N 能取代的標籤。 | 17　保存 N 的 pred、contact 與 s | 18　找出同節點的既有有效標籤 K | 19　若任一 K 支配 N，捨棄 N | 20　否則： | 21　　 將被 N 支配的 K 標記失效 | 22　　 保留前驅紀錄，將 N 加入 Q | 23　回到迴圈，取出下一個最早標籤 | 24　若 Q 耗盡，回報格點上無解"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide14.xml",
+          "text": "投影片重點： | • 17　保存 N 的 pred、contact 與 s | • 18　找出同節點的既有有效標籤 K | • 19　若任一 K 支配 N，捨棄 N | • 20　否則： | 講者備註： | 既有有效標籤含已展開但未失效者，不只是在 Q 中的標籤。相同 a、U 時保留舊代表，避免互刪。失效標籤可留在 Q，取出時跳過；歷史前驅不能一起刪除。 | 一句話重點：先判斷舊標籤是否支配 N，再處理 N 能取代的標籤。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide15.xml",
+          "text": "虛擬碼 4：接受路徑後更新 | 15 | 搜尋中的候選方案不扣資源，接受完整路徑後才更新。 | 25　依 pred 回溯完整 contact 與發送時刻 | 26　獨立檢查整條路徑的時間、容量與 buffer | 27　若檢查失敗，保存案例並停止 | 28　計算整條路徑的 U* 與節點占用曲線 B* | 29　R_c ← R_c − U*[c] | 30　O_v(t) ← O_v(t) + B*_v(t) | 31　記錄已選定的發送區間 | 32　下一包使用更新後的 R 與 O 重新搜尋"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide15.xml",
+          "text": "投影片重點： | • 25　依 pred 回溯完整 contact 與發送時刻 | • 26　獨立檢查整條路徑的時間、容量與 buffer | • 27　若檢查失敗，保存案例並停止 | • 28　計算整條路徑的 U* 與節點占用曲線 B* | 講者備註： | 記錄發送區間不代表已經實作鏈路時段衝突檢查。本版仍是 aggregate quota。若無解，R 與 O 不變。不能由單包最早到達推論多包聯合最佳。 | 一句話重點：搜尋中的候選方案不扣資源，接受完整路徑後才更新。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide16.xml",
+          "text": "範例設定：固定拓樸與處理順序 | 16 | Δ=1 秒，T=12 秒；所有速率均為 4 MB/s。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 箭頭：可用的通訊方向 | • 每包 4 MB，各節點上限 4 MB | • 第一包 X→D，g=0 秒 | • 第二包 A→D，g=1 秒"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide16.xml",
+          "text": "投影片重點： | • 每包 4 MB，各節點上限 4 MB | • 第一包 X→D，g=0 秒 | • 第二包 A→D，g=1 秒 | 講者備註： | 所有圖沿用 X、A、B、C、D 的同一拓樸；每跳發送需要 1 秒。綠色表示當頁強調的路徑。每包標籤編號重新從 L0 開始。 | 一句話重點：Δ=1 秒，T=12 秒；所有速率均為 4 MB/s。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide17.xml",
+          "text": "範例輸入：八個通訊機會 | 17 | c2 與 c5 的 δ=1 秒，因此發送完成不等於到達。 | ID | 方向 | α～ω（秒） | δ（秒） | R（MB） | c1 | X→B | 2～3 | 0 | 4 | c2 | B→D | 6～7 | 1 | 4 | c3 | A→B | 1～2 | 0 | 4 | c4 | A→B | 7～9 | 0 | 8 | c5 | B→D | 10～11 | 1 | 4 | c6 | A→C | 1～2 | 1 | 4 | c7 | C→D | 4～5 | 0 | 2 | c8 | C→D | 2～3 | 0 | 4"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide17.xml",
+          "text": "投影片重點： | • c4 可嘗試兩個發送起始時刻 | • c7 用於容量不足分支 | • c8 用於時間不足分支 | 講者備註： | 數據逐項對照 walkthrough_input.json；本表是第一包搜尋前的 R。每個 contact 的時間區間是發送窗口。 | 一句話重點：c2 與 c5 的 δ=1 秒，因此發送完成不等於到達。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide18.xml",
+          "text": "第一包 1：初始化並取出 L₀ | 18 | X 的 outgoing contact 只有 c1，下一步嘗試 c1。 | • 來源檢查：O_X(0)+4=4≤M_X | • L₀=(X,0,{})，所有 contact 已用量為 0 | • Q=[L₀]；取出 L₀ 後 Q=[]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide18.xml",
+          "text": "投影片重點： | • 來源檢查：O_X(0)+4=4≤M_X | • L₀=(X,0,{})，所有 contact 已用量為 0 | • Q=[L₀]；取出 L₀ 後 Q=[] | 講者備註： | 對應第一包 trace step 0。花括號只列非零分量；空集合表示零向量。Q 的左端表示下一個會取出的標籤。R 與 O 尚未更新。 | 一句話重點：X 的 outgoing contact 只有 c1，下一步嘗試 c1。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide19.xml",
+          "text": "第一包 2：c1 建立 B 的標籤 | 19 | 沒有同節點標籤可支配 L₁，因此加入 Q。 | 目前 L₀=(X,0,{})；c1 只能選 s=2 | 嘗試前 Q = [] | 檢查 | 代入數值／結果 | 判定 | 容量 | U[c1]+S=0+4≤4 | 通過 | 時間 | s=2，f=3≤3，h=2，a′=3≤12 | 通過 | Buffer | X 峰值 4 MB；B 峰值 4 MB | 通過 | 建立 L₁=(B,3,{c1:4})，pred=L₀ | 嘗試後 Q = [L₁(B,3)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide19.xml",
+          "text": "投影片重點： | • 目前 L₀=(X,0,{})；c1 只能選 s=2 | • U[c1]+S=0+4≤4 | • s=2，f=3≤3，h=2，a′=3≤12 | • X 峰值 4 MB；B 峰值 4 MB | • 建立 L₁=(B,3,{c1:4})，pred=L₀ | 講者備註： | 對應 step 1。X 在 0～2 秒等待，2～3 秒釋放；B 在 2～3 秒接收。查完 c1 後，取出 L1，剩餘 Q=[]，再嘗試 c2 與 c5。 | 一句話重點：沒有同節點標籤可支配 L₁，因此加入 Q。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide20.xml",
+          "text": "第一包 3：取出 L₁，嘗試 c2 | 20 | 現在只是在展開 L₁，仍須繼續檢查 c5。 | 取出 L₁=(B,3,{c1:4})；c2 選 s=6 | 嘗試前 Q = [] | 檢查 | 代入數值／結果 | 判定 | 容量 | U[c2]+S=0+4≤4 | 通過 | 時間 | f=7≤7，h=7，a′=8≤12 | 通過 | Buffer | B 等待／發送峰值 4；D 接收峰值 4 | 通過 | 建立 L₂=(D,8,{c1:4,c2:4}) | 嘗試後 Q = [L₂(D,8)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide20.xml",
+          "text": "投影片重點： | • 取出 L₁=(B,3,{c1:4})；c2 選 s=6 | • U[c2]+S=0+4≤4 | • f=7≤7，h=7，a′=8≤12 | • B 等待／發送峰值 4；D 接收峰值 4 | • 建立 L₂=(D,8,{c1:4,c2:4}) | 講者備註： | 對應 step 2、3。s=6≥max(3,6)。產生目的地標籤不立即中斷延伸；有效目的地標籤取出才終止。 | 一句話重點：現在只是在展開 L₁，仍須繼續檢查 c5。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide21.xml",
+          "text": "第一包 4：同一個 L₁ 再嘗試 c5 | 21 | 兩個標籤都先保留，接著從 Q 取出 L₂。 | 目前仍在展開 L₁；c5 選 s=10 | 嘗試前 Q = [L₂(D,8)] | 檢查 | 代入數值／結果 | 判定 | 容量 | U[c5]+S=0+4≤4 | 通過 | 時間 | f=11≤11，h=11，a′=12≤12 | 通過 | Buffer | B 等待／發送峰值 4；D 接收峰值 4 | 通過 | 建立 L₃=(D,12,{c1:4,c5:4}) | 嘗試後 Q = [L₂(D,8), L₃(D,12)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide21.xml",
+          "text": "投影片重點： | • 目前仍在展開 L₁；c5 選 s=10 | • U[c5]+S=0+4≤4 | • f=11≤11，h=11，a′=12≤12 | • B 等待／發送峰值 4；D 接收峰值 4 | • 建立 L₃=(D,12,{c1:4,c5:4}) | 講者備註： | 對應 step 4。兩條候選路徑互斥，不把第一條候選的占用加到第二條；此刻 R、O 未更新。 | 一句話重點：兩個標籤都先保留，接著從 Q 取出 L₂。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide22.xml",
+          "text": "第一包 5：為何沒有刪除 L₃？ | 22 | 時間較早仍不足以構成支配，L₃ 依規則保留。 | • 同節點 D，且 L₂ 的 8 秒早於 L₃ 的 12 秒 | • D 在 8～12 秒可容納 4 MB，等待條件通過 | • 但 U₂[c2]=4 > U₃[c2]=0，容量向量條件失敗 | Q=[L₂(D,8), L₃(D,12)] → 取出 L₂ → 結束本次搜尋"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide22.xml",
+          "text": "投影片重點： | • 同節點 D，且 L₂ 的 8 秒早於 L₃ 的 12 秒 | • D 在 8～12 秒可容納 4 MB，等待條件通過 | • 但 U₂[c2]=4 > U₃[c2]=0，容量向量條件失敗 | 講者備註： | L2 用 c1、c2；L3 用 c1、c5。三項支配條件必須全部成立。保留較晚目的地標籤不影響搜尋在最早有效目的地被取出時停止。 | 一句話重點：時間較早仍不足以構成支配，L₃ 依規則保留。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide23.xml",
+          "text": "第一包 6：回溯並更新資源 | 23 | 只有選定的 c1、c2 扣除容量，未選中的 c5 保持 4 MB。 | • pred：L₂ ← L₁ ← L₀，反轉得到 c1、c2 | • 發送：c1 為 2～3 秒；c2 為 6～7 秒 | • 完整到達 8 秒；確認後 R[c1]=R[c2]=0 | R（c1～c8）=(0, 0, 4, 8, 4, 4, 2, 4) MB"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide23.xml",
+          "text": "投影片重點： | • pred：L₂ ← L₁ ← L₀，反轉得到 c1、c2 | • 發送：c1 為 2～3 秒；c2 為 6～7 秒 | • 完整到達 8 秒；確認後 R[c1]=R[c2]=0 | 講者備註： | 對應 step 5 與 quota_after。原始 R 向量按 c1～c8 為 (4,4,4,8,4,4,2,4)，更新後為 (0,0,4,8,4,4,2,4)。完整路徑需驗證後才提交占用。 | 一句話重點：只有選定的 c1、c2 扣除容量，未選中的 c5 保持 4 MB。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide24.xml",
+          "text": "第一包 7：第二包會讀到的占用 | 24 | O_B(t) 是 buffer 占用量，不是速率或鏈路。 | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 0 | 2 | 4 | 占用量（MB） | 時間（秒） | 容量上限 4 MB | B 的既有占用 O_B(t)"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide24.xml",
+          "text": "投影片重點： | • X：0～2 秒持有，2～3 秒釋放 | • B：2～3 秒接收，3～6 秒等待，6～7 秒釋放 | • D：7～8 秒接收，交付前檢查峰值後釋放 | 講者備註： | B 曲線為 2～3 秒 4(t−2)、3～6 秒 4、6～7 秒 4(7−t)，其他時刻 0。A、C 仍為零占用。更新發生在規劃階段，但實際占用只落在記錄的時間區間。 | 一句話重點：O_B(t) 是 buffer 占用量，不是速率或鏈路。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide25.xml",
+          "text": "第二包 1：重新初始化搜尋 | 25 | 第二包標籤重新編號，第一包的資源預約仍保留。 | • 讀取第一包更新後的 R、O | • O_A(1)+4=4≤4，建立 L₀=(A,1,{}) | • 取出 L₀ 後 Q=[]；依序嘗試 c3、c4、c6"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide25.xml",
+          "text": "投影片重點： | • 讀取第一包更新後的 R、O | • O_A(1)+4=4≤4，建立 L₀=(A,1,{}) | • 取出 L₀ 後 Q=[]；依序嘗試 c3、c4、c6 | 講者備註： | 對應第二包 step 0。不同候選不互相扣資源，U 也重新為零。後續 Q 顯示 ID、節點與到達時間。 | 一句話重點：第二包標籤重新編號，第一包的資源預約仍保留。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide26.xml",
+          "text": "第二包 2：經 c3 於第 2 秒到 B | 26 | 此刻只保證接收可行，尚未檢查在 B 後續等待。 | 目前 L₀=(A,1,{})；c3 選 s=1 | 嘗試前 Q = [] | 檢查 | 代入數值／結果 | 判定 | 容量 | 0+4≤R[c3]=4 | 通過 | 時間 | f=2≤2，h=1，a′=2≤12 | 通過 | Buffer | A 峰值 4；B 在 1～2 秒接收峰值 4 | 通過 | 建立 L₁=(B,2,{c3:4}) | 嘗試後 Q = [L₁(B,2)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide26.xml",
+          "text": "投影片重點： | • 目前 L₀=(A,1,{})；c3 選 s=1 | • 0+4≤R[c3]=4 | • f=2≤2，h=1，a′=2≤12 | • A 峰值 4；B 在 1～2 秒接收峰值 4 | • 建立 L₁=(B,2,{c3:4}) | 講者備註： | 對應 step 1。第一包在 B 第 2 秒開始接收，其占用於 t=2 為 0；因此第二包第 2 秒接收完成仍可行。下一跳延伸才檢查等待期間。 | 一句話重點：此刻只保證接收可行，尚未檢查在 B 後續等待。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide27.xml",
+          "text": "第二包 3：c4 的第一個時刻 s=7 | 27 | 不能用 L₁ 的較早到達時間直接刪除 L₂。 | 仍展開 L₀；c4 可列舉 s∈{7,8} | 嘗試前 Q = [L₁(B,2)] | 檢查 | 代入數值／結果 | 判定 | 容量 | 0+4≤R[c4]=8 | 通過 | 時間 | s=7，f=8≤9，h=7，a′=8 | 通過 | Buffer | A 峰值 4；B 在 7～8 秒接收峰值 4 | 通過 | 建立 L₂=(B,8,{c4:4}) | 嘗試後 Q = [L₁(B,2), L₂(B,8)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide27.xml",
+          "text": "投影片重點： | • 仍展開 L₀；c4 可列舉 s∈{7,8} | • 0+4≤R[c4]=8 | • s=7，f=8≤9，h=7，a′=8 | • A 峰值 4；B 在 7～8 秒接收峰值 4 | • 建立 L₂=(B,8,{c4:4}) | 講者備註： | 對應 step 2。c4 起始下界 max(1,7)=7，上界 9−4/4=8，所以有兩個起始時刻。L1無法等待到8且用量向量不同；下一頁明列比較。 | 一句話重點：不能用 L₁ 的較早到達時間直接刪除 L₂。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide28.xml",
+          "text": "第二包 4：L₁ 無法取代 L₂ | 28 | 這個比較同時有等待與用量兩個失敗原因。 | 條件 | 代入 | 結果 | a₁≤a₂ | 2≤8 | 通過 | 整段可等待 | t=2.5：2+4=6>4 | 失敗 | 各 contact 已用量不更多 | c3：4>0 | 失敗 | Q 維持 [L₁(B,2), L₂(B,8)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide28.xml",
+          "text": "投影片重點： | • 到達時間：2≤8，通過 | • 等待：t=2.5 時 O_B(t)+4=2+4=6>4 | • 用量：U₁[c3]=4>U₂[c3]=0，也不通過 | 講者備註： | L1=(B,2,{c3:4})、L2=(B,8,{c4:4})。不要把這個例子當成只隔離 buffer 單一因素的支配反例。三條件中任一不符就不能刪除。反向支配也失敗，因為8不早於2。 | 一句話重點：這個比較同時有等待與用量兩個失敗原因。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide29.xml",
+          "text": "第二包 5：c4 的第二個時刻 s=8 | 29 | L₃ 的延伸可行，但會在入列前被 L₂ 支配。 | 仍展開 L₀；c4 改試 s=8 | 嘗試前 Q = [L₁(B,2), L₂(B,8)] | 檢查 | 代入數值／結果 | 判定 | 容量 | 0+4≤8；上一個候選不扣除 R | 通過 | 時間 | f=9≤9，h=8，a′=9≤12 | 通過 | Buffer | A 峰值 4；B 在 8～9 秒接收峰值 4 | 通過 | 候選 L₃=(B,9,{c4:4})，接著做支配判斷 | 嘗試後 Q = [L₁(B,2), L₂(B,8)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide29.xml",
+          "text": "投影片重點： | • 仍展開 L₀；c4 改試 s=8 | • 0+4≤8；上一個候選不扣除 R | • f=9≤9，h=8，a′=9≤12 | • A 峰值 4；B 在 8～9 秒接收峰值 4 | • 候選 L₃=(B,9,{c4:4})，接著做支配判斷 | 講者備註： | 對應 step 3。Q 前後不變不是時間或 buffer 檢查失敗，而是支配檢查成功。下一頁詳列三個條件。 | 一句話重點：L₃ 的延伸可行，但會在入列前被 L₂ 支配。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide30.xml",
+          "text": "第二包 6：逐項刪除 L₃ 的理由 | 30 | 保留 L₂，L₃ 不加入 Q；這不會扣除任何全域資源。 | 條件 | 代入 | 結果 | 到達不晚 | 8≤9 | 通過 | 可以等待 | O_B(t)+4=4≤4，8≤t≤9 | 通過 | 已用量不更多 | c4 都為 4，其餘都為 0 | 通過 | Q=[L₁(B,2), L₂(B,8)]；L₃ 標記為失效"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide30.xml",
+          "text": "投影片重點： | • 同節點 B，8≤9 | • 8～9 秒既有占用為 0，可持有整包等待 | • 兩者使用同一個 c4，U₂=U₃ | 講者備註： | 標籤ID下標與支配公式的一般L1/L2不同，此頁比較的是 trace L2、L3。兩者的c4用量均4，其他分量均0。L2可以等到9，再複製L3的任何可行後續安排。 | 一句話重點：保留 L₂，L₃ 不加入 Q；這不會扣除任何全域資源。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide31.xml",
+          "text": "第二包 7：再由 c6 到 C | 31 | 標籤編號是建立順序，Q 則按到達時間排序。 | 仍展開 L₀；c6 選 s=1 | 嘗試前 Q = [L₁(B,2), L₂(B,8)] | 檢查 | 代入數值／結果 | 判定 | 容量 | 0+4≤R[c6]=4 | 通過 | 時間 | f=2≤2，δ=1，h=2，a′=3 | 通過 | Buffer | A 峰值 4；C 在 2～3 秒接收峰值 4 | 通過 | 建立 L₄=(C,3,{c6:4})，依到達時間重新排序 | 嘗試後 Q = [L₁(B,2), L₄(C,3), L₂(B,8)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide31.xml",
+          "text": "投影片重點： | • 仍展開 L₀；c6 選 s=1 | • 0+4≤R[c6]=4 | • f=2≤2，δ=1，h=2，a′=3 | • A 峰值 4；C 在 2～3 秒接收峰值 4 | • 建立 L₄=(C,3,{c6:4})，依到達時間重新排序 | 講者備註： | 對應 step 4。L3雖未入列仍已占用建立序號，所以新標籤是L4。L0展開到此結束。下一次取出L1而不是最後建立的L4。 | 一句話重點：標籤編號是建立順序，Q 則按到達時間排序。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide32.xml",
+          "text": "第二包 8：取出早到 B 的 L₁ | 32 | 「未執行」不能寫成「通過」。 | Q 取出 L₁(B,2)；先嘗試 c2 | 嘗試前 Q = [L₄(C,3), L₂(B,8)] | 檢查 | 代入數值／結果 | 判定 | 容量 | U[c2]+S=0+4>R[c2]=0 | 失敗 | 時間 | 容量已不足，不再執行時間檢查 | 未執行 | Buffer | 容量已不足，不再執行 buffer 檢查 | 未執行 | 不建立新標籤；繼續用 L₁ 嘗試 c5 | 嘗試後 Q = [L₄(C,3), L₂(B,8)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide32.xml",
+          "text": "投影片重點： | • Q 取出 L₁(B,2)；先嘗試 c2 | • U[c2]+S=0+4>R[c2]=0 | • 容量已不足，不再執行時間檢查 | • 容量已不足，不再執行 buffer 檢查 | • 不建立新標籤；繼續用 L₁ 嘗試 c5 | 講者備註： | 對應 step 5、6。c2已由第一包用完。這裡依實作的短路順序先檢容量；不把未做的其他檢查描述為通過。 | 一句話重點：「未執行」不能寫成「通過」。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide33.xml",
+          "text": "第二包 9：L₁ 等到 c5 會超量 | 33 | 接收時可行的 L₁，可能因後續等待而無法繼續。 | 目前 L₁=(B,2,{c3:4})；c5 選 s=10 | 嘗試前 Q = [L₄(C,3), L₂(B,8)] | 檢查 | 代入數值／結果 | 判定 | 容量 | 0+4≤R[c5]=4 | 通過 | 時間 | f=11≤11，h=11，a′=12 | 通過 | Buffer | B 在第 3 秒：既有 4 + 本包 4 = 8>4 | 失敗 | 不建立目的地標籤；L₁ 的所有後續嘗試結束 | 嘗試後 Q = [L₄(C,3), L₂(B,8)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide33.xml",
+          "text": "投影片重點： | • 目前 L₁=(B,2,{c3:4})；c5 選 s=10 | • 0+4≤R[c5]=4 | • f=11≤11，h=11，a′=12 | • B 在第 3 秒：既有 4 + 本包 4 = 8>4 | • 不建立目的地標籤；L₁ 的所有後續嘗試結束 | 講者備註： | 對應 step 7。sender峰值8@3，receiver峰值4@12。t=2.5占用6已超限；trace記錄的最大值為8。發送端等待2～10秒，與第一包3～6秒滿載重疊。 | 一句話重點：接收時可行的 L₁，可能因後續等待而無法繼續。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide34.xml",
+          "text": "第二包 10：取出 C 的 L₄，試 c7 | 34 | 整包 4 MB 不能使用僅剩 2 MB 的 contact。 | 取出 L₄=(C,3,{c6:4})；嘗試 c7 | 嘗試前 Q = [L₂(B,8)] | 檢查 | 代入數值／結果 | 判定 | 容量 | 0+4>R[c7]=2 | 失敗 | 時間 | 容量已不足，時間檢查未執行 | 未執行 | Buffer | 容量已不足，buffer 檢查未執行 | 未執行 | 不建立標籤；同一個 L₄ 繼續嘗試 c8 | 嘗試後 Q = [L₂(B,8)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide34.xml",
+          "text": "投影片重點： | • 取出 L₄=(C,3,{c6:4})；嘗試 c7 | • 0+4>R[c7]=2 | • 容量已不足，時間檢查未執行 | • 容量已不足，buffer 檢查未執行 | • 不建立標籤；同一個 L₄ 繼續嘗試 c8 | 講者備註： | 對應 step 8、9。不可分割，所以不能只把其中2MB送進c7，剩下另找contact。 | 一句話重點：整包 4 MB 不能使用僅剩 2 MB 的 contact。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide35.xml",
+          "text": "第二包 11：c8 容量足夠但太晚到 | 35 | 不能在第 3 秒才收到整包，卻從第 2 秒開始發送。 | 目前 L₄=(C,3,{c6:4})；嘗試 c8 | 嘗試前 Q = [L₂(B,8)] | 檢查 | 代入數值／結果 | 判定 | 容量 | 0+4≤R[c8]=4 | 通過 | 時間 | 最早 max(3,2)=3 > 最晚 3−4/4=2 | 失敗 | Buffer | 沒有候選 s，buffer 檢查未執行 | 未執行 | 無可列舉的起始時間；L₄ 的延伸結束 | 嘗試後 Q = [L₂(B,8)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide35.xml",
+          "text": "投影片重點： | • 目前 L₄=(C,3,{c6:4})；嘗試 c8 | • 0+4≤R[c8]=4 | • 最早 max(3,2)=3 > 最晚 3−4/4=2 | • 沒有候選 s，buffer 檢查未執行 | • 無可列舉的起始時間；L₄ 的延伸結束 | 講者備註： | 對應 step 10。c8發送窗口[2,3)，整包發送需1秒。即使R≥S，也無法在結束前完成。 | 一句話重點：不能在第 3 秒才收到整包，卻從第 2 秒開始發送。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide36.xml",
+          "text": "第二包 12：取出晚到 B 的 L₂ | 36 | 同一個 B 節點再次展開，這次使用不同的到達狀態。 | 取出 L₂=(B,8,{c4:4})；先試 c2 | 嘗試前 Q = [] | 檢查 | 代入數值／結果 | 判定 | 容量 | 0+4>R[c2]=0 | 失敗 | 時間 | 依檢查順序，時間檢查未執行 | 未執行 | Buffer | 依檢查順序，buffer 檢查未執行 | 未執行 | 不建立標籤；L₂ 繼續嘗試 c5 | 嘗試後 Q = []"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide36.xml",
+          "text": "投影片重點： | • 取出 L₂=(B,8,{c4:4})；先試 c2 | • 0+4>R[c2]=0 | • 依檢查順序，時間檢查未執行 | • 依檢查順序，buffer 檢查未執行 | • 不建立標籤；L₂ 繼續嘗試 c5 | 講者備註： | 對應 step 11、12。這說明不能將B整個節點設為已處理而永久跳過。實際上c2時間也已過，但trace先因容量拒絕，故不把時間列為已執行的失敗。 | 一句話重點：同一個 B 節點再次展開，這次使用不同的到達狀態。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide37.xml",
+          "text": "第二包 13：L₂ 經 c5 成功到 D | 37 | 第 8 秒之後 B 的第一包占用已清空，所以等待可行。 | 目前 L₂=(B,8,{c4:4})；c5 選 s=10 | 嘗試前 Q = [] | 檢查 | 代入數值／結果 | 判定 | 容量 | 0+4≤R[c5]=4 | 通過 | 時間 | f=11≤11，h=11，a′=12≤12 | 通過 | Buffer | B 在 8～11 秒峰值 4；D 接收峰值 4 | 通過 | 建立 L₅=(D,12,{c4:4,c5:4})，pred=L₂ | 嘗試後 Q = [L₅(D,12)]"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide37.xml",
+          "text": "投影片重點： | • 目前 L₂=(B,8,{c4:4})；c5 選 s=10 | • 0+4≤R[c5]=4 | • f=11≤11，h=11，a′=12≤12 | • B 在 8～11 秒峰值 4；D 接收峰值 4 | • 建立 L₅=(D,12,{c4:4,c5:4})，pred=L₂ | 講者備註： | 對應 step 13。B8～10持有4，10～11逐byte釋放；D11～12接收。第一包在D的接收早已結束。 | 一句話重點：第 8 秒之後 B 的第一包占用已清空，所以等待可行。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide38.xml",
+          "text": "第二包 14：取出目的地與回溯 | 38 | 選定 A→B→D，完整到達時間為第 12 秒。 | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | X | A | B | C | D | 箭頭：可用的通訊方向 | • 取出 L₅(D,12)，本次搜尋結束 | • pred：L₅ ← L₂ ← L₀ | • 反轉後：c4(s=7)、c5(s=10)"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide38.xml",
+          "text": "投影片重點： | • 取出 L₅(D,12)，本次搜尋結束 | • pred：L₅ ← L₂ ← L₀ | • 反轉後：c4(s=7)、c5(s=10) | 講者備註： | 對應 step 14。L5產生與被取出是兩個不同事件。不是選擇第一個到B的L1，而是經可行的晚到B標籤L2。 | 一句話重點：選定 A→B→D，完整到達時間為第 12 秒。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide39.xml",
+          "text": "第二包 15：接受後的完整占用 | 39 | 兩包在 B 的合計占用峰值為 4 MB，沒有超量。 | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 0 | 2 | 4 | 占用量（MB） | 時間（秒） | 容量上限 4 MB | B：第一包＋第二包的合計占用"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide39.xml",
+          "text": "投影片重點： | • A：1～7 秒持有，7～8 秒釋放 | • B：7～8 秒接收，8～10 秒等待，10～11 秒釋放 | • D：11～12 秒接收，交付後釋放 | 講者備註： | 本頁折線是兩包接受後的合計。第二包更新R[c4]8→4、R[c5]4→0。完整R向量為(0,0,4,4,0,4,2,4)。交界t=7第一包B占用為0，第二包剛開始接收也是0，並沒有重複計算。 | 一句話重點：兩包在 B 的合計占用峰值為 4 MB，沒有超量。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide40.xml",
+          "text": "第二包標籤總表：每個結果可追溯 | 40 | 「延伸失敗」、「被支配」、「已展開」是不同的狀態。 | 標籤 | 節點／時間 | 非零 U（MB） | 最終處理 | L₀ | A，1 | 無 | 已展開 | L₁ | B，2 | c3:4 | 已展開，後續皆失敗 | L₂ | B，8 | c4:4 | 已展開，選定路徑 | L₃ | B，9 | c4:4 | 被 L₂ 支配，不入列 | L₄ | C，3 | c6:4 | 已展開，後續皆失敗 | L₅ | D，12 | c4:4、c5:4 | 取出目的地，回傳"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide40.xml",
+          "text": "投影片重點： | • L₁ 接收可行，但後續延伸全失敗 | • L₃ 延伸可行，但被 L₂ 支配而不入列 | • L₅ 被取出後，回溯至 L₂ 與 L₀ | 講者備註： | 已展開標籤仍可以是有效標籤。標籤建立編號不是到達順序。表格只列非零U分量。 | 一句話重點：「延伸失敗」、「被支配」、「已展開」是不同的狀態。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide41.xml",
+          "text": "如何驗證目前版本？ | 41 | 驗證程式必須採用相同模型，才能判斷演算法是否出錯。 | • 保留原演算法定義，固定測試輸入 | • 獨立列舉路徑與格點發送時刻，作為比較答案 | • 比較可行性與最早完整到達時間 | • 另外關閉支配刪除，檢查答案是否改變"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide41.xml",
+          "text": "投影片重點： | • 保留原演算法定義，固定測試輸入 | • 獨立列舉路徑與格點發送時刻，作為比較答案 | • 比較可行性與最早完整到達時間 | • 另外關閉支配刪除，檢查答案是否改變 | 講者備註： | 獨立列舉驗證程式不是直接重跑同一搜尋流程。它為小案例列舉路徑和時刻安排，檢查完整路徑，再比較答案。這些結果支持測試範圍內的一致性，不能取代一般性證明。原始輸出在 output/validation/oracle_comparison.csv 與 dominance_comparison.csv。 | 一句話重點：驗證程式必須採用相同模型，才能判斷演算法是否出錯。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide42.xml",
+          "text": "驗證結果與適用範圍 | 42 | 目前未找到同一離散時間模型內的失敗案例；尚非所有輸入的正確性證明。 | • 14 個人工案例，共 15 次單包查詢 | • 15 次查詢與獨立列舉答案全部一致 | • 18 項單元測試通過 | • 啟用／停用支配刪除，15 次答案相同"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide42.xml",
+          "text": "投影片重點： | • 14 個人工案例，共 15 次單包查詢 | • 15 次查詢與獨立列舉答案全部一致 | • 18 項單元測試通過 | • 啟用／停用支配刪除，15 次答案相同 | 講者備註： | 一個依序處理案例包含兩包，所以 14 個案例對應 15 次查詢。覆蓋無路徑、較晚標籤、接收與發送超限、來源容量、循環、contact 重複使用與目的地事件峰值等。結果來自既有驗證輸出；此簡報製作沒有新增效能測試或修改演算法。 | 一句話重點：目前未找到同一離散時間模型內的失敗案例；尚非所有輸入的正確性證明。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide43.xml",
+          "text": "支配刪除的觀察結果 | 43 | 下一階段才適合評估更大規模的時間與記憶體成本。 | 案例 | 停用支配 | 啟用支配 | 最佳到達 | 可刪除標籤案例 | 7 | 3 | 5 秒 | 兩包範例：第二包 | 7 | 5 | 12 秒 | 指標：加入優先佇列的標籤數"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide43.xml",
+          "text": "投影片重點： | • 比較指標：加入優先佇列的標籤數 | • 刪除部分標籤後，最早到達時間相同 | • 這些數字是小案例觀察，尚非效能結論 | 講者備註： | 數字取自 output/validation/dominance_comparison.csv；加入佇列、建立標籤、展開標籤是不同指標，本頁只使用加入佇列數，不混用。未做執行時間或記憶體基準測試。 | 一句話重點：下一階段才適合評估更大規模的時間與記憶體成本。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide44.xml",
+          "text": "限制一：格點最早 ≠ 連續時間最早 | 44 | 現有結果只支持離散時間版本，不能直接宣稱連續時間最佳。 | • Δ = 1 秒時，最佳完整到達為 4 秒 | • 允許非整數起始時刻，可於 3.5 秒到達 | • 緩衝區門檻可能產生新的非整數時刻 | 連續時間 3.5 秒     ／     整數格點 4 秒"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide44.xml",
+          "text": "投影片重點： | • Δ = 1 秒時，最佳完整到達為 4 秒 | • 允許非整數起始時刻，可於 3.5 秒到達 | • 緩衝區門檻可能產生新的非整數時刻 | 講者備註： | 反例：S=4，A→B 時段 [0,3]、B→D 時段 [2,4]，速率皆 4，延遲皆 0；M_B=5。既有 O_B 在 0～1 秒為 4，1～3 秒為 6−2t，3 秒後為 0。A 於 1.5～2.5 秒送出，B 於 2.5～3.5 秒轉送即可達 3.5；整數格點最早於 4 到達。此為模型範圍差異，不是同格點演算法的失敗。來源 counterexample_grid_continuous.json。 | 一句話重點：現有結果只支持離散時間版本，不能直接宣稱連續時間最佳。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide45.xml",
+          "text": "限制二：總容量不等於可排入整包 | 45 | 加入已排定傳輸時段表之前，不能保證實際鏈路排程可行。 | • contact 長 6 秒；剩餘總容量 3 MB | • 速率 1 MB/s，新 bundle 需連續傳送 2 秒 | • 空檔各只有 1 秒，無法排入整包 | 空檔 | 0 | 已占用 | 1 | 空檔 | 2 | 已占用 | 3 | 空檔 | 4 | 已占用 | 5 | 6 秒"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide45.xml",
+          "text": "投影片重點： | • contact 長 6 秒；剩餘總容量 3 MB | • 速率 1 MB/s，新 bundle 需連續傳送 2 秒 | • 空檔各只有 1 秒，無法排入整包 | 講者備註： | 反例的忙碌時段為 [1,2]、[3,4]、[5,6]；空檔 [0,1]、[2,3]、[4,5]。雖總剩餘 3 MB≥2 MB，卻無連續 2 秒可用。現版本只檢查剩餘可分配資料量，不檢查忙碌時段。這是模型限制；未擅自加入傳輸時段表或修改演算法。 | 一句話重點：加入已排定傳輸時段表之前，不能保證實際鏈路排程可行。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide46.xml",
+          "text": "目前結論與下一步 | 46 | 先界定並證明目前模型，再決定擴充範圍與效能比較。 | • 已建立：時間、整包容量與逐 byte buffer 檢查 | • 已驗證：小型格點案例與支配刪除的一致性 | • 待補：一般性證明與連續時間候選時刻 | • 後續擴充：已排定傳輸時段表；需另行確認修正"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide46.xml",
+          "text": "投影片重點： | • 已建立：時間、整包容量與逐 byte buffer 檢查 | • 已驗證：小型格點案例與支配刪除的一致性 | • 待補：一般性證明與連續時間候選時刻 | • 後續擴充：已排定傳輸時段表；需另行確認修正 | 講者備註： | 延伸檢查與支配充分條件已有論證方向；整體正確性需要清楚列出有限格點、事件處理、狀態資訊、無副本及固定資源等前提。若後續找到同模型反例，應保留案例、定位定義或判別式錯誤，停止後續效能比較，只提出候選修正供確認。 | 一句話重點：先界定並證明目前模型，再決定擴充範圍與效能比較。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        },
+        {
+          "part": "ppt/slides/slide47.xml",
+          "text": "附錄：範例 Contact Plan | 47 | 同一拓樸可以有多個不同時段的 contact。 | ID | 方向 | 時段 | δ（秒） | R（MB） | c1 | X → B | 2～3 | 0 | 4 | c2 | B → D | 6～7 | 1 | 4 | c3 | A → B | 1～2 | 0 | 4 | c4 | A → B | 7～9 | 0 | 8 | c5 | B → D | 10～11 | 1 | 4 | c6 | A → C | 1～2 | 1 | 4 | c7 | C → D | 4～5 | 0 | 2 | c8 | C → D | 2～3 | 0 | 4"
+        },
+        {
+          "part": "ppt/notesSlides/notesSlide47.xml",
+          "text": "投影片重點： | • 速率皆為 4 MB/s；時間單位為秒 | • δ 為傳播延遲；R 為搜尋前剩餘資料量 | • 固定順序：第一包 X→D，再處理第二包 A→D | 講者備註： | 本表為第一包搜尋前的原始資料。所有 buffer 上限 4 MB，每包大小 4 MB，Δ=1 秒。資料來源 output/validation/walkthrough_input.json。 | 一句話重點：同一拓樸可以有多個不同時段的 contact。 | 資料來源：專案 docs/sequential_label_setting_v04.md、docs/algorithm_validation_summary_v01.md、output/validation/。"
+        }
+      ]
+    }
+  ],
+  "code_differs_from_saved_validation_hashes": [
+    "src\\validation\\render_figures.py"
+  ],
+  "absent_directories": [
+    "experiments",
+    "data",
+    "outputs"
+  ]
+}

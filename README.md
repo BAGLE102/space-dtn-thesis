@@ -7,6 +7,7 @@
 **目前為有限時間格點與 aggregate quota 模型的演算法原型及正確性驗證階段。** 每次處理一個 bundle；接受後更新資源，再處理下一包。不主張多包聯合最佳化、連續時間最優或已支援 transmission calendar。
 
 - [進度與下一步](PROGRESS.md)
+- [研究合理性與風險審查（含兩包傳輸重疊反例）](docs/research_reality_audit_v01.md)
 - [更新紀錄](CHANGELOG.md)
 - [集中式 DTN 架構與研究假設](docs/centralized_dtn_architecture_v01.md)
 - [現行演算法 v04](docs/sequential_label_setting_v04.md)

@@ -2,6 +2,13 @@
 
 更新日期：2026-10-06
 
+## 最新審查（2026-10-06）
+
+- 完成 [研究合理性與風險審查](docs/research_reality_audit_v01.md)，列出 26 項風險、Top 10 問題、22 題口試問題，以及假設、參數、比較公平性與文件差異表。
+- 新增兩次查詢的可重現模型邊界反例：同一 1 MB/s contact，兩包各 2 MB 皆被排在 [0,2)，aggregate quota 與 buffer 通過，但實際鏈路超載。資料在 `output/research_audit_v01/counterexample_sequential_overlap.json`。
+- 此反例否定實際無衝突排程的外推，未推翻已明限 aggregate grid 的同模型命題。未修改演算法、程式、PPT、既有驗證結果或 comparison gate；未進行效能比較或大型實驗。
+- 下一個討論優先處理 claim／calendar 範圍，以及逐 byte buffer 釋放與目標 BPA／CLA 的關係；候選修正尚未採用。
+
 ## 已完成
 
 - [x] 現行 v04：有限時間格點、aggregate quota、有限 buffer、逐包資源預約。
