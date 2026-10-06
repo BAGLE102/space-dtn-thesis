@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-06",
+  "deck": "output/presentations/1007_定義更新版_v02_20261006.pptx",
+  "sha256": "7736bad0b0eebf3da17f8709d5f865d8d04b4380d47dc851713f59693a81f540",
+  "slide_count": 21,
+  "speaker_notes_count": 21,
+  "old_U_label_notation_removed": true,
+  "visual_review": "All 21 slides individually inspected using Artifact Tool rendered PNGs. No native PowerPoint execution.",
+  "presentation_revision_comparison": "Slide text and shape extents unchanged between initial visual review and final notes-only revision. Raw XML differs due regenerated identifiers.",
+  "structure_status": "pass",
+  "layout_finding_count": 0,
+  "layout_warning_count": 17,
+  "font_families": [
+    "DFKai-SB"
+  ],
+  "algorithm_changes": false,
+  "experiments_run": false
+}

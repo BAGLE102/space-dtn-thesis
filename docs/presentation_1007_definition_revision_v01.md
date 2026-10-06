@@ -52,4 +52,3 @@ Aggregate容量未檢查已接受bundles的鏈路時段重疊。保留既有buff
 ## 明天報告前優先確認
 
 第4頁的四個label欄位、第6頁的contact及資源輸入、第12頁等待與支配條件、第20頁pred回溯，以及第3頁aggregate容量模型的限制。
-
