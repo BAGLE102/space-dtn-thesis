@@ -6,6 +6,7 @@ __pycache__/
 venv/
 node_modules/
 .pytest_cache/
+.codex-ppt-build/
 .DS_Store
 Thumbs.db
 ~$*

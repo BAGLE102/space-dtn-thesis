@@ -17,7 +17,8 @@
 
 ## 簡報與圖解
 
-- [17 頁圖解簡報](output/presentations/整包路由_Label_Setting_圖解版_v01.pptx)
+- [20 頁圖解簡報（現行，含中央架構與 Q／U 觀察）](output/presentations/整包路由_Label_Setting_圖解版_v02_中央架構與Q-U觀察.pptx)
+- [17 頁圖解簡報（舊版）](output/presentations/整包路由_Label_Setting_圖解版_v01.pptx)
 - [逐步詳解簡報](output/presentations/整包路由_Label_Setting_逐步詳解_v02.pptx)
 - [17 張逐頁圖片](output/presentations/圖解版逐頁圖/)
 
