@@ -55,3 +55,11 @@
 - [現行定義摘要](docs/current_algorithm_snapshot_v01.md)
 - [原始測試紀錄](output/validation/test_results.txt)
 - [已知反例索引](output/validation/counterexamples_index.json)
+
+## 1007 報告簡報定義表示更新（2026-10-06）
+
+- 依使用者提供的 `F:/1007.pptx` 更新21頁圖解簡報，輸出 `output/presentations/1007_定義更新版_v02_20261006.pptx`。
+- Label及Q改以 `(c,A,s,pred)` 表示，更新回溯圖、contact參數與講稿，統一以「剩餘可分配資料量」解釋R。
+- 調整為可由完整pred鏈還原舊v04資訊的表示方式，未取消quota/dominance中的前綴用量條件，未修改現行演算法或實作。
+- 修改說明與報告前核對重點：`docs/presentation_1007_definition_revision_v01.md`。
+- 保留原有8秒／12秒到達結果及aggregate模型界線，未進行效能比較或新實驗。
