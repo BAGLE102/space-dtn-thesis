@@ -81,3 +81,10 @@
 - 保留原有事件峰值約定，目的地完整接收後立即交付，包含horizon末端的釋放。
 - 對照修正版1007簡報的contact表、bundle起訖／生成時間／大小及buffer設定；核對紀錄與報告位於 `output/experiments/ppt_topology_run_20261006/`。
 - 重播是選定排程的事後檢查，沒有改動v04、啟用calendar搜尋或宣稱實際BP／共用radio驗證。
+
+
+## Buffer 圖時間軸調整（2026-10-07）
+
+- 依提供圖片重繪，時間軸改為 0–12 秒，使用標楷體。
+- 保留 t≥2 的原圖曲線，未推測 0–2 秒數值；不修改演算法或模擬結果。
+- 輸出：`output/figures/buffer_chart_axis_zero_20261007/`（PNG、SVG）；已目視檢查。
