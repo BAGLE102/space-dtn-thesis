@@ -24,3 +24,6 @@ credentials*.json
 *.zip
 /papers/
 /attachments/
+
+# GUI execution logs may contain machine-local paths and diagnostic text.
+/output/experiments/gui_logs/

@@ -1,0 +1,11 @@
+{
+  "cases": 9,
+  "queries": 18,
+  "steps_checked": 179,
+  "tk_callback_errors": [],
+  "playback_checked": true,
+  "worker_run_checked": true,
+  "cancellation_checked": true,
+  "buffer_event_peak_checked": true,
+  "worker_output": ".codex-ppt-build/gui_smoke_runs/20261011_163253_560046"
+}

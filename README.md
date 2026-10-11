@@ -83,3 +83,6 @@ python -m unittest discover -s tests -v
 
 
 小型實驗套件與重現方式：[small_experiment_suite_v01.md](docs/small_experiment_suite_v01.md)。
+
+
+桌面實驗GUI：`python -m src.experiments.gui`，或使用 `launch_experiment_gui.pyw`。操作說明見 [desktop_gui_v01.md](docs/desktop_gui_v01.md)。

@@ -80,3 +80,13 @@
 - 直接讀取既有v04紀錄，未改演算法；持續標示內部usage cache與非SimPy界線。
 - 瀏覽器核對9案例／18查詢／179步、播放、事件峰值與釋放，以及320px寬度；保存截圖與browser_checks.json。
 - 說明：`docs/process_visualization_v01.md`；產生器：`src/experiments/process_view.py`。
+
+
+## 桌面實驗 GUI（2026-10-11）
+
+- 新增Tkinter桌面GUI、雙擊啟動入口、既有結果載入與JSON案例執行。
+- 支援搜尋步驟／排程播放、Label與Q表、Contact與剩餘容量、Buffer即時占用。
+- 以獨立子程序執行原路由，中止保留部分資料與標記；未改凍結v04核心，內部usage cache仍保留。
+- 179步GUI操作、播放、背景執行／載入、中止與Buffer事件檢查通過；40項回歸測試通過。
+- 共用載入器重構前後的瀏覽器資料完全一致；已檢查Windows DPI畫面。
+- 說明：`docs/desktop_gui_v01.md`；檢查與截圖：`output/visualizations/desktop_gui_v01_20261011/`。
