@@ -1,0 +1,10 @@
+[
+  {
+    "bundle": "b001",
+    "status": "ACCEPTED",
+    "node_path": "22 → 37 → 5",
+    "contact_path": "rrn_0042 → rrn_0067",
+    "arrival": "1466",
+    "delivery_delay": "1213"
+  }
+]

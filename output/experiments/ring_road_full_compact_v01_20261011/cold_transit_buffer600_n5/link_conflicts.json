@@ -1,0 +1,74 @@
+[
+  {
+    "contact": "rrn_0042",
+    "bundle1": "b001",
+    "hop1": 1,
+    "bundle2": "b002",
+    "hop2": 1,
+    "overlap_start": "754",
+    "overlap_end": "778"
+  },
+  {
+    "contact": "rrn_0067",
+    "bundle1": "b001",
+    "hop1": 2,
+    "bundle2": "b002",
+    "hop2": 2,
+    "overlap_start": "1442",
+    "overlap_end": "1466"
+  },
+  {
+    "contact": "rrn_0107",
+    "bundle1": "b003",
+    "hop1": 1,
+    "bundle2": "b004",
+    "hop2": 1,
+    "overlap_start": "2272",
+    "overlap_end": "2296"
+  },
+  {
+    "contact": "rrn_0107",
+    "bundle1": "b003",
+    "hop1": 1,
+    "bundle2": "b005",
+    "hop2": 1,
+    "overlap_start": "2272",
+    "overlap_end": "2296"
+  },
+  {
+    "contact": "rrn_0123",
+    "bundle1": "b003",
+    "hop1": 2,
+    "bundle2": "b004",
+    "hop2": 2,
+    "overlap_start": "2882",
+    "overlap_end": "2906"
+  },
+  {
+    "contact": "rrn_0123",
+    "bundle1": "b003",
+    "hop1": 2,
+    "bundle2": "b005",
+    "hop2": 2,
+    "overlap_start": "2882",
+    "overlap_end": "2906"
+  },
+  {
+    "contact": "rrn_0107",
+    "bundle1": "b004",
+    "hop1": 1,
+    "bundle2": "b005",
+    "hop2": 1,
+    "overlap_start": "2272",
+    "overlap_end": "2296"
+  },
+  {
+    "contact": "rrn_0123",
+    "bundle1": "b004",
+    "hop1": 2,
+    "bundle2": "b005",
+    "hop2": 2,
+    "overlap_start": "2882",
+    "overlap_end": "2906"
+  }
+]

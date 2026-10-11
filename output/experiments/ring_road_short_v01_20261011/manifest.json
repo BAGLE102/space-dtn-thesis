@@ -1,0 +1,466 @@
+{
+  "source_url": "https://api.bitbucket.org/2.0/repositories/lcd-unc-ar/dtnsim/src/56d2c9835f6706563566768de646f9442a8602ab/dtnsim/simulations/hindawi_rrn/contactPlan/RingRoad_16sats_Walker_6hotspots_simtime24hs_comrange1000km.txt",
+  "source_sha256": "fe363dabdd182e292f5e3b74a28558245b2caf9d3aa7730db60d52afdb9763d2",
+  "seed": 20261011,
+  "model": "frozen_v04_internal_usage_cache_time_enumeration",
+  "grid_s": 1,
+  "propagation_delay_s": 0,
+  "server_48_removed": true,
+  "decimal_MB": true,
+  "deadlines": false,
+  "joint_optimization": false,
+  "transmission_calendar": false,
+  "profile": "short",
+  "cases": [
+    {
+      "name": "sat_900_n1",
+      "horizon": 900,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 1,
+      "contacts": 48,
+      "traffic": "explicit_shared_contact_stress",
+      "demands": [
+        {
+          "id": "b001",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        }
+      ]
+    },
+    {
+      "name": "sat_900_n5",
+      "horizon": 900,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 5,
+      "contacts": 48,
+      "traffic": "explicit_shared_contact_stress",
+      "demands": [
+        {
+          "id": "b001",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b002",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b003",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b004",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b005",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        }
+      ]
+    },
+    {
+      "name": "sat_900_n10",
+      "horizon": 900,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 10,
+      "contacts": 48,
+      "traffic": "explicit_shared_contact_stress",
+      "demands": [
+        {
+          "id": "b001",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b002",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b003",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b004",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b005",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b006",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b007",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b008",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b009",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b010",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        }
+      ]
+    },
+    {
+      "name": "sat_900_size600_n5",
+      "horizon": 900,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/5",
+      "buffer_MB": "30",
+      "requested": 5,
+      "contacts": 48,
+      "traffic": "explicit_shared_contact_stress",
+      "demands": [
+        {
+          "id": "b001",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/5"
+        },
+        {
+          "id": "b002",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/5"
+        },
+        {
+          "id": "b003",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/5"
+        },
+        {
+          "id": "b004",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/5"
+        },
+        {
+          "id": "b005",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/5"
+        }
+      ]
+    },
+    {
+      "name": "sat_900_size1200_n5",
+      "horizon": 900,
+      "rate_MB_s": "1/80",
+      "size_MB": "6/5",
+      "buffer_MB": "30",
+      "requested": 5,
+      "contacts": 48,
+      "traffic": "explicit_shared_contact_stress",
+      "demands": [
+        {
+          "id": "b001",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "6/5"
+        },
+        {
+          "id": "b002",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "6/5"
+        },
+        {
+          "id": "b003",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "6/5"
+        },
+        {
+          "id": "b004",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "6/5"
+        },
+        {
+          "id": "b005",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "6/5"
+        }
+      ]
+    },
+    {
+      "name": "sat_900_buffer300_n5",
+      "horizon": 900,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "3/10",
+      "requested": 5,
+      "contacts": 48,
+      "traffic": "explicit_shared_contact_stress",
+      "demands": [
+        {
+          "id": "b001",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b002",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b003",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b004",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b005",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        }
+      ]
+    },
+    {
+      "name": "sat_900_buffer600_n5",
+      "horizon": 900,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "3/5",
+      "requested": 5,
+      "contacts": 48,
+      "traffic": "explicit_shared_contact_stress",
+      "demands": [
+        {
+          "id": "b001",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b002",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b003",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b004",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b005",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        }
+      ]
+    },
+    {
+      "name": "sat_900_thesisrate_n5",
+      "horizon": 900,
+      "rate_MB_s": "1/10",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 5,
+      "contacts": 48,
+      "traffic": "explicit_shared_contact_stress",
+      "demands": [
+        {
+          "id": "b001",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b002",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b003",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b004",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        },
+        {
+          "id": "b005",
+          "source": "36",
+          "destination": "6",
+          "release": "400",
+          "size": "3/10"
+        }
+      ]
+    },
+    {
+      "name": "cold_1800_n1",
+      "horizon": 1800,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 1,
+      "contacts": 86,
+      "traffic": "explicit_shared_contact_stress",
+      "demands": [
+        {
+          "id": "b001",
+          "source": "22",
+          "destination": "5",
+          "release": "253",
+          "size": "3/10"
+        }
+      ]
+    },
+    {
+      "name": "cold_1800_n5",
+      "horizon": 1800,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 5,
+      "contacts": 86,
+      "traffic": "explicit_shared_contact_stress",
+      "demands": [
+        {
+          "id": "b001",
+          "source": "22",
+          "destination": "5",
+          "release": "253",
+          "size": "3/10"
+        },
+        {
+          "id": "b002",
+          "source": "22",
+          "destination": "5",
+          "release": "253",
+          "size": "3/10"
+        },
+        {
+          "id": "b003",
+          "source": "22",
+          "destination": "5",
+          "release": "253",
+          "size": "3/10"
+        },
+        {
+          "id": "b004",
+          "source": "22",
+          "destination": "5",
+          "release": "253",
+          "size": "3/10"
+        },
+        {
+          "id": "b005",
+          "source": "22",
+          "destination": "5",
+          "release": "253",
+          "size": "3/10"
+        }
+      ]
+    }
+  ],
+  "per_case_wall_budget_s": 20.0
+}

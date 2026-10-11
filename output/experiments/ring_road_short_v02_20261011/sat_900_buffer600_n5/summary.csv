@@ -1,0 +1,6 @@
+﻿index,bundle,source,destination,size,release,status,arrival,delivery_delay,hops,labels_created,labels_expanded,oracle_checked
+1,b001,36,6,3/10,400,ACCEPTED,431,31,1,367,1,False
+2,b002,36,6,3/10,400,ACCEPTED,431,31,1,367,1,False
+3,b003,36,6,3/10,400,NO_ROUTE_ON_GRID,,,0,0,0,False
+4,b004,36,6,3/10,400,NO_ROUTE_ON_GRID,,,0,0,0,False
+5,b005,36,6,3/10,400,NO_ROUTE_ON_GRID,,,0,0,0,False

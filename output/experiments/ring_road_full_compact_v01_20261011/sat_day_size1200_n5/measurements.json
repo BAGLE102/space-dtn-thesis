@@ -1,0 +1,34 @@
+[
+  {
+    "bundle": "b001",
+    "search_wall_s": 2.9105941001325846,
+    "created": 15662,
+    "enqueued": 125,
+    "expanded": 1,
+    "pruned_new": 15537,
+    "pruned_old": 0,
+    "start_times_tested": 15661,
+    "buffer_rejected": 0,
+    "source_buffer_rejected": 0,
+    "contact_quota_rejected": 5,
+    "contact_time_rejected": 0,
+    "max_queue_records": 124,
+    "pruned_new_ratio": 0.9920822425132495
+  },
+  {
+    "bundle": "b002",
+    "search_wall_s": 6.917407399974763,
+    "created": 31317,
+    "enqueued": 218,
+    "expanded": 2,
+    "pruned_new": 31099,
+    "pruned_old": 0,
+    "start_times_tested": 31316,
+    "buffer_rejected": 0,
+    "source_buffer_rejected": 0,
+    "contact_quota_rejected": 12,
+    "contact_time_rejected": 0,
+    "max_queue_records": 216,
+    "pruned_new_ratio": 0.9930706348192617
+  }
+]

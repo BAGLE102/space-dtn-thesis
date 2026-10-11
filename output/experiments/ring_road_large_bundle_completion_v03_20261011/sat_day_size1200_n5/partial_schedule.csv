@@ -1,0 +1,4 @@
+﻿bundle,hop,contact,sender,receiver,start,finish,arrival
+b001,1,rrn_0021,36,6,407,503,503
+b002,1,rrn_0026,36,33,411,507,507
+b002,2,rrn_0029,33,6,507,603,603

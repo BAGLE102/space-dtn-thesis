@@ -1,0 +1,82 @@
+[
+  {
+    "bundle": "b001",
+    "status": "ACCEPTED",
+    "node_path": "36 → 6",
+    "contact_path": "rrn_0021",
+    "arrival": "431",
+    "delivery_delay": "31"
+  },
+  {
+    "bundle": "b002",
+    "status": "ACCEPTED",
+    "node_path": "36 → 6",
+    "contact_path": "rrn_0021",
+    "arrival": "431",
+    "delivery_delay": "31"
+  },
+  {
+    "bundle": "b003",
+    "status": "ACCEPTED",
+    "node_path": "36 → 6",
+    "contact_path": "rrn_0021",
+    "arrival": "431",
+    "delivery_delay": "31"
+  },
+  {
+    "bundle": "b004",
+    "status": "ACCEPTED",
+    "node_path": "36 → 6",
+    "contact_path": "rrn_0021",
+    "arrival": "431",
+    "delivery_delay": "31"
+  },
+  {
+    "bundle": "b005",
+    "status": "ACCEPTED",
+    "node_path": "36 → 6",
+    "contact_path": "rrn_0021",
+    "arrival": "431",
+    "delivery_delay": "31"
+  },
+  {
+    "bundle": "b006",
+    "status": "ACCEPTED",
+    "node_path": "36 → 6",
+    "contact_path": "rrn_0021",
+    "arrival": "431",
+    "delivery_delay": "31"
+  },
+  {
+    "bundle": "b007",
+    "status": "ACCEPTED",
+    "node_path": "36 → 6",
+    "contact_path": "rrn_0021",
+    "arrival": "431",
+    "delivery_delay": "31"
+  },
+  {
+    "bundle": "b008",
+    "status": "ACCEPTED",
+    "node_path": "36 → 33 → 6",
+    "contact_path": "rrn_0026 → rrn_0029",
+    "arrival": "507",
+    "delivery_delay": "107"
+  },
+  {
+    "bundle": "b009",
+    "status": "ACCEPTED",
+    "node_path": "36 → 33 → 6",
+    "contact_path": "rrn_0026 → rrn_0029",
+    "arrival": "507",
+    "delivery_delay": "107"
+  },
+  {
+    "bundle": "b010",
+    "status": "ACCEPTED",
+    "node_path": "36 → 33 → 6",
+    "contact_path": "rrn_0026 → rrn_0029",
+    "arrival": "507",
+    "delivery_delay": "107"
+  }
+]

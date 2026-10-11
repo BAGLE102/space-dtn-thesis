@@ -1,0 +1,3 @@
+﻿case,status,requested,completed_queries,measured_searches,wall_s,horizon_s,contacts,rate_MB_s,size_MB,buffer_MB,accepted,acceptance_ratio,delay_mean_s,delay_min_s,delay_max_s,delay_population_std_s,search_wall_mean_s,labels_created_total,search_wall_min_s,search_wall_max_s,search_wall_population_std_s,pruned_new_total,buffer_peak_MB,contact_overlap_count,earliest_arrival_oracle_checked
+original_day_n1,TIMEOUT,1,0,0,120.0736908998806,86400,3172,1/80,3/10,30,,,,,,,,,,,,,,,False
+thesis_rate_day_n1,TIMEOUT,1,0,0,120.01132970000617,86400,3172,1/10,3/10,30,,,,,,,,,,,,,,,False

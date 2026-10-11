@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "checked_cases": 24,
+  "complete_query_records": 109,
+  "timeout_cases": 1,
+  "acceptance_counts": true,
+  "label_counter_identity": true,
+  "buffer_peaks_within_limits": true,
+  "overlap_counts_preserved": true,
+  "physical_conflicts_required_to_be_zero": false
+}

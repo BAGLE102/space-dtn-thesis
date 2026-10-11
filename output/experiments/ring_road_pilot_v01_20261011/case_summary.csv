@@ -1,0 +1,13 @@
+﻿case,status,requested,completed_queries,measured_searches,wall_s,horizon_s,contacts,rate_MB_s,size_MB,buffer_MB,accepted,acceptance_ratio,delay_mean_s,delay_min_s,delay_max_s,delay_population_std_s,search_wall_mean_s,labels_created_total,pruned_new_total,buffer_peak_MB,contact_overlap_count,earliest_arrival_oracle_checked
+pilot_satellite_900,COMPLETE,1,1,1,0.2897934999782592,900,48,1/80,3/10,30,1,1.0,31.0,31.0,31.0,0.0,0.03755889995954931,367,364,0.3,0,False
+pilot_cold_900,COMPLETE,1,1,1,0.36170959984883666,900,48,1/80,3/10,30,0,0.0,,,,,0.06510859983973205,397,394,0.0,0,False
+original_day_n1,TIMEOUT,1,0,0,20.030982800060883,86400,3172,1/80,3/10,30,,,,,,,,,,,,False
+original_day_n5,TIMEOUT,5,0,0,20.019877000013366,86400,3172,1/80,3/10,30,,,,,,,,,,,,False
+original_day_n10,TIMEOUT,10,0,0,20.02032250002958,86400,3172,1/80,3/10,30,,,,,,,,,,,,False
+thesis_rate_day_n1,TIMEOUT,1,0,0,20.018598800059408,86400,3172,1/10,3/10,30,,,,,,,,,,,,False
+thesis_rate_day_n5,TIMEOUT,5,0,0,20.01812110003084,86400,3172,1/10,3/10,30,,,,,,,,,,,,False
+thesis_rate_day_n10,TIMEOUT,10,0,0,20.062767199939117,86400,3172,1/10,3/10,30,,,,,,,,,,,,False
+size_600KB_day_n5,TIMEOUT,5,0,0,20.01997789996676,86400,3172,1/80,3/5,30,,,,,,,,,,,,False
+size_1200KB_day_n5,TIMEOUT,5,0,0,20.01574519998394,86400,3172,1/80,6/5,30,,,,,,,,,,,,False
+buffer_300KB_day_n5,TIMEOUT,5,0,0,20.079876399831846,86400,3172,1/80,3/10,3/10,,,,,,,,,,,,False
+buffer_600KB_day_n5,TIMEOUT,5,0,0,20.020002000033855,86400,3172,1/80,3/10,3/5,,,,,,,,,,,,False

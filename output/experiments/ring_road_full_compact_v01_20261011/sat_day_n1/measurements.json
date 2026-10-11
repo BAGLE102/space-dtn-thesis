@@ -1,0 +1,18 @@
+[
+  {
+    "bundle": "b001",
+    "search_wall_s": 4.658511100104079,
+    "created": 24879,
+    "enqueued": 130,
+    "expanded": 1,
+    "pruned_new": 24749,
+    "pruned_old": 0,
+    "start_times_tested": 24878,
+    "buffer_rejected": 0,
+    "source_buffer_rejected": 0,
+    "contact_quota_rejected": 0,
+    "contact_time_rejected": 0,
+    "max_queue_records": 129,
+    "pruned_new_ratio": 0.9948146957150896
+  }
+]

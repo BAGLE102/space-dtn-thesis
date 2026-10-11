@@ -1,0 +1,42 @@
+[
+  {
+    "bundle": "b001",
+    "status": "ACCEPTED",
+    "node_path": "36 → 6",
+    "contact_path": "rrn_0021",
+    "arrival": "503",
+    "delivery_delay": "103"
+  },
+  {
+    "bundle": "b002",
+    "status": "ACCEPTED",
+    "node_path": "36 → 33 → 6",
+    "contact_path": "rrn_0026 → rrn_0029",
+    "arrival": "603",
+    "delivery_delay": "203"
+  },
+  {
+    "bundle": "b003",
+    "status": "NO_ROUTE_ON_GRID",
+    "node_path": "",
+    "contact_path": "",
+    "arrival": "",
+    "delivery_delay": ""
+  },
+  {
+    "bundle": "b004",
+    "status": "NO_ROUTE_ON_GRID",
+    "node_path": "",
+    "contact_path": "",
+    "arrival": "",
+    "delivery_delay": ""
+  },
+  {
+    "bundle": "b005",
+    "status": "NO_ROUTE_ON_GRID",
+    "node_path": "",
+    "contact_path": "",
+    "arrival": "",
+    "delivery_delay": ""
+  }
+]

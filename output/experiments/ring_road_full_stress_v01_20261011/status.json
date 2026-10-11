@@ -1,0 +1,9 @@
+{
+  "status": "COLLECTION_COMPLETE",
+  "complete_cases": 0,
+  "timeout_cases": 12,
+  "independent_schedule_check": true,
+  "earliest_arrival_oracle_checked": false,
+  "performance_comparison_run": false,
+  "physical_simulation": false
+}

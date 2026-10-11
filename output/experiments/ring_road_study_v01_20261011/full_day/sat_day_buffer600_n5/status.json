@@ -1,0 +1,15 @@
+{
+  "status": "COMPLETE",
+  "completed_queries": 5,
+  "wall_budget_s": 120.0,
+  "no_route_inferred_from_timeout": false,
+  "original_status": {
+    "status": "COMPLETE",
+    "bundles": 5,
+    "accepted": 2,
+    "oracle_checked": false,
+    "correctness_claim": "tested_input_only",
+    "transmission_calendar_checked": false,
+    "performance_comparison_run": false
+  }
+}

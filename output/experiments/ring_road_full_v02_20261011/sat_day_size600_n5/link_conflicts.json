@@ -1,0 +1,47 @@
+[
+  {
+    "contact": "rrn_0021",
+    "bundle1": "b001",
+    "hop1": 1,
+    "bundle2": "b002",
+    "hop2": 1,
+    "overlap_start": "407",
+    "overlap_end": "455"
+  },
+  {
+    "contact": "rrn_0021",
+    "bundle1": "b001",
+    "hop1": 1,
+    "bundle2": "b003",
+    "hop2": 1,
+    "overlap_start": "407",
+    "overlap_end": "455"
+  },
+  {
+    "contact": "rrn_0021",
+    "bundle1": "b002",
+    "hop1": 1,
+    "bundle2": "b003",
+    "hop2": 1,
+    "overlap_start": "407",
+    "overlap_end": "455"
+  },
+  {
+    "contact": "rrn_0026",
+    "bundle1": "b004",
+    "hop1": 1,
+    "bundle2": "b005",
+    "hop2": 1,
+    "overlap_start": "411",
+    "overlap_end": "459"
+  },
+  {
+    "contact": "rrn_0029",
+    "bundle1": "b004",
+    "hop1": 2,
+    "bundle2": "b005",
+    "hop2": 2,
+    "overlap_start": "483",
+    "overlap_end": "531"
+  }
+]

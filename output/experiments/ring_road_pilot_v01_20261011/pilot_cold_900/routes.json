@@ -1,0 +1,10 @@
+[
+  {
+    "bundle": "b001",
+    "status": "NO_ROUTE_ON_GRID",
+    "node_path": "",
+    "contact_path": "",
+    "arrival": "",
+    "delivery_delay": ""
+  }
+]

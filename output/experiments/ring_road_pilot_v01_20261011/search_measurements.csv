@@ -1,0 +1,3 @@
+﻿case,bundle,search_wall_s,created,enqueued,expanded,pruned_new,pruned_old,start_times_tested,buffer_rejected,contact_quota_rejected,contact_time_rejected,max_queue_records,pruned_new_ratio
+pilot_satellite_900,b001,0.03755889995954931,367,3,1,364,0,366,0,0,0,2,0.994535519125683
+pilot_cold_900,b001,0.06510859983973205,397,3,3,394,0,396,0,0,2,1,0.9949494949494949

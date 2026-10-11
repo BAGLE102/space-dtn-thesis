@@ -1,0 +1,6 @@
+﻿bundle,status,hops,total_transmission_s,total_waiting_s,arrival_lower_bound_s,arrival_gap_to_lower_bound_s,earliest_arrival_certified_by_bound,no_route_certified_by_no_last_contact
+b001,ACCEPTED,1,24,7,431,0,True,False
+b002,ACCEPTED,1,24,7,431,0,True,False
+b003,NO_ROUTE_ON_GRID,,,,431,,False,False
+b004,NO_ROUTE_ON_GRID,,,,431,,False,False
+b005,NO_ROUTE_ON_GRID,,,,431,,False,False

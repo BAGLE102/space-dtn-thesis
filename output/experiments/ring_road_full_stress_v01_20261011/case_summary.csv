@@ -1,0 +1,13 @@
+﻿case,status,requested,completed_queries,measured_searches,wall_s,horizon_s,contacts,rate_MB_s,size_MB,buffer_MB,accepted,acceptance_ratio,delay_mean_s,delay_min_s,delay_max_s,delay_population_std_s,search_wall_mean_s,labels_created_total,search_wall_min_s,search_wall_max_s,search_wall_population_std_s,pruned_new_total,buffer_peak_MB,contact_overlap_count,earliest_arrival_oracle_checked
+sat_day_n1,TIMEOUT,1,0,0,20.060504500055686,86400,3172,1/80,3/10,30,,,,,,,,,,,,,,,False
+sat_day_n5,TIMEOUT,5,0,0,20.028375099878758,86400,3172,1/80,3/10,30,,,,,,,,,,,,,,,False
+sat_day_n10,TIMEOUT,10,0,0,20.020068699959666,86400,3172,1/80,3/10,30,,,,,,,,,,,,,,,False
+sat_day_size600_n5,TIMEOUT,5,0,0,20.019105199957266,86400,3172,1/80,3/5,30,,,,,,,,,,,,,,,False
+sat_day_size1200_n5,TIMEOUT,5,1,1,20.032810099888593,86400,3172,1/80,6/5,30,,,,,,,,,,,,,,,False
+sat_day_buffer300_n5,TIMEOUT,5,0,0,20.02304370002821,86400,3172,1/80,3/10,3/10,,,,,,,,,,,,,,,False
+sat_day_buffer600_n5,TIMEOUT,5,0,0,20.021448199870065,86400,3172,1/80,3/10,3/5,,,,,,,,,,,,,,,False
+sat_day_thesisrate_n5,TIMEOUT,5,0,0,20.020920800045133,86400,3172,1/10,3/10,30,,,,,,,,,,,,,,,False
+cold_day_n1,TIMEOUT,1,0,0,20.023318900028244,86400,3172,1/80,3/10,30,,,,,,,,,,,,,,,False
+cold_day_n5,TIMEOUT,5,0,0,20.019512500148267,86400,3172,1/80,3/10,30,,,,,,,,,,,,,,,False
+cold_transit_buffer300_n5,TIMEOUT,5,0,0,20.01873519993387,86400,3172,1/80,3/10,30,,,,,,,,,,,,,,,False
+cold_transit_buffer600_n5,TIMEOUT,5,0,0,20.02451159991324,86400,3172,1/80,3/10,30,,,,,,,,,,,,,,,False

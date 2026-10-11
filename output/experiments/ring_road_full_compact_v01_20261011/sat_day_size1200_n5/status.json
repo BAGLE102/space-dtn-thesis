@@ -1,0 +1,9 @@
+{
+  "status": "TIMEOUT",
+  "completed_queries": 2,
+  "wall_budget_s": 60.0,
+  "no_route_inferred_from_timeout": false,
+  "original_status": {
+    "status": "RUNNING"
+  }
+}

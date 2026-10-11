@@ -1,0 +1,11 @@
+﻿bundle,status,hops,total_transmission_s,total_waiting_s,arrival_lower_bound_s,arrival_gap_to_lower_bound_s,earliest_arrival_certified_by_bound,no_route_certified_by_no_last_contact
+b001,ACCEPTED,1,24,7,431,0,True,False
+b002,ACCEPTED,1,24,7,431,0,True,False
+b003,ACCEPTED,1,24,7,431,0,True,False
+b004,ACCEPTED,1,24,7,431,0,True,False
+b005,ACCEPTED,1,24,7,431,0,True,False
+b006,ACCEPTED,1,24,7,431,0,True,False
+b007,ACCEPTED,1,24,7,431,0,True,False
+b008,ACCEPTED,2,48,59,507,0,True,False
+b009,ACCEPTED,2,48,59,507,0,True,False
+b010,ACCEPTED,2,48,59,507,0,True,False

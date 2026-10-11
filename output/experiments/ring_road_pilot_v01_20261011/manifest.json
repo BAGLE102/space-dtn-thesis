@@ -1,0 +1,136 @@
+{
+  "source_url": "https://api.bitbucket.org/2.0/repositories/lcd-unc-ar/dtnsim/src/56d2c9835f6706563566768de646f9442a8602ab/dtnsim/simulations/hindawi_rrn/contactPlan/RingRoad_16sats_Walker_6hotspots_simtime24hs_comrange1000km.txt",
+  "source_sha256": "fe363dabdd182e292f5e3b74a28558245b2caf9d3aa7730db60d52afdb9763d2",
+  "seed": 20261011,
+  "model": "frozen_v04_internal_usage_cache_time_enumeration",
+  "grid_s": 1,
+  "propagation_delay_s": 0,
+  "server_48_removed": true,
+  "decimal_MB": true,
+  "deadlines": false,
+  "joint_optimization": false,
+  "transmission_calendar": false,
+  "cases": [
+    {
+      "name": "pilot_satellite_900",
+      "horizon": 900,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 1,
+      "contacts": 48,
+      "traffic": "anchor"
+    },
+    {
+      "name": "pilot_cold_900",
+      "horizon": 900,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 1,
+      "contacts": 48,
+      "traffic": "seeded_random"
+    },
+    {
+      "name": "original_day_n1",
+      "horizon": 86400,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 1,
+      "contacts": 3172,
+      "traffic": "seeded_random"
+    },
+    {
+      "name": "original_day_n5",
+      "horizon": 86400,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 5,
+      "contacts": 3172,
+      "traffic": "seeded_random"
+    },
+    {
+      "name": "original_day_n10",
+      "horizon": 86400,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 10,
+      "contacts": 3172,
+      "traffic": "seeded_random"
+    },
+    {
+      "name": "thesis_rate_day_n1",
+      "horizon": 86400,
+      "rate_MB_s": "1/10",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 1,
+      "contacts": 3172,
+      "traffic": "seeded_random"
+    },
+    {
+      "name": "thesis_rate_day_n5",
+      "horizon": 86400,
+      "rate_MB_s": "1/10",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 5,
+      "contacts": 3172,
+      "traffic": "seeded_random"
+    },
+    {
+      "name": "thesis_rate_day_n10",
+      "horizon": 86400,
+      "rate_MB_s": "1/10",
+      "size_MB": "3/10",
+      "buffer_MB": "30",
+      "requested": 10,
+      "contacts": 3172,
+      "traffic": "seeded_random"
+    },
+    {
+      "name": "size_600KB_day_n5",
+      "horizon": 86400,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/5",
+      "buffer_MB": "30",
+      "requested": 5,
+      "contacts": 3172,
+      "traffic": "seeded_random"
+    },
+    {
+      "name": "size_1200KB_day_n5",
+      "horizon": 86400,
+      "rate_MB_s": "1/80",
+      "size_MB": "6/5",
+      "buffer_MB": "30",
+      "requested": 5,
+      "contacts": 3172,
+      "traffic": "seeded_random"
+    },
+    {
+      "name": "buffer_300KB_day_n5",
+      "horizon": 86400,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "3/10",
+      "requested": 5,
+      "contacts": 3172,
+      "traffic": "seeded_random"
+    },
+    {
+      "name": "buffer_600KB_day_n5",
+      "horizon": 86400,
+      "rate_MB_s": "1/80",
+      "size_MB": "3/10",
+      "buffer_MB": "3/5",
+      "requested": 5,
+      "contacts": 3172,
+      "traffic": "seeded_random"
+    }
+  ],
+  "per_case_wall_budget_s": 20.0
+}

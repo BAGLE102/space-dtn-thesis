@@ -1,0 +1,17 @@
+{
+  "status": "CONSOLIDATED",
+  "full_day_complete_cases": 11,
+  "full_day_timeout_cases": 1,
+  "accepted_in_complete_cases": 45,
+  "accepted_certified_by_lower_bound": 38,
+  "all_full_day_cases_complete": false,
+  "same_model_independent_checks_passed": true,
+  "general_optimality_proven": false,
+  "physical_calendar_checked": false,
+  "full_day_runs": [
+    "ring_road_full_v02_20261011",
+    "ring_road_n10_completion_v03_20261011",
+    "ring_road_large_bundle_completion_v03_20261011"
+  ],
+  "short_window_run": "ring_road_short_v02_20261011"
+}

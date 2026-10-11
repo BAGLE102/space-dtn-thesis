@@ -86,3 +86,5 @@ python -m unittest discover -s tests -v
 
 
 桌面實驗GUI：`python -m src.experiments.gui`，或使用 `launch_experiment_gui.pyw`。操作說明見 [desktop_gui_v01.md](docs/desktop_gui_v01.md)。
+
+Ring Road初步實驗：[結果報告](output/experiments/ring_road_study_v01_20261011/report.md)、[完整一天摘要](output/experiments/ring_road_study_v01_20261011/full_day_summary.csv)、[實驗方法與重現](docs/ring_road_experiment_protocol_v01.md)。完整一天12組壓力設定有11組完成、1組逾時；隨機單包兩組仍逾時。這不是完整論文效能比較，且aggregate模型的同Contact傳送重疊尚未修正。
