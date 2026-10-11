@@ -1,0 +1,12 @@
+{
+  "cases": 9,
+  "queries": 18,
+  "steps_checked": 179,
+  "buffer_event_peak_checked": true,
+  "javascript_errors": [],
+  "mobile_width": {
+    "width": 288,
+    "scroll": 288
+  },
+  "playback_controls_checked": true
+}

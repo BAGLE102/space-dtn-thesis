@@ -1,0 +1,143 @@
+<div id="dtn-process-view">
+  <style>
+    #dtn-process-view {font-family: "DFKai-SB", "標楷體", serif; color:var(--foreground)}
+    #dtn-process-view .graph {display:block;width:100%;overflow:visible}
+    #dtn-process-view .graph text {fill:var(--foreground);font-size:14px}
+    #dtn-process-view .section {margin-block:16px}
+    #dtn-process-view .meter {height:10px;background:var(--muted);margin-block:6px}
+    #dtn-process-view .fill {height:100%;background:var(--viz-series-1)}
+    #dtn-process-view .buffers {display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:16px}
+    #dtn-process-view [hidden] {display:none!important}
+  </style>
+  <h3>Label Setting 過程重播</h3>
+  <div class="viz-controls">
+    <label class="form-label">實驗案例<select class="form-select" data-role="case"></select></label>
+    <label class="form-label">觀看模式<select class="form-select" data-role="mode"><option value="search">搜尋步驟</option><option value="schedule">已接受排程</option></select></label>
+    <label class="form-label" data-role="bundle-wrap">路由需求<select class="form-select" data-role="bundle"></select></label>
+  </div>
+  <div class="text-small section">既有 v04 執行紀錄 · 保留時間枚舉 · 內部仍含 usage cache · 非 SimPy</div>
+  <div class="viz-controls">
+    <button class="btn" type="button" data-role="prev">上一步</button>
+    <button class="btn btn-primary" type="button" data-role="play">播放</button>
+    <button class="btn" type="button" data-role="next">下一步</button>
+    <span class="tabular-nums" data-role="position"></span>
+  </div>
+  <label class="form-label section">進度<input class="form-range" data-role="slider" type="range" min="0" max="1" step="1" value="0"></label>
+  <div class="section" aria-live="polite" data-role="status"></div>
+  <svg class="graph" data-role="graph" role="img" aria-label="目前搜尋的Contact或選定排程的傳輸狀態"></svg>
+  <div class="section" data-role="detail"></div>
+  <section data-role="search-panel">
+    <div class="section" data-role="queue-before"></div>
+    <h3>Q：這一步之後的待處理 Labels</h3>
+    <div class="table-responsive"><table class="table table-sm">
+      <thead><tr><th>Label</th><th>目前節點</th><th>最後 Contact</th><th>抵達（秒）</th><th>起送（秒）</th><th>pred</th></tr></thead>
+      <tbody data-role="queue"></tbody>
+    </table></div>
+  </section>
+  <section data-role="schedule-panel" hidden>
+    <h3>各節點 Buffer 占用（MB）</h3>
+    <div class="buffers" data-role="buffers"></div>
+    <div class="section" data-role="bundle-status"></div>
+    <div class="text-small section">依已接受排程計算；事件瞬間顯示交付前峰值。未模擬無線電互斥、遺失或重傳。</div>
+  </section>
+</div>
+<script type="application/json" id="dtn-process-data">__DTN_DATA__</script>
+<script>
+(() => {
+  const root=document.getElementById('dtn-process-view');
+  const data=JSON.parse(document.getElementById('dtn-process-data').textContent);
+  const el=name=>root.querySelector('[data-role="'+name+'"]');
+  const num=value=>{if(value==null)return 0;const p=String(value).split('/');return Number(p[0])/(p.length>1?Number(p[1]):1)};
+  const fmt=x=>Number.isInteger(x)?String(x):Number(x.toFixed(3)).toString();
+  const esc=x=>String(x??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  let ci=0,bi=1,step=0,time=0,mode='search',timer=null;
+  const stop=()=>{clearInterval(timer);timer=null;el('play').textContent='播放'};
+  const current=()=>data[ci];
+  const record=()=>current().records[bi];
+  function steps(){const r=record();return r.labels.L0?[{event:'INIT',queue_before:[],queue_after:['L0']},...r.trace]:r.trace}
+  function save(){if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{case:current().name,bundle:record().bundle.id,mode,step,time},privateContent:null}).catch(()=>{});}
+  function labelsAt(){const active=new Set(record().labels.L0?['L0']:[]);for(const e of steps().slice(0,step+1)){if(e.new_label&&!e.dominated_by?.length)active.add(e.new_label);for(const id of e.removed||[])active.delete(id)}return active}
+  function chain(id){const c=[];let l=record().labels[id],guard=0;while(l?.pred!=null&&guard++<10000){c.push(l.c);l=record().labels[l.pred]}return c}
+  function explain(e){
+    const labels=record().labels,c=current().contacts.find(c=>c.id===e.contact),S=num(record().bundle.size),buf=current().buffers;
+    let title='',detail='';
+    switch(e.event){
+      case 'INIT':title='建立起始 Label L0，放入 Q';detail=`${record().bundle.source} → ${record().bundle.dest}；生成 ${record().bundle.g} 秒；大小 ${record().bundle.size} MB。`;break;
+      case 'POP':title=`取出 ${e.selected}，從 ${labels[e.selected].node} 嘗試下一跳`;detail='取出的是最早抵達的有效 Label；此時尚未選定完整路徑。';break;
+      case 'EXTEND':
+        if(e.reason!=='PASS'){title=`嘗試 ${e.contact}，${e.s} 秒起送：${e.reason==='BUFFER'?'Buffer 超限':'不符合時間或容量限制'}`;}
+        else if(e.dominated_by?.length){title=`候選 ${e.new_label} 被 ${e.dominated_by.join('、')} 支配，不加入 Q`;}
+        else {title=`${e.contact} 檢查通過，建立 ${e.new_label} 並加入 Q`;}
+        detail=`發送 ${e.s}–${e.f} 秒；接收 ${e.h}–${e.arrival} 秒。`;
+        if(e.sender_peak!=null)detail+=` ${c.u} 峰值 ${e.sender_peak}/${buf[c.u]} MB（第 ${e.sender_peak_time} 秒）；${c.v} 峰值 ${e.receiver_peak}/${buf[c.v]} MB（第 ${e.receiver_peak_time} 秒）。`;
+        if(e.dominated_by?.length)detail+=' 本次候選未被接受；不是先預約再取消。';
+        if(e.removed?.length)detail+=` 標記 ${e.removed.join('、')} 為遭支配，保留回溯紀錄。`;
+        break;
+      case 'CONTACT_QUOTA_FAIL':title=`跳過 ${e.contact}：剩餘容量不足`;detail=`候選前綴已用 ${e.used} MB，加本次 ${S} MB，大於剩餘 ${e.quota} MB。未進行後續Buffer檢查。`;break;
+      case 'CONTACT_TIME_FAIL':title=`跳過 ${e.contact}：來不及發送完整包`;detail=`最早可起送 ${e.earliest} 秒，最晚須於 ${e.latest} 秒起送。`;break;
+      case 'GOAL':title=`取出目的地 Label ${e.selected}：第 ${record().arrival} 秒抵達`;detail=`沿 pred 回溯 ${record().hops.map(h=>h[0]).join(' → ')}；完整排程獨立檢查後才接受與更新資源。`;break;
+      case 'STALE':title=`跳過已遭支配的 ${e.selected}`;detail='它仍暫留於佇列，但不再延伸。';break;
+      case 'SOURCE_FAIL':title='來源節點於生成時無法容納整包';detail='這是目前既有程式的初始化檢查。';break;
+      case 'EXHAUSTED':title='Q 已耗盡：格點與時間範圍內無路徑';detail='此包不扣Contact容量，也不提交Buffer預約。';break;
+      default:title=e.event;
+    }
+    return [title,detail];
+  }
+  function graph(e){
+    const cs=current().contacts,nodes=Object.keys(current().buffers),svg=el('graph');
+    const w=Math.max(280,svg.getBoundingClientRect().width),h=280;
+    svg.setAttribute('viewBox',`0 0 ${w} ${h}`);svg.setAttribute('height',h);
+    const pos={};
+    if(nodes.length===5&&nodes.every(n=>['X','A','B','C','D'].includes(n))){pos.X=[.1*w,55];pos.A=[.1*w,225];pos.B=[.5*w,70];pos.C=[.5*w,225];pos.D=[.9*w,145]}
+    else nodes.forEach((n,i)=>pos[n]=[w*(i+1)/(nodes.length+1),140]);
+    const selected=e?.selected?record().labels[e.selected]?.node:null;
+    const chosen=mode==='search'?chain(e?.event==='GOAL'?e.selected:e?.selected):[];
+    const markup=['<title>Contact拓樸與目前步驟</title>'];
+    cs.forEach(c=>{
+      const [x1,y1]=pos[c.u],[x2,y2]=pos[c.v],dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy),ux=dx/len,uy=dy/len;
+      const peers=cs.filter(p=>p.u===c.u&&p.v===c.v),offset=(peers.indexOf(c)-(peers.length-1)/2)*42;
+      const cx=(x1+x2)/2-uy*offset,cy=(y1+y2)/2+ux*offset;
+      const sx=x1+ux*22,sy=y1+uy*22,ex=x2-ux*24,ey=y2-uy*24;
+      const active=mode==='search'?e?.contact===c.id:current().schedules.some(s=>s.contact===c.id&&time>=num(s.start)&&time<num(s.finish));
+      const inPath=chosen.includes(c.id),bad=active&&mode==='search'&&(e.reason&&e.reason!=='PASS'||e.event.includes('FAIL'));
+      const color=bad?'var(--destructive)':active?'var(--viz-series-1)':inPath?'var(--viz-series-2)':'var(--border)';
+      const mx=(sx+2*cx+ex)/4,my=(sy+2*cy+ey)/4;
+      const tx=ex-cx,ty=ey-cy,tl=Math.hypot(tx,ty),ax=tx/tl,ay=ty/tl;
+      markup.push(`<g data-tooltip="${esc(c.id+': '+c.u+' → '+c.v+'；時窗 '+c.start+'–'+c.end+' 秒；速率 '+c.rate+' MB/s；傳播 '+c.delay+' 秒')}" role="img" aria-label="${esc(c.id+' '+c.u+'到'+c.v)}"><path d="M${sx},${sy} Q${cx},${cy} ${ex},${ey}" fill="none" stroke="${color}" stroke-width="${active?3:inPath?2:1.5}"/><path d="M${ex-ax*8+ay*4},${ey-ay*8-ax*4} L${ex},${ey} L${ex-ax*8-ay*4},${ey-ay*8+ax*4}" fill="none" stroke="${color}"/><text x="${mx-uy*10}" y="${my+ux*10-5}" text-anchor="middle">${esc(c.id)}</text></g>`);
+    });
+    nodes.forEach(n=>{const [x,y]=pos[n];const on=mode==='search'&&n===selected;markup.push(`<circle cx="${x}" cy="${y}" r="21" fill="var(--background)" stroke="${on?'var(--viz-series-1)':'var(--border)'}" stroke-width="${on?3:1.5}"/><text x="${x}" y="${y+5}" text-anchor="middle">${esc(n)}</text>`)});
+    svg.innerHTML=markup.join('');
+  }
+  function curveValue(curve,t){let max=0;for(const [a,b,y0,y1] of curve){const lo=num(a),hi=num(b);if(t>=lo&&t<=hi)max=Math.max(max,hi===lo?num(y0):num(y0)+(num(y1)-num(y0))*(t-lo)/(hi-lo))}return max}
+  function draw(){
+    const search=mode==='search';el('search-panel').hidden=!search;el('schedule-panel').hidden=search;el('bundle-wrap').hidden=!search;
+    el('slider').step=search?'1':'.25';el('slider').max=search?steps().length-1:num(current().horizon);el('slider').value=search?step:time;
+    el('prev').textContent=search?'上一步':'前 0.25 秒';el('next').textContent=search?'下一步':'後 0.25 秒';
+    el('position').textContent=search?`${step+1} / ${steps().length}`:`第 ${fmt(time)} 秒`;
+    el('prev').disabled=search?step===0:time===0;el('next').disabled=search?step>=steps().length-1:time>=num(current().horizon);
+    if(search){const e=steps()[step],active=labelsAt();const [title,detail]=explain(e);el('status').textContent=title;el('detail').textContent=detail;graph(e);
+      el('queue-before').textContent='Q 變化：['+(e.queue_before||[]).join(', ')+'] → ['+(e.queue_after||[]).join(', ')+']';
+      el('queue').innerHTML=(e.queue_after||[]).map(id=>{const l=record().labels[id];return '<tr>'+[id+(active.has(id)?'':'（遭支配）'),l.node,l.c,l.A,l.s,l.pred].map(x=>'<td>'+esc(x)+'</td>').join('')+'</tr>'}).join('')||'<tr><td colspan="6">Q 為空</td></tr>';
+    }else{
+      const running=current().schedules.filter(s=>time>=num(s.start)&&time<num(s.finish));
+      el('status').textContent=running.length?running.map(s=>`${s.bundle} 正經 ${s.contact} 發送`).join('；'):'目前沒有發送中的已接受傳輸';
+      el('detail').textContent=current().conflicts.length?'此案例含同Contact時段重疊：總容量模型接受，不代表實體鏈路可執行。':'已接受排程重播；不顯示搜尋中被捨棄的候選。';
+      graph(null);
+      el('buffers').innerHTML=Object.entries(current().buffers).map(([node,capacity])=>{const used=(current().occupancy[node]||[]).reduce((sum,curve)=>sum+curveValue(curve,time),0),cap=num(capacity);return `<div><span>${esc(node)}：${fmt(used)} / ${esc(capacity)} MB</span><div class="meter"><div class="fill" style="width:${Math.min(100,cap?100*used/cap:0)}%"></div></div></div>`}).join('');
+      el('bundle-status').innerHTML=current().records.map(r=>{let state='未生成';if(r.arrival==null)state='未接受（無路徑）';else if(time>num(r.arrival))state='已交付';else if(time===num(r.arrival))state='整包抵達，顯示交付前峰值';else if(time>=num(r.bundle.g)){const rows=current().schedules.filter(s=>s.bundle===r.bundle.id);const tx=rows.find(s=>time>=num(s.start)&&time<num(s.finish));const rx=rows.find(s=>time>=num(s.receive_start)&&time<num(s.arrival));state=[tx?`經 ${tx.contact} 發送`:null,rx?`${rx.receiver} 接收中`:null].filter(Boolean).join('、')||'持有整包，等待下一跳'}return `<div>${esc(r.bundle.id)}：${esc(state)}</div>`}).join('');
+    }
+  }
+  function populate(){el('case').innerHTML=data.map((c,i)=>`<option value="${i}">${esc(c.description)}</option>`).join('');el('case').value=ci;
+    el('bundle').innerHTML=current().records.map((r,i)=>`<option value="${i}">${esc(r.bundle.id)}：${esc(r.bundle.source)} → ${esc(r.bundle.dest)}</option>`).join('');bi=Math.min(bi,current().records.length-1);el('bundle').value=bi;el('mode').value=mode;draw()}
+  function move(direction){if(mode==='search')step=Math.max(0,Math.min(steps().length-1,step+direction));else time=Math.max(0,Math.min(num(current().horizon),time+direction*.25));draw()}
+  el('prev').onclick=()=>{stop();move(-1);save()};el('next').onclick=()=>{stop();move(1);save()};
+  el('play').onclick=()=>{if(timer){stop();save();return}if(el('next').disabled){step=0;time=0;draw()}el('play').textContent='暫停';timer=setInterval(()=>{move(1);if(el('next').disabled){stop();save()}},mode==='search'?1200:250)};
+  el('slider').oninput=e=>{stop();if(mode==='search')step=Number(e.target.value);else time=Number(e.target.value);draw()};el('slider').onchange=save;
+  el('case').onchange=e=>{stop();ci=Number(e.target.value);bi=1;step=0;time=0;populate();save()};
+  el('bundle').onchange=e=>{stop();bi=Number(e.target.value);step=0;draw();save()};
+  el('mode').onchange=e=>{stop();mode=e.target.value;draw();save()};
+  function restore(state){if(!state?.modelContent)return;const s=state.modelContent;const found=data.findIndex(c=>c.name===s.case);if(found<0)return;stop();ci=found;bi=Math.max(0,current().records.findIndex(r=>r.bundle.id===s.bundle));mode=s.mode==='schedule'?'schedule':'search';step=Math.max(0,Math.min(steps().length-1,Number(s.step)||0));time=Math.max(0,Math.min(num(current().horizon),Number(s.time)||0));}
+  restore(window.openai?.widgetState);populate();new ResizeObserver(()=>graph(mode==='search'?steps()[step]:null)).observe(el('graph'));
+  window.addEventListener('openai:set_globals',event=>{restore(event.detail?.globals?.widgetState);populate()});
+})();
+</script>

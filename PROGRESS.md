@@ -104,3 +104,11 @@
 - 保留時間枚舉與舊內部usage cache，未改路由核心、未使用SimPy或做效能比較。
 - 新增失敗即停與證據保留的批次測試；全套40項測試通過。
 - 說明：`docs/small_experiment_suite_v01.md`；結果：`output/experiments/small_suite_v01_20261011/`。
+
+
+## 演算法互動過程（2026-10-11）
+
+- 新增9案例搜尋與已接受排程的互動重播，展示Contact延伸、枚舉、拒絕原因、Dominance、Q及Buffer即時占用。
+- 直接讀取既有v04紀錄，未改演算法；持續標示內部usage cache與非SimPy界線。
+- 瀏覽器核對9案例／18查詢／179步、播放、事件峰值與釋放，以及320px寬度；保存截圖與browser_checks.json。
+- 說明：`docs/process_visualization_v01.md`；產生器：`src/experiments/process_view.py`。
