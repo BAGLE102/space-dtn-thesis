@@ -1,0 +1,111 @@
+{
+  "name": "01_ppt_baseline",
+  "contacts": [
+    {
+      "id": "c1",
+      "u": "X",
+      "v": "B",
+      "start": "2",
+      "end": "3",
+      "rate": "4",
+      "delay": "0",
+      "quota": "4"
+    },
+    {
+      "id": "c2",
+      "u": "B",
+      "v": "D",
+      "start": "6",
+      "end": "7",
+      "rate": "4",
+      "delay": "1",
+      "quota": "4"
+    },
+    {
+      "id": "c3",
+      "u": "A",
+      "v": "B",
+      "start": "1",
+      "end": "2",
+      "rate": "4",
+      "delay": "0",
+      "quota": "4"
+    },
+    {
+      "id": "c4",
+      "u": "A",
+      "v": "B",
+      "start": "7",
+      "end": "9",
+      "rate": "4",
+      "delay": "0",
+      "quota": "8"
+    },
+    {
+      "id": "c5",
+      "u": "B",
+      "v": "D",
+      "start": "10",
+      "end": "11",
+      "rate": "4",
+      "delay": "1",
+      "quota": "4"
+    },
+    {
+      "id": "c6",
+      "u": "A",
+      "v": "C",
+      "start": "1",
+      "end": "2",
+      "rate": "4",
+      "delay": "1",
+      "quota": "4"
+    },
+    {
+      "id": "c7",
+      "u": "C",
+      "v": "D",
+      "start": "4",
+      "end": "5",
+      "rate": "4",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c8",
+      "u": "C",
+      "v": "D",
+      "start": "2",
+      "end": "3",
+      "rate": "4",
+      "delay": "0",
+      "quota": "4"
+    }
+  ],
+  "bundles": [
+    {
+      "id": "bundle1",
+      "source": "X",
+      "dest": "D",
+      "g": "0",
+      "size": "4"
+    },
+    {
+      "id": "bundle2",
+      "source": "A",
+      "dest": "D",
+      "g": "1",
+      "size": "4"
+    }
+  ],
+  "buffers": {
+    "X": "4",
+    "A": "4",
+    "B": "4",
+    "C": "4",
+    "D": "4"
+  },
+  "background": {},
+  "delta": "1",
+  "horizon": "12"
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "name": "09_aggregate_overlap",
+  "description": "模型限制示例：同contact的傳輸時間重疊，非同模型錯誤",
+  "units": {
+    "time": "s",
+    "data": "MB",
+    "rate": "MB/s"
+  },
+  "time_step": "1",
+  "horizon": "4",
+  "nodes": [
+    {
+      "id": "A",
+      "buffer": "4"
+    },
+    {
+      "id": "D",
+      "buffer": "4"
+    }
+  ],
+  "bundles": [
+    {
+      "id": "bundle1",
+      "source": "A",
+      "destination": "D",
+      "release": "0",
+      "size": "2"
+    },
+    {
+      "id": "bundle2",
+      "source": "A",
+      "destination": "D",
+      "release": "0",
+      "size": "2"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "link",
+      "source": "A",
+      "target": "D",
+      "start": "0",
+      "end": "4",
+      "rate": "1",
+      "delay": "0",
+      "remaining_capacity": "4"
+    }
+  ]
+}

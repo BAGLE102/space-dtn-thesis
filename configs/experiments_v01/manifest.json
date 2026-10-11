@@ -1,0 +1,90 @@
+{
+  "model": "frozen_v04_finite_grid_aggregate_capacity",
+  "internal_usage_cache": true,
+  "label_U_removed_implementation": false,
+  "simpy_used": false,
+  "performance_comparison": false,
+  "cases": [
+    {
+      "config": "01_ppt_baseline.json",
+      "description": "PPT原始案例",
+      "expected_arrivals": [
+        "8",
+        "12"
+      ],
+      "expected_contact_conflicts": 0
+    },
+    {
+      "config": "02_buffer_B_2.json",
+      "description": "僅B的Buffer縮小為2MB",
+      "expected_arrivals": [
+        null,
+        null
+      ],
+      "expected_contact_conflicts": 0
+    },
+    {
+      "config": "03_buffer_B_8.json",
+      "description": "僅B的Buffer增加為8MB",
+      "expected_arrivals": [
+        "8",
+        "12"
+      ],
+      "expected_contact_conflicts": 0
+    },
+    {
+      "config": "04_quota_c1_2.json",
+      "description": "c1剩餘容量2MB，第一包不可通過",
+      "expected_arrivals": [
+        null,
+        "8"
+      ],
+      "expected_contact_conflicts": 0
+    },
+    {
+      "config": "05_delay_c2_2.json",
+      "description": "c2傳播延遲由1秒增至2秒",
+      "expected_arrivals": [
+        "9",
+        "12"
+      ],
+      "expected_contact_conflicts": 0
+    },
+    {
+      "config": "06_quota_c7_4.json",
+      "description": "c7容量增加為4MB，開放經C的路徑",
+      "expected_arrivals": [
+        "8",
+        "5"
+      ],
+      "expected_contact_conflicts": 0
+    },
+    {
+      "config": "07_reverse_order.json",
+      "description": "固定規劃順序反轉，生成時間不變",
+      "expected_arrivals": [
+        "8",
+        null
+      ],
+      "expected_contact_conflicts": 0
+    },
+    {
+      "config": "08_grid_half.json",
+      "description": "時間格點由1秒改為0.5秒",
+      "expected_arrivals": [
+        "8",
+        "12"
+      ],
+      "expected_contact_conflicts": 0
+    },
+    {
+      "config": "09_aggregate_overlap.json",
+      "description": "模型限制示例：同contact的傳輸時間重疊，非同模型錯誤",
+      "expected_arrivals": [
+        "2",
+        "2"
+      ],
+      "expected_contact_conflicts": 1
+    }
+  ]
+}

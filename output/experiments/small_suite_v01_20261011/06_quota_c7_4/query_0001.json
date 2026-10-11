@@ -1,0 +1,225 @@
+{
+  "index": 1,
+  "bundle": {
+    "id": "bundle1",
+    "source": "X",
+    "dest": "D",
+    "g": "0",
+    "size": "4"
+  },
+  "status": "ACCEPTED",
+  "arrival": "8",
+  "hops": [
+    [
+      "c1",
+      "2"
+    ],
+    [
+      "c2",
+      "6"
+    ]
+  ],
+  "labels": {
+    "L0": {
+      "id": "L0",
+      "c": null,
+      "A": "0",
+      "s": null,
+      "pred": null,
+      "node": "X",
+      "is_source_label": true,
+      "active": true,
+      "processed": true
+    },
+    "L1": {
+      "id": "L1",
+      "c": "c1",
+      "A": "3",
+      "s": "2",
+      "pred": "L0",
+      "node": "B",
+      "is_source_label": false,
+      "active": true,
+      "processed": true
+    },
+    "L2": {
+      "id": "L2",
+      "c": "c2",
+      "A": "8",
+      "s": "6",
+      "pred": "L1",
+      "node": "D",
+      "is_source_label": false,
+      "active": true,
+      "processed": false
+    },
+    "L3": {
+      "id": "L3",
+      "c": "c5",
+      "A": "12",
+      "s": "10",
+      "pred": "L1",
+      "node": "D",
+      "is_source_label": false,
+      "active": true,
+      "processed": false
+    }
+  },
+  "trace": [
+    {
+      "event": "POP",
+      "queue_before": [
+        "L0"
+      ],
+      "selected": "L0",
+      "queue_after": []
+    },
+    {
+      "event": "EXTEND",
+      "selected": "L0",
+      "contact": "c1",
+      "queue_before": [],
+      "temporal": true,
+      "quota": true,
+      "s": "2",
+      "f": "3",
+      "h": "2",
+      "arrival": "3",
+      "sender_peak": "4",
+      "sender_peak_time": "0",
+      "receiver_peak": "4",
+      "receiver_peak_time": "3",
+      "reason": "PASS",
+      "new_label": "L1",
+      "removed": [],
+      "queue_after": [
+        "L1"
+      ]
+    },
+    {
+      "event": "POP",
+      "queue_before": [
+        "L1"
+      ],
+      "selected": "L1",
+      "queue_after": []
+    },
+    {
+      "event": "EXTEND",
+      "selected": "L1",
+      "contact": "c2",
+      "queue_before": [],
+      "temporal": true,
+      "quota": true,
+      "s": "6",
+      "f": "7",
+      "h": "7",
+      "arrival": "8",
+      "sender_peak": "4",
+      "sender_peak_time": "3",
+      "receiver_peak": "4",
+      "receiver_peak_time": "8",
+      "reason": "PASS",
+      "new_label": "L2",
+      "removed": [],
+      "queue_after": [
+        "L2"
+      ]
+    },
+    {
+      "event": "EXTEND",
+      "selected": "L1",
+      "contact": "c5",
+      "queue_before": [
+        "L2"
+      ],
+      "temporal": true,
+      "quota": true,
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "arrival": "12",
+      "sender_peak": "4",
+      "sender_peak_time": "3",
+      "receiver_peak": "4",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "new_label": "L3",
+      "removed": [],
+      "queue_after": [
+        "L2",
+        "L3"
+      ]
+    },
+    {
+      "event": "GOAL",
+      "queue_before": [
+        "L2",
+        "L3"
+      ],
+      "selected": "L2",
+      "queue_after": [
+        "L3"
+      ]
+    }
+  ],
+  "stats": {
+    "created": 4,
+    "enqueued": 4,
+    "expanded": 2,
+    "pruned_new": 0,
+    "pruned_old": 0
+  },
+  "independent_schedule_check": {
+    "feasible": true,
+    "arrival": "8",
+    "usage": {
+      "c1": "4",
+      "c2": "4"
+    },
+    "peaks": {
+      "X": {
+        "value": "4",
+        "time": "0"
+      },
+      "A": {
+        "value": "0",
+        "time": "0"
+      },
+      "B": {
+        "value": "4",
+        "time": "3"
+      },
+      "C": {
+        "value": "0",
+        "time": "0"
+      },
+      "D": {
+        "value": "4",
+        "time": "8"
+      }
+    }
+  },
+  "oracle_checked": true,
+  "oracle_arrival": "8",
+  "quota_before": {
+    "c1": "4",
+    "c2": "4",
+    "c3": "4",
+    "c4": "8",
+    "c5": "4",
+    "c6": "4",
+    "c7": "4",
+    "c8": "4"
+  },
+  "quota_after": {
+    "c1": "0",
+    "c2": "0",
+    "c3": "4",
+    "c4": "8",
+    "c5": "4",
+    "c6": "4",
+    "c7": "4",
+    "c8": "4"
+  }
+}

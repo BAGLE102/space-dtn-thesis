@@ -1,0 +1,19 @@
+﻿case,bundle,status,node_path,contacts,arrival,delay,labels_created,labels_expanded,labels_pruned,oracle_checked,arrival_error_s
+01_ppt_baseline,bundle1,ACCEPTED,X → B → D,c1 → c2,8,8,4,2,0,True,0
+01_ppt_baseline,bundle2,ACCEPTED,A → B → D,c4 → c5,12,11,6,4,1,True,0
+02_buffer_B_2,bundle1,NO_ROUTE_ON_GRID,,,,,1,1,0,True,
+02_buffer_B_2,bundle2,NO_ROUTE_ON_GRID,,,,,2,2,0,True,
+03_buffer_B_8,bundle1,ACCEPTED,X → B → D,c1 → c2,8,8,4,2,0,True,0
+03_buffer_B_8,bundle2,ACCEPTED,A → B → D,c3 → c5,12,11,7,4,1,True,0
+04_quota_c1_2,bundle1,NO_ROUTE_ON_GRID,,,,,1,1,0,True,
+04_quota_c1_2,bundle2,ACCEPTED,A → B → D,c3 → c2,8,7,8,4,1,True,0
+05_delay_c2_2,bundle1,ACCEPTED,X → B → D,c1 → c2,9,9,4,2,0,True,0
+05_delay_c2_2,bundle2,ACCEPTED,A → B → D,c4 → c5,12,11,6,4,1,True,0
+06_quota_c7_4,bundle1,ACCEPTED,X → B → D,c1 → c2,8,8,4,2,0,True,0
+06_quota_c7_4,bundle2,ACCEPTED,A → C → D,c6 → c7,5,4,6,3,1,True,0
+07_reverse_order,bundle2,ACCEPTED,A → B → D,c3 → c2,8,7,8,4,1,True,0
+07_reverse_order,bundle1,NO_ROUTE_ON_GRID,,,,,1,1,0,True,
+08_grid_half,bundle1,ACCEPTED,X → B → D,c1 → c2,8,8,4,2,0,True,0
+08_grid_half,bundle2,ACCEPTED,A → B → D,c4 → c5,12,11,7,4,2,True,0
+09_aggregate_overlap,bundle1,ACCEPTED,A → D,link,2,2,4,1,2,True,0
+09_aggregate_overlap,bundle2,ACCEPTED,A → D,link,2,2,4,1,2,True,0

@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE",
+  "cases": 9,
+  "bundles": 18,
+  "oracle_match": true,
+  "expected_match": true,
+  "internal_usage_cache": true,
+  "simpy_used": false,
+  "performance_comparison_run": false,
+  "known_model_boundary_cases": [
+    "09_aggregate_overlap"
+  ]
+}

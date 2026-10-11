@@ -1,0 +1,80 @@
+{
+  "index": 1,
+  "bundle": {
+    "id": "bundle1",
+    "source": "X",
+    "dest": "D",
+    "g": "0",
+    "size": "4"
+  },
+  "status": "NO_ROUTE_ON_GRID",
+  "arrival": null,
+  "hops": [],
+  "labels": {
+    "L0": {
+      "id": "L0",
+      "c": null,
+      "A": "0",
+      "s": null,
+      "pred": null,
+      "node": "X",
+      "is_source_label": true,
+      "active": true,
+      "processed": true
+    }
+  },
+  "trace": [
+    {
+      "event": "POP",
+      "queue_before": [
+        "L0"
+      ],
+      "selected": "L0",
+      "queue_after": []
+    },
+    {
+      "event": "CONTACT_QUOTA_FAIL",
+      "selected": "L0",
+      "contact": "c1",
+      "used": 0,
+      "quota": "2",
+      "queue_before": [],
+      "queue_after": []
+    },
+    {
+      "event": "EXHAUSTED",
+      "queue_before": [],
+      "queue_after": []
+    }
+  ],
+  "stats": {
+    "created": 1,
+    "enqueued": 1,
+    "expanded": 1,
+    "pruned_new": 0,
+    "pruned_old": 0
+  },
+  "independent_schedule_check": null,
+  "oracle_checked": true,
+  "oracle_arrival": null,
+  "quota_before": {
+    "c1": "2",
+    "c2": "4",
+    "c3": "4",
+    "c4": "8",
+    "c5": "4",
+    "c6": "4",
+    "c7": "2",
+    "c8": "4"
+  },
+  "quota_after": {
+    "c1": "2",
+    "c2": "4",
+    "c3": "4",
+    "c4": "8",
+    "c5": "4",
+    "c6": "4",
+    "c7": "2",
+    "c8": "4"
+  }
+}

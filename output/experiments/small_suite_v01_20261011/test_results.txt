@@ -1,0 +1,45 @@
+test_baseline_and_known_boundary_are_distinguished (test_batch_experiments.BatchExperiments.test_baseline_and_known_boundary_are_distinguished) ... ok
+test_expectation_failure_stops_later_cases_and_keeps_evidence (test_batch_experiments.BatchExperiments.test_expectation_failure_stops_later_cases_and_keeps_evidence) ... ok
+test_all_enumerated_continuations_preserved (test_dominance.DominanceChecks.test_all_enumerated_continuations_preserved) ... ok
+test_pruning_reduces_enqueued_labels_and_not_value (test_dominance.DominanceChecks.test_pruning_reduces_enqueued_labels_and_not_value) ... ok
+test_resource_comparison_not_total_sum (test_dominance.DominanceChecks.test_resource_comparison_not_total_sum) ... ok
+test_waiting_counterexample_same_usage (test_dominance.DominanceChecks.test_waiting_counterexample_same_usage) ... ok
+test_csv_path_is_relative_to_config_not_current_directory (test_experiment_config.ScenarioConfigChecks.test_csv_path_is_relative_to_config_not_current_directory) ... ok
+test_csv_scenario_matches_existing_walkthrough (test_experiment_config.ScenarioConfigChecks.test_csv_scenario_matches_existing_walkthrough) ... ok
+test_decimal_literals_are_not_rounded_by_json_parser (test_experiment_config.ScenarioConfigChecks.test_decimal_literals_are_not_rounded_by_json_parser) ... ok
+test_invalid_fields_fail_before_search (test_experiment_config.ScenarioConfigChecks.test_invalid_fields_fail_before_search) ... ok
+test_isolated_node_and_zero_buffer_allowed (test_experiment_config.ScenarioConfigChecks.test_isolated_node_and_zero_buffer_allowed) ... ok
+test_legacy_invalid_initial_occupancy_rejected (test_experiment_config.ScenarioConfigChecks.test_legacy_invalid_initial_occupancy_rejected) ... ok
+test_legacy_saved_case_is_importable (test_experiment_config.ScenarioConfigChecks.test_legacy_saved_case_is_importable) ... ok
+test_malformed_csv_and_missing_file_are_rejected (test_experiment_config.ScenarioConfigChecks.test_malformed_csv_and_missing_file_are_rejected) ... ok
+test_unicode_nodes_and_exact_fractions (test_experiment_config.ScenarioConfigChecks.test_unicode_nodes_and_exact_fractions) ... ok
+test_cli_validation_and_error_exit (test_experiment_runner.ExperimentRunnerChecks.test_cli_validation_and_error_exit) ... ok
+test_dominance_toggle_keeps_answer_on_small_case (test_experiment_runner.ExperimentRunnerChecks.test_dominance_toggle_keeps_answer_on_small_case) ... ok
+test_existing_results_not_overwritten (test_experiment_runner.ExperimentRunnerChecks.test_existing_results_not_overwritten) ... ok
+test_source_equals_destination_with_no_contacts (test_experiment_runner.ExperimentRunnerChecks.test_source_equals_destination_with_no_contacts) ... ok
+test_stops_and_preserves_failure_before_next_bundle (test_experiment_runner.ExperimentRunnerChecks.test_stops_and_preserves_failure_before_next_bundle) ... ok
+test_unroutable_bundle_does_not_reserve_capacity (test_experiment_runner.ExperimentRunnerChecks.test_unroutable_bundle_does_not_reserve_capacity) ... ok
+test_walkthrough_results_and_predecessor_reconstruction (test_experiment_runner.ExperimentRunnerChecks.test_walkthrough_results_and_predecessor_reconstruction) ... ok
+test_continuity_and_store_forward (test_extension.ExtensionChecks.test_continuity_and_store_forward) ... ok
+test_destination_peak_before_release (test_extension.ExtensionChecks.test_destination_peak_before_release) ... ok
+test_mid_interval_peak_not_just_start_end (test_extension.ExtensionChecks.test_mid_interval_peak_not_just_start_end) ... ok
+test_quota_is_cumulative (test_extension.ExtensionChecks.test_quota_is_cumulative) ... ok
+test_receive_and_sender_drain_overflow (test_extension.ExtensionChecks.test_receive_and_sender_drain_overflow) ... ok
+test_reject_unaligned_input_without_rounding (test_extension.ExtensionChecks.test_reject_unaligned_input_without_rounding) ... ok
+test_window_end_and_propagation (test_extension.ExtensionChecks.test_window_end_and_propagation) ... ok
+test_all_fixed_cases (test_oracle_consistency.OracleChecks.test_all_fixed_cases) ... ok
+test_cycle_needed_and_repeated_quota (test_oracle_consistency.OracleChecks.test_cycle_needed_and_repeated_quota) ... ok
+test_fractional_optimum_witness (test_oracle_consistency.OracleChecks.test_fractional_optimum_witness) ... ok
+test_oracle_has_only_standard_library_imports (test_oracle_consistency.OracleChecks.test_oracle_has_only_standard_library_imports) ... ok
+test_contact_overlap_is_diagnostic_not_silently_repaired (test_schedule_replay.ReplayChecks.test_contact_overlap_is_diagnostic_not_silently_repaired) ... ok
+test_exact_linear_inventory_between_events (test_schedule_replay.ReplayChecks.test_exact_linear_inventory_between_events) ... ok
+test_modified_route_is_rejected_and_preserved (test_schedule_replay.ReplayChecks.test_modified_route_is_rejected_and_preserved) ... ok
+test_ppt_routes_buffer_peaks_and_immediate_delivery (test_schedule_replay.ReplayChecks.test_ppt_routes_buffer_peaks_and_immediate_delivery) ... ok
+test_commit_counts_only_selected_route (test_sequential_bundle_update.SequentialChecks.test_commit_counts_only_selected_route) ... ok
+test_previous_bundle_changes_second_route (test_sequential_bundle_update.SequentialChecks.test_previous_bundle_changes_second_route) ... ok
+test_search_does_not_mutate_global_resources (test_sequential_bundle_update.SequentialChecks.test_search_does_not_mutate_global_resources) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 3.731s
+
+OK

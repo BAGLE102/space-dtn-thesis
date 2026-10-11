@@ -1,0 +1,5 @@
+﻿bundle,hop,contact,sender,receiver,start,finish,receive_start,arrival,size
+bundle1,1,c1,X,B,2,3,2,3,4
+bundle1,2,c2,B,D,6,7,8,9,4
+bundle2,1,c4,A,B,7,8,7,8,4
+bundle2,2,c5,B,D,10,11,11,12,4

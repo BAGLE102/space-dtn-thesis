@@ -1,0 +1,10 @@
+﻿case,description,requested,accepted,acceptance_ratio,delay_mean_s,delay_min_s,delay_max_s,delay_population_std_s,labels_created,buffer_peak_MB,contact_overlap_count,oracle_match,expected_match
+01_ppt_baseline,PPT原始案例,2,2,1.0,9.5,8.0,11.0,1.5,10,4,0,True,True
+02_buffer_B_2,僅B的Buffer縮小為2MB,2,0,0.0,,,,,3,0,0,True,True
+03_buffer_B_8,僅B的Buffer增加為8MB,2,2,1.0,9.5,8.0,11.0,1.5,11,8,0,True,True
+04_quota_c1_2,c1剩餘容量2MB，第一包不可通過,2,1,0.5,7.0,7.0,7.0,0.0,9,4,0,True,True
+05_delay_c2_2,c2傳播延遲由1秒增至2秒,2,2,1.0,10.0,9.0,11.0,1.0,10,4,0,True,True
+06_quota_c7_4,c7容量增加為4MB，開放經C的路徑,2,2,1.0,6.0,4.0,8.0,2.0,10,4,0,True,True
+07_reverse_order,固定規劃順序反轉，生成時間不變,2,1,0.5,7.0,7.0,7.0,0.0,9,4,0,True,True
+08_grid_half,時間格點由1秒改為0.5秒,2,2,1.0,9.5,8.0,11.0,1.5,11,4,0,True,True
+09_aggregate_overlap,模型限制示例：同contact的傳輸時間重疊，非同模型錯誤,2,2,1.0,2.0,2.0,2.0,0.0,8,4,1,True,True

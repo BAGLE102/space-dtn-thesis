@@ -1,0 +1,3 @@
+﻿index,bundle,source,destination,size,release,status,arrival,delivery_delay,hops,labels_created,labels_expanded,oracle_checked
+1,bundle1,X,D,4,0,ACCEPTED,8,8,2,4,2,True
+2,bundle2,A,D,4,1,ACCEPTED,5,4,2,6,3,True

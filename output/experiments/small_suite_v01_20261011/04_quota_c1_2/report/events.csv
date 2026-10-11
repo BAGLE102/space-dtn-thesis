@@ -1,0 +1,11 @@
+﻿time,bundle,hop,contact,node,event
+1,bundle2,0,,A,GENERATED
+1,bundle2,1,c3,A,SEND_START
+1,bundle2,1,c3,B,RECEIVE_START
+2,bundle2,1,c3,A,SEND_FINISH
+2,bundle2,1,c3,B,RECEIVE_FINISH
+6,bundle2,2,c2,B,SEND_START
+7,bundle2,2,c2,D,RECEIVE_START
+7,bundle2,2,c2,B,SEND_FINISH
+8,bundle2,2,c2,D,RECEIVE_FINISH
+8,bundle2,2,c2,D,DELIVERED

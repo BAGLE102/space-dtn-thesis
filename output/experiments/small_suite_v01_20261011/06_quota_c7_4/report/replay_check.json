@@ -1,0 +1,56 @@
+{
+  "same_model_schedule_checks": "PASS",
+  "buffer_peaks": [
+    {
+      "node": "X",
+      "peak": "4",
+      "peak_time": "0",
+      "limit": "4",
+      "within_limit": true
+    },
+    {
+      "node": "A",
+      "peak": "4",
+      "peak_time": "1",
+      "limit": "4",
+      "within_limit": true
+    },
+    {
+      "node": "B",
+      "peak": "4",
+      "peak_time": "3",
+      "limit": "4",
+      "within_limit": true
+    },
+    {
+      "node": "C",
+      "peak": "4",
+      "peak_time": "3",
+      "limit": "4",
+      "within_limit": true
+    },
+    {
+      "node": "D",
+      "peak": "4",
+      "peak_time": "5",
+      "limit": "4",
+      "within_limit": true
+    }
+  ],
+  "final_quota": {
+    "c1": "0",
+    "c2": "0",
+    "c3": "4",
+    "c4": "8",
+    "c5": "4",
+    "c6": "0",
+    "c7": "0",
+    "c8": "4"
+  },
+  "link_conflicts": [],
+  "contact_interval_overlap_checked": true,
+  "shared_radio_checked": false,
+  "routing_algorithm_changed": false,
+  "real_bundle_protocol_execution": false,
+  "note": "Interval conflicts are model-boundary diagnostics, not automatically repaired."
+}

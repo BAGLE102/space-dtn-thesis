@@ -1,0 +1,11 @@
+﻿bundle,id,c,A,s,pred,node,is_source_label,active,processed
+bundle1,L0,,0,,,X,True,True,True
+bundle1,L1,c1,3,2,L0,B,False,True,True
+bundle1,L2,c2,8,6,L1,D,False,True,False
+bundle1,L3,c5,12,10,L1,D,False,True,False
+bundle2,L0,,1,,,A,True,True,True
+bundle2,L1,c3,2,1,L0,B,False,True,True
+bundle2,L2,c4,8,7,L0,B,False,True,True
+bundle2,L3,c4,9,8,L0,B,False,False,False
+bundle2,L4,c6,3,1,L0,C,False,True,True
+bundle2,L5,c5,12,10,L2,D,False,True,False

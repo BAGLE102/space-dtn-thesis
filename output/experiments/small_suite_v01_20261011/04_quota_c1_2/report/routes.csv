@@ -1,0 +1,3 @@
+﻿bundle,status,node_path,contact_path,arrival,delivery_delay
+bundle1,NO_ROUTE_ON_GRID,,,,
+bundle2,ACCEPTED,A → B → D,c3 → c2,8,7

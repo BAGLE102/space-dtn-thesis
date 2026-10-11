@@ -1,0 +1,38 @@
+{
+  "same_model_schedule_checks": "PASS",
+  "buffer_peaks": [
+    {
+      "node": "A",
+      "peak": "4",
+      "peak_time": "0",
+      "limit": "4",
+      "within_limit": true
+    },
+    {
+      "node": "D",
+      "peak": "4",
+      "peak_time": "2",
+      "limit": "4",
+      "within_limit": true
+    }
+  ],
+  "final_quota": {
+    "link": "0"
+  },
+  "link_conflicts": [
+    {
+      "contact": "link",
+      "bundle1": "bundle1",
+      "hop1": 1,
+      "bundle2": "bundle2",
+      "hop2": 1,
+      "overlap_start": "0",
+      "overlap_end": "2"
+    }
+  ],
+  "contact_interval_overlap_checked": true,
+  "shared_radio_checked": false,
+  "routing_algorithm_changed": false,
+  "real_bundle_protocol_execution": false,
+  "note": "Interval conflicts are model-boundary diagnostics, not automatically repaired."
+}

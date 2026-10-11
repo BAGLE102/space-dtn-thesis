@@ -1,0 +1,38 @@
+{
+  "name": "09_aggregate_overlap",
+  "contacts": [
+    {
+      "id": "link",
+      "u": "A",
+      "v": "D",
+      "start": "0",
+      "end": "4",
+      "rate": "1",
+      "delay": "0",
+      "quota": "4"
+    }
+  ],
+  "bundles": [
+    {
+      "id": "bundle1",
+      "source": "A",
+      "dest": "D",
+      "g": "0",
+      "size": "2"
+    },
+    {
+      "id": "bundle2",
+      "source": "A",
+      "dest": "D",
+      "g": "0",
+      "size": "2"
+    }
+  ],
+  "buffers": {
+    "A": "4",
+    "D": "4"
+  },
+  "background": {},
+  "delta": "1",
+  "horizon": "4"
+}

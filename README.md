@@ -80,3 +80,6 @@ python -m unittest discover -s tests -v
 ## 更新方式
 
 每次完成研究或程式工作後，更新相關文件與進度、執行適用檢查，再 commit 與 push。Git 紀錄以有意義的工作單位保存；本專案未設定背景檔案監控或定時自動上傳。
+
+
+小型實驗套件與重現方式：[small_experiment_suite_v01.md](docs/small_experiment_suite_v01.md)。

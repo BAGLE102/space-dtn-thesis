@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "name": "02_buffer_B_2",
+  "description": "僅B的Buffer縮小為2MB",
+  "units": {
+    "time": "s",
+    "data": "MB",
+    "rate": "MB/s"
+  },
+  "time_step": "1",
+  "horizon": "12",
+  "nodes": [
+    {
+      "id": "X",
+      "buffer": "4"
+    },
+    {
+      "id": "A",
+      "buffer": "4"
+    },
+    {
+      "id": "B",
+      "buffer": "2"
+    },
+    {
+      "id": "C",
+      "buffer": "4"
+    },
+    {
+      "id": "D",
+      "buffer": "4"
+    }
+  ],
+  "bundles": [
+    {
+      "id": "bundle1",
+      "source": "X",
+      "destination": "D",
+      "release": "0",
+      "size": "4"
+    },
+    {
+      "id": "bundle2",
+      "source": "A",
+      "destination": "D",
+      "release": "1",
+      "size": "4"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "c1",
+      "source": "X",
+      "target": "B",
+      "start": "2",
+      "end": "3",
+      "rate": "4",
+      "delay": "0",
+      "remaining_capacity": "4"
+    },
+    {
+      "id": "c2",
+      "source": "B",
+      "target": "D",
+      "start": "6",
+      "end": "7",
+      "rate": "4",
+      "delay": "1",
+      "remaining_capacity": "4"
+    },
+    {
+      "id": "c3",
+      "source": "A",
+      "target": "B",
+      "start": "1",
+      "end": "2",
+      "rate": "4",
+      "delay": "0",
+      "remaining_capacity": "4"
+    },
+    {
+      "id": "c4",
+      "source": "A",
+      "target": "B",
+      "start": "7",
+      "end": "9",
+      "rate": "4",
+      "delay": "0",
+      "remaining_capacity": "8"
+    },
+    {
+      "id": "c5",
+      "source": "B",
+      "target": "D",
+      "start": "10",
+      "end": "11",
+      "rate": "4",
+      "delay": "1",
+      "remaining_capacity": "4"
+    },
+    {
+      "id": "c6",
+      "source": "A",
+      "target": "C",
+      "start": "1",
+      "end": "2",
+      "rate": "4",
+      "delay": "1",
+      "remaining_capacity": "4"
+    },
+    {
+      "id": "c7",
+      "source": "C",
+      "target": "D",
+      "start": "4",
+      "end": "5",
+      "rate": "4",
+      "delay": "0",
+      "remaining_capacity": "2"
+    },
+    {
+      "id": "c8",
+      "source": "C",
+      "target": "D",
+      "start": "2",
+      "end": "3",
+      "rate": "4",
+      "delay": "0",
+      "remaining_capacity": "4"
+    }
+  ]
+}

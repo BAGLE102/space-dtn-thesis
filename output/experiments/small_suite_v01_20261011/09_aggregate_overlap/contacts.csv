@@ -1,0 +1,2 @@
+﻿id,source,target,start,end,rate,delay,remaining_capacity
+link,A,D,0,4,1,0,4
