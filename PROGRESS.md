@@ -122,3 +122,9 @@
 - 179步GUI操作、播放、背景執行／載入、中止與Buffer事件檢查通過；40項回歸測試通過。
 - 共用載入器重構前後的瀏覽器資料完全一致；已檢查Windows DPI畫面。
 - 說明：`docs/desktop_gui_v01.md`；檢查與截圖：`output/visualizations/desktop_gui_v01_20261011/`。
+
+## Ring Road 公開資料來源核對（2026-10-11）
+
+- 新增 docs/ring_road_contact_plan_source_v01.md，找到公開 Walker Ring Road Contact Plan；排除額外 Server 後恰為 47 節點、3,172 條 Contact，範圍為一天。
+- 原檔速率為 12,500 Bytes/s，與學長論文的 100 KB/s 不同；range 值皆為零。逐筆同一性與真實傳播延遲尚未確認。
+- 下載暫存於 Git 忽略的 tmp/topology_sources，未修改演算法、未導入正式實驗。

@@ -90,3 +90,8 @@
 - 179步GUI操作、播放、背景執行／載入、中止與Buffer事件檢查通過；40項回歸測試通過。
 - 共用載入器重構前後的瀏覽器資料完全一致；已檢查Windows DPI畫面。
 - 說明：`docs/desktop_gui_v01.md`；檢查與截圖：`output/visualizations/desktop_gui_v01_20261011/`。
+
+## 2026-10-11：公開 Ring Road Contact Plan 搜尋
+
+- 保存公開來源、下載連結、SHA-256、節點與 Contact 盤點及論文對照。
+- 明列額外 Server、速率單位差異、零 range 與尚未確認事項；不重新發布來源資料。
