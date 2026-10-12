@@ -158,3 +158,11 @@
 - 為既有37個Python檔案及網頁重播模板補上中文註解；核心逐段說明時間枚舉、Buffer、dominance、Q、前驅保留與預約提交。
 - 新增系統架構、逐包預約、單包Label Setting三張圖，提供PNG／SVG及Mermaid原稿；圖稿產生器位於src/experiments/render_code_diagrams.py。
 - 註解前後Python語法樹一致；新增圖稿產生器不執行路由。導讀：docs/code_reading_guide_v01.md。驗證紀錄另存output/validation/code_comments_20261012/，不覆寫原有凍結紀錄。
+
+## GitHub Pages 逐步圖解（2026-10-12）
+
+- 新增 web/ 靜態網站，顯示拓樸、候選路徑、Q 前後、四欄位 Label、Buffer 曲線與峰值、支配比較、前驅回溯及同步虛擬碼。
+- PPT 兩包與人工後段可行案例直接匯出既有 trace，匯出前重新獨立驗證排程；沒有改動 frozen v04 或重跑大型實驗。
+- 支援逐步、倒退、播放、進度條、節點篩選及匯入匯出格式 JSON；屬於已保存搜尋紀錄重播，不在瀏覽器重新求解。
+- 52 項 Python 測試與前端狀態檢查通過；瀏覽器逐步走完三個查詢無 console error。
+- 網站 https://bagle102.github.io/space-dtn-thesis/ 由 GitHub Actions 部署 web/，詳細操作見 docs/github_walkthrough_website.md。

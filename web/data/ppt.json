@@ -1,0 +1,692 @@
+{
+  "title": "PPT 拓樸：兩包依序路由",
+  "name": "ppt_modular_walkthrough",
+  "contacts": [
+    {
+      "id": "c1",
+      "u": "X",
+      "v": "B",
+      "start": "2",
+      "end": "3",
+      "rate": "4",
+      "delay": "0",
+      "quota": "4"
+    },
+    {
+      "id": "c2",
+      "u": "B",
+      "v": "D",
+      "start": "6",
+      "end": "7",
+      "rate": "4",
+      "delay": "1",
+      "quota": "4"
+    },
+    {
+      "id": "c3",
+      "u": "A",
+      "v": "B",
+      "start": "1",
+      "end": "2",
+      "rate": "4",
+      "delay": "0",
+      "quota": "4"
+    },
+    {
+      "id": "c4",
+      "u": "A",
+      "v": "B",
+      "start": "7",
+      "end": "9",
+      "rate": "4",
+      "delay": "0",
+      "quota": "8"
+    },
+    {
+      "id": "c5",
+      "u": "B",
+      "v": "D",
+      "start": "10",
+      "end": "11",
+      "rate": "4",
+      "delay": "1",
+      "quota": "4"
+    },
+    {
+      "id": "c6",
+      "u": "A",
+      "v": "C",
+      "start": "1",
+      "end": "2",
+      "rate": "4",
+      "delay": "1",
+      "quota": "4"
+    },
+    {
+      "id": "c7",
+      "u": "C",
+      "v": "D",
+      "start": "4",
+      "end": "5",
+      "rate": "4",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c8",
+      "u": "C",
+      "v": "D",
+      "start": "2",
+      "end": "3",
+      "rate": "4",
+      "delay": "0",
+      "quota": "4"
+    }
+  ],
+  "buffers": {
+    "X": "4",
+    "A": "4",
+    "B": "4",
+    "C": "4",
+    "D": "4"
+  },
+  "delta": "1",
+  "horizon": "12",
+  "records": [
+    {
+      "bundle": {
+        "id": "bundle1",
+        "source": "X",
+        "dest": "D",
+        "g": "0",
+        "size": "4"
+      },
+      "status": "ACCEPTED",
+      "arrival": "8",
+      "hops": [
+        [
+          "c1",
+          "2"
+        ],
+        [
+          "c2",
+          "6"
+        ]
+      ],
+      "labels": {
+        "L0": {
+          "id": "L0",
+          "c": null,
+          "A": "0",
+          "s": null,
+          "pred": null,
+          "node": "X",
+          "is_source_label": true,
+          "active": true,
+          "processed": true
+        },
+        "L1": {
+          "id": "L1",
+          "c": "c1",
+          "A": "3",
+          "s": "2",
+          "pred": "L0",
+          "node": "B",
+          "is_source_label": false,
+          "active": true,
+          "processed": true
+        },
+        "L2": {
+          "id": "L2",
+          "c": "c2",
+          "A": "8",
+          "s": "6",
+          "pred": "L1",
+          "node": "D",
+          "is_source_label": false,
+          "active": true,
+          "processed": false
+        },
+        "L3": {
+          "id": "L3",
+          "c": "c5",
+          "A": "12",
+          "s": "10",
+          "pred": "L1",
+          "node": "D",
+          "is_source_label": false,
+          "active": true,
+          "processed": false
+        }
+      },
+      "trace": [
+        {
+          "event": "POP",
+          "queue_before": [
+            "L0"
+          ],
+          "selected": "L0",
+          "queue_after": []
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L0",
+          "contact": "c1",
+          "queue_before": [],
+          "temporal": true,
+          "quota": true,
+          "s": "2",
+          "f": "3",
+          "h": "2",
+          "arrival": "3",
+          "sender_peak": "4",
+          "sender_peak_time": "0",
+          "receiver_peak": "4",
+          "receiver_peak_time": "3",
+          "reason": "PASS",
+          "new_label": "L1",
+          "removed": [],
+          "queue_after": [
+            "L1"
+          ]
+        },
+        {
+          "event": "POP",
+          "queue_before": [
+            "L1"
+          ],
+          "selected": "L1",
+          "queue_after": []
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L1",
+          "contact": "c2",
+          "queue_before": [],
+          "temporal": true,
+          "quota": true,
+          "s": "6",
+          "f": "7",
+          "h": "7",
+          "arrival": "8",
+          "sender_peak": "4",
+          "sender_peak_time": "3",
+          "receiver_peak": "4",
+          "receiver_peak_time": "8",
+          "reason": "PASS",
+          "new_label": "L2",
+          "removed": [],
+          "queue_after": [
+            "L2"
+          ]
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L1",
+          "contact": "c5",
+          "queue_before": [
+            "L2"
+          ],
+          "temporal": true,
+          "quota": true,
+          "s": "10",
+          "f": "11",
+          "h": "11",
+          "arrival": "12",
+          "sender_peak": "4",
+          "sender_peak_time": "3",
+          "receiver_peak": "4",
+          "receiver_peak_time": "12",
+          "reason": "PASS",
+          "new_label": "L3",
+          "removed": [],
+          "queue_after": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "event": "GOAL",
+          "queue_before": [
+            "L2",
+            "L3"
+          ],
+          "selected": "L2",
+          "queue_after": [
+            "L3"
+          ]
+        }
+      ],
+      "quota_before": {
+        "c1": "4",
+        "c2": "4",
+        "c3": "4",
+        "c4": "8",
+        "c5": "4",
+        "c6": "4",
+        "c7": "2",
+        "c8": "4"
+      },
+      "quota_after": {
+        "c1": "0",
+        "c2": "0",
+        "c3": "4",
+        "c4": "8",
+        "c5": "4",
+        "c6": "4",
+        "c7": "2",
+        "c8": "4"
+      },
+      "background": {}
+    },
+    {
+      "bundle": {
+        "id": "bundle2",
+        "source": "A",
+        "dest": "D",
+        "g": "1",
+        "size": "4"
+      },
+      "status": "ACCEPTED",
+      "arrival": "12",
+      "hops": [
+        [
+          "c4",
+          "7"
+        ],
+        [
+          "c5",
+          "10"
+        ]
+      ],
+      "labels": {
+        "L0": {
+          "id": "L0",
+          "c": null,
+          "A": "1",
+          "s": null,
+          "pred": null,
+          "node": "A",
+          "is_source_label": true,
+          "active": true,
+          "processed": true
+        },
+        "L1": {
+          "id": "L1",
+          "c": "c3",
+          "A": "2",
+          "s": "1",
+          "pred": "L0",
+          "node": "B",
+          "is_source_label": false,
+          "active": true,
+          "processed": true
+        },
+        "L2": {
+          "id": "L2",
+          "c": "c4",
+          "A": "8",
+          "s": "7",
+          "pred": "L0",
+          "node": "B",
+          "is_source_label": false,
+          "active": true,
+          "processed": true
+        },
+        "L3": {
+          "id": "L3",
+          "c": "c4",
+          "A": "9",
+          "s": "8",
+          "pred": "L0",
+          "node": "B",
+          "is_source_label": false,
+          "active": false,
+          "processed": false
+        },
+        "L4": {
+          "id": "L4",
+          "c": "c6",
+          "A": "3",
+          "s": "1",
+          "pred": "L0",
+          "node": "C",
+          "is_source_label": false,
+          "active": true,
+          "processed": true
+        },
+        "L5": {
+          "id": "L5",
+          "c": "c5",
+          "A": "12",
+          "s": "10",
+          "pred": "L2",
+          "node": "D",
+          "is_source_label": false,
+          "active": true,
+          "processed": false
+        }
+      },
+      "trace": [
+        {
+          "event": "POP",
+          "queue_before": [
+            "L0"
+          ],
+          "selected": "L0",
+          "queue_after": []
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L0",
+          "contact": "c3",
+          "queue_before": [],
+          "temporal": true,
+          "quota": true,
+          "s": "1",
+          "f": "2",
+          "h": "1",
+          "arrival": "2",
+          "sender_peak": "4",
+          "sender_peak_time": "1",
+          "receiver_peak": "4",
+          "receiver_peak_time": "2",
+          "reason": "PASS",
+          "new_label": "L1",
+          "removed": [],
+          "queue_after": [
+            "L1"
+          ]
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L0",
+          "contact": "c4",
+          "queue_before": [
+            "L1"
+          ],
+          "temporal": true,
+          "quota": true,
+          "s": "7",
+          "f": "8",
+          "h": "7",
+          "arrival": "8",
+          "sender_peak": "4",
+          "sender_peak_time": "1",
+          "receiver_peak": "4",
+          "receiver_peak_time": "8",
+          "reason": "PASS",
+          "new_label": "L2",
+          "removed": [],
+          "queue_after": [
+            "L1",
+            "L2"
+          ]
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L0",
+          "contact": "c4",
+          "queue_before": [
+            "L1",
+            "L2"
+          ],
+          "temporal": true,
+          "quota": true,
+          "s": "8",
+          "f": "9",
+          "h": "8",
+          "arrival": "9",
+          "sender_peak": "4",
+          "sender_peak_time": "1",
+          "receiver_peak": "4",
+          "receiver_peak_time": "9",
+          "reason": "PASS",
+          "new_label": "L3",
+          "dominated_by": [
+            "L2"
+          ],
+          "queue_after": [
+            "L1",
+            "L2"
+          ]
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L0",
+          "contact": "c6",
+          "queue_before": [
+            "L1",
+            "L2"
+          ],
+          "temporal": true,
+          "quota": true,
+          "s": "1",
+          "f": "2",
+          "h": "2",
+          "arrival": "3",
+          "sender_peak": "4",
+          "sender_peak_time": "1",
+          "receiver_peak": "4",
+          "receiver_peak_time": "3",
+          "reason": "PASS",
+          "new_label": "L4",
+          "removed": [],
+          "queue_after": [
+            "L1",
+            "L4",
+            "L2"
+          ]
+        },
+        {
+          "event": "POP",
+          "queue_before": [
+            "L1",
+            "L4",
+            "L2"
+          ],
+          "selected": "L1",
+          "queue_after": [
+            "L4",
+            "L2"
+          ]
+        },
+        {
+          "event": "CONTACT_QUOTA_FAIL",
+          "selected": "L1",
+          "contact": "c2",
+          "used": 0,
+          "quota": "0",
+          "queue_before": [
+            "L4",
+            "L2"
+          ],
+          "queue_after": [
+            "L4",
+            "L2"
+          ]
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L1",
+          "contact": "c5",
+          "queue_before": [
+            "L4",
+            "L2"
+          ],
+          "temporal": true,
+          "quota": true,
+          "s": "10",
+          "f": "11",
+          "h": "11",
+          "arrival": "12",
+          "sender_peak": "8",
+          "sender_peak_time": "3",
+          "receiver_peak": "4",
+          "receiver_peak_time": "12",
+          "reason": "BUFFER",
+          "queue_after": [
+            "L4",
+            "L2"
+          ]
+        },
+        {
+          "event": "POP",
+          "queue_before": [
+            "L4",
+            "L2"
+          ],
+          "selected": "L4",
+          "queue_after": [
+            "L2"
+          ]
+        },
+        {
+          "event": "CONTACT_QUOTA_FAIL",
+          "selected": "L4",
+          "contact": "c7",
+          "used": 0,
+          "quota": "2",
+          "queue_before": [
+            "L2"
+          ],
+          "queue_after": [
+            "L2"
+          ]
+        },
+        {
+          "event": "CONTACT_TIME_FAIL",
+          "selected": "L4",
+          "contact": "c8",
+          "earliest": "3",
+          "latest": "2",
+          "queue_before": [
+            "L2"
+          ],
+          "queue_after": [
+            "L2"
+          ]
+        },
+        {
+          "event": "POP",
+          "queue_before": [
+            "L2"
+          ],
+          "selected": "L2",
+          "queue_after": []
+        },
+        {
+          "event": "CONTACT_QUOTA_FAIL",
+          "selected": "L2",
+          "contact": "c2",
+          "used": 0,
+          "quota": "0",
+          "queue_before": [],
+          "queue_after": []
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L2",
+          "contact": "c5",
+          "queue_before": [],
+          "temporal": true,
+          "quota": true,
+          "s": "10",
+          "f": "11",
+          "h": "11",
+          "arrival": "12",
+          "sender_peak": "4",
+          "sender_peak_time": "8",
+          "receiver_peak": "4",
+          "receiver_peak_time": "12",
+          "reason": "PASS",
+          "new_label": "L5",
+          "removed": [],
+          "queue_after": [
+            "L5"
+          ]
+        },
+        {
+          "event": "GOAL",
+          "queue_before": [
+            "L5"
+          ],
+          "selected": "L5",
+          "queue_after": []
+        }
+      ],
+      "quota_before": {
+        "c1": "0",
+        "c2": "0",
+        "c3": "4",
+        "c4": "8",
+        "c5": "4",
+        "c6": "4",
+        "c7": "2",
+        "c8": "4"
+      },
+      "quota_after": {
+        "c1": "0",
+        "c2": "0",
+        "c3": "4",
+        "c4": "4",
+        "c5": "0",
+        "c6": "4",
+        "c7": "2",
+        "c8": "4"
+      },
+      "background": {
+        "X": [
+          [
+            [
+              "0",
+              "2",
+              "4",
+              "4"
+            ],
+            [
+              "2",
+              "3",
+              "4",
+              "0"
+            ]
+          ]
+        ],
+        "B": [
+          [
+            [
+              "2",
+              "3",
+              "0",
+              "4"
+            ],
+            [
+              "3",
+              "6",
+              "4",
+              "4"
+            ],
+            [
+              "6",
+              "7",
+              "4",
+              "0"
+            ]
+          ]
+        ],
+        "D": [
+          [
+            [
+              "7",
+              "8",
+              "0",
+              "4"
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "verified": true,
+  "physical_simulation": false
+}

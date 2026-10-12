@@ -1,0 +1,204 @@
+{
+  "title": "人工案例：前段失敗，後段可行",
+  "name": "synthetic_later_start_check",
+  "contacts": [
+    {
+      "id": "a",
+      "u": "A",
+      "v": "D",
+      "start": "0",
+      "end": "4",
+      "rate": "4",
+      "delay": "0",
+      "quota": "4"
+    }
+  ],
+  "buffers": {
+    "A": "4",
+    "D": "4"
+  },
+  "delta": "1",
+  "horizon": "4",
+  "records": [
+    {
+      "bundle": {
+        "id": "bundle",
+        "source": "A",
+        "dest": "D",
+        "g": "0",
+        "size": "4"
+      },
+      "status": "ACCEPTED",
+      "arrival": "3",
+      "hops": [
+        [
+          "a",
+          "2"
+        ]
+      ],
+      "labels": {
+        "L0": {
+          "id": "L0",
+          "c": null,
+          "A": "0",
+          "s": null,
+          "pred": null,
+          "node": "A",
+          "is_source_label": true,
+          "active": true,
+          "processed": true
+        },
+        "L1": {
+          "id": "L1",
+          "c": "a",
+          "A": "3",
+          "s": "2",
+          "pred": "L0",
+          "node": "D",
+          "is_source_label": false,
+          "active": true,
+          "processed": false
+        },
+        "L2": {
+          "id": "L2",
+          "c": "a",
+          "A": "4",
+          "s": "3",
+          "pred": "L0",
+          "node": "D",
+          "is_source_label": false,
+          "active": false,
+          "processed": false
+        }
+      },
+      "trace": [
+        {
+          "event": "POP",
+          "queue_before": [
+            "L0"
+          ],
+          "selected": "L0",
+          "queue_after": []
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L0",
+          "contact": "a",
+          "queue_before": [],
+          "temporal": true,
+          "quota": true,
+          "s": "0",
+          "f": "1",
+          "h": "0",
+          "arrival": "1",
+          "sender_peak": "4",
+          "sender_peak_time": "0",
+          "receiver_peak": "8",
+          "receiver_peak_time": "1",
+          "reason": "BUFFER",
+          "queue_after": []
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L0",
+          "contact": "a",
+          "queue_before": [],
+          "temporal": true,
+          "quota": true,
+          "s": "1",
+          "f": "2",
+          "h": "1",
+          "arrival": "2",
+          "sender_peak": "4",
+          "sender_peak_time": "0",
+          "receiver_peak": "8",
+          "receiver_peak_time": "2",
+          "reason": "BUFFER",
+          "queue_after": []
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L0",
+          "contact": "a",
+          "queue_before": [],
+          "temporal": true,
+          "quota": true,
+          "s": "2",
+          "f": "3",
+          "h": "2",
+          "arrival": "3",
+          "sender_peak": "4",
+          "sender_peak_time": "0",
+          "receiver_peak": "4",
+          "receiver_peak_time": "2",
+          "reason": "PASS",
+          "new_label": "L1",
+          "removed": [],
+          "queue_after": [
+            "L1"
+          ]
+        },
+        {
+          "event": "EXTEND",
+          "selected": "L0",
+          "contact": "a",
+          "queue_before": [
+            "L1"
+          ],
+          "temporal": true,
+          "quota": true,
+          "s": "3",
+          "f": "4",
+          "h": "3",
+          "arrival": "4",
+          "sender_peak": "4",
+          "sender_peak_time": "0",
+          "receiver_peak": "4",
+          "receiver_peak_time": "4",
+          "reason": "PASS",
+          "new_label": "L2",
+          "dominated_by": [
+            "L1"
+          ],
+          "queue_after": [
+            "L1"
+          ]
+        },
+        {
+          "event": "GOAL",
+          "queue_before": [
+            "L1"
+          ],
+          "selected": "L1",
+          "queue_after": []
+        }
+      ],
+      "quota_before": {
+        "a": "4"
+      },
+      "quota_after": {
+        "a": "0"
+      },
+      "background": {
+        "D": [
+          [
+            [
+              "0",
+              "2",
+              "4",
+              "4"
+            ],
+            [
+              "2",
+              "3",
+              "4",
+              "0"
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "verified": true,
+  "physical_simulation": false
+}
