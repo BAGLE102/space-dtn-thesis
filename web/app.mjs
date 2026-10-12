@@ -71,7 +71,9 @@ function buffers(c,r,e,labels){
   const values=times.map(t=>[t,bg.reduce((v,curve)=>v+curveValue(curve,t),0),curveValue(own,t)]);
   const ymax=Math.max(limit,...values.map(z=>z[1]+z[2]),1)*1.2;
   const X=t=>42+t/T*450,Y=v=>112-v/ymax*85;
-  const path=k=>values.map((v,i)=>`${i?'L':'M'}${X(v[0])},${Y(k===3?v[1]+v[2]:v[k])}`).join(' ');
+  // 本次接收曲線只檢查到整包抵達；不畫抵達後的假釋放，後續等待留待下一跳。
+  const lo=own[0][0],hi=own.at(-1)[1];
+  const path=k=>(k===1?values:values.filter(v=>lo<=v[0]&&v[0]<=hi)).map((v,i)=>`${i?'L':'M'}${X(v[0])},${Y(k===3?v[1]+v[2]:v[k])}`).join(' ');
   return `<svg class="bufferplot" viewBox="0 0 530 145" role="img" aria-label="${esc(node)} Buffer 占用"><text x="5" y="15" font-size="13">${esc(node)} · 上限 ${fmt(limit)} MB</text><line x1="42" y1="112" x2="492" y2="112" stroke="#bbc7d6"/><line x1="42" y1="${Y(limit)}" x2="492" y2="${Y(limit)}" stroke="#8593a5" stroke-dasharray="4 4"/><path d="${path(1)}" fill="none" stroke="#c77920" stroke-width="2"/><path d="${path(2)}" fill="none" stroke="#2469c5" stroke-width="2"/><path d="${path(3)}" fill="none" stroke="#bd3646" stroke-width="2"/>${[0,T/4,T/2,T*3/4,T].map(t=>`<text x="${X(t)}" y="132" text-anchor="middle" font-size="11">${fmt(t)}</text>`).join('')}<text x="30" y="115" text-anchor="end" font-size="10">0</text><text x="30" y="${Y(limit)+4}" text-anchor="end" font-size="10">${fmt(limit)}</text></svg>`;
  };
  $('buffers').innerHTML=plot(contact.u,[[a,s,S,S],[s,f,S,0]])+plot(contact.v,[[h,arr,0,S]]);
