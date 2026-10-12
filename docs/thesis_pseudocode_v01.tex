@@ -1,0 +1,201 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\nil}{\bot}
+\newcommand{\grid}{\mathcal{G}}
+\newcommand{\node}{\operatorname{node}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\peak}{\operatorname{Peak}}
+\newcommand{\out}{\operatorname{Out}}
+\title{Sequential Label Setting with Aggregate Contact Capacity\\and Buffer Reservations}
+\author{}
+\date{Notation and pseudocode aligned with the frozen v04 implementation}
+\begin{document}
+\maketitle
+\noindent\textbf{Scope.} A centralized planner processes indivisible bundles in a given order.
+Each query minimizes whole-bundle arrival time over a finite departure-time grid.
+Accepted earlier bundles determine the remaining contact capacity and buffer reservations.
+This model does not enforce non-overlapping transmissions on a contact or shared-radio constraints.
+
+\medskip
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule Symbol & Definition \\
+\midrule
+$V,\mathcal C$ & Physical nodes and directed contacts; no self-loop contacts. \\
+$c$ & A contact with sender $u_c$, receiver $v_c$, transmission window $[\alpha_c,\beta_c)$, constant rate $r_c>0$, and propagation delay $\delta_c\geq0$. \\
+$R_c$ & Remaining total data volume available on contact $c$ before the current query; fixed during that query. \\
+$M_v,O_v(t)$ & Buffer capacity and occupancy reserved by previously accepted bundles at node $v$. \\
+$\mathcal B=(b_1,\ldots,b_m)$ & Bundles in the prescribed processing order. \\
+$b=(o,d,g,S)$ & Source, destination, release time, and size $S>0$ of the current bundle. \\
+$\Delta,T,\grid$ & Grid spacing, planning horizon, and $\grid=\{k\Delta:k\in\mathbb Z_{\geq0},\ k\Delta\leq T\}$. \\
+$L=(c(L),A(L),s(L),p(L))$ & Last contact, whole-bundle arrival time, start time on that contact, and predecessor label. \\
+$L_0$ & Root label $(c_{\nil},g,\nil,\nil)$; virtual contact $c_{\nil}$ has receiver $o$ and consumes no resources. \\
+$\node(L)$ & $v_{c(L)}$ for a non-root label; $o$ for $L_0$. \\
+$Q,\mathcal A_v,\mathcal H$ & Min-priority queue; active labels at $v$ (including expanded labels); retained label records for reconstruction. \\
+$\vol_L(c)$ & $S$ times the number of occurrences of contact $c$ in the predecessor chain of $L$, excluding $c_{\nil}$. A derived quantity, not an additional label field. \\
+\bottomrule
+\end{tabularx}
+
+\medskip
+Label identifiers and contact identifiers are independent. In particular, label $L_i$ may end on any contact $c_j$.
+Queue and active-status metadata are maintained separately from the four label fields.
+All release times, contact boundaries, transmission durations $S/r_c$, and propagation delays are assumed to be aligned with $\Delta$.
+No rounding is implicit. Routes may revisit nodes or contacts.
+
+\newpage
+\noindent\textbf{Extension conditions.}
+For a label $L$, let $u=\node(L)$ and $a=A(L)$. For contact $c\in\out(u)=\{c\in\mathcal C:u_c=u\}$, enumerate
+\begin{equation}
+\mathcal D(L,c)=\grid\cap
+ [\max\{a,\alpha_c\},\,\beta_c-S/r_c].
+\end{equation}
+For each $s\in\mathcal D(L,c)$, define transmission completion $f$, reception start $h$, and whole-bundle arrival $a'$:
+\begin{equation}
+ f=s+S/r_c,\qquad h=s+\delta_c,\qquad a'=f+\delta_c.
+\end{equation}
+The candidate must satisfy
+\begin{equation}
+ a'\leq T,\qquad \vol_L(c)+S\leq R_c.
+\end{equation}
+The candidate's buffer occupancy at the sender and receiver is
+\begin{align}
+ q^{\rm tx}_{L,c,s}(t)&=
+ \begin{cases}
+ S,&a\leq t\leq s,\\
+ S-r_c(t-s),&s<t\leq f,\\
+ 0,&\text{otherwise},
+ \end{cases}\\
+ q^{\rm rx}_{c,s}(t)&=
+ \begin{cases}
+ r_c(t-h),&h\leq t\leq a',\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\end{align}
+The second curve represents only the new reception. Subsequent holding and transmission at the receiver are checked when that label is extended.
+The necessary buffer tests are
+\begin{equation}
+ \peak(O_u+q^{\rm tx}_{L,c,s};[a,f])\leq M_u,\qquad
+ \peak(O_{v_c}+q^{\rm rx}_{c,s};[h,a'])\leq M_{v_c}.
+\end{equation}
+$\peak(F;I)$ is the supremum of the total occupancy over interval $I$, including the event-point upper values and both one-sided limits at discontinuities.
+For piecewise-linear occupancy, evaluate all breakpoints, interval endpoints, and these one-sided limits; checking only time-grid samples is insufficient.
+The frozen model checks the receive-completion peak before delivery releases memory. The sender releases bytes as they are transmitted, without retaining copies.
+
+\medskip
+\noindent\textbf{Dominance predicate.}
+Within the same query and fixed reservations, $\operatorname{Dominates}(K,N)$ is true if and only if the following sufficient replacement conditions all hold:
+\begin{align}
+ \node(K)&=\node(N)=v, & A(K)&\leq A(N),\\
+ \vol_K(c)&\leq\vol_N(c)\quad(\forall c\in\mathcal C), &
+ \peak(O_v+S;[A(K),A(N)])&\leq M_v.
+\end{align}
+An existing equivalent label is kept; the new equivalent label is discarded.
+Arrival time alone is not a valid dominance test under time-dependent reservations.
+
+\newpage
+\begin{algorithm}[H]
+\caption{Label Setting for One Bundle on a Finite Time Grid}
+\label{alg:search}
+\small
+\begin{algorithmic}[1]
+\Require $\mathcal C,R,M,O,b=(o,d,g,S),\Delta,T$
+\Ensure A route and departure schedule, or \textsc{NoRouteOnGrid}
+\If{$O_o(g)+S>M_o$}
+ \State \Return \textsc{NoRouteOnGrid}
+\EndIf
+\State $L_0\gets(c_{\nil},g,\nil,\nil)$; $\mathcal H\gets\{L_0\}$
+\State $\mathcal A_v\gets\varnothing$ for all $v\in V$; $\mathcal A_o\gets\{L_0\}$
+\State $Q\gets\{L_0\}$, ordered by $A(L)$; break ties by creation order
+\While{$Q\neq\varnothing$}
+ \State $L\gets\Call{ExtractMin}{Q}$
+ \If{$L\notin\mathcal A_{\node(L)}$}
+  \State \textbf{continue} \Comment{Skip an entry invalidated by dominance}
+ \EndIf
+ \If{$\node(L)=d$}
+  \State \Return $\Call{Reconstruct}{L}$
+ \EndIf
+ \ForAll{$c\in\out(\node(L))$ in contact-ID order}
+  \If{$\vol_L(c)+S>R_c$}
+   \State \textbf{continue}
+  \EndIf
+  \ForAll{$s\in\mathcal D(L,c)$ in increasing order}
+   \State $f\gets s+S/r_c$; $h\gets s+\delta_c$; $a'\gets f+\delta_c$
+   \If{$a'>T$}
+    \State \textbf{continue}
+   \EndIf
+   \If{either sender or receiver buffer test in (6) fails}
+    \State \textbf{continue}
+   \EndIf
+   \State $N\gets(c,a',s,L)$; $v\gets v_c$
+   \If{$\exists K\in\mathcal A_v:\Call{Dominates}{K,N}$}
+    \State Discard $N$; \textbf{continue}
+   \EndIf
+   \State $\mathcal A_v\gets\mathcal A_v\setminus\{K:\Call{Dominates}{N,K}\}$
+   \State Retain all existing records in $\mathcal H$, including inactive predecessors
+   \State $\mathcal H\gets\mathcal H\cup\{N\}$; $\mathcal A_v\gets\mathcal A_v\cup\{N\}$
+   \State Insert $N$ into $Q$
+  \EndFor
+ \EndFor
+\EndWhile
+\State \Return \textsc{NoRouteOnGrid}
+\end{algorithmic}
+\end{algorithm}
+\noindent Expanded labels stay in the active sets until dominated. Each queue entry is extracted at most once; a node is not permanently settled.
+Neither $R$ nor $O$ is changed by this search. Alternatives are not added together as simultaneous buffer demand.
+
+\newpage
+\begin{algorithm}[H]
+\caption{Sequential Planning and Reservation}
+\label{alg:sequential}
+\begin{algorithmic}[1]
+\Require $\mathcal C,R,M,O,\mathcal B,\Delta,T$, with consistent initial reservations
+\Ensure A result for each bundle and updated reservations
+\ForAll{$b\in\mathcal B$ in the given order}
+ \State $(o,d,g,S)\gets b$
+ \State $\Pi\gets\Call{LabelSetting}{\mathcal C,R,M,O,b,\Delta,T}$ \Comment{Algorithm 1}
+ \If{$\Pi=\textsc{NoRouteOnGrid}$}
+  \State Record \textsc{NoRouteOnGrid}; \textbf{continue}
+ \EndIf
+ \State Independently validate the complete route and schedule $\Pi$
+ \If{validation fails}
+  \State Preserve the failing input and schedule; \textbf{halt}
+ \EndIf
+ \State $n_c(\Pi)\gets$ number of occurrences of $c$ in $\Pi$, for all $c\in\mathcal C$
+ \State $B_v^{\Pi,b}(t)\gets$ complete byte-level occupancy of $b$ at $v$ under $\Pi$
+ \State $R_c\gets R_c-S\,n_c(\Pi)$ for all $c\in\mathcal C$
+ \State $O_v(t)\gets O_v(t)+B_v^{\Pi,b}(t)$ for all $v\in V$
+ \State Record $\Pi$ and its whole-bundle destination arrival
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Route and Departure-Time Reconstruction}
+\label{alg:reconstruct}
+\begin{algorithmic}[1]
+\Require A destination label $L$ with retained predecessor records
+\Ensure Ordered contact--departure pairs $\Pi$
+\State $\Pi\gets[\,]$; $K\gets L$
+\While{$p(K)\neq\nil$}
+ \State Append $(c(K),s(K))$ to $\Pi$
+ \State $K\gets p(K)$
+\EndWhile
+\State \Return $\Call{Reverse}{\Pi}$
+\end{algorithmic}
+\end{algorithm}
+
+\noindent\textbf{Complete-route validation and occupancy.}
+Validate endpoint and node continuity, release time, store-and-forward timing, contact windows, horizon, total contact volumes, and the entire buffer trajectory.
+$B_v^{\Pi,b}$ sums the bundle's visits to $v$: reception increases occupancy byte by byte; occupancy remains $S$ until the next transmission; transmission decreases it byte by byte. The source initially holds $S$ at $g$; the destination releases the bundle after checking its full-reception peak. A zero-hop delivery follows the same peak-before-release convention.
+The virtual contact never appears in $\Pi$ or in capacity updates.
+
+\medskip
+\noindent\textbf{Interpretation.}
+The intended optimality statement concerns a single query on the stated grid, conditional on the extension and dominance rules and their model assumptions.
+It is not a claim of joint optimality over all bundles, continuous-time optimality, or physically conflict-free link scheduling.
+\textsc{NoRouteOnGrid} requires queue exhaustion or source-buffer infeasibility; a runtime limit must instead be reported as \textsc{Timeout}.
+The current implementation caches predecessor-derived contact volumes internally; using this cache does not add a fifth field to the mathematical label definition.
+\end{document}

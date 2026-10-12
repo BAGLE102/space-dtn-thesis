@@ -138,3 +138,10 @@
 - 中繼37 Buffer降至0.3 MB時，後續包由22→37→5改走22→36→5，抵達由1466變2906秒；同Contact傳送重疊仍存在，不是實體可執行排程證明。
 - 統一結果：output/experiments/ring_road_study_v01_20261011；圖表：output/figures/ring_road_study_v01_20261011；方法：docs/ring_road_experiment_protocol_v01.md。
 - 尚未完成學長50–175條Flow規模、其他方法公平比較、多seed與正式重複計時；下一步先討論重疊排程界線及可保留時間枚舉的搜尋效率改善，不自行新增剪枝判別。
+
+## 論文格式虛擬碼（2026-10-12）
+
+- 新增 `docs/thesis_pseudocode_v01.tex` 與中文對照 `docs/thesis_pseudocode_v01.md`；已核對 frozen v04、四欄位 Label 表示法與現行程式。
+- 包含參數定義、延伸／Buffer／dominance 判別式，以及單包搜尋、依序預約與回溯三個演算法。未修改演算法或重跑實驗。
+- 明列 aggregate 容量、有限格點、來源 Buffer、已展開 Label 仍參與 dominance、保留前驅紀錄及逾時不等於無路徑等界線。
+- 已開啟 LaTeX 編輯器；內建編譯器回報平台目錄錯誤，PDF 版面尚未驗證。下一步為確認論文模板與演算法內容，再於可用編譯環境確認排版。
