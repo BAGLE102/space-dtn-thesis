@@ -1,0 +1,11 @@
+{
+  "units": {"time": "s", "data": "MB", "rate": "MB/s"},
+  "nodes": [
+    {"id": "X", "buffer": "4"},
+    {"id": "A", "buffer": "4"},
+    {"id": "B", "buffer": "4"},
+    {"id": "C", "buffer": "4"},
+    {"id": "D", "buffer": "4"}
+  ],
+  "contacts_file": "../walkthrough_contacts.csv"
+}

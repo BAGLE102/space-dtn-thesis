@@ -1,0 +1,6 @@
+digraph contact_topology {
+  rankdir=LR;
+  "A" [label="A / buffer=4 MB"];
+  "D" [label="D / buffer=4 MB"];
+  "A" -> "D" [label="a [0,4) r=4, delay=0, R=4"];
+}

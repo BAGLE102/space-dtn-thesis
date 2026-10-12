@@ -145,3 +145,10 @@
 - 包含參數定義、延伸／Buffer／dominance 判別式，以及單包搜尋、依序預約與回溯三個演算法。未修改演算法或重跑實驗。
 - 明列 aggregate 容量、有限格點、來源 Buffer、已展開 Label 仍參與 dominance、保留前驅紀錄及逾時不等於無路徑等界線。
 - 已開啟 LaTeX 編輯器；內建編譯器回報平台目錄錯誤，PDF 版面尚未驗證。下一步為確認論文模板與演算法內容，再於可用編譯環境確認排版。
+
+## PPT 拓樸與可替換演算法架構（2026-10-12）
+
+- 將執行設定、拓樸、Contact CSV、Bundle需求分開；新增演算法入口，可選內建方法或本機 module:function，共用逐包預約與獨立驗證。
+- 沿用 frozen v04，未改動演算法判別式。PPT 兩包結果為 c1→c2（8秒）、c4→c5（12秒），與獨立完整搜尋一致。
+- 新增 departure_candidates.csv，可直接查看各起送時間的延伸結果與支配者；另保存人工「前段不可用、後段可用」案例。
+- 50項測試通過；此次沒有進行大型或效能比較實驗。說明：docs/modular_routing_v01.md；PPT結果：output/experiments/ppt_modular_20261012/。

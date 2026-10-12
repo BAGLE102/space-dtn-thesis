@@ -31,6 +31,8 @@
 
 ### 可替換拓樸的實驗入口
 
+新增[拓樸／Bundle需求／演算法拆分架構](docs/modular_routing_v01.md)，範例設定為 `configs/ppt_modular/experiment.json`，可用 `--algorithm` 替換同模型演算法；[PPT 案例本次結果](output/experiments/ppt_modular_20261012/report/report.md)。
+
 不必修改搜尋程式；改 JSON 的 nodes、bundles、時間格點，或 CSV 的 contacts 即可：
 
 ```sh

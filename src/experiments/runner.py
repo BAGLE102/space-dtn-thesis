@@ -46,8 +46,17 @@ def _stop(output, reason, case, bundle, quota, background, result, check):
     raise CorrectnessFailure(f'{reason}；已保存 {output / "failure.json"}')
 
 
-def run_scenario(case, output, dominance=True, verify_oracle=False):
+def run_scenario(case, output, dominance=True, verify_oracle=False, algorithm=None):
     """Use a fresh output directory; commit only independently checked routes."""
+    # The legacy default preserves existing monkey-patched callers and GUI behavior.
+    search_one = search
+    algorithm_name = 'label_setting_v04'
+    algorithm = algorithm or case.get('algorithm')
+    if algorithm is not None:
+        from .algorithms import resolve_algorithm
+        selected = resolve_algorithm(algorithm)
+        search_one, algorithm_name = selected.search, selected.name
+        dominance = dominance and not selected.disable_dominance
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
     write_json(output / 'input.json', case)
@@ -59,7 +68,7 @@ def run_scenario(case, output, dominance=True, verify_oracle=False):
     try:
         for index, bundle in enumerate(case['bundles'], 1):
             before_quota, before_background = deepcopy(quota), deepcopy(background)
-            proposed = search(case, bundle, quota, background, dominance=dominance)
+            proposed = search_one(case, bundle, quota, background, dominance=dominance)
             accepted = proposed['arrival'] is not None
             route_check = (evaluate_schedule(case, bundle, quota, background, proposed['hops'])
                            if accepted else None)
@@ -125,6 +134,7 @@ def run_scenario(case, output, dominance=True, verify_oracle=False):
         write_json(output / 'status.json', dict(status='ERROR', error=str(error)))
         raise
     results = dict(name=case['name'], model='frozen_v04_finite_grid_aggregate_capacity',
+                   algorithm=algorithm_name,
                    units=dict(time='s', data='MB', rate='MB/s'),
                    dominance=dominance, oracle_checked=verify_oracle,
                    transmission_calendar_checked=False, physical_simulation=False,
@@ -142,6 +152,19 @@ def run_scenario(case, output, dominance=True, verify_oracle=False):
     write_csv(output / 'labels.csv', [
         'bundle', 'id', 'c', 'A', 's', 'pred', 'node', 'is_source_label', 'active',
         'processed'], labels)
+    departure_rows = []
+    for record in records:
+        for event in record['trace']:
+            if event['event'] != 'EXTEND':
+                continue
+            departure_rows.append(dict(
+                bundle=record['bundle']['id'], parent_label=event['selected'],
+                contact=event['contact'], start=event['s'], arrival=event['arrival'],
+                reason=event['reason'], candidate_label=event.get('new_label', ''),
+                dominated_by=';'.join(event.get('dominated_by', []))))
+    write_csv(output / 'departure_candidates.csv', [
+        'bundle', 'parent_label', 'contact', 'start', 'arrival', 'reason',
+        'candidate_label', 'dominated_by'], departure_rows)
     write_csv(output / 'contacts.csv', [
         'id', 'source', 'target', 'start', 'end', 'rate', 'delay', 'remaining_capacity'],
         [dict(id=edge['id'], source=edge['u'], target=edge['v'], start=edge['start'],

@@ -1,0 +1,5 @@
+﻿bundle,parent_label,contact,start,arrival,reason,candidate_label,dominated_by
+bundle,L0,a,0,1,BUFFER,,
+bundle,L0,a,1,2,BUFFER,,
+bundle,L0,a,2,3,PASS,L1,
+bundle,L0,a,3,4,PASS,L2,L1

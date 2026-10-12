@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETE",
+  "bundles": 1,
+  "accepted": 1,
+  "oracle_checked": true,
+  "correctness_claim": "tested_input_only",
+  "transmission_calendar_checked": false,
+  "performance_comparison_run": false
+}

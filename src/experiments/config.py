@@ -138,6 +138,27 @@ def _version_one(raw, base_dir):
                 horizon=_numeric(raw['horizon'], 'horizon'))
 
 
+def _version_two(raw, base_dir):
+    """Compose independently replaceable topology and ordered-demand files."""
+    required = {'schema_version', 'name', 'time_step', 'horizon',
+                'topology_file', 'bundles_file'}
+    _fields(raw, required | {'description', 'algorithm'}, required, 'experiment')
+    if type(raw['schema_version']) is not int or raw['schema_version'] != 2:
+        raise ConfigError('schema_version: modular experiments require integer 2')
+    topology_path = base_dir / _id(raw['topology_file'], 'topology_file')
+    demand_path = base_dir / _id(raw['bundles_file'], 'bundles_file')
+    topology = json.loads(topology_path.read_text(encoding='utf-8-sig'), parse_float=str)
+    demands = json.loads(demand_path.read_text(encoding='utf-8-sig'), parse_float=str)
+    _fields(topology, {'nodes', 'contacts', 'contacts_file', 'units'}, {'nodes'}, 'topology')
+    _fields(demands, {'bundles'}, {'bundles'}, 'demand file')
+    composed = dict(topology, schema_version=1, name=raw['name'],
+                    time_step=raw['time_step'], horizon=raw['horizon'],
+                    bundles=demands['bundles'])
+    case = _version_one(composed, topology_path.parent)
+    case['algorithm'] = _id(raw.get('algorithm', 'label_setting_v04'), 'algorithm')
+    return case
+
+
 def validate_case(case):
     """Check the configuration boundary without changing routing semantics."""
     _id(case.get('name'), 'name')
@@ -200,11 +221,13 @@ def load_scenario(path):
         raw = json.loads(path.read_text(encoding='utf-8-sig'), parse_float=str)
         if not isinstance(raw, dict):
             raise ConfigError('scenario: 頂層必須是物件')
-        if 'schema_version' in raw:
+        if raw.get('schema_version') == 2:
+            case = _version_two(raw, path.parent)
+        elif 'schema_version' in raw:
             case = _version_one(raw, path.parent)
         else:
             required = {'name', 'contacts', 'bundles', 'buffers', 'horizon', 'delta'}
-            _fields(raw, required | {'background', 'expected'}, required, 'legacy scenario')
+            _fields(raw, required | {'background', 'expected', 'algorithm'}, required, 'legacy scenario')
             case = deepcopy(raw)
             # Reject boolean numeric values before Fraction normalization.
             for edge in _records(case['contacts'], 'contacts'):
@@ -223,6 +246,8 @@ def load_scenario(path):
                 _numeric(capacity, f'buffers[{node}]')
             _numeric(case['delta'], 'delta', positive=True)
             _numeric(case['horizon'], 'horizon')
+        if 'algorithm' in case:
+            _id(case['algorithm'], 'algorithm')
         return validate_case(normalize(case))
     except ConfigError:
         raise

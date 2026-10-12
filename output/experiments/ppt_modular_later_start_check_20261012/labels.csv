@@ -1,0 +1,4 @@
+﻿bundle,id,c,A,s,pred,node,is_source_label,active,processed
+bundle,L0,,0,,,A,True,True,True
+bundle,L1,a,3,2,L0,D,False,True,False
+bundle,L2,a,4,3,L0,D,False,False,False
