@@ -1,3 +1,4 @@
+# 事後重播與報表：計算既定排程的 Buffer 和 Contact 重疊；不修正搜尋結果。
 """Replay selected schedules and produce route tables and scientific figures.
 
 Uses exact inventory functions for replay; rendering never determines feasibility.
@@ -17,6 +18,7 @@ from src.validation.exhaustive_oracle import (
 )
 
 
+# 依既定排程重建精確占用、峰值與傳送重疊；不是重新尋找可行路徑。
 def analyze(case, results):
     """Independently replay each accepted bundle and check combined inventories."""
     quota = {edge['id']: edge['quota'] for edge in case['contacts']}
@@ -68,6 +70,7 @@ def analyze(case, results):
                   for segment in curve for t in segment[:2] if 0 <= t <= case['horizon'])
     points = sorted(points)
 
+    # 求指定節點及時間的占用，可選擇只計某一個 Bundle。
     def value(node, t, bundle_id=None):
         if bundle_id is None:
             return background_at(case['background'], node, t) + sum(
@@ -76,6 +79,7 @@ def analyze(case, results):
         size, rows = visits[bundle_id]
         return sum((inventory(visit, t, size) for visit in rows if visit['node'] == node), F(0))
 
+    # 取得事件前後的占用值，區分交付前峰值與交付後釋放。
     def limits(node, index, bundle_id=None):
         """Exact one-sided limits by linear extrapolation within each event interval."""
         t = points[index]
@@ -131,6 +135,7 @@ def analyze(case, results):
         link_conflicts=conflicts, final_quota=quota, points=points)
 
 
+# 繪製已算好的拓樸與占用曲線；不以圖片代替數值驗證。
 def render(case, replay, output, positions=None):
     """Plot only after numerical checks; optional plotting dependencies stay here."""
     import sys
@@ -234,6 +239,7 @@ def render(case, replay, output, positions=None):
         svg_path.write_text(svg_text, encoding='utf8', newline='\n')
 
 
+# 載入已保存結果，先驗證完整排程，再輸出數值重播表與報告。
 def generate(run_dir, positions_path=None, draw=True):
     run_dir=Path(run_dir)
     case=load_scenario(run_dir/'input.json')
@@ -281,6 +287,7 @@ def generate(run_dir, positions_path=None, draw=True):
     return output
 
 
+# 命令列可選擇只輸出數值報告，不必載入繪圖套件。
 def main():
     parser=argparse.ArgumentParser(description='依路由結果重播排程，輸出路徑與buffer圖')
     parser.add_argument('--run',required=True,type=Path)

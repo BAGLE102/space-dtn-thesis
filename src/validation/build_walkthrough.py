@@ -1,3 +1,4 @@
+# 歷史手算與 trace 建置工具：會寫出驗證紀錄；本次加註解不執行此工具。
 """Freeze original documents and produce the trace BEFORE oracle comparisons."""
 from pathlib import Path
 from hashlib import sha256
@@ -12,17 +13,20 @@ OUT = ROOT/'output'/'validation'
 DOC = ROOT/'docs'
 
 
+# 將已取得資料排成 Markdown 表格，不重新計算判別條件。
 def table(headers, rows):
     return '\n'.join(['| '+' | '.join(headers)+' |', '| '+' | '.join(['---']*len(headers))+' |']+
                      ['| '+' | '.join(str(x).replace('\n','<br>') for x in row)+' |' for row in rows])
 
 
+# 歷史驗證紀錄的內部 Label 表示，含 usage；不是現行論文四欄位格式。
 def label_name(labels, lid):
     k = labels[lid]
     used = ','.join(f'{c}:{x}' for c,x in k['usage'].items()) or '0'
     return f"{lid}=({k['v']},{k['a']},{{{used}}})"
 
 
+# 保存原始文件雜湊及手算 trace，避免在核對前覆寫研究基準。
 def run():
     OUT.mkdir(parents=True, exist_ok=True)
     manifest=OUT/'frozen_document_hashes.json'

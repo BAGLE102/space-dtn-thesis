@@ -1,3 +1,4 @@
+# 小案例批次驗證：逐組核對預期答案；失敗即停止，不把案例通過當一般證明。
 """Run small, reproducible correctness experiments without changing routing."""
 import argparse
 import json
@@ -10,6 +11,7 @@ from .runner import run_scenario, write_csv, write_json, CorrectnessFailure
 from .report import generate
 
 
+# 依清單逐組執行小案例與完整搜尋比對，任何差異立即停止。
 def run_batch(manifest_path, output, figures=False):
     manifest_path, output = Path(manifest_path), Path(output)
     manifest = json.loads(manifest_path.read_text(encoding='utf-8-sig'))
@@ -102,6 +104,7 @@ def run_batch(manifest_path, output, figures=False):
     return output
 
 
+# 提供批次案例清單與新輸出位置的命令列入口。
 def main():
     parser=argparse.ArgumentParser(description='批次執行小型路由驗證實驗')
     parser.add_argument('--manifest',type=Path,default=Path('configs/experiments_v01/manifest.json'))

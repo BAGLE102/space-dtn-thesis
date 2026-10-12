@@ -1,3 +1,4 @@
+# 先前實驗彙整工具：保留每次嘗試的來源及逾時，不補造未完成結果。
 """Consolidate explicit attempts; retain timeouts and their provenance."""
 import argparse
 import csv
@@ -8,6 +9,7 @@ from shutil import copyfile
 from .runner import write_csv, write_json
 
 
+# 核對摘要、查詢數、Label 計數、Buffer 與重疊紀錄的一致性。
 def validate_artifacts(full, short, output):
     from fractions import Fraction as F
     checked, queries, timeouts = 0, 0, 0
@@ -48,6 +50,7 @@ def validate_artifacts(full, short, output):
         physical_conflicts_required_to_be_zero=False))
 
 
+# 按明列的嘗試來源彙整最新狀態，同時保留全部嘗試與逾時。
 def consolidate(runs, short, output, random_run=None):
     output.mkdir(parents=True, exist_ok=False)
     latest, attempts = {}, []

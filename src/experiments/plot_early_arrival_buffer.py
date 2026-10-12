@@ -1,3 +1,4 @@
+# 既有 PPT 拒絕候選的 Buffer 示意圖；圖中候選不是已接受的資源預約。
 """Plot B occupancy for the infeasible c3-to-c5 candidate shown in the PPT.
 This candidate is rejected; it is not an accepted reservation.
 """

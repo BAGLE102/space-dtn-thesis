@@ -1,3 +1,4 @@
+# 回歸測試：以下中文註解說明每個測試要避免的錯誤情況。
 """Importer boundary and instrumentation checks, without requiring downloaded data."""
 import json
 import tempfile
@@ -11,7 +12,9 @@ from src.experiments.ring_road import (
 )
 
 
+# 這組測試驗證指定模組的輸入、結果或邊界；每個案例各自建立隔離狀態。
 class RingRoadExperiments(unittest.TestCase):
+    # 被中斷的 JSON 不算完成，但仍保留未完成的檔名。
     def test_interrupted_json_is_preserved_but_not_counted_as_complete(self):
         with tempfile.TemporaryDirectory() as tmp:
             folder = Path(tmp)
@@ -22,6 +25,7 @@ class RingRoadExperiments(unittest.TestCase):
             self.assertEqual(incomplete, ['query_0002.json'])
             self.assertTrue((folder/'query_0002.json').exists())
 
+    # 核對轉接版與原核心的選路、支配、Q 數量與統計。
     def test_compact_search_preserves_decisions_queue_sizes_and_statistics(self):
         from copy import deepcopy
         from src.experiments.compact_search import search as compact_search
@@ -55,6 +59,7 @@ class RingRoadExperiments(unittest.TestCase):
                         if left['arrival'] is not None:
                             quota, background = commit(case, quota, background, bundle, left['hops'])
 
+    # 確認最後一跳下界不被誤當成可行完整路徑。
     def test_last_contact_bound_is_a_relaxation_not_a_route(self):
         from fractions import Fraction as F
         case = load_scenario(Path('configs/walkthrough.json'))
@@ -67,6 +72,7 @@ class RingRoadExperiments(unittest.TestCase):
                 quota[c['id']] = 0
         self.assertIsNone(destination_lower_bound(case, bundle, quota))
 
+    # 核對公開資料匯入的方向、ID 與 horizon 裁切。
     def test_import_preserves_direction_identity_and_clips_only_horizon(self):
         with tempfile.TemporaryDirectory() as tmp:
             source = Path(tmp) / 'contacts.txt'
@@ -80,6 +86,7 @@ class RingRoadExperiments(unittest.TestCase):
                               for r in rows], [('rrn_0002', '7', '32', '4', '10'),
                                                ('rrn_0003', '32', '7', '4', '10')])
 
+    # 確認量測不改變路徑，且離開後還原搜尋函式。
     def test_measurements_do_not_change_routes_or_leave_search_patched(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

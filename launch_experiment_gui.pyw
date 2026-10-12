@@ -1,3 +1,4 @@
+# Windows 雙擊入口：設定專案匯入路徑，再啟動 GUI；不自行實作搜尋。
 """Double-click launcher; can also run with python launch_experiment_gui.pyw."""
 import sys
 from pathlib import Path

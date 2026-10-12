@@ -1,3 +1,4 @@
+# 由驗證資料繪製既有圖解；圖像是說明，不取代數值核對。
 """Nine reproducible scientific walkthrough diagrams, fixed topology throughout."""
 from pathlib import Path
 import sys
@@ -22,6 +23,7 @@ POS={'X':(0,2.6),'A':(0,0.4),'B':(2.8,2.0),'C':(2.8,-0.3),'D':(5.6,1.2)}
 BLUE='#2563A6';ORANGE='#C16B17';GREEN='#16794D';RED='#B6343A';GRAY='#A8B0BC';INK='#172B45'
 
 
+# 讀取既有 trace 與數值，輸出各步驟圖解；不執行效能實驗。
 def run():
     data=json.loads((ROOT/'output/validation/walkthrough_trace.json').read_text(encoding='utf-8'))
     edges=data['case']['contacts']

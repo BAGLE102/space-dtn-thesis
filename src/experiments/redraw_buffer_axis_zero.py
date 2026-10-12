@@ -1,3 +1,4 @@
+# 歷史圖片重繪工具：曲線取自圖片，不是新增模擬或補推未提供的數值。
 """Redraw the visible chart with an x-axis starting at zero.
 Coordinates are transcribed from the supplied image, not simulation outputs.
 No curve values are inferred before t=2.

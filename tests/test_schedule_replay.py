@@ -1,3 +1,4 @@
+# 回歸測試：以下中文註解說明每個測試要避免的錯誤情況。
 import json
 import tempfile
 import unittest
@@ -13,7 +14,9 @@ from src.validation.validation_cases import make, c, b
 ROOT=Path(__file__).resolve().parents[1]
 
 
+# 這組測試驗證指定模組的輸入、結果或邊界；每個案例各自建立隔離狀態。
 class ReplayChecks(unittest.TestCase):
+    # 核對 PPT 路徑、Buffer 峰值與目的地即交付。
     def test_ppt_routes_buffer_peaks_and_immediate_delivery(self):
         case=load_scenario(ROOT/'configs/walkthrough.json')
         with tempfile.TemporaryDirectory() as temp:
@@ -35,6 +38,7 @@ class ReplayChecks(unittest.TestCase):
             self.assertTrue((report/'routes.csv').exists())
             self.assertTrue((report/'events.csv').exists())
 
+    # 確認事件之間的占用按分段線性計算。
     def test_exact_linear_inventory_between_events(self):
         case=load_scenario(ROOT/'configs/walkthrough.json')
         with tempfile.TemporaryDirectory() as temp:
@@ -47,6 +51,7 @@ class ReplayChecks(unittest.TestCase):
             self.assertEqual((at2[-1]+at3[0])/2,F(2))
             self.assertEqual(replay['final_quota']['c4'],4)
 
+    # 重疊只作診斷，不在報表階段偷偷更改排程。
     def test_contact_overlap_is_diagnostic_not_silently_repaired(self):
         case=make('overlap',[c('one','A','D',0,4,rate=1,quota=4)],
                   [b('A','D',size=2,name='first'),b('A','D',size=2,name='second')],horizon=4)
@@ -58,6 +63,7 @@ class ReplayChecks(unittest.TestCase):
             conflict=replay['link_conflicts'][0]
             self.assertEqual((conflict['overlap_start'],conflict['overlap_end']),(0,2))
 
+    # 人為改壞路徑，確認完整檢查拒絕且保留證據。
     def test_modified_route_is_rejected_and_preserved(self):
         case=load_scenario(ROOT/'configs/walkthrough.json')
         with tempfile.TemporaryDirectory() as temp:

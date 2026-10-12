@@ -152,3 +152,9 @@
 - 沿用 frozen v04，未改動演算法判別式。PPT 兩包結果為 c1→c2（8秒）、c4→c5（12秒），與獨立完整搜尋一致。
 - 新增 departure_candidates.csv，可直接查看各起送時間的延伸結果與支配者；另保存人工「前段不可用、後段可用」案例。
 - 50項測試通過；此次沒有進行大型或效能比較實驗。說明：docs/modular_routing_v01.md；PPT結果：output/experiments/ppt_modular_20261012/。
+
+## 中文程式註解與流程圖（2026-10-12）
+
+- 為既有37個Python檔案及網頁重播模板補上中文註解；核心逐段說明時間枚舉、Buffer、dominance、Q、前驅保留與預約提交。
+- 新增系統架構、逐包預約、單包Label Setting三張圖，提供PNG／SVG及Mermaid原稿；圖稿產生器位於src/experiments/render_code_diagrams.py。
+- 註解前後Python語法樹一致；新增圖稿產生器不執行路由。導讀：docs/code_reading_guide_v01.md。驗證紀錄另存output/validation/code_comments_20261012/，不覆寫原有凍結紀錄。

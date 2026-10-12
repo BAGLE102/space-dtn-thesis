@@ -1,3 +1,4 @@
+# 桌面介面人工／自動操作檢查工具，會開視窗；不是一般 unittest 自動發現項目。
 """Explicit desktop GUI smoke checks; not part of headless unittest discovery."""
 import json
 import subprocess
@@ -12,6 +13,7 @@ sys.path.insert(0, str(ROOT))
 from src.experiments.gui import ExperimentGUI, DEFAULT_SUITE, curve_value, enable_dpi_awareness
 
 
+# 操作 GUI 案例與播放步驟，收集回呼錯誤及畫面證據。
 def main():
     output = ROOT/'output/visualizations/desktop_gui_v01_20261011'
     output.mkdir(parents=True, exist_ok=True)
@@ -43,6 +45,7 @@ def main():
     app.draw()
     root.update()
     from PIL import ImageGrab
+    # 保存 GUI 檢查畫面作版面證據；不當作路由答案的驗證。
     def screenshot(name):
         root.lift()
         root.update()

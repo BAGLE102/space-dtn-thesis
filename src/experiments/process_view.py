@@ -1,3 +1,4 @@
+# 網頁／GUI 共用讀取層：只使用已保存的路徑與 trace，不執行新的路由搜尋。
 """Embed saved experiment traces in an offline interactive HTML fragment.
 
 This does not run routing or modify its results. The HTML template is literal
@@ -9,6 +10,7 @@ import json
 from pathlib import Path
 
 
+# 讀取一組已完成結果，並確認 trace 與前驅引用的 Label 確實存在。
 def load_run(folder, description=None):
     """Read one saved run; shared by the browser view and desktop GUI."""
     folder = Path(folder)
@@ -38,6 +40,7 @@ def load_run(folder, description=None):
                 conflicts=check['link_conflicts'], folder=str(folder.resolve()))
 
 
+# 依清單載入案例，移除只適用本機的路徑再交給網頁重播。
 def load_suite(suite):
     suite = Path(suite)
     manifest = json.loads((suite/'manifest.json').read_text(encoding='utf8'))
@@ -50,6 +53,7 @@ def load_suite(suite):
     return payload
 
 
+# 將結果嵌入模板，跳脫 HTML 敏感字元；不覆蓋既有重播檔。
 def build_view(suite, output):
     output = Path(output)
     payload = load_suite(suite)
@@ -69,6 +73,7 @@ def build_view(suite, output):
                 trace_events=sum(len(r['trace']) for c in payload for r in c['records']))
 
 
+# 解析輸入結果資料夾與輸出 HTML 的命令列參數。
 def main():
     parser = argparse.ArgumentParser(description='把已保存實驗紀錄轉為互動過程重播')
     parser.add_argument('--suite', type=Path, required=True)

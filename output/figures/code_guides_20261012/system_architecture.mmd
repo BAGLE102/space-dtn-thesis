@@ -1,0 +1,14 @@
+flowchart TB
+    E["experiment.json：方法、Δ、T"] --> C["config.py：組合與驗證輸入"]
+    N["topology.json + Contact CSV：節點與接觸資料"] --> C
+    B["bundles.json：需求與處理順序"] --> C
+    C --> R["runner.py：依序處理 Bundle"]
+    A["algorithms.py：選擇搜尋函式"] --> R
+    R -->|呼叫| S["proposed_v04.py 或同介面的替代方法"]
+    S -->|回傳候選路徑| R
+    R --> V["獨立完整排程檢查；可選完整搜尋比對"]
+    V -->|通過後提交| O["R：剩餘容量；O：Buffer 預約"]
+    O -->|下一包使用| R
+    V -->|失敗| X["保存案例並停止"]
+    R --> F["CSV、JSON、報告"]
+    F --> G["GUI／網頁：只讀重播"]

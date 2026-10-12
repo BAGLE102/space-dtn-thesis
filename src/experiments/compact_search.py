@@ -1,3 +1,4 @@
+# 既有實驗轉接版：改用索引及較少事件紀錄；容量、Buffer 與支配條件沿用核心。
 """Execution adapter for frozen v04; same candidates, checks, dominance and ties.
 
 Index outgoing contacts/active labels and omit per-event queue copies. The frozen
@@ -13,12 +14,14 @@ from src.validation.model import occupancy, validate_input
 from src.validation.proposed_v04 import check_extension, dominates
 
 
+# 使用相同延伸與支配函式，僅調整索引、事件保存及前驅紀錄的管理方式。
 def search(case, bundle, quota, background, dominance=True, trace_events=True):
     validate_input(case, bundle)
     labels, heap, trace = {}, [], []
     stats = dict(created=0, enqueued=0, expanded=0, pruned_new=0, pruned_old=0)
     events, reasons, maximum_queue = Counter(), Counter(), 0
 
+    # 累加事件與失敗原因；可只留計數，避免每一步複製完整 Q。
     def record(event):
         nonlocal maximum_queue
         events[event['event']] += 1
@@ -28,6 +31,7 @@ def search(case, bundle, quota, background, dominance=True, trace_events=True):
         if trace_events:
             trace.append(event)
 
+    # 統一封裝答案與診斷；無解時 arrival 為 None，不捏造抵達時間。
     def finish(arrival, hops):
         return dict(arrival=arrival, hops=hops, labels=labels, trace=trace, stats=stats,
                     diagnostics=dict(events=dict(events), reasons=dict(reasons),
@@ -107,6 +111,7 @@ def search(case, bundle, quota, background, dominance=True, trace_events=True):
                         stats['enqueued'] += 1
                 event['queue_count'] = len(heap)
                 record(event)
+                # 與原核心一致：當前起送時間失敗也不能跳過剩餘時間。
                 s += case['delta']
         label['processed'] = True
     record(dict(event='EXHAUSTED', queue_count=0))

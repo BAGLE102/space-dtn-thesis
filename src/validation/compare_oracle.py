@@ -1,3 +1,4 @@
+# 同模型答案核對：發現差異保存反例並停止，不自行修改演算法。
 """Stop and preserve inputs on any same-model correctness discrepancy."""
 from pathlib import Path
 import json
@@ -11,10 +12,12 @@ ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'output'/'validation'
 
 
+# 保存可重現的輸入、結果與失敗狀態。
 def write(name,data):
     (OUT/name).write_text(json.dumps(jsonable(data),ensure_ascii=False,indent=2),encoding='utf-8')
 
 
+# 單一案例內逐包比對答案與預約更新，保持後續查詢的狀態一致。
 def compare_one(case):
     q={c['id']:c['quota'] for c in case['contacts']}; o=case['background']
     oq=dict(q); oo=case['background']; rows=[]
@@ -46,6 +49,7 @@ def compare_one(case):
     return rows
 
 
+# 執行固定小案例與格點邊界示例，結果只支持這些被測輸入。
 def run():
     OUT.mkdir(parents=True,exist_ok=True)
     records=[]

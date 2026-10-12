@@ -1,3 +1,4 @@
+# 由已保存的驗證資料產生歷史報告，不手填抵達時間或通過數量。
 """Render verified values from raw JSON/CSV; never type in result numbers."""
 from pathlib import Path
 from hashlib import sha256
@@ -10,6 +11,7 @@ OUT=ROOT/'output'/'validation'
 DOC=ROOT/'docs'
 
 
+# 核對凍結文件雜湊與已保存答案，再由資料生成驗證報告。
 def run():
     results=json.loads((OUT/'oracle_results.json').read_text(encoding='utf-8'))
     dom=json.loads((OUT/'dominance_results.json').read_text(encoding='utf-8'))

@@ -1,0 +1,235 @@
+{
+  "baseline_commit": "b49e4f9",
+  "existing_python_files": 37,
+  "all_existing_asts_unchanged": true,
+  "html_comment_only": true,
+  "new_diagram_generator_syntax_valid": true,
+  "unit_tests": 50,
+  "unit_tests_passed": true,
+  "gui_interaction_run": false,
+  "large_experiments_run": false,
+  "files": [
+    {
+      "path": "launch_experiment_gui.pyw",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 0
+    },
+    {
+      "path": "src/experiments/__init__.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 0
+    },
+    {
+      "path": "src/experiments/__main__.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 1
+    },
+    {
+      "path": "src/experiments/algorithms.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 1
+    },
+    {
+      "path": "src/experiments/batch.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 2
+    },
+    {
+      "path": "src/experiments/compact_search.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 3
+    },
+    {
+      "path": "src/experiments/config.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 10
+    },
+    {
+      "path": "src/experiments/gui.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 31
+    },
+    {
+      "path": "src/experiments/plot_early_arrival_buffer.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 0
+    },
+    {
+      "path": "src/experiments/process_view.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 4
+    },
+    {
+      "path": "src/experiments/redraw_buffer_axis_zero.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 0
+    },
+    {
+      "path": "src/experiments/report.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 6
+    },
+    {
+      "path": "src/experiments/ring_road.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 10
+    },
+    {
+      "path": "src/experiments/ring_road_figures.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 2
+    },
+    {
+      "path": "src/experiments/ring_road_study.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 2
+    },
+    {
+      "path": "src/experiments/runner.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 5
+    },
+    {
+      "path": "src/validation/__init__.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 0
+    },
+    {
+      "path": "src/validation/build_report.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 1
+    },
+    {
+      "path": "src/validation/build_walkthrough.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 3
+    },
+    {
+      "path": "src/validation/compare_dominance.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 1
+    },
+    {
+      "path": "src/validation/compare_oracle.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 3
+    },
+    {
+      "path": "src/validation/exhaustive_oracle.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 7
+    },
+    {
+      "path": "src/validation/model.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 9
+    },
+    {
+      "path": "src/validation/proposed_v04.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 4
+    },
+    {
+      "path": "src/validation/render_figures.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 1
+    },
+    {
+      "path": "src/validation/validation_cases.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 6
+    },
+    {
+      "path": "tests/check_desktop_gui.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 2
+    },
+    {
+      "path": "tests/test_batch_experiments.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 3
+    },
+    {
+      "path": "tests/test_dominance.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 4
+    },
+    {
+      "path": "tests/test_experiment_config.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 10
+    },
+    {
+      "path": "tests/test_experiment_runner.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 7
+    },
+    {
+      "path": "tests/test_extension.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 7
+    },
+    {
+      "path": "tests/test_modular_routing.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 5
+    },
+    {
+      "path": "tests/test_oracle_consistency.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 4
+    },
+    {
+      "path": "tests/test_ring_road_experiments.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 5
+    },
+    {
+      "path": "tests/test_schedule_replay.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 4
+    },
+    {
+      "path": "tests/test_sequential_bundle_update.py",
+      "ast_unchanged": true,
+      "syntax_valid": true,
+      "functions": 3
+    }
+  ]
+}

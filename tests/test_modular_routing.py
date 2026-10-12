@@ -1,3 +1,4 @@
+# 回歸測試：以下中文註解說明每個測試要避免的錯誤情況。
 """Composition, replaceable routing, and later-departure regression checks."""
 import json
 import tempfile
@@ -16,13 +17,16 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / 'configs/ppt_modular/experiment.json'
 
 
+# 這組測試驗證指定模組的輸入、結果或邊界；每個案例各自建立隔離狀態。
 class ModularRoutingChecks(unittest.TestCase):
+    # 確認拆分格式組合後的拓樸與需求仍等於 PPT 案例。
     def test_split_config_matches_original_ppt(self):
         modular = load_scenario(CONFIG)
         original = load_scenario(ROOT / 'configs/walkthrough.json')
         for key in ('contacts', 'buffers', 'bundles', 'delta', 'horizon', 'background'):
             self.assertEqual(modular[key], original[key])
 
+    # 切換演算法入口，確認仍共用驗證、報表與預約流程。
     def test_replace_algorithm_preserves_paths_and_shared_validation(self):
         case = load_scenario(CONFIG)
         original = deepcopy(case)
@@ -46,6 +50,7 @@ class ModularRoutingChecks(unittest.TestCase):
             self.assertEqual(results[0]['records'][1]['hops'], results[1]['records'][1]['hops'])
         self.assertEqual(case, original)
 
+    # 確認可獨立更換需求且拓樸內 CSV 相對路徑正確。
     def test_topology_relative_paths_and_demand_replacement(self):
         with tempfile.TemporaryDirectory() as temp:
             base = Path(temp)
@@ -71,6 +76,7 @@ class ModularRoutingChecks(unittest.TestCase):
             with self.assertRaises(ConfigError):
                 load_scenario(base/'experiment.json')
 
+    # 前面起送時間超限時，仍須繼續後面的起送時間。
     def test_failed_early_start_does_not_eliminate_contact(self):
         case = make('later_start', [c('a', 'A', 'D', 0, 4)], [b('A', 'D')],
                     horizon=4, background={'D': [[[0, 2, 4, 4], [2, 3, 4, 0]]]})
@@ -83,6 +89,7 @@ class ModularRoutingChecks(unittest.TestCase):
         self.assertEqual([(e['s'], e['reason']) for e in attempts],
                          [(0, 'BUFFER'), (1, 'BUFFER'), (2, 'PASS'), (3, 'PASS')])
 
+    # 無效演算法名稱應在建立輸出與搜尋前被拒絕。
     def test_invalid_algorithm_rejected_before_creating_output(self):
         case = load_scenario(CONFIG)
         with tempfile.TemporaryDirectory() as temp:

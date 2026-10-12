@@ -16,6 +16,7 @@
 - [正確性驗證總結](docs/algorithm_validation_summary_v01.md)
 - [符號與公式](docs/algorithm_symbols_and_equations_v01.md)
 - [逐步搜尋說明](docs/algorithm_walkthrough_v01.md)
+- [中文程式註解導讀、架構圖與流程圖](docs/code_reading_guide_v01.md)
 
 ## 簡報與圖解
 

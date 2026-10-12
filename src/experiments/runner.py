@@ -1,3 +1,4 @@
+# 執行層：按固定順序規劃 Bundle；完整路徑驗證通過後才更新 R 與 O。
 """Scenario execution and inspectable outputs; no simulator or routing changes."""
 import csv
 import json
@@ -11,15 +12,18 @@ from src.validation.exhaustive_oracle import (
 )
 
 
+# 驗證失敗的停止訊號，避免錯誤結果繼續影響下一包。
 class CorrectnessFailure(RuntimeError):
     """A preserved discrepancy; stop immediately without processing later bundles."""
 
 
+# 將 Fraction 等資料轉成可保存格式，使用 UTF-8 與固定換行。
 def write_json(path, data):
     Path(path).write_text(json.dumps(jsonable(data), ensure_ascii=False, indent=2)
                           + '\n', encoding='utf-8', newline='\n')
 
 
+# 輸出含欄位名稱的 CSV；UTF-8 BOM 方便 Windows Excel 辨識中文。
 def write_csv(path, fields, rows):
     with Path(path).open('w', encoding='utf-8-sig', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=fields, lineterminator='\n')
@@ -27,6 +31,7 @@ def write_csv(path, fields, rows):
         writer.writerows(jsonable(rows))
 
 
+# 將核心紀錄轉為論文四欄位 c/A/s/pred；內部 usage 快取不當作第五欄位。
 def label_view(label):
     """Export the presentation's four fields; retain the frozen engine internally."""
     hop = label['hop']
@@ -36,6 +41,7 @@ def label_view(label):
                 active=label['active'], processed=label['processed'])
 
 
+# 保存輸入、候選與獨立檢查差異，標記 STOP，阻止後續 Bundle 或比較。
 def _stop(output, reason, case, bundle, quota, background, result, check):
     write_json(output / 'failure.json', dict(
         reason=reason, case=case, bundle=bundle, quota=quota,
@@ -46,6 +52,7 @@ def _stop(output, reason, case, bundle, quota, background, result, check):
     raise CorrectnessFailure(f'{reason}；已保存 {output / "failure.json"}')
 
 
+# 依序搜尋單包；檢查結果與資源不變性，接受後才統一提交並輸出紀錄。
 def run_scenario(case, output, dominance=True, verify_oracle=False, algorithm=None):
     """Use a fresh output directory; commit only independently checked routes."""
     # The legacy default preserves existing monkey-patched callers and GUI behavior.
@@ -61,15 +68,18 @@ def run_scenario(case, output, dominance=True, verify_oracle=False, algorithm=No
     output.mkdir(parents=True, exist_ok=False)
     write_json(output / 'input.json', case)
     write_json(output / 'status.json', dict(status='RUNNING'))
+    # quota 即 R；background 即 O。每次 run 都由輸入建立自己的狀態。
     quota = {edge['id']: edge['quota'] for edge in case['contacts']}
     background = deepcopy(case['background'])
     edges = {edge['id']: edge for edge in case['contacts']}
     records, summaries, schedules, labels = [], [], [], []
     try:
         for index, bundle in enumerate(case['bundles'], 1):
+            # 同次搜尋的候選路徑互斥，不可把各候選同時扣到全域 R/O。
             before_quota, before_background = deepcopy(quota), deepcopy(background)
             proposed = search_one(case, bundle, quota, background, dominance=dominance)
             accepted = proposed['arrival'] is not None
+            # 獨立檢查選定完整排程；--oracle 另核對最優值及無解判定。
             route_check = (evaluate_schedule(case, bundle, quota, background, proposed['hops'])
                            if accepted else None)
             reference = solve(case, bundle, quota, background) if verify_oracle else None
@@ -83,6 +93,7 @@ def run_scenario(case, output, dominance=True, verify_oracle=False, algorithm=No
             if (quota, background) != (before_quota, before_background):
                 _stop(output, 'SEARCH_MUTATED_RESERVATIONS', case, bundle,
                       before_quota, before_background, proposed, (quota, background))
+            # 只有完整路徑被接受，才產生下一包可見的新預約狀態。
             if accepted:
                 new_q, new_o = commit(case, quota, background, bundle, proposed['hops'])
                 independent_q, independent_o = commit_independently(
@@ -98,6 +109,7 @@ def run_scenario(case, output, dominance=True, verify_oracle=False, algorithm=No
                     _stop(output, 'INDEPENDENT_RESERVATION_MISMATCH', case, bundle,
                           quota, background, proposed, dict(
                               proposed=(new_q, new_o), independent=(independent_q, independent_o)))
+                # 前面的檢查全通過後再替換狀態，避免半途提交。
                 quota, background = new_q, new_o
             record = dict(index=index, bundle=bundle,
                           status='ACCEPTED' if accepted else 'NO_ROUTE_ON_GRID',
@@ -152,6 +164,8 @@ def run_scenario(case, output, dominance=True, verify_oracle=False, algorithm=No
     write_csv(output / 'labels.csv', [
         'bundle', 'id', 'c', 'A', 's', 'pred', 'node', 'is_source_label', 'active',
         'processed'], labels)
+    # 匯出實際展開過的 (Contact, s)，PASS 仍可能在 dominance 階段被丟棄。
+    # 未開事件紀錄的演算法會只有表頭；不偽造其未提供的枚舉紀錄。
     departure_rows = []
     for record in records:
         for event in record['trace']:

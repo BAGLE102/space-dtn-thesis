@@ -1,3 +1,4 @@
+# 輸入層：載入拓樸與 Bundle，驗證單位、欄位及時間格點，轉成精確有理數。
 """Load JSON scenarios and optional CSV contacts, using exact rational values."""
 import csv
 import json
@@ -8,10 +9,12 @@ from pathlib import Path
 from src.validation.model import normalize, number, occupancy, validate_input
 
 
+# 設定錯誤的專用例外，讓入口能顯示欄位與停止原因。
 class ConfigError(ValueError):
     """An input error, with the field name included in the message."""
 
 
+# 拒絕缺少或拼錯欄位，避免錯誤設定默默套用其他意思。
 def _fields(value, allowed, required, location):
     if not isinstance(value, dict):
         raise ConfigError(f'{location}: 必須是物件')
@@ -22,12 +25,14 @@ def _fields(value, allowed, required, location):
         raise ConfigError(f'{location}: 未知欄位 {sorted(extra)}')
 
 
+# 節點、Contact 與 Bundle ID 必須是非空字串，且不能混入前後空白。
 def _id(value, location):
     if not isinstance(value, str) or not value.strip() or value != value.strip():
         raise ConfigError(f'{location}: 必須是非空字串，且前後不能有空白')
     return value
 
 
+# 排除 bool 與無效數字，再用 Fraction 精確解析；依欄位要求檢查正值或非負。
 def _numeric(value, location, minimum=0, positive=False):
     if isinstance(value, bool) or not isinstance(value, (int, float, str, Fraction)):
         raise ConfigError(f'{location}: 必須是數值或有理數字串')
@@ -41,12 +46,14 @@ def _numeric(value, location, minimum=0, positive=False):
     return result
 
 
+# 確認輸入是記錄陣列，避免字串或物件被當作多筆資料。
 def _records(values, location):
     if not isinstance(values, list):
         raise ConfigError(f'{location}: 必須是陣列')
     return values
 
 
+# 同一類型的 ID 不可重複，否則索引與前驅引用會產生歧義。
 def _unique(records, location):
     seen = set()
     for index, item in enumerate(records):
@@ -58,6 +65,7 @@ def _unique(records, location):
         seen.add(identifier)
 
 
+# 讀取 Contact CSV；選填欄位留白可使用預設值，必要欄位仍須提供。
 def _csv_contacts(path):
     try:
         with path.open(encoding='utf-8-sig', newline='') as stream:
@@ -81,6 +89,7 @@ def _csv_contacts(path):
         raise ConfigError(f'contacts_file: 無法讀取 {path}: {error}') from error
 
 
+# 整份案例格式：將外部欄位轉成核心使用的 u/v、quota、g 等名稱。
 def _version_one(raw, base_dir):
     required = {'schema_version', 'name', 'time_step', 'horizon', 'nodes', 'bundles'}
     allowed = required | {'description', 'units', 'contacts', 'contacts_file'}
@@ -138,6 +147,7 @@ def _version_one(raw, base_dir):
                 horizon=_numeric(raw['horizon'], 'horizon'))
 
 
+# 拆分格式：合併拓樸及需求，Contact CSV 相對於拓樸檔所在位置解析。
 def _version_two(raw, base_dir):
     """Compose independently replaceable topology and ordered-demand files."""
     required = {'schema_version', 'name', 'time_step', 'horizon',
@@ -145,6 +155,7 @@ def _version_two(raw, base_dir):
     _fields(raw, required | {'description', 'algorithm'}, required, 'experiment')
     if type(raw['schema_version']) is not int or raw['schema_version'] != 2:
         raise ConfigError('schema_version: modular experiments require integer 2')
+    # experiment 內的檔名相對於 experiment；CSV 則由 _version_one 以 topology 位置解析。
     topology_path = base_dir / _id(raw['topology_file'], 'topology_file')
     demand_path = base_dir / _id(raw['bundles_file'], 'bundles_file')
     topology = json.loads(topology_path.read_text(encoding='utf-8-sig'), parse_float=str)
@@ -159,6 +170,7 @@ def _version_two(raw, base_dir):
     return case
 
 
+# 統一檢查節點引用、時間格點及既有占用曲線；不新增路由限制。
 def validate_case(case):
     """Check the configuration boundary without changing routing semantics."""
     _id(case.get('name'), 'name')
@@ -213,11 +225,13 @@ def validate_case(case):
     return case
 
 
+# 自動識別拆分、整份或歷史案例格式；回傳通過驗證的統一 case。
 def load_scenario(path):
     """Accept schema v1 or existing contacts/buffers/bundles audit JSON files."""
     path = Path(path)
     try:
         # Keep decimal literals as exact strings, avoiding float rounding at import.
+        # parse_float=str 保留原始十進位精度；之後再轉 Fraction。
         raw = json.loads(path.read_text(encoding='utf-8-sig'), parse_float=str)
         if not isinstance(raw, dict):
             raise ConfigError('scenario: 頂層必須是物件')

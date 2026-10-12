@@ -1,3 +1,4 @@
+# 獨立完整搜尋：只依標準函式庫枚舉完整排程，避免和待測演算法共用判別式。
 """Independent exhaustive route/schedule oracle.
 
 Imports ONLY Python standard library. No proposed search, dominance, extension,
@@ -13,6 +14,7 @@ from copy import deepcopy
 F = Fraction
 
 
+# 獨立計算既有占用，不呼叫待測方法的 occupancy。
 def background_at(background, node, t):
     value = F(0)
     for profile in background.get(node, []):
@@ -25,6 +27,7 @@ def background_at(background, node, t):
     return value
 
 
+# 將完整 Contact 序列轉成來源、中繼、目的地的每次停留資料。
 def visits_for(case, bundle, hops):
     edges = {edge['id']: edge for edge in case['contacts']}
     visits = []
@@ -48,6 +51,7 @@ def visits_for(case, bundle, hops):
     return visits
 
 
+# 直接依停留時間算本包占用，與待測方法的曲線表示分開。
 def inventory(visit, t, size):
     """Direct per-visit inventory, independent of proposed piecewise-curve code."""
     kind = visit['kind']
@@ -66,6 +70,7 @@ def inventory(visit, t, size):
     return size*(visit['finish']-t)/(visit['finish']-visit['send'])
 
 
+# 從頭檢查完整路徑的連通、時間、容量與 Buffer，不做增量支配剪枝。
 def evaluate_schedule(case, bundle, quota, background, hops):
     """No incremental resource pruning: validate a whole candidate schedule."""
     contacts = {edge['id']: edge for edge in case['contacts']}
@@ -105,6 +110,7 @@ def evaluate_schedule(case, bundle, quota, background, hops):
     return dict(feasible=True, arrival=ready, usage=dict(used), peaks=peaks)
 
 
+# 枚舉有限長度的走訪及各跳起送組合；僅適合小案例的答案核對。
 def solve(case, bundle, quota, background):
     outgoing = {v: [] for v in case['buffers']}
     for edge in case['contacts']:
@@ -115,6 +121,7 @@ def solve(case, bundle, quota, background):
     else:
         depth_bound = 0
     paths = []
+    # 遞迴建立允許重訪的拓樸走訪；利用正傳輸時間與 horizon 限制深度。
     def walk(node, path):
         if node == bundle['dest']:
             paths.append(tuple(path)); return
@@ -150,6 +157,7 @@ def solve(case, bundle, quota, background):
                 depth_bound=depth_bound)
 
 
+# 獨立建立預約更新，用來核對待測方法是否正確扣量及加總占用。
 def commit_independently(case, bundle, quota, background, hops):
     """Construct accepted visit profiles without proposed route_curves/commit."""
     q,o = deepcopy(quota),deepcopy(background)

@@ -1,3 +1,4 @@
+# 命令列入口：組合設定與演算法選擇，不在此實作路由判別。
 """Run: python -m src.experiments --config configs/walkthrough.json"""
 import argparse
 from datetime import datetime
@@ -8,6 +9,7 @@ from .config import ConfigError, load_scenario
 from .runner import CorrectnessFailure, run_scenario
 
 
+# 載入設定、解析可替換演算法，再交給 runner 執行與統一輸出。
 def main(argv=None):
     parser = argparse.ArgumentParser(description='可設定拓樸的 Space DTN v04 實驗入口')
     parser.add_argument('--config', required=True, type=Path, help='JSON案例檔')

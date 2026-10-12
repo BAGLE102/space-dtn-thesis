@@ -1,3 +1,4 @@
+# 先前實驗繪圖工具：讀取已保存的資料；逾時不畫成零接受率。
 """Static scientific figures from compact RRN measurements, without rerunning routing."""
 import argparse
 import csv
@@ -5,6 +6,7 @@ import sys
 from pathlib import Path
 
 
+# 由彙整表及占用資料繪圖；逾時資料以缺值保留，不補零。
 def render(short, day, output):
     try:
         import matplotlib
@@ -26,6 +28,7 @@ def render(short, day, output):
         rows = {name.replace('_day_', '_900_'): row for name, row in rows.items()}
     output.mkdir(parents=True, exist_ok=True)
 
+    # 同一張圖保存 PNG 與 SVG，統一文字換行且清除行尾空白。
     def save(fig, name):
         fig.savefig(output / f'{name}.png', dpi=160, bbox_inches='tight')
         with (output / f'{name}.svg').open('w', encoding='utf8', newline='\n') as stream:

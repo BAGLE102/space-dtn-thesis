@@ -1,3 +1,4 @@
+# 檢查支配剪枝前後的答案；必須先通過同模型完整搜尋核對。
 """Structural correctness comparison, not a CPU/memory performance benchmark."""
 from pathlib import Path
 import json
@@ -11,6 +12,7 @@ ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'output'/'validation'
 
 
+# 確認驗證閘門已通過後，比對開啟／關閉 dominance 的答案及剪枝計數。
 def run():
     gate=json.loads((OUT/'comparison_gate.json').read_text(encoding='utf-8'))
     if gate['status']!='PASS_FINITE_CASES':

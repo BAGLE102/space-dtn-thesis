@@ -1,3 +1,4 @@
+# 回歸測試：以下中文註解說明每個測試要避免的錯誤情況。
 """Checks for suite completion and fail-fast evidence preservation."""
 import contextlib
 import io
@@ -12,7 +13,9 @@ from src.experiments.runner import CorrectnessFailure
 ROOT = Path(__file__).resolve().parents[1]
 
 
+# 這組測試驗證指定模組的輸入、結果或邊界；每個案例各自建立隔離狀態。
 class BatchExperiments(unittest.TestCase):
+    # 建立批次檢查用的臨時清單與輸出目錄。
     def prepare(self, directory, indices):
         source = ROOT/'configs'/'experiments_v01'
         manifest = json.loads((source/'manifest.json').read_text(encoding='utf8'))
@@ -23,6 +26,7 @@ class BatchExperiments(unittest.TestCase):
         path.write_text(json.dumps(manifest),encoding='utf8')
         return path,manifest
 
+    # 確認 PPT 基準與已知模型限制分開報告。
     def test_baseline_and_known_boundary_are_distinguished(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)
@@ -36,6 +40,7 @@ class BatchExperiments(unittest.TestCase):
             check=json.loads((root/'run'/'09_aggregate_overlap'/'report'/'replay_check.json').read_text())
             self.assertEqual(len(check['link_conflicts']),1)
 
+    # 故意給錯預期答案，確認停止後續案例且保存差異。
     def test_expectation_failure_stops_later_cases_and_keeps_evidence(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)

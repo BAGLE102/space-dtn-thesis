@@ -1,3 +1,4 @@
+# 桌面介面：執行案例或重播已保存的搜尋與排程；顯示邏輯不重新決定路徑。
 """Tkinter desktop viewer and launcher for the existing frozen v04 router."""
 import argparse
 import json
@@ -17,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_SUITE = ROOT/'output/experiments/small_suite_v01_20261011'
 
 
+# 處理 Windows 顯示縮放，使 Tk 座標與視窗尺寸一致。
 def enable_dpi_awareness():
     """Keep Tk window coordinates consistent with Windows display scaling."""
     if os.name == 'nt':
@@ -27,10 +29,12 @@ def enable_dpi_awareness():
             pass
 
 
+# 顯示階段才將有理數轉為 float；不回寫到搜尋輸入。
 def number(value):
     return float(Fraction(str(value)))
 
 
+# GUI 顯示用線性插值；正式可行性由獨立檢查器決定。
 def curve_value(curve, time):
     values = []
     for lo, hi, y0, y1 in curve:
@@ -40,6 +44,7 @@ def curve_value(curve, time):
     return max(values, default=0)
 
 
+# 解釋已記錄的事件與數值，不額外推定未執行的檢查。
 def event_text(run, record, event):
     """Explain the logged result, without inventing a new feasibility rule."""
     kind = event['event']
@@ -77,7 +82,9 @@ def event_text(run, record, event):
     return 'Q 已耗盡，格點上無路徑', '此包不扣除容量或提交 Buffer 預約。'
 
 
+# 管理視窗控制、已保存結果與本視窗啟動的背景子程序。
 class ExperimentGUI:
+    # 建立控制項與顯示狀態，將搜尋步數和排程時間分開保存。
     def __init__(self, root, suite=None):
         self.root = root
         self.data, self.ci, self.bi, self.step, self.time = [], 0, 1, 0, 0.0
@@ -178,6 +185,7 @@ class ExperimentGUI:
         if suite and Path(suite).exists():
             self.load_results(suite)
 
+    # 建立具欄位與捲動功能的資料表，供 Contact 與 Label 顯示。
     def tree(self, parent, columns, row, height):
         frame = ttk.Frame(parent)
         frame.grid(row=row, sticky='nsew')
@@ -195,27 +203,33 @@ class ExperimentGUI:
         tree.configure(xscrollcommand=bar.set, yscrollcommand=vertical.set)
         return tree
 
+    # 依目前可用寬度調整 Label 欄位，避免固定寬度截斷內容。
     def resize_labels(self, event):
         if event.widget == self.root:
             for label in (self.status_label, self.detail_label):
                 label.configure(wraplength=max(650, event.width-40))
 
+    # 取得目前選取的案例；這是 property，不會啟動實驗。
     @property
     def run(self):
         return self.data[self.ci]
 
+    # 取得目前選取 Bundle 的已保存結果。
     @property
     def record(self):
         return self.run['records'][self.bi]
 
+    # 依模式判斷目前顯示搜尋事件或已接受排程。
     @property
     def searching(self):
         return self.mode_box.current() == 0
 
+    # 把初始化與 trace 組成可播放的事件序列。
     def events(self):
         initial = [dict(event='INIT', queue_before=[], queue_after=['L0'])] if 'L0' in self.record['labels'] else []
         return initial+self.record['trace']
 
+    # 從單組結果或案例清單載入資料，不重新運算路徑。
     def load_results(self, path):
         path = Path(path)
         if (path/'manifest.json').exists():
@@ -234,6 +248,7 @@ class ExperimentGUI:
         self.footer.set(f'已載入 {len(data)} 組案例。結果位置：{path.resolve()}')
         self.draw()
 
+    # 讓使用者選擇既有輸出資料夾並載入。
     def open_results(self):
         path = filedialog.askdirectory(title='選擇含 manifest.json 的實驗套件，或含 results.json 的單次結果')
         if path:
@@ -242,36 +257,43 @@ class ExperimentGUI:
             except (OSError, ValueError, KeyError) as error:
                 messagebox.showerror('結果載入失敗', str(error))
 
+    # 選擇要執行的 JSON 設定檔，尚不啟動搜尋。
     def choose_config(self):
         path = filedialog.askopenfilename(title='選擇案例 JSON', initialdir=ROOT/'configs', filetypes=[('JSON', '*.json')])
         if path:
             self.config.set(path)
 
+    # 依目前案例更新 Bundle 選項，保留有效的選取位置。
     def populate_bundles(self):
         self.bundle_box.configure(values=[f"{r['bundle']['id']}：{r['bundle']['source']} → {r['bundle']['dest']}" for r in self.run['records']])
         self.bundle_box.current(self.bi)
 
+    # 切換案例時重設播放位置，避免沿用另一個案例的 trace 索引。
     def change_case(self, _=None):
         self.pause()
         self.ci, self.bi, self.step, self.time = self.case_box.current(), 0, 0, 0
         self.populate_bundles()
         self.draw()
 
+    # 切換 Bundle 的搜尋紀錄，重新顯示對應 Label 與 Q。
     def change_bundle(self, _=None):
         self.pause()
         self.bi, self.step = self.bundle_box.current(), 0
         self.draw()
 
+    # 切換搜尋步驟與實際排程時間；兩者不是同一條時間軸。
     def change_mode(self, _=None):
         self.pause()
         self.draw()
 
+    # 取消 Tk 播放計時器，避免重複註冊回呼。
     def pause(self):
         if self.timer:
             self.root.after_cancel(self.timer)
             self.timer = None
         self.play_button.configure(text='播放')
 
+    # 在合法範圍內移動一步或一段排程時間。
     def move(self, direction, automatic=False):
         if not self.data:
             return
@@ -283,6 +305,7 @@ class ExperimentGUI:
             self.time = max(0, min(number(self.run['horizon']), self.time+.25*direction))
         self.draw()
 
+    # 啟動或停止播放，不啟動路由搜尋。
     def play(self):
         if not self.data:
             return
@@ -294,6 +317,7 @@ class ExperimentGUI:
         self.play_button.configure(text='暫停')
         self.timer = self.root.after(50, self.tick)
 
+    # Tk 計時回呼：更新顯示位置，到結尾後停止。
     def tick(self):
         self.timer = None
         self.move(1, automatic=True)
@@ -303,6 +327,7 @@ class ExperimentGUI:
         else:
             self.timer = self.root.after(1100 if self.searching else 250, self.tick)
 
+    # 將滑桿位置對應到步數或排程時間。
     def seek(self, value):
         if self.updating or not self.data:
             return
@@ -313,6 +338,7 @@ class ExperimentGUI:
             self.time = float(value)
         self.draw()
 
+    # 更新文字、表格與畫布；避免控制項互相觸發遞迴更新。
     def draw(self):
         if not self.data:
             return
@@ -375,6 +401,7 @@ class ExperimentGUI:
         self.root.update_idletasks()
         self.updating = False
 
+    # 標出目前 Contact 與前驅鏈；平行 Contact 用不同偏移區分。
     def draw_graph(self):
         canvas = self.graph
         canvas.delete('all')
@@ -412,6 +439,7 @@ class ExperimentGUI:
             canvas.create_oval(x-22,y-22,x+22,y+22,fill='#ffffff',outline='#2168b3' if n==selected else '#81909d',width=3 if n==selected else 1)
             canvas.create_text(x,y,text=n,font=('標楷體',15),fill='#172c3d')
 
+    # 顯示已接受排程的 Buffer 占用，不將替代候選同時相加。
     def draw_buffers(self):
         canvas = self.buffer_canvas
         canvas.delete('all')
@@ -433,6 +461,7 @@ class ExperimentGUI:
             y += 45
         canvas.configure(scrollregion=(0,0,w,y))
 
+    # 以背景子程序執行核心，避免完整搜尋阻塞 GUI 事件迴圈。
     def start_run(self):
         if self.process:
             return
@@ -463,6 +492,7 @@ class ExperimentGUI:
         self.footer.set('執行中；完整搜尋可能耗時，可用「停止執行」中止。'+str(self.output))
         self.poll_timer = self.root.after(150,self.poll)
 
+    # 定期檢查子程序狀態；成功才載入，失敗保留並顯示紀錄。
     def poll(self):
         self.poll_timer = None
         if not self.process:
@@ -485,6 +515,7 @@ class ExperimentGUI:
             self.footer.set('執行停止；輸出與錯誤紀錄已保留。'+str(self.log_path))
             messagebox.showerror('執行停止', self.log_path.read_text(encoding='utf8')[-2500:])
 
+    # 中止本視窗啟動的實驗並標記取消，不將部分結果當完成。
     def cancel_run(self):
         if not self.process:
             return
@@ -504,12 +535,14 @@ class ExperimentGUI:
         self.cancel_button.configure(state='disabled')
         self.footer.set('已停止。部分輸出保留，勿當成完成實驗。'+str(self.output))
 
+    # 關閉前取消播放及本視窗的子程序，釋放檔案資源。
     def close(self):
         self.pause()
         self.cancel_run()
         self.root.destroy()
 
 
+# 區分桌面模式與 worker 模式；worker 仍使用共用 runner 與檢查器。
 def main():
     parser = argparse.ArgumentParser(description='Space DTN 桌面實驗 GUI')
     parser.add_argument('--suite',type=Path,default=DEFAULT_SUITE)

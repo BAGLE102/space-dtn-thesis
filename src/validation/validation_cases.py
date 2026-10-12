@@ -1,16 +1,20 @@
+# 人工可核對的驗證資料；案例通過只代表這些輸入通過。
 """Hand-auditable cases. All time fields are exact rationals, not floats."""
 from copy import deepcopy
 from .model import normalize
 
 
+# 建立一個測試 Contact；quota 是測試輸入，不必等於全部理論容量。
 def c(cid, u, v, start, end, rate=4, delay=0, quota=4):
     return dict(id=cid, u=u, v=v, start=start, end=end, rate=rate, delay=delay, quota=quota)
 
 
+# 建立測試 Bundle 的來源、目的地、release、大小與獨立 ID。
 def b(source, dest, g=0, size=4, name='bundle'):
     return dict(id=name, source=source, dest=dest, g=g, size=size)
 
 
+# 把人工案例正規化，缺省 Buffer 與背景值明列於此。
 def make(name, contacts, bundles, buffers=None, horizon=12, background=None, expected=None, delta=1):
     nodes = {x for edge in contacts for x in (edge['u'], edge['v'])}
     nodes |= {x for item in bundles for x in (item['source'], item['dest'])}
@@ -19,6 +23,7 @@ def make(name, contacts, bundles, buffers=None, horizon=12, background=None, exp
                           background=background or {}, expected=expected, delta=delta))
 
 
+# PPT 五節點、八 Contact、兩包案例；預期抵達 8 與 12 秒。
 def walkthrough():
     return make('06_sequential_walkthrough', [
         c('c1','X','B',2,3), c('c2','B','D',6,7,delay=1),
@@ -28,6 +33,7 @@ def walkthrough():
         [b('X','D',0,name='bundle1'), b('A','D',1,name='bundle2')], expected=[8,12])
 
 
+# 列出時窗、Buffer、循環與重複用量等邊界案例，供共同驗證。
 def cases():
     return [
         make('01_unique', [c('a','A','B',0,1),c('b','B','D',2,3)], [b('A','D')], expected=[3]),
@@ -55,6 +61,7 @@ def cases():
     ]
 
 
+# 展示不同時間格點可能有不同答案；此差異不是同模型演算法錯誤。
 def fractional_gap(delta=1):
     # An accepted previous bundle of size 4 transmits from B during [1,3] at rate 2.
     # All contact boundaries, durations and background breakpoints are integer.

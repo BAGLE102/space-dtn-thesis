@@ -1,3 +1,4 @@
+# 先前 Ring Road 實驗工具：保留來源、逾時與模型限制，不是本次 PPT 案例入口。
 """Bounded experiments using the unchanged frozen v04 router and public RRN data.
 
 Keep downloaded inputs and verbose traces local; publish compact measurements only.
@@ -24,6 +25,7 @@ SOURCE = ('https://api.bitbucket.org/2.0/repositories/lcd-unc-ar/dtnsim/src/'
 EXPECTED_SHA = 'fe363dabdd182e292f5e3b74a28558245b2caf9d3aa7730db60d52afdb9763d2'
 
 
+# 核對公開來源雜湊，保留 Contact ID 與方向；依需求裁切 horizon。
 def convert_contacts(path, horizon, rate_MB_s):
     """Retain original directed contacts, remove EID 48, clip at the stated horizon."""
     contacts = []
@@ -45,6 +47,7 @@ def convert_contacts(path, horizon, rate_MB_s):
     return contacts
 
 
+# 依已明列的 profile 建立案例與來源清單，不在載入時偷偷修改模型。
 def prepare(source, folder, profile='day'):
     """Predeclare all scenarios; repeated size/load cases reuse seed and prefixes."""
     folder.mkdir(parents=True, exist_ok=False)
@@ -126,6 +129,7 @@ def prepare(source, folder, profile='day'):
     return metadata
 
 
+# 在子程序量測搜尋並保存結果，保留完整路徑的獨立驗證。
 def worker(config, output, compact=False):
     """Time search only; preserve the engine and its independent feasibility checks."""
     from . import runner
@@ -139,6 +143,7 @@ def worker(config, output, compact=False):
     else:
         execute_search = search
 
+    # 包住搜尋取得計數與 wall time；finally 會還原原本函式。
     def measured_search(case, bundle, quota, background, dominance=True):
         started = time.perf_counter()
         result = execute_search(case, bundle, quota, background, dominance=dominance)
@@ -177,11 +182,13 @@ def worker(config, output, compact=False):
         write_csv(output / 'buffer_samples.csv', list(samples[0]), samples)
 
 
+# 從完成紀錄彙整設定與統計，未完成組不推估整組接受率。
 def describe(values):
     return dict(mean=mean(values), minimum=min(values), maximum=max(values),
                 population_std=pstdev(values)) if values else None
 
 
+# 忽略前綴與 Buffer 的最後一跳下界；差距不是對真正最優解的誤差。
 def destination_lower_bound(case, bundle, quota):
     """Relax all prefix/buffer constraints; every valid route needs a last contact.
 
@@ -199,6 +206,7 @@ def destination_lower_bound(case, bundle, quota):
     return min(arrivals) if arrivals else None
 
 
+# 跳過被中斷而無法解析的檔案，保留其名稱作未完成證據。
 def read_complete_json_files(folder, pattern):
     records, incomplete = [], []
     for path in sorted(folder.glob(pattern)):
@@ -209,6 +217,7 @@ def read_complete_json_files(folder, pattern):
     return records, incomplete
 
 
+# 只匯出已完整驗證的部分查詢，不把整組逾時說成完成。
 def export_partial_queries(local, output):
     """Preserve individually validated queries without estimating case acceptance."""
     records, _ = read_complete_json_files(local, 'query_*.json')
@@ -233,6 +242,7 @@ def export_partial_queries(local, output):
         write_csv(output / 'partial_schedule.csv', list(schedules[0]), schedules)
 
 
+# 依案例啟動有時限的子程序；TIMEOUT 與 NO_ROUTE_ON_GRID 分開記錄。
 def execute(source, output, budget_s, profile='day', selected=None, compact=False):
     from shutil import copyfile
     output.mkdir(parents=True, exist_ok=False)
@@ -382,6 +392,7 @@ def execute(source, output, budget_s, profile='day', selected=None, compact=Fals
     (output / 'report.md').write_text('\n'.join(lines)+'\n', encoding='utf8', newline='\n')
 
 
+# 解析來源、profile 與時限；只執行明確指定的實驗設定。
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--worker', nargs=2, metavar=('CONFIG', 'OUTPUT'))

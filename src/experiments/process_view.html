@@ -47,17 +47,24 @@
   const root=document.getElementById('dtn-process-view');
   const data=JSON.parse(document.getElementById('dtn-process-data').textContent);
   const el=name=>root.querySelector('[data-role="'+name+'"]');
+  // 中文註解：將保存的 Fraction 字串轉成顯示用數字；不回傳給核心判別。
   const num=value=>{if(value==null)return 0;const p=String(value).split('/');return Number(p[0])/(p.length>1?Number(p[1]):1)};
   const fmt=x=>Number.isInteger(x)?String(x):Number(x.toFixed(3)).toString();
+  // 中文註解：將顯示內容跳脫後才插入 HTML，避免節點或 ID 被當作標記解析。
   const esc=x=>String(x??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   let ci=0,bi=1,step=0,time=0,mode='search',timer=null;
   const stop=()=>{clearInterval(timer);timer=null;el('play').textContent='播放'};
   const current=()=>data[ci];
   const record=()=>current().records[bi];
+  // 中文註解：組合初始化與已保存事件；只重播，不在瀏覽器搜尋路徑。
   function steps(){const r=record();return r.labels.L0?[{event:'INIT',queue_before:[],queue_after:['L0']},...r.trace]:r.trace}
+  // 中文註解：只保存案例、Bundle、模式與播放位置，不更改研究結果。
   function save(){if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{case:current().name,bundle:record().bundle.id,mode,step,time},privateContent:null}).catch(()=>{});}
+  // 中文註解：依已播放的建立／支配事件還原有效 Label 集合。
   function labelsAt(){const active=new Set(record().labels.L0?['L0']:[]);for(const e of steps().slice(0,step+1)){if(e.new_label&&!e.dominated_by?.length)active.add(e.new_label);for(const id of e.removed||[])active.delete(id)}return active}
+  // 中文註解：沿 pred 找出目前候選的 Contact 鏈，供拓樸醒目顯示。
   function chain(id){const c=[];let l=record().labels[id],guard=0;while(l?.pred!=null&&guard++<10000){c.push(l.c);l=record().labels[l.pred]}return c}
+  // 中文註解：將已記錄的判別值轉為說明，不把未執行檢查說成通過。
   function explain(e){
     const labels=record().labels,c=current().contacts.find(c=>c.id===e.contact),S=num(record().bundle.size),buf=current().buffers;
     let title='',detail='';
@@ -83,6 +90,7 @@
     }
     return [title,detail];
   }
+  // 中文註解：依顯示模式標示嘗試中的 Contact 或已接受排程。
   function graph(e){
     const cs=current().contacts,nodes=Object.keys(current().buffers),svg=el('graph');
     const w=Math.max(280,svg.getBoundingClientRect().width),h=280;
@@ -108,7 +116,9 @@
     nodes.forEach(n=>{const [x,y]=pos[n];const on=mode==='search'&&n===selected;markup.push(`<circle cx="${x}" cy="${y}" r="21" fill="var(--background)" stroke="${on?'var(--viz-series-1)':'var(--border)'}" stroke-width="${on?3:1.5}"/><text x="${x}" y="${y+5}" text-anchor="middle">${esc(n)}</text>`)});
     svg.innerHTML=markup.join('');
   }
+  // 中文註解：顯示用分段線性插值；相鄰線段交點不重複相加。
   function curveValue(curve,t){let max=0;for(const [a,b,y0,y1] of curve){const lo=num(a),hi=num(b);if(t>=lo&&t<=hi)max=Math.max(max,hi===lo?num(y0):num(y0)+(num(y1)-num(y0))*(t-lo)/(hi-lo))}return max}
+  // 中文註解：更新 Q、狀態與占用；搜尋步數和排程時間各自處理。
   function draw(){
     const search=mode==='search';el('search-panel').hidden=!search;el('schedule-panel').hidden=search;el('bundle-wrap').hidden=!search;
     el('slider').step=search?'1':'.25';el('slider').max=search?steps().length-1:num(current().horizon);el('slider').value=search?step:time;
@@ -127,15 +137,19 @@
       el('bundle-status').innerHTML=current().records.map(r=>{let state='未生成';if(r.arrival==null)state='未接受（無路徑）';else if(time>num(r.arrival))state='已交付';else if(time===num(r.arrival))state='整包抵達，顯示交付前峰值';else if(time>=num(r.bundle.g)){const rows=current().schedules.filter(s=>s.bundle===r.bundle.id);const tx=rows.find(s=>time>=num(s.start)&&time<num(s.finish));const rx=rows.find(s=>time>=num(s.receive_start)&&time<num(s.arrival));state=[tx?`經 ${tx.contact} 發送`:null,rx?`${rx.receiver} 接收中`:null].filter(Boolean).join('、')||'持有整包，等待下一跳'}return `<div>${esc(r.bundle.id)}：${esc(state)}</div>`}).join('');
     }
   }
+  // 中文註解：依目前案例重新建立 Bundle 選項。
   function populate(){el('case').innerHTML=data.map((c,i)=>`<option value="${i}">${esc(c.description)}</option>`).join('');el('case').value=ci;
     el('bundle').innerHTML=current().records.map((r,i)=>`<option value="${i}">${esc(r.bundle.id)}：${esc(r.bundle.source)} → ${esc(r.bundle.dest)}</option>`).join('');bi=Math.min(bi,current().records.length-1);el('bundle').value=bi;el('mode').value=mode;draw()}
+  // 中文註解：在邊界內移動一個搜尋步驟或四分之一秒的排程時間。
   function move(direction){if(mode==='search')step=Math.max(0,Math.min(steps().length-1,step+direction));else time=Math.max(0,Math.min(num(current().horizon),time+direction*.25));draw()}
+  // 中文註解：事件綁定只改變播放狀態，不修改來源 trace 或已接受排程。
   el('prev').onclick=()=>{stop();move(-1);save()};el('next').onclick=()=>{stop();move(1);save()};
   el('play').onclick=()=>{if(timer){stop();save();return}if(el('next').disabled){step=0;time=0;draw()}el('play').textContent='暫停';timer=setInterval(()=>{move(1);if(el('next').disabled){stop();save()}},mode==='search'?1200:250)};
   el('slider').oninput=e=>{stop();if(mode==='search')step=Number(e.target.value);else time=Number(e.target.value);draw()};el('slider').onchange=save;
   el('case').onchange=e=>{stop();ci=Number(e.target.value);bi=1;step=0;time=0;populate();save()};
   el('bundle').onchange=e=>{stop();bi=Number(e.target.value);step=0;draw();save()};
   el('mode').onchange=e=>{stop();mode=e.target.value;draw();save()};
+  // 中文註解：恢復 widget 播放位置，並限制為目前資料的合法範圍。
   function restore(state){if(!state?.modelContent)return;const s=state.modelContent;const found=data.findIndex(c=>c.name===s.case);if(found<0)return;stop();ci=found;bi=Math.max(0,current().records.findIndex(r=>r.bundle.id===s.bundle));mode=s.mode==='schedule'?'schedule':'search';step=Math.max(0,Math.min(steps().length-1,Number(s.step)||0));time=Math.max(0,Math.min(num(current().horizon),Number(s.time)||0));}
   restore(window.openai?.widgetState);populate();new ResizeObserver(()=>graph(mode==='search'?steps()[step]:null)).observe(el('graph'));
   window.addEventListener('openai:set_globals',event=>{restore(event.detail?.globals?.widgetState);populate()});
