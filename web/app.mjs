@@ -4,11 +4,12 @@ const esc=x=>String(x??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>'
 const fmt=x=>x==null?'—':Number(num(x).toFixed(3)).toString();
 let cases=[],ci=0,bi=0,index=0,steps=[],timer=null,filter=null,highlight=null;
 const code=[
- 'Q ← {source label L0}; Labels ← {L0}',
+ 'if source buffer cannot hold S at g: return NO_ROUTE_ON_GRID',
+ 'Q ← {L0}; Labels ← {L0}; solution ← none',
  'while Q is not empty:',
  '  L ← ExtractMin(Q, arrival time)',
  '  if L is inactive: continue',
- '  if node(L) = destination: return TraceBack(L)',
+ '  if node(L) = destination: solution ← TraceBack(L); break',
  '  for each outgoing contact c:',
  '    if route_usage(L,c) + S > R[c]: continue',
  '    first ← max(A(L), start(c)); last ← end(c) − S/r(c)',
@@ -19,12 +20,13 @@ const code=[
  '      compare N with active labels at the same node',
  '      if an existing label dominates N: discard N',
  '      else: invalidate dominated labels; insert N into Q',
- 'return NO_ROUTE_ON_GRID',
- 'validate selected route; commit capacity and buffer reservations'
+ 'if solution is none: return NO_ROUTE_ON_GRID',
+ 'if independent validation fails: stop and preserve case',
+ 'commit capacity and buffer reservations; return solution'
 ];
 $('pseudo').innerHTML=code.map((s,i)=>`<li data-line="${i}">${esc(s)}</li>`).join('');
 function stage(e){return e.phase==='CHECK'?'延伸檢查':e.phase==='DECIDE'?'支配比較與入隊':({INIT:'初始化',POP:'取出 Label',STALE:'略過失效 Label',CONTACT_QUOTA_FAIL:'容量不足',CONTACT_TIME_FAIL:'沒有可用開始時間',GOAL:'取出目的地並回溯',EXHAUSTED:'搜尋結束',SOURCE_FAIL:'來源 Buffer 不足',COMMIT:'驗證後預約資源'}[e.event]||e.event);}
-function lines(e){if(e.phase==='CHECK')return[8,9,10];if(e.phase==='DECIDE')return[11,12,e.dominated_by?.length?13:14];return {INIT:[0],POP:[2],STALE:[3],CONTACT_QUOTA_FAIL:[6],CONTACT_TIME_FAIL:[7],GOAL:[4],EXHAUSTED:[15],COMMIT:[16],SOURCE_FAIL:[0]}[e.event]||[];}
+function lines(e){if(e.phase==='CHECK')return[9,10,11];if(e.phase==='DECIDE')return[12,13,e.dominated_by?.length?14:15];return {INIT:[1],POP:[3],STALE:[4],CONTACT_QUOTA_FAIL:[7],CONTACT_TIME_FAIL:[8],GOAL:[5],EXHAUSTED:[16],COMMIT:[17,18],SOURCE_FAIL:[0]}[e.event]||[];}
 function describe(e,r,labels){
  const label=labels[e.selected];
  if(e.phase==='CHECK')return `從 ${e.selected}（${label?.node}，完整抵達 ${fmt(label?.A)} 秒）嘗試 ${e.contact}，開始時間 s=${fmt(e.s)} 秒。最後 byte 於 ${fmt(e.f)} 秒送出，於 ${fmt(e.arrival)} 秒完整抵達。${e.reason==='PASS'?'本次延伸可行，下一步進行 Label 建立與支配比較。':'這個開始時間不可行；仍會繼續嘗試此 Contact 後面的格點。'}`;
