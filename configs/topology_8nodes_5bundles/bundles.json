@@ -1,0 +1,39 @@
+{
+  "bundles": [
+    {
+      "id": "bundle1",
+      "source": "S1",
+      "destination": "T",
+      "release": "0",
+      "size": "4"
+    },
+    {
+      "id": "bundle2",
+      "source": "S2",
+      "destination": "T",
+      "release": "0",
+      "size": "4"
+    },
+    {
+      "id": "bundle3",
+      "source": "S1",
+      "destination": "T",
+      "release": "1",
+      "size": "4"
+    },
+    {
+      "id": "bundle4",
+      "source": "S2",
+      "destination": "T",
+      "release": "2",
+      "size": "4"
+    },
+    {
+      "id": "bundle5",
+      "source": "A",
+      "destination": "T",
+      "release": "3",
+      "size": "4"
+    }
+  ]
+}

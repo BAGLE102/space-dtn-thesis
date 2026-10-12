@@ -1,0 +1,10 @@
+{
+  "schema_version": 2,
+  "name": "8nodes_5bundles_legacy_quota_only",
+  "description": "僅為既有 aggregate quota 程式的輸入相容設定，未實作更新 PPT 的發送時段不重疊檢查。",
+  "topology_file": "topology.json",
+  "bundles_file": "bundles.json",
+  "algorithm": "label_setting_v04",
+  "time_step": "1",
+  "horizon": "24"
+}

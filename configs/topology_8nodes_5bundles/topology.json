@@ -1,0 +1,42 @@
+{
+  "units": {
+    "time": "s",
+    "data": "MB",
+    "rate": "MB/s"
+  },
+  "nodes": [
+    {
+      "id": "S1",
+      "buffer": "16"
+    },
+    {
+      "id": "S2",
+      "buffer": "16"
+    },
+    {
+      "id": "A",
+      "buffer": "8"
+    },
+    {
+      "id": "B",
+      "buffer": "4"
+    },
+    {
+      "id": "C",
+      "buffer": "8"
+    },
+    {
+      "id": "D",
+      "buffer": "4"
+    },
+    {
+      "id": "E",
+      "buffer": "8"
+    },
+    {
+      "id": "T",
+      "buffer": "16"
+    }
+  ],
+  "contacts_file": "contacts.csv"
+}

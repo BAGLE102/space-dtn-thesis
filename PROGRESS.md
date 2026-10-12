@@ -183,3 +183,8 @@
 
 - 以使用者 PPT 為準，新增 contact 發送時段檢查、Q 次序說明、支配適用範圍與待驗證項目，共25頁。
 - 詳見 docs/ppt_1007_revision_20261013.md。未修改程式、網頁或 frozen v04。
+
+## 八節點五包測試資料（2026-10-13）
+
+- 新增 configs/topology_8nodes_5bundles：8節點、18 contacts、5個4MB bundles，含B/D單包Buffer瓶頸與早晚班替代路徑。
+- 現有載入器檢查通過，未執行路由。legacy設定明示未加入新版PPT的發送時段互斥，不宣稱新版結果。
