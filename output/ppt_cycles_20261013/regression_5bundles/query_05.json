@@ -1,0 +1,207 @@
+{
+  "index": 5,
+  "bundle": {
+    "id": "bundle5",
+    "source": "A",
+    "dest": "T",
+    "g": "3",
+    "size": "4"
+  },
+  "status": "NO_ROUTE_ON_GRID",
+  "arrival": null,
+  "hops": [],
+  "labels": {
+    "L0": {
+      "c": null,
+      "A": "3",
+      "s": null,
+      "pred": null
+    }
+  },
+  "trace": [
+    {
+      "event": "POP",
+      "label": "L0",
+      "node": "A",
+      "A": "3",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c05",
+      "s": "5",
+      "f": "6",
+      "h": "5",
+      "A": "6",
+      "receiver_peak": "8",
+      "receiver_peak_time": "6",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c05",
+      "s": "6",
+      "f": "7",
+      "h": "6",
+      "A": "7",
+      "receiver_peak": "8",
+      "receiver_peak_time": "7",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c05",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "8",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c06",
+      "s": "4",
+      "f": "5",
+      "h": "5",
+      "A": "6",
+      "receiver_peak": "8",
+      "receiver_peak_time": "6",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c06",
+      "s": "5",
+      "f": "6",
+      "h": "6",
+      "A": "7",
+      "receiver_peak": "8",
+      "receiver_peak_time": "7",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c06",
+      "s": "6",
+      "f": "7",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "8",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c13",
+      "s": "11",
+      "f": "12",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "8",
+      "receiver_peak_time": "13",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c13",
+      "s": "12",
+      "f": "13",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "8",
+      "receiver_peak_time": "14",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c13",
+      "s": "13",
+      "f": "14",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "8",
+      "receiver_peak_time": "15",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 0
+    },
+    {
+      "event": "EXHAUSTED"
+    }
+  ],
+  "labels_created": 1,
+  "labels_expanded": 1,
+  "independent": {
+    "arrival": null,
+    "hops": [],
+    "paths_considered": 18,
+    "schedules_considered": 570,
+    "feasible_schedules": 0,
+    "rejection_counts": {
+      "BUFFER": 298,
+      "TIMING": 254,
+      "QUOTA": 18
+    },
+    "depth_bound": 21,
+    "walk_prefixes_considered": 29
+  },
+  "full_schedule_check": null,
+  "quota_before": {
+    "c01": "8",
+    "c02": "8",
+    "c03": "8",
+    "c04": "8",
+    "c05": "12",
+    "c06": "8",
+    "c07": "12",
+    "c08": "0",
+    "c09": "12",
+    "c10": "8",
+    "c11": "4",
+    "c12": "4",
+    "c13": "8",
+    "c14": "12",
+    "c15": "12",
+    "c16": "12",
+    "c17": "8",
+    "c18": "12"
+  },
+  "quota_after": {
+    "c01": "8",
+    "c02": "8",
+    "c03": "8",
+    "c04": "8",
+    "c05": "12",
+    "c06": "8",
+    "c07": "12",
+    "c08": "0",
+    "c09": "12",
+    "c10": "8",
+    "c11": "4",
+    "c12": "4",
+    "c13": "8",
+    "c14": "12",
+    "c15": "12",
+    "c16": "12",
+    "c17": "8",
+    "c18": "12"
+  }
+}

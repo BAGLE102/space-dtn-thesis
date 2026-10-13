@@ -1,13 +1,13 @@
 """時間格點 Label Setting 驗證版本：保留所有 Label，不做 dominance。
 
-只接受無循環拓樸，供目前 PPT／八節點人工案例核對。
+允許重訪節點與contact；沿前驅核對本路徑已用容量。
 這是已授權的驗證版本，不是已定案的一般支配演算法。
 """
 from dataclasses import dataclass, asdict
 from fractions import Fraction as F
 import heapq
 
-from src.validation.model import peak
+from src.validation.model import peak, validate_input
 
 
 @dataclass(frozen=True)
@@ -19,24 +19,15 @@ class Label:
     pred: str | None
 
 
-def require_dag(case):
-    """明確限制本輪測試範圍，遇到循環拒絕執行，不默默刪路徑。"""
-    adjacent = {v: [] for v in case['buffers']}
-    indegree = {v: 0 for v in adjacent}
-    for c in case['contacts']:
-        adjacent[c['u']].append(c['v'])
-        indegree[c['v']] += 1
-    pending = [v for v in adjacent if indegree[v] == 0]
-    count = 0
-    while pending:
-        v = pending.pop()
-        count += 1
-        for w in adjacent[v]:
-            indegree[w] -= 1
-            if indegree[w] == 0:
-                pending.append(w)
-    if count != len(adjacent):
-        raise ValueError('UNSUPPORTED_CYCLIC_TOPOLOGY: 本輪僅驗證 DAG')
+def contact_usage(labels, lid, cid, size):
+    """沿pred累計此候選路徑使用同一contact的資料量，不新增Label欄位。"""
+    used = F(0)
+    while labels[lid].pred is not None:
+        label = labels[lid]
+        if label.c == cid:
+            used += size
+        lid = label.pred
+    return used
 
 
 def transmission_free(calendar, cid, start, finish):
@@ -68,7 +59,7 @@ def receiver_candidates(case, bundle, label, contact, background):
 
 def search(case, bundle, quota, background, calendar, max_labels=100000):
     """以完整抵達時間 ExtractMin；只有取出目的地才結束搜尋。"""
-    require_dag(case)
+    validate_input(case, bundle)
     contacts = {c['id']: c for c in case['contacts']}
     labels = {'L0': Label(None, bundle['g'], None, None)}
     queue = [(bundle['g'], 0, 'L0')]
@@ -104,10 +95,12 @@ def search(case, bundle, quota, background, calendar, max_labels=100000):
             return result(label.A, list(reversed(hops)))
         expanded += 1
         for c in outgoing[node]:
-            # DAG 中一條路徑不會重用同一 contact，容量直接判斷 S <= R[c]。
-            if bundle['size'] > quota[c['id']]:
+            # 允許繞圈；前面已用的容量先由pred臨時計算。
+            used = contact_usage(labels, lid, c['id'], bundle['size'])
+            if used + bundle['size'] > quota[c['id']]:
                 trace.append(dict(event='CONTACT_REJECT', label=lid,
-                                  contact=c['id'], reason='CAPACITY'))
+                                  contact=c['id'], reason='CAPACITY',
+                                  used=used, requested=bundle['size'], residual=quota[c['id']]))
                 continue
             attempted = False
             for candidate in receiver_candidates(case, bundle, label, c, background):

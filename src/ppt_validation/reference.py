@@ -26,24 +26,41 @@ def evaluate(case, bundle, quota, background, calendar, hops):
     return basic
 
 
-def solve(case, bundle, quota, background, calendar, max_schedules=1000000):
-    """僅用於已確認 DAG 的小案例，完整列出每條路徑的所有時間組合。"""
+def solve(case, bundle, quota, background, calendar, max_schedules=1000000,
+          max_walk_prefixes=1000000):
+    """允許繞圈，以正的每跳耗時推導有限深度，再核對完整排程。"""
     outgoing = {v: [] for v in case['buffers']}
     for c in case['contacts']:
         outgoing[c['u']].append(c)
 
-    def paths(node, prefix, visited):
-        if node == bundle['dest']:
-            yield prefix
-            return
-        for c in outgoing[node]:
-            if c['v'] in visited:
-                raise ValueError('REFERENCE_REQUIRES_DAG')
-            yield from paths(c['v'], prefix + [c], visited | {c['v']})
+    # 最小每跳耗時>0，任何可行walk的hop數不超過此上界。
+    hop_times = [bundle['size']/c['rate'] + c['delay'] for c in case['contacts']]
+    if any(t <= 0 for t in hop_times):
+        raise ValueError('REFERENCE_REQUIRES_POSITIVE_HOP_TIME')
+    depth_bound = (int((case['horizon']-bundle['g']) // min(hop_times))
+                   if hop_times else 0)
+    prefixes = 0
+
+    def paths():
+        # 用stack取代遞迴，不以visited集合排除節點或contact重訪。
+        nonlocal prefixes
+        pending = [(bundle['source'], [])]
+        while pending:
+            node, prefix = pending.pop()
+            prefixes += 1
+            if prefixes > max_walk_prefixes:
+                raise RuntimeError('INCOMPLETE_REFERENCE_WALK_LIMIT: 尚未核對完成')
+            if node == bundle['dest']:
+                yield prefix
+                continue
+            if len(prefix) >= depth_bound:
+                continue
+            for c in reversed(outgoing[node]):
+                pending.append((c['v'], prefix + [c]))
 
     optimum, best, count, path_count, feasible = None, [], 0, 0, 0
     rejections = Counter()
-    for edges in paths(bundle['source'], [], {bundle['source']}):
+    for edges in paths():
         path_count += 1
         domains = []
         for c in edges:
@@ -64,4 +81,5 @@ def solve(case, bundle, quota, background, calendar, max_schedules=1000000):
                 optimum, best = check['arrival'], hops
     return dict(arrival=optimum, hops=best, paths_considered=path_count,
                 schedules_considered=count, feasible_schedules=feasible,
-                rejection_counts=dict(rejections))
+                rejection_counts=dict(rejections), depth_bound=depth_bound,
+                walk_prefixes_considered=prefixes)

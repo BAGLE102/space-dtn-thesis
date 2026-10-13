@@ -1,0 +1,3730 @@
+{
+  "index": 3,
+  "bundle": {
+    "id": "bundle3",
+    "source": "S1",
+    "dest": "T",
+    "g": "1",
+    "size": "4"
+  },
+  "status": "ACCEPTED",
+  "arrival": "13",
+  "hops": [
+    [
+      "c02",
+      "3"
+    ],
+    [
+      "c08",
+      "8"
+    ],
+    [
+      "c12",
+      "11"
+    ]
+  ],
+  "labels": {
+    "L0": {
+      "c": null,
+      "A": "1",
+      "s": null,
+      "pred": null
+    },
+    "L1": {
+      "c": "c01",
+      "A": "3",
+      "s": "2",
+      "pred": "L0"
+    },
+    "L2": {
+      "c": "c01",
+      "A": "4",
+      "s": "3",
+      "pred": "L0"
+    },
+    "L3": {
+      "c": "c02",
+      "A": "4",
+      "s": "3",
+      "pred": "L0"
+    },
+    "L4": {
+      "c": "c02",
+      "A": "5",
+      "s": "4",
+      "pred": "L0"
+    },
+    "L5": {
+      "c": "c02",
+      "A": "6",
+      "s": "5",
+      "pred": "L0"
+    },
+    "L6": {
+      "c": "c05",
+      "A": "6",
+      "s": "5",
+      "pred": "L1"
+    },
+    "L7": {
+      "c": "c05",
+      "A": "7",
+      "s": "6",
+      "pred": "L1"
+    },
+    "L8": {
+      "c": "c05",
+      "A": "8",
+      "s": "7",
+      "pred": "L1"
+    },
+    "L9": {
+      "c": "c13",
+      "A": "13",
+      "s": "11",
+      "pred": "L1"
+    },
+    "L10": {
+      "c": "c13",
+      "A": "14",
+      "s": "12",
+      "pred": "L1"
+    },
+    "L11": {
+      "c": "c13",
+      "A": "15",
+      "s": "13",
+      "pred": "L1"
+    },
+    "L12": {
+      "c": "c05",
+      "A": "6",
+      "s": "5",
+      "pred": "L2"
+    },
+    "L13": {
+      "c": "c05",
+      "A": "7",
+      "s": "6",
+      "pred": "L2"
+    },
+    "L14": {
+      "c": "c05",
+      "A": "8",
+      "s": "7",
+      "pred": "L2"
+    },
+    "L15": {
+      "c": "c13",
+      "A": "13",
+      "s": "11",
+      "pred": "L2"
+    },
+    "L16": {
+      "c": "c13",
+      "A": "14",
+      "s": "12",
+      "pred": "L2"
+    },
+    "L17": {
+      "c": "c13",
+      "A": "15",
+      "s": "13",
+      "pred": "L2"
+    },
+    "L18": {
+      "c": "c08",
+      "A": "9",
+      "s": "8",
+      "pred": "L3"
+    },
+    "L19": {
+      "c": "c14",
+      "A": "14",
+      "s": "13",
+      "pred": "L3"
+    },
+    "L20": {
+      "c": "c14",
+      "A": "15",
+      "s": "14",
+      "pred": "L3"
+    },
+    "L21": {
+      "c": "c14",
+      "A": "16",
+      "s": "15",
+      "pred": "L3"
+    },
+    "L22": {
+      "c": "c08",
+      "A": "9",
+      "s": "8",
+      "pred": "L4"
+    },
+    "L23": {
+      "c": "c14",
+      "A": "14",
+      "s": "13",
+      "pred": "L4"
+    },
+    "L24": {
+      "c": "c14",
+      "A": "15",
+      "s": "14",
+      "pred": "L4"
+    },
+    "L25": {
+      "c": "c14",
+      "A": "16",
+      "s": "15",
+      "pred": "L4"
+    },
+    "L26": {
+      "c": "c08",
+      "A": "9",
+      "s": "8",
+      "pred": "L5"
+    },
+    "L27": {
+      "c": "c14",
+      "A": "14",
+      "s": "13",
+      "pred": "L5"
+    },
+    "L28": {
+      "c": "c14",
+      "A": "15",
+      "s": "14",
+      "pred": "L5"
+    },
+    "L29": {
+      "c": "c14",
+      "A": "16",
+      "s": "15",
+      "pred": "L5"
+    },
+    "L30": {
+      "c": "c08",
+      "A": "9",
+      "s": "8",
+      "pred": "L6"
+    },
+    "L31": {
+      "c": "c14",
+      "A": "14",
+      "s": "13",
+      "pred": "L6"
+    },
+    "L32": {
+      "c": "c14",
+      "A": "15",
+      "s": "14",
+      "pred": "L6"
+    },
+    "L33": {
+      "c": "c14",
+      "A": "16",
+      "s": "15",
+      "pred": "L6"
+    },
+    "L34": {
+      "c": "c08",
+      "A": "9",
+      "s": "8",
+      "pred": "L12"
+    },
+    "L35": {
+      "c": "c14",
+      "A": "14",
+      "s": "13",
+      "pred": "L12"
+    },
+    "L36": {
+      "c": "c14",
+      "A": "15",
+      "s": "14",
+      "pred": "L12"
+    },
+    "L37": {
+      "c": "c14",
+      "A": "16",
+      "s": "15",
+      "pred": "L12"
+    },
+    "L38": {
+      "c": "c08",
+      "A": "9",
+      "s": "8",
+      "pred": "L7"
+    },
+    "L39": {
+      "c": "c14",
+      "A": "14",
+      "s": "13",
+      "pred": "L7"
+    },
+    "L40": {
+      "c": "c14",
+      "A": "15",
+      "s": "14",
+      "pred": "L7"
+    },
+    "L41": {
+      "c": "c14",
+      "A": "16",
+      "s": "15",
+      "pred": "L7"
+    },
+    "L42": {
+      "c": "c08",
+      "A": "9",
+      "s": "8",
+      "pred": "L13"
+    },
+    "L43": {
+      "c": "c14",
+      "A": "14",
+      "s": "13",
+      "pred": "L13"
+    },
+    "L44": {
+      "c": "c14",
+      "A": "15",
+      "s": "14",
+      "pred": "L13"
+    },
+    "L45": {
+      "c": "c14",
+      "A": "16",
+      "s": "15",
+      "pred": "L13"
+    },
+    "L46": {
+      "c": "c08",
+      "A": "9",
+      "s": "8",
+      "pred": "L8"
+    },
+    "L47": {
+      "c": "c14",
+      "A": "14",
+      "s": "13",
+      "pred": "L8"
+    },
+    "L48": {
+      "c": "c14",
+      "A": "15",
+      "s": "14",
+      "pred": "L8"
+    },
+    "L49": {
+      "c": "c14",
+      "A": "16",
+      "s": "15",
+      "pred": "L8"
+    },
+    "L50": {
+      "c": "c08",
+      "A": "9",
+      "s": "8",
+      "pred": "L14"
+    },
+    "L51": {
+      "c": "c14",
+      "A": "14",
+      "s": "13",
+      "pred": "L14"
+    },
+    "L52": {
+      "c": "c14",
+      "A": "15",
+      "s": "14",
+      "pred": "L14"
+    },
+    "L53": {
+      "c": "c14",
+      "A": "16",
+      "s": "15",
+      "pred": "L14"
+    },
+    "L54": {
+      "c": "c12",
+      "A": "13",
+      "s": "11",
+      "pred": "L18"
+    },
+    "L55": {
+      "c": "c12",
+      "A": "14",
+      "s": "12",
+      "pred": "L18"
+    },
+    "L56": {
+      "c": "c18",
+      "A": "22",
+      "s": "20",
+      "pred": "L18"
+    },
+    "L57": {
+      "c": "c18",
+      "A": "23",
+      "s": "21",
+      "pred": "L18"
+    },
+    "L58": {
+      "c": "c18",
+      "A": "24",
+      "s": "22",
+      "pred": "L18"
+    },
+    "L59": {
+      "c": "c12",
+      "A": "13",
+      "s": "11",
+      "pred": "L22"
+    },
+    "L60": {
+      "c": "c12",
+      "A": "14",
+      "s": "12",
+      "pred": "L22"
+    },
+    "L61": {
+      "c": "c18",
+      "A": "22",
+      "s": "20",
+      "pred": "L22"
+    },
+    "L62": {
+      "c": "c18",
+      "A": "23",
+      "s": "21",
+      "pred": "L22"
+    },
+    "L63": {
+      "c": "c18",
+      "A": "24",
+      "s": "22",
+      "pred": "L22"
+    },
+    "L64": {
+      "c": "c12",
+      "A": "13",
+      "s": "11",
+      "pred": "L26"
+    },
+    "L65": {
+      "c": "c12",
+      "A": "14",
+      "s": "12",
+      "pred": "L26"
+    },
+    "L66": {
+      "c": "c18",
+      "A": "22",
+      "s": "20",
+      "pred": "L26"
+    },
+    "L67": {
+      "c": "c18",
+      "A": "23",
+      "s": "21",
+      "pred": "L26"
+    },
+    "L68": {
+      "c": "c18",
+      "A": "24",
+      "s": "22",
+      "pred": "L26"
+    },
+    "L69": {
+      "c": "c12",
+      "A": "13",
+      "s": "11",
+      "pred": "L30"
+    },
+    "L70": {
+      "c": "c12",
+      "A": "14",
+      "s": "12",
+      "pred": "L30"
+    },
+    "L71": {
+      "c": "c18",
+      "A": "22",
+      "s": "20",
+      "pred": "L30"
+    },
+    "L72": {
+      "c": "c18",
+      "A": "23",
+      "s": "21",
+      "pred": "L30"
+    },
+    "L73": {
+      "c": "c18",
+      "A": "24",
+      "s": "22",
+      "pred": "L30"
+    },
+    "L74": {
+      "c": "c12",
+      "A": "13",
+      "s": "11",
+      "pred": "L34"
+    },
+    "L75": {
+      "c": "c12",
+      "A": "14",
+      "s": "12",
+      "pred": "L34"
+    },
+    "L76": {
+      "c": "c18",
+      "A": "22",
+      "s": "20",
+      "pred": "L34"
+    },
+    "L77": {
+      "c": "c18",
+      "A": "23",
+      "s": "21",
+      "pred": "L34"
+    },
+    "L78": {
+      "c": "c18",
+      "A": "24",
+      "s": "22",
+      "pred": "L34"
+    },
+    "L79": {
+      "c": "c12",
+      "A": "13",
+      "s": "11",
+      "pred": "L38"
+    },
+    "L80": {
+      "c": "c12",
+      "A": "14",
+      "s": "12",
+      "pred": "L38"
+    },
+    "L81": {
+      "c": "c18",
+      "A": "22",
+      "s": "20",
+      "pred": "L38"
+    },
+    "L82": {
+      "c": "c18",
+      "A": "23",
+      "s": "21",
+      "pred": "L38"
+    },
+    "L83": {
+      "c": "c18",
+      "A": "24",
+      "s": "22",
+      "pred": "L38"
+    },
+    "L84": {
+      "c": "c12",
+      "A": "13",
+      "s": "11",
+      "pred": "L42"
+    },
+    "L85": {
+      "c": "c12",
+      "A": "14",
+      "s": "12",
+      "pred": "L42"
+    },
+    "L86": {
+      "c": "c18",
+      "A": "22",
+      "s": "20",
+      "pred": "L42"
+    },
+    "L87": {
+      "c": "c18",
+      "A": "23",
+      "s": "21",
+      "pred": "L42"
+    },
+    "L88": {
+      "c": "c18",
+      "A": "24",
+      "s": "22",
+      "pred": "L42"
+    },
+    "L89": {
+      "c": "c12",
+      "A": "13",
+      "s": "11",
+      "pred": "L46"
+    },
+    "L90": {
+      "c": "c12",
+      "A": "14",
+      "s": "12",
+      "pred": "L46"
+    },
+    "L91": {
+      "c": "c18",
+      "A": "22",
+      "s": "20",
+      "pred": "L46"
+    },
+    "L92": {
+      "c": "c18",
+      "A": "23",
+      "s": "21",
+      "pred": "L46"
+    },
+    "L93": {
+      "c": "c18",
+      "A": "24",
+      "s": "22",
+      "pred": "L46"
+    },
+    "L94": {
+      "c": "c12",
+      "A": "13",
+      "s": "11",
+      "pred": "L50"
+    },
+    "L95": {
+      "c": "c12",
+      "A": "14",
+      "s": "12",
+      "pred": "L50"
+    },
+    "L96": {
+      "c": "c18",
+      "A": "22",
+      "s": "20",
+      "pred": "L50"
+    },
+    "L97": {
+      "c": "c18",
+      "A": "23",
+      "s": "21",
+      "pred": "L50"
+    },
+    "L98": {
+      "c": "c18",
+      "A": "24",
+      "s": "22",
+      "pred": "L50"
+    },
+    "L99": {
+      "c": "c16",
+      "A": "17",
+      "s": "16",
+      "pred": "L9"
+    },
+    "L100": {
+      "c": "c16",
+      "A": "18",
+      "s": "17",
+      "pred": "L9"
+    },
+    "L101": {
+      "c": "c16",
+      "A": "19",
+      "s": "18",
+      "pred": "L9"
+    },
+    "L102": {
+      "c": "c17",
+      "A": "20",
+      "s": "18",
+      "pred": "L9"
+    },
+    "L103": {
+      "c": "c17",
+      "A": "21",
+      "s": "19",
+      "pred": "L9"
+    },
+    "L104": {
+      "c": "c17",
+      "A": "22",
+      "s": "20",
+      "pred": "L9"
+    },
+    "L105": {
+      "c": "c16",
+      "A": "17",
+      "s": "16",
+      "pred": "L15"
+    },
+    "L106": {
+      "c": "c16",
+      "A": "18",
+      "s": "17",
+      "pred": "L15"
+    },
+    "L107": {
+      "c": "c16",
+      "A": "19",
+      "s": "18",
+      "pred": "L15"
+    },
+    "L108": {
+      "c": "c17",
+      "A": "20",
+      "s": "18",
+      "pred": "L15"
+    },
+    "L109": {
+      "c": "c17",
+      "A": "21",
+      "s": "19",
+      "pred": "L15"
+    },
+    "L110": {
+      "c": "c17",
+      "A": "22",
+      "s": "20",
+      "pred": "L15"
+    }
+  },
+  "trace": [
+    {
+      "event": "POP",
+      "label": "L0",
+      "node": "S1",
+      "A": "1",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c01",
+      "s": "1",
+      "f": "2",
+      "h": "1",
+      "A": "2",
+      "receiver_peak": "8",
+      "receiver_peak_time": "2",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c01",
+      "s": "2",
+      "f": "3",
+      "h": "2",
+      "A": "3",
+      "receiver_peak": "8",
+      "receiver_peak_time": "3",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "1",
+      "new_label": "L1",
+      "priority": [
+        "3",
+        1
+      ],
+      "queue_size": 1
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c01",
+      "s": "3",
+      "f": "4",
+      "h": "3",
+      "A": "4",
+      "receiver_peak": "8",
+      "receiver_peak_time": "4",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "1",
+      "new_label": "L2",
+      "priority": [
+        "4",
+        2
+      ],
+      "queue_size": 2
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c02",
+      "s": "3",
+      "f": "4",
+      "h": "3",
+      "A": "4",
+      "receiver_peak": "4",
+      "receiver_peak_time": "4",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "1",
+      "new_label": "L3",
+      "priority": [
+        "4",
+        3
+      ],
+      "queue_size": 3
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c02",
+      "s": "4",
+      "f": "5",
+      "h": "4",
+      "A": "5",
+      "receiver_peak": "4",
+      "receiver_peak_time": "5",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "1",
+      "new_label": "L4",
+      "priority": [
+        "5",
+        4
+      ],
+      "queue_size": 4
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c02",
+      "s": "5",
+      "f": "6",
+      "h": "5",
+      "A": "6",
+      "receiver_peak": "4",
+      "receiver_peak_time": "6",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "1",
+      "new_label": "L5",
+      "priority": [
+        "6",
+        5
+      ],
+      "queue_size": 5
+    },
+    {
+      "event": "POP",
+      "label": "L1",
+      "node": "A",
+      "A": "3",
+      "queue_size": 4
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c05",
+      "s": "5",
+      "f": "6",
+      "h": "5",
+      "A": "6",
+      "receiver_peak": "4",
+      "receiver_peak_time": "6",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "3",
+      "new_label": "L6",
+      "priority": [
+        "6",
+        6
+      ],
+      "queue_size": 5
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c05",
+      "s": "6",
+      "f": "7",
+      "h": "6",
+      "A": "7",
+      "receiver_peak": "4",
+      "receiver_peak_time": "7",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "3",
+      "new_label": "L7",
+      "priority": [
+        "7",
+        7
+      ],
+      "queue_size": 6
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c05",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "4",
+      "receiver_peak_time": "8",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "3",
+      "new_label": "L8",
+      "priority": [
+        "8",
+        8
+      ],
+      "queue_size": 7
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c06",
+      "s": "4",
+      "f": "5",
+      "h": "5",
+      "A": "6",
+      "receiver_peak": "8",
+      "receiver_peak_time": "6",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 7
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c06",
+      "s": "5",
+      "f": "6",
+      "h": "6",
+      "A": "7",
+      "receiver_peak": "8",
+      "receiver_peak_time": "7",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 7
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c06",
+      "s": "6",
+      "f": "7",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "8",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 7
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c13",
+      "s": "11",
+      "f": "12",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "4",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "3",
+      "new_label": "L9",
+      "priority": [
+        "13",
+        9
+      ],
+      "queue_size": 8
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c13",
+      "s": "12",
+      "f": "13",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "3",
+      "new_label": "L10",
+      "priority": [
+        "14",
+        10
+      ],
+      "queue_size": 9
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c13",
+      "s": "13",
+      "f": "14",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "4",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "3",
+      "new_label": "L11",
+      "priority": [
+        "15",
+        11
+      ],
+      "queue_size": 10
+    },
+    {
+      "event": "POP",
+      "label": "L2",
+      "node": "A",
+      "A": "4",
+      "queue_size": 9
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c05",
+      "s": "5",
+      "f": "6",
+      "h": "5",
+      "A": "6",
+      "receiver_peak": "4",
+      "receiver_peak_time": "6",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "4",
+      "new_label": "L12",
+      "priority": [
+        "6",
+        12
+      ],
+      "queue_size": 10
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c05",
+      "s": "6",
+      "f": "7",
+      "h": "6",
+      "A": "7",
+      "receiver_peak": "4",
+      "receiver_peak_time": "7",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "4",
+      "new_label": "L13",
+      "priority": [
+        "7",
+        13
+      ],
+      "queue_size": 11
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c05",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "4",
+      "receiver_peak_time": "8",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "4",
+      "new_label": "L14",
+      "priority": [
+        "8",
+        14
+      ],
+      "queue_size": 12
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c06",
+      "s": "4",
+      "f": "5",
+      "h": "5",
+      "A": "6",
+      "receiver_peak": "8",
+      "receiver_peak_time": "6",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 12
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c06",
+      "s": "5",
+      "f": "6",
+      "h": "6",
+      "A": "7",
+      "receiver_peak": "8",
+      "receiver_peak_time": "7",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 12
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c06",
+      "s": "6",
+      "f": "7",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "8",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 12
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c13",
+      "s": "11",
+      "f": "12",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "4",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "4",
+      "new_label": "L15",
+      "priority": [
+        "13",
+        15
+      ],
+      "queue_size": 13
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c13",
+      "s": "12",
+      "f": "13",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "4",
+      "new_label": "L16",
+      "priority": [
+        "14",
+        16
+      ],
+      "queue_size": 14
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c13",
+      "s": "13",
+      "f": "14",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "4",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "4",
+      "new_label": "L17",
+      "priority": [
+        "15",
+        17
+      ],
+      "queue_size": 15
+    },
+    {
+      "event": "POP",
+      "label": "L3",
+      "node": "B",
+      "A": "4",
+      "queue_size": 14
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c07",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "8",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 14
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c07",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 14
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c07",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "8",
+      "receiver_peak_time": "10",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 14
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c08",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "4",
+      "new_label": "L18",
+      "priority": [
+        "9",
+        18
+      ],
+      "queue_size": 15
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c14",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "4",
+      "new_label": "L19",
+      "priority": [
+        "14",
+        19
+      ],
+      "queue_size": 16
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c14",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "4",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "4",
+      "new_label": "L20",
+      "priority": [
+        "15",
+        20
+      ],
+      "queue_size": 17
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c14",
+      "s": "15",
+      "f": "16",
+      "h": "15",
+      "A": "16",
+      "receiver_peak": "4",
+      "receiver_peak_time": "16",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "4",
+      "new_label": "L21",
+      "priority": [
+        "16",
+        21
+      ],
+      "queue_size": 18
+    },
+    {
+      "event": "POP",
+      "label": "L4",
+      "node": "B",
+      "A": "5",
+      "queue_size": 17
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c07",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "8",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 17
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c07",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 17
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c07",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "8",
+      "receiver_peak_time": "10",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 17
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c08",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "5",
+      "new_label": "L22",
+      "priority": [
+        "9",
+        22
+      ],
+      "queue_size": 18
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c14",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "5",
+      "new_label": "L23",
+      "priority": [
+        "14",
+        23
+      ],
+      "queue_size": 19
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c14",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "4",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "5",
+      "new_label": "L24",
+      "priority": [
+        "15",
+        24
+      ],
+      "queue_size": 20
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c14",
+      "s": "15",
+      "f": "16",
+      "h": "15",
+      "A": "16",
+      "receiver_peak": "4",
+      "receiver_peak_time": "16",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "5",
+      "new_label": "L25",
+      "priority": [
+        "16",
+        25
+      ],
+      "queue_size": 21
+    },
+    {
+      "event": "POP",
+      "label": "L5",
+      "node": "B",
+      "A": "6",
+      "queue_size": 20
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c07",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "8",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 20
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c07",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 20
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c07",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "8",
+      "receiver_peak_time": "10",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 20
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c08",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "6",
+      "new_label": "L26",
+      "priority": [
+        "9",
+        26
+      ],
+      "queue_size": 21
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c14",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "6",
+      "new_label": "L27",
+      "priority": [
+        "14",
+        27
+      ],
+      "queue_size": 22
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c14",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "4",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "6",
+      "new_label": "L28",
+      "priority": [
+        "15",
+        28
+      ],
+      "queue_size": 23
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c14",
+      "s": "15",
+      "f": "16",
+      "h": "15",
+      "A": "16",
+      "receiver_peak": "4",
+      "receiver_peak_time": "16",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "6",
+      "new_label": "L29",
+      "priority": [
+        "16",
+        29
+      ],
+      "queue_size": 24
+    },
+    {
+      "event": "POP",
+      "label": "L6",
+      "node": "B",
+      "A": "6",
+      "queue_size": 23
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L6",
+      "contact": "c07",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "8",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 23
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L6",
+      "contact": "c07",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 23
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L6",
+      "contact": "c07",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "8",
+      "receiver_peak_time": "10",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 23
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L6",
+      "contact": "c08",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "6",
+      "new_label": "L30",
+      "priority": [
+        "9",
+        30
+      ],
+      "queue_size": 24
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L6",
+      "contact": "c14",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "6",
+      "new_label": "L31",
+      "priority": [
+        "14",
+        31
+      ],
+      "queue_size": 25
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L6",
+      "contact": "c14",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "4",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "6",
+      "new_label": "L32",
+      "priority": [
+        "15",
+        32
+      ],
+      "queue_size": 26
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L6",
+      "contact": "c14",
+      "s": "15",
+      "f": "16",
+      "h": "15",
+      "A": "16",
+      "receiver_peak": "4",
+      "receiver_peak_time": "16",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "6",
+      "new_label": "L33",
+      "priority": [
+        "16",
+        33
+      ],
+      "queue_size": 27
+    },
+    {
+      "event": "POP",
+      "label": "L12",
+      "node": "B",
+      "A": "6",
+      "queue_size": 26
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L12",
+      "contact": "c07",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "8",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 26
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L12",
+      "contact": "c07",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 26
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L12",
+      "contact": "c07",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "8",
+      "receiver_peak_time": "10",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 26
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L12",
+      "contact": "c08",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "6",
+      "new_label": "L34",
+      "priority": [
+        "9",
+        34
+      ],
+      "queue_size": 27
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L12",
+      "contact": "c14",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "6",
+      "new_label": "L35",
+      "priority": [
+        "14",
+        35
+      ],
+      "queue_size": 28
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L12",
+      "contact": "c14",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "4",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "6",
+      "new_label": "L36",
+      "priority": [
+        "15",
+        36
+      ],
+      "queue_size": 29
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L12",
+      "contact": "c14",
+      "s": "15",
+      "f": "16",
+      "h": "15",
+      "A": "16",
+      "receiver_peak": "4",
+      "receiver_peak_time": "16",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "6",
+      "new_label": "L37",
+      "priority": [
+        "16",
+        37
+      ],
+      "queue_size": 30
+    },
+    {
+      "event": "POP",
+      "label": "L7",
+      "node": "B",
+      "A": "7",
+      "queue_size": 29
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L7",
+      "contact": "c07",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "8",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 29
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L7",
+      "contact": "c07",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 29
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L7",
+      "contact": "c07",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "8",
+      "receiver_peak_time": "10",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 29
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L7",
+      "contact": "c08",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "7",
+      "new_label": "L38",
+      "priority": [
+        "9",
+        38
+      ],
+      "queue_size": 30
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L7",
+      "contact": "c14",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "7",
+      "new_label": "L39",
+      "priority": [
+        "14",
+        39
+      ],
+      "queue_size": 31
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L7",
+      "contact": "c14",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "4",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "7",
+      "new_label": "L40",
+      "priority": [
+        "15",
+        40
+      ],
+      "queue_size": 32
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L7",
+      "contact": "c14",
+      "s": "15",
+      "f": "16",
+      "h": "15",
+      "A": "16",
+      "receiver_peak": "4",
+      "receiver_peak_time": "16",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "7",
+      "new_label": "L41",
+      "priority": [
+        "16",
+        41
+      ],
+      "queue_size": 33
+    },
+    {
+      "event": "POP",
+      "label": "L13",
+      "node": "B",
+      "A": "7",
+      "queue_size": 32
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L13",
+      "contact": "c07",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "8",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 32
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L13",
+      "contact": "c07",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 32
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L13",
+      "contact": "c07",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "8",
+      "receiver_peak_time": "10",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 32
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L13",
+      "contact": "c08",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "7",
+      "new_label": "L42",
+      "priority": [
+        "9",
+        42
+      ],
+      "queue_size": 33
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L13",
+      "contact": "c14",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "7",
+      "new_label": "L43",
+      "priority": [
+        "14",
+        43
+      ],
+      "queue_size": 34
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L13",
+      "contact": "c14",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "4",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "7",
+      "new_label": "L44",
+      "priority": [
+        "15",
+        44
+      ],
+      "queue_size": 35
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L13",
+      "contact": "c14",
+      "s": "15",
+      "f": "16",
+      "h": "15",
+      "A": "16",
+      "receiver_peak": "4",
+      "receiver_peak_time": "16",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "7",
+      "new_label": "L45",
+      "priority": [
+        "16",
+        45
+      ],
+      "queue_size": 36
+    },
+    {
+      "event": "POP",
+      "label": "L8",
+      "node": "B",
+      "A": "8",
+      "queue_size": 35
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L8",
+      "contact": "c07",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 35
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L8",
+      "contact": "c07",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "8",
+      "receiver_peak_time": "10",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 35
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L8",
+      "contact": "c08",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "8",
+      "new_label": "L46",
+      "priority": [
+        "9",
+        46
+      ],
+      "queue_size": 36
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L8",
+      "contact": "c14",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "8",
+      "new_label": "L47",
+      "priority": [
+        "14",
+        47
+      ],
+      "queue_size": 37
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L8",
+      "contact": "c14",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "4",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "8",
+      "new_label": "L48",
+      "priority": [
+        "15",
+        48
+      ],
+      "queue_size": 38
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L8",
+      "contact": "c14",
+      "s": "15",
+      "f": "16",
+      "h": "15",
+      "A": "16",
+      "receiver_peak": "4",
+      "receiver_peak_time": "16",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "8",
+      "new_label": "L49",
+      "priority": [
+        "16",
+        49
+      ],
+      "queue_size": 39
+    },
+    {
+      "event": "POP",
+      "label": "L14",
+      "node": "B",
+      "A": "8",
+      "queue_size": 38
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L14",
+      "contact": "c07",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 38
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L14",
+      "contact": "c07",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "8",
+      "receiver_peak_time": "10",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 38
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L14",
+      "contact": "c08",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "8",
+      "receiver_peak_time": "9",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "8",
+      "new_label": "L50",
+      "priority": [
+        "9",
+        50
+      ],
+      "queue_size": 39
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L14",
+      "contact": "c14",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "8",
+      "new_label": "L51",
+      "priority": [
+        "14",
+        51
+      ],
+      "queue_size": 40
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L14",
+      "contact": "c14",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "4",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "8",
+      "new_label": "L52",
+      "priority": [
+        "15",
+        52
+      ],
+      "queue_size": 41
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L14",
+      "contact": "c14",
+      "s": "15",
+      "f": "16",
+      "h": "15",
+      "A": "16",
+      "receiver_peak": "4",
+      "receiver_peak_time": "16",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "8",
+      "new_label": "L53",
+      "priority": [
+        "16",
+        53
+      ],
+      "queue_size": 42
+    },
+    {
+      "event": "POP",
+      "label": "L18",
+      "node": "E",
+      "A": "9",
+      "queue_size": 41
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L18",
+      "contact": "c12",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "12",
+      "receiver_peak_time": "12",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 41
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L18",
+      "contact": "c12",
+      "s": "11",
+      "f": "12",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "8",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L54",
+      "priority": [
+        "13",
+        54
+      ],
+      "queue_size": 42
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L18",
+      "contact": "c12",
+      "s": "12",
+      "f": "13",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L55",
+      "priority": [
+        "14",
+        55
+      ],
+      "queue_size": 43
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L18",
+      "contact": "c18",
+      "s": "20",
+      "f": "21",
+      "h": "21",
+      "A": "22",
+      "receiver_peak": "4",
+      "receiver_peak_time": "22",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L56",
+      "priority": [
+        "22",
+        56
+      ],
+      "queue_size": 44
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L18",
+      "contact": "c18",
+      "s": "21",
+      "f": "22",
+      "h": "22",
+      "A": "23",
+      "receiver_peak": "4",
+      "receiver_peak_time": "23",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L57",
+      "priority": [
+        "23",
+        57
+      ],
+      "queue_size": 45
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L18",
+      "contact": "c18",
+      "s": "22",
+      "f": "23",
+      "h": "23",
+      "A": "24",
+      "receiver_peak": "4",
+      "receiver_peak_time": "24",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L58",
+      "priority": [
+        "24",
+        58
+      ],
+      "queue_size": 46
+    },
+    {
+      "event": "POP",
+      "label": "L22",
+      "node": "E",
+      "A": "9",
+      "queue_size": 45
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L22",
+      "contact": "c12",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "12",
+      "receiver_peak_time": "12",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 45
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L22",
+      "contact": "c12",
+      "s": "11",
+      "f": "12",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "8",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L59",
+      "priority": [
+        "13",
+        59
+      ],
+      "queue_size": 46
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L22",
+      "contact": "c12",
+      "s": "12",
+      "f": "13",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L60",
+      "priority": [
+        "14",
+        60
+      ],
+      "queue_size": 47
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L22",
+      "contact": "c18",
+      "s": "20",
+      "f": "21",
+      "h": "21",
+      "A": "22",
+      "receiver_peak": "4",
+      "receiver_peak_time": "22",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L61",
+      "priority": [
+        "22",
+        61
+      ],
+      "queue_size": 48
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L22",
+      "contact": "c18",
+      "s": "21",
+      "f": "22",
+      "h": "22",
+      "A": "23",
+      "receiver_peak": "4",
+      "receiver_peak_time": "23",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L62",
+      "priority": [
+        "23",
+        62
+      ],
+      "queue_size": 49
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L22",
+      "contact": "c18",
+      "s": "22",
+      "f": "23",
+      "h": "23",
+      "A": "24",
+      "receiver_peak": "4",
+      "receiver_peak_time": "24",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L63",
+      "priority": [
+        "24",
+        63
+      ],
+      "queue_size": 50
+    },
+    {
+      "event": "POP",
+      "label": "L26",
+      "node": "E",
+      "A": "9",
+      "queue_size": 49
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L26",
+      "contact": "c12",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "12",
+      "receiver_peak_time": "12",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 49
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L26",
+      "contact": "c12",
+      "s": "11",
+      "f": "12",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "8",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L64",
+      "priority": [
+        "13",
+        64
+      ],
+      "queue_size": 50
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L26",
+      "contact": "c12",
+      "s": "12",
+      "f": "13",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L65",
+      "priority": [
+        "14",
+        65
+      ],
+      "queue_size": 51
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L26",
+      "contact": "c18",
+      "s": "20",
+      "f": "21",
+      "h": "21",
+      "A": "22",
+      "receiver_peak": "4",
+      "receiver_peak_time": "22",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L66",
+      "priority": [
+        "22",
+        66
+      ],
+      "queue_size": 52
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L26",
+      "contact": "c18",
+      "s": "21",
+      "f": "22",
+      "h": "22",
+      "A": "23",
+      "receiver_peak": "4",
+      "receiver_peak_time": "23",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L67",
+      "priority": [
+        "23",
+        67
+      ],
+      "queue_size": 53
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L26",
+      "contact": "c18",
+      "s": "22",
+      "f": "23",
+      "h": "23",
+      "A": "24",
+      "receiver_peak": "4",
+      "receiver_peak_time": "24",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L68",
+      "priority": [
+        "24",
+        68
+      ],
+      "queue_size": 54
+    },
+    {
+      "event": "POP",
+      "label": "L30",
+      "node": "E",
+      "A": "9",
+      "queue_size": 53
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L30",
+      "contact": "c12",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "12",
+      "receiver_peak_time": "12",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 53
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L30",
+      "contact": "c12",
+      "s": "11",
+      "f": "12",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "8",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L69",
+      "priority": [
+        "13",
+        69
+      ],
+      "queue_size": 54
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L30",
+      "contact": "c12",
+      "s": "12",
+      "f": "13",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L70",
+      "priority": [
+        "14",
+        70
+      ],
+      "queue_size": 55
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L30",
+      "contact": "c18",
+      "s": "20",
+      "f": "21",
+      "h": "21",
+      "A": "22",
+      "receiver_peak": "4",
+      "receiver_peak_time": "22",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L71",
+      "priority": [
+        "22",
+        71
+      ],
+      "queue_size": 56
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L30",
+      "contact": "c18",
+      "s": "21",
+      "f": "22",
+      "h": "22",
+      "A": "23",
+      "receiver_peak": "4",
+      "receiver_peak_time": "23",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L72",
+      "priority": [
+        "23",
+        72
+      ],
+      "queue_size": 57
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L30",
+      "contact": "c18",
+      "s": "22",
+      "f": "23",
+      "h": "23",
+      "A": "24",
+      "receiver_peak": "4",
+      "receiver_peak_time": "24",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L73",
+      "priority": [
+        "24",
+        73
+      ],
+      "queue_size": 58
+    },
+    {
+      "event": "POP",
+      "label": "L34",
+      "node": "E",
+      "A": "9",
+      "queue_size": 57
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L34",
+      "contact": "c12",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "12",
+      "receiver_peak_time": "12",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 57
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L34",
+      "contact": "c12",
+      "s": "11",
+      "f": "12",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "8",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L74",
+      "priority": [
+        "13",
+        74
+      ],
+      "queue_size": 58
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L34",
+      "contact": "c12",
+      "s": "12",
+      "f": "13",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L75",
+      "priority": [
+        "14",
+        75
+      ],
+      "queue_size": 59
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L34",
+      "contact": "c18",
+      "s": "20",
+      "f": "21",
+      "h": "21",
+      "A": "22",
+      "receiver_peak": "4",
+      "receiver_peak_time": "22",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L76",
+      "priority": [
+        "22",
+        76
+      ],
+      "queue_size": 60
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L34",
+      "contact": "c18",
+      "s": "21",
+      "f": "22",
+      "h": "22",
+      "A": "23",
+      "receiver_peak": "4",
+      "receiver_peak_time": "23",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L77",
+      "priority": [
+        "23",
+        77
+      ],
+      "queue_size": 61
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L34",
+      "contact": "c18",
+      "s": "22",
+      "f": "23",
+      "h": "23",
+      "A": "24",
+      "receiver_peak": "4",
+      "receiver_peak_time": "24",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L78",
+      "priority": [
+        "24",
+        78
+      ],
+      "queue_size": 62
+    },
+    {
+      "event": "POP",
+      "label": "L38",
+      "node": "E",
+      "A": "9",
+      "queue_size": 61
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L38",
+      "contact": "c12",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "12",
+      "receiver_peak_time": "12",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 61
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L38",
+      "contact": "c12",
+      "s": "11",
+      "f": "12",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "8",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L79",
+      "priority": [
+        "13",
+        79
+      ],
+      "queue_size": 62
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L38",
+      "contact": "c12",
+      "s": "12",
+      "f": "13",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L80",
+      "priority": [
+        "14",
+        80
+      ],
+      "queue_size": 63
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L38",
+      "contact": "c18",
+      "s": "20",
+      "f": "21",
+      "h": "21",
+      "A": "22",
+      "receiver_peak": "4",
+      "receiver_peak_time": "22",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L81",
+      "priority": [
+        "22",
+        81
+      ],
+      "queue_size": 64
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L38",
+      "contact": "c18",
+      "s": "21",
+      "f": "22",
+      "h": "22",
+      "A": "23",
+      "receiver_peak": "4",
+      "receiver_peak_time": "23",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L82",
+      "priority": [
+        "23",
+        82
+      ],
+      "queue_size": 65
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L38",
+      "contact": "c18",
+      "s": "22",
+      "f": "23",
+      "h": "23",
+      "A": "24",
+      "receiver_peak": "4",
+      "receiver_peak_time": "24",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L83",
+      "priority": [
+        "24",
+        83
+      ],
+      "queue_size": 66
+    },
+    {
+      "event": "POP",
+      "label": "L42",
+      "node": "E",
+      "A": "9",
+      "queue_size": 65
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L42",
+      "contact": "c12",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "12",
+      "receiver_peak_time": "12",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 65
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L42",
+      "contact": "c12",
+      "s": "11",
+      "f": "12",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "8",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L84",
+      "priority": [
+        "13",
+        84
+      ],
+      "queue_size": 66
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L42",
+      "contact": "c12",
+      "s": "12",
+      "f": "13",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L85",
+      "priority": [
+        "14",
+        85
+      ],
+      "queue_size": 67
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L42",
+      "contact": "c18",
+      "s": "20",
+      "f": "21",
+      "h": "21",
+      "A": "22",
+      "receiver_peak": "4",
+      "receiver_peak_time": "22",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L86",
+      "priority": [
+        "22",
+        86
+      ],
+      "queue_size": 68
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L42",
+      "contact": "c18",
+      "s": "21",
+      "f": "22",
+      "h": "22",
+      "A": "23",
+      "receiver_peak": "4",
+      "receiver_peak_time": "23",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L87",
+      "priority": [
+        "23",
+        87
+      ],
+      "queue_size": 69
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L42",
+      "contact": "c18",
+      "s": "22",
+      "f": "23",
+      "h": "23",
+      "A": "24",
+      "receiver_peak": "4",
+      "receiver_peak_time": "24",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L88",
+      "priority": [
+        "24",
+        88
+      ],
+      "queue_size": 70
+    },
+    {
+      "event": "POP",
+      "label": "L46",
+      "node": "E",
+      "A": "9",
+      "queue_size": 69
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L46",
+      "contact": "c12",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "12",
+      "receiver_peak_time": "12",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 69
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L46",
+      "contact": "c12",
+      "s": "11",
+      "f": "12",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "8",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L89",
+      "priority": [
+        "13",
+        89
+      ],
+      "queue_size": 70
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L46",
+      "contact": "c12",
+      "s": "12",
+      "f": "13",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L90",
+      "priority": [
+        "14",
+        90
+      ],
+      "queue_size": 71
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L46",
+      "contact": "c18",
+      "s": "20",
+      "f": "21",
+      "h": "21",
+      "A": "22",
+      "receiver_peak": "4",
+      "receiver_peak_time": "22",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L91",
+      "priority": [
+        "22",
+        91
+      ],
+      "queue_size": 72
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L46",
+      "contact": "c18",
+      "s": "21",
+      "f": "22",
+      "h": "22",
+      "A": "23",
+      "receiver_peak": "4",
+      "receiver_peak_time": "23",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L92",
+      "priority": [
+        "23",
+        92
+      ],
+      "queue_size": 73
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L46",
+      "contact": "c18",
+      "s": "22",
+      "f": "23",
+      "h": "23",
+      "A": "24",
+      "receiver_peak": "4",
+      "receiver_peak_time": "24",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L93",
+      "priority": [
+        "24",
+        93
+      ],
+      "queue_size": 74
+    },
+    {
+      "event": "POP",
+      "label": "L50",
+      "node": "E",
+      "A": "9",
+      "queue_size": 73
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L50",
+      "contact": "c12",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "12",
+      "receiver_peak_time": "12",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 73
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L50",
+      "contact": "c12",
+      "s": "11",
+      "f": "12",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "8",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L94",
+      "priority": [
+        "13",
+        94
+      ],
+      "queue_size": 74
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L50",
+      "contact": "c12",
+      "s": "12",
+      "f": "13",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "4",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L95",
+      "priority": [
+        "14",
+        95
+      ],
+      "queue_size": 75
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L50",
+      "contact": "c18",
+      "s": "20",
+      "f": "21",
+      "h": "21",
+      "A": "22",
+      "receiver_peak": "4",
+      "receiver_peak_time": "22",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L96",
+      "priority": [
+        "22",
+        96
+      ],
+      "queue_size": 76
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L50",
+      "contact": "c18",
+      "s": "21",
+      "f": "22",
+      "h": "22",
+      "A": "23",
+      "receiver_peak": "4",
+      "receiver_peak_time": "23",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L97",
+      "priority": [
+        "23",
+        97
+      ],
+      "queue_size": 77
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L50",
+      "contact": "c18",
+      "s": "22",
+      "f": "23",
+      "h": "23",
+      "A": "24",
+      "receiver_peak": "4",
+      "receiver_peak_time": "24",
+      "reason": "PASS",
+      "sender_peak": "8",
+      "sender_peak_time": "9",
+      "new_label": "L98",
+      "priority": [
+        "24",
+        98
+      ],
+      "queue_size": 78
+    },
+    {
+      "event": "POP",
+      "label": "L9",
+      "node": "D",
+      "A": "13",
+      "queue_size": 77
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L9",
+      "contact": "c11",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L9",
+      "contact": "c16",
+      "s": "16",
+      "f": "17",
+      "h": "16",
+      "A": "17",
+      "receiver_peak": "4",
+      "receiver_peak_time": "17",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "13",
+      "new_label": "L99",
+      "priority": [
+        "17",
+        99
+      ],
+      "queue_size": 78
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L9",
+      "contact": "c16",
+      "s": "17",
+      "f": "18",
+      "h": "17",
+      "A": "18",
+      "receiver_peak": "4",
+      "receiver_peak_time": "18",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "13",
+      "new_label": "L100",
+      "priority": [
+        "18",
+        100
+      ],
+      "queue_size": 79
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L9",
+      "contact": "c16",
+      "s": "18",
+      "f": "19",
+      "h": "18",
+      "A": "19",
+      "receiver_peak": "4",
+      "receiver_peak_time": "19",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "13",
+      "new_label": "L101",
+      "priority": [
+        "19",
+        101
+      ],
+      "queue_size": 80
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L9",
+      "contact": "c17",
+      "s": "18",
+      "f": "19",
+      "h": "19",
+      "A": "20",
+      "receiver_peak": "4",
+      "receiver_peak_time": "20",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "13",
+      "new_label": "L102",
+      "priority": [
+        "20",
+        102
+      ],
+      "queue_size": 81
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L9",
+      "contact": "c17",
+      "s": "19",
+      "f": "20",
+      "h": "20",
+      "A": "21",
+      "receiver_peak": "4",
+      "receiver_peak_time": "21",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "13",
+      "new_label": "L103",
+      "priority": [
+        "21",
+        103
+      ],
+      "queue_size": 82
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L9",
+      "contact": "c17",
+      "s": "20",
+      "f": "21",
+      "h": "21",
+      "A": "22",
+      "receiver_peak": "4",
+      "receiver_peak_time": "22",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "13",
+      "new_label": "L104",
+      "priority": [
+        "22",
+        104
+      ],
+      "queue_size": 83
+    },
+    {
+      "event": "POP",
+      "label": "L15",
+      "node": "D",
+      "A": "13",
+      "queue_size": 82
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L15",
+      "contact": "c11",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L15",
+      "contact": "c16",
+      "s": "16",
+      "f": "17",
+      "h": "16",
+      "A": "17",
+      "receiver_peak": "4",
+      "receiver_peak_time": "17",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "13",
+      "new_label": "L105",
+      "priority": [
+        "17",
+        105
+      ],
+      "queue_size": 83
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L15",
+      "contact": "c16",
+      "s": "17",
+      "f": "18",
+      "h": "17",
+      "A": "18",
+      "receiver_peak": "4",
+      "receiver_peak_time": "18",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "13",
+      "new_label": "L106",
+      "priority": [
+        "18",
+        106
+      ],
+      "queue_size": 84
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L15",
+      "contact": "c16",
+      "s": "18",
+      "f": "19",
+      "h": "18",
+      "A": "19",
+      "receiver_peak": "4",
+      "receiver_peak_time": "19",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "13",
+      "new_label": "L107",
+      "priority": [
+        "19",
+        107
+      ],
+      "queue_size": 85
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L15",
+      "contact": "c17",
+      "s": "18",
+      "f": "19",
+      "h": "19",
+      "A": "20",
+      "receiver_peak": "4",
+      "receiver_peak_time": "20",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "13",
+      "new_label": "L108",
+      "priority": [
+        "20",
+        108
+      ],
+      "queue_size": 86
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L15",
+      "contact": "c17",
+      "s": "19",
+      "f": "20",
+      "h": "20",
+      "A": "21",
+      "receiver_peak": "4",
+      "receiver_peak_time": "21",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "13",
+      "new_label": "L109",
+      "priority": [
+        "21",
+        109
+      ],
+      "queue_size": 87
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L15",
+      "contact": "c17",
+      "s": "20",
+      "f": "21",
+      "h": "21",
+      "A": "22",
+      "receiver_peak": "4",
+      "receiver_peak_time": "22",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "13",
+      "new_label": "L110",
+      "priority": [
+        "22",
+        110
+      ],
+      "queue_size": 88
+    },
+    {
+      "event": "POP",
+      "label": "L54",
+      "node": "T",
+      "A": "13",
+      "queue_size": 87
+    },
+    {
+      "event": "GOAL",
+      "label": "L54",
+      "A": "13"
+    }
+  ],
+  "labels_created": 111,
+  "labels_expanded": 23,
+  "independent": {
+    "arrival": "13",
+    "hops": [
+      [
+        "c01",
+        "2"
+      ],
+      [
+        "c05",
+        "5"
+      ],
+      [
+        "c08",
+        "8"
+      ],
+      [
+        "c12",
+        "11"
+      ]
+    ],
+    "paths_considered": 28,
+    "schedules_considered": 2142,
+    "feasible_schedules": 441,
+    "rejection_counts": {
+      "BUFFER": 588,
+      "TIMING": 942,
+      "CONTACT_BUSY": 171
+    },
+    "depth_bound": 23,
+    "walk_prefixes_considered": 46
+  },
+  "full_schedule_check": {
+    "feasible": true,
+    "arrival": "13",
+    "usage": {
+      "c02": "4",
+      "c08": "4",
+      "c12": "4"
+    },
+    "peaks": {
+      "S1": {
+        "value": "8",
+        "time": "1"
+      },
+      "S2": {
+        "value": "4",
+        "time": "0"
+      },
+      "A": {
+        "value": "4",
+        "time": "2"
+      },
+      "B": {
+        "value": "4",
+        "time": "4"
+      },
+      "C": {
+        "value": "4",
+        "time": "3"
+      },
+      "D": {
+        "value": "4",
+        "time": "6"
+      },
+      "E": {
+        "value": "8",
+        "time": "9"
+      },
+      "T": {
+        "value": "8",
+        "time": "12"
+      }
+    }
+  },
+  "quota_before": {
+    "c01": "8",
+    "c02": "12",
+    "c03": "12",
+    "c04": "8",
+    "c05": "12",
+    "c06": "8",
+    "c07": "12",
+    "c08": "4",
+    "c09": "12",
+    "c10": "8",
+    "c11": "4",
+    "c12": "8",
+    "c13": "12",
+    "c14": "12",
+    "c15": "12",
+    "c16": "12",
+    "c17": "12",
+    "c18": "12"
+  },
+  "quota_after": {
+    "c01": "8",
+    "c02": "8",
+    "c03": "12",
+    "c04": "8",
+    "c05": "12",
+    "c06": "8",
+    "c07": "12",
+    "c08": "0",
+    "c09": "12",
+    "c10": "8",
+    "c11": "4",
+    "c12": "4",
+    "c13": "12",
+    "c14": "12",
+    "c15": "12",
+    "c16": "12",
+    "c17": "12",
+    "c18": "12"
+  }
+}

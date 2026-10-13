@@ -8,10 +8,10 @@ import json
 from pathlib import Path
 import statistics
 
-from src.experiments.config import load_scenario
+from src.experiments.config import load_scenario, validate_case
 from src.validation.model import commit, jsonable, occupancy, route_curves
 from src.validation.exhaustive_oracle import commit_independently, background_at
-from .search import search, require_dag
+from .search import search
 from .reference import evaluate, solve
 
 
@@ -69,7 +69,7 @@ def build_statistics(records):
 
 
 def run(case, output):
-    require_dag(case)
+    validate_case(case)
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
     write_json(output/'input.json', case)
@@ -145,7 +145,7 @@ def run(case, output):
             candidates.extend(dict(bundle=b['id'], **event)
                               for event in actual['trace'] if event['event']=='CANDIDATE')
             buffers.extend(buffer_rows(case, background, b['id']))
-        data = dict(name=case['name'], model='PPT_DAG_grid_calendar_validation',
+        data = dict(name=case['name'], model='PPT_walk_grid_calendar_validation',
                     dominance=False, physical_simulation=False,
                     same_contact_one_bundle_at_a_time=True,
                     records=records, quota=quota, background=background, calendar=calendar)
@@ -176,14 +176,14 @@ def run(case, output):
 def make_report(case, output, data, summaries):
     lines = [f'# {case["name"]}：小案例驗證', '',
              '本輪依新版PPT做有限格點搜尋，保留所有Label，不做支配刪除。',
-             '只驗證無循環人工拓樸，不代表真實衛星模擬、一般證明或效能比較。', '',
+             '允許節點與contact重訪，以小案例核對，不代表真實衛星模擬、一般證明或效能比較。', '',
              '| Bundle | 路徑 | Contact序列 | 完整抵達秒 | 完整列舉抵達秒 | 結果 |',
              '| --- | --- | --- | ---: | ---: | --- |']
     for row in summaries:
         lines.append(f'| {row["bundle"]} | {row["path"]} | {row["contacts"]} | '
                      f'{row["arrival"]} | {row["reference_arrival"]} | {row["status"]} |')
     lines += ['', '## 判斷與限制', '',
-              '- contact容量使用 S≤R[c]，本輪DAG不會重用同一contact。',
+              '- contact容量使用 本路徑已用量＋S≤R[c]，已用量沿pred計算。',
               '- 逐格試起送時間，整包在contact結束前送完，完整抵達不超過horizon。',
               '- 接收端以已接受前包占用＋逐byte接收量檢查整段接收期間。',
               '- 傳送端檢查完整抵達後的等待與逐byte發送釋放。',

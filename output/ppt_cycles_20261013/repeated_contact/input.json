@@ -1,0 +1,86 @@
+{
+  "name": "cycle_reuses_same_contact",
+  "delta": "1",
+  "horizon": "5",
+  "algorithm": "ppt_validation_no_dominance",
+  "buffers": {
+    "A": "1",
+    "B": "1",
+    "D": "1"
+  },
+  "background": {
+    "A": [
+      [
+        [
+          "1",
+          "3/2",
+          "0",
+          "1"
+        ],
+        [
+          "3/2",
+          "2",
+          "1",
+          "0"
+        ]
+      ]
+    ],
+    "B": [
+      [
+        [
+          "2",
+          "5/2",
+          "0",
+          "1/2"
+        ],
+        [
+          "5/2",
+          "3",
+          "1/2",
+          "0"
+        ]
+      ]
+    ]
+  },
+  "contacts": [
+    {
+      "id": "ab",
+      "u": "A",
+      "v": "B",
+      "start": "0",
+      "end": "4",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "ba",
+      "u": "B",
+      "v": "A",
+      "start": "2",
+      "end": "3",
+      "rate": "1",
+      "delay": "0",
+      "quota": "1"
+    },
+    {
+      "id": "bd",
+      "u": "B",
+      "v": "D",
+      "start": "4",
+      "end": "5",
+      "rate": "1",
+      "delay": "0",
+      "quota": "1"
+    }
+  ],
+  "bundles": [
+    {
+      "id": "b1",
+      "source": "A",
+      "dest": "D",
+      "g": "0",
+      "size": "1"
+    }
+  ]
+}

@@ -72,12 +72,44 @@ class PptValidationChecks(unittest.TestCase):
         self.assertIsNone(search(case,b,{'c':F(12)},{},calendar)['arrival'])
         self.assertIsNone(solve(case,b,{'c':F(12)},{},calendar)['arrival'])
 
-    def test_reject_cycle_instead_of_silently_skipping_it(self):
+    def test_cycle_reuses_contact_and_commit_deducts_each_visit(self):
+        case=load_scenario(ROOT/'configs/ppt_cycles/repeated_contact.json')
+        with tempfile.TemporaryDirectory() as directory:
+            result=run(case,Path(directory)/'cycle')
+        record=result['records'][0]
+        self.assertEqual(record['hops'], [('ab',0),('ba',2),('ab',3),('bd',4)])
+        self.assertEqual(record['arrival'],5)
+        self.assertEqual(record['independent']['arrival'],5)
+        self.assertEqual(result['quota']['ab'],0)
+        self.assertEqual([(x['start'],x['finish']) for x in result['calendar']['ab']],[(0,1),(3,4)])
+        self.assertTrue(record['full_schedule_check']['feasible'])
+        self.assertTrue(all(set(lab)=={'c','A','s','pred'} for lab in record['labels'].values()))
+
+    def test_repeated_contact_requires_accumulated_capacity(self):
+        case=load_scenario(ROOT/'configs/ppt_cycles/repeated_contact_insufficient.json')
+        b=case['bundles'][0]; quota={c['id']:c['quota'] for c in case['contacts']}
+        result=search(case,b,quota,case['background'],{})
+        self.assertIsNone(result['arrival'])
+        self.assertIsNone(solve(case,b,quota,case['background'],{})['arrival'])
+        self.assertTrue(any(e.get('reason')=='CAPACITY' and e.get('used')==1
+                            for e in result['trace']))
+
+    def test_finite_horizon_ends_cycle_without_destination(self):
         case=simple_case(); b=case['bundles'][0]
+        case['buffers']['D']=F(4); b['dest']='D'; case['horizon']=F(3)
         case['contacts'].append(dict(id='back',u='B',v='A',start=F(1),end=F(3),
                                      rate=F(4),delay=F(0),quota=F(8)))
-        with self.assertRaisesRegex(ValueError,'CYCLIC'):
-            search(case,b,{'c':F(12),'back':F(8)},{},{})
+        quota={c['id']:c['quota'] for c in case['contacts']}
+        self.assertIsNone(search(case,b,quota,{}, {})['arrival'])
+        reference=solve(case,b,quota,{}, {})
+        self.assertIsNone(reference['arrival'])
+        self.assertEqual(reference['depth_bound'],3)
+
+    def test_reference_walk_limit_is_not_no_route(self):
+        case=load_scenario(ROOT/'configs/ppt_cycles/repeated_contact.json')
+        with self.assertRaisesRegex(RuntimeError,'INCOMPLETE_REFERENCE_WALK_LIMIT'):
+            solve(case,case['bundles'][0],{c['id']:c['quota'] for c in case['contacts']},
+                  case['background'],{},max_walk_prefixes=1)
 
     def test_search_limit_is_not_no_route(self):
         case=simple_case(); b=case['bundles'][0]

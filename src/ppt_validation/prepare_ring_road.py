@@ -74,7 +74,7 @@ def prepare(source, output):
                  propagation_delay_s=0,propagation_delay_is_assumption=True,
                  contact_windows_clipped=False,short_contacts_removed=False,
                  bundle_demands_selected=False,routing_experiment_run=False,
-                 current_ppt_engine_support='DAG only; full Ring Road not supported yet')
+                 current_ppt_engine_support='Cyclic walks supported and small-case validated; full-day run not performed')
     for name,data in [('topology.json',topology),('source_and_parameters.json',audit)]:
         (output/name).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',
                                 encoding='utf-8',newline='\n')

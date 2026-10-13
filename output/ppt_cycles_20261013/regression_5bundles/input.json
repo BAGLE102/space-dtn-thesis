@@ -1,0 +1,236 @@
+{
+  "name": "8nodes_5bundles_calendar_no_dominance",
+  "contacts": [
+    {
+      "id": "c01",
+      "u": "S1",
+      "v": "A",
+      "start": "1",
+      "end": "4",
+      "rate": "4",
+      "delay": "0",
+      "quota": "12"
+    },
+    {
+      "id": "c02",
+      "u": "S1",
+      "v": "B",
+      "start": "3",
+      "end": "6",
+      "rate": "4",
+      "delay": "0",
+      "quota": "12"
+    },
+    {
+      "id": "c03",
+      "u": "S2",
+      "v": "A",
+      "start": "1",
+      "end": "4",
+      "rate": "4",
+      "delay": "0",
+      "quota": "12"
+    },
+    {
+      "id": "c04",
+      "u": "S2",
+      "v": "C",
+      "start": "2",
+      "end": "5",
+      "rate": "4",
+      "delay": "0",
+      "quota": "12"
+    },
+    {
+      "id": "c05",
+      "u": "A",
+      "v": "B",
+      "start": "5",
+      "end": "8",
+      "rate": "4",
+      "delay": "0",
+      "quota": "12"
+    },
+    {
+      "id": "c06",
+      "u": "A",
+      "v": "D",
+      "start": "4",
+      "end": "7",
+      "rate": "4",
+      "delay": "1",
+      "quota": "12"
+    },
+    {
+      "id": "c07",
+      "u": "B",
+      "v": "D",
+      "start": "7",
+      "end": "10",
+      "rate": "4",
+      "delay": "0",
+      "quota": "12"
+    },
+    {
+      "id": "c08",
+      "u": "B",
+      "v": "E",
+      "start": "8",
+      "end": "9",
+      "rate": "4",
+      "delay": "0",
+      "quota": "4"
+    },
+    {
+      "id": "c09",
+      "u": "C",
+      "v": "B",
+      "start": "5",
+      "end": "8",
+      "rate": "4",
+      "delay": "0",
+      "quota": "12"
+    },
+    {
+      "id": "c10",
+      "u": "C",
+      "v": "E",
+      "start": "6",
+      "end": "9",
+      "rate": "4",
+      "delay": "1",
+      "quota": "12"
+    },
+    {
+      "id": "c11",
+      "u": "D",
+      "v": "T",
+      "start": "10",
+      "end": "12",
+      "rate": "4",
+      "delay": "1",
+      "quota": "8"
+    },
+    {
+      "id": "c12",
+      "u": "E",
+      "v": "T",
+      "start": "10",
+      "end": "13",
+      "rate": "4",
+      "delay": "1",
+      "quota": "12"
+    },
+    {
+      "id": "c13",
+      "u": "A",
+      "v": "D",
+      "start": "11",
+      "end": "14",
+      "rate": "4",
+      "delay": "1",
+      "quota": "12"
+    },
+    {
+      "id": "c14",
+      "u": "B",
+      "v": "D",
+      "start": "13",
+      "end": "16",
+      "rate": "4",
+      "delay": "0",
+      "quota": "12"
+    },
+    {
+      "id": "c15",
+      "u": "C",
+      "v": "E",
+      "start": "12",
+      "end": "15",
+      "rate": "4",
+      "delay": "1",
+      "quota": "12"
+    },
+    {
+      "id": "c16",
+      "u": "D",
+      "v": "E",
+      "start": "16",
+      "end": "19",
+      "rate": "4",
+      "delay": "0",
+      "quota": "12"
+    },
+    {
+      "id": "c17",
+      "u": "D",
+      "v": "T",
+      "start": "18",
+      "end": "21",
+      "rate": "4",
+      "delay": "1",
+      "quota": "12"
+    },
+    {
+      "id": "c18",
+      "u": "E",
+      "v": "T",
+      "start": "20",
+      "end": "23",
+      "rate": "4",
+      "delay": "1",
+      "quota": "12"
+    }
+  ],
+  "bundles": [
+    {
+      "id": "bundle1",
+      "source": "S1",
+      "dest": "T",
+      "g": "0",
+      "size": "4"
+    },
+    {
+      "id": "bundle2",
+      "source": "S2",
+      "dest": "T",
+      "g": "0",
+      "size": "4"
+    },
+    {
+      "id": "bundle3",
+      "source": "S1",
+      "dest": "T",
+      "g": "1",
+      "size": "4"
+    },
+    {
+      "id": "bundle4",
+      "source": "S2",
+      "dest": "T",
+      "g": "2",
+      "size": "4"
+    },
+    {
+      "id": "bundle5",
+      "source": "A",
+      "dest": "T",
+      "g": "3",
+      "size": "4"
+    }
+  ],
+  "buffers": {
+    "S1": "16",
+    "S2": "16",
+    "A": "8",
+    "B": "4",
+    "C": "8",
+    "D": "4",
+    "E": "8",
+    "T": "16"
+  },
+  "background": {},
+  "delta": "1",
+  "horizon": "24",
+  "algorithm": "ppt_validation_no_dominance"
+}

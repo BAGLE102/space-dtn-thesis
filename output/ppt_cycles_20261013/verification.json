@@ -1,0 +1,42 @@
+{
+  "tests_passed": 16,
+  "test_command": "python -m unittest tests.test_ppt_validation tests.test_modular_routing tests.test_prepare_ring_road -v",
+  "saved_runs": [
+    {
+      "case": "insufficient_capacity",
+      "arrivals": [
+        null
+      ],
+      "model": "PPT_walk_grid_calendar_validation",
+      "all_queries_match_reference": true
+    },
+    {
+      "case": "regression_5bundles",
+      "arrivals": [
+        "12",
+        "12",
+        "13",
+        "20",
+        null
+      ],
+      "model": "PPT_walk_grid_calendar_validation",
+      "all_queries_match_reference": true
+    },
+    {
+      "case": "repeated_contact",
+      "arrivals": [
+        "5"
+      ],
+      "model": "PPT_walk_grid_calendar_validation",
+      "all_queries_match_reference": true
+    }
+  ],
+  "dominance": false,
+  "full_ring_road_run": false,
+  "general_correctness_proven": false,
+  "sha256": {
+    "src/ppt_validation/search.py": "6752c534daebcd21ef2d9977cf625cefaaa0ede814a00fc1dcae7c661f563cc0",
+    "src/ppt_validation/reference.py": "712d767160544f9df3b69c172904fb1ef76074abc2ede24055e1ef816152ef4f",
+    "src/ppt_validation/run.py": "ea010ef4a126e5247afae3daf02a1c7e1a4e45580c4a134a700f1b7a33c4b590"
+  }
+}

@@ -216,3 +216,11 @@
 - 完成轉換程式、參數設定、來源SHA核對及格式驗證，保留循環與短contact；2項轉換測試通過。資料在`tmp/ring_road_ppt_thesis/`本機存放。
 - `configs/ring_road_thesis/README.md`記錄重建方法與限制。未確認與學長實際輸入逐筆相同，δ=0暫為假設，未選五包需求、未跑新版路由。
 - 現有驗證版僅DAG，下一步先定案循環／前綴資源處理，不直接刪除DAG防護。
+
+## 允許循環的驗證版（2026-10-13，使用者確認修改）
+
+- 移除DAG限制，允許重訪節點與contact，沿pred臨時計算已用容量；四欄Label、時間枚舉、Q排序、Buffer與無支配策略保留。
+- 完整列舉核對改以正每跳耗時界定walk深度，保留循環；上限超出仍為INCOMPLETE而非無解。
+- 繞圈案例ab→ba→ab→bd在5秒抵達，ab容量扣兩次；ab容量只夠一次時雙方皆判定無解。
+- 原PPT兩包及八節點五包結果不變；16項相關測試通過，未跑整天Ring Road或效能比較。
+- 虛擬碼與符號：`docs/ppt_label_setting_cycles_pseudocode_v01.md`；新資料：`output/ppt_cycles_20261013/`。
