@@ -1,0 +1,15 @@
+{
+  "case": "mixed_sources_20",
+  "family": "mixed_sources",
+  "requested": 20,
+  "completed_queries": 13,
+  "accepted": 7,
+  "no_route": 6,
+  "unprocessed": 7,
+  "status": "INCOMPLETE_TIMEOUT",
+  "window_s": 10,
+  "size_MB": "1/10",
+  "buffer_MB": "30",
+  "source_pattern": "alternating 9->2 and 7->2, same release; diagnostic only",
+  "error": ""
+}

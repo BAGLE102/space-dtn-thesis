@@ -1,0 +1,11 @@
+﻿index,bundle,source,destination,release,size,status,arrival,delivery_delay,path,contacts,labels_created,labels_expanded,reference_schedules,reference_arrival
+1,bundle1,19,3,6336,1/10,ACCEPTED,6338,2,19 → 44 → 3,rrn_0246 → rrn_0258,53,4,511,6338
+2,bundle2,19,3,6336,1/10,ACCEPTED,6339,3,19 → 44 → 3,rrn_0246 → rrn_0258,47,4,511,6339
+3,bundle3,19,3,6336,1/10,ACCEPTED,6340,4,19 → 44 → 3,rrn_0246 → rrn_0258,41,4,511,6340
+4,bundle4,19,3,6336,1/10,ACCEPTED,6341,5,19 → 44 → 3,rrn_0246 → rrn_0258,35,4,511,6341
+5,bundle5,19,3,6336,1/10,ACCEPTED,6342,6,19 → 44 → 3,rrn_0246 → rrn_0258,29,4,511,6342
+6,bundle6,19,3,6336,1/10,ACCEPTED,6343,7,19 → 44 → 3,rrn_0246 → rrn_0258,23,4,511,6343
+7,bundle7,19,3,6336,1/10,ACCEPTED,6344,8,19 → 44 → 3,rrn_0246 → rrn_0258,17,4,511,6344
+8,bundle8,19,3,6336,1/10,ACCEPTED,6345,9,19 → 44 → 3,rrn_0246 → rrn_0258,11,4,511,6345
+9,bundle9,19,3,6336,1/10,ACCEPTED,6346,10,19 → 44 → 3,rrn_0246 → rrn_0258,5,4,511,6346
+10,bundle10,19,3,6336,1/10,NO_ROUTE_ON_GRID,,,19,,2,2,511,

@@ -1,0 +1,15 @@
+{
+  "case": "load_20",
+  "family": "bundle_count",
+  "requested": 20,
+  "completed_queries": 20,
+  "accepted": 9,
+  "no_route": 11,
+  "unprocessed": 0,
+  "status": "INCOMPLETE_TIMEOUT",
+  "window_s": 10,
+  "size_MB": "1/10",
+  "buffer_MB": "30",
+  "source_pattern": "explicit shared 9->2 corridor; diagnostic only",
+  "error": ""
+}

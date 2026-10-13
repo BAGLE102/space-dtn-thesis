@@ -1,0 +1,15 @@
+﻿case,scope,accepted,mean_delay_s,min_delay_s,max_delay_s,population_std_s,max_arrival_error_s,max_arrival_error_pct
+load_10,entire case,9,6.0,2.0,10.0,2.581988897471611,0,0
+load_20,checked queries only,9,6.0,2.0,10.0,2.581988897471611,0,0
+load_50,checked queries only,9,6.0,2.0,10.0,2.581988897471611,0,0
+load_100,checked queries only,9,6.0,2.0,10.0,2.581988897471611,0,0
+size_200KB,entire case,4,7.0,4.0,10.0,2.23606797749979,0,0
+size_500KB,entire case,1,10.0,10.0,10.0,0.0,0,0
+size_1000KB,entire case,0,,,,,,
+corridor_20_5,entire case,9,6.0,2.0,10.0,2.581988897471611,0,0
+corridor_29_1,entire case,9,6.0,2.0,10.0,2.581988897471611,0,0
+corridor_25_3,entire case,9,6.0,2.0,10.0,2.581988897471611,0,0
+corridor_19_3,entire case,9,6.0,2.0,10.0,2.581988897471611,0,0
+mixed_sources_20,checked queries only,7,5.0,2.0,8.0,2.0,0,0
+buffer_200KB,entire case,2,2.5,2.0,3.0,0.5,0,0
+window_20s,checked queries only,1,2.0,2.0,2.0,0.0,0,0

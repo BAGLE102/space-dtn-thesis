@@ -36,8 +36,14 @@ python -m src.ppt_validation.prepare_ring_road --source tmp/topology_sources/Rin
 
 已依使用者確認支援重訪節點／contact：沿pred累計同contact已用容量，保持四欄Label及無支配搜尋。繞圈、容量不足及有限終止的小案例通過，原兩包及五包回歸結果不變。詳細虛擬碼在`docs/ppt_label_setting_cycles_pseudocode_v01.md`。
 
-整天Ring Road尚未執行；五包來源／目的地／大小／生成時間尚未選定。完整列舉僅供小案例，不能直接承諾一天資料能在資源上限內完成。尚未確認原始逐筆資料與學長完全相同，單位及延遲假設仍保留。
+整天Ring Road尚未執行；五包與擴充批次的需求設定及已核對結果見下文。完整列舉僅供小案例，不能直接承諾一天資料能在資源上限內完成。尚未確認原始逐筆資料與學長完全相同，單位及延遲假設仍保留。
 
 ## 五包功能測試已完成
 
 `pilot_5bundles.json`指定1342～1352秒、5包100KB、cold spot 9→hot spot 2。使用相交的10個有向contacts，保留47節點與循環。抵達1344～1348秒，全部與獨立完整列舉一致。這不是整天流量實驗；詳見`docs/ring_road_pilot_20261013.md`。
+
+## 擴充批次測試
+
+完成14組嘗試，規劃330包；206包已獨立核對，124包未完成。9組完整完成，5組遇到20秒整體驗證上限。涵蓋10／20／50／100包、不同bundle大小、其他4條已知走廊、混合來源、Buffer診斷及較長時窗。
+
+`output/ring_road_batch_20261013/report.md`列出全部狀態與限制，未完成不算無路徑。除了明列的Buffer診斷組，其餘維持學長30MB Buffer；路由搜尋未修改。

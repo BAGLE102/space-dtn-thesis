@@ -1,0 +1,133 @@
+{
+  "bundles": 20,
+  "accepted": 4,
+  "per_bundle_reference_check": [
+    {
+      "bundle": "bundle1",
+      "feasibility_matches": true,
+      "arrival_error_s": "0",
+      "arrival_error_pct": "0"
+    },
+    {
+      "bundle": "bundle2",
+      "feasibility_matches": true,
+      "arrival_error_s": "0",
+      "arrival_error_pct": "0"
+    },
+    {
+      "bundle": "bundle3",
+      "feasibility_matches": true,
+      "arrival_error_s": "0",
+      "arrival_error_pct": "0"
+    },
+    {
+      "bundle": "bundle4",
+      "feasibility_matches": true,
+      "arrival_error_s": "0",
+      "arrival_error_pct": "0"
+    },
+    {
+      "bundle": "bundle5",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle6",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle7",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle8",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle9",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle10",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle11",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle12",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle13",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle14",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle15",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle16",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle17",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle18",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle19",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    },
+    {
+      "bundle": "bundle20",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    }
+  ],
+  "delivery_delay_s": {
+    "mean": 7.0,
+    "minimum": 4.0,
+    "maximum": 10.0,
+    "population_std": 2.23606797749979
+  },
+  "scope": "Delay statistics include accepted bundles only; no physical ideal claimed"
+}

@@ -1,0 +1,15 @@
+{
+  "case": "window_20s",
+  "family": "longer_window",
+  "requested": 10,
+  "completed_queries": 1,
+  "accepted": 1,
+  "no_route": 0,
+  "unprocessed": 9,
+  "status": "INCOMPLETE_TIMEOUT",
+  "window_s": 20,
+  "size_MB": "1/10",
+  "buffer_MB": "30",
+  "source_pattern": "explicit shared 9->2 corridor; diagnostic only",
+  "error": ""
+}

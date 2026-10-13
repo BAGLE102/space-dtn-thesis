@@ -18,8 +18,8 @@
   "propagation_delay_s": "0",
   "delay_assumption_pending": true,
   "time_step_for_initial_validation_s": "1",
-  "bundle_demands": "not selected; do not reuse senior flow demands as unsplittable bundles silently",
+  "bundle_demands": "pilot_5bundles.json; configs/ring_road_batch_20261013/manifest.json",
   "local_converted_inputs": "tmp/ring_road_ppt_thesis/",
-  "status": "INPUT_PREPARED_CYCLIC_SEARCH_SMALL_CASE_VALIDATED",
+  "status": "INPUT_READY_SHORT_WINDOW_BATCH_PARTIALLY_VALIDATED",
   "exact_original_senior_contact_plan_verified": false
 }

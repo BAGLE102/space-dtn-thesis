@@ -1,0 +1,83 @@
+{
+  "name": "corridor_19_3",
+  "family": "other_corridors",
+  "window_start_s": "6336",
+  "window_end_s": "6346",
+  "time_step_s": "1",
+  "buffer_MB": "30",
+  "rate_MB_s": "1/10",
+  "propagation_delay_s": "0",
+  "bundles": [
+    {
+      "id": "bundle1",
+      "source": "19",
+      "destination": "3",
+      "release": "6336",
+      "size": "1/10"
+    },
+    {
+      "id": "bundle2",
+      "source": "19",
+      "destination": "3",
+      "release": "6336",
+      "size": "1/10"
+    },
+    {
+      "id": "bundle3",
+      "source": "19",
+      "destination": "3",
+      "release": "6336",
+      "size": "1/10"
+    },
+    {
+      "id": "bundle4",
+      "source": "19",
+      "destination": "3",
+      "release": "6336",
+      "size": "1/10"
+    },
+    {
+      "id": "bundle5",
+      "source": "19",
+      "destination": "3",
+      "release": "6336",
+      "size": "1/10"
+    },
+    {
+      "id": "bundle6",
+      "source": "19",
+      "destination": "3",
+      "release": "6336",
+      "size": "1/10"
+    },
+    {
+      "id": "bundle7",
+      "source": "19",
+      "destination": "3",
+      "release": "6336",
+      "size": "1/10"
+    },
+    {
+      "id": "bundle8",
+      "source": "19",
+      "destination": "3",
+      "release": "6336",
+      "size": "1/10"
+    },
+    {
+      "id": "bundle9",
+      "source": "19",
+      "destination": "3",
+      "release": "6336",
+      "size": "1/10"
+    },
+    {
+      "id": "bundle10",
+      "source": "19",
+      "destination": "3",
+      "release": "6336",
+      "size": "1/10"
+    }
+  ],
+  "traffic_selection": "explicit shared 19->3 corridor; diagnostic only"
+}

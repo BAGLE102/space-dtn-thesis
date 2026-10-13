@@ -1,0 +1,17 @@
+{
+  "tests_passed": 20,
+  "planned_queries": 330,
+  "checked_queries": 206,
+  "accepted_checked": 87,
+  "no_route_checked": 119,
+  "unprocessed": 124,
+  "all_checked_arrivals_match_independent": true,
+  "all_accepted_schedules_pass_full_check": true,
+  "case_states": {
+    "COMPLETE": 9,
+    "INCOMPLETE_TIMEOUT": 5
+  },
+  "unchanged_search_sha256": "6752c534daebcd21ef2d9977cf625cefaaa0ede814a00fc1dcae7c661f563cc0",
+  "performance_comparison": false,
+  "full_day_test": false
+}

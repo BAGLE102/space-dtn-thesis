@@ -1,0 +1,11 @@
+{
+  "case_states": {
+    "COMPLETE": 9,
+    "INCOMPLETE_TIMEOUT": 5
+  },
+  "planned": 14,
+  "attempted": 14,
+  "checked_queries": 206,
+  "status": "BATCH_FINISHED_WITH_EXPLICIT_STATES",
+  "performance_comparison_run": false
+}

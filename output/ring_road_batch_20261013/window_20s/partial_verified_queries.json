@@ -1,0 +1,248 @@
+{
+  "requested": 10,
+  "checked": 1,
+  "records": [
+    {
+      "bundle": {
+        "id": "bundle1",
+        "source": "9",
+        "dest": "2",
+        "g": "1342",
+        "size": "1/10"
+      },
+      "status": "ACCEPTED",
+      "arrival": "1344",
+      "hops": [
+        [
+          "rrn_0057",
+          "1342"
+        ],
+        [
+          "rrn_0059",
+          "1343"
+        ]
+      ],
+      "independent": {
+        "arrival": "1344",
+        "hops": [
+          [
+            "rrn_0057",
+            "1342"
+          ],
+          [
+            "rrn_0059",
+            "1343"
+          ]
+        ],
+        "paths_considered": null,
+        "schedules_considered": 5631,
+        "feasible_schedules": 5631,
+        "walk_prefixes_considered": 6655,
+        "rejection_counts": {},
+        "method": "complete enumeration of temporally feasible walks"
+      },
+      "full_schedule_check": {
+        "feasible": true,
+        "arrival": "1344",
+        "usage": {
+          "rrn_0057": "1/10",
+          "rrn_0059": "1/10"
+        },
+        "peaks": {
+          "1": {
+            "value": "0",
+            "time": "1342"
+          },
+          "2": {
+            "value": "1/10",
+            "time": "1344"
+          },
+          "3": {
+            "value": "0",
+            "time": "1342"
+          },
+          "4": {
+            "value": "0",
+            "time": "1342"
+          },
+          "5": {
+            "value": "0",
+            "time": "1342"
+          },
+          "6": {
+            "value": "0",
+            "time": "1342"
+          },
+          "7": {
+            "value": "0",
+            "time": "1342"
+          },
+          "8": {
+            "value": "0",
+            "time": "1342"
+          },
+          "9": {
+            "value": "1/10",
+            "time": "1342"
+          },
+          "10": {
+            "value": "0",
+            "time": "1342"
+          },
+          "11": {
+            "value": "0",
+            "time": "1342"
+          },
+          "12": {
+            "value": "0",
+            "time": "1342"
+          },
+          "13": {
+            "value": "0",
+            "time": "1342"
+          },
+          "14": {
+            "value": "0",
+            "time": "1342"
+          },
+          "15": {
+            "value": "0",
+            "time": "1342"
+          },
+          "16": {
+            "value": "0",
+            "time": "1342"
+          },
+          "17": {
+            "value": "0",
+            "time": "1342"
+          },
+          "18": {
+            "value": "0",
+            "time": "1342"
+          },
+          "19": {
+            "value": "0",
+            "time": "1342"
+          },
+          "20": {
+            "value": "0",
+            "time": "1342"
+          },
+          "21": {
+            "value": "0",
+            "time": "1342"
+          },
+          "22": {
+            "value": "0",
+            "time": "1342"
+          },
+          "23": {
+            "value": "0",
+            "time": "1342"
+          },
+          "24": {
+            "value": "0",
+            "time": "1342"
+          },
+          "25": {
+            "value": "0",
+            "time": "1342"
+          },
+          "26": {
+            "value": "0",
+            "time": "1342"
+          },
+          "27": {
+            "value": "0",
+            "time": "1342"
+          },
+          "28": {
+            "value": "0",
+            "time": "1342"
+          },
+          "29": {
+            "value": "0",
+            "time": "1342"
+          },
+          "30": {
+            "value": "0",
+            "time": "1342"
+          },
+          "31": {
+            "value": "0",
+            "time": "1342"
+          },
+          "32": {
+            "value": "0",
+            "time": "1342"
+          },
+          "33": {
+            "value": "0",
+            "time": "1342"
+          },
+          "34": {
+            "value": "0",
+            "time": "1342"
+          },
+          "35": {
+            "value": "0",
+            "time": "1342"
+          },
+          "36": {
+            "value": "0",
+            "time": "1342"
+          },
+          "37": {
+            "value": "0",
+            "time": "1342"
+          },
+          "38": {
+            "value": "0",
+            "time": "1342"
+          },
+          "39": {
+            "value": "0",
+            "time": "1342"
+          },
+          "40": {
+            "value": "0",
+            "time": "1342"
+          },
+          "41": {
+            "value": "1/10",
+            "time": "1343"
+          },
+          "42": {
+            "value": "0",
+            "time": "1342"
+          },
+          "43": {
+            "value": "0",
+            "time": "1342"
+          },
+          "44": {
+            "value": "0",
+            "time": "1342"
+          },
+          "45": {
+            "value": "0",
+            "time": "1342"
+          },
+          "46": {
+            "value": "0",
+            "time": "1342"
+          },
+          "47": {
+            "value": "0",
+            "time": "1342"
+          }
+        }
+      },
+      "labels_created": 73,
+      "labels_expanded": 4
+    }
+  ],
+  "whole_case_completed": false,
+  "unprocessed_are_not_no_route": true
+}

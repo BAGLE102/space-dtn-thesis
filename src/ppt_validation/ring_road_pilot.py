@@ -12,7 +12,7 @@ from .run import run, write_json
 from .temporal_reference import solve_temporal
 
 
-def execute(source, config, local, published):
+def execute(source, config, local, published, draw=True):
     source,config,local,published=map(Path,(source,config,local,published))
     if hashlib.sha256(source.read_bytes()).hexdigest()!=SOURCE_SHA256:
         raise ValueError('SOURCE_SHA256_MISMATCH')
@@ -43,22 +43,25 @@ def execute(source, config, local, published):
         contact_times_clipped=True,quota_recomputed_for_clipped_window=True,
         short_contacts_removed=False,cycles_removed=False,dominance=False,
         scenario_parameters=spec,
-        traffic_selection='explicit shared 9 -> 41 -> 2 corridor; selected connectivity smoke test',
+        traffic_selection=spec.get('traffic_selection',
+            'explicit shared 9 -> 41 -> 2 corridor; selected connectivity smoke test'),
         full_day_test=False,random_traffic=False,physical_simulation=False)
     write_json(local/'manifest.json',manifest)
     # 保留同一待測搜尋，只替換獨立完整列舉的組合產生方式。
     result=run(case,local/'run',reference_solver=solve_temporal)
-    from .figures import generate
-    shown=[]
-    edges={c['id']:c for c in case['contacts']}
-    for r in result['records']:
-        for node in [r['bundle']['source']]+[edges[cid]['v'] for cid,_ in r['hops']]:
-            if node not in shown: shown.append(node)
-    generate(local/'run',nodes=shown,time_origin=first,buffer_zoom=True)
+    if draw:
+        from .figures import generate
+        shown=[]
+        edges={c['id']:c for c in case['contacts']}
+        for r in result['records']:
+            for node in [r['bundle']['source']]+[edges[cid]['v'] for cid,_ in r['hops']]:
+                if node not in shown: shown.append(node)
+        generate(local/'run',nodes=shown,time_origin=first,buffer_zoom=True)
     published.mkdir(parents=True,exist_ok=False)
     for filename in ['summary.csv','schedule.csv','statistics.json','status.json','report.md']:
         shutil.copy2(local/'run'/filename,published/filename)
-    shutil.copytree(local/'run/figures',published/'figures')
+    if draw:
+        shutil.copytree(local/'run/figures',published/'figures')
     write_json(published/'manifest.json',manifest)
     write_json(published/'verification.json',dict(
         queries=[dict(bundle=r['bundle']['id'],arrival=r['arrival'],hops=r['hops'],
@@ -78,5 +81,6 @@ if __name__=='__main__':
     parser.add_argument('--config',required=True)
     parser.add_argument('--local',required=True)
     parser.add_argument('--output',required=True)
+    parser.add_argument('--no-figures',action='store_true')
     args=parser.parse_args()
-    execute(args.source,args.config,args.local,args.output)
+    execute(args.source,args.config,args.local,args.output,draw=not args.no_figures)

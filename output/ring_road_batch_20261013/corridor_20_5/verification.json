@@ -1,0 +1,2143 @@
+{
+  "queries": [
+    {
+      "bundle": "bundle1",
+      "arrival": "2884",
+      "hops": [
+        [
+          "rrn_0121",
+          "2882"
+        ],
+        [
+          "rrn_0123",
+          "2883"
+        ]
+      ],
+      "labels_created": 53,
+      "labels_expanded": 4,
+      "full_schedule_check": {
+        "feasible": true,
+        "arrival": "2884",
+        "usage": {
+          "rrn_0121": "1/10",
+          "rrn_0123": "1/10"
+        },
+        "peaks": {
+          "1": {
+            "value": "0",
+            "time": "2882"
+          },
+          "2": {
+            "value": "0",
+            "time": "2882"
+          },
+          "3": {
+            "value": "0",
+            "time": "2882"
+          },
+          "4": {
+            "value": "0",
+            "time": "2882"
+          },
+          "5": {
+            "value": "1/10",
+            "time": "2884"
+          },
+          "6": {
+            "value": "0",
+            "time": "2882"
+          },
+          "7": {
+            "value": "0",
+            "time": "2882"
+          },
+          "8": {
+            "value": "0",
+            "time": "2882"
+          },
+          "9": {
+            "value": "0",
+            "time": "2882"
+          },
+          "10": {
+            "value": "0",
+            "time": "2882"
+          },
+          "11": {
+            "value": "0",
+            "time": "2882"
+          },
+          "12": {
+            "value": "0",
+            "time": "2882"
+          },
+          "13": {
+            "value": "0",
+            "time": "2882"
+          },
+          "14": {
+            "value": "0",
+            "time": "2882"
+          },
+          "15": {
+            "value": "0",
+            "time": "2882"
+          },
+          "16": {
+            "value": "0",
+            "time": "2882"
+          },
+          "17": {
+            "value": "0",
+            "time": "2882"
+          },
+          "18": {
+            "value": "0",
+            "time": "2882"
+          },
+          "19": {
+            "value": "0",
+            "time": "2882"
+          },
+          "20": {
+            "value": "1/10",
+            "time": "2882"
+          },
+          "21": {
+            "value": "0",
+            "time": "2882"
+          },
+          "22": {
+            "value": "0",
+            "time": "2882"
+          },
+          "23": {
+            "value": "0",
+            "time": "2882"
+          },
+          "24": {
+            "value": "0",
+            "time": "2882"
+          },
+          "25": {
+            "value": "0",
+            "time": "2882"
+          },
+          "26": {
+            "value": "0",
+            "time": "2882"
+          },
+          "27": {
+            "value": "0",
+            "time": "2882"
+          },
+          "28": {
+            "value": "0",
+            "time": "2882"
+          },
+          "29": {
+            "value": "0",
+            "time": "2882"
+          },
+          "30": {
+            "value": "0",
+            "time": "2882"
+          },
+          "31": {
+            "value": "0",
+            "time": "2882"
+          },
+          "32": {
+            "value": "0",
+            "time": "2882"
+          },
+          "33": {
+            "value": "0",
+            "time": "2882"
+          },
+          "34": {
+            "value": "0",
+            "time": "2882"
+          },
+          "35": {
+            "value": "0",
+            "time": "2882"
+          },
+          "36": {
+            "value": "1/10",
+            "time": "2883"
+          },
+          "37": {
+            "value": "0",
+            "time": "2882"
+          },
+          "38": {
+            "value": "0",
+            "time": "2882"
+          },
+          "39": {
+            "value": "0",
+            "time": "2882"
+          },
+          "40": {
+            "value": "0",
+            "time": "2882"
+          },
+          "41": {
+            "value": "0",
+            "time": "2882"
+          },
+          "42": {
+            "value": "0",
+            "time": "2882"
+          },
+          "43": {
+            "value": "0",
+            "time": "2882"
+          },
+          "44": {
+            "value": "0",
+            "time": "2882"
+          },
+          "45": {
+            "value": "0",
+            "time": "2882"
+          },
+          "46": {
+            "value": "0",
+            "time": "2882"
+          },
+          "47": {
+            "value": "0",
+            "time": "2882"
+          }
+        }
+      },
+      "independent": {
+        "arrival": "2884",
+        "hops": [
+          [
+            "rrn_0121",
+            "2882"
+          ],
+          [
+            "rrn_0123",
+            "2883"
+          ]
+        ],
+        "paths_considered": null,
+        "schedules_considered": 511,
+        "feasible_schedules": 511,
+        "walk_prefixes_considered": 1535,
+        "rejection_counts": {},
+        "method": "complete enumeration of temporally feasible walks"
+      }
+    },
+    {
+      "bundle": "bundle2",
+      "arrival": "2885",
+      "hops": [
+        [
+          "rrn_0121",
+          "2883"
+        ],
+        [
+          "rrn_0123",
+          "2884"
+        ]
+      ],
+      "labels_created": 47,
+      "labels_expanded": 4,
+      "full_schedule_check": {
+        "feasible": true,
+        "arrival": "2885",
+        "usage": {
+          "rrn_0121": "1/10",
+          "rrn_0123": "1/10"
+        },
+        "peaks": {
+          "1": {
+            "value": "0",
+            "time": "2882"
+          },
+          "2": {
+            "value": "0",
+            "time": "2882"
+          },
+          "3": {
+            "value": "0",
+            "time": "2882"
+          },
+          "4": {
+            "value": "0",
+            "time": "2882"
+          },
+          "5": {
+            "value": "1/10",
+            "time": "2884"
+          },
+          "6": {
+            "value": "0",
+            "time": "2882"
+          },
+          "7": {
+            "value": "0",
+            "time": "2882"
+          },
+          "8": {
+            "value": "0",
+            "time": "2882"
+          },
+          "9": {
+            "value": "0",
+            "time": "2882"
+          },
+          "10": {
+            "value": "0",
+            "time": "2882"
+          },
+          "11": {
+            "value": "0",
+            "time": "2882"
+          },
+          "12": {
+            "value": "0",
+            "time": "2882"
+          },
+          "13": {
+            "value": "0",
+            "time": "2882"
+          },
+          "14": {
+            "value": "0",
+            "time": "2882"
+          },
+          "15": {
+            "value": "0",
+            "time": "2882"
+          },
+          "16": {
+            "value": "0",
+            "time": "2882"
+          },
+          "17": {
+            "value": "0",
+            "time": "2882"
+          },
+          "18": {
+            "value": "0",
+            "time": "2882"
+          },
+          "19": {
+            "value": "0",
+            "time": "2882"
+          },
+          "20": {
+            "value": "1/5",
+            "time": "2882"
+          },
+          "21": {
+            "value": "0",
+            "time": "2882"
+          },
+          "22": {
+            "value": "0",
+            "time": "2882"
+          },
+          "23": {
+            "value": "0",
+            "time": "2882"
+          },
+          "24": {
+            "value": "0",
+            "time": "2882"
+          },
+          "25": {
+            "value": "0",
+            "time": "2882"
+          },
+          "26": {
+            "value": "0",
+            "time": "2882"
+          },
+          "27": {
+            "value": "0",
+            "time": "2882"
+          },
+          "28": {
+            "value": "0",
+            "time": "2882"
+          },
+          "29": {
+            "value": "0",
+            "time": "2882"
+          },
+          "30": {
+            "value": "0",
+            "time": "2882"
+          },
+          "31": {
+            "value": "0",
+            "time": "2882"
+          },
+          "32": {
+            "value": "0",
+            "time": "2882"
+          },
+          "33": {
+            "value": "0",
+            "time": "2882"
+          },
+          "34": {
+            "value": "0",
+            "time": "2882"
+          },
+          "35": {
+            "value": "0",
+            "time": "2882"
+          },
+          "36": {
+            "value": "1/10",
+            "time": "2883"
+          },
+          "37": {
+            "value": "0",
+            "time": "2882"
+          },
+          "38": {
+            "value": "0",
+            "time": "2882"
+          },
+          "39": {
+            "value": "0",
+            "time": "2882"
+          },
+          "40": {
+            "value": "0",
+            "time": "2882"
+          },
+          "41": {
+            "value": "0",
+            "time": "2882"
+          },
+          "42": {
+            "value": "0",
+            "time": "2882"
+          },
+          "43": {
+            "value": "0",
+            "time": "2882"
+          },
+          "44": {
+            "value": "0",
+            "time": "2882"
+          },
+          "45": {
+            "value": "0",
+            "time": "2882"
+          },
+          "46": {
+            "value": "0",
+            "time": "2882"
+          },
+          "47": {
+            "value": "0",
+            "time": "2882"
+          }
+        }
+      },
+      "independent": {
+        "arrival": "2885",
+        "hops": [
+          [
+            "rrn_0121",
+            "2883"
+          ],
+          [
+            "rrn_0123",
+            "2884"
+          ]
+        ],
+        "paths_considered": null,
+        "schedules_considered": 511,
+        "feasible_schedules": 255,
+        "walk_prefixes_considered": 1535,
+        "rejection_counts": {
+          "CONTACT_BUSY": 256
+        },
+        "method": "complete enumeration of temporally feasible walks"
+      }
+    },
+    {
+      "bundle": "bundle3",
+      "arrival": "2886",
+      "hops": [
+        [
+          "rrn_0121",
+          "2884"
+        ],
+        [
+          "rrn_0123",
+          "2885"
+        ]
+      ],
+      "labels_created": 41,
+      "labels_expanded": 4,
+      "full_schedule_check": {
+        "feasible": true,
+        "arrival": "2886",
+        "usage": {
+          "rrn_0121": "1/10",
+          "rrn_0123": "1/10"
+        },
+        "peaks": {
+          "1": {
+            "value": "0",
+            "time": "2882"
+          },
+          "2": {
+            "value": "0",
+            "time": "2882"
+          },
+          "3": {
+            "value": "0",
+            "time": "2882"
+          },
+          "4": {
+            "value": "0",
+            "time": "2882"
+          },
+          "5": {
+            "value": "1/10",
+            "time": "2884"
+          },
+          "6": {
+            "value": "0",
+            "time": "2882"
+          },
+          "7": {
+            "value": "0",
+            "time": "2882"
+          },
+          "8": {
+            "value": "0",
+            "time": "2882"
+          },
+          "9": {
+            "value": "0",
+            "time": "2882"
+          },
+          "10": {
+            "value": "0",
+            "time": "2882"
+          },
+          "11": {
+            "value": "0",
+            "time": "2882"
+          },
+          "12": {
+            "value": "0",
+            "time": "2882"
+          },
+          "13": {
+            "value": "0",
+            "time": "2882"
+          },
+          "14": {
+            "value": "0",
+            "time": "2882"
+          },
+          "15": {
+            "value": "0",
+            "time": "2882"
+          },
+          "16": {
+            "value": "0",
+            "time": "2882"
+          },
+          "17": {
+            "value": "0",
+            "time": "2882"
+          },
+          "18": {
+            "value": "0",
+            "time": "2882"
+          },
+          "19": {
+            "value": "0",
+            "time": "2882"
+          },
+          "20": {
+            "value": "3/10",
+            "time": "2882"
+          },
+          "21": {
+            "value": "0",
+            "time": "2882"
+          },
+          "22": {
+            "value": "0",
+            "time": "2882"
+          },
+          "23": {
+            "value": "0",
+            "time": "2882"
+          },
+          "24": {
+            "value": "0",
+            "time": "2882"
+          },
+          "25": {
+            "value": "0",
+            "time": "2882"
+          },
+          "26": {
+            "value": "0",
+            "time": "2882"
+          },
+          "27": {
+            "value": "0",
+            "time": "2882"
+          },
+          "28": {
+            "value": "0",
+            "time": "2882"
+          },
+          "29": {
+            "value": "0",
+            "time": "2882"
+          },
+          "30": {
+            "value": "0",
+            "time": "2882"
+          },
+          "31": {
+            "value": "0",
+            "time": "2882"
+          },
+          "32": {
+            "value": "0",
+            "time": "2882"
+          },
+          "33": {
+            "value": "0",
+            "time": "2882"
+          },
+          "34": {
+            "value": "0",
+            "time": "2882"
+          },
+          "35": {
+            "value": "0",
+            "time": "2882"
+          },
+          "36": {
+            "value": "1/10",
+            "time": "2883"
+          },
+          "37": {
+            "value": "0",
+            "time": "2882"
+          },
+          "38": {
+            "value": "0",
+            "time": "2882"
+          },
+          "39": {
+            "value": "0",
+            "time": "2882"
+          },
+          "40": {
+            "value": "0",
+            "time": "2882"
+          },
+          "41": {
+            "value": "0",
+            "time": "2882"
+          },
+          "42": {
+            "value": "0",
+            "time": "2882"
+          },
+          "43": {
+            "value": "0",
+            "time": "2882"
+          },
+          "44": {
+            "value": "0",
+            "time": "2882"
+          },
+          "45": {
+            "value": "0",
+            "time": "2882"
+          },
+          "46": {
+            "value": "0",
+            "time": "2882"
+          },
+          "47": {
+            "value": "0",
+            "time": "2882"
+          }
+        }
+      },
+      "independent": {
+        "arrival": "2886",
+        "hops": [
+          [
+            "rrn_0121",
+            "2884"
+          ],
+          [
+            "rrn_0123",
+            "2885"
+          ]
+        ],
+        "paths_considered": null,
+        "schedules_considered": 511,
+        "feasible_schedules": 127,
+        "walk_prefixes_considered": 1535,
+        "rejection_counts": {
+          "CONTACT_BUSY": 384
+        },
+        "method": "complete enumeration of temporally feasible walks"
+      }
+    },
+    {
+      "bundle": "bundle4",
+      "arrival": "2887",
+      "hops": [
+        [
+          "rrn_0121",
+          "2885"
+        ],
+        [
+          "rrn_0123",
+          "2886"
+        ]
+      ],
+      "labels_created": 35,
+      "labels_expanded": 4,
+      "full_schedule_check": {
+        "feasible": true,
+        "arrival": "2887",
+        "usage": {
+          "rrn_0121": "1/10",
+          "rrn_0123": "1/10"
+        },
+        "peaks": {
+          "1": {
+            "value": "0",
+            "time": "2882"
+          },
+          "2": {
+            "value": "0",
+            "time": "2882"
+          },
+          "3": {
+            "value": "0",
+            "time": "2882"
+          },
+          "4": {
+            "value": "0",
+            "time": "2882"
+          },
+          "5": {
+            "value": "1/10",
+            "time": "2884"
+          },
+          "6": {
+            "value": "0",
+            "time": "2882"
+          },
+          "7": {
+            "value": "0",
+            "time": "2882"
+          },
+          "8": {
+            "value": "0",
+            "time": "2882"
+          },
+          "9": {
+            "value": "0",
+            "time": "2882"
+          },
+          "10": {
+            "value": "0",
+            "time": "2882"
+          },
+          "11": {
+            "value": "0",
+            "time": "2882"
+          },
+          "12": {
+            "value": "0",
+            "time": "2882"
+          },
+          "13": {
+            "value": "0",
+            "time": "2882"
+          },
+          "14": {
+            "value": "0",
+            "time": "2882"
+          },
+          "15": {
+            "value": "0",
+            "time": "2882"
+          },
+          "16": {
+            "value": "0",
+            "time": "2882"
+          },
+          "17": {
+            "value": "0",
+            "time": "2882"
+          },
+          "18": {
+            "value": "0",
+            "time": "2882"
+          },
+          "19": {
+            "value": "0",
+            "time": "2882"
+          },
+          "20": {
+            "value": "2/5",
+            "time": "2882"
+          },
+          "21": {
+            "value": "0",
+            "time": "2882"
+          },
+          "22": {
+            "value": "0",
+            "time": "2882"
+          },
+          "23": {
+            "value": "0",
+            "time": "2882"
+          },
+          "24": {
+            "value": "0",
+            "time": "2882"
+          },
+          "25": {
+            "value": "0",
+            "time": "2882"
+          },
+          "26": {
+            "value": "0",
+            "time": "2882"
+          },
+          "27": {
+            "value": "0",
+            "time": "2882"
+          },
+          "28": {
+            "value": "0",
+            "time": "2882"
+          },
+          "29": {
+            "value": "0",
+            "time": "2882"
+          },
+          "30": {
+            "value": "0",
+            "time": "2882"
+          },
+          "31": {
+            "value": "0",
+            "time": "2882"
+          },
+          "32": {
+            "value": "0",
+            "time": "2882"
+          },
+          "33": {
+            "value": "0",
+            "time": "2882"
+          },
+          "34": {
+            "value": "0",
+            "time": "2882"
+          },
+          "35": {
+            "value": "0",
+            "time": "2882"
+          },
+          "36": {
+            "value": "1/10",
+            "time": "2883"
+          },
+          "37": {
+            "value": "0",
+            "time": "2882"
+          },
+          "38": {
+            "value": "0",
+            "time": "2882"
+          },
+          "39": {
+            "value": "0",
+            "time": "2882"
+          },
+          "40": {
+            "value": "0",
+            "time": "2882"
+          },
+          "41": {
+            "value": "0",
+            "time": "2882"
+          },
+          "42": {
+            "value": "0",
+            "time": "2882"
+          },
+          "43": {
+            "value": "0",
+            "time": "2882"
+          },
+          "44": {
+            "value": "0",
+            "time": "2882"
+          },
+          "45": {
+            "value": "0",
+            "time": "2882"
+          },
+          "46": {
+            "value": "0",
+            "time": "2882"
+          },
+          "47": {
+            "value": "0",
+            "time": "2882"
+          }
+        }
+      },
+      "independent": {
+        "arrival": "2887",
+        "hops": [
+          [
+            "rrn_0121",
+            "2885"
+          ],
+          [
+            "rrn_0123",
+            "2886"
+          ]
+        ],
+        "paths_considered": null,
+        "schedules_considered": 511,
+        "feasible_schedules": 63,
+        "walk_prefixes_considered": 1535,
+        "rejection_counts": {
+          "CONTACT_BUSY": 448
+        },
+        "method": "complete enumeration of temporally feasible walks"
+      }
+    },
+    {
+      "bundle": "bundle5",
+      "arrival": "2888",
+      "hops": [
+        [
+          "rrn_0121",
+          "2886"
+        ],
+        [
+          "rrn_0123",
+          "2887"
+        ]
+      ],
+      "labels_created": 29,
+      "labels_expanded": 4,
+      "full_schedule_check": {
+        "feasible": true,
+        "arrival": "2888",
+        "usage": {
+          "rrn_0121": "1/10",
+          "rrn_0123": "1/10"
+        },
+        "peaks": {
+          "1": {
+            "value": "0",
+            "time": "2882"
+          },
+          "2": {
+            "value": "0",
+            "time": "2882"
+          },
+          "3": {
+            "value": "0",
+            "time": "2882"
+          },
+          "4": {
+            "value": "0",
+            "time": "2882"
+          },
+          "5": {
+            "value": "1/10",
+            "time": "2884"
+          },
+          "6": {
+            "value": "0",
+            "time": "2882"
+          },
+          "7": {
+            "value": "0",
+            "time": "2882"
+          },
+          "8": {
+            "value": "0",
+            "time": "2882"
+          },
+          "9": {
+            "value": "0",
+            "time": "2882"
+          },
+          "10": {
+            "value": "0",
+            "time": "2882"
+          },
+          "11": {
+            "value": "0",
+            "time": "2882"
+          },
+          "12": {
+            "value": "0",
+            "time": "2882"
+          },
+          "13": {
+            "value": "0",
+            "time": "2882"
+          },
+          "14": {
+            "value": "0",
+            "time": "2882"
+          },
+          "15": {
+            "value": "0",
+            "time": "2882"
+          },
+          "16": {
+            "value": "0",
+            "time": "2882"
+          },
+          "17": {
+            "value": "0",
+            "time": "2882"
+          },
+          "18": {
+            "value": "0",
+            "time": "2882"
+          },
+          "19": {
+            "value": "0",
+            "time": "2882"
+          },
+          "20": {
+            "value": "1/2",
+            "time": "2882"
+          },
+          "21": {
+            "value": "0",
+            "time": "2882"
+          },
+          "22": {
+            "value": "0",
+            "time": "2882"
+          },
+          "23": {
+            "value": "0",
+            "time": "2882"
+          },
+          "24": {
+            "value": "0",
+            "time": "2882"
+          },
+          "25": {
+            "value": "0",
+            "time": "2882"
+          },
+          "26": {
+            "value": "0",
+            "time": "2882"
+          },
+          "27": {
+            "value": "0",
+            "time": "2882"
+          },
+          "28": {
+            "value": "0",
+            "time": "2882"
+          },
+          "29": {
+            "value": "0",
+            "time": "2882"
+          },
+          "30": {
+            "value": "0",
+            "time": "2882"
+          },
+          "31": {
+            "value": "0",
+            "time": "2882"
+          },
+          "32": {
+            "value": "0",
+            "time": "2882"
+          },
+          "33": {
+            "value": "0",
+            "time": "2882"
+          },
+          "34": {
+            "value": "0",
+            "time": "2882"
+          },
+          "35": {
+            "value": "0",
+            "time": "2882"
+          },
+          "36": {
+            "value": "1/10",
+            "time": "2883"
+          },
+          "37": {
+            "value": "0",
+            "time": "2882"
+          },
+          "38": {
+            "value": "0",
+            "time": "2882"
+          },
+          "39": {
+            "value": "0",
+            "time": "2882"
+          },
+          "40": {
+            "value": "0",
+            "time": "2882"
+          },
+          "41": {
+            "value": "0",
+            "time": "2882"
+          },
+          "42": {
+            "value": "0",
+            "time": "2882"
+          },
+          "43": {
+            "value": "0",
+            "time": "2882"
+          },
+          "44": {
+            "value": "0",
+            "time": "2882"
+          },
+          "45": {
+            "value": "0",
+            "time": "2882"
+          },
+          "46": {
+            "value": "0",
+            "time": "2882"
+          },
+          "47": {
+            "value": "0",
+            "time": "2882"
+          }
+        }
+      },
+      "independent": {
+        "arrival": "2888",
+        "hops": [
+          [
+            "rrn_0121",
+            "2886"
+          ],
+          [
+            "rrn_0123",
+            "2887"
+          ]
+        ],
+        "paths_considered": null,
+        "schedules_considered": 511,
+        "feasible_schedules": 31,
+        "walk_prefixes_considered": 1535,
+        "rejection_counts": {
+          "CONTACT_BUSY": 480
+        },
+        "method": "complete enumeration of temporally feasible walks"
+      }
+    },
+    {
+      "bundle": "bundle6",
+      "arrival": "2889",
+      "hops": [
+        [
+          "rrn_0121",
+          "2887"
+        ],
+        [
+          "rrn_0123",
+          "2888"
+        ]
+      ],
+      "labels_created": 23,
+      "labels_expanded": 4,
+      "full_schedule_check": {
+        "feasible": true,
+        "arrival": "2889",
+        "usage": {
+          "rrn_0121": "1/10",
+          "rrn_0123": "1/10"
+        },
+        "peaks": {
+          "1": {
+            "value": "0",
+            "time": "2882"
+          },
+          "2": {
+            "value": "0",
+            "time": "2882"
+          },
+          "3": {
+            "value": "0",
+            "time": "2882"
+          },
+          "4": {
+            "value": "0",
+            "time": "2882"
+          },
+          "5": {
+            "value": "1/10",
+            "time": "2884"
+          },
+          "6": {
+            "value": "0",
+            "time": "2882"
+          },
+          "7": {
+            "value": "0",
+            "time": "2882"
+          },
+          "8": {
+            "value": "0",
+            "time": "2882"
+          },
+          "9": {
+            "value": "0",
+            "time": "2882"
+          },
+          "10": {
+            "value": "0",
+            "time": "2882"
+          },
+          "11": {
+            "value": "0",
+            "time": "2882"
+          },
+          "12": {
+            "value": "0",
+            "time": "2882"
+          },
+          "13": {
+            "value": "0",
+            "time": "2882"
+          },
+          "14": {
+            "value": "0",
+            "time": "2882"
+          },
+          "15": {
+            "value": "0",
+            "time": "2882"
+          },
+          "16": {
+            "value": "0",
+            "time": "2882"
+          },
+          "17": {
+            "value": "0",
+            "time": "2882"
+          },
+          "18": {
+            "value": "0",
+            "time": "2882"
+          },
+          "19": {
+            "value": "0",
+            "time": "2882"
+          },
+          "20": {
+            "value": "3/5",
+            "time": "2882"
+          },
+          "21": {
+            "value": "0",
+            "time": "2882"
+          },
+          "22": {
+            "value": "0",
+            "time": "2882"
+          },
+          "23": {
+            "value": "0",
+            "time": "2882"
+          },
+          "24": {
+            "value": "0",
+            "time": "2882"
+          },
+          "25": {
+            "value": "0",
+            "time": "2882"
+          },
+          "26": {
+            "value": "0",
+            "time": "2882"
+          },
+          "27": {
+            "value": "0",
+            "time": "2882"
+          },
+          "28": {
+            "value": "0",
+            "time": "2882"
+          },
+          "29": {
+            "value": "0",
+            "time": "2882"
+          },
+          "30": {
+            "value": "0",
+            "time": "2882"
+          },
+          "31": {
+            "value": "0",
+            "time": "2882"
+          },
+          "32": {
+            "value": "0",
+            "time": "2882"
+          },
+          "33": {
+            "value": "0",
+            "time": "2882"
+          },
+          "34": {
+            "value": "0",
+            "time": "2882"
+          },
+          "35": {
+            "value": "0",
+            "time": "2882"
+          },
+          "36": {
+            "value": "1/10",
+            "time": "2883"
+          },
+          "37": {
+            "value": "0",
+            "time": "2882"
+          },
+          "38": {
+            "value": "0",
+            "time": "2882"
+          },
+          "39": {
+            "value": "0",
+            "time": "2882"
+          },
+          "40": {
+            "value": "0",
+            "time": "2882"
+          },
+          "41": {
+            "value": "0",
+            "time": "2882"
+          },
+          "42": {
+            "value": "0",
+            "time": "2882"
+          },
+          "43": {
+            "value": "0",
+            "time": "2882"
+          },
+          "44": {
+            "value": "0",
+            "time": "2882"
+          },
+          "45": {
+            "value": "0",
+            "time": "2882"
+          },
+          "46": {
+            "value": "0",
+            "time": "2882"
+          },
+          "47": {
+            "value": "0",
+            "time": "2882"
+          }
+        }
+      },
+      "independent": {
+        "arrival": "2889",
+        "hops": [
+          [
+            "rrn_0121",
+            "2887"
+          ],
+          [
+            "rrn_0123",
+            "2888"
+          ]
+        ],
+        "paths_considered": null,
+        "schedules_considered": 511,
+        "feasible_schedules": 15,
+        "walk_prefixes_considered": 1535,
+        "rejection_counts": {
+          "CONTACT_BUSY": 496
+        },
+        "method": "complete enumeration of temporally feasible walks"
+      }
+    },
+    {
+      "bundle": "bundle7",
+      "arrival": "2890",
+      "hops": [
+        [
+          "rrn_0121",
+          "2888"
+        ],
+        [
+          "rrn_0123",
+          "2889"
+        ]
+      ],
+      "labels_created": 17,
+      "labels_expanded": 4,
+      "full_schedule_check": {
+        "feasible": true,
+        "arrival": "2890",
+        "usage": {
+          "rrn_0121": "1/10",
+          "rrn_0123": "1/10"
+        },
+        "peaks": {
+          "1": {
+            "value": "0",
+            "time": "2882"
+          },
+          "2": {
+            "value": "0",
+            "time": "2882"
+          },
+          "3": {
+            "value": "0",
+            "time": "2882"
+          },
+          "4": {
+            "value": "0",
+            "time": "2882"
+          },
+          "5": {
+            "value": "1/10",
+            "time": "2884"
+          },
+          "6": {
+            "value": "0",
+            "time": "2882"
+          },
+          "7": {
+            "value": "0",
+            "time": "2882"
+          },
+          "8": {
+            "value": "0",
+            "time": "2882"
+          },
+          "9": {
+            "value": "0",
+            "time": "2882"
+          },
+          "10": {
+            "value": "0",
+            "time": "2882"
+          },
+          "11": {
+            "value": "0",
+            "time": "2882"
+          },
+          "12": {
+            "value": "0",
+            "time": "2882"
+          },
+          "13": {
+            "value": "0",
+            "time": "2882"
+          },
+          "14": {
+            "value": "0",
+            "time": "2882"
+          },
+          "15": {
+            "value": "0",
+            "time": "2882"
+          },
+          "16": {
+            "value": "0",
+            "time": "2882"
+          },
+          "17": {
+            "value": "0",
+            "time": "2882"
+          },
+          "18": {
+            "value": "0",
+            "time": "2882"
+          },
+          "19": {
+            "value": "0",
+            "time": "2882"
+          },
+          "20": {
+            "value": "7/10",
+            "time": "2882"
+          },
+          "21": {
+            "value": "0",
+            "time": "2882"
+          },
+          "22": {
+            "value": "0",
+            "time": "2882"
+          },
+          "23": {
+            "value": "0",
+            "time": "2882"
+          },
+          "24": {
+            "value": "0",
+            "time": "2882"
+          },
+          "25": {
+            "value": "0",
+            "time": "2882"
+          },
+          "26": {
+            "value": "0",
+            "time": "2882"
+          },
+          "27": {
+            "value": "0",
+            "time": "2882"
+          },
+          "28": {
+            "value": "0",
+            "time": "2882"
+          },
+          "29": {
+            "value": "0",
+            "time": "2882"
+          },
+          "30": {
+            "value": "0",
+            "time": "2882"
+          },
+          "31": {
+            "value": "0",
+            "time": "2882"
+          },
+          "32": {
+            "value": "0",
+            "time": "2882"
+          },
+          "33": {
+            "value": "0",
+            "time": "2882"
+          },
+          "34": {
+            "value": "0",
+            "time": "2882"
+          },
+          "35": {
+            "value": "0",
+            "time": "2882"
+          },
+          "36": {
+            "value": "1/10",
+            "time": "2883"
+          },
+          "37": {
+            "value": "0",
+            "time": "2882"
+          },
+          "38": {
+            "value": "0",
+            "time": "2882"
+          },
+          "39": {
+            "value": "0",
+            "time": "2882"
+          },
+          "40": {
+            "value": "0",
+            "time": "2882"
+          },
+          "41": {
+            "value": "0",
+            "time": "2882"
+          },
+          "42": {
+            "value": "0",
+            "time": "2882"
+          },
+          "43": {
+            "value": "0",
+            "time": "2882"
+          },
+          "44": {
+            "value": "0",
+            "time": "2882"
+          },
+          "45": {
+            "value": "0",
+            "time": "2882"
+          },
+          "46": {
+            "value": "0",
+            "time": "2882"
+          },
+          "47": {
+            "value": "0",
+            "time": "2882"
+          }
+        }
+      },
+      "independent": {
+        "arrival": "2890",
+        "hops": [
+          [
+            "rrn_0121",
+            "2888"
+          ],
+          [
+            "rrn_0123",
+            "2889"
+          ]
+        ],
+        "paths_considered": null,
+        "schedules_considered": 511,
+        "feasible_schedules": 7,
+        "walk_prefixes_considered": 1535,
+        "rejection_counts": {
+          "CONTACT_BUSY": 503,
+          "QUOTA": 1
+        },
+        "method": "complete enumeration of temporally feasible walks"
+      }
+    },
+    {
+      "bundle": "bundle8",
+      "arrival": "2891",
+      "hops": [
+        [
+          "rrn_0121",
+          "2889"
+        ],
+        [
+          "rrn_0123",
+          "2890"
+        ]
+      ],
+      "labels_created": 11,
+      "labels_expanded": 4,
+      "full_schedule_check": {
+        "feasible": true,
+        "arrival": "2891",
+        "usage": {
+          "rrn_0121": "1/10",
+          "rrn_0123": "1/10"
+        },
+        "peaks": {
+          "1": {
+            "value": "0",
+            "time": "2882"
+          },
+          "2": {
+            "value": "0",
+            "time": "2882"
+          },
+          "3": {
+            "value": "0",
+            "time": "2882"
+          },
+          "4": {
+            "value": "0",
+            "time": "2882"
+          },
+          "5": {
+            "value": "1/10",
+            "time": "2884"
+          },
+          "6": {
+            "value": "0",
+            "time": "2882"
+          },
+          "7": {
+            "value": "0",
+            "time": "2882"
+          },
+          "8": {
+            "value": "0",
+            "time": "2882"
+          },
+          "9": {
+            "value": "0",
+            "time": "2882"
+          },
+          "10": {
+            "value": "0",
+            "time": "2882"
+          },
+          "11": {
+            "value": "0",
+            "time": "2882"
+          },
+          "12": {
+            "value": "0",
+            "time": "2882"
+          },
+          "13": {
+            "value": "0",
+            "time": "2882"
+          },
+          "14": {
+            "value": "0",
+            "time": "2882"
+          },
+          "15": {
+            "value": "0",
+            "time": "2882"
+          },
+          "16": {
+            "value": "0",
+            "time": "2882"
+          },
+          "17": {
+            "value": "0",
+            "time": "2882"
+          },
+          "18": {
+            "value": "0",
+            "time": "2882"
+          },
+          "19": {
+            "value": "0",
+            "time": "2882"
+          },
+          "20": {
+            "value": "4/5",
+            "time": "2882"
+          },
+          "21": {
+            "value": "0",
+            "time": "2882"
+          },
+          "22": {
+            "value": "0",
+            "time": "2882"
+          },
+          "23": {
+            "value": "0",
+            "time": "2882"
+          },
+          "24": {
+            "value": "0",
+            "time": "2882"
+          },
+          "25": {
+            "value": "0",
+            "time": "2882"
+          },
+          "26": {
+            "value": "0",
+            "time": "2882"
+          },
+          "27": {
+            "value": "0",
+            "time": "2882"
+          },
+          "28": {
+            "value": "0",
+            "time": "2882"
+          },
+          "29": {
+            "value": "0",
+            "time": "2882"
+          },
+          "30": {
+            "value": "0",
+            "time": "2882"
+          },
+          "31": {
+            "value": "0",
+            "time": "2882"
+          },
+          "32": {
+            "value": "0",
+            "time": "2882"
+          },
+          "33": {
+            "value": "0",
+            "time": "2882"
+          },
+          "34": {
+            "value": "0",
+            "time": "2882"
+          },
+          "35": {
+            "value": "0",
+            "time": "2882"
+          },
+          "36": {
+            "value": "1/10",
+            "time": "2883"
+          },
+          "37": {
+            "value": "0",
+            "time": "2882"
+          },
+          "38": {
+            "value": "0",
+            "time": "2882"
+          },
+          "39": {
+            "value": "0",
+            "time": "2882"
+          },
+          "40": {
+            "value": "0",
+            "time": "2882"
+          },
+          "41": {
+            "value": "0",
+            "time": "2882"
+          },
+          "42": {
+            "value": "0",
+            "time": "2882"
+          },
+          "43": {
+            "value": "0",
+            "time": "2882"
+          },
+          "44": {
+            "value": "0",
+            "time": "2882"
+          },
+          "45": {
+            "value": "0",
+            "time": "2882"
+          },
+          "46": {
+            "value": "0",
+            "time": "2882"
+          },
+          "47": {
+            "value": "0",
+            "time": "2882"
+          }
+        }
+      },
+      "independent": {
+        "arrival": "2891",
+        "hops": [
+          [
+            "rrn_0121",
+            "2889"
+          ],
+          [
+            "rrn_0123",
+            "2890"
+          ]
+        ],
+        "paths_considered": null,
+        "schedules_considered": 511,
+        "feasible_schedules": 3,
+        "walk_prefixes_considered": 1535,
+        "rejection_counts": {
+          "CONTACT_BUSY": 462,
+          "QUOTA": 46
+        },
+        "method": "complete enumeration of temporally feasible walks"
+      }
+    },
+    {
+      "bundle": "bundle9",
+      "arrival": "2892",
+      "hops": [
+        [
+          "rrn_0121",
+          "2890"
+        ],
+        [
+          "rrn_0123",
+          "2891"
+        ]
+      ],
+      "labels_created": 5,
+      "labels_expanded": 4,
+      "full_schedule_check": {
+        "feasible": true,
+        "arrival": "2892",
+        "usage": {
+          "rrn_0121": "1/10",
+          "rrn_0123": "1/10"
+        },
+        "peaks": {
+          "1": {
+            "value": "0",
+            "time": "2882"
+          },
+          "2": {
+            "value": "0",
+            "time": "2882"
+          },
+          "3": {
+            "value": "0",
+            "time": "2882"
+          },
+          "4": {
+            "value": "0",
+            "time": "2882"
+          },
+          "5": {
+            "value": "1/10",
+            "time": "2884"
+          },
+          "6": {
+            "value": "0",
+            "time": "2882"
+          },
+          "7": {
+            "value": "0",
+            "time": "2882"
+          },
+          "8": {
+            "value": "0",
+            "time": "2882"
+          },
+          "9": {
+            "value": "0",
+            "time": "2882"
+          },
+          "10": {
+            "value": "0",
+            "time": "2882"
+          },
+          "11": {
+            "value": "0",
+            "time": "2882"
+          },
+          "12": {
+            "value": "0",
+            "time": "2882"
+          },
+          "13": {
+            "value": "0",
+            "time": "2882"
+          },
+          "14": {
+            "value": "0",
+            "time": "2882"
+          },
+          "15": {
+            "value": "0",
+            "time": "2882"
+          },
+          "16": {
+            "value": "0",
+            "time": "2882"
+          },
+          "17": {
+            "value": "0",
+            "time": "2882"
+          },
+          "18": {
+            "value": "0",
+            "time": "2882"
+          },
+          "19": {
+            "value": "0",
+            "time": "2882"
+          },
+          "20": {
+            "value": "9/10",
+            "time": "2882"
+          },
+          "21": {
+            "value": "0",
+            "time": "2882"
+          },
+          "22": {
+            "value": "0",
+            "time": "2882"
+          },
+          "23": {
+            "value": "0",
+            "time": "2882"
+          },
+          "24": {
+            "value": "0",
+            "time": "2882"
+          },
+          "25": {
+            "value": "0",
+            "time": "2882"
+          },
+          "26": {
+            "value": "0",
+            "time": "2882"
+          },
+          "27": {
+            "value": "0",
+            "time": "2882"
+          },
+          "28": {
+            "value": "0",
+            "time": "2882"
+          },
+          "29": {
+            "value": "0",
+            "time": "2882"
+          },
+          "30": {
+            "value": "0",
+            "time": "2882"
+          },
+          "31": {
+            "value": "0",
+            "time": "2882"
+          },
+          "32": {
+            "value": "0",
+            "time": "2882"
+          },
+          "33": {
+            "value": "0",
+            "time": "2882"
+          },
+          "34": {
+            "value": "0",
+            "time": "2882"
+          },
+          "35": {
+            "value": "0",
+            "time": "2882"
+          },
+          "36": {
+            "value": "1/10",
+            "time": "2883"
+          },
+          "37": {
+            "value": "0",
+            "time": "2882"
+          },
+          "38": {
+            "value": "0",
+            "time": "2882"
+          },
+          "39": {
+            "value": "0",
+            "time": "2882"
+          },
+          "40": {
+            "value": "0",
+            "time": "2882"
+          },
+          "41": {
+            "value": "0",
+            "time": "2882"
+          },
+          "42": {
+            "value": "0",
+            "time": "2882"
+          },
+          "43": {
+            "value": "0",
+            "time": "2882"
+          },
+          "44": {
+            "value": "0",
+            "time": "2882"
+          },
+          "45": {
+            "value": "0",
+            "time": "2882"
+          },
+          "46": {
+            "value": "0",
+            "time": "2882"
+          },
+          "47": {
+            "value": "0",
+            "time": "2882"
+          }
+        }
+      },
+      "independent": {
+        "arrival": "2892",
+        "hops": [
+          [
+            "rrn_0121",
+            "2890"
+          ],
+          [
+            "rrn_0123",
+            "2891"
+          ]
+        ],
+        "paths_considered": null,
+        "schedules_considered": 511,
+        "feasible_schedules": 1,
+        "walk_prefixes_considered": 1535,
+        "rejection_counts": {
+          "CONTACT_BUSY": 254,
+          "QUOTA": 256
+        },
+        "method": "complete enumeration of temporally feasible walks"
+      }
+    },
+    {
+      "bundle": "bundle10",
+      "arrival": null,
+      "hops": [],
+      "labels_created": 2,
+      "labels_expanded": 2,
+      "full_schedule_check": null,
+      "independent": {
+        "arrival": null,
+        "hops": [],
+        "paths_considered": null,
+        "schedules_considered": 511,
+        "feasible_schedules": 0,
+        "walk_prefixes_considered": 1535,
+        "rejection_counts": {
+          "CONTACT_BUSY": 45,
+          "QUOTA": 466
+        },
+        "method": "complete enumeration of temporally feasible walks"
+      }
+    }
+  ],
+  "all_queries_match_reference": true,
+  "general_correctness_proven": false
+}

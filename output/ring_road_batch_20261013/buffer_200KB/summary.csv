@@ -1,0 +1,21 @@
+﻿index,bundle,source,destination,release,size,status,arrival,delivery_delay,path,contacts,labels_created,labels_expanded,reference_schedules,reference_arrival
+1,bundle1,9,2,1342,1/10,ACCEPTED,1344,2,9 → 41 → 2,rrn_0057 → rrn_0059,53,4,511,1344
+2,bundle2,9,2,1342,1/10,ACCEPTED,1345,3,9 → 41 → 2,rrn_0057 → rrn_0059,47,4,511,1345
+3,bundle3,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+4,bundle4,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+5,bundle5,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+6,bundle6,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+7,bundle7,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+8,bundle8,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+9,bundle9,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+10,bundle10,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+11,bundle11,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+12,bundle12,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+13,bundle13,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+14,bundle14,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+15,bundle15,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+16,bundle16,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+17,bundle17,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+18,bundle18,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+19,bundle19,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
+20,bundle20,9,2,1342,1/10,NO_ROUTE_ON_GRID,,,9,,1,1,511,
