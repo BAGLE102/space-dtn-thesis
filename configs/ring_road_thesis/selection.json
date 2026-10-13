@@ -1,0 +1,21 @@
+{
+  "selection": "學長論文的Ring Road情境與報告參數",
+  "reference": "Fraire, Feldmann, Burleigh, ICC 2017, DOI 10.1109/ICC.2017.7996778",
+  "thesis_pdf_pages": [26, 45, 46],
+  "nodes": 47,
+  "satellites": 16,
+  "cold_spots": 25,
+  "hot_spots": 6,
+  "contacts": 3172,
+  "horizon_s": 86400,
+  "rate_MB_s": "1/10",
+  "buffer_MB": "30",
+  "unit_assumption": "decimal KB and MB",
+  "propagation_delay_s": "0",
+  "delay_assumption_pending": true,
+  "time_step_for_initial_validation_s": "1",
+  "bundle_demands": "not selected; do not reuse senior flow demands as unsplittable bundles silently",
+  "local_converted_inputs": "tmp/ring_road_ppt_thesis/",
+  "status": "INPUT_PREPARED_ENGINE_NOT_YET_COMPATIBLE",
+  "exact_original_senior_contact_plan_verified": false
+}

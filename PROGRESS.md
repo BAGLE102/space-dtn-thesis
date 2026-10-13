@@ -209,3 +209,10 @@
 - 6項新驗證測試＋5項既有模組回歸測試，共11項通過。輸出路徑、各跳時間、Label/Q事件、拒絕原因、逐包預約、統計與Buffer／contact圖。
 - 定義、結果、重現命令：`docs/ppt_validation_experiments_20261013.md`；資料：`output/ppt_validation_20261013/`。
 - 這是人工小案例驗證，不是一般正確性證明或效能比較。下一步先核對五包排程，再定案支配規則。
+
+## 選用學長Ring Road情境（2026-10-13）
+
+- 使用者選擇沿用學長拓樸。準備公開Walker Ring Road＋論文參數：47節點／3,172 contacts／一天／100KB/s／30,000KB Buffer，十進位單位假設明列。
+- 完成轉換程式、參數設定、來源SHA核對及格式驗證，保留循環與短contact；2項轉換測試通過。資料在`tmp/ring_road_ppt_thesis/`本機存放。
+- `configs/ring_road_thesis/README.md`記錄重建方法與限制。未確認與學長實際輸入逐筆相同，δ=0暫為假設，未選五包需求、未跑新版路由。
+- 現有驗證版僅DAG，下一步先定案循環／前綴資源處理，不直接刪除DAG防護。
