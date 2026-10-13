@@ -1,0 +1,9 @@
+{
+  "schema_version": 2,
+  "name": "8nodes_5bundles_calendar_no_dominance",
+  "topology_file": "topology.json",
+  "bundles_file": "bundles.json",
+  "algorithm": "ppt_validation_no_dominance",
+  "time_step": "1",
+  "horizon": "24"
+}

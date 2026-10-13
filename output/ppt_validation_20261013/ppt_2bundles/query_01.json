@@ -1,0 +1,205 @@
+{
+  "index": 1,
+  "bundle": {
+    "id": "bundle1",
+    "source": "X",
+    "dest": "D",
+    "g": "0",
+    "size": "4"
+  },
+  "status": "ACCEPTED",
+  "arrival": "8",
+  "hops": [
+    [
+      "c1",
+      "2"
+    ],
+    [
+      "c2",
+      "6"
+    ]
+  ],
+  "labels": {
+    "L0": {
+      "c": null,
+      "A": "0",
+      "s": null,
+      "pred": null
+    },
+    "L1": {
+      "c": "c1",
+      "A": "3",
+      "s": "2",
+      "pred": "L0"
+    },
+    "L2": {
+      "c": "c2",
+      "A": "8",
+      "s": "6",
+      "pred": "L1"
+    },
+    "L3": {
+      "c": "c5",
+      "A": "12",
+      "s": "10",
+      "pred": "L1"
+    }
+  },
+  "trace": [
+    {
+      "event": "POP",
+      "label": "L0",
+      "node": "X",
+      "A": "0",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c1",
+      "s": "2",
+      "f": "3",
+      "h": "2",
+      "A": "3",
+      "receiver_peak": "4",
+      "receiver_peak_time": "3",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "0",
+      "new_label": "L1",
+      "priority": [
+        "3",
+        1
+      ],
+      "queue_size": 1
+    },
+    {
+      "event": "POP",
+      "label": "L1",
+      "node": "B",
+      "A": "3",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c2",
+      "s": "6",
+      "f": "7",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "4",
+      "receiver_peak_time": "8",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "3",
+      "new_label": "L2",
+      "priority": [
+        "8",
+        2
+      ],
+      "queue_size": 1
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c5",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "4",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "3",
+      "new_label": "L3",
+      "priority": [
+        "12",
+        3
+      ],
+      "queue_size": 2
+    },
+    {
+      "event": "POP",
+      "label": "L2",
+      "node": "D",
+      "A": "8",
+      "queue_size": 1
+    },
+    {
+      "event": "GOAL",
+      "label": "L2",
+      "A": "8"
+    }
+  ],
+  "labels_created": 4,
+  "labels_expanded": 2,
+  "independent": {
+    "arrival": "8",
+    "hops": [
+      [
+        "c1",
+        "2"
+      ],
+      [
+        "c2",
+        "6"
+      ]
+    ],
+    "paths_considered": 2,
+    "schedules_considered": 2,
+    "feasible_schedules": 2,
+    "rejection_counts": {}
+  },
+  "full_schedule_check": {
+    "feasible": true,
+    "arrival": "8",
+    "usage": {
+      "c1": "4",
+      "c2": "4"
+    },
+    "peaks": {
+      "X": {
+        "value": "4",
+        "time": "0"
+      },
+      "A": {
+        "value": "0",
+        "time": "0"
+      },
+      "B": {
+        "value": "4",
+        "time": "3"
+      },
+      "C": {
+        "value": "0",
+        "time": "0"
+      },
+      "D": {
+        "value": "4",
+        "time": "8"
+      }
+    }
+  },
+  "quota_before": {
+    "c1": "4",
+    "c2": "4",
+    "c3": "4",
+    "c4": "8",
+    "c5": "4",
+    "c6": "4",
+    "c7": "2",
+    "c8": "4"
+  },
+  "quota_after": {
+    "c1": "0",
+    "c2": "0",
+    "c3": "4",
+    "c4": "8",
+    "c5": "4",
+    "c6": "4",
+    "c7": "2",
+    "c8": "4"
+  }
+}

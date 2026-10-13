@@ -99,3 +99,9 @@ S1、S2 與 T 設16MB，降低來源與目的地容量成為主要瓶頸的機�
 **現有 v04 程式尚未加入更新 PPT 的發送時段互斥。用 legacy 設定執行所得結果，不能當作新 PPT 演算法的結果。**
 本次只驗證輸入格式、節點引用、容量及格點一致性，未執行路由或大型實驗。
 未生成 routes、成功率或執行時間數字。對齊新 PPT 的程式後，再使用這組資料做五包 walkthrough。
+
+## 新版PPT驗證入口（2026-10-13）
+
+`experiment_ppt_validation.json`由獨立的`src.ppt_validation.run`執行，加入同contact發送時段檢查、接收起送時間篩選，暫不做支配刪除。不要用legacy runner解讀此新入口。
+
+本輪已跑完：前4包抵達12、12、13、20秒，第5包無解；7次查詢（含PPT兩包）的可行性／最早抵達皆與完整列舉一致。詳見`docs/ppt_validation_experiments_20261013.md`及`output/ppt_validation_20261013/`。

@@ -1,0 +1,353 @@
+{
+  "index": 2,
+  "bundle": {
+    "id": "bundle2",
+    "source": "A",
+    "dest": "D",
+    "g": "1",
+    "size": "4"
+  },
+  "status": "ACCEPTED",
+  "arrival": "12",
+  "hops": [
+    [
+      "c4",
+      "7"
+    ],
+    [
+      "c5",
+      "10"
+    ]
+  ],
+  "labels": {
+    "L0": {
+      "c": null,
+      "A": "1",
+      "s": null,
+      "pred": null
+    },
+    "L1": {
+      "c": "c3",
+      "A": "2",
+      "s": "1",
+      "pred": "L0"
+    },
+    "L2": {
+      "c": "c4",
+      "A": "8",
+      "s": "7",
+      "pred": "L0"
+    },
+    "L3": {
+      "c": "c4",
+      "A": "9",
+      "s": "8",
+      "pred": "L0"
+    },
+    "L4": {
+      "c": "c6",
+      "A": "3",
+      "s": "1",
+      "pred": "L0"
+    },
+    "L5": {
+      "c": "c5",
+      "A": "12",
+      "s": "10",
+      "pred": "L2"
+    },
+    "L6": {
+      "c": "c5",
+      "A": "12",
+      "s": "10",
+      "pred": "L3"
+    }
+  },
+  "trace": [
+    {
+      "event": "POP",
+      "label": "L0",
+      "node": "A",
+      "A": "1",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c3",
+      "s": "1",
+      "f": "2",
+      "h": "1",
+      "A": "2",
+      "receiver_peak": "4",
+      "receiver_peak_time": "2",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "1",
+      "new_label": "L1",
+      "priority": [
+        "2",
+        1
+      ],
+      "queue_size": 1
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c4",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "4",
+      "receiver_peak_time": "8",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "1",
+      "new_label": "L2",
+      "priority": [
+        "8",
+        2
+      ],
+      "queue_size": 2
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c4",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "4",
+      "receiver_peak_time": "9",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "1",
+      "new_label": "L3",
+      "priority": [
+        "9",
+        3
+      ],
+      "queue_size": 3
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c6",
+      "s": "1",
+      "f": "2",
+      "h": "2",
+      "A": "3",
+      "receiver_peak": "4",
+      "receiver_peak_time": "3",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "1",
+      "new_label": "L4",
+      "priority": [
+        "3",
+        4
+      ],
+      "queue_size": 4
+    },
+    {
+      "event": "POP",
+      "label": "L1",
+      "node": "B",
+      "A": "2",
+      "queue_size": 3
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L1",
+      "contact": "c2",
+      "reason": "CAPACITY"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c5",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "4",
+      "receiver_peak_time": "12",
+      "reason": "SENDER_BUFFER",
+      "sender_peak": "8",
+      "sender_peak_time": "3",
+      "queue_size": 3
+    },
+    {
+      "event": "POP",
+      "label": "L4",
+      "node": "C",
+      "A": "3",
+      "queue_size": 2
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L4",
+      "contact": "c7",
+      "reason": "CAPACITY"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L4",
+      "contact": "c8",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "POP",
+      "label": "L2",
+      "node": "B",
+      "A": "8",
+      "queue_size": 1
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L2",
+      "contact": "c2",
+      "reason": "CAPACITY"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c5",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "4",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "8",
+      "new_label": "L5",
+      "priority": [
+        "12",
+        5
+      ],
+      "queue_size": 2
+    },
+    {
+      "event": "POP",
+      "label": "L3",
+      "node": "B",
+      "A": "9",
+      "queue_size": 1
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L3",
+      "contact": "c2",
+      "reason": "CAPACITY"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c5",
+      "s": "10",
+      "f": "11",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "4",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "4",
+      "sender_peak_time": "9",
+      "new_label": "L6",
+      "priority": [
+        "12",
+        6
+      ],
+      "queue_size": 2
+    },
+    {
+      "event": "POP",
+      "label": "L5",
+      "node": "D",
+      "A": "12",
+      "queue_size": 1
+    },
+    {
+      "event": "GOAL",
+      "label": "L5",
+      "A": "12"
+    }
+  ],
+  "labels_created": 7,
+  "labels_expanded": 5,
+  "independent": {
+    "arrival": "12",
+    "hops": [
+      [
+        "c4",
+        "7"
+      ],
+      [
+        "c5",
+        "10"
+      ]
+    ],
+    "paths_considered": 6,
+    "schedules_considered": 8,
+    "feasible_schedules": 2,
+    "rejection_counts": {
+      "QUOTA": 2,
+      "BUFFER": 1,
+      "TIMING": 3
+    }
+  },
+  "full_schedule_check": {
+    "feasible": true,
+    "arrival": "12",
+    "usage": {
+      "c4": "4",
+      "c5": "4"
+    },
+    "peaks": {
+      "X": {
+        "value": "4",
+        "time": "0"
+      },
+      "A": {
+        "value": "4",
+        "time": "1"
+      },
+      "B": {
+        "value": "4",
+        "time": "3"
+      },
+      "C": {
+        "value": "0",
+        "time": "0"
+      },
+      "D": {
+        "value": "4",
+        "time": "8"
+      }
+    }
+  },
+  "quota_before": {
+    "c1": "0",
+    "c2": "0",
+    "c3": "4",
+    "c4": "8",
+    "c5": "4",
+    "c6": "4",
+    "c7": "2",
+    "c8": "4"
+  },
+  "quota_after": {
+    "c1": "0",
+    "c2": "0",
+    "c3": "4",
+    "c4": "4",
+    "c5": "0",
+    "c6": "4",
+    "c7": "2",
+    "c8": "4"
+  }
+}

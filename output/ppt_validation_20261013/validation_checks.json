@@ -1,0 +1,17 @@
+{
+  "python_version": "3.12.10",
+  "test_command": "python -m unittest tests.test_ppt_validation tests.test_modular_routing -v",
+  "tests_passed": 11,
+  "queries_checked": 7,
+  "scope": "DAG, finite grid, no dominance, no performance comparison",
+  "source_sha256": {
+    "src/ppt_validation/__init__.py": "fb31975fb5a584eb26a52359d8b045a4d3c4407d14fbb37e19da4608b37d8e2b",
+    "src/ppt_validation/figures.py": "3785f32dac76c13cd058187b4b8cd45147d654d1756fb3347e17c696ffbdca63",
+    "src/ppt_validation/reference.py": "9cf08c19474e3837d06f04a43ce549ba4908e35adf2572eff35c090bd5c8f01b",
+    "src/ppt_validation/run.py": "a2416a0ede9b18131798c5714606d7f6b0e5393766eb77be1c3b9b4354005079",
+    "src/ppt_validation/search.py": "d342068bb896b13b322aed450fde7a8cec21a0bd8f72471d431f52967acd5afb",
+    "tests/test_ppt_validation.py": "21da91c6f823f9183c1e53e4d787efa2aeacc177637fd908f258686b1985c102",
+    "configs/ppt_modular/experiment_ppt_validation.json": "c839cb65d046223995064c1b2d0be23730b56f03007a841429c34a0bec4d671c",
+    "configs/topology_8nodes_5bundles/experiment_ppt_validation.json": "122be609cd3eb9d38f16ae3c8e20aa921a43ec608d9e3ef71f8949154fb43d53"
+  }
+}
