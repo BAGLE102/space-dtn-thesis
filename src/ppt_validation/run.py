@@ -68,7 +68,7 @@ def build_statistics(records):
                 scope='Delay statistics include accepted bundles only; no physical ideal claimed')
 
 
-def run(case, output):
+def run(case, output, reference_solver=solve):
     validate_case(case)
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
@@ -85,7 +85,7 @@ def run(case, output):
             actual = search(case, b, quota, background, calendar)
             check = (evaluate(case, b, quota, background, calendar, actual['hops'])
                      if actual['arrival'] is not None else None)
-            expected = solve(case, b, quota, background, calendar)
+            expected = reference_solver(case, b, quota, background, calendar)
             evidence = dict(case=case, bundle=b, quota=quota, background=background,
                             calendar=calendar, actual=actual, independent=expected,
                             full_schedule_check=check)
@@ -147,6 +147,7 @@ def run(case, output):
             buffers.extend(buffer_rows(case, background, b['id']))
         data = dict(name=case['name'], model='PPT_walk_grid_calendar_validation',
                     dominance=False, physical_simulation=False,
+                    reference_method=reference_solver.__name__,
                     same_contact_one_bundle_at_a_time=True,
                     records=records, quota=quota, background=background, calendar=calendar)
         write_json(output/'results.json', data)

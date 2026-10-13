@@ -1,0 +1,23 @@
+{
+  "tests_passed": 18,
+  "queries_checked": 5,
+  "all_arrivals_match_reference": true,
+  "no_contact_overlap": true,
+  "no_negative_capacity": true,
+  "buffer_peaks_MB": {
+    "9": "1/2",
+    "41": "1/10",
+    "2": "1/10"
+  },
+  "source_sha256": {
+    "src/ppt_validation/search.py": "6752c534daebcd21ef2d9977cf625cefaaa0ede814a00fc1dcae7c661f563cc0",
+    "src/ppt_validation/run.py": "5d4789d98118d7a485cd9512741793afdcd1b026eacfd36f3e5642b893fb019d",
+    "src/ppt_validation/temporal_reference.py": "e2baf3923fb55c2b49baebe3c73cac92e00ea634b6cb7b253d3585412d14d09b",
+    "src/ppt_validation/ring_road_pilot.py": "0ccaf0647e130f8d39d463cf00eb0784f8a03fcd70a0f2c21d4a2f1f70874015",
+    "src/ppt_validation/figures.py": "edf17e879f44242aee994f2d964fcbc6231ca07310e1318c764f4fc4e7ff8ac1"
+  },
+  "output_figure_origin_s": 1342,
+  "buffer_figure_upper_limit_offscale_labelled": true,
+  "full_day_test": false,
+  "buffer_bottleneck_test": false
+}

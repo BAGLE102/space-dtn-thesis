@@ -1,0 +1,65 @@
+{
+  "source_url": "https://api.bitbucket.org/2.0/repositories/lcd-unc-ar/dtnsim/src/56d2c9835f6706563566768de646f9442a8602ab/dtnsim/simulations/hindawi_rrn/contactPlan/RingRoad_16sats_Walker_6hotspots_simtime24hs_comrange1000km.txt",
+  "source_sha256": "fe363dabdd182e292f5e3b74a28558245b2caf9d3aa7730db60d52afdb9763d2",
+  "original_nodes": 47,
+  "original_contacts": 3172,
+  "retained_nodes": 47,
+  "active_window_contacts": 10,
+  "window_start_s": "1342",
+  "window_end_s": "1352",
+  "contact_times_clipped": true,
+  "quota_recomputed_for_clipped_window": true,
+  "short_contacts_removed": false,
+  "cycles_removed": false,
+  "dominance": false,
+  "scenario_parameters": {
+    "name": "ring_road_shared_corridor_5bundles",
+    "window_start_s": "1342",
+    "window_end_s": "1352",
+    "time_step_s": "1",
+    "buffer_MB": "30",
+    "rate_MB_s": "1/10",
+    "propagation_delay_s": "0",
+    "bundles": [
+      {
+        "id": "bundle1",
+        "source": "9",
+        "destination": "2",
+        "release": "1342",
+        "size": "1/10"
+      },
+      {
+        "id": "bundle2",
+        "source": "9",
+        "destination": "2",
+        "release": "1342",
+        "size": "1/10"
+      },
+      {
+        "id": "bundle3",
+        "source": "9",
+        "destination": "2",
+        "release": "1342",
+        "size": "1/10"
+      },
+      {
+        "id": "bundle4",
+        "source": "9",
+        "destination": "2",
+        "release": "1342",
+        "size": "1/10"
+      },
+      {
+        "id": "bundle5",
+        "source": "9",
+        "destination": "2",
+        "release": "1342",
+        "size": "1/10"
+      }
+    ]
+  },
+  "traffic_selection": "explicit shared 9 -> 41 -> 2 corridor; selected connectivity smoke test",
+  "full_day_test": false,
+  "random_traffic": false,
+  "physical_simulation": false
+}

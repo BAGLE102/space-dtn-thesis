@@ -33,8 +33,10 @@ def series(background,node,points):
              for side in ('left','at','right')])
 
 
-def generate(output):
+def generate(output, nodes=None, time_origin=0, buffer_zoom=False):
     output=Path(output)
+    origin=float(time_origin)
+    xlabel='Time (s)' if origin==0 else f'Time since {origin:g} s (s)'
     raw=json.loads((output/'results.json').read_text(encoding='utf-8'))
     case=normalize(json.loads((output/'input.json').read_text(encoding='utf-8')))
     total={v:[[[number(x) for x in seg] for seg in curve] for curve in curves]
@@ -49,18 +51,27 @@ def generate(output):
                   for curve in curves for seg in curve for t in seg[:2]})
     figures=output/'figures'; figures.mkdir(exist_ok=True)
     plt.rcParams.update({'font.size':11,'axes.spines.top':False,'axes.spines.right':False})
-    nodes=list(case['buffers']); columns=2; rows=(len(nodes)+1)//2
+    nodes=list(case['buffers']) if nodes is None else list(nodes)
+    if not nodes or any(n not in case['buffers'] for n in nodes):
+        raise ValueError('INVALID_FIGURE_NODES')
+    columns=2; rows=(len(nodes)+1)//2
     fig,axs=plt.subplots(rows,columns,figsize=(13,3*rows),squeeze=False)
     palette=['#d16b06','#246bb1','#1c9254','#a84ba0','#8a6505']
     for ax,node in zip(axs.flat,nodes):
         for i,(bid,curves) in enumerate(own):
             x,y=series(curves,node,points)
-            ax.plot(x,y,color=palette[i%len(palette)],lw=1.7,alpha=.85,label=bid)
+            ax.plot([t-origin for t in x],y,color=palette[i%len(palette)],lw=1.7,alpha=.85,label=bid)
         x,y=series(total,node,points)
-        ax.plot(x,y,color='#222222',lw=2.2,label='total',linestyle='--')
-        limit=float(case['buffers'][node]); ax.axhline(limit,color='#777777',lw=1.4,label='limit')
-        ax.set(xlim=(0,float(case['horizon'])),ylim=(-.15,max(limit,max(y,default=0))*1.18),
-               title=f'Node {node}',xlabel='Time (s)',ylabel='Buffer occupancy (MB)')
+        ax.plot([t-origin for t in x],y,color='#222222',lw=2.2,label='total',linestyle='--')
+        limit=float(case['buffers'][node])
+        upper=max(max(y,default=0)*1.18,.12) if buffer_zoom else max(limit,max(y,default=0))*1.18
+        if limit<=upper:
+            ax.axhline(limit,color='#777777',lw=1.4,label='limit')
+        else:
+            ax.text(.97,.92,f'Capacity {limit:g} MB (above plot range)',
+                    transform=ax.transAxes,ha='right',color='#666666',fontsize=10)
+        ax.set(xlim=(0,float(case['horizon'])-origin),ylim=(-upper*.03,upper),
+               title=f'Node {node}',xlabel=xlabel,ylabel='Buffer occupancy (MB)')
         ax.grid(alpha=.2)
     for ax in list(axs.flat)[len(nodes):]: ax.axis('off')
     handles,labels=axs.flat[0].get_legend_handles_labels()
@@ -74,13 +85,13 @@ def generate(output):
     contacts=case['contacts']; fig,ax=plt.subplots(figsize=(13,max(4,len(contacts)*.4)))
     colors={bid:palette[i%len(palette)] for i,(bid,_) in enumerate(own)}
     for i,c in enumerate(contacts):
-        ax.broken_barh([(float(c['start']),float(c['end']-c['start']))],(i-.32,.64),facecolors='#e6e6ed')
+        ax.broken_barh([(float(c['start'])-origin,float(c['end']-c['start']))],(i-.32,.64),facecolors='#e6e6ed')
         for entry in raw['calendar'].get(c['id'],[]):
             s,f=F(entry['start']),F(entry['finish'])
-            ax.broken_barh([(float(s),float(f-s))],(i-.23,.46),facecolors=colors[entry['bundle']])
+            ax.broken_barh([(float(s)-origin,float(f-s))],(i-.23,.46),facecolors=colors[entry['bundle']])
     ax.set_yticks(range(len(contacts)),[f'{c["id"]}: {c["u"]} -> {c["v"]}' for c in contacts])
-    ax.invert_yaxis(); ax.set(xlim=(0,float(case['horizon'])),xlabel='Time (s)',
-                            title='Contact windows and accepted transmission reservations')
+    ax.invert_yaxis(); ax.set(xlim=(0,float(case['horizon'])-origin),xlabel=xlabel)
+    ax.set_title('Contact windows and accepted transmission reservations',pad=46)
     ax.legend(handles=[Patch(facecolor='#e6e6ed',label='contact window')] +
               [Patch(facecolor=color,label=bid) for bid,color in colors.items()],
               loc='lower center',bbox_to_anchor=(.5,1.035),ncol=len(colors)+1,fontsize=9)
