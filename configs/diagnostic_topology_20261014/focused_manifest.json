@@ -1,0 +1,75 @@
+[
+  {
+    "file": "01_normal.json",
+    "expected_arrivals": [
+      1
+    ]
+  },
+  {
+    "file": "02_capacity_insufficient.json",
+    "expected_arrivals": [
+      null
+    ]
+  },
+  {
+    "file": "03_exact_capacity.json",
+    "expected_arrivals": [
+      1
+    ]
+  },
+  {
+    "file": "04_receiver_busy_then_free.json",
+    "expected_arrivals": [
+      3
+    ]
+  },
+  {
+    "file": "05_receiver_interior_peak.json",
+    "expected_arrivals": [
+      2
+    ]
+  },
+  {
+    "file": "06_receive_while_previous_drains.json",
+    "expected_arrivals": [
+      1
+    ]
+  },
+  {
+    "file": "07_sender_waiting_overflow.json",
+    "expected_arrivals": [
+      null
+    ]
+  },
+  {
+    "file": "08_propagation_exceeds_deadline.json",
+    "expected_arrivals": [
+      null
+    ]
+  },
+  {
+    "file": "09_exact_window_end.json",
+    "expected_arrivals": [
+      1
+    ]
+  },
+  {
+    "file": "10_bundle_exceeds_window.json",
+    "expected_arrivals": [
+      null
+    ]
+  },
+  {
+    "file": "11_sequential_transmission_reservation.json",
+    "expected_arrivals": [
+      1,
+      2
+    ]
+  },
+  {
+    "file": "12_late_arrival_needed.json",
+    "expected_arrivals": [
+      4
+    ]
+  }
+]

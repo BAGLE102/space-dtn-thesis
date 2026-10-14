@@ -1,0 +1,3326 @@
+{
+  "index": 4,
+  "bundle": {
+    "id": "b4",
+    "source": "S1",
+    "dest": "T",
+    "g": "1",
+    "size": "1"
+  },
+  "status": "ACCEPTED",
+  "arrival": "12",
+  "hops": [
+    [
+      "c01",
+      "1"
+    ],
+    [
+      "c08",
+      "5"
+    ],
+    [
+      "c15",
+      "8"
+    ],
+    [
+      "c18",
+      "11"
+    ]
+  ],
+  "labels": {
+    "L0": {
+      "c": null,
+      "A": "1",
+      "s": null,
+      "pred": null
+    },
+    "L1": {
+      "c": "c01",
+      "A": "2",
+      "s": "1",
+      "pred": "L0"
+    },
+    "L2": {
+      "c": "c07",
+      "A": "4",
+      "s": "3",
+      "pred": "L1"
+    },
+    "L3": {
+      "c": "c07",
+      "A": "5",
+      "s": "4",
+      "pred": "L1"
+    },
+    "L4": {
+      "c": "c08",
+      "A": "6",
+      "s": "5",
+      "pred": "L1"
+    },
+    "L5": {
+      "c": "c08",
+      "A": "7",
+      "s": "6",
+      "pred": "L1"
+    },
+    "L6": {
+      "c": "c23",
+      "A": "10",
+      "s": "9",
+      "pred": "L1"
+    },
+    "L7": {
+      "c": "c23",
+      "A": "11",
+      "s": "10",
+      "pred": "L1"
+    },
+    "L8": {
+      "c": "c19",
+      "A": "7",
+      "s": "6",
+      "pred": "L2"
+    },
+    "L9": {
+      "c": "c19",
+      "A": "8",
+      "s": "7",
+      "pred": "L2"
+    },
+    "L10": {
+      "c": "c26",
+      "A": "13",
+      "s": "12",
+      "pred": "L2"
+    },
+    "L11": {
+      "c": "c26",
+      "A": "14",
+      "s": "13",
+      "pred": "L2"
+    },
+    "L12": {
+      "c": "c19",
+      "A": "7",
+      "s": "6",
+      "pred": "L3"
+    },
+    "L13": {
+      "c": "c19",
+      "A": "8",
+      "s": "7",
+      "pred": "L3"
+    },
+    "L14": {
+      "c": "c26",
+      "A": "13",
+      "s": "12",
+      "pred": "L3"
+    },
+    "L15": {
+      "c": "c26",
+      "A": "14",
+      "s": "13",
+      "pred": "L3"
+    },
+    "L16": {
+      "c": "c15",
+      "A": "9",
+      "s": "8",
+      "pred": "L4"
+    },
+    "L17": {
+      "c": "c15",
+      "A": "10",
+      "s": "9",
+      "pred": "L4"
+    },
+    "L18": {
+      "c": "c20",
+      "A": "7",
+      "s": "6",
+      "pred": "L4"
+    },
+    "L19": {
+      "c": "c20",
+      "A": "8",
+      "s": "7",
+      "pred": "L4"
+    },
+    "L20": {
+      "c": "c27",
+      "A": "14",
+      "s": "13",
+      "pred": "L4"
+    },
+    "L21": {
+      "c": "c27",
+      "A": "15",
+      "s": "14",
+      "pred": "L4"
+    },
+    "L22": {
+      "c": "c32",
+      "A": "17",
+      "s": "14",
+      "pred": "L4"
+    },
+    "L23": {
+      "c": "c15",
+      "A": "9",
+      "s": "8",
+      "pred": "L5"
+    },
+    "L24": {
+      "c": "c15",
+      "A": "10",
+      "s": "9",
+      "pred": "L5"
+    },
+    "L25": {
+      "c": "c20",
+      "A": "8",
+      "s": "7",
+      "pred": "L5"
+    },
+    "L26": {
+      "c": "c27",
+      "A": "14",
+      "s": "13",
+      "pred": "L5"
+    },
+    "L27": {
+      "c": "c27",
+      "A": "15",
+      "s": "14",
+      "pred": "L5"
+    },
+    "L28": {
+      "c": "c32",
+      "A": "17",
+      "s": "14",
+      "pred": "L5"
+    },
+    "L29": {
+      "c": "c23",
+      "A": "10",
+      "s": "9",
+      "pred": "L8"
+    },
+    "L30": {
+      "c": "c23",
+      "A": "11",
+      "s": "10",
+      "pred": "L8"
+    },
+    "L31": {
+      "c": "c23",
+      "A": "10",
+      "s": "9",
+      "pred": "L12"
+    },
+    "L32": {
+      "c": "c23",
+      "A": "11",
+      "s": "10",
+      "pred": "L12"
+    },
+    "L33": {
+      "c": "c24",
+      "A": "11",
+      "s": "10",
+      "pred": "L18"
+    },
+    "L34": {
+      "c": "c24",
+      "A": "12",
+      "s": "11",
+      "pred": "L18"
+    },
+    "L35": {
+      "c": "c23",
+      "A": "10",
+      "s": "9",
+      "pred": "L9"
+    },
+    "L36": {
+      "c": "c23",
+      "A": "11",
+      "s": "10",
+      "pred": "L9"
+    },
+    "L37": {
+      "c": "c23",
+      "A": "10",
+      "s": "9",
+      "pred": "L13"
+    },
+    "L38": {
+      "c": "c23",
+      "A": "11",
+      "s": "10",
+      "pred": "L13"
+    },
+    "L39": {
+      "c": "c24",
+      "A": "11",
+      "s": "10",
+      "pred": "L19"
+    },
+    "L40": {
+      "c": "c24",
+      "A": "12",
+      "s": "11",
+      "pred": "L19"
+    },
+    "L41": {
+      "c": "c24",
+      "A": "11",
+      "s": "10",
+      "pred": "L25"
+    },
+    "L42": {
+      "c": "c24",
+      "A": "12",
+      "s": "11",
+      "pred": "L25"
+    },
+    "L43": {
+      "c": "c18",
+      "A": "12",
+      "s": "11",
+      "pred": "L16"
+    },
+    "L44": {
+      "c": "c30",
+      "A": "18",
+      "s": "17",
+      "pred": "L16"
+    },
+    "L45": {
+      "c": "c30",
+      "A": "19",
+      "s": "18",
+      "pred": "L16"
+    },
+    "L46": {
+      "c": "c18",
+      "A": "12",
+      "s": "11",
+      "pred": "L23"
+    },
+    "L47": {
+      "c": "c30",
+      "A": "18",
+      "s": "17",
+      "pred": "L23"
+    },
+    "L48": {
+      "c": "c30",
+      "A": "19",
+      "s": "18",
+      "pred": "L23"
+    },
+    "L49": {
+      "c": "c26",
+      "A": "13",
+      "s": "12",
+      "pred": "L6"
+    },
+    "L50": {
+      "c": "c26",
+      "A": "14",
+      "s": "13",
+      "pred": "L6"
+    },
+    "L51": {
+      "c": "c18",
+      "A": "12",
+      "s": "11",
+      "pred": "L17"
+    },
+    "L52": {
+      "c": "c30",
+      "A": "18",
+      "s": "17",
+      "pred": "L17"
+    },
+    "L53": {
+      "c": "c30",
+      "A": "19",
+      "s": "18",
+      "pred": "L17"
+    },
+    "L54": {
+      "c": "c18",
+      "A": "12",
+      "s": "11",
+      "pred": "L24"
+    },
+    "L55": {
+      "c": "c30",
+      "A": "18",
+      "s": "17",
+      "pred": "L24"
+    },
+    "L56": {
+      "c": "c30",
+      "A": "19",
+      "s": "18",
+      "pred": "L24"
+    },
+    "L57": {
+      "c": "c26",
+      "A": "13",
+      "s": "12",
+      "pred": "L29"
+    },
+    "L58": {
+      "c": "c26",
+      "A": "14",
+      "s": "13",
+      "pred": "L29"
+    },
+    "L59": {
+      "c": "c26",
+      "A": "13",
+      "s": "12",
+      "pred": "L31"
+    },
+    "L60": {
+      "c": "c26",
+      "A": "14",
+      "s": "13",
+      "pred": "L31"
+    },
+    "L61": {
+      "c": "c26",
+      "A": "13",
+      "s": "12",
+      "pred": "L35"
+    },
+    "L62": {
+      "c": "c26",
+      "A": "14",
+      "s": "13",
+      "pred": "L35"
+    },
+    "L63": {
+      "c": "c26",
+      "A": "13",
+      "s": "12",
+      "pred": "L37"
+    },
+    "L64": {
+      "c": "c26",
+      "A": "14",
+      "s": "13",
+      "pred": "L37"
+    },
+    "L65": {
+      "c": "c26",
+      "A": "13",
+      "s": "12",
+      "pred": "L7"
+    },
+    "L66": {
+      "c": "c26",
+      "A": "14",
+      "s": "13",
+      "pred": "L7"
+    },
+    "L67": {
+      "c": "c26",
+      "A": "13",
+      "s": "12",
+      "pred": "L30"
+    },
+    "L68": {
+      "c": "c26",
+      "A": "14",
+      "s": "13",
+      "pred": "L30"
+    },
+    "L69": {
+      "c": "c26",
+      "A": "13",
+      "s": "12",
+      "pred": "L32"
+    },
+    "L70": {
+      "c": "c26",
+      "A": "14",
+      "s": "13",
+      "pred": "L32"
+    },
+    "L71": {
+      "c": "c27",
+      "A": "14",
+      "s": "13",
+      "pred": "L33"
+    },
+    "L72": {
+      "c": "c27",
+      "A": "15",
+      "s": "14",
+      "pred": "L33"
+    },
+    "L73": {
+      "c": "c32",
+      "A": "17",
+      "s": "14",
+      "pred": "L33"
+    },
+    "L74": {
+      "c": "c26",
+      "A": "13",
+      "s": "12",
+      "pred": "L36"
+    },
+    "L75": {
+      "c": "c26",
+      "A": "14",
+      "s": "13",
+      "pred": "L36"
+    },
+    "L76": {
+      "c": "c26",
+      "A": "13",
+      "s": "12",
+      "pred": "L38"
+    },
+    "L77": {
+      "c": "c26",
+      "A": "14",
+      "s": "13",
+      "pred": "L38"
+    },
+    "L78": {
+      "c": "c27",
+      "A": "14",
+      "s": "13",
+      "pred": "L39"
+    },
+    "L79": {
+      "c": "c27",
+      "A": "15",
+      "s": "14",
+      "pred": "L39"
+    },
+    "L80": {
+      "c": "c32",
+      "A": "17",
+      "s": "14",
+      "pred": "L39"
+    },
+    "L81": {
+      "c": "c27",
+      "A": "14",
+      "s": "13",
+      "pred": "L41"
+    },
+    "L82": {
+      "c": "c27",
+      "A": "15",
+      "s": "14",
+      "pred": "L41"
+    },
+    "L83": {
+      "c": "c32",
+      "A": "17",
+      "s": "14",
+      "pred": "L41"
+    },
+    "L84": {
+      "c": "c27",
+      "A": "14",
+      "s": "13",
+      "pred": "L34"
+    },
+    "L85": {
+      "c": "c27",
+      "A": "15",
+      "s": "14",
+      "pred": "L34"
+    },
+    "L86": {
+      "c": "c32",
+      "A": "17",
+      "s": "14",
+      "pred": "L34"
+    },
+    "L87": {
+      "c": "c27",
+      "A": "14",
+      "s": "13",
+      "pred": "L40"
+    },
+    "L88": {
+      "c": "c27",
+      "A": "15",
+      "s": "14",
+      "pred": "L40"
+    },
+    "L89": {
+      "c": "c32",
+      "A": "17",
+      "s": "14",
+      "pred": "L40"
+    },
+    "L90": {
+      "c": "c27",
+      "A": "14",
+      "s": "13",
+      "pred": "L42"
+    },
+    "L91": {
+      "c": "c27",
+      "A": "15",
+      "s": "14",
+      "pred": "L42"
+    },
+    "L92": {
+      "c": "c32",
+      "A": "17",
+      "s": "14",
+      "pred": "L42"
+    }
+  },
+  "trace": [
+    {
+      "event": "POP",
+      "label": "L0",
+      "node": "S1",
+      "A": "1",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c01",
+      "s": "1",
+      "f": "2",
+      "h": "1",
+      "A": "2",
+      "receiver_peak": "1",
+      "receiver_peak_time": "2",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "1",
+      "new_label": "L1",
+      "priority": [
+        "2",
+        1
+      ],
+      "queue_size": 1
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c02",
+      "s": "1",
+      "f": "2",
+      "h": "1",
+      "A": "2",
+      "receiver_peak": "3",
+      "receiver_peak_time": "2",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 1
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "c02",
+      "s": "2",
+      "f": "3",
+      "h": "2",
+      "A": "3",
+      "receiver_peak": "3",
+      "receiver_peak_time": "3",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 1
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L0",
+      "contact": "c31",
+      "reason": "CAPACITY",
+      "used": "0",
+      "requested": "1",
+      "residual": "1/2"
+    },
+    {
+      "event": "POP",
+      "label": "L1",
+      "node": "A",
+      "A": "2",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c07",
+      "s": "3",
+      "f": "4",
+      "h": "3",
+      "A": "4",
+      "receiver_peak": "1",
+      "receiver_peak_time": "4",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "2",
+      "new_label": "L2",
+      "priority": [
+        "4",
+        2
+      ],
+      "queue_size": 1
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c07",
+      "s": "4",
+      "f": "5",
+      "h": "4",
+      "A": "5",
+      "receiver_peak": "2",
+      "receiver_peak_time": "5",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "2",
+      "new_label": "L3",
+      "priority": [
+        "5",
+        3
+      ],
+      "queue_size": 2
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c08",
+      "s": "5",
+      "f": "6",
+      "h": "5",
+      "A": "6",
+      "receiver_peak": "2",
+      "receiver_peak_time": "6",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "2",
+      "new_label": "L4",
+      "priority": [
+        "6",
+        4
+      ],
+      "queue_size": 3
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c08",
+      "s": "6",
+      "f": "7",
+      "h": "6",
+      "A": "7",
+      "receiver_peak": "1",
+      "receiver_peak_time": "6",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "2",
+      "new_label": "L5",
+      "priority": [
+        "7",
+        5
+      ],
+      "queue_size": 4
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c23",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "1",
+      "receiver_peak_time": "10",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "2",
+      "new_label": "L6",
+      "priority": [
+        "10",
+        6
+      ],
+      "queue_size": 5
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L1",
+      "contact": "c23",
+      "s": "10",
+      "f": "11",
+      "h": "10",
+      "A": "11",
+      "receiver_peak": "1",
+      "receiver_peak_time": "11",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "2",
+      "new_label": "L7",
+      "priority": [
+        "11",
+        7
+      ],
+      "queue_size": 6
+    },
+    {
+      "event": "POP",
+      "label": "L2",
+      "node": "D",
+      "A": "4",
+      "queue_size": 5
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c13",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "3",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 5
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c13",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "3",
+      "receiver_peak_time": "9",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 5
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c19",
+      "s": "6",
+      "f": "7",
+      "h": "6",
+      "A": "7",
+      "receiver_peak": "1",
+      "receiver_peak_time": "7",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "5",
+      "new_label": "L8",
+      "priority": [
+        "7",
+        8
+      ],
+      "queue_size": 6
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c19",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "1",
+      "receiver_peak_time": "8",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "5",
+      "new_label": "L9",
+      "priority": [
+        "8",
+        9
+      ],
+      "queue_size": 7
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c26",
+      "s": "12",
+      "f": "13",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "1",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "5",
+      "new_label": "L10",
+      "priority": [
+        "13",
+        10
+      ],
+      "queue_size": 8
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L2",
+      "contact": "c26",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "5",
+      "new_label": "L11",
+      "priority": [
+        "14",
+        11
+      ],
+      "queue_size": 9
+    },
+    {
+      "event": "POP",
+      "label": "L3",
+      "node": "D",
+      "A": "5",
+      "queue_size": 8
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c13",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "3",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 8
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c13",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "3",
+      "receiver_peak_time": "9",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 8
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c19",
+      "s": "6",
+      "f": "7",
+      "h": "6",
+      "A": "7",
+      "receiver_peak": "1",
+      "receiver_peak_time": "7",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "5",
+      "new_label": "L12",
+      "priority": [
+        "7",
+        12
+      ],
+      "queue_size": 9
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c19",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "1",
+      "receiver_peak_time": "8",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "5",
+      "new_label": "L13",
+      "priority": [
+        "8",
+        13
+      ],
+      "queue_size": 10
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c26",
+      "s": "12",
+      "f": "13",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "1",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "5",
+      "new_label": "L14",
+      "priority": [
+        "13",
+        14
+      ],
+      "queue_size": 11
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L3",
+      "contact": "c26",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "5",
+      "new_label": "L15",
+      "priority": [
+        "14",
+        15
+      ],
+      "queue_size": 12
+    },
+    {
+      "event": "POP",
+      "label": "L4",
+      "node": "E",
+      "A": "6",
+      "queue_size": 11
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c14",
+      "s": "6",
+      "f": "7",
+      "h": "6",
+      "A": "7",
+      "receiver_peak": "2",
+      "receiver_peak_time": "7",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 11
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c14",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "3",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 11
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c15",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "2",
+      "receiver_peak_time": "9",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "6",
+      "new_label": "L16",
+      "priority": [
+        "9",
+        16
+      ],
+      "queue_size": 12
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c15",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "2",
+      "receiver_peak_time": "10",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "6",
+      "new_label": "L17",
+      "priority": [
+        "10",
+        17
+      ],
+      "queue_size": 13
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c20",
+      "s": "6",
+      "f": "7",
+      "h": "6",
+      "A": "7",
+      "receiver_peak": "1",
+      "receiver_peak_time": "7",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "6",
+      "new_label": "L18",
+      "priority": [
+        "7",
+        18
+      ],
+      "queue_size": 14
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c20",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "1",
+      "receiver_peak_time": "8",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "6",
+      "new_label": "L19",
+      "priority": [
+        "8",
+        19
+      ],
+      "queue_size": 15
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c27",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "6",
+      "new_label": "L20",
+      "priority": [
+        "14",
+        20
+      ],
+      "queue_size": 16
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c27",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "1",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "6",
+      "new_label": "L21",
+      "priority": [
+        "15",
+        21
+      ],
+      "queue_size": 17
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L4",
+      "contact": "c32",
+      "s": "14",
+      "f": "15",
+      "h": "16",
+      "A": "17",
+      "receiver_peak": "1",
+      "receiver_peak_time": "17",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "6",
+      "new_label": "L22",
+      "priority": [
+        "17",
+        22
+      ],
+      "queue_size": 18
+    },
+    {
+      "event": "POP",
+      "label": "L5",
+      "node": "E",
+      "A": "7",
+      "queue_size": 17
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c14",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "3",
+      "receiver_peak_time": "8",
+      "reason": "RECEIVER_BUFFER",
+      "queue_size": 17
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c15",
+      "s": "8",
+      "f": "9",
+      "h": "8",
+      "A": "9",
+      "receiver_peak": "2",
+      "receiver_peak_time": "9",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "7",
+      "new_label": "L23",
+      "priority": [
+        "9",
+        23
+      ],
+      "queue_size": 18
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c15",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "2",
+      "receiver_peak_time": "10",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "7",
+      "new_label": "L24",
+      "priority": [
+        "10",
+        24
+      ],
+      "queue_size": 19
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c20",
+      "s": "7",
+      "f": "8",
+      "h": "7",
+      "A": "8",
+      "receiver_peak": "1",
+      "receiver_peak_time": "8",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "7",
+      "new_label": "L25",
+      "priority": [
+        "8",
+        25
+      ],
+      "queue_size": 20
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c27",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "7",
+      "new_label": "L26",
+      "priority": [
+        "14",
+        26
+      ],
+      "queue_size": 21
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c27",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "1",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "7",
+      "new_label": "L27",
+      "priority": [
+        "15",
+        27
+      ],
+      "queue_size": 22
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L5",
+      "contact": "c32",
+      "s": "14",
+      "f": "15",
+      "h": "16",
+      "A": "17",
+      "receiver_peak": "1",
+      "receiver_peak_time": "17",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "7",
+      "new_label": "L28",
+      "priority": [
+        "17",
+        28
+      ],
+      "queue_size": 23
+    },
+    {
+      "event": "POP",
+      "label": "L8",
+      "node": "A",
+      "A": "7",
+      "queue_size": 22
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L8",
+      "contact": "c07",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L8",
+      "contact": "c08",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L8",
+      "contact": "c23",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "1",
+      "receiver_peak_time": "10",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "7",
+      "new_label": "L29",
+      "priority": [
+        "10",
+        29
+      ],
+      "queue_size": 23
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L8",
+      "contact": "c23",
+      "s": "10",
+      "f": "11",
+      "h": "10",
+      "A": "11",
+      "receiver_peak": "1",
+      "receiver_peak_time": "11",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "7",
+      "new_label": "L30",
+      "priority": [
+        "11",
+        30
+      ],
+      "queue_size": 24
+    },
+    {
+      "event": "POP",
+      "label": "L12",
+      "node": "A",
+      "A": "7",
+      "queue_size": 23
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L12",
+      "contact": "c07",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L12",
+      "contact": "c08",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L12",
+      "contact": "c23",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "1",
+      "receiver_peak_time": "10",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "7",
+      "new_label": "L31",
+      "priority": [
+        "10",
+        31
+      ],
+      "queue_size": 24
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L12",
+      "contact": "c23",
+      "s": "10",
+      "f": "11",
+      "h": "10",
+      "A": "11",
+      "receiver_peak": "1",
+      "receiver_peak_time": "11",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "7",
+      "new_label": "L32",
+      "priority": [
+        "11",
+        32
+      ],
+      "queue_size": 25
+    },
+    {
+      "event": "POP",
+      "label": "L18",
+      "node": "B",
+      "A": "7",
+      "queue_size": 24
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L18",
+      "contact": "c09",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L18",
+      "contact": "c10",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L18",
+      "contact": "c24",
+      "s": "10",
+      "f": "11",
+      "h": "10",
+      "A": "11",
+      "receiver_peak": "1",
+      "receiver_peak_time": "11",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "7",
+      "new_label": "L33",
+      "priority": [
+        "11",
+        33
+      ],
+      "queue_size": 25
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L18",
+      "contact": "c24",
+      "s": "11",
+      "f": "12",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "1",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "7",
+      "new_label": "L34",
+      "priority": [
+        "12",
+        34
+      ],
+      "queue_size": 26
+    },
+    {
+      "event": "POP",
+      "label": "L9",
+      "node": "A",
+      "A": "8",
+      "queue_size": 25
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L9",
+      "contact": "c07",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L9",
+      "contact": "c08",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L9",
+      "contact": "c23",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "1",
+      "receiver_peak_time": "10",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "8",
+      "new_label": "L35",
+      "priority": [
+        "10",
+        35
+      ],
+      "queue_size": 26
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L9",
+      "contact": "c23",
+      "s": "10",
+      "f": "11",
+      "h": "10",
+      "A": "11",
+      "receiver_peak": "1",
+      "receiver_peak_time": "11",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "8",
+      "new_label": "L36",
+      "priority": [
+        "11",
+        36
+      ],
+      "queue_size": 27
+    },
+    {
+      "event": "POP",
+      "label": "L13",
+      "node": "A",
+      "A": "8",
+      "queue_size": 26
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L13",
+      "contact": "c07",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L13",
+      "contact": "c08",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L13",
+      "contact": "c23",
+      "s": "9",
+      "f": "10",
+      "h": "9",
+      "A": "10",
+      "receiver_peak": "1",
+      "receiver_peak_time": "10",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "8",
+      "new_label": "L37",
+      "priority": [
+        "10",
+        37
+      ],
+      "queue_size": 27
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L13",
+      "contact": "c23",
+      "s": "10",
+      "f": "11",
+      "h": "10",
+      "A": "11",
+      "receiver_peak": "1",
+      "receiver_peak_time": "11",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "8",
+      "new_label": "L38",
+      "priority": [
+        "11",
+        38
+      ],
+      "queue_size": 28
+    },
+    {
+      "event": "POP",
+      "label": "L19",
+      "node": "B",
+      "A": "8",
+      "queue_size": 27
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L19",
+      "contact": "c09",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L19",
+      "contact": "c10",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L19",
+      "contact": "c24",
+      "s": "10",
+      "f": "11",
+      "h": "10",
+      "A": "11",
+      "receiver_peak": "1",
+      "receiver_peak_time": "11",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "8",
+      "new_label": "L39",
+      "priority": [
+        "11",
+        39
+      ],
+      "queue_size": 28
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L19",
+      "contact": "c24",
+      "s": "11",
+      "f": "12",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "1",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "8",
+      "new_label": "L40",
+      "priority": [
+        "12",
+        40
+      ],
+      "queue_size": 29
+    },
+    {
+      "event": "POP",
+      "label": "L25",
+      "node": "B",
+      "A": "8",
+      "queue_size": 28
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L25",
+      "contact": "c09",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L25",
+      "contact": "c10",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L25",
+      "contact": "c24",
+      "s": "10",
+      "f": "11",
+      "h": "10",
+      "A": "11",
+      "receiver_peak": "1",
+      "receiver_peak_time": "11",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "8",
+      "new_label": "L41",
+      "priority": [
+        "11",
+        41
+      ],
+      "queue_size": 29
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L25",
+      "contact": "c24",
+      "s": "11",
+      "f": "12",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "1",
+      "receiver_peak_time": "12",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "8",
+      "new_label": "L42",
+      "priority": [
+        "12",
+        42
+      ],
+      "queue_size": 30
+    },
+    {
+      "event": "POP",
+      "label": "L16",
+      "node": "H",
+      "A": "9",
+      "queue_size": 29
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L16",
+      "contact": "c18",
+      "s": "10",
+      "f": "11",
+      "h": "10",
+      "A": "11",
+      "receiver_peak": "3",
+      "receiver_peak_time": "11",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 29
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L16",
+      "contact": "c18",
+      "s": "11",
+      "f": "12",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "2",
+      "receiver_peak_time": "11",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "9",
+      "new_label": "L43",
+      "priority": [
+        "12",
+        43
+      ],
+      "queue_size": 30
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L16",
+      "contact": "c30",
+      "s": "17",
+      "f": "18",
+      "h": "17",
+      "A": "18",
+      "receiver_peak": "1",
+      "receiver_peak_time": "18",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "9",
+      "new_label": "L44",
+      "priority": [
+        "18",
+        44
+      ],
+      "queue_size": 31
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L16",
+      "contact": "c30",
+      "s": "18",
+      "f": "19",
+      "h": "18",
+      "A": "19",
+      "receiver_peak": "1",
+      "receiver_peak_time": "19",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "9",
+      "new_label": "L45",
+      "priority": [
+        "19",
+        45
+      ],
+      "queue_size": 32
+    },
+    {
+      "event": "POP",
+      "label": "L23",
+      "node": "H",
+      "A": "9",
+      "queue_size": 31
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L23",
+      "contact": "c18",
+      "s": "10",
+      "f": "11",
+      "h": "10",
+      "A": "11",
+      "receiver_peak": "3",
+      "receiver_peak_time": "11",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 31
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L23",
+      "contact": "c18",
+      "s": "11",
+      "f": "12",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "2",
+      "receiver_peak_time": "11",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "9",
+      "new_label": "L46",
+      "priority": [
+        "12",
+        46
+      ],
+      "queue_size": 32
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L23",
+      "contact": "c30",
+      "s": "17",
+      "f": "18",
+      "h": "17",
+      "A": "18",
+      "receiver_peak": "1",
+      "receiver_peak_time": "18",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "9",
+      "new_label": "L47",
+      "priority": [
+        "18",
+        47
+      ],
+      "queue_size": 33
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L23",
+      "contact": "c30",
+      "s": "18",
+      "f": "19",
+      "h": "18",
+      "A": "19",
+      "receiver_peak": "1",
+      "receiver_peak_time": "19",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "9",
+      "new_label": "L48",
+      "priority": [
+        "19",
+        48
+      ],
+      "queue_size": 34
+    },
+    {
+      "event": "POP",
+      "label": "L6",
+      "node": "D",
+      "A": "10",
+      "queue_size": 33
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L6",
+      "contact": "c13",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L6",
+      "contact": "c19",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L6",
+      "contact": "c26",
+      "s": "12",
+      "f": "13",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "1",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "10",
+      "new_label": "L49",
+      "priority": [
+        "13",
+        49
+      ],
+      "queue_size": 34
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L6",
+      "contact": "c26",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "10",
+      "new_label": "L50",
+      "priority": [
+        "14",
+        50
+      ],
+      "queue_size": 35
+    },
+    {
+      "event": "POP",
+      "label": "L17",
+      "node": "H",
+      "A": "10",
+      "queue_size": 34
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L17",
+      "contact": "c18",
+      "s": "10",
+      "f": "11",
+      "h": "10",
+      "A": "11",
+      "receiver_peak": "3",
+      "receiver_peak_time": "11",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 34
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L17",
+      "contact": "c18",
+      "s": "11",
+      "f": "12",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "2",
+      "receiver_peak_time": "11",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "10",
+      "new_label": "L51",
+      "priority": [
+        "12",
+        51
+      ],
+      "queue_size": 35
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L17",
+      "contact": "c30",
+      "s": "17",
+      "f": "18",
+      "h": "17",
+      "A": "18",
+      "receiver_peak": "1",
+      "receiver_peak_time": "18",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "10",
+      "new_label": "L52",
+      "priority": [
+        "18",
+        52
+      ],
+      "queue_size": 36
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L17",
+      "contact": "c30",
+      "s": "18",
+      "f": "19",
+      "h": "18",
+      "A": "19",
+      "receiver_peak": "1",
+      "receiver_peak_time": "19",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "10",
+      "new_label": "L53",
+      "priority": [
+        "19",
+        53
+      ],
+      "queue_size": 37
+    },
+    {
+      "event": "POP",
+      "label": "L24",
+      "node": "H",
+      "A": "10",
+      "queue_size": 36
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L24",
+      "contact": "c18",
+      "s": "10",
+      "f": "11",
+      "h": "10",
+      "A": "11",
+      "receiver_peak": "3",
+      "receiver_peak_time": "11",
+      "reason": "CONTACT_BUSY",
+      "queue_size": 36
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L24",
+      "contact": "c18",
+      "s": "11",
+      "f": "12",
+      "h": "11",
+      "A": "12",
+      "receiver_peak": "2",
+      "receiver_peak_time": "11",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "10",
+      "new_label": "L54",
+      "priority": [
+        "12",
+        54
+      ],
+      "queue_size": 37
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L24",
+      "contact": "c30",
+      "s": "17",
+      "f": "18",
+      "h": "17",
+      "A": "18",
+      "receiver_peak": "1",
+      "receiver_peak_time": "18",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "10",
+      "new_label": "L55",
+      "priority": [
+        "18",
+        55
+      ],
+      "queue_size": 38
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L24",
+      "contact": "c30",
+      "s": "18",
+      "f": "19",
+      "h": "18",
+      "A": "19",
+      "receiver_peak": "1",
+      "receiver_peak_time": "19",
+      "reason": "PASS",
+      "sender_peak": "2",
+      "sender_peak_time": "10",
+      "new_label": "L56",
+      "priority": [
+        "19",
+        56
+      ],
+      "queue_size": 39
+    },
+    {
+      "event": "POP",
+      "label": "L29",
+      "node": "D",
+      "A": "10",
+      "queue_size": 38
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L29",
+      "contact": "c13",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L29",
+      "contact": "c19",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L29",
+      "contact": "c26",
+      "s": "12",
+      "f": "13",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "1",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "10",
+      "new_label": "L57",
+      "priority": [
+        "13",
+        57
+      ],
+      "queue_size": 39
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L29",
+      "contact": "c26",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "10",
+      "new_label": "L58",
+      "priority": [
+        "14",
+        58
+      ],
+      "queue_size": 40
+    },
+    {
+      "event": "POP",
+      "label": "L31",
+      "node": "D",
+      "A": "10",
+      "queue_size": 39
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L31",
+      "contact": "c13",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L31",
+      "contact": "c19",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L31",
+      "contact": "c26",
+      "s": "12",
+      "f": "13",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "1",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "10",
+      "new_label": "L59",
+      "priority": [
+        "13",
+        59
+      ],
+      "queue_size": 40
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L31",
+      "contact": "c26",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "10",
+      "new_label": "L60",
+      "priority": [
+        "14",
+        60
+      ],
+      "queue_size": 41
+    },
+    {
+      "event": "POP",
+      "label": "L35",
+      "node": "D",
+      "A": "10",
+      "queue_size": 40
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L35",
+      "contact": "c13",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L35",
+      "contact": "c19",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L35",
+      "contact": "c26",
+      "s": "12",
+      "f": "13",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "1",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "10",
+      "new_label": "L61",
+      "priority": [
+        "13",
+        61
+      ],
+      "queue_size": 41
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L35",
+      "contact": "c26",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "10",
+      "new_label": "L62",
+      "priority": [
+        "14",
+        62
+      ],
+      "queue_size": 42
+    },
+    {
+      "event": "POP",
+      "label": "L37",
+      "node": "D",
+      "A": "10",
+      "queue_size": 41
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L37",
+      "contact": "c13",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L37",
+      "contact": "c19",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L37",
+      "contact": "c26",
+      "s": "12",
+      "f": "13",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "1",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "10",
+      "new_label": "L63",
+      "priority": [
+        "13",
+        63
+      ],
+      "queue_size": 42
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L37",
+      "contact": "c26",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "10",
+      "new_label": "L64",
+      "priority": [
+        "14",
+        64
+      ],
+      "queue_size": 43
+    },
+    {
+      "event": "POP",
+      "label": "L7",
+      "node": "D",
+      "A": "11",
+      "queue_size": 42
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L7",
+      "contact": "c13",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L7",
+      "contact": "c19",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L7",
+      "contact": "c26",
+      "s": "12",
+      "f": "13",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "1",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L65",
+      "priority": [
+        "13",
+        65
+      ],
+      "queue_size": 43
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L7",
+      "contact": "c26",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L66",
+      "priority": [
+        "14",
+        66
+      ],
+      "queue_size": 44
+    },
+    {
+      "event": "POP",
+      "label": "L30",
+      "node": "D",
+      "A": "11",
+      "queue_size": 43
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L30",
+      "contact": "c13",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L30",
+      "contact": "c19",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L30",
+      "contact": "c26",
+      "s": "12",
+      "f": "13",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "1",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L67",
+      "priority": [
+        "13",
+        67
+      ],
+      "queue_size": 44
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L30",
+      "contact": "c26",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L68",
+      "priority": [
+        "14",
+        68
+      ],
+      "queue_size": 45
+    },
+    {
+      "event": "POP",
+      "label": "L32",
+      "node": "D",
+      "A": "11",
+      "queue_size": 44
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L32",
+      "contact": "c13",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L32",
+      "contact": "c19",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L32",
+      "contact": "c26",
+      "s": "12",
+      "f": "13",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "1",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L69",
+      "priority": [
+        "13",
+        69
+      ],
+      "queue_size": 45
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L32",
+      "contact": "c26",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L70",
+      "priority": [
+        "14",
+        70
+      ],
+      "queue_size": 46
+    },
+    {
+      "event": "POP",
+      "label": "L33",
+      "node": "E",
+      "A": "11",
+      "queue_size": 45
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L33",
+      "contact": "c14",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L33",
+      "contact": "c15",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L33",
+      "contact": "c20",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L33",
+      "contact": "c27",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L71",
+      "priority": [
+        "14",
+        71
+      ],
+      "queue_size": 46
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L33",
+      "contact": "c27",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "1",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L72",
+      "priority": [
+        "15",
+        72
+      ],
+      "queue_size": 47
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L33",
+      "contact": "c32",
+      "s": "14",
+      "f": "15",
+      "h": "16",
+      "A": "17",
+      "receiver_peak": "1",
+      "receiver_peak_time": "17",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L73",
+      "priority": [
+        "17",
+        73
+      ],
+      "queue_size": 48
+    },
+    {
+      "event": "POP",
+      "label": "L36",
+      "node": "D",
+      "A": "11",
+      "queue_size": 47
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L36",
+      "contact": "c13",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L36",
+      "contact": "c19",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L36",
+      "contact": "c26",
+      "s": "12",
+      "f": "13",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "1",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L74",
+      "priority": [
+        "13",
+        74
+      ],
+      "queue_size": 48
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L36",
+      "contact": "c26",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L75",
+      "priority": [
+        "14",
+        75
+      ],
+      "queue_size": 49
+    },
+    {
+      "event": "POP",
+      "label": "L38",
+      "node": "D",
+      "A": "11",
+      "queue_size": 48
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L38",
+      "contact": "c13",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L38",
+      "contact": "c19",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L38",
+      "contact": "c26",
+      "s": "12",
+      "f": "13",
+      "h": "12",
+      "A": "13",
+      "receiver_peak": "1",
+      "receiver_peak_time": "13",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L76",
+      "priority": [
+        "13",
+        76
+      ],
+      "queue_size": 49
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L38",
+      "contact": "c26",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L77",
+      "priority": [
+        "14",
+        77
+      ],
+      "queue_size": 50
+    },
+    {
+      "event": "POP",
+      "label": "L39",
+      "node": "E",
+      "A": "11",
+      "queue_size": 49
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L39",
+      "contact": "c14",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L39",
+      "contact": "c15",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L39",
+      "contact": "c20",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L39",
+      "contact": "c27",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L78",
+      "priority": [
+        "14",
+        78
+      ],
+      "queue_size": 50
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L39",
+      "contact": "c27",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "1",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L79",
+      "priority": [
+        "15",
+        79
+      ],
+      "queue_size": 51
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L39",
+      "contact": "c32",
+      "s": "14",
+      "f": "15",
+      "h": "16",
+      "A": "17",
+      "receiver_peak": "1",
+      "receiver_peak_time": "17",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L80",
+      "priority": [
+        "17",
+        80
+      ],
+      "queue_size": 52
+    },
+    {
+      "event": "POP",
+      "label": "L41",
+      "node": "E",
+      "A": "11",
+      "queue_size": 51
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L41",
+      "contact": "c14",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L41",
+      "contact": "c15",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L41",
+      "contact": "c20",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L41",
+      "contact": "c27",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L81",
+      "priority": [
+        "14",
+        81
+      ],
+      "queue_size": 52
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L41",
+      "contact": "c27",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "1",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L82",
+      "priority": [
+        "15",
+        82
+      ],
+      "queue_size": 53
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L41",
+      "contact": "c32",
+      "s": "14",
+      "f": "15",
+      "h": "16",
+      "A": "17",
+      "receiver_peak": "1",
+      "receiver_peak_time": "17",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "11",
+      "new_label": "L83",
+      "priority": [
+        "17",
+        83
+      ],
+      "queue_size": 54
+    },
+    {
+      "event": "POP",
+      "label": "L34",
+      "node": "E",
+      "A": "12",
+      "queue_size": 53
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L34",
+      "contact": "c14",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L34",
+      "contact": "c15",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L34",
+      "contact": "c20",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L34",
+      "contact": "c27",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "12",
+      "new_label": "L84",
+      "priority": [
+        "14",
+        84
+      ],
+      "queue_size": 54
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L34",
+      "contact": "c27",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "1",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "12",
+      "new_label": "L85",
+      "priority": [
+        "15",
+        85
+      ],
+      "queue_size": 55
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L34",
+      "contact": "c32",
+      "s": "14",
+      "f": "15",
+      "h": "16",
+      "A": "17",
+      "receiver_peak": "1",
+      "receiver_peak_time": "17",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "12",
+      "new_label": "L86",
+      "priority": [
+        "17",
+        86
+      ],
+      "queue_size": 56
+    },
+    {
+      "event": "POP",
+      "label": "L40",
+      "node": "E",
+      "A": "12",
+      "queue_size": 55
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L40",
+      "contact": "c14",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L40",
+      "contact": "c15",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L40",
+      "contact": "c20",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L40",
+      "contact": "c27",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "12",
+      "new_label": "L87",
+      "priority": [
+        "14",
+        87
+      ],
+      "queue_size": 56
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L40",
+      "contact": "c27",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "1",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "12",
+      "new_label": "L88",
+      "priority": [
+        "15",
+        88
+      ],
+      "queue_size": 57
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L40",
+      "contact": "c32",
+      "s": "14",
+      "f": "15",
+      "h": "16",
+      "A": "17",
+      "receiver_peak": "1",
+      "receiver_peak_time": "17",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "12",
+      "new_label": "L89",
+      "priority": [
+        "17",
+        89
+      ],
+      "queue_size": 58
+    },
+    {
+      "event": "POP",
+      "label": "L42",
+      "node": "E",
+      "A": "12",
+      "queue_size": 57
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L42",
+      "contact": "c14",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L42",
+      "contact": "c15",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L42",
+      "contact": "c20",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L42",
+      "contact": "c27",
+      "s": "13",
+      "f": "14",
+      "h": "13",
+      "A": "14",
+      "receiver_peak": "1",
+      "receiver_peak_time": "14",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "12",
+      "new_label": "L90",
+      "priority": [
+        "14",
+        90
+      ],
+      "queue_size": 58
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L42",
+      "contact": "c27",
+      "s": "14",
+      "f": "15",
+      "h": "14",
+      "A": "15",
+      "receiver_peak": "1",
+      "receiver_peak_time": "15",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "12",
+      "new_label": "L91",
+      "priority": [
+        "15",
+        91
+      ],
+      "queue_size": 59
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L42",
+      "contact": "c32",
+      "s": "14",
+      "f": "15",
+      "h": "16",
+      "A": "17",
+      "receiver_peak": "1",
+      "receiver_peak_time": "17",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "12",
+      "new_label": "L92",
+      "priority": [
+        "17",
+        92
+      ],
+      "queue_size": 60
+    },
+    {
+      "event": "POP",
+      "label": "L43",
+      "node": "T",
+      "A": "12",
+      "queue_size": 59
+    },
+    {
+      "event": "GOAL",
+      "label": "L43",
+      "A": "12"
+    }
+  ],
+  "labels_created": 93,
+  "labels_expanded": 33,
+  "independent": {
+    "arrival": "12",
+    "hops": [
+      [
+        "c01",
+        "1"
+      ],
+      [
+        "c08",
+        "6"
+      ],
+      [
+        "c15",
+        "9"
+      ],
+      [
+        "c18",
+        "11"
+      ]
+    ],
+    "paths_considered": null,
+    "schedules_considered": 658,
+    "feasible_schedules": 100,
+    "walk_prefixes_considered": 1050,
+    "rejection_counts": {
+      "BUFFER": 508,
+      "QUOTA": 46,
+      "CONTACT_BUSY": 4
+    },
+    "method": "complete enumeration of temporally feasible walks"
+  },
+  "full_schedule_check": {
+    "feasible": true,
+    "arrival": "12",
+    "usage": {
+      "c01": "1",
+      "c08": "1",
+      "c15": "1",
+      "c18": "1"
+    },
+    "peaks": {
+      "S1": {
+        "value": "2",
+        "time": "1"
+      },
+      "S2": {
+        "value": "1",
+        "time": "0"
+      },
+      "S3": {
+        "value": "1",
+        "time": "0"
+      },
+      "A": {
+        "value": "1",
+        "time": "2"
+      },
+      "B": {
+        "value": "2",
+        "time": "2"
+      },
+      "C": {
+        "value": "1",
+        "time": "2"
+      },
+      "D": {
+        "value": "1",
+        "time": "5"
+      },
+      "E": {
+        "value": "2",
+        "time": "6"
+      },
+      "F": {
+        "value": "1",
+        "time": "4"
+      },
+      "G": {
+        "value": "2",
+        "time": "8"
+      },
+      "H": {
+        "value": "2",
+        "time": "9"
+      },
+      "T": {
+        "value": "2",
+        "time": "11"
+      }
+    }
+  },
+  "quota_before": {
+    "c01": "2",
+    "c02": "1",
+    "c03": "2",
+    "c04": "1",
+    "c05": "1",
+    "c06": "2",
+    "c07": "2",
+    "c08": "2",
+    "c09": "1",
+    "c10": "1",
+    "c11": "2",
+    "c12": "1",
+    "c13": "1",
+    "c14": "1",
+    "c15": "2",
+    "c16": "1",
+    "c17": "0",
+    "c18": "1",
+    "c19": "2",
+    "c20": "2",
+    "c21": "2",
+    "c22": "2",
+    "c23": "2",
+    "c24": "2",
+    "c25": "2",
+    "c26": "2",
+    "c27": "2",
+    "c28": "2",
+    "c29": "2",
+    "c30": "2",
+    "c31": "1/2",
+    "c32": "1"
+  },
+  "quota_after": {
+    "c01": "1",
+    "c02": "1",
+    "c03": "2",
+    "c04": "1",
+    "c05": "1",
+    "c06": "2",
+    "c07": "2",
+    "c08": "1",
+    "c09": "1",
+    "c10": "1",
+    "c11": "2",
+    "c12": "1",
+    "c13": "1",
+    "c14": "1",
+    "c15": "1",
+    "c16": "1",
+    "c17": "0",
+    "c18": "0",
+    "c19": "2",
+    "c20": "2",
+    "c21": "2",
+    "c22": "2",
+    "c23": "2",
+    "c24": "2",
+    "c25": "2",
+    "c26": "2",
+    "c27": "2",
+    "c28": "2",
+    "c29": "2",
+    "c30": "2",
+    "c31": "1/2",
+    "c32": "1"
+  }
+}

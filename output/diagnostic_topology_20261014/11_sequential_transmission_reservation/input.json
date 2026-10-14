@@ -1,0 +1,38 @@
+{
+  "name": "11_sequential_transmission_reservation",
+  "delta": "1",
+  "horizon": "6",
+  "buffers": {
+    "A": "2",
+    "B": "2"
+  },
+  "background": {},
+  "contacts": [
+    {
+      "id": "ab",
+      "u": "A",
+      "v": "B",
+      "start": "0",
+      "end": "4",
+      "rate": "1",
+      "delay": "0",
+      "quota": "4"
+    }
+  ],
+  "bundles": [
+    {
+      "id": "b1",
+      "source": "A",
+      "dest": "B",
+      "g": "0",
+      "size": "1"
+    },
+    {
+      "id": "b2",
+      "source": "A",
+      "dest": "B",
+      "g": "0",
+      "size": "1"
+    }
+  ]
+}

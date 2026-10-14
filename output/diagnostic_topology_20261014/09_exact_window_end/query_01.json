@@ -1,0 +1,113 @@
+{
+  "index": 1,
+  "bundle": {
+    "id": "b1",
+    "source": "A",
+    "dest": "B",
+    "g": "0",
+    "size": "1"
+  },
+  "status": "ACCEPTED",
+  "arrival": "1",
+  "hops": [
+    [
+      "ab",
+      "0"
+    ]
+  ],
+  "labels": {
+    "L0": {
+      "c": null,
+      "A": "0",
+      "s": null,
+      "pred": null
+    },
+    "L1": {
+      "c": "ab",
+      "A": "1",
+      "s": "0",
+      "pred": "L0"
+    }
+  },
+  "trace": [
+    {
+      "event": "POP",
+      "label": "L0",
+      "node": "A",
+      "A": "0",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "ab",
+      "s": "0",
+      "f": "1",
+      "h": "0",
+      "A": "1",
+      "receiver_peak": "1",
+      "receiver_peak_time": "1",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "0",
+      "new_label": "L1",
+      "priority": [
+        "1",
+        1
+      ],
+      "queue_size": 1
+    },
+    {
+      "event": "POP",
+      "label": "L1",
+      "node": "B",
+      "A": "1",
+      "queue_size": 0
+    },
+    {
+      "event": "GOAL",
+      "label": "L1",
+      "A": "1"
+    }
+  ],
+  "labels_created": 2,
+  "labels_expanded": 1,
+  "independent": {
+    "arrival": "1",
+    "hops": [
+      [
+        "ab",
+        "0"
+      ]
+    ],
+    "paths_considered": null,
+    "schedules_considered": 1,
+    "feasible_schedules": 1,
+    "walk_prefixes_considered": 2,
+    "rejection_counts": {},
+    "method": "complete enumeration of temporally feasible walks"
+  },
+  "full_schedule_check": {
+    "feasible": true,
+    "arrival": "1",
+    "usage": {
+      "ab": "1"
+    },
+    "peaks": {
+      "A": {
+        "value": "1",
+        "time": "0"
+      },
+      "B": {
+        "value": "1",
+        "time": "1"
+      }
+    }
+  },
+  "quota_before": {
+    "ab": "1"
+  },
+  "quota_after": {
+    "ab": "0"
+  }
+}

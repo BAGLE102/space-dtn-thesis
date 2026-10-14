@@ -1,0 +1,6 @@
+﻿bundle,id,c,A,s,pred
+b1,L0,,0,,
+b1,L1,ab,1,0,L0
+b1,L2,ab,2,1,L0
+b1,L3,ab,3,2,L0
+b1,L4,ab,4,3,L0

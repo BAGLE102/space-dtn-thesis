@@ -1,0 +1,13 @@
+﻿after_bundle,node,time,occupancy,capacity
+INITIAL,A,0,0,1
+INITIAL,A,1,0,1
+INITIAL,A,6,0,1
+INITIAL,B,0,1,1
+INITIAL,B,1,0,1
+INITIAL,B,6,0,1
+b1,A,0,1,1
+b1,A,1,0,1
+b1,A,6,0,1
+b1,B,0,1,1
+b1,B,1,1,1
+b1,B,6,0,1

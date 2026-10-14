@@ -1,0 +1,69 @@
+{
+  "index": 1,
+  "bundle": {
+    "id": "b1",
+    "source": "A",
+    "dest": "B",
+    "g": "0",
+    "size": "1"
+  },
+  "status": "NO_ROUTE_ON_GRID",
+  "arrival": null,
+  "hops": [],
+  "labels": {
+    "L0": {
+      "c": null,
+      "A": "0",
+      "s": null,
+      "pred": null
+    }
+  },
+  "trace": [
+    {
+      "event": "POP",
+      "label": "L0",
+      "node": "A",
+      "A": "0",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "ab",
+      "s": "3",
+      "f": "4",
+      "h": "3",
+      "A": "4",
+      "receiver_peak": "1",
+      "receiver_peak_time": "4",
+      "reason": "SENDER_BUFFER",
+      "sender_peak": "2",
+      "sender_peak_time": "2",
+      "queue_size": 0
+    },
+    {
+      "event": "EXHAUSTED"
+    }
+  ],
+  "labels_created": 1,
+  "labels_expanded": 1,
+  "independent": {
+    "arrival": null,
+    "hops": [],
+    "paths_considered": null,
+    "schedules_considered": 1,
+    "feasible_schedules": 0,
+    "walk_prefixes_considered": 2,
+    "rejection_counts": {
+      "BUFFER": 1
+    },
+    "method": "complete enumeration of temporally feasible walks"
+  },
+  "full_schedule_check": null,
+  "quota_before": {
+    "ab": "1"
+  },
+  "quota_after": {
+    "ab": "1"
+  }
+}

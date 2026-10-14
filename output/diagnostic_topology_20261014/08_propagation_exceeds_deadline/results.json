@@ -1,0 +1,80 @@
+{
+  "name": "08_propagation_exceeds_deadline",
+  "model": "PPT_walk_grid_calendar_validation",
+  "dominance": false,
+  "physical_simulation": false,
+  "reference_method": "solve_temporal",
+  "same_contact_one_bundle_at_a_time": true,
+  "records": [
+    {
+      "index": 1,
+      "bundle": {
+        "id": "b1",
+        "source": "A",
+        "dest": "B",
+        "g": "0",
+        "size": "1"
+      },
+      "status": "NO_ROUTE_ON_GRID",
+      "arrival": null,
+      "hops": [],
+      "labels": {
+        "L0": {
+          "c": null,
+          "A": "0",
+          "s": null,
+          "pred": null
+        }
+      },
+      "trace": [
+        {
+          "event": "POP",
+          "label": "L0",
+          "node": "A",
+          "A": "0",
+          "queue_size": 0
+        },
+        {
+          "event": "CANDIDATE",
+          "label": "L0",
+          "contact": "ab",
+          "s": "0",
+          "f": "1",
+          "h": "2",
+          "A": "3",
+          "receiver_peak": "1",
+          "receiver_peak_time": "3",
+          "reason": "DEADLINE",
+          "queue_size": 0
+        },
+        {
+          "event": "EXHAUSTED"
+        }
+      ],
+      "labels_created": 1,
+      "labels_expanded": 1,
+      "independent": {
+        "arrival": null,
+        "hops": [],
+        "paths_considered": null,
+        "schedules_considered": 0,
+        "feasible_schedules": 0,
+        "walk_prefixes_considered": 1,
+        "rejection_counts": {},
+        "method": "complete enumeration of temporally feasible walks"
+      },
+      "full_schedule_check": null,
+      "quota_before": {
+        "ab": "1"
+      },
+      "quota_after": {
+        "ab": "1"
+      }
+    }
+  ],
+  "quota": {
+    "ab": "1"
+  },
+  "background": {},
+  "calendar": {}
+}

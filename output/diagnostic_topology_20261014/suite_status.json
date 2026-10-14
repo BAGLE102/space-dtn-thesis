@@ -1,0 +1,102 @@
+{
+  "status": "COMPLETE",
+  "completed": [
+    {
+      "case": "01_normal",
+      "arrivals": [
+        "1"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "case": "02_capacity_insufficient",
+      "arrivals": [
+        null
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "case": "03_exact_capacity",
+      "arrivals": [
+        "1"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "case": "04_receiver_busy_then_free",
+      "arrivals": [
+        "3"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "case": "05_receiver_interior_peak",
+      "arrivals": [
+        "2"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "case": "06_receive_while_previous_drains",
+      "arrivals": [
+        "1"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "case": "07_sender_waiting_overflow",
+      "arrivals": [
+        null
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "case": "08_propagation_exceeds_deadline",
+      "arrivals": [
+        null
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "case": "09_exact_window_end",
+      "arrivals": [
+        "1"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "case": "10_bundle_exceeds_window",
+      "arrivals": [
+        null
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "case": "11_sequential_transmission_reservation",
+      "arrivals": [
+        "1",
+        "2"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "case": "12_late_arrival_needed",
+      "arrivals": [
+        "4"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "case": "synthetic_12nodes_32contacts_5bundles",
+      "status": "VERIFIED",
+      "arrivals": [
+        "11",
+        "11",
+        "12",
+        "12",
+        null
+      ]
+    }
+  ],
+  "scope": "finite-grid current PPT verification; no dynamic-contact implementation"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "VALIDATED_SMALL_CASE",
+  "earliest_arrival_matches_exhaustive": true,
+  "dominance": false,
+  "general_correctness_proven": false,
+  "performance_comparison_run": false
+}

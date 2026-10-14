@@ -1,0 +1,244 @@
+{
+  "name": "05_receiver_interior_peak",
+  "model": "PPT_walk_grid_calendar_validation",
+  "dominance": false,
+  "physical_simulation": false,
+  "reference_method": "solve_temporal",
+  "same_contact_one_bundle_at_a_time": true,
+  "records": [
+    {
+      "index": 1,
+      "bundle": {
+        "id": "b1",
+        "source": "A",
+        "dest": "B",
+        "g": "0",
+        "size": "1"
+      },
+      "status": "ACCEPTED",
+      "arrival": "2",
+      "hops": [
+        [
+          "ab",
+          "1"
+        ]
+      ],
+      "labels": {
+        "L0": {
+          "c": null,
+          "A": "0",
+          "s": null,
+          "pred": null
+        },
+        "L1": {
+          "c": "ab",
+          "A": "2",
+          "s": "1",
+          "pred": "L0"
+        },
+        "L2": {
+          "c": "ab",
+          "A": "3",
+          "s": "2",
+          "pred": "L0"
+        },
+        "L3": {
+          "c": "ab",
+          "A": "4",
+          "s": "3",
+          "pred": "L0"
+        }
+      },
+      "trace": [
+        {
+          "event": "POP",
+          "label": "L0",
+          "node": "A",
+          "A": "0",
+          "queue_size": 0
+        },
+        {
+          "event": "CANDIDATE",
+          "label": "L0",
+          "contact": "ab",
+          "s": "0",
+          "f": "1",
+          "h": "0",
+          "A": "1",
+          "receiver_peak": "3/2",
+          "receiver_peak_time": "1/2",
+          "reason": "RECEIVER_BUFFER",
+          "queue_size": 0
+        },
+        {
+          "event": "CANDIDATE",
+          "label": "L0",
+          "contact": "ab",
+          "s": "1",
+          "f": "2",
+          "h": "1",
+          "A": "2",
+          "receiver_peak": "1",
+          "receiver_peak_time": "2",
+          "reason": "PASS",
+          "sender_peak": "1",
+          "sender_peak_time": "0",
+          "new_label": "L1",
+          "priority": [
+            "2",
+            1
+          ],
+          "queue_size": 1
+        },
+        {
+          "event": "CANDIDATE",
+          "label": "L0",
+          "contact": "ab",
+          "s": "2",
+          "f": "3",
+          "h": "2",
+          "A": "3",
+          "receiver_peak": "1",
+          "receiver_peak_time": "3",
+          "reason": "PASS",
+          "sender_peak": "1",
+          "sender_peak_time": "0",
+          "new_label": "L2",
+          "priority": [
+            "3",
+            2
+          ],
+          "queue_size": 2
+        },
+        {
+          "event": "CANDIDATE",
+          "label": "L0",
+          "contact": "ab",
+          "s": "3",
+          "f": "4",
+          "h": "3",
+          "A": "4",
+          "receiver_peak": "1",
+          "receiver_peak_time": "4",
+          "reason": "PASS",
+          "sender_peak": "1",
+          "sender_peak_time": "0",
+          "new_label": "L3",
+          "priority": [
+            "4",
+            3
+          ],
+          "queue_size": 3
+        },
+        {
+          "event": "POP",
+          "label": "L1",
+          "node": "B",
+          "A": "2",
+          "queue_size": 2
+        },
+        {
+          "event": "GOAL",
+          "label": "L1",
+          "A": "2"
+        }
+      ],
+      "labels_created": 4,
+      "labels_expanded": 1,
+      "independent": {
+        "arrival": "2",
+        "hops": [
+          [
+            "ab",
+            "1"
+          ]
+        ],
+        "paths_considered": null,
+        "schedules_considered": 4,
+        "feasible_schedules": 3,
+        "walk_prefixes_considered": 5,
+        "rejection_counts": {
+          "BUFFER": 1
+        },
+        "method": "complete enumeration of temporally feasible walks"
+      },
+      "full_schedule_check": {
+        "feasible": true,
+        "arrival": "2",
+        "usage": {
+          "ab": "1"
+        },
+        "peaks": {
+          "A": {
+            "value": "1",
+            "time": "0"
+          },
+          "B": {
+            "value": "1",
+            "time": "1/2"
+          }
+        }
+      },
+      "quota_before": {
+        "ab": "4"
+      },
+      "quota_after": {
+        "ab": "3"
+      }
+    }
+  ],
+  "quota": {
+    "ab": "3"
+  },
+  "background": {
+    "B": [
+      [
+        [
+          "0",
+          "1/2",
+          "0",
+          "1"
+        ],
+        [
+          "1/2",
+          "1",
+          "1",
+          "0"
+        ]
+      ],
+      [
+        [
+          "1",
+          "2",
+          "0",
+          "1"
+        ]
+      ]
+    ],
+    "A": [
+      [
+        [
+          "0",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "2",
+          "1",
+          "0"
+        ]
+      ]
+    ]
+  },
+  "calendar": {
+    "ab": [
+      {
+        "bundle": "b1",
+        "start": "1",
+        "finish": "2"
+      }
+    ]
+  }
+}

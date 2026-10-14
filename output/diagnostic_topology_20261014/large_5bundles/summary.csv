@@ -1,0 +1,6 @@
+﻿index,bundle,source,destination,release,size,status,arrival,delivery_delay,path,contacts,labels_created,labels_expanded,reference_schedules,reference_arrival
+1,b1,S1,T,0,1,ACCEPTED,11,11,S1 → B → E → G → T,c02 → c10 → c14 → c17,589,151,860,11
+2,b2,S2,T,0,1,ACCEPTED,11,11,S2 → C → F → H → T,c04 → c12 → c16 → c18,475,133,776,11
+3,b3,S3,T,0,1,ACCEPTED,12,12,S3 → B → D → G → T,c05 → c09 → c13 → c17,473,147,800,12
+4,b4,S1,T,1,1,ACCEPTED,12,11,S1 → A → E → H → T,c01 → c08 → c15 → c18,93,33,658,12
+5,b5,S2,T,1,2,NO_ROUTE_ON_GRID,,,S2,,1,1,12,

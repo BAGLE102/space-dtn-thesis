@@ -1,0 +1,2 @@
+﻿index,bundle,source,destination,release,size,status,arrival,delivery_delay,path,contacts,labels_created,labels_expanded,reference_schedules,reference_arrival
+1,b1,A,B,0,1,ACCEPTED,2,2,A → B,ab,4,1,4,2

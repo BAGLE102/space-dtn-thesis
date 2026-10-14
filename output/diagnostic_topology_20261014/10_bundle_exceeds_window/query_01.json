@@ -1,0 +1,61 @@
+{
+  "index": 1,
+  "bundle": {
+    "id": "b1",
+    "source": "A",
+    "dest": "B",
+    "g": "0",
+    "size": "2"
+  },
+  "status": "NO_ROUTE_ON_GRID",
+  "arrival": null,
+  "hops": [],
+  "labels": {
+    "L0": {
+      "c": null,
+      "A": "0",
+      "s": null,
+      "pred": null
+    }
+  },
+  "trace": [
+    {
+      "event": "POP",
+      "label": "L0",
+      "node": "A",
+      "A": "0",
+      "queue_size": 0
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L0",
+      "contact": "ab",
+      "reason": "CAPACITY",
+      "used": "0",
+      "requested": "2",
+      "residual": "1"
+    },
+    {
+      "event": "EXHAUSTED"
+    }
+  ],
+  "labels_created": 1,
+  "labels_expanded": 1,
+  "independent": {
+    "arrival": null,
+    "hops": [],
+    "paths_considered": null,
+    "schedules_considered": 0,
+    "feasible_schedules": 0,
+    "walk_prefixes_considered": 1,
+    "rejection_counts": {},
+    "method": "complete enumeration of temporally feasible walks"
+  },
+  "full_schedule_check": null,
+  "quota_before": {
+    "ab": "1"
+  },
+  "quota_after": {
+    "ab": "1"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "index": 5,
+  "bundle": {
+    "id": "b5",
+    "source": "S2",
+    "dest": "T",
+    "g": "1",
+    "size": "2"
+  },
+  "status": "NO_ROUTE_ON_GRID",
+  "arrival": null,
+  "hops": [],
+  "labels": {
+    "L0": {
+      "c": null,
+      "A": "1",
+      "s": null,
+      "pred": null
+    }
+  },
+  "trace": [
+    {
+      "event": "POP",
+      "label": "L0",
+      "node": "S2",
+      "A": "1",
+      "queue_size": 0
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L0",
+      "contact": "c03",
+      "reason": "NO_START_IN_WINDOW"
+    },
+    {
+      "event": "CONTACT_REJECT",
+      "label": "L0",
+      "contact": "c04",
+      "reason": "CAPACITY",
+      "used": "0",
+      "requested": "2",
+      "residual": "1"
+    },
+    {
+      "event": "EXHAUSTED"
+    }
+  ],
+  "labels_created": 1,
+  "labels_expanded": 1,
+  "independent": {
+    "arrival": null,
+    "hops": [],
+    "paths_considered": null,
+    "schedules_considered": 12,
+    "feasible_schedules": 0,
+    "walk_prefixes_considered": 31,
+    "rejection_counts": {
+      "QUOTA": 12
+    },
+    "method": "complete enumeration of temporally feasible walks"
+  },
+  "full_schedule_check": null,
+  "quota_before": {
+    "c01": "1",
+    "c02": "1",
+    "c03": "2",
+    "c04": "1",
+    "c05": "1",
+    "c06": "2",
+    "c07": "2",
+    "c08": "1",
+    "c09": "1",
+    "c10": "1",
+    "c11": "2",
+    "c12": "1",
+    "c13": "1",
+    "c14": "1",
+    "c15": "1",
+    "c16": "1",
+    "c17": "0",
+    "c18": "0",
+    "c19": "2",
+    "c20": "2",
+    "c21": "2",
+    "c22": "2",
+    "c23": "2",
+    "c24": "2",
+    "c25": "2",
+    "c26": "2",
+    "c27": "2",
+    "c28": "2",
+    "c29": "2",
+    "c30": "2",
+    "c31": "1/2",
+    "c32": "1"
+  },
+  "quota_after": {
+    "c01": "1",
+    "c02": "1",
+    "c03": "2",
+    "c04": "1",
+    "c05": "1",
+    "c06": "2",
+    "c07": "2",
+    "c08": "1",
+    "c09": "1",
+    "c10": "1",
+    "c11": "2",
+    "c12": "1",
+    "c13": "1",
+    "c14": "1",
+    "c15": "1",
+    "c16": "1",
+    "c17": "0",
+    "c18": "0",
+    "c19": "2",
+    "c20": "2",
+    "c21": "2",
+    "c22": "2",
+    "c23": "2",
+    "c24": "2",
+    "c25": "2",
+    "c26": "2",
+    "c27": "2",
+    "c28": "2",
+    "c29": "2",
+    "c30": "2",
+    "c31": "1/2",
+    "c32": "1"
+  }
+}

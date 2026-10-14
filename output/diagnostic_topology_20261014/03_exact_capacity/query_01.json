@@ -1,0 +1,191 @@
+{
+  "index": 1,
+  "bundle": {
+    "id": "b1",
+    "source": "A",
+    "dest": "B",
+    "g": "0",
+    "size": "1"
+  },
+  "status": "ACCEPTED",
+  "arrival": "1",
+  "hops": [
+    [
+      "ab",
+      "0"
+    ]
+  ],
+  "labels": {
+    "L0": {
+      "c": null,
+      "A": "0",
+      "s": null,
+      "pred": null
+    },
+    "L1": {
+      "c": "ab",
+      "A": "1",
+      "s": "0",
+      "pred": "L0"
+    },
+    "L2": {
+      "c": "ab",
+      "A": "2",
+      "s": "1",
+      "pred": "L0"
+    },
+    "L3": {
+      "c": "ab",
+      "A": "3",
+      "s": "2",
+      "pred": "L0"
+    },
+    "L4": {
+      "c": "ab",
+      "A": "4",
+      "s": "3",
+      "pred": "L0"
+    }
+  },
+  "trace": [
+    {
+      "event": "POP",
+      "label": "L0",
+      "node": "A",
+      "A": "0",
+      "queue_size": 0
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "ab",
+      "s": "0",
+      "f": "1",
+      "h": "0",
+      "A": "1",
+      "receiver_peak": "1",
+      "receiver_peak_time": "1",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "0",
+      "new_label": "L1",
+      "priority": [
+        "1",
+        1
+      ],
+      "queue_size": 1
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "ab",
+      "s": "1",
+      "f": "2",
+      "h": "1",
+      "A": "2",
+      "receiver_peak": "1",
+      "receiver_peak_time": "2",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "0",
+      "new_label": "L2",
+      "priority": [
+        "2",
+        2
+      ],
+      "queue_size": 2
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "ab",
+      "s": "2",
+      "f": "3",
+      "h": "2",
+      "A": "3",
+      "receiver_peak": "1",
+      "receiver_peak_time": "3",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "0",
+      "new_label": "L3",
+      "priority": [
+        "3",
+        3
+      ],
+      "queue_size": 3
+    },
+    {
+      "event": "CANDIDATE",
+      "label": "L0",
+      "contact": "ab",
+      "s": "3",
+      "f": "4",
+      "h": "3",
+      "A": "4",
+      "receiver_peak": "1",
+      "receiver_peak_time": "4",
+      "reason": "PASS",
+      "sender_peak": "1",
+      "sender_peak_time": "0",
+      "new_label": "L4",
+      "priority": [
+        "4",
+        4
+      ],
+      "queue_size": 4
+    },
+    {
+      "event": "POP",
+      "label": "L1",
+      "node": "B",
+      "A": "1",
+      "queue_size": 3
+    },
+    {
+      "event": "GOAL",
+      "label": "L1",
+      "A": "1"
+    }
+  ],
+  "labels_created": 5,
+  "labels_expanded": 1,
+  "independent": {
+    "arrival": "1",
+    "hops": [
+      [
+        "ab",
+        "0"
+      ]
+    ],
+    "paths_considered": null,
+    "schedules_considered": 4,
+    "feasible_schedules": 4,
+    "walk_prefixes_considered": 5,
+    "rejection_counts": {},
+    "method": "complete enumeration of temporally feasible walks"
+  },
+  "full_schedule_check": {
+    "feasible": true,
+    "arrival": "1",
+    "usage": {
+      "ab": "1"
+    },
+    "peaks": {
+      "A": {
+        "value": "1",
+        "time": "0"
+      },
+      "B": {
+        "value": "1",
+        "time": "1"
+      }
+    }
+  },
+  "quota_before": {
+    "ab": "1"
+  },
+  "quota_after": {
+    "ab": "0"
+  }
+}

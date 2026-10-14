@@ -1,0 +1,43 @@
+{
+  "bundles": 5,
+  "accepted": 4,
+  "per_bundle_reference_check": [
+    {
+      "bundle": "b1",
+      "feasibility_matches": true,
+      "arrival_error_s": "0",
+      "arrival_error_pct": "0"
+    },
+    {
+      "bundle": "b2",
+      "feasibility_matches": true,
+      "arrival_error_s": "0",
+      "arrival_error_pct": "0"
+    },
+    {
+      "bundle": "b3",
+      "feasibility_matches": true,
+      "arrival_error_s": "0",
+      "arrival_error_pct": "0"
+    },
+    {
+      "bundle": "b4",
+      "feasibility_matches": true,
+      "arrival_error_s": "0",
+      "arrival_error_pct": "0"
+    },
+    {
+      "bundle": "b5",
+      "feasibility_matches": true,
+      "arrival_error_s": null,
+      "arrival_error_pct": null
+    }
+  ],
+  "delivery_delay_s": {
+    "mean": 11.25,
+    "minimum": 11.0,
+    "maximum": 12.0,
+    "population_std": 0.4330127018922193
+  },
+  "scope": "Delay statistics include accepted bundles only; no physical ideal claimed"
+}

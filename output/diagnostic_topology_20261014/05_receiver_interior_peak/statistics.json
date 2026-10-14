@@ -1,0 +1,19 @@
+{
+  "bundles": 1,
+  "accepted": 1,
+  "per_bundle_reference_check": [
+    {
+      "bundle": "b1",
+      "feasibility_matches": true,
+      "arrival_error_s": "0",
+      "arrival_error_pct": "0"
+    }
+  ],
+  "delivery_delay_s": {
+    "mean": 2.0,
+    "minimum": 2.0,
+    "maximum": 2.0,
+    "population_std": 0.0
+  },
+  "scope": "Delay statistics include accepted bundles only; no physical ideal claimed"
+}

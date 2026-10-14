@@ -1,0 +1,2 @@
+﻿bundle,event,label,contact,s,f,h,A,receiver_peak,receiver_peak_time,sender_peak,sender_peak_time,reason,new_label,priority,queue_size
+b1,CANDIDATE,L0,ab,0,1,0,1,1,1,1,0,PASS,L1,"['1', 1]",1

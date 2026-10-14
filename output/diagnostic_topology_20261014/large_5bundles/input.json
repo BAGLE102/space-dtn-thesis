@@ -1,0 +1,380 @@
+{
+  "name": "synthetic_12nodes_32contacts_5bundles",
+  "delta": "1",
+  "horizon": "24",
+  "algorithm": "ppt_validation_no_dominance",
+  "buffers": {
+    "S1": "4",
+    "S2": "4",
+    "S3": "4",
+    "A": "2",
+    "B": "2",
+    "C": "2",
+    "D": "2",
+    "E": "2",
+    "F": "2",
+    "G": "2",
+    "H": "2",
+    "T": "4"
+  },
+  "background": {},
+  "contacts": [
+    {
+      "id": "c01",
+      "u": "S1",
+      "v": "A",
+      "start": "0",
+      "end": "2",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c02",
+      "u": "S1",
+      "v": "B",
+      "start": "1",
+      "end": "3",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c03",
+      "u": "S2",
+      "v": "A",
+      "start": "0",
+      "end": "2",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c04",
+      "u": "S2",
+      "v": "C",
+      "start": "1",
+      "end": "3",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c05",
+      "u": "S3",
+      "v": "B",
+      "start": "0",
+      "end": "2",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c06",
+      "u": "S3",
+      "v": "C",
+      "start": "2",
+      "end": "4",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c07",
+      "u": "A",
+      "v": "D",
+      "start": "3",
+      "end": "5",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c08",
+      "u": "A",
+      "v": "E",
+      "start": "5",
+      "end": "7",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c09",
+      "u": "B",
+      "v": "D",
+      "start": "4",
+      "end": "6",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c10",
+      "u": "B",
+      "v": "E",
+      "start": "3",
+      "end": "5",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c11",
+      "u": "C",
+      "v": "E",
+      "start": "4",
+      "end": "6",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c12",
+      "u": "C",
+      "v": "F",
+      "start": "3",
+      "end": "5",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c13",
+      "u": "D",
+      "v": "G",
+      "start": "7",
+      "end": "9",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c14",
+      "u": "E",
+      "v": "G",
+      "start": "6",
+      "end": "8",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c15",
+      "u": "E",
+      "v": "H",
+      "start": "8",
+      "end": "10",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c16",
+      "u": "F",
+      "v": "H",
+      "start": "6",
+      "end": "8",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c17",
+      "u": "G",
+      "v": "T",
+      "start": "10",
+      "end": "12",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c18",
+      "u": "H",
+      "v": "T",
+      "start": "10",
+      "end": "12",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c19",
+      "u": "D",
+      "v": "A",
+      "start": "6",
+      "end": "8",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c20",
+      "u": "E",
+      "v": "B",
+      "start": "6",
+      "end": "8",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c21",
+      "u": "F",
+      "v": "C",
+      "start": "6",
+      "end": "8",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c22",
+      "u": "G",
+      "v": "E",
+      "start": "9",
+      "end": "11",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c23",
+      "u": "A",
+      "v": "D",
+      "start": "9",
+      "end": "11",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c24",
+      "u": "B",
+      "v": "E",
+      "start": "10",
+      "end": "12",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c25",
+      "u": "C",
+      "v": "F",
+      "start": "9",
+      "end": "11",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c26",
+      "u": "D",
+      "v": "G",
+      "start": "12",
+      "end": "14",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c27",
+      "u": "E",
+      "v": "H",
+      "start": "13",
+      "end": "15",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c28",
+      "u": "F",
+      "v": "H",
+      "start": "12",
+      "end": "14",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c29",
+      "u": "G",
+      "v": "T",
+      "start": "16",
+      "end": "18",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c30",
+      "u": "H",
+      "v": "T",
+      "start": "17",
+      "end": "19",
+      "rate": "1",
+      "delay": "0",
+      "quota": "2"
+    },
+    {
+      "id": "c31",
+      "u": "S1",
+      "v": "T",
+      "start": "0",
+      "end": "2",
+      "rate": "1/4",
+      "delay": "0",
+      "quota": "1/2"
+    },
+    {
+      "id": "c32",
+      "u": "E",
+      "v": "T",
+      "start": "14",
+      "end": "15",
+      "rate": "1",
+      "delay": "2",
+      "quota": "1"
+    }
+  ],
+  "bundles": [
+    {
+      "id": "b1",
+      "source": "S1",
+      "dest": "T",
+      "g": "0",
+      "size": "1"
+    },
+    {
+      "id": "b2",
+      "source": "S2",
+      "dest": "T",
+      "g": "0",
+      "size": "1"
+    },
+    {
+      "id": "b3",
+      "source": "S3",
+      "dest": "T",
+      "g": "0",
+      "size": "1"
+    },
+    {
+      "id": "b4",
+      "source": "S1",
+      "dest": "T",
+      "g": "1",
+      "size": "1"
+    },
+    {
+      "id": "b5",
+      "source": "S2",
+      "dest": "T",
+      "g": "1",
+      "size": "2"
+    }
+  ]
+}
