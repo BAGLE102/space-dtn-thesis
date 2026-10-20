@@ -1,0 +1,354 @@
+{
+  "scope": "Nine fixed schedules; not a routing run or proof of interval completeness",
+  "input_config": "configs/long_contacts_20261021/experiment.json",
+  "checks": [
+    {
+      "name": "first_selected",
+      "bundle": "bundle1",
+      "hops": [
+        [
+          "c1",
+          "2"
+        ],
+        [
+          "c2",
+          "8"
+        ]
+      ],
+      "result": {
+        "feasible": true,
+        "arrival": "10",
+        "usage": {
+          "c1": "4",
+          "c2": "4"
+        },
+        "peaks": {
+          "X": {
+            "value": "4",
+            "time": "0"
+          },
+          "A": {
+            "value": "0",
+            "time": "0"
+          },
+          "B": {
+            "value": "4",
+            "time": "3"
+          },
+          "C": {
+            "value": "0",
+            "time": "0"
+          },
+          "D": {
+            "value": "4",
+            "time": "10"
+          }
+        }
+      },
+      "expected_feasible": true,
+      "expected_arrival": "10"
+    },
+    {
+      "name": "second_selected_C",
+      "bundle": "bundle2",
+      "hops": [
+        [
+          "c6",
+          "1"
+        ],
+        [
+          "c8",
+          "4"
+        ]
+      ],
+      "result": {
+        "feasible": true,
+        "arrival": "5",
+        "usage": {
+          "c6": "4",
+          "c8": "4"
+        },
+        "peaks": {
+          "X": {
+            "value": "4",
+            "time": "0"
+          },
+          "A": {
+            "value": "4",
+            "time": "1"
+          },
+          "B": {
+            "value": "4",
+            "time": "3"
+          },
+          "C": {
+            "value": "4",
+            "time": "3"
+          },
+          "D": {
+            "value": "4",
+            "time": "5"
+          }
+        }
+      },
+      "expected_feasible": true,
+      "expected_arrival": "5"
+    },
+    {
+      "name": "early_B_wait_overflow",
+      "bundle": "bundle2",
+      "hops": [
+        [
+          "c3",
+          "1"
+        ],
+        [
+          "c2",
+          "9"
+        ]
+      ],
+      "result": {
+        "feasible": false,
+        "reason": "BUFFER",
+        "node": "B",
+        "time": "3",
+        "value": "8",
+        "limit": "4"
+      },
+      "expected_feasible": false,
+      "expected_arrival": null
+    },
+    {
+      "name": "late_B_valid",
+      "bundle": "bundle2",
+      "hops": [
+        [
+          "c3",
+          "8"
+        ],
+        [
+          "c2",
+          "9"
+        ]
+      ],
+      "result": {
+        "feasible": true,
+        "arrival": "11",
+        "usage": {
+          "c3": "4",
+          "c2": "4"
+        },
+        "peaks": {
+          "X": {
+            "value": "4",
+            "time": "0"
+          },
+          "A": {
+            "value": "4",
+            "time": "1"
+          },
+          "B": {
+            "value": "4",
+            "time": "3"
+          },
+          "C": {
+            "value": "0",
+            "time": "0"
+          },
+          "D": {
+            "value": "4",
+            "time": "10"
+          }
+        }
+      },
+      "expected_feasible": true,
+      "expected_arrival": "11"
+    },
+    {
+      "name": "D_reception_conflict",
+      "bundle": "bundle2",
+      "hops": [
+        [
+          "c6",
+          "1"
+        ],
+        [
+          "c8",
+          "9"
+        ]
+      ],
+      "result": {
+        "feasible": false,
+        "reason": "BUFFER",
+        "node": "D",
+        "time": "10",
+        "value": "8",
+        "limit": "4"
+      },
+      "expected_feasible": false,
+      "expected_arrival": null
+    },
+    {
+      "name": "D_after_release_boundary",
+      "bundle": "bundle2",
+      "hops": [
+        [
+          "c6",
+          "1"
+        ],
+        [
+          "c8",
+          "10"
+        ]
+      ],
+      "result": {
+        "feasible": true,
+        "arrival": "11",
+        "usage": {
+          "c6": "4",
+          "c8": "4"
+        },
+        "peaks": {
+          "X": {
+            "value": "4",
+            "time": "0"
+          },
+          "A": {
+            "value": "4",
+            "time": "1"
+          },
+          "B": {
+            "value": "4",
+            "time": "3"
+          },
+          "C": {
+            "value": "4",
+            "time": "3"
+          },
+          "D": {
+            "value": "4",
+            "time": "10"
+          }
+        }
+      },
+      "expected_feasible": true,
+      "expected_arrival": "11"
+    },
+    {
+      "name": "D_before_reception_boundary",
+      "bundle": "bundle2",
+      "hops": [
+        [
+          "c6",
+          "1"
+        ],
+        [
+          "c8",
+          "8"
+        ]
+      ],
+      "result": {
+        "feasible": true,
+        "arrival": "9",
+        "usage": {
+          "c6": "4",
+          "c8": "4"
+        },
+        "peaks": {
+          "X": {
+            "value": "4",
+            "time": "0"
+          },
+          "A": {
+            "value": "4",
+            "time": "1"
+          },
+          "B": {
+            "value": "4",
+            "time": "3"
+          },
+          "C": {
+            "value": "4",
+            "time": "3"
+          },
+          "D": {
+            "value": "4",
+            "time": "9"
+          }
+        }
+      },
+      "expected_feasible": true,
+      "expected_arrival": "9"
+    },
+    {
+      "name": "B_before_release_conflict",
+      "bundle": "bundle2",
+      "hops": [
+        [
+          "c3",
+          "7"
+        ],
+        [
+          "c2",
+          "9"
+        ]
+      ],
+      "result": {
+        "feasible": false,
+        "reason": "BUFFER",
+        "node": "B",
+        "time": "8",
+        "value": "8",
+        "limit": "4"
+      },
+      "expected_feasible": false,
+      "expected_arrival": null
+    },
+    {
+      "name": "c8_last_start",
+      "bundle": "bundle2",
+      "hops": [
+        [
+          "c6",
+          "1"
+        ],
+        [
+          "c8",
+          "13"
+        ]
+      ],
+      "result": {
+        "feasible": true,
+        "arrival": "14",
+        "usage": {
+          "c6": "4",
+          "c8": "4"
+        },
+        "peaks": {
+          "X": {
+            "value": "4",
+            "time": "0"
+          },
+          "A": {
+            "value": "4",
+            "time": "1"
+          },
+          "B": {
+            "value": "4",
+            "time": "3"
+          },
+          "C": {
+            "value": "4",
+            "time": "3"
+          },
+          "D": {
+            "value": "4",
+            "time": "10"
+          }
+        }
+      },
+      "expected_feasible": true,
+      "expected_arrival": "14"
+    }
+  ]
+}
