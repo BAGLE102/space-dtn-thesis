@@ -1,0 +1,18 @@
+{
+  "bundles": [
+    {
+      "id": "bundle1",
+      "source": "X",
+      "destination": "D",
+      "release": "0",
+      "size": "4"
+    },
+    {
+      "id": "bundle2",
+      "source": "A",
+      "destination": "D",
+      "release": "1",
+      "size": "4"
+    }
+  ]
+}

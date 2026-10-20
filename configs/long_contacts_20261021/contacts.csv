@@ -1,0 +1,9 @@
+﻿id,source,target,start,end,rate,delay,remaining_capacity
+c1,X,B,2,12,4,0,40
+c2,B,D,8,18,4,1,40
+c3,A,B,1,11,4,0,40
+c4,A,B,12,28,4,0,64
+c5,B,D,20,36,4,1,64
+c6,A,C,1,18,4,1,68
+c7,C,D,16,30,4,0,56
+c8,C,D,4,14,4,0,40

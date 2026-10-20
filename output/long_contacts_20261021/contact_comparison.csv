@@ -1,0 +1,9 @@
+﻿contact,sender,receiver,old_start,old_end,new_start,new_end,duration,rate,delay,full_initial_capacity,controlled_residual
+c1,X,B,2,3,2,12,10,4,0,40,4
+c2,B,D,6,7,8,18,10,4,1,40,4
+c3,A,B,1,2,1,11,10,4,0,40,4
+c4,A,B,7,9,12,28,16,4,0,64,8
+c5,B,D,10,11,20,36,16,4,1,64,4
+c6,A,C,1,2,1,18,17,4,1,68,4
+c7,C,D,4,5,16,30,14,4,0,56,2
+c8,C,D,2,3,4,14,10,4,0,40,4

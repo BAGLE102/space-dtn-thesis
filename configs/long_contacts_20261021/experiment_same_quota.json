@@ -1,0 +1,9 @@
+{
+  "schema_version": 2,
+  "name": "long_contacts_same_quota",
+  "topology_file": "topology_same_quota.json",
+  "bundles_file": "bundles.json",
+  "algorithm": "interval_candidate_not_implemented",
+  "time_step": "1",
+  "horizon": "40"
+}

@@ -1,0 +1,21 @@
+{
+  "checks": [
+    {
+      "config": "experiment.json",
+      "contacts": 8,
+      "nodes": 5,
+      "bundles": 2,
+      "input_valid": true,
+      "routing_executed": false
+    },
+    {
+      "config": "experiment_same_quota.json",
+      "contacts": 8,
+      "nodes": 5,
+      "bundles": 2,
+      "input_valid": true,
+      "routing_executed": false
+    }
+  ],
+  "scope": "Input validation only. No interval solver or enumeration was run."
+}
