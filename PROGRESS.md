@@ -4,6 +4,8 @@
 
 ## Codex工作效率設定（2026-10-20）
 
+- 使用者追加允許Skills後，已安裝並驗證token-efficient-workflow；正常按需匹配，來源固定commit，未覆寫ADHD skill。實際整體token節省仍未量測。
+
 - 查核RTK／Serena／Context7與官方上下文設定；安裝RTK OSS 1.0.1並校驗資產digest，設定個別工具歷史輸出預算4000tokens。
 - AGENTS新增按需搜尋／讀檔與避免過量輸出的規則；保留原始失敗證據，不修改研究演算法。設定備份與執行檔僅在本機，不上傳。
 - 本機兩組唯讀Git查詢stdout分別縮小72.4%與55.6%；不是帳單或帳戶額度節省量測。詳細來源、範圍與回復方式見 `docs/codex_efficiency_setup_20261020.md`。

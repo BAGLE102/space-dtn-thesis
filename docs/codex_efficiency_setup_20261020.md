@@ -47,3 +47,12 @@
 要停用：移除使用者config新增的 `tool_output_token_limit`，或在確認沒有較新的設定修改後選擇備份還原；移除AGENTS的RTK建議即可停止顯式使用。未改PATH、未註冊服務、未安裝自動重寫hook，不需改回系統shell。
 
 本機安裝檢查資料在 `tmp/codex_efficiency_20261020/installation_check.json`（不提交）；重現本機測試需在原始與RTK命令各自以相同參數擷取stdout後計算bytes。
+
+## 後續授權：Skills也可安裝
+
+依使用者追加指示，已用官方Skill Installer安裝 [token-efficient-workflow](https://github.com/luziyezz/codex-skills/tree/52d29116acd82198d00d8836bbd6460cab9e5864/token-efficient-workflow)，固定來源commit `52d29116acd82198d00d8836bbd6460cab9e5864`，位置 `%USERPROFILE%/.codex/skills/token-efficient-workflow/`。
+
+- 已讀完整SKILL.md與安裝後openai.yaml；此skill只含指引與UI設定，沒有腳本、API依賴或自動hook。格式驗證通過，保留原始內容與正常自動匹配設定。
+- 主要用途為縮小搜尋、局部讀檔與壓縮工作摘要，不略過必要驗證。不因指引寫「always-on」就能保證每次必定觸發，也沒有實測整段任務的token節省。
+- 下一回合可被發現並使用；也可明確輸入 `$token-efficient-workflow`。不覆寫既有ADHD skill或專案研究規則。
+- 不安裝第二個同名／高度重複的效率skill，也不因其列出輔助工具就自動安裝全部工具。
