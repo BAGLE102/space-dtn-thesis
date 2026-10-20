@@ -1,0 +1,207 @@
+{
+  "scope": "Fixed schedules, exact rational arithmetic; not a search or a general proof",
+  "ai_example": {
+    "early": {
+      "arrival": "80",
+      "local_checks": false,
+      "quota_excess": {},
+      "feasible": false,
+      "hops": [
+        {
+          "contact": "c1",
+          "start": "0",
+          "arrival": "10",
+          "waiting_peak": "10",
+          "sending_peak": "10",
+          "receiving_peak": "10",
+          "local_checks": true
+        },
+        {
+          "contact": "c2",
+          "start": "70",
+          "arrival": "80",
+          "waiting_peak": "20",
+          "sending_peak": "10",
+          "receiving_peak": "10",
+          "local_checks": false
+        }
+      ]
+    },
+    "late": {
+      "arrival": "80",
+      "local_checks": true,
+      "quota_excess": {},
+      "feasible": true,
+      "hops": [
+        {
+          "contact": "c1",
+          "start": "35",
+          "arrival": "45",
+          "waiting_peak": "10",
+          "sending_peak": "10",
+          "receiving_peak": "15",
+          "local_checks": true
+        },
+        {
+          "contact": "c2",
+          "start": "70",
+          "arrival": "80",
+          "waiting_peak": "15",
+          "sending_peak": "10",
+          "receiving_peak": "10",
+          "local_checks": true
+        }
+      ]
+    },
+    "reception_boundary_peaks": {
+      "15": "15",
+      "16": "16",
+      "34": "16",
+      "35": "15"
+    }
+  },
+  "independent_quota_counterexample": {
+    "earlier_prefix": {
+      "arrival": "5",
+      "local_checks": true,
+      "quota_excess": {},
+      "feasible": true,
+      "hops": [
+        {
+          "contact": "early",
+          "start": "0",
+          "arrival": "1",
+          "waiting_peak": "1",
+          "sending_peak": "1",
+          "receiving_peak": "1",
+          "local_checks": true
+        },
+        {
+          "contact": "c",
+          "start": "1",
+          "arrival": "2",
+          "waiting_peak": "1",
+          "sending_peak": "1",
+          "receiving_peak": "1",
+          "local_checks": true
+        },
+        {
+          "contact": "back",
+          "start": "2",
+          "arrival": "5",
+          "waiting_peak": "1",
+          "sending_peak": "1",
+          "receiving_peak": "1",
+          "local_checks": true
+        }
+      ]
+    },
+    "later_prefix": {
+      "arrival": "11/2",
+      "local_checks": true,
+      "quota_excess": {},
+      "feasible": true,
+      "hops": [
+        {
+          "contact": "late",
+          "start": "9/2",
+          "arrival": "11/2",
+          "waiting_peak": "1",
+          "sending_peak": "1",
+          "receiving_peak": "1",
+          "local_checks": true
+        }
+      ]
+    },
+    "earlier_completion": {
+      "arrival": "8",
+      "local_checks": true,
+      "quota_excess": {
+        "c": "2"
+      },
+      "feasible": false,
+      "hops": [
+        {
+          "contact": "early",
+          "start": "0",
+          "arrival": "1",
+          "waiting_peak": "1",
+          "sending_peak": "1",
+          "receiving_peak": "1",
+          "local_checks": true
+        },
+        {
+          "contact": "c",
+          "start": "1",
+          "arrival": "2",
+          "waiting_peak": "1",
+          "sending_peak": "1",
+          "receiving_peak": "1",
+          "local_checks": true
+        },
+        {
+          "contact": "back",
+          "start": "2",
+          "arrival": "5",
+          "waiting_peak": "1",
+          "sending_peak": "1",
+          "receiving_peak": "1",
+          "local_checks": true
+        },
+        {
+          "contact": "c",
+          "start": "5",
+          "arrival": "6",
+          "waiting_peak": "1",
+          "sending_peak": "1",
+          "receiving_peak": "1",
+          "local_checks": true
+        },
+        {
+          "contact": "goal",
+          "start": "7",
+          "arrival": "8",
+          "waiting_peak": "1",
+          "sending_peak": "1",
+          "receiving_peak": "1",
+          "local_checks": true
+        }
+      ]
+    },
+    "later_completion": {
+      "arrival": "8",
+      "local_checks": true,
+      "quota_excess": {},
+      "feasible": true,
+      "hops": [
+        {
+          "contact": "late",
+          "start": "9/2",
+          "arrival": "11/2",
+          "waiting_peak": "1",
+          "sending_peak": "1",
+          "receiving_peak": "1",
+          "local_checks": true
+        },
+        {
+          "contact": "c",
+          "start": "11/2",
+          "arrival": "13/2",
+          "waiting_peak": "1",
+          "sending_peak": "1",
+          "receiving_peak": "1",
+          "local_checks": true
+        },
+        {
+          "contact": "goal",
+          "start": "7",
+          "arrival": "8",
+          "waiting_peak": "1",
+          "sending_peak": "1",
+          "receiving_peak": "1",
+          "local_checks": true
+        }
+      ]
+    }
+  }
+}
