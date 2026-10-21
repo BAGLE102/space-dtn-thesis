@@ -1,0 +1,113 @@
+﻿strategy,epoch,phase,contact,action,size,versions,intervals
+eager_rebuild,0,prepare,,computed 96 contacts,4,,
+eager_rebuild,0,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+eager_rebuild,0,query,46,cache_hit,4,"(0, 0, 0)","[[""6"", ""6""]]"
+eager_rebuild,0,query,88,cache_hit,4,"(0, 0, 0)",[]
+eager_rebuild,0,query,49,cache_hit,4,"(0, 0, 0)","[[""8"", ""17""]]"
+eager_rebuild,0,query,53,cache_hit,4,"(0, 0, 0)","[[""0"", ""32/3""]]"
+eager_rebuild,0,query,45,cache_hit,4,"(0, 0, 0)","[[""2"", ""29/3""]]"
+eager_rebuild,0,query,84,cache_hit,4,"(0, 0, 0)","[[""9"", ""10""], [""13"", ""25""]]"
+eager_rebuild,0,query,8,cache_hit,4,"(0, 0, 0)","[[""4"", ""16/3""], [""32/3"", ""21""]]"
+eager_rebuild,0,query,2,cache_hit,4,"(0, 0, 0)","[[""18"", ""18""]]"
+eager_rebuild,0,query,39,cache_hit,4,"(0, 0, 0)","[[""8/3"", ""10""], [""13"", ""40/3""]]"
+eager_rebuild,0,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+eager_rebuild,0,query,46,cache_hit,4,"(0, 0, 0)","[[""6"", ""6""]]"
+eager_rebuild,0,query,88,cache_hit,4,"(0, 0, 0)",[]
+eager_rebuild,1,prepare,,computed 96 contacts,4,,
+eager_rebuild,1,query,88,cache_hit,4,"(0, 0, 0)",[]
+eager_rebuild,1,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+eager_rebuild,1,query,2,cache_hit,4,"(0, 0, 0)","[[""18"", ""18""]]"
+eager_rebuild,1,query,39,cache_hit,4,"(0, 0, 0)","[[""8/3"", ""10""], [""13"", ""40/3""]]"
+eager_rebuild,1,query,45,cache_hit,4,"(0, 0, 0)","[[""2"", ""29/3""]]"
+eager_rebuild,1,query,84,cache_hit,4,"(0, 0, 0)","[[""9"", ""10""], [""13"", ""25""]]"
+eager_rebuild,1,query,53,cache_hit,4,"(0, 0, 0)","[[""0"", ""32/3""]]"
+eager_rebuild,1,query,46,cache_hit,4,"(0, 0, 0)","[[""6"", ""6""]]"
+eager_rebuild,1,query,49,cache_hit,4,"(0, 0, 0)","[[""8"", ""17""]]"
+eager_rebuild,1,query,8,cache_hit,4,"(0, 0, 0)","[[""4"", ""16/3""], [""32/3"", ""21""]]"
+eager_rebuild,1,query,88,cache_hit,4,"(0, 0, 0)",[]
+eager_rebuild,1,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+eager_rebuild,1,query,2,cache_hit,4,"(0, 0, 0)","[[""18"", ""18""]]"
+lazy_roundcache,0,prepare,,computed 0 contacts,4,,
+lazy_roundcache,0,query,23,solve,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+lazy_roundcache,0,query,46,solve,4,"(0, 0, 0)","[[""6"", ""6""]]"
+lazy_roundcache,0,query,88,solve,4,"(0, 0, 0)",[]
+lazy_roundcache,0,query,49,solve,4,"(0, 0, 0)","[[""8"", ""17""]]"
+lazy_roundcache,0,query,53,solve,4,"(0, 0, 0)","[[""0"", ""32/3""]]"
+lazy_roundcache,0,query,45,solve,4,"(0, 0, 0)","[[""2"", ""29/3""]]"
+lazy_roundcache,0,query,84,solve,4,"(0, 0, 0)","[[""9"", ""10""], [""13"", ""25""]]"
+lazy_roundcache,0,query,8,solve,4,"(0, 0, 0)","[[""4"", ""16/3""], [""32/3"", ""21""]]"
+lazy_roundcache,0,query,2,solve,4,"(0, 0, 0)","[[""18"", ""18""]]"
+lazy_roundcache,0,query,39,solve,4,"(0, 0, 0)","[[""8/3"", ""10""], [""13"", ""40/3""]]"
+lazy_roundcache,0,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+lazy_roundcache,0,query,46,cache_hit,4,"(0, 0, 0)","[[""6"", ""6""]]"
+lazy_roundcache,0,query,88,cache_hit,4,"(0, 0, 0)",[]
+lazy_roundcache,1,prepare,,computed 0 contacts,4,,
+lazy_roundcache,1,query,88,solve,4,"(0, 0, 0)",[]
+lazy_roundcache,1,query,23,solve,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+lazy_roundcache,1,query,2,solve,4,"(0, 0, 0)","[[""18"", ""18""]]"
+lazy_roundcache,1,query,39,solve,4,"(0, 0, 0)","[[""8/3"", ""10""], [""13"", ""40/3""]]"
+lazy_roundcache,1,query,45,solve,4,"(0, 0, 0)","[[""2"", ""29/3""]]"
+lazy_roundcache,1,query,84,solve,4,"(0, 0, 0)","[[""9"", ""10""], [""13"", ""25""]]"
+lazy_roundcache,1,query,53,solve,4,"(0, 0, 0)","[[""0"", ""32/3""]]"
+lazy_roundcache,1,query,46,solve,4,"(0, 0, 0)","[[""6"", ""6""]]"
+lazy_roundcache,1,query,49,solve,4,"(0, 0, 0)","[[""8"", ""17""]]"
+lazy_roundcache,1,query,8,solve,4,"(0, 0, 0)","[[""4"", ""16/3""], [""32/3"", ""21""]]"
+lazy_roundcache,1,query,88,cache_hit,4,"(0, 0, 0)",[]
+lazy_roundcache,1,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+lazy_roundcache,1,query,2,cache_hit,4,"(0, 0, 0)","[[""18"", ""18""]]"
+eager_incremental,0,prepare,,computed 96 contacts,4,,
+eager_incremental,0,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+eager_incremental,0,query,46,cache_hit,4,"(0, 0, 0)","[[""6"", ""6""]]"
+eager_incremental,0,query,88,cache_hit,4,"(0, 0, 0)",[]
+eager_incremental,0,query,49,cache_hit,4,"(0, 0, 0)","[[""8"", ""17""]]"
+eager_incremental,0,query,53,cache_hit,4,"(0, 0, 0)","[[""0"", ""32/3""]]"
+eager_incremental,0,query,45,cache_hit,4,"(0, 0, 0)","[[""2"", ""29/3""]]"
+eager_incremental,0,query,84,cache_hit,4,"(0, 0, 0)","[[""9"", ""10""], [""13"", ""25""]]"
+eager_incremental,0,query,8,cache_hit,4,"(0, 0, 0)","[[""4"", ""16/3""], [""32/3"", ""21""]]"
+eager_incremental,0,query,2,cache_hit,4,"(0, 0, 0)","[[""18"", ""18""]]"
+eager_incremental,0,query,39,cache_hit,4,"(0, 0, 0)","[[""8/3"", ""10""], [""13"", ""40/3""]]"
+eager_incremental,0,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+eager_incremental,0,query,46,cache_hit,4,"(0, 0, 0)","[[""6"", ""6""]]"
+eager_incremental,0,query,88,cache_hit,4,"(0, 0, 0)",[]
+eager_incremental,1,prepare,,computed 8 contacts,4,,
+eager_incremental,1,query,88,cache_hit,4,"(0, 0, 0)",[]
+eager_incremental,1,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+eager_incremental,1,query,2,cache_hit,4,"(0, 0, 0)","[[""18"", ""18""]]"
+eager_incremental,1,query,39,cache_hit,4,"(0, 0, 0)","[[""8/3"", ""10""], [""13"", ""40/3""]]"
+eager_incremental,1,query,45,cache_hit,4,"(0, 0, 0)","[[""2"", ""29/3""]]"
+eager_incremental,1,query,84,cache_hit,4,"(0, 0, 0)","[[""9"", ""10""], [""13"", ""25""]]"
+eager_incremental,1,query,53,cache_hit,4,"(0, 0, 0)","[[""0"", ""32/3""]]"
+eager_incremental,1,query,46,cache_hit,4,"(0, 0, 0)","[[""6"", ""6""]]"
+eager_incremental,1,query,49,cache_hit,4,"(0, 0, 0)","[[""8"", ""17""]]"
+eager_incremental,1,query,8,cache_hit,4,"(0, 0, 0)","[[""4"", ""16/3""], [""32/3"", ""21""]]"
+eager_incremental,1,query,88,cache_hit,4,"(0, 0, 0)",[]
+eager_incremental,1,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+eager_incremental,1,query,2,cache_hit,4,"(0, 0, 0)","[[""18"", ""18""]]"
+lazy_incremental,0,prepare,,computed 0 contacts,4,,
+lazy_incremental,0,query,23,solve,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+lazy_incremental,0,query,46,solve,4,"(0, 0, 0)","[[""6"", ""6""]]"
+lazy_incremental,0,query,88,solve,4,"(0, 0, 0)",[]
+lazy_incremental,0,query,49,solve,4,"(0, 0, 0)","[[""8"", ""17""]]"
+lazy_incremental,0,query,53,solve,4,"(0, 0, 0)","[[""0"", ""32/3""]]"
+lazy_incremental,0,query,45,solve,4,"(0, 0, 0)","[[""2"", ""29/3""]]"
+lazy_incremental,0,query,84,solve,4,"(0, 0, 0)","[[""9"", ""10""], [""13"", ""25""]]"
+lazy_incremental,0,query,8,solve,4,"(0, 0, 0)","[[""4"", ""16/3""], [""32/3"", ""21""]]"
+lazy_incremental,0,query,2,solve,4,"(0, 0, 0)","[[""18"", ""18""]]"
+lazy_incremental,0,query,39,solve,4,"(0, 0, 0)","[[""8/3"", ""10""], [""13"", ""40/3""]]"
+lazy_incremental,0,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+lazy_incremental,0,query,46,cache_hit,4,"(0, 0, 0)","[[""6"", ""6""]]"
+lazy_incremental,0,query,88,cache_hit,4,"(0, 0, 0)",[]
+lazy_incremental,1,prepare,,computed 0 contacts,4,,
+lazy_incremental,1,query,88,cache_hit,4,"(0, 0, 0)",[]
+lazy_incremental,1,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+lazy_incremental,1,query,2,cache_hit,4,"(0, 0, 0)","[[""18"", ""18""]]"
+lazy_incremental,1,query,39,cache_hit,4,"(0, 0, 0)","[[""8/3"", ""10""], [""13"", ""40/3""]]"
+lazy_incremental,1,query,45,cache_hit,4,"(0, 0, 0)","[[""2"", ""29/3""]]"
+lazy_incremental,1,query,84,cache_hit,4,"(0, 0, 0)","[[""9"", ""10""], [""13"", ""25""]]"
+lazy_incremental,1,query,53,cache_hit,4,"(0, 0, 0)","[[""0"", ""32/3""]]"
+lazy_incremental,1,query,46,cache_hit,4,"(0, 0, 0)","[[""6"", ""6""]]"
+lazy_incremental,1,query,49,cache_hit,4,"(0, 0, 0)","[[""8"", ""17""]]"
+lazy_incremental,1,query,8,cache_hit,4,"(0, 0, 0)","[[""4"", ""16/3""], [""32/3"", ""21""]]"
+lazy_incremental,1,query,88,cache_hit,4,"(0, 0, 0)",[]
+lazy_incremental,1,query,23,cache_hit,4,"(0, 0, 0)","[[""26/3"", ""21""]]"
+lazy_incremental,1,query,2,cache_hit,4,"(0, 0, 0)","[[""18"", ""18""]]"

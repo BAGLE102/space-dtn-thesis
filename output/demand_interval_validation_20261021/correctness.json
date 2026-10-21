@@ -1,0 +1,158 @@
+{
+  "analytic": [
+    {
+      "case": "empty",
+      "expected": [
+        [
+          "1",
+          "9"
+        ]
+      ],
+      "actual": [
+        [
+          "1",
+          "9"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "simultaneous_release_receive",
+      "expected": [
+        [
+          "7",
+          "9"
+        ]
+      ],
+      "actual": [
+        [
+          "7",
+          "9"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "sender_ramp",
+      "expected": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "7",
+          "9"
+        ]
+      ],
+      "actual": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "7",
+          "9"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "busy_slots",
+      "expected": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "5",
+          "9"
+        ]
+      ],
+      "actual": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "5",
+          "9"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "delay_shift",
+      "expected": [
+        [
+          "6",
+          "9"
+        ]
+      ],
+      "actual": [
+        [
+          "6",
+          "9"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "quota_reject",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "case": "deadline",
+      "expected": [
+        [
+          "1",
+          "5"
+        ]
+      ],
+      "actual": [
+        [
+          "1",
+          "5"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "one_point",
+      "expected": [
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "actual": [
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "rational_boundary",
+      "expected": [
+        [
+          "7/3",
+          "4"
+        ]
+      ],
+      "actual": [
+        [
+          "7/3",
+          "4"
+        ]
+      ],
+      "passed": true
+    }
+  ],
+  "random_fixed_start_checks": 9307,
+  "seed": 1021,
+  "scope": "Exact rational continuous curves; finite probes do not prove interval completeness",
+  "cache_answer_comparisons": 22320
+}

@@ -1,0 +1,11 @@
+{
+  "script_hash_matches": true,
+  "input_hash_matches": true,
+  "analytic_cases": 9,
+  "fixed_start_checks": 9307,
+  "cache_comparisons": 22320,
+  "raw_timing_rows": 196,
+  "summary_rows": 28,
+  "unit_tests_passed": 5,
+  "plot_visually_inspected": true
+}
