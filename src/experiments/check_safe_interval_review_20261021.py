@@ -93,10 +93,22 @@ def main():
     assert p1['feasible'] and p2['feasible'] and p1['arrival'] == '5' and p2['arrival'] == '11/2'
     assert bad['local_checks'] and bad['quota_excess'] == {'c': '2'}
     assert good['feasible'] and good['arrival'] == '8'
+
+    # Rule B 與「先釋放再接納來源資料」不是同一種事件模型。
+    # 節點上限1：既有資料在t=1交付釋放，本包也在g=1成為可用。
+    # 既有占用：事件前1、後0；本包：事件前0、後1。
+    before_total, after_total = Q(1) + Q(0), Q(0) + Q(1)
+    aggregate_event_peak = max(before_total, after_total)
+    rule_b_source_check = max(Q(1), Q(0)) + Q(1)
+    assert aggregate_event_peak == 1 and rule_b_source_check == 2
     evidence = dict(scope='Fixed schedules, exact rational arithmetic; not a search or a general proof',
                     ai_example=dict(early=early, late=late, reception_boundary_peaks=reception),
                     independent_quota_counterexample=dict(earlier_prefix=p1, later_prefix=p2,
-                                                           earlier_completion=bad, later_completion=good))
+                                                           earlier_completion=bad, later_completion=good),
+                    rule_b_event_semantics=dict(capacity='1',
+                        release_then_admit_peak=str(aggregate_event_peak),
+                        rule_b_source_check=str(rule_b_source_check),
+                        conclusion='Conservative model change, not a refutation under its own Rule B'))
     destination = Path(__file__).resolve().parents[2] / 'output/safe_interval_review_20261021/fixed_checks.json'
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_bytes((json.dumps(evidence, ensure_ascii=False, indent=2) + '\n').encode('utf-8'))

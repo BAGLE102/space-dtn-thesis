@@ -203,5 +203,11 @@
         }
       ]
     }
+  },
+  "rule_b_event_semantics": {
+    "capacity": "1",
+    "release_then_admit_peak": "1",
+    "rule_b_source_check": "2",
+    "conclusion": "Conservative model change, not a refutation under its own Rule B"
   }
 }
