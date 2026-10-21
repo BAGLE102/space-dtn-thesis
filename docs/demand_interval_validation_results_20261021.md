@@ -78,3 +78,4 @@ python -m src.experiments.report_demand_interval_validation output/demand_interv
 - 原始輸入、CSV、correctness、metadata：`output/demand_interval_validation_20261021/`。
 - 圖表與逐步查詢：同目錄 `comparison/`。
 - 腳本與輸入 SHA256 記錄於 metadata.json，交付前核對一致。
+- 交付時將文字產物的 CRLF 換行正規化為 LF；未改輸入、原始計時或其他數值。
