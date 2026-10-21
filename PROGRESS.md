@@ -2,6 +2,12 @@
 
 更新日期：2026-10-21
 
+## Contact splitting 相關工作比對（2026-10-21）
+
+- 核對使用者提供2410.15546v3的FEAP-CB、contact splitting、forecast buffer tables與edge pruning，確認與目前切割方向高度重疊。
+- 原文已處理S/r、前包預約、依bundle暫時切割及避免等待跨越溢位；不能把這些單獨主張新貢獻。
+- 逐byte起送集合、允許walk／容量歷史與事件端點列為待核對差異；尚未重現論文原碼或確認效能／新穎性。見 `docs/paper_2410_15546v3_contact_splitting_comparison_20261021.md`；未修改PPT。
+
 ## 起送時段候選簡報（2026-10-21）
 
 - 依使用者1013製作32頁 `output/presentations/1021_起送時段修訂版.pptx`，採A3b容量配額與P事件順序，保留具體四欄Label，替換逐秒枚舉／抵達區間Label。
