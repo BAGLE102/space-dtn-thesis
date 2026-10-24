@@ -1,0 +1,459 @@
+{
+  "report_date": "2026-10-25",
+  "experiment_date": "2026-10-21",
+  "scope": "Mechanical sentence/paragraph and numeric checks, not full STE dictionary or translation validation",
+  "english_sha256": "c93c31294011d1f776cf3a578efef08e8d79d33842b56f1d6f51790984d52819",
+  "chinese_sha256": "f3997ad21e443a8583bb0c8064d4efd2efab4df557c496a52aec614189299b95",
+  "sentences": 68,
+  "paragraphs": 24,
+  "max_sentence_tokens": 17,
+  "max_expanded_word_count": 17,
+  "max_sentences_per_paragraph": 3,
+  "sections": [
+    {
+      "section": "1. Background",
+      "paragraph_count": 4
+    },
+    {
+      "section": "2. Motivation",
+      "paragraph_count": 4
+    },
+    {
+      "section": "3. Relation to Existing Work",
+      "paragraph_count": 2
+    },
+    {
+      "section": "4. Objectives",
+      "paragraph_count": 6
+    },
+    {
+      "section": "5. Current Progress",
+      "paragraph_count": 5
+    },
+    {
+      "section": "6. Scope and Open Questions",
+      "paragraph_count": 3
+    }
+  ],
+  "chinese_paragraph_counts": [
+    4,
+    4,
+    2,
+    6,
+    5,
+    3
+  ],
+  "paragraph_alignment_passed": true,
+  "numeric_claims_match_saved_evidence": true,
+  "full_dictionary_compliance_verified": false,
+  "sentence_audit": [
+    {
+      "section": "1. Background",
+      "text": "Space networks do not always provide a continuous path from a source node to a destination node.",
+      "tokens": 17,
+      "expanded_words": 17
+    },
+    {
+      "section": "1. Background",
+      "text": "Delay-Tolerant Networking (DTN) supports data transfer across these periods without a continuous path.",
+      "tokens": 13,
+      "expanded_words": 14
+    },
+    {
+      "section": "1. Background",
+      "text": "Nodes keep data until a contact becomes available.",
+      "tokens": 8,
+      "expanded_words": 8
+    },
+    {
+      "section": "1. Background",
+      "text": "In this study, a bundle is the unit of data that the routing method must transfer.",
+      "tokens": 16,
+      "expanded_words": 16
+    },
+    {
+      "section": "1. Background",
+      "text": "Each contact has a sender, a receiver, a time window, a data rate, and a propagation delay.",
+      "tokens": 17,
+      "expanded_words": 17
+    },
+    {
+      "section": "1. Background",
+      "text": "A Contact Plan describes these contacts.",
+      "tokens": 6,
+      "expanded_words": 6
+    },
+    {
+      "section": "1. Background",
+      "text": "The study treats each bundle as a whole unit.",
+      "tokens": 9,
+      "expanded_words": 9
+    },
+    {
+      "section": "1. Background",
+      "text": "The method cannot divide a bundle between contacts on the same hop.",
+      "tokens": 12,
+      "expanded_words": 12
+    },
+    {
+      "section": "1. Background",
+      "text": "A node must receive the complete bundle before it can send the bundle to the next node.",
+      "tokens": 17,
+      "expanded_words": 17
+    },
+    {
+      "section": "1. Background",
+      "text": "Each node has a buffer limit.",
+      "tokens": 6,
+      "expanded_words": 6
+    },
+    {
+      "section": "1. Background",
+      "text": "Earlier bundles can use contact time and buffer space that a later bundle also needs.",
+      "tokens": 15,
+      "expanded_words": 15
+    },
+    {
+      "section": "1. Background",
+      "text": "Thus, the method must use the current resource reservations when it plans a route.",
+      "tokens": 14,
+      "expanded_words": 14
+    },
+    {
+      "section": "2. Motivation",
+      "text": "Enough total contact capacity does not mean that a continuous transmission slot is available.",
+      "tokens": 14,
+      "expanded_words": 14
+    },
+    {
+      "section": "2. Motivation",
+      "text": "A contact can contain a free slot that starts after an occupied slot.",
+      "tokens": 13,
+      "expanded_words": 13
+    },
+    {
+      "section": "2. Motivation",
+      "text": "The method must find a slot long enough to send the complete bundle.",
+      "tokens": 13,
+      "expanded_words": 13
+    },
+    {
+      "section": "2. Motivation",
+      "text": "Enough buffer space at full arrival does not prove that reception is feasible.",
+      "tokens": 13,
+      "expanded_words": 13
+    },
+    {
+      "section": "2. Motivation",
+      "text": "The buffer limit must hold throughout reception.",
+      "tokens": 7,
+      "expanded_words": 7
+    },
+    {
+      "section": "2. Motivation",
+      "text": "The same limit must hold while the node keeps or sends the bundle.",
+      "tokens": 13,
+      "expanded_words": 13
+    },
+    {
+      "section": "2. Motivation",
+      "text": "An early arrival can require a wait through a period with insufficient buffer space.",
+      "tokens": 14,
+      "expanded_words": 14
+    },
+    {
+      "section": "2. Motivation",
+      "text": "A later arrival can avoid that period.",
+      "tokens": 7,
+      "expanded_words": 7
+    },
+    {
+      "section": "2. Motivation",
+      "text": "Thus, arrival time alone does not show that one label can replace another label.",
+      "tokens": 14,
+      "expanded_words": 14
+    },
+    {
+      "section": "2. Motivation",
+      "text": "Earlier drafts tested transmission start times on a time grid.",
+      "tokens": 10,
+      "expanded_words": 10
+    },
+    {
+      "section": "2. Motivation",
+      "text": "The current candidate uses feasible start intervals instead.",
+      "tokens": 8,
+      "expanded_words": 8
+    },
+    {
+      "section": "2. Motivation",
+      "text": "This change removes the need to create a label for each time-grid point.",
+      "tokens": 13,
+      "expanded_words": 14
+    },
+    {
+      "section": "3. Relation to Existing Work",
+      "text": "The literature review found strong overlap with an existing study.",
+      "tokens": 10,
+      "expanded_words": 10
+    },
+    {
+      "section": "3. Relation to Existing Work",
+      "text": "That study uses contact splitting, buffer forecasts, and contact-sequence restrictions.",
+      "tokens": 10,
+      "expanded_words": 11
+    },
+    {
+      "section": "3. Relation to Existing Work",
+      "text": "It also plans bundles one at a time and updates resource reservations.",
+      "tokens": 12,
+      "expanded_words": 12
+    },
+    {
+      "section": "3. Relation to Existing Work",
+      "text": "These features cannot support a claim that this study introduces a new method.",
+      "tokens": 13,
+      "expanded_words": 13
+    },
+    {
+      "section": "3. Relation to Existing Work",
+      "text": "The research must identify a specific difference and test that difference.",
+      "tokens": 11,
+      "expanded_words": 11
+    },
+    {
+      "section": "3. Relation to Existing Work",
+      "text": "One candidate difference concerns the cost of resource calculations.",
+      "tokens": 9,
+      "expanded_words": 9
+    },
+    {
+      "section": "4. Objectives",
+      "text": "The main objective is to find the earliest feasible arrival for each bundle under existing resource reservations.",
+      "tokens": 17,
+      "expanded_words": 17
+    },
+    {
+      "section": "4. Objectives",
+      "text": "The output must include the route and the transmission start time on each contact.",
+      "tokens": 14,
+      "expanded_words": 14
+    },
+    {
+      "section": "4. Objectives",
+      "text": "First, the study will define consistent time, contact capacity, and buffer constraints.",
+      "tokens": 12,
+      "expanded_words": 12
+    },
+    {
+      "section": "4. Objectives",
+      "text": "These definitions must distinguish contact availability from the buffer space that a receiver needs.",
+      "tokens": 14,
+      "expanded_words": 14
+    },
+    {
+      "section": "4. Objectives",
+      "text": "Second, the study will determine feasible start intervals without time-grid enumeration.",
+      "tokens": 11,
+      "expanded_words": 12
+    },
+    {
+      "section": "4. Objectives",
+      "text": "Each interval must satisfy the contact window and the applicable resource limits.",
+      "tokens": 12,
+      "expanded_words": 12
+    },
+    {
+      "section": "4. Objectives",
+      "text": "Third, the study will test whether the search retains all necessary route candidates.",
+      "tokens": 13,
+      "expanded_words": 13
+    },
+    {
+      "section": "4. Objectives",
+      "text": "A complete route must satisfy the buffer limit during reception, storage, and transmission.",
+      "tokens": 13,
+      "expanded_words": 13
+    },
+    {
+      "section": "4. Objectives",
+      "text": "The method must distinguish an incomplete search from a search that proves no feasible route exists.",
+      "tokens": 16,
+      "expanded_words": 16
+    },
+    {
+      "section": "4. Objectives",
+      "text": "Fourth, the study will compare methods under the same model and input data.",
+      "tokens": 13,
+      "expanded_words": 13
+    },
+    {
+      "section": "4. Objectives",
+      "text": "The comparison will include arrival time, calculation time, memory use, and failure cases.",
+      "tokens": 13,
+      "expanded_words": 13
+    },
+    {
+      "section": "4. Objectives",
+      "text": "An additional candidate objective is to reduce repeated resource calculations.",
+      "tokens": 10,
+      "expanded_words": 10
+    },
+    {
+      "section": "4. Objectives",
+      "text": "The candidate calculates intervals on demand and reuses valid results.",
+      "tokens": 10,
+      "expanded_words": 10
+    },
+    {
+      "section": "4. Objectives",
+      "text": "The study has not established this candidate as a new research contribution.",
+      "tokens": 12,
+      "expanded_words": 12
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "The project has a candidate label definition and route-search flow.",
+      "tokens": 10,
+      "expanded_words": 11
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "Fixed route examples support the explanations in the current presentation.",
+      "tokens": 10,
+      "expanded_words": 10
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "The complete candidate search does not yet have a verified implementation.",
+      "tokens": 11,
+      "expanded_words": 11
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "The project has a separate interval component for continuous buffer curves.",
+      "tokens": 11,
+      "expanded_words": 11
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "Nine analytical cases matched their expected interval results.",
+      "tokens": 8,
+      "expanded_words": 8
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "The tests found no differences across 9,307 fixed-start comparisons and 22,320 cache-answer comparisons.",
+      "tokens": 13,
+      "expanded_words": 15
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "These checks do not prove that the complete route search is correct.",
+      "tokens": 12,
+      "expanded_words": 12
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "The component experiment used 96 contacts and five resource snapshots.",
+      "tokens": 10,
+      "expanded_words": 10
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "Each strategy had seven timed runs.",
+      "tokens": 6,
+      "expanded_words": 6
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "For the local-update case with 10% contact queries, the on-demand median was 28.443 milliseconds.",
+      "tokens": 14,
+      "expanded_words": 16
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "The full incremental strategy required 228.056 milliseconds.",
+      "tokens": 7,
+      "expanded_words": 7
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "Both values represent the total time across five snapshots.",
+      "tokens": 9,
+      "expanded_words": 9
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "When queries covered all contacts, the on-demand strategy had no consistent time advantage.",
+      "tokens": 13,
+      "expanded_words": 14
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "These results support only a conditional component benefit.",
+      "tokens": 8,
+      "expanded_words": 8
+    },
+    {
+      "section": "5. Current Progress",
+      "text": "The experiment did not compare the candidate with the published algorithm.",
+      "tokens": 11,
+      "expanded_words": 11
+    },
+    {
+      "section": "6. Scope and Open Questions",
+      "text": "The current route model plans one bundle at a time in a fixed order.",
+      "tokens": 14,
+      "expanded_words": 14
+    },
+    {
+      "section": "6. Scope and Open Questions",
+      "text": "The model assumes known contacts and resource reservations.",
+      "tokens": 8,
+      "expanded_words": 8
+    },
+    {
+      "section": "6. Scope and Open Questions",
+      "text": "The model does not optimize all bundles together.",
+      "tokens": 8,
+      "expanded_words": 8
+    },
+    {
+      "section": "6. Scope and Open Questions",
+      "text": "The component experiment excludes predecessor waiting, occupancy jumps, and full-route resource updates.",
+      "tokens": 12,
+      "expanded_words": 13
+    },
+    {
+      "section": "6. Scope and Open Questions",
+      "text": "The experiment also excludes random contact failures and shared-radio constraints.",
+      "tokens": 10,
+      "expanded_words": 11
+    },
+    {
+      "section": "6. Scope and Open Questions",
+      "text": "Thus, the results do not establish operational performance or complete-search optimality.",
+      "tokens": 11,
+      "expanded_words": 12
+    },
+    {
+      "section": "6. Scope and Open Questions",
+      "text": "The research contribution remains unconfirmed.",
+      "tokens": 5,
+      "expanded_words": 5
+    },
+    {
+      "section": "6. Scope and Open Questions",
+      "text": "The next validation step is to measure resource queries during a complete search.",
+      "tokens": 13,
+      "expanded_words": 13
+    },
+    {
+      "section": "6. Scope and Open Questions",
+      "text": "That measurement must determine whether on-demand calculation reduces total route-planning time.",
+      "tokens": 11,
+      "expanded_words": 13
+    }
+  ]
+}
