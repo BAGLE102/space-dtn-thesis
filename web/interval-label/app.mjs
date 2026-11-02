@@ -38,7 +38,7 @@ function explain(s) {
     case 'pop': return [`取出 ${L}`, `<p><b>${L}</b> = (${x.L1.c.id}, ${fmt([x.L1.I])})，到節點 <b>${x.L1.c.v}</b>，key = ${x.L1.key}。</p><p>最早完整抵達時間最小，所以先處理。</p>`];
     case 'goal': return ['到達目的地', `<p><b>${L}</b> 已到 ${P.dst}。Q 依最早完整抵達排序，所以這是最早結果（候選結論，尚未正式證明）。</p>`];
     case 'dead': return ['沒有下一跳', `<p>節點 ${x.L1.c.v} 沒有 outgoing contact，這個 Label 到此結束。</p>`];
-    case 'range': { const c1 = x.L1.c, c2 = x.c2, d1 = P.S.div(c1.r), d2 = P.S.div(c2.r), lo = x.L1.I[0]; const fast = d1.gt(d2) ? `<p>下一跳比較快，太早開始會沒資料可送，所以多等 d₁ − d₂ = ${d1.sub(d2)} 秒。</p>` : ''; return [`${L} → ${c2.id}：抓頭和尾`, `<pre>Head = max(a₂, lo + δ₁ + max(0, d₁ − d₂))\n     = max(${c2.a}, ${lo} + ${c1.d} + max(0, ${d1} − ${d2}))\nTail = min(b₂ − d₂, D* − d₂ − δ₂)\n     = min(${c2.b} − ${d2}, ${P.T} − ${d2} − ${c2.d})</pre>${c2.F.length ? `<p>預約 ${c2.F.map(([a, b]) => `[${a}, ${b})`).join('、')}：移除 ${c2.F.map(([a, b]) => `(${a.sub(d2)}, ${b})`).join('、')}。</p>` : ''}${fast}<p>候選：${fmt(x.parts)}</p>`]; }
+    case 'range': { const c1 = x.L1.c, c2 = x.c2, d1 = P.S.div(c1.r), d2 = P.S.div(c2.r), lo = x.L1.I[0]; const fast = d1.gt(d2) ? `<p>下一跳比較快，太早開始會沒資料可送，所以多等 d₁ − d₂ = ${d1.sub(d2)} 秒。</p>` : ''; return [`${L} → ${c2.id}：抓頭和尾`, `<p>S = ${P.S}；${c1.id}：r₁ = ${c1.r}、d₁ = S/r₁ = ${d1}、δ₁ = ${c1.d}；${c2.id}：r₂ = ${c2.r}、d₂ = S/r₂ = ${d2}、δ₂ = ${c2.d}。</p><pre>Head = max(a₂, lo + δ₁ + max(0, d₁ − d₂))\n     = max(${c2.a}, ${lo} + ${c1.d} + max(0, ${d1} − ${d2}))\nTail = min(b₂ − d₂, D* − d₂ − δ₂)\n     = min(${c2.b} − ${d2}, ${P.T} − ${d2} − ${c2.d})</pre>${c2.F.length ? `<p>預約 ${c2.F.map(([a, b]) => `[${a}, ${b})`).join('、')}：移除 ${c2.F.map(([a, b]) => `(${a.sub(d2)}, ${b})`).join('、')}。</p>` : ''}${fast}<p>候選：${fmt(x.parts)}</p>`]; }
     case 'filter': return [`${L} → ${x.c2.id}：檢查 ${x.c2.u} 的 buffer`, `<p>對每個 s₂，只查最晚的 s₁*：</p><pre>O(t) + 已收(t) − 已送(t) ≤ ${P.M}</pre><p>候選 ${fmt(x.parts)} → 結果 <b>${fmt(x.res)}</b></p>${x.parts.length && !x.res.length ? '<p class="badtxt">整段都放不下，這是「早到不一定比較好」的情況。</p>' : ''}<p>可在下方拖動 s₂ 查看。</p>`];
     case 'finish': {
       if (!x.goal) return [x.status === 'UNKNOWN' ? '未完成' : '找不到路徑', `<p>${x.status === 'UNKNOWN' ? '超過 Label 上限，結果未知。' : `Q 已空，期限 ${P.T} 內找不到路徑（在目前的限制範圍內）。`}</p>`];
@@ -57,7 +57,7 @@ function edges(svg, nodes, marks = {}) {
     const dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, sign = c.u < c.v ? 1 : -1, bend = (idx + (key.includes('|') ? .35 : 0)) * 34 * sign * (idx % 2 ? -1 : 1) + 14 * sign;
     const mx = (a.x + b.x) / 2 - dy / len * bend, my = (a.y + b.y) / 2 + dx / len * bend, r = 21; const ux = mx - a.x, uy = my - a.y, ul = Math.hypot(ux, uy) || 1, vx = mx - b.x, vy = my - b.y, vl = Math.hypot(vx, vy) || 1;
     const off = current.contacts.some((o) => o.u === c.v && o.v === c.u) ? 34 : 16; const st = marks[c.id] || ''; const p = sv('path', { d: `M${a.x + ux / ul * r} ${a.y + uy / ul * r} Q${mx} ${my} ${b.x + vx / vl * r} ${b.y + vy / vl * r}`, class: `edge ${st}`, 'marker-end': `url(#m-${svg.id}-${st || 'a'})` }); svg.append(p);
-    const nsx = -dy / len * Math.sign(bend || 1) * off, nsy = dx / len * Math.sign(bend || 1) * off; svg.append(sv('text', { x: (a.x + 2 * mx + b.x) / 4 + nsx, y: (a.y + 2 * my + b.y) / 4 + nsy, class: 'halo', 'text-anchor': 'middle', 'dominant-baseline': 'central' }, `${c.id} [${c.a},${c.b}]`)); });
+    const nsx = -dy / len * Math.sign(bend || 1) * off, nsy = dx / len * Math.sign(bend || 1) * off; svg.append(sv('text', { x: (a.x + 2 * mx + b.x) / 4 + nsx, y: (a.y + 2 * my + b.y) / 4 + nsy, class: 'halo', 'text-anchor': 'middle', 'dominant-baseline': 'central' }, `${c.id} [${c.a},${c.b}] r=${c.r}`)); });
 }
 function drawGraph() {
   const svg = $('#graph'); svg.replaceChildren(); svg.setAttribute('viewBox', `0 0 ${VIEW.w} ${VIEW.h}`);
@@ -96,12 +96,18 @@ function drawBuffer() {
   if (cv && cv.r.s1) { const { h, A, f } = cv.r; const ts = [new R(0n), h, A, chosen, f, ...O.map((p) => p[0]), R.of(tmax)].sort((a, b) => a.cmp(b)); const start = h; const tot = ts.filter((t) => t.ge(start) && t.le(f)).map((t) => `${X(t.num())},${Y(occ(O, t).add(ramp(t, h, A, P.S)).sub(ramp(t, chosen, f, P.S)).num())}`).join(' '); svg.append(sv('polyline', { points: tot, fill: 'none', stroke: cv.ok ? 'var(--can)' : 'var(--bad)', 'stroke-width': 3 })); svg.append(sv('text', { x: M.l, y: 14 }, '粗線：背景＋本包')); }
   svg.append(sv('text', { x: W - M.r, y: 14, 'text-anchor': 'end', class: 'muted' }, W < 500 ? '灰：背景　紅虛線：上限' : '灰線：背景　紅虛線：上限'));
 }
+function drawParams() {
+  const s = steps[at], x = s.x, focus = new Set([x.L1?.c.id, x.c2?.id, x.c?.id].filter(Boolean)), t = $('#params');
+  $('#param-sum').textContent = `S = ${P.S} MB，g = ${P.g} 秒，每節點上限 M = ${P.M} MB，期限 D* = ${P.T} 秒`;
+  t.replaceChildren(el('tr', {}, ...['Contact', '方向', '時窗 [a, b]（秒）', '速率 r（MB/s）', '傳輸時間 d = S/r（秒）', '延遲 δ（秒）', '已預約 F（秒）'].map((h) => el('th', { text: h }))));
+  P.cs.forEach((c) => t.append(el('tr', { class: focus.has(c.id) ? 'current' : '' }, el('td', { text: c.id }), el('td', { text: `${c.u}→${c.v}` }), el('td', { text: `[${c.a}, ${c.b}]` }), el('td', { text: String(c.r) }), el('td', { text: String(P.S.div(c.r)) }), el('td', { text: String(c.d) }), el('td', { text: c.F.length ? c.F.map(([u, v]) => `[${u}, ${v})`).join('、') : '—' }))));
+}
 function draw() {
   const s = steps[at]; $('#seek').max = steps.length - 1; $('#seek').value = at; $('#stepno').textContent = `${at + 1} / ${steps.length}`;
   const [t, b] = explain(s); $('#exp-title').textContent = t; $('#exp-body').innerHTML = b;
   const ln = s.kind === 'insert' && s.x.pred !== null ? lineOf.ins2 : s.kind === 'finish' && !s.x.goal ? lineOf.nopath : lineOf[s.kind]; const code = $('#sub-code'); code.replaceChildren(...PSEUDO.map((l, i) => el('span', { class: i === ln ? 'on' : '', text: l || ' ' })));
   const log = $('#sub-log'); log.replaceChildren(...steps.slice(0, at + 1).map((x, i) => el('li', { class: i === at ? 'on' : '', text: explain(x)[0] }))); log.scrollTop = log.scrollHeight;
-  drawGraph(); drawLabels(); drawTimeline(); drawBuffer();
+  drawGraph(); drawLabels(); drawTimeline(); drawParams(); drawBuffer();
 }
 function stopPlay() { if (timer) clearInterval(timer); timer = null; $('#play').textContent = '播放'; }
 function go(i) { at = Math.max(0, Math.min(steps.length - 1, i)); const info = bufferInfo(); if (info && info.parts.length) { $('#s2').value = 0; } draw(); }

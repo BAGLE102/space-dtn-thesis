@@ -25,3 +25,4 @@ svg text{fill:var(--ink);font:12px system-ui,"Noto Sans TC",sans-serif}svg .mute
 [hidden]{display:none!important}
 @media (max-width:860px){.graph text{font-size:17px}.graph .nodet{font-size:20px}}
 .head span.badtxt,.head .badtxt{color:var(--bad);font-weight:600}.head span.good,.head .good{color:var(--ok);font-weight:600}
+#params tr.current{background:color-mix(in srgb,var(--nxt) 14%,transparent)}
