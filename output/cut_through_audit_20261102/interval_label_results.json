@@ -1,0 +1,452 @@
+{
+ "fixtures": {
+  "7秒案例": {
+   "arrival": "7",
+   "schedule": [
+    [
+     "ab",
+     "2"
+    ],
+    [
+     "bc",
+     "2"
+    ]
+   ],
+   "valid": true,
+   "reach": {
+    "ab": [
+     [
+      "0",
+      "5"
+     ]
+    ],
+    "bc": [
+     [
+      "2",
+      "7"
+     ]
+    ]
+   }
+  },
+  "B只剩3MB": {
+   "arrival": "7",
+   "schedule": [
+    [
+     "ab",
+     "2"
+    ],
+    [
+     "bc",
+     "2"
+    ]
+   ],
+   "valid": true,
+   "reach": {
+    "ab": [
+     [
+      "0",
+      "5"
+     ]
+    ],
+    "bc": [
+     [
+      "2",
+      "13/2"
+     ]
+    ]
+   }
+  },
+  "兩段區間": {
+   "arrival": "7",
+   "schedule": [
+    [
+     "ab",
+     "2"
+    ],
+    [
+     "bc",
+     "2"
+    ]
+   ],
+   "valid": true,
+   "reach": {
+    "ab": [
+     [
+      "0",
+      "5"
+     ]
+    ],
+    "bc": [
+     [
+      "2",
+      "4"
+     ],
+     [
+      "10",
+      "15"
+     ]
+    ]
+   }
+  },
+  "ppt_second": {
+   "arrival": "3",
+   "schedule": [
+    [
+     "c6",
+     "1"
+    ],
+    [
+     "c8",
+     "2"
+    ]
+   ],
+   "valid": true,
+   "reach": {
+    "c3": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c4": [
+     [
+      "7",
+      "8"
+     ]
+    ],
+    "c5": [
+     [
+      "10",
+      "10"
+     ]
+    ],
+    "c6": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c8": [
+     [
+      "2",
+      "2"
+     ]
+    ]
+   }
+  },
+  "pareto_out_fast": {
+   "arrival": "6",
+   "schedule": [
+    [
+     "fast",
+     "5"
+    ],
+    [
+     "out",
+     "5"
+    ]
+   ],
+   "valid": true,
+   "reach": {
+    "slow": [
+     [
+      "0",
+      "0"
+     ]
+    ],
+    "fast": [
+     [
+      "5",
+      "5"
+     ]
+    ],
+    "out": [
+     [
+      "5",
+      "29"
+     ]
+    ]
+   }
+  },
+  "pareto_out_slow": {
+   "arrival": "10",
+   "schedule": [
+    [
+     "slow",
+     "0"
+    ],
+    [
+     "out",
+     "1"
+    ]
+   ],
+   "valid": true,
+   "reach": {
+    "slow": [
+     [
+      "0",
+      "0"
+     ]
+    ],
+    "fast": [
+     [
+      "5",
+      "5"
+     ]
+    ],
+    "out": [
+     [
+      "1",
+      "21"
+     ]
+    ]
+   }
+  },
+  "full_node": {
+   "arrival": "3",
+   "schedule": [
+    [
+     "in",
+     "2"
+    ],
+    [
+     "out",
+     "2"
+    ]
+   ],
+   "valid": true,
+   "reach": {
+    "in": [
+     [
+      "2",
+      "2"
+     ]
+    ],
+    "out": [
+     [
+      "2",
+      "2"
+     ]
+    ]
+   }
+  },
+  "late_only": {
+   "arrival": "3",
+   "schedule": [
+    [
+     "in",
+     "2"
+    ],
+    [
+     "out",
+     "2"
+    ]
+   ],
+   "valid": true,
+   "reach": {
+    "in": [
+     [
+      "0",
+      "5"
+     ]
+    ],
+    "out": [
+     [
+      "2",
+      "2"
+     ]
+    ]
+   }
+  },
+  "walk_v5": {
+   "arrival": "8",
+   "schedule": [
+    [
+     "a",
+     "0"
+    ],
+    [
+     "b",
+     "1"
+    ],
+    [
+     "c",
+     "5"
+    ],
+    [
+     "e",
+     "7"
+    ]
+   ],
+   "valid": true,
+   "reach": {
+    "a": [
+     [
+      "0",
+      "0"
+     ]
+    ],
+    "b": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c": [
+     [
+      "5",
+      "5"
+     ]
+    ],
+    "e": [
+     [
+      "7",
+      "7"
+     ]
+    ]
+   }
+  }
+ },
+ "single_equal": {
+  "n": 300,
+  "hetero": false,
+  "grid": "1/16",
+  "bundles": 1,
+  "queries": 300,
+  "feasible": 181,
+  "invalid": 0,
+  "later_than_grid": 0,
+  "grid_only": 0,
+  "earlier_than_grid": 0,
+  "cand_only": 0,
+  "overlap": 0,
+  "max_parts": 2,
+  "max_labels": 10,
+  "examples": []
+ },
+ "open_flags": 0,
+ "single_hetero": {
+  "n": 300,
+  "hetero": true,
+  "grid": "1/16",
+  "bundles": 1,
+  "queries": 300,
+  "feasible": 153,
+  "invalid": 0,
+  "later_than_grid": 0,
+  "grid_only": 0,
+  "earlier_than_grid": 0,
+  "cand_only": 0,
+  "overlap": 0,
+  "max_parts": 2,
+  "max_labels": 11,
+  "examples": []
+ },
+ "multi_equal": {
+  "n": 150,
+  "hetero": false,
+  "grid": "1/16",
+  "bundles": 3,
+  "queries": 312,
+  "feasible": 214,
+  "invalid": 0,
+  "later_than_grid": 0,
+  "grid_only": 0,
+  "earlier_than_grid": 0,
+  "cand_only": 0,
+  "overlap": 0,
+  "max_parts": 3,
+  "max_labels": 10,
+  "examples": []
+ },
+ "multi_hetero": {
+  "n": 150,
+  "hetero": true,
+  "grid": "1/16",
+  "bundles": 3,
+  "queries": 291,
+  "feasible": 185,
+  "invalid": 0,
+  "later_than_grid": 0,
+  "grid_only": 0,
+  "earlier_than_grid": 0,
+  "cand_only": 0,
+  "overlap": 0,
+  "max_parts": 2,
+  "max_labels": 11,
+  "examples": []
+ },
+ "reach": {
+  "n": 150,
+  "grid": "1/16",
+  "missing_grid_points": 0,
+  "extra_grid_points": 0,
+  "grid_points": 11943,
+  "bad_instances": 0
+ },
+ "stress_single": {
+  "n": 300,
+  "grid": "1/16",
+  "bundles": 1,
+  "queries": 300,
+  "feasible": 222,
+  "invalid": 0,
+  "later_than_grid": 0,
+  "grid_only": 0,
+  "earlier_than_grid": 0,
+  "cand_only": 0,
+  "overlap": 1,
+  "max_parts": 3,
+  "max_labels": 19,
+  "missing_reach": 0,
+  "extra_reach": 0,
+  "reach_points": 55301,
+  "examples": []
+ },
+ "stress_multi": {
+  "n": 150,
+  "grid": "1/16",
+  "bundles": 3,
+  "queries": 346,
+  "feasible": 273,
+  "invalid": 0,
+  "later_than_grid": 0,
+  "grid_only": 0,
+  "earlier_than_grid": 0,
+  "cand_only": 0,
+  "overlap": 1,
+  "max_parts": 3,
+  "max_labels": 17,
+  "missing_reach": 0,
+  "extra_reach": 0,
+  "reach_points": 64252,
+  "examples": []
+ },
+ "control": {
+  "n": 300,
+  "earliest_predecessor_wrong": 30,
+  "earliest_predecessor_reach_diff": 141,
+  "concrete_earliest_wrong": 30,
+  "skip_buffer_invalid": 0,
+  "no_cut_through_later": 89
+ },
+ "stress_fine_grid": {
+  "n": 15,
+  "grid": "1/48",
+  "bundles": 1,
+  "queries": 15,
+  "feasible": 12,
+  "invalid": 0,
+  "later_than_grid": 0,
+  "grid_only": 0,
+  "earlier_than_grid": 0,
+  "cand_only": 0,
+  "overlap": 0,
+  "max_parts": 2,
+  "max_labels": 12,
+  "missing_reach": 0,
+  "extra_reach": 0,
+  "reach_points": 6619,
+  "examples": []
+ }
+}

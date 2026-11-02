@@ -1,0 +1,660 @@
+{
+ "cases": [
+  {
+   "case": "第一包（原PPT）",
+   "oracle": "8",
+   "candidate": "8",
+   "schedule": [
+    [
+     "c1",
+     "2"
+    ],
+    [
+     "c2",
+     "6"
+    ]
+   ],
+   "labels": 3,
+   "valid": true,
+   "J": {
+    "c1": [
+     [
+      "2",
+      "2"
+     ]
+    ],
+    "c2": [
+     [
+      "6",
+      "6"
+     ]
+    ],
+    "c3": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c4": [
+     [
+      "7",
+      "8"
+     ]
+    ],
+    "c5": [
+     [
+      "10",
+      "10"
+     ]
+    ],
+    "c6": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c7": [
+     [
+      "4",
+      "4"
+     ]
+    ],
+    "c8": [
+     [
+      "2",
+      "2"
+     ]
+    ]
+   },
+   "precut": "8",
+   "early_only": "8",
+   "no_count": "8",
+   "double_subtract": null,
+   "delete_receiver_gap": "8",
+   "first_part_only": "8",
+   "merge_small_gap": "8"
+  },
+  {
+   "case": "第二包（原PPT）",
+   "oracle": "12",
+   "candidate": "12",
+   "schedule": [
+    [
+     "c4",
+     "7"
+    ],
+    [
+     "c5",
+     "10"
+    ]
+   ],
+   "labels": 4,
+   "valid": true,
+   "J": {
+    "c1": [],
+    "c2": [],
+    "c3": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c4": [
+     [
+      "7",
+      "8"
+     ]
+    ],
+    "c5": [
+     [
+      "10",
+      "10"
+     ]
+    ],
+    "c6": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c7": [
+     [
+      "4",
+      "4"
+     ]
+    ],
+    "c8": [
+     [
+      "2",
+      "2"
+     ]
+    ]
+   },
+   "precut": "12",
+   "early_only": null,
+   "no_count": "12",
+   "double_subtract": null,
+   "delete_receiver_gap": "12",
+   "first_part_only": "12",
+   "merge_small_gap": "12"
+  },
+  {
+   "case": "V1 第二包，c7無配額限制",
+   "oracle": "5",
+   "candidate": "5",
+   "schedule": [
+    [
+     "c6",
+     "1"
+    ],
+    [
+     "c7",
+     "4"
+    ]
+   ],
+   "labels": 4,
+   "valid": true,
+   "J": {
+    "c1": [],
+    "c2": [],
+    "c3": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c4": [
+     [
+      "7",
+      "8"
+     ]
+    ],
+    "c5": [
+     [
+      "10",
+      "10"
+     ]
+    ],
+    "c6": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c7": [
+     [
+      "4",
+      "4"
+     ]
+    ],
+    "c8": [
+     [
+      "2",
+      "2"
+     ]
+    ]
+   },
+   "precut": "5",
+   "early_only": "5",
+   "no_count": "5",
+   "double_subtract": null,
+   "delete_receiver_gap": "5",
+   "first_part_only": "5",
+   "merge_small_gap": "5"
+  },
+  {
+   "case": "V2 c4=[6,9]，c5=[7,8]：同步收放",
+   "oracle": "9",
+   "candidate": "9",
+   "schedule": [
+    [
+     "c4",
+     "6"
+    ],
+    [
+     "c5",
+     "7"
+    ]
+   ],
+   "labels": 4,
+   "valid": true,
+   "J": {
+    "c1": [],
+    "c2": [],
+    "c3": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c4": [
+     [
+      "6",
+      "8"
+     ]
+    ],
+    "c5": [
+     [
+      "7",
+      "7"
+     ]
+    ],
+    "c6": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c7": [
+     [
+      "4",
+      "4"
+     ]
+    ],
+    "c8": [
+     [
+      "2",
+      "2"
+     ]
+    ]
+   },
+   "precut": "9",
+   "early_only": null,
+   "no_count": "9",
+   "double_subtract": null,
+   "delete_receiver_gap": null,
+   "first_part_only": "9",
+   "merge_small_gap": "9"
+  },
+  {
+   "case": "V3 c4=[5,9]且δ=1，c5=[7,8]：接收映射需平移",
+   "oracle": "9",
+   "candidate": "9",
+   "schedule": [
+    [
+     "c4",
+     "5"
+    ],
+    [
+     "c5",
+     "7"
+    ]
+   ],
+   "labels": 4,
+   "valid": true,
+   "J": {
+    "c1": [],
+    "c2": [],
+    "c3": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c4": [
+     [
+      "5",
+      "8"
+     ]
+    ],
+    "c5": [
+     [
+      "7",
+      "7"
+     ]
+    ],
+    "c6": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c7": [
+     [
+      "4",
+      "4"
+     ]
+    ],
+    "c8": [
+     [
+      "2",
+      "2"
+     ]
+    ]
+   },
+   "precut": "9",
+   "early_only": null,
+   "no_count": "9",
+   "double_subtract": null,
+   "delete_receiver_gap": null,
+   "first_part_only": "9",
+   "merge_small_gap": "9"
+  },
+  {
+   "case": "V4 前包1MB造成小缺口",
+   "oracle": "2",
+   "candidate": "2",
+   "schedule": [
+    [
+     "in",
+     "0"
+    ],
+    [
+     "out",
+     "1"
+    ]
+   ],
+   "labels": 3,
+   "valid": true,
+   "J": {
+    "in": [
+     [
+      "0",
+      "1"
+     ],
+     [
+      "7/4",
+      "5"
+     ]
+    ],
+    "out": [
+     [
+      "0",
+      "2"
+     ],
+     [
+      "11/4",
+      "11"
+     ]
+    ]
+   },
+   "precut": "2",
+   "early_only": "2",
+   "no_count": "2",
+   "double_subtract": "2",
+   "delete_receiver_gap": "2",
+   "first_part_only": "2",
+   "merge_small_gap": "2"
+  },
+  {
+   "case": "V5 必須離開再返回的walk",
+   "oracle": "8",
+   "candidate": "8",
+   "schedule": [
+    [
+     "a",
+     "0"
+    ],
+    [
+     "b",
+     "1"
+    ],
+    [
+     "c",
+     "5"
+    ],
+    [
+     "e",
+     "7"
+    ]
+   ],
+   "labels": 4,
+   "valid": true,
+   "J": {
+    "a": [
+     [
+      "0",
+      "0"
+     ]
+    ],
+    "b": [
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "c": [
+     [
+      "5",
+      "5"
+     ]
+    ],
+    "e": [
+     [
+      "7",
+      "7"
+     ]
+    ]
+   },
+   "precut": "8",
+   "early_only": null,
+   "no_count": "8",
+   "double_subtract": null,
+   "delete_receiver_gap": "8",
+   "first_part_only": "8",
+   "merge_small_gap": "8"
+  },
+  {
+   "case": "V6 第26頁容量歷史診斷例",
+   "oracle": "29/4",
+   "candidate": "29/4",
+   "schedule": [
+    [
+     "x3",
+     "21/4"
+    ],
+    [
+     "c",
+     "11/2"
+    ],
+    [
+     "goal",
+     "7"
+    ]
+   ],
+   "labels": 6,
+   "valid": true,
+   "J": {
+    "x1": [
+     [
+      "0",
+      "0"
+     ]
+    ],
+    "c": [
+     [
+      "1",
+      "2"
+     ],
+     [
+      "21/4",
+      "23/4"
+     ]
+    ],
+    "x2": [
+     [
+      "19/4",
+      "19/4"
+     ]
+    ],
+    "x3": [
+     [
+      "21/4",
+      "21/4"
+     ]
+    ],
+    "goal": [
+     [
+      "7",
+      "7"
+     ]
+    ]
+   },
+   "precut": "29/4",
+   "early_only": null,
+   "no_count": null,
+   "double_subtract": null,
+   "delete_receiver_gap": "29/4",
+   "first_part_only": "29/4",
+   "merge_small_gap": "29/4"
+  },
+  {
+   "case": "V7 小缺口內不可起送",
+   "oracle": "15/4",
+   "candidate": "15/4",
+   "schedule": [
+    [
+     "in",
+     "7/4"
+    ],
+    [
+     "out",
+     "11/4"
+    ]
+   ],
+   "labels": 2,
+   "valid": true,
+   "J": {
+    "in": [
+     [
+      "0",
+      "1"
+     ],
+     [
+      "7/4",
+      "5"
+     ]
+    ],
+    "out": [
+     [
+      "0",
+      "2"
+     ],
+     [
+      "11/4",
+      "11"
+     ]
+    ]
+   },
+   "precut": "15/4",
+   "early_only": "15/4",
+   "no_count": "15/4",
+   "double_subtract": "15/4",
+   "delete_receiver_gap": "19/4",
+   "first_part_only": "15/4",
+   "merge_small_gap": null
+  }
+ ],
+ "fuzz_no_quota": {
+  "n": 1500,
+  "quota": false,
+  "feasible": 878,
+  "candidate_mismatch": 0,
+  "invalid": 0,
+  "small_gap_instances": 3,
+  "label_max": 21,
+  "eval_sum": 5369,
+  "contact_sum": 10542,
+  "modes": {
+   "precut": {
+    "mismatch": 0,
+    "false_infeasible": 0,
+    "later": 0,
+    "invalid": 0
+   },
+   "early_only": {
+    "mismatch": 9,
+    "false_infeasible": 8,
+    "later": 1,
+    "invalid": 0
+   },
+   "no_count": {
+    "mismatch": 0,
+    "false_infeasible": 0,
+    "later": 0,
+    "invalid": 0
+   },
+   "double_subtract": {
+    "mismatch": 177,
+    "false_infeasible": 133,
+    "later": 44,
+    "invalid": 0
+   },
+   "delete_receiver_gap": {
+    "mismatch": 83,
+    "false_infeasible": 9,
+    "later": 9,
+    "invalid": 65
+   },
+   "first_part_only": {
+    "mismatch": 2,
+    "false_infeasible": 1,
+    "later": 1,
+    "invalid": 0
+   },
+   "merge_small_gap": {
+    "mismatch": 0,
+    "false_infeasible": 0,
+    "later": 0,
+    "invalid": 0
+   }
+  },
+  "fails": []
+ },
+ "fuzz_quota": {
+  "n": 1500,
+  "quota": true,
+  "feasible": 752,
+  "candidate_mismatch": 0,
+  "invalid": 0,
+  "small_gap_instances": 0,
+  "label_max": 18,
+  "eval_sum": 4152,
+  "contact_sum": 10487,
+  "modes": {
+   "precut": {
+    "mismatch": 0,
+    "false_infeasible": 0,
+    "later": 0,
+    "invalid": 0
+   },
+   "early_only": {
+    "mismatch": 4,
+    "false_infeasible": 4,
+    "later": 0,
+    "invalid": 0
+   },
+   "no_count": {
+    "mismatch": 0,
+    "false_infeasible": 0,
+    "later": 0,
+    "invalid": 0
+   },
+   "double_subtract": {
+    "mismatch": 133,
+    "false_infeasible": 103,
+    "later": 30,
+    "invalid": 0
+   },
+   "delete_receiver_gap": {
+    "mismatch": 62,
+    "false_infeasible": 2,
+    "later": 3,
+    "invalid": 57
+   },
+   "first_part_only": {
+    "mismatch": 0,
+    "false_infeasible": 0,
+    "later": 0,
+    "invalid": 0
+   },
+   "merge_small_gap": {
+    "mismatch": 0,
+    "false_infeasible": 0,
+    "later": 0,
+    "invalid": 0
+   }
+  },
+  "fails": []
+ }
+}

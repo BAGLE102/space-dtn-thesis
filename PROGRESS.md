@@ -2,6 +2,26 @@
 
 更新日期：2026-11-02
 
+## 區間 Label 驗證（2026-11-02）
+
+- 模型：有資料可送就能開始轉；不採用 visited 規則；同一節點造訪不可重疊；無獨立配額。見 `docs/interval_label_pseudocode_20261102.md`、`docs/interval_label_validation_20261102.md`。
+- 1,864 次小型查詢（含三包提交）與格點窮舉、獨立重放未發現錯誤；非一般證明。
+- 未完成：TRACK（已有 2 次自我重疊）、來源與目的地背景、配額、與原論文對照、cut-through 文獻查核。
+
+## Cut-through 查核（2026-11-02）
+
+- 使用者告知老師方向：可在收完前轉發。新增 `docs/cut_through_audit_20261102.md`、`src/experiments/cut_through_audit.py`、`output/cut_through_audit_20261102/`。
+- PPT 第二包由 12 秒變 3 秒；每段取最早與只留最早 A 有反例；安全支配在 2,000 個格點小例 0 不一致（非證明）。
+- 使用者另經其他 AI 核對 PDF：§IV-C 未證明排除重訪不影響最優性（本助理未直接核對 PDF）。隨機例未出現必須重訪。
+- 待決定：是否改用區間 Label。
+
+## 方法查核（2026-11-02）
+
+- 新增 `docs/contact_splitting_method_audit_20261102.md`、`src/experiments/contact_splitting_audit.py`、`output/contact_splitting_audit_20261102/`。
+- 兩包 D8、D12 與 oracle 一致；3,000 個小型隨機單包例子候選流程 0 不一致（非一般證明）。
+- 發現：第二包 D12 取決於 c7 的 2 MB 配額，無配額時為 D5；虛擬時窗可重疊；固定快照下延伸時判定與全圖預算答案相同。
+- 待使用者決定：是否保留獨立 quota。P 端點、開區間、多包提交、原文對照未完成。
+
 ## 方法核心澄清（2026-11-02）
 
 - 使用者強調由Label延伸當下做局部可行性判定／必要切割；原助理流程圖將buffer切割放在Q前，與使用者意圖不符，已標記該圖不可作現行流程並補充handoff。

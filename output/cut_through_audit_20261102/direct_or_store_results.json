@@ -1,0 +1,118 @@
+{
+ "fixtures": {
+  "ppt_second": {
+   "truth": "3",
+   "cand": "3",
+   "sch": [
+    [
+     "c6",
+     "1"
+    ],
+    [
+     "c8",
+     "2"
+    ]
+   ]
+  },
+  "pareto_out_fast": {
+   "truth": "6",
+   "cand": "6",
+   "sch": [
+    [
+     "fast",
+     "5"
+    ],
+    [
+     "out",
+     "5"
+    ]
+   ]
+  },
+  "pareto_out_slow": {
+   "truth": "14",
+   "cand": "14",
+   "sch": [
+    [
+     "fast",
+     "5"
+    ],
+    [
+     "out",
+     "5"
+    ]
+   ]
+  },
+  "full_node": {
+   "truth": "3",
+   "cand": "3",
+   "sch": [
+    [
+     "in",
+     "2"
+    ],
+    [
+     "out",
+     "2"
+    ]
+   ]
+  },
+  "late_only": {
+   "truth": "3",
+   "cand": "3",
+   "sch": [
+    [
+     "in",
+     "2"
+    ],
+    [
+     "out",
+     "2"
+    ]
+   ]
+  },
+  "walk_v5": {
+   "truth": "8",
+   "cand": "8",
+   "sch": [
+    [
+     "a",
+     "0"
+    ],
+    [
+     "b",
+     "1"
+    ],
+    [
+     "c",
+     "5"
+    ],
+    [
+     "e",
+     "7"
+    ]
+   ]
+  }
+ },
+ "equal": {
+  "n": 1000,
+  "hetero": false,
+  "feasible": 572,
+  "mismatch": 0,
+  "later": 0,
+  "false_inf": 0,
+  "wrong": 0,
+  "labels_max": 68,
+  "ex": null
+ },
+ "hetero": {
+  "n": 1000,
+  "hetero": true,
+  "feasible": 515,
+  "mismatch": 0,
+  "later": 0,
+  "false_inf": 0,
+  "wrong": 0,
+  "labels_max": 26,
+  "ex": null
+ }
+}
