@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>區間 Label 逐步圖解</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="top"><div><h1>區間 Label Setting 逐步圖解</h1><p>Space DTN：節點有資料可送就能開始轉，求每包最早抵達路徑。</p></div><a href="../">舊版 v04 圖解</a></header>
+<nav class="tabs" role="tablist">
+<button role="tab" data-tab="intro" aria-selected="false">簡介</button><button role="tab" data-tab="edit" aria-selected="false">建立拓譜</button><button role="tab" data-tab="run" aria-selected="true">執行演算法</button><button role="tab" data-tab="desc" aria-selected="false">演算法說明</button></nav>
+<main>
+<section id="tab-intro" class="tab" hidden>
+<div class="prose">
+<h2>這個網頁在做什麼</h2>
+<p>選一個拓譜，或自己建立拓譜，然後一步一步看搜尋怎麼建立 Label、切區間、判斷 buffer，最後回溯出每一跳的起送時間。求解在你的瀏覽器中用精確分數計算。</p>
+<h2>和一般最早抵達搜尋的差別</h2>
+<div class="cards"><div><h3>邊收邊轉</h3><p>第一個 byte 到達後，只要有資料可送，就能開始往下一跳送。</p></div><div><h3>區間 Label</h3><p>Label 記一段可達起送時間，到最後才決定實際時間。</p></div><div><h3>Buffer Detour</h3><p>節點快滿時，資料可以先離開，之後再回來。</p></div></div>
+<h2>怎麼使用</h2>
+<ol><li>到「執行演算法」，選擇案例。</li><li>按「下一步」或「播放」。</li><li>在 buffer 圖拖動 <code>s₂</code>，看哪些起送時間放得下。</li><li>按左側 Label，查看它的前驅路徑。</li></ol>
+<h2 id="status">目前的範圍</h2>
+<p class="warn">這是候選方法。小型測試未發現漏解或不可行排程，但尚未正式證明。此版本只有 <code>RELAX</code> 模式；未計來源與目的地背景占用，也不含獨立配額與多包提交。不要把這裡的結果當成優於既有方法的證據。</p>
+</div></section>
+
+<section id="tab-edit" class="tab" hidden>
+<div class="edit-grid"><div class="panel"><div class="head"><h2>拓譜圖</h2><span>拖動節點可調整位置</span></div><svg id="edit-graph" class="graph" role="img" aria-label="可編輯的拓譜圖"></svg>
+<div class="row"><label>案例 <select id="edit-case"></select></label><button id="load-case">載入</button><button id="export">下載 JSON</button><label class="filebtn">上傳 JSON<input id="import" type="file" accept="application/json"></label></div></div>
+<div class="panel"><div class="head"><h2>Bundle</h2></div><div class="fields" id="bundle-fields"></div>
+<div class="head"><h2>節點</h2><button id="add-node">新增節點</button></div><div class="scroll"><table id="node-table"></table></div>
+<p class="hint">背景占用寫成「時間:占用」，例如 <code>11:0, 12:10, 13:10, 14:0</code>。來源與目的地要留空。</p></div></div>
+<div class="panel"><div class="head"><h2>Contact Plan</h2><button id="add-contact">新增 Contact</button></div><div class="scroll"><table id="contact-table"></table></div><p class="hint">時間可填小數或分數。已預約寫成 <code>9-10</code>，多段用逗號分開。</p>
+<div class="row"><button id="apply" class="primary">套用並執行</button><span id="edit-msg" role="alert"></span></div></div>
+</section>
+
+<section id="tab-run" class="tab">
+<div class="row toolbar"><label>案例 <select id="case"></select></label><button id="first">開頭</button><button id="prev">上一步</button><button id="next" class="primary">下一步</button><button id="play">播放</button><button id="last">結束</button><input id="seek" type="range" min="0" value="0" aria-label="步驟"><span id="stepno"></span></div>
+<div class="run-grid">
+<div class="panel"><div class="head"><h2>拓譜</h2><span class="legend"><i class="k cur"></i>目前 Label<i class="k nxt"></i>檢查中<i class="k path"></i>路徑</span></div><svg id="graph" class="graph" role="img" aria-label="拓譜與目前搜尋狀態"></svg></div>
+<div class="panel"><div class="subtabs" role="tablist"><button data-sub="exp" aria-selected="true">說明</button><button data-sub="code" aria-selected="false">虛擬碼</button><button data-sub="log" aria-selected="false">紀錄</button></div>
+<div id="sub-exp"><h3 id="exp-title"></h3><div id="exp-body"></div></div><pre id="sub-code" hidden></pre><ol id="sub-log" hidden></ol></div>
+<div class="panel"><div class="head"><h2>Label</h2><span id="qtext"></span></div><div class="scroll short"><table id="labels"></table></div></div>
+<div class="panel"><div class="head"><h2>可起送時間</h2><span class="legend"><i class="k win"></i>時窗<i class="k res"></i>已預約<i class="k rea"></i>已到達<i class="k can"></i>本次候選</span></div><div id="timeline"></div></div>
+<div class="panel wide"><div class="head"><h2 id="buf-title">節點 Buffer</h2><span id="buf-state"></span></div><div class="row" id="s2-row" hidden><label for="s2">下一跳起送 s₂</label><input id="s2" type="range" min="0" max="200" value="0"><output id="s2-val"></output></div><svg id="buffer" class="chart" role="img" aria-label="節點 buffer 占用圖"></svg></div>
+</div></section>
+
+<section id="tab-desc" class="tab" hidden><div class="prose">
+<h2>符號</h2><div class="scroll"><table class="plain"><tr><th>符號</th><th>意義</th></tr>
+<tr><td><code>S</code>、<code>g</code>、<code>D*</code></td><td>Bundle 大小、可開始傳送時間、期限</td></tr><tr><td><code>a(c)</code>、<code>b(c)</code></td><td>Contact 開始、結束時間</td></tr><tr><td><code>r(c)</code>、<code>δ(c)</code></td><td>速率、傳播延遲</td></tr><tr><td><code>d(c) = S / r(c)</code></td><td>傳完一包所需時間</td></tr><tr><td><code>F[c]</code></td><td>已預約傳送時段</td></tr><tr><td><code>O_n(t)</code>、<code>M_n</code></td><td>節點既有占用、上限</td></tr><tr><td><code>s</code>、<code>f = s + d</code></td><td>起送、傳完</td></tr><tr><td><code>h = s + δ</code></td><td>第一個 byte 抵達</td></tr><tr><td><code>A = s + d + δ</code></td><td>整包收完</td></tr><tr><td><code>L = (c, I, pred)</code></td><td>Label：Contact、可達起送區間、前驅</td></tr><tr><td><code>key(L) = lo(I) + d + δ</code></td><td>最早完整抵達，Q 依此排序</td></tr><tr><td><code>s₁*</code></td><td>能接上 <code>s₂</code> 的最晚前一跳起送時間</td></tr></table></div>
+<h2>限制</h2><pre>不能送出還沒收到的資料：
+  s₂ ≥ h₁
+  s₂ + d₂ ≥ A₁
+節點放得下：
+  O_n(t) + 已收(t) − 已送(t) ≤ M_n</pre>
+<p><code>s₂ &lt; A₁</code> 是邊收邊轉，<code>s₂ ≥ A₁</code> 是收完才轉，不需要另外判斷。</p>
+<h2>區間的頭和尾</h2><pre>Head = max( a₂, lo(I₁) + δ₁ + max(0, d₁ − d₂) )
+Tail = min( b₂ − d₂, D* − d₂ − δ₂ )
+對每段預約 [x, y)，移除 (x − d₂, y)</pre>
+<h2>只查最晚前一跳</h2><p>固定 <code>s₂</code> 時，「已送」不變；<code>s₁</code> 越晚，「已收」越少，占用只會變少。所以最晚的 <code>s₁*</code> 放不下，更早的也放不下。</p><pre>s₁* = I₁ 中不超過 s₂ − δ₁ − max(0, d₁ − d₂) 的最大值</pre>
+<h2>驗證與限制</h2><p>Python 原型已和 1/16 秒格點窮舉、獨立重放比對 1,864 次查詢，未發現漏解或不可行排程；這裡的瀏覽器版本另與原型比對 506 個案例，結果相同。</p><p class="warn">這些是小型測試，不是證明。自我重疊的 <code>TRACK</code> 模式尚未實作；結果出現重疊時，頁面會提示答案未確認。格點之間的精度也還沒被充分檢驗。Cut-through 的協定依據與文獻查核尚未完成。</p>
+<h2>參考</h2><p>互動形式參考 <a href="https://www.adrian-haarbach.de/idp-graph-algorithms/implementation/spp-rc-label-setting/index_en.html">Adrian Haarbach 的 SPPRC 示範</a>；內容與程式為本專案原創。</p></div></section>
+</main>
+<footer>候選方法，尚待證明。求解只在瀏覽器執行，不會上傳你的資料。</footer>
+<script type="module" src="app.mjs"></script></body></html>

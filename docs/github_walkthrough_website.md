@@ -1,5 +1,7 @@
 # GitHub Pages 逐步圖解
 
+新版區間 Label 圖解：https://bagle102.github.io/space-dtn-thesis/interval-label/ 。它在瀏覽器內計算，與本文的舊版 v04 重播不同。測試：`node tests/interval_label_solver.test.mjs`。
+
 網站：https://bagle102.github.io/space-dtn-thesis/
 
 ## 操作
