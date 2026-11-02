@@ -2,6 +2,12 @@
 
 更新日期：2026-11-02
 
+## 論文進度交接（2026-11-02）
+
+- 新增 `docs/thesis_progress_handoff_20261102.md`，整理背景目標、contact splitting最新選擇、具體Label／dominance、版本衝突、已驗證元件結果、文獻重疊及待解問題。
+- 同時記錄約5,000字課程論文的碩論式章節規劃、AI規範等未知要求，以及相關Skills實際讀取來源；未將提案當成已採用貢獻。
+- 核對交接文件內的專案路徑、既存檢查數與計時數值；沒有重跑實驗、修改模型或撰寫全文。
+
 ## Contact splitting 流程圖（2026-11-02）
 
 - 依使用者確認方向，整理總流程、切割細節與Label延伸三張Mermaid圖，見 `docs/contact_splitting_flowchart_20261102.md`。
