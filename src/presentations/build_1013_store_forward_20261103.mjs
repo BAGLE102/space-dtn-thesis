@@ -119,7 +119,8 @@ function timeline(s,rows,{x=765,y=205,w=420,min=0,max=12}={}) {
 function chart(s,series,{x=655,y=210,w=540,h=265,max=4,title='占用量（MB）'}={}) {
  const chart=s.charts.add('scatter',{position:{left:x,top:y,width:w,height:h},hasLegend:true,
   legend:{position:'top',textStyle:{fontSize:17,typeface:FONT}},scatterOptions:{style:'line'},
-  series:series.map(o=>({name:o.name,xValues:o.points.map(z=>z[0]),values:o.points.map(z=>z[1]),line:{fill:o.color,width:o.width||2.8,style:o.dash?'dashed':'solid'},marker:{symbol:'none'}})),
+  // Buffer ramps and holds are piecewise linear; smoothing would invent intermediate occupancy.
+  series:series.map(o=>({name:o.name,xValues:o.points.map(z=>z[0]),values:o.points.map(z=>z[1]),smooth:false,line:{fill:o.color,width:o.width||2.8,style:o.dash?'dashed':'solid'},marker:{symbol:'none'}})),
   xAxis:{title:'時間（秒）',min:0,max:12,majorUnit:2,textStyle:{fontSize:18,typeface:FONT},majorGridlines:null},
   yAxis:{title,min:0,max,majorUnit:4,textStyle:{fontSize:18,typeface:FONT},majorGridlines:{fill:C.light,width:1}},
   chartFill:C.white,plotAreaFill:C.white});

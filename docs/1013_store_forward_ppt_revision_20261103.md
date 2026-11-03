@@ -96,3 +96,10 @@ python src/experiments/ppt_store_forward_walkthrough_20261103.py
 - P23 明標摘要欄位為 Label ID:key；P26 區分 Q、pred 鏈與 Reached，P28/P31 補齊取出與回溯符號。
 - 本次為呈現與虛擬碼記法修正，未修改研究演算法、數值或實驗。
 - 驗證：32 頁重新匯入與渲染完成；套件、字型及版面檢查通過（0 幾何問題），前驅示例核對通過；3 張圖表 XML 與 contact／結果數值維持不變。未在原生 PowerPoint 驗證。
+
+## v1.1：Buffer 圖改為分段直線
+
+- 之後此簡報修訂採 `v1.x` 命名；本次另存 `1103_新版演算法完整流程_v1.1.pptx`，不改名或覆蓋先前交付檔。
+- P11、P16、P21 的原生散佈圖每個 series 明設 `smooth=false`，將原資料點以斜線／水平線連接，移除造成占用超出資料點的平滑插值。
+- contact 折線、完整 pred、所有時間／占用數值、文字與講者備註保持不變；未修改演算法或執行實驗。
+- 核對：排除重建識別碼後，32 頁 slide／notes XML 相同；chart 指向不變。3 張圖的 8 個 series 僅新增 smooth=0，其他 chart XML 不變。32 頁最終檔渲染與預覽一致；套件、字型、幾何檢查通過。原生 PowerPoint 未驗證。
