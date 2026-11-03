@@ -352,5 +352,19 @@ s=new('演算法 3：BufferFilter','三種節點共用同一個不等式，差�
 code(s,["if mode is source then","    Own(t,s) ← S − Sent(t,s);  t ∈ [g, s + d(c)]","else if mode is relay then","    s1*(s) ← max{ x ∈ I1 : x ≤ s − δ(c1) − d(c1) }","    Own(t,s) ← Recv(t, s1*(s)) − Sent(t,s);  t ∈ [s1*(s) + δ(c1), s + d(c)]","else","    Own(t,s) ← Recv(t,s);  t ∈ [s + δ(c), s + d(c) + δ(c)]","split C into segments at breakpoints of O_n(t) and Own","for each segment G do","    solve O_n(t) + Own(t,s) ≤ M_n and add each feasible s in G to R","return R"],size=18)
 s=new('演算法 4：Backtrack','最後一跳取區間下界，往前每跳取不超過上限的最大值。')
 code(s,["L ← L_goal;  s ← lo(I(L))","schedule ← [(c(L), s)]","while pred(L) ≠ SOURCE do","    P ← pred(L)","    s ← max{ x ∈ I(P) : x ≤ s − δ(c(P)) − d(c(P)) }","    prepend (c(P), s) to schedule;  L ← P","end while","return schedule"],size=21)
-# remove leftover empty placeholders except title
+
+# ========== 符號小註解
+D={'node':'X、A、B、C、D：節點','nodeA':'A、B、C：節點','nodeD':'A、B、C、D：節點','nodeV':'A、B、V、D、F：節點','ci':'c1、c2…：各條 contact','c':'c：contact','L':'L：Label','Li':'L1、L2…：Label 編號（每包重新編號）','I':'I：可起送區間','win':'[a, b]：contact 開放時間','pred':'pred：前一個 Label','src':'SOURCE：第一跳的前驅標記','key':'key：最早完整抵達時間','Q':'Q：待處理 Label 的佇列','g':'g：可開始傳送的時間','S':'S：包大小','r':'r：速率','M':'M：Buffer 上限','d':'d：傳完一包的時間','delta':'δ：傳播延遲','s':'s：起送時間','A':'A：整包抵達時間','lo':'lo(I)：區間 I 的最早時間','s12':'s1、s2：前一跳、下一跳的起送時間','F':'F[c]：c 已預約的時段','half':'[x, y)：含 x、不含 y 的時段','open':'(x, y)：不含兩端的時段','HT':'Head、Tail：候選範圍的最早、最晚時間','R':'Reached[c]：c 已處理過的起送時間','Ds':'D*：抵達期限','uv':'u(c)、v(c)：c 的傳送端、接收端','Own':'Own：這一包在節點的占用','On':'O_n：節點 n 的既有占用','Mn':'M_n：節點 n 的 Buffer 上限','SR':'Sent、Recv：已送出、已收到的量','star':'s1*：最晚可行的前一跳起送時間','sch':'schedule：每一跳的 (c, s)','goal':'L_goal：到目的地的 Label','abm':'a(c)、b(c)：c 開始、結束時間','e':'e：這一跳最早可開始的時間','new':'New：扣除已處理後的新時間','C':'C：候選起送時間集合','P':'P：前一個 Label','G':'G：C 切出的小段','mode':'R：可行的起送時間','t':'t：檢查占用的時間','cj':'c1、c2：前一跳、下一跳 contact','I1':'L1=(c1,I1,pred1)：目前取出的 Label','term':'Bundle：要傳送的資料包；Buffer：節點的暫存空間'}
+K={2:'node',3:'term',4:'nodeA',5:'L c I pred src',6:'Q key',7:'ci s12',8:'node ci win g S r d M delta',
+9:'ci L I key src Q win d',10:'ci Li pred key Q',11:'ci Li uv Q',12:'ci Li s d delta',13:'ci win F half',
+14:'ci Li I key src Q g',15:'ci Li I key Q win',16:'ci Li I key Q delta',17:'ci Li Q half open d',18:'ci Li Q M',19:'ci Li I key Q win',20:'ci Li Q HT win d',21:'ci Li Q F half delta d',22:'ci node',
+23:'c F R win open half pred',24:'nodeD win',25:'s star delta d lo',26:'ci nodeV',27:'s12 d S r delta Ds R c',28:'',
+30:'goal sch F On',31:'Q key R uv g lo delta d I1 C e Ds abm F new',32:'Own On Mn S SR g star I1 delta d C G mode t',33:'goal lo sch pred src P s delta d'}
+for i,sl in enumerate(p.slides,1):
+    ks=K.get(i,'').split()
+    if not ks:continue
+    txt='；'.join(D[k] for k in ks)
+    long=len(txt)>=125
+    tb(sl,.5,5.72 if long else 6.47,9.25,1.25 if long else .52,'符號：'+txt,11 if long else 11.5,MUT,name='symbol-note')
+
 p.save('walk.pptx');print(len(p.slides))
