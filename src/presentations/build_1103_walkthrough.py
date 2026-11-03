@@ -224,11 +224,16 @@ table(s,[['','來源→目的地','g'],['第一包','X → D','0'],['第二包',
 tb(s,6.85,3.0,6,2.2,['S = 4 MB，r = 4 MB/s，所以 d = 1 秒','Buffer 上限 M = 4 MB','c2、c5、c6 的 δ = 1 秒，其他 δ = 0','[a, b] 是 contact 開放時間；g 是可開始的時間'],18)
 # ========== first bundle
 L1a='L1=(c1,[2,2],SOURCE)  key=3';L2a='L2=(c2,[6,6],L1)  key=8';L3a='L3=(c5,[10,10],L1)  key=12'
-s=new('第一包 ①：從來源 X 建立 Label','X 只有 c1 一條出去。c1 開放 [2,3]，d=1，所以只能第 2 秒起送，區間是 [2,2]。key=2+1+0=3。X 從 g=0 就持有整包，2 到 3 邊送邊釋放，來源 Buffer 檢查通過。此時還沒有預約任何資源。')
+s=new('第一包 ①：從來源 X 建立 Label','X 只有 c1 一條出去。duration d 是傳完整包的時間：S÷r=4÷4=1 秒。delay δ 是訊號在路上的時間，c1 為 0。最早起送 Head 要 contact 已開放、bundle 也已產生，所以取 a=2 和 g=0 的較大值，得到 2。最晚起送 Tail 要在 contact 關閉前傳完，所以是 b−d=3−1=2。範例沒有業務期限，也沒有預約。所以 I=[2,2]，也就是只能第 2 秒起送。key=2+1+0=3。X 從 g=0 就持有整包，2 到 3 邊送邊釋放，來源 Buffer 檢查通過。此時還沒有預約任何資源。')
 topo(s,cand=('c1',),nodes=('X',))
-timeline(s,[('X 持有',[(0,2,LINE)]),('X 發送',[(2,3,BLUE)]),('B 接收',[(2,3,BLUE)])],0,5,y=1.45)
-tb(s,6.75,3.5,6,.8,['c1：開放 [2,3]，d = 1','→ 只能第 2 秒起送：I = [2,2]，key = 3'],18)
-qrow(s,[(L1a,True)]);concl(s,'搜尋時只建立候選，還沒有預約任何資源。')
+timeline(s,[('X 持有',[(0,2,LINE)]),('X 發送',[(2,3,BLUE)]),('B 接收',[(2,3,BLUE)])],0,5,y=1.05,rowh=.3)
+table(s,[['項目','計算','結果'],['duration d（傳完要多久）','S / r = 4 / 4','1 秒'],['delay δ（訊號在路上）','c1 的傳播延遲','0 秒'],['最早 Head','max(a, g) = max(2, 0)','2'],['最晚 Tail','b − d = 3 − 1','2']],[2.75,2.3,1.0],6.75,2.45,rowh=.37,size=13.5)
+tb(s,6.75,4.33,6.05,.5,'I = [Head, Tail] = [2,2]；key = 2 + 1 + 0 = 3',17,NAVY)
+qrow(s,[(L1a,True)]);concl(s,'c1 只能第 2 秒起送；搜尋時只建立候選，還沒有預約任何資源。')
+s=new('區間怎麼取：先定最早和最晚，再扣除不能用的','取區間有四步。第一步最早：contact 要開放，這一跳也要能開始；第一跳 e=g，後面每跳 e 是前一跳最早收完的時間。第二步最晚：要在 contact 關閉前傳完，也要趕上期限。第三步扣預約：起送落在 (x−d, y) 就會撞到 [x, y)。第四步檢查 Buffer。剩下的每段連續時間各建一個 Label。下表的數字都是這個例子。c8 的 Head=3 大於 Tail=2，所以沒有候選。')
+table(s,[['步驟','算法','意思'],['1 最早','Head = max(a, e)','contact 已開放，這一跳也能開始'],['2 最晚','Tail = min(b − d, D* − d − δ)','關閉前傳完，並趕上期限'],['3 扣預約','移除 (x − d, y)','不撞到已預約的 [x, y)'],['4 查 Buffer','只留占用不超限的時間','剩下每段各建一個 Label']],[2.0,5.0,5.2],.55,1.08,rowh=.38,size=15)
+table(s,[['contact','開放 [a, b]','最早可開始 e','Head','Tail','區間 I'],['c1（第一跳）','[2,3]','g = 0','2','2','[2,2]'],['c4（第一跳）','[7,9]','g = 1','7','8','[7,8]'],['c2（接 L1）','[6,7]','2 + 0 + 1 = 3','6','6','[6,6]'],['c7（接 c6）','[4,5]','1 + 1 + 1 = 3','4','4','[4,4]'],['c8（接 c6）','[2,3]','1 + 1 + 1 = 3','3','2','空（3 > 2）']],[2.6,1.9,2.9,1.1,1.1,2.6],.55,3.15,rowh=.38,size=15)
+tb(s,.55,5.65,9.2,.5,'e：第一跳是 g；後面每跳是前一跳最早收完的時間 lo(I1) + δ1 + d1',16,NAVY)
 s=new('第一包 ②：取出 L1，從 B 延伸','取出 L1，整包第 3 秒到 B。從 B 有 c2、c5 兩條。c2 只能第 6 秒起送，第 8 秒到 D；c5 只能第 10 秒起送，第 12 秒到 D。兩者都通過 Buffer 檢查。L1 離開 Q，但 L2、L3 的 pred 還指向它，回溯時用得到。')
 topo(s,used=('c1',),cand=('c2','c5'),nodes=('B',))
 timeline(s,[('c2 發送',[(6,7,BLUE)]),('D 接收',[(7,8,BLUE)]),('c5 發送',[(10,11,ORG)]),('D 接收',[(11,12,ORG)])],5,13,y=1.35)
@@ -355,16 +360,18 @@ code(s,["L ← L_goal;  s ← lo(I(L))","schedule ← [(c(L), s)]","while pred(L
 
 # ========== 符號小註解
 D={'node':'X、A、B、C、D：節點','nodeA':'A、B、C：節點','nodeD':'A、B、C、D：節點','nodeV':'A、B、V、D、F：節點','ci':'c1、c2…：各條 contact','c':'c：contact','L':'L：Label','Li':'L1、L2…：Label 編號（每包重新編號）','I':'I：可起送區間','win':'[a, b]：contact 開放時間','pred':'pred：前一個 Label','src':'SOURCE：第一跳的前驅標記','key':'key：最早完整抵達時間','Q':'Q：待處理 Label 的佇列','g':'g：可開始傳送的時間','S':'S：包大小','r':'r：速率','M':'M：Buffer 上限','d':'d：傳完一包的時間','delta':'δ：傳播延遲','s':'s：起送時間','A':'A：整包抵達時間','lo':'lo(I)：區間 I 的最早時間','s12':'s1、s2：前一跳、下一跳的起送時間','F':'F[c]：c 已預約的時段','half':'[x, y)：含 x、不含 y 的時段','open':'(x, y)：不含兩端的時段','HT':'Head、Tail：候選範圍的最早、最晚時間','R':'Reached[c]：c 已處理過的起送時間','Ds':'D*：抵達期限','uv':'u(c)、v(c)：c 的傳送端、接收端','Own':'Own：這一包在節點的占用','On':'O_n：節點 n 的既有占用','Mn':'M_n：節點 n 的 Buffer 上限','SR':'Sent、Recv：已送出、已收到的量','star':'s1*：最晚可行的前一跳起送時間','sch':'schedule：每一跳的 (c, s)','goal':'L_goal：到目的地的 Label','abm':'a(c)、b(c)：c 開始、結束時間','e':'e：這一跳最早可開始的時間','new':'New：扣除已處理後的新時間','C':'C：候選起送時間集合','P':'P：前一個 Label','G':'G：C 切出的小段','mode':'R：可行的起送時間','t':'t：檢查占用的時間','cj':'c1、c2：前一跳、下一跳 contact','I1':'L1=(c1,I1,pred1)：目前取出的 Label','term':'Bundle：要傳送的資料包；Buffer：節點的暫存空間'}
-K={2:'node',3:'term',4:'nodeA',5:'L c I pred src',6:'Q key',7:'ci s12',8:'node ci win g S r d M delta',
-9:'ci L I key src Q win d',10:'ci Li pred key Q',11:'ci Li uv Q',12:'ci Li s d delta',13:'ci win F half',
+K0={2:'node',3:'term',4:'nodeA',5:'L c I pred src',6:'Q key',7:'ci s12',8:'node ci win g S r d M delta',
+9:'ci L I key src Q win HT g S r',10:'ci Li pred key Q',11:'ci Li uv Q',12:'ci Li s d delta',13:'ci win F half',
 14:'ci Li I key src Q g',15:'ci Li I key Q win',16:'ci Li I key Q delta',17:'ci Li Q half open d',18:'ci Li Q M',19:'ci Li I key Q win',20:'ci Li Q HT win d',21:'ci Li Q F half delta d',22:'ci node',
 23:'c F R win open half pred',24:'nodeD win',25:'s star delta d lo',26:'ci nodeV',27:'s12 d S r delta Ds R c',28:'',
 30:'goal sch F On',31:'Q key R uv g lo delta d I1 C e Ds abm F new',32:'Own On Mn S SR g star I1 delta d C G mode t',33:'goal lo sch pred src P s delta d'}
+K={(k if k<10 else k+1):v for k,v in K0.items()}
+K[10]='win HT e g d delta Ds lo I'
 for i,sl in enumerate(p.slides,1):
     ks=K.get(i,'').split()
     if not ks:continue
     txt='；'.join(D[k] for k in ks)
-    long=len(txt)>=125
-    tb(sl,.5,5.72 if long else 6.47,9.25,1.25 if long else .52,'符號：'+txt,11 if long else 11.5,MUT,name='symbol-note')
+    long=len(txt)>=165
+    tb(sl,.5,5.72 if long else 6.45,9.25,1.25 if long else .54,'符號：'+txt,11 if long else (10.5 if len(txt)>=120 else 11.5),MUT,name='symbol-note')
 
 p.save('walk.pptx');print(len(p.slides))
