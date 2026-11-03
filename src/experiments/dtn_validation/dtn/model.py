@@ -2,7 +2,7 @@
 
 占用曲線允許跳變。每個頂點存左極限 l 與右極限 r。
 """
-from bisect import bisect_left
+from bisect import bisect_left, bisect_right
 from collections import namedtuple
 from fractions import Fraction as Fr
 
@@ -49,7 +49,7 @@ class Curve:
 
     def between(self, a, b):
         """嚴格落在 (a, b) 內的頂點時間。"""
-        return self.ts[bisect_left(self.ts, a):bisect_left(self.ts, b)] if a < b else []
+        return self.ts[bisect_right(self.ts, a):bisect_left(self.ts, b)] if a < b else []
 
     def peak(self, a, b):
         """[a, b] 內的最高占用。"""
