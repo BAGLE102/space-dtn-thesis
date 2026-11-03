@@ -1,5 +1,10 @@
 # 更新紀錄
 
+## 2026-11-03
+
+- 依使用者決定，候選方法改為 store-and-forward，移除 RELAX／TRACK 與自我重疊處理；舊 cut-through 程式保留。新增 `src/experiments/store_forward/`、`docs/store_forward_label_20261103.md` 與 `output/store_forward_20261103/`。
+- 補上原型缺少的來源端 Buffer 檢查；3,000 例與 1/16 秒格點窮舉一致。初步多包實驗：Buffer 吃緊時送達率高於簡化版 SR-CGR，延遲沒有一致優勢。目的地 Buffer 與完整 `Commit` 未完成，數字尚非正式結果。未修改 v04。
+
 ## 2026-11-02
 
 - 新增 `web/interval-label/` 互動網頁：瀏覽器內精確分數求解、拓譜編輯、逐步執行；與 Python 原型 506 案例結果相同。候選方法，RELAX 模式。

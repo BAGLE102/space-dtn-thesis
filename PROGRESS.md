@@ -370,3 +370,11 @@
 - PPT案例：你的方法2/2、對照1/2；Ring Road原五包：兩組皆5/5且抵達時間相同。成功路徑與提交資源皆獨立核對；22項相關測試通過。
 - 比較資料：`output/single_label_baseline_20261013/comparison.json`；規劃：`docs/ten_thousand_bundle_comparison_protocol_v01.md`。
 - 尚未執行一萬包；生成方式（一日分散／同時壓力）待使用者選擇。大規模需將完整列舉與搜尋量測分開，且不得把未完成當作無路徑。
+
+## 改採 store-and-forward（2026-11-03，使用者決定，待老師確認）
+
+- 候選區間 Label 移除 cut-through、RELAX、TRACK；v04 與舊 cut-through 程式未動。
+- 單包：3,000 例與 1/16 秒格點窮舉全部一致；只存最早時間的負控制在 1,397 個有解案例中變差 364 例。
+- 多包初步比較簡化版 SR-CGR：Buffer 吃緊時送達率較高，寬鬆時相同；延遲只有 relay 一致較快。Ring Road 多數組別只跑到前段。
+- 未完成：`DestinationFilter`、`Commit` 納入來源與目的地、修正後重跑、單包正式證明、ILP 基準、cut-through 敏感度實驗。
+- 細節：`docs/store_forward_label_20261103.md`；資料：`output/store_forward_20261103/`。
