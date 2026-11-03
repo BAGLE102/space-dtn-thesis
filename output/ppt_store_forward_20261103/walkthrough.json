@@ -1,0 +1,1265 @@
+{
+  "source_ppt": "1013.pptx",
+  "algorithm": "store_forward/store_label.py at d8ade1c",
+  "business_deadline": null,
+  "finite_contact_coverage_bound": "12",
+  "capacity_model": "rate and unoccupied transmission intervals; no independent quota",
+  "c7_volume_MB": "4",
+  "size_MB": "4",
+  "buffer_MB": "4",
+  "bundles": [
+    {
+      "bundle": 1,
+      "source": "X",
+      "release": "0",
+      "arrival": "8",
+      "schedule": [
+        {
+          "contact": "c1",
+          "start": "2",
+          "finish": "3",
+          "first_byte": "2",
+          "arrival": "3"
+        },
+        {
+          "contact": "c2",
+          "start": "6",
+          "finish": "7",
+          "first_byte": "7",
+          "arrival": "8"
+        }
+      ],
+      "trace": [
+        {
+          "event": "source",
+          "contact": "c1",
+          "starts": [
+            [
+              "2",
+              "2"
+            ]
+          ],
+          "labels": [
+            {
+              "id": "L1",
+              "contact": "c1",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "2",
+                  "2"
+                ]
+              ],
+              "key": "3",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_before": [],
+          "q_after": [
+            {
+              "id": "L1",
+              "contact": "c1",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "2",
+                  "2"
+                ]
+              ],
+              "key": "3",
+              "predecessor": "SOURCE"
+            }
+          ]
+        },
+        {
+          "event": "pop",
+          "label": {
+            "id": "L1",
+            "contact": "c1",
+            "node": "B",
+            "start_intervals": [
+              [
+                "2",
+                "2"
+              ]
+            ],
+            "key": "3",
+            "predecessor": "SOURCE"
+          },
+          "q_before": [
+            {
+              "id": "L1",
+              "contact": "c1",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "2",
+                  "2"
+                ]
+              ],
+              "key": "3",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_after": []
+        },
+        {
+          "event": "extend",
+          "predecessor": {
+            "id": "L1",
+            "contact": "c1",
+            "node": "B",
+            "start_intervals": [
+              [
+                "2",
+                "2"
+              ]
+            ],
+            "key": "3",
+            "predecessor": "SOURCE"
+          },
+          "contact": "c2",
+          "head": "6",
+          "tail": "6",
+          "starts": [
+            [
+              "6",
+              "6"
+            ]
+          ],
+          "feasible": [
+            [
+              "6",
+              "6"
+            ]
+          ],
+          "reason": "accepted",
+          "labels": [
+            {
+              "id": "L2",
+              "contact": "c2",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "6",
+                  "6"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "L1"
+            }
+          ],
+          "q_before": [],
+          "q_after": [
+            {
+              "id": "L2",
+              "contact": "c2",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "6",
+                  "6"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "L1"
+            }
+          ]
+        },
+        {
+          "event": "extend",
+          "predecessor": {
+            "id": "L1",
+            "contact": "c1",
+            "node": "B",
+            "start_intervals": [
+              [
+                "2",
+                "2"
+              ]
+            ],
+            "key": "3",
+            "predecessor": "SOURCE"
+          },
+          "contact": "c5",
+          "head": "10",
+          "tail": "10",
+          "starts": [
+            [
+              "10",
+              "10"
+            ]
+          ],
+          "feasible": [
+            [
+              "10",
+              "10"
+            ]
+          ],
+          "reason": "accepted",
+          "labels": [
+            {
+              "id": "L3",
+              "contact": "c5",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "10",
+                  "10"
+                ]
+              ],
+              "key": "12",
+              "predecessor": "L1"
+            }
+          ],
+          "q_before": [
+            {
+              "id": "L2",
+              "contact": "c2",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "6",
+                  "6"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "L1"
+            }
+          ],
+          "q_after": [
+            {
+              "id": "L2",
+              "contact": "c2",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "6",
+                  "6"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "L1"
+            },
+            {
+              "id": "L3",
+              "contact": "c5",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "10",
+                  "10"
+                ]
+              ],
+              "key": "12",
+              "predecessor": "L1"
+            }
+          ]
+        },
+        {
+          "event": "pop",
+          "label": {
+            "id": "L2",
+            "contact": "c2",
+            "node": "D",
+            "start_intervals": [
+              [
+                "6",
+                "6"
+              ]
+            ],
+            "key": "8",
+            "predecessor": "L1"
+          },
+          "q_before": [
+            {
+              "id": "L2",
+              "contact": "c2",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "6",
+                  "6"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "L1"
+            },
+            {
+              "id": "L3",
+              "contact": "c5",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "10",
+                  "10"
+                ]
+              ],
+              "key": "12",
+              "predecessor": "L1"
+            }
+          ],
+          "q_after": [
+            {
+              "id": "L3",
+              "contact": "c5",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "10",
+                  "10"
+                ]
+              ],
+              "key": "12",
+              "predecessor": "L1"
+            }
+          ]
+        },
+        {
+          "event": "goal",
+          "label": {
+            "id": "L2",
+            "contact": "c2",
+            "node": "D",
+            "start_intervals": [
+              [
+                "6",
+                "6"
+              ]
+            ],
+            "key": "8",
+            "predecessor": "L1"
+          },
+          "q_after": [
+            {
+              "id": "L3",
+              "contact": "c5",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "10",
+                  "10"
+                ]
+              ],
+              "key": "12",
+              "predecessor": "L1"
+            }
+          ]
+        }
+      ],
+      "independent_all_node_peaks": {
+        "X": "4",
+        "B": "4",
+        "D": "4"
+      },
+      "reservations": {
+        "c1": [
+          [
+            "2",
+            "3"
+          ]
+        ],
+        "c2": [
+          [
+            "6",
+            "7"
+          ]
+        ]
+      },
+      "background": {
+        "B": [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "3",
+            "4"
+          ],
+          [
+            "6",
+            "4"
+          ],
+          [
+            "7",
+            "0"
+          ]
+        ]
+      }
+    },
+    {
+      "bundle": 2,
+      "source": "A",
+      "release": "1",
+      "arrival": "5",
+      "schedule": [
+        {
+          "contact": "c6",
+          "start": "1",
+          "finish": "2",
+          "first_byte": "2",
+          "arrival": "3"
+        },
+        {
+          "contact": "c7",
+          "start": "4",
+          "finish": "5",
+          "first_byte": "4",
+          "arrival": "5"
+        }
+      ],
+      "trace": [
+        {
+          "event": "source",
+          "contact": "c3",
+          "starts": [
+            [
+              "1",
+              "1"
+            ]
+          ],
+          "labels": [
+            {
+              "id": "L1",
+              "contact": "c3",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "2",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_before": [],
+          "q_after": [
+            {
+              "id": "L1",
+              "contact": "c3",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "2",
+              "predecessor": "SOURCE"
+            }
+          ]
+        },
+        {
+          "event": "source",
+          "contact": "c4",
+          "starts": [
+            [
+              "7",
+              "8"
+            ]
+          ],
+          "labels": [
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_before": [
+            {
+              "id": "L1",
+              "contact": "c3",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "2",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_after": [
+            {
+              "id": "L1",
+              "contact": "c3",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "2",
+              "predecessor": "SOURCE"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ]
+        },
+        {
+          "event": "source",
+          "contact": "c6",
+          "starts": [
+            [
+              "1",
+              "1"
+            ]
+          ],
+          "labels": [
+            {
+              "id": "L3",
+              "contact": "c6",
+              "node": "C",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "3",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_before": [
+            {
+              "id": "L1",
+              "contact": "c3",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "2",
+              "predecessor": "SOURCE"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_after": [
+            {
+              "id": "L1",
+              "contact": "c3",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "2",
+              "predecessor": "SOURCE"
+            },
+            {
+              "id": "L3",
+              "contact": "c6",
+              "node": "C",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "3",
+              "predecessor": "SOURCE"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ]
+        },
+        {
+          "event": "pop",
+          "label": {
+            "id": "L1",
+            "contact": "c3",
+            "node": "B",
+            "start_intervals": [
+              [
+                "1",
+                "1"
+              ]
+            ],
+            "key": "2",
+            "predecessor": "SOURCE"
+          },
+          "q_before": [
+            {
+              "id": "L1",
+              "contact": "c3",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "2",
+              "predecessor": "SOURCE"
+            },
+            {
+              "id": "L3",
+              "contact": "c6",
+              "node": "C",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "3",
+              "predecessor": "SOURCE"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_after": [
+            {
+              "id": "L3",
+              "contact": "c6",
+              "node": "C",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "3",
+              "predecessor": "SOURCE"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ]
+        },
+        {
+          "event": "extend",
+          "predecessor": {
+            "id": "L1",
+            "contact": "c3",
+            "node": "B",
+            "start_intervals": [
+              [
+                "1",
+                "1"
+              ]
+            ],
+            "key": "2",
+            "predecessor": "SOURCE"
+          },
+          "contact": "c2",
+          "head": "6",
+          "tail": "6",
+          "starts": [],
+          "feasible": [],
+          "reason": "booked_contact",
+          "labels": [],
+          "q_before": [
+            {
+              "id": "L3",
+              "contact": "c6",
+              "node": "C",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "3",
+              "predecessor": "SOURCE"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_after": [
+            {
+              "id": "L3",
+              "contact": "c6",
+              "node": "C",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "3",
+              "predecessor": "SOURCE"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ]
+        },
+        {
+          "event": "extend",
+          "predecessor": {
+            "id": "L1",
+            "contact": "c3",
+            "node": "B",
+            "start_intervals": [
+              [
+                "1",
+                "1"
+              ]
+            ],
+            "key": "2",
+            "predecessor": "SOURCE"
+          },
+          "contact": "c5",
+          "head": "10",
+          "tail": "10",
+          "starts": [
+            [
+              "10",
+              "10"
+            ]
+          ],
+          "feasible": [],
+          "reason": "buffer",
+          "labels": [],
+          "q_before": [
+            {
+              "id": "L3",
+              "contact": "c6",
+              "node": "C",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "3",
+              "predecessor": "SOURCE"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_after": [
+            {
+              "id": "L3",
+              "contact": "c6",
+              "node": "C",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "3",
+              "predecessor": "SOURCE"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ]
+        },
+        {
+          "event": "pop",
+          "label": {
+            "id": "L3",
+            "contact": "c6",
+            "node": "C",
+            "start_intervals": [
+              [
+                "1",
+                "1"
+              ]
+            ],
+            "key": "3",
+            "predecessor": "SOURCE"
+          },
+          "q_before": [
+            {
+              "id": "L3",
+              "contact": "c6",
+              "node": "C",
+              "start_intervals": [
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "key": "3",
+              "predecessor": "SOURCE"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_after": [
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ]
+        },
+        {
+          "event": "extend",
+          "predecessor": {
+            "id": "L3",
+            "contact": "c6",
+            "node": "C",
+            "start_intervals": [
+              [
+                "1",
+                "1"
+              ]
+            ],
+            "key": "3",
+            "predecessor": "SOURCE"
+          },
+          "contact": "c7",
+          "head": "4",
+          "tail": "4",
+          "starts": [
+            [
+              "4",
+              "4"
+            ]
+          ],
+          "feasible": [
+            [
+              "4",
+              "4"
+            ]
+          ],
+          "reason": "accepted",
+          "labels": [
+            {
+              "id": "L4",
+              "contact": "c7",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "4",
+                  "4"
+                ]
+              ],
+              "key": "5",
+              "predecessor": "L3"
+            }
+          ],
+          "q_before": [
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_after": [
+            {
+              "id": "L4",
+              "contact": "c7",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "4",
+                  "4"
+                ]
+              ],
+              "key": "5",
+              "predecessor": "L3"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ]
+        },
+        {
+          "event": "extend",
+          "predecessor": {
+            "id": "L3",
+            "contact": "c6",
+            "node": "C",
+            "start_intervals": [
+              [
+                "1",
+                "1"
+              ]
+            ],
+            "key": "3",
+            "predecessor": "SOURCE"
+          },
+          "contact": "c8",
+          "head": "3",
+          "tail": "2",
+          "starts": [],
+          "feasible": [],
+          "reason": "time_window",
+          "labels": [],
+          "q_before": [
+            {
+              "id": "L4",
+              "contact": "c7",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "4",
+                  "4"
+                ]
+              ],
+              "key": "5",
+              "predecessor": "L3"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_after": [
+            {
+              "id": "L4",
+              "contact": "c7",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "4",
+                  "4"
+                ]
+              ],
+              "key": "5",
+              "predecessor": "L3"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ]
+        },
+        {
+          "event": "pop",
+          "label": {
+            "id": "L4",
+            "contact": "c7",
+            "node": "D",
+            "start_intervals": [
+              [
+                "4",
+                "4"
+              ]
+            ],
+            "key": "5",
+            "predecessor": "L3"
+          },
+          "q_before": [
+            {
+              "id": "L4",
+              "contact": "c7",
+              "node": "D",
+              "start_intervals": [
+                [
+                  "4",
+                  "4"
+                ]
+              ],
+              "key": "5",
+              "predecessor": "L3"
+            },
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ],
+          "q_after": [
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ]
+        },
+        {
+          "event": "goal",
+          "label": {
+            "id": "L4",
+            "contact": "c7",
+            "node": "D",
+            "start_intervals": [
+              [
+                "4",
+                "4"
+              ]
+            ],
+            "key": "5",
+            "predecessor": "L3"
+          },
+          "q_after": [
+            {
+              "id": "L2",
+              "contact": "c4",
+              "node": "B",
+              "start_intervals": [
+                [
+                  "7",
+                  "8"
+                ]
+              ],
+              "key": "8",
+              "predecessor": "SOURCE"
+            }
+          ]
+        }
+      ],
+      "independent_all_node_peaks": {
+        "X": "4",
+        "D": "4",
+        "B": "4",
+        "A": "4",
+        "C": "4"
+      },
+      "reservations": {
+        "c1": [
+          [
+            "2",
+            "3"
+          ]
+        ],
+        "c2": [
+          [
+            "6",
+            "7"
+          ]
+        ],
+        "c6": [
+          [
+            "1",
+            "2"
+          ]
+        ],
+        "c7": [
+          [
+            "4",
+            "5"
+          ]
+        ]
+      },
+      "background": {
+        "B": [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "3",
+            "4"
+          ],
+          [
+            "6",
+            "4"
+          ],
+          [
+            "7",
+            "0"
+          ]
+        ],
+        "C": [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "3",
+            "4"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "5",
+            "0"
+          ]
+        ]
+      }
+    }
+  ],
+  "checks": {
+    "candidate_trace_parity": true,
+    "quarter_second_fixture_oracle": true,
+    "independent_source_transit_destination_buffer": true
+  },
+  "limitations": [
+    "No general correctness proof",
+    "Not a research-scale experiment",
+    "Prototype DestinationFilter and endpoint Commit remain incomplete"
+  ]
+}

@@ -2,6 +2,8 @@
 
 ## 2026-11-03
 
+- 依 1013 原版型另製 32 頁 store-and-forward 區間 Label 完整流程簡報，新增逐頁講稿、修改清單、排版原始碼與兩包可重現核對。取消舊 c7 獨立配額後第二包改走 c6→c7、5 秒抵達；標明原型 endpoint 缺口，不修改演算法或宣稱一般證明。
+
 - 依使用者決定，候選方法改為 store-and-forward，移除 RELAX／TRACK 與自我重疊處理；舊 cut-through 程式保留。新增 `src/experiments/store_forward/`、`docs/store_forward_label_20261103.md` 與 `output/store_forward_20261103/`。
 - 補上原型缺少的來源端 Buffer 檢查；3,000 例與 1/16 秒格點窮舉一致。初步多包實驗：Buffer 吃緊時送達率高於簡化版 SR-CGR，延遲沒有一致優勢。目的地 Buffer 與完整 `Commit` 未完成，數字尚非正式結果。未修改 v04。
 
