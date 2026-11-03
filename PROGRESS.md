@@ -388,3 +388,8 @@
 - 多包初步比較簡化版 SR-CGR：Buffer 吃緊時送達率較高，寬鬆時相同；延遲只有 relay 一致較快。Ring Road 多數組別只跑到前段。
 - 未完成：`DestinationFilter`、`Commit` 納入來源與目的地、修正後重跑、單包正式證明、ILP 基準、cut-through 敏感度實驗。
 - 細節：`docs/store_forward_label_20261103.md`；資料：`output/store_forward_20261103/`。
+
+## 驗證程式包（2026-11-03）
+
+- `src/experiments/dtn_validation/` 補上目的地 Buffer 與完整 `Commit`，含多包提交後的窮舉比對；結果在 `output/dtn_validation_20261103/validation.jsonl`。
+- `docs/store_forward_label_20261103.md` 的多包數字來自修正前版本；正式數字待隨機拓樸實驗。
