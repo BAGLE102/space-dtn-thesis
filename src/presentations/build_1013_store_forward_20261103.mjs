@@ -41,7 +41,7 @@ function base(index,title,takeaway,note) {
  txt(s,title,88,48,1110,78,50,C.blue);
  txt(s,takeaway,88,640,1110,40,23,C.blue);
  txt(s,String(index),605,689,70,22,16,C.gray,'center');
- const n=`${note}\n一句重點：${takeaway}\n方法來源：docs/store_forward_label_20261103.md；GitHub d8ade1c。\n案例資料：output/ppt_store_forward_20261103/walkthrough.json。\n本簡報呈現候選方法，尚無一般正確性證明。`;
+ const n=`${note}\n一句重點：${takeaway}\n方法來源：src/experiments/dtn_validation/dtn/ours.py、validate.py；GitHub 67db7a2。\n文件：docs/store_forward_label_20261103.md（部分歷史段落未同步，以此程式版本為準）。\n案例資料：output/ppt_store_forward_20261103/walkthrough.json；新版重算核對：v1_2_source_checks.json。\n本簡報呈現候選方法，尚無一般正確性證明；store-and-forward 與無獨立配額的主模型待老師確認。`;
  s.speakerNotes.text=n;notes.push({slide:index,title,takeaway,notes:n});return s;
 }
 function bullets(s,rows,x=90,y=162,w=1090,size=30,gap=72) {
@@ -138,16 +138,17 @@ s=base(1,'新版流程：區間 Label 延伸','保留整段可行起送時間；
 const flow=[['取出 Label','(c, I, pred)'],['選下一跳','完整收完才轉'],['求起送區間','扣除既有預約'],['檢查 Buffer','切出可行區間'],['更新 Reached','新區間加入 Q']];
 flow.forEach(([a,b],i)=>{const x=90+i*230;rect(s,x,235,198,130,C.white,C.blue);txt(s,a,x+12,257,174,45,29,C.blue,'center');txt(s,b,x+10,310,178,45,23,C.ink,'center');if(i<4)line(s,x+199,301,x+228,301,C.blue,2,true);});
 txt(s,'抵達目的地 → 沿 pred 回溯 → 驗證排程 → 提交資源',130,450,1040,58,34,C.green,'center');
-txt(s,'候選方法｜store-and-forward｜無獨立配額',130,530,1040,40,25,C.gray,'center');
+txt(s,'待老師確認：store-and-forward、無獨立配額',130,525,1040,38,25,C.gray,'center');
+txt(s,'模型假設：目的地整包收完即交付並釋放 Buffer。',130,575,1040,38,25,C.gray,'center');
 
 s=base(2,'研究環境：中央規劃、節點執行','上一包接受並預約後，下一包才使用更新後的資源搜尋。','中央端知道 contact plan 與已接受 bundles 的傳送時段和背景占用；這是固定已知預約的理想規劃模型，非分散式即時共識。Bundle 規劃順序固定，不保證多包整體最佳。節點依中央產生的排程執行 store-and-forward。');
 for(const [x,head,body]of [[90,'輸入','Contact plan\nBundle requests'],[485,'中央規劃器','路由搜尋、時間選擇\n驗證、資源預約'],[915,'相關節點','保存完整 bundle\n依指定時段轉送']]){rect(s,x,210,x===485?325:280,175,C.white,C.blue);txt(s,head,x+20,230,x===485?285:240,50,32,C.blue,'center');txt(s,body,x+20,295,x===485?285:240,80,27,C.ink,'center');}
 line(s,371,296,482,296,C.blue,2,true);line(s,812,296,912,296,C.blue,2,true);
 bullets(s,['F[c]：contact 已預約的傳送時段','O_n(t)：已接受 bundles 在節點 n 的占用曲線','傳輸容量由速率與剩餘時段決定，不另加 aggregate quota'],90,440,1110,28,54);
 
-s=base(3,'Label 的完整定義','Label 記錄可達時間與前驅；實際時刻在回溯時決定。','L_i 的 i 是本次單包搜尋中的唯一編號，不是 contact 編號。數學狀態仍為 c、I、pred 三項；key 是可由它們與 bundle 大小計算的推導值，Python 的 namedtuple 另外快取 key，並非新增研究狀態。I 是沿該前驅鏈可達的連通起送區間，不代表可以任意搭配前驅的所有時間。選定 s 後 A(L,s)=s+d(c)+δ(c)。目前範例為閉區間，下界可取到；一般開區間仍未補完。SOURCE 是來源標記，程式用 None，不是假 contact 或另一個 Label。Q 只持有待展開 Label；子 Label 的 pred 引用保留前驅，移出 Q 不等於刪除前驅物件。');
-txt(s,'L_i = (c(L_i), I(L_i), pred(L_i))',125,155,1050,58,38,C.blue,'center');
-table(s,[['項目','定義'],['i','本次搜尋的 Label 唯一編號；與 contact 編號分開'],['c(L)','最後使用的 contact；目前節點為 receiver(c(L))'],['I(L)','沿此前驅鏈可達的起送時間區間；本例為閉區間'],['pred(L)','前驅 Label 的引用；來源用 SOURCE（程式為 None）'],['key(L)','推導值：lo(I(L)) + d(c(L)) + δ(c(L))']],95,225,1090,285,[190,900],25);
+s=base(3,'Label 的完整定義','Label 記錄可達時間與前驅；編號與 key 另列。','L_i 的 i 是本次單包搜尋中的唯一編號，不是 contact 編號或 Label 狀態欄位。數學狀態為 c、I、pred 三項；key=lo(I)+d(c)+δ(c) 是優先佇列的推導值。程式 Label(c,lo,hi,pred) 以 lo、hi 表示區間 I。v(c) 統一表示 contact 接收端。I 是沿該前驅鏈可達的連通起送區間，不代表可以任意搭配前驅的所有時間。選定 s 後 A(L,s)=s+d(c)+δ(c)。目前範例為閉區間，下界可取到；一般開區間仍待完整處理。SOURCE 是來源標記，程式用 None。子 Label 的 pred 引用保留前驅，移出 Q 不等於刪除前驅物件。');
+txt(s,'L = (c, I, pred)',125,155,1050,58,38,C.blue,'center');
+table(s,[['項目','定義'],['編號 i','本次搜尋的 Label 唯一編號；不是狀態欄位'],['c(L)','最後使用的 contact；目前節點為 v(c(L))'],['I(L)','沿此前驅鏈可達的起送時間區間；本例為閉區間'],['pred(L)','前驅 Label 的引用；來源用 SOURCE（程式為 None）'],['推導 key','lo(I(L)) + d(c(L)) + δ(c(L))；不是狀態欄位']],95,225,1090,285,[190,900],25);
 txt(s,'選定 s ∈ I(L) 後：A(L,s) = s + d(c(L)) + δ(c(L))',105,535,1090,43,29,C.green);
 txt(s,'lo(I)：區間下界；d(c)=S/r(c)；key 不鎖定實際起送時刻。',105,589,1090,38,25,C.blue);
 
@@ -156,10 +157,10 @@ graph(s);txt(s,'第一包：X → D，g=0',650,178,560,45,33,C.orange);txt(s,'�
 bullets(s,['g：產生時間；S=4 MB','r=4 MB/s，d=S/r=1 秒','M=4 MB（各節點 Buffer 上限）','無業務 deadline；此計畫涵蓋抵達至 12 秒'],650,320,550,26,63);
 
 s=base(5,'Contact plan 與容量模型','c7 的時長 1 秒、速率 4 MB/s，故傳輸量為 4 MB。','資料逐項取自 1013：時間窗與傳播延遲不變。原稿額外設定 R[c7]=2 MB，但新版無此獨立配額。此處列出的是 rate×duration 的初始物理傳輸量；不代表多個分離時段可以拼成不分割 bundle。每跳仍須有連續長度 d 的空檔。');
-table(s,[['Contact','方向','時窗 [a,b]（秒）','δ（秒）','初始量（MB）'],['c1','X→B','[2,3]','0','4'],['c2','B→D','[6,7]','1','4'],['c3','A→B','[1,2]','0','4'],['c4','A→B','[7,9]','0','8'],['c5','B→D','[10,11]','1','4'],['c6','A→C','[1,2]','1','4'],['c7','C→D','[4,5]','0','4'],['c8','C→D','[2,3]','0','4']],95,150,1090,428,[160,190,290,170,280],26);
+table(s,[['Contact','方向','[a,b]（秒）','r（MB/s）','δ（秒）','傳輸量上限 r×時長（MB）'],['c1','X→B','[2,3]','4','0','4'],['c2','B→D','[6,7]','4','1','4'],['c3','A→B','[1,2]','4','0','4'],['c4','A→B','[7,9]','4','0','8'],['c5','B→D','[10,11]','4','1','4'],['c6','A→C','[1,2]','4','1','4'],['c7','C→D','[4,5]','4','0','4'],['c8','C→D','[2,3]','4','0','4']],95,145,1090,420,[115,135,195,160,130,355],23);
 txt(s,'新版變更：刪除舊版 c7 的 2 MB 獨立配額。',105,591,1090,38,28,C.red);
 
-s=base(6,'傳送、抵達與 Buffer 占用','上一跳整包抵達後，下一跳才可起送：s2 ≥ A1。','a(c)、b(c) 是 contact 開始與結束；s 是起送；f 是發送完成；h 是第一個 byte 抵達；A 是最後一個 byte 抵達。傳播延遲 δ 與傳輸時間 d 不同。中繼占用為已收減已送，接收時上升、持有時固定、發送時下降。來源從 g 擁有整包；目的地交付時釋放。端點實作缺口列於最後一頁。');
+s=base(6,'傳送、抵達與 Buffer 占用','上一跳整包抵達後，下一跳才可起送：s2 ≥ A1。','a(c)、b(c) 是 contact 開始與結束；s 是起送；f 是發送完成；h 是第一個 byte 抵達；A 是最後一個 byte 抵達。傳播延遲 δ 與傳輸時間 d 不同。中繼占用為已收減已送，接收時上升、持有時固定、發送時下降。來源從 g 擁有整包；目的地在 A 完整接收後交付並釋放。新版已檢查來源、中繼與目的地，Commit 也納入三者。');
 table(s,[['符號','意義／公式'],['d(c)','整包傳輸時間 S/r(c)'],['f','發送完成：s+d(c)'],['h','第一個 byte 抵達：s+δ(c)'],['A','整包抵達：s+d(c)+δ(c)'],['O_n(t)、M_n','既有背景占用、節點 Buffer 上限']],95,157,1090,350,[230,860],28);
 txt(s,'整次造訪都要滿足：O_n(t) + 已收(t) − 已送(t) ≤ M_n',105,543,1090,50,30,C.green);
 
@@ -185,12 +186,13 @@ line(s,385,305,480,305,C.green,2,true);line(s,765,305,860,305,C.green,2,true);
 txt(s,'回溯：L2 → L1 → SOURCE；排程：c1[2,3)、c2[6,7)',110,430,1090,54,31,C.green);
 queue(s,b1.trace[4].q_before,b1.trace[4].q_after,'完整抵達 D：6+1+1=8 秒');
 
-s=base(11,'第一包：提交 F 與 B 的占用曲線','接受後才預約 c1[2,3)、c2[6,7)，並寫入 B 的占用。','本頁忠實呈現目前 Commit：contact 傳送預約加上中繼節點曲線。B 在 2 到 3 接收，3 到 6 持有，6 到 7 發送下降。來源與目的地提交仍未完成；本例另有獨立完整節點重放，不能把該核對器當成原型已補完。');
+s=base(11,'第一包：提交預約與各節點占用','預約 c1、c2，並提交來源 X、中繼 B 與目的地 D 的占用。','Validate 通過後，Commit 寫入 c1[2,3)、c2[6,7) 及所有節點占用。X 從 0 持有 4 MB 到 2，再於 2 到 3 發送下降；B 在 2 到 3 接收、3 到 6 持有、6 到 7 發送下降；D 在 7 到 8 接收，於 8 交付釋放。本圖只展示 B，未畫出的 X 與 D 同樣已提交。');
 graph(s,{c1:C.orange,c2:C.orange},'B');chart(s,[{name:'第一包 B',points:B1,color:C.orange},cap]);
 txt(s,'B：2～3 接收，3～6 等待，6～7 發送',650,478,560,42,24,C.orange);
 txt(s,'F[c1]={[2,3)}；F[c2]={[6,7)}',100,549,1100,47,31,C.blue);
 
 s=base(12,'第二包：來源 A 先建立 c3 Label','收到整包只代表這個前綴可達；能否等待要延伸時再檢查。','第二包 g=1。在 A 的 outgoing contacts 依輸入順序 c3、c4、c6 初始化。c3 只能於 1 起送，2 到 B。來源 A 的 Buffer 通過；B 在 1 到 2 的接收也可行，但接續 c5 時會因等待遇到背景占用而失敗。');
+txt(s,'第二包搜尋重新編號：L1、L2…與第一包分開。',650,235,550,35,23,C.gray);
 graph(s,{c1:C.orange,c2:C.orange,c3:C.blue},'B');txt(s,'c3：I=[1,1]，key=1+1+0=2',650,175,560,50,31,C.blue);
 timeline(s,[{label:'A 發送',bars:[[1,2,C.blue]]},{label:'B 接收',bars:[[1,2,C.blue]]}],{min:0,max:4,y:285});
 queue(s,b2.trace[0].q_before,b2.trace[0].q_after,'L1 = (c3, [1,1], SOURCE)');
@@ -211,7 +213,7 @@ txt(s,'c2 原起送集合：[6,6]',650,180,550,47,31,C.ink);txt(s,'已有預約�
 txt(s,'排除起送時間：(5,7)',650,312,550,47,31,C.red);txt(s,'[6,6] − (5,7) = 空集合',650,392,550,58,31,C.red);
 queue(s,b2.trace[3].q_before,b2.trace[4].q_after);
 
-s=base(16,'取出 c3：等待 c5 會使 B 超限','第 3 秒：前包 4 MB＋本包 4 MB＝8 MB，拒絕此延伸。','c5 可於 10 起送，但 c3 只能在 1 起送，因此第二包於 2 完整到 B 後須持有到 10。既有第一包在 B 的占用從 2 到 3 上升，合計第 3 秒達 8。圖從 0 秒開始；第二包於 1 到 2 接收，不與第一包於 2 到 3 的接收誤畫成同時上升。只拒絕 c3→c5 這個延伸，不取消其他候選。');
+s=base(16,'取出 c3：等待 c5 會使 B 超限','第 2 秒後即超限，第 3 秒達 8 MB；拒絕 c3→c5。','c5 可於 10 起送，但 c3 只能在 1 起送，因此第二包於 2 完整到 B 後須持有到 10。t=2 時合計為 4；在 2<t<3 既有第一包逐漸接收，合計立刻超過 4，第 3 秒達 8。圖從 0 秒開始；第二包於 1 到 2 接收，不與第一包於 2 到 3 的接收誤畫成同時上升。只拒絕 c3→c5 這個延伸，不取消其他候選。');
 graph(s,{c1:C.orange,c2:C.orange,c3:C.blue,c5:C.red},'B');
 chart(s,[{name:'第一包',points:B1,color:C.orange},{name:'第二包候選',points:B2bad,color:C.blue,dash:true},{name:'合計',points:[[0,0],[1,0],[2,4],[3,8],[6,8],[7,4],[10,4],[11,0],[12,0]],color:C.red},cap],{max:8});
 queue(s,b2.trace[5].q_before,b2.trace[5].q_after,'BufferFilter 輸出空集合');
@@ -238,11 +240,11 @@ line(s,381,298,482,298,C.green,2,true);line(s,766,298,867,298,C.green,2,true);
 txt(s,'c6 前驅時間上界 = 4 − 1 − 1 = 2；在 [1,1] 中取最大值 1。',95,433,1100,58,29,C.blue);
 txt(s,'A→C：發送 1～2、接收 2～3；C→D：發送／接收 4～5。',95,536,1100,58,29,C.green);
 
-s=base(21,'第二包：驗證後提交 c6、c7 與 C 曲線','只提交選定排程；c3、c4 的候選不占用全域資源。','目前 Commit 把 c6[1,2)、c7[4,5) 加入 F，並加入 C 的占用。c3 前綴與未選的 c4 都不提交。這裡仍沿用現行原型的中繼提交範圍，不把來源或目的地尚缺的功能畫成已完成。');
+s=base(21,'第二包：提交 c6、c7 與各節點占用','提交來源 A、中繼 C、目的地 D；未選候選不提交。','Validate 通過後，把 c6[1,2)、c7[4,5) 加入 F，並提交所有節點占用。A 在 g=1 出現整包，1 到 2 發送下降；C 在 2 到 3 接收、3 到 4 持有、4 到 5 發送下降；D 在 4 到 5 接收並於 5 交付釋放。本圖只展示 C，A 與 D 同樣已提交。c3 前綴與未選的 c4 都不提交。');
 graph(s,{c6:C.green,c7:C.green},'C');chart(s,[{name:'第二包 C',points:C2,color:C.green},cap]);
 txt(s,'F[c6]={[1,2)}；F[c7]={[4,5)}',105,535,1090,55,32,C.green);
 
-s=base(22,'兩包完成：送達時間與資源預約','規劃第二包時已知第一包的未來預約，但仍可在較早時間抵達。','第一包先規劃，不等於第一包先抵達。它經 B 於 8 到 D；第二包經 C 於 5 到 D。中繼背景位在不同節點，各節點峰值最高 4。獨立核對器另外檢查來源與目的地，這個特殊案例沒有共用來源、沒有重疊的 D 接收，因此目前 Commit 缺口不改變結果；不可以外推到多包一般情況。');
+s=base(22,'兩包完成：送達時間與資源預約','第二包 12→5 秒是取消 c7 配額造成，不能歸因於區間搜尋。','第一包先規劃，不等於第一包先抵達。它經 B 於 8 到 D；第二包經 C 於 5 到 D。新版使用來源、中繼與目的地檢查及完整 Commit。c7 物理傳輸量為 4 MB，取消舊稿的 2 MB 獨立配額後才可傳送本包，因此第二包由舊稿 12 秒變 5 秒是模型限制不同，不能當成演算法效能提升。');
 graph(s,{c1:C.orange,c2:C.orange,c6:C.green,c7:C.green},'D');
 table(s,[['Bundle','路徑','起送時間','整包到 D'],['第一包','X→B→D','2、6','8 秒'],['第二包','A→C→D','1、4','5 秒']],650,190,540,220,[105,160,145,130],25);
 txt(s,'預約：c1[2,3)、c2[6,7)',650,455,540,38,26,C.orange);txt(s,'　　　c6[1,2)、c7[4,5)',650,510,540,38,26,C.green);
@@ -266,28 +268,29 @@ table(s,[['對象','用途'],['Q','只放待展開 Label；ExtractMin 後即離�
 txt(s,'New = C − Reached[c]',140,493,1000,55,37,C.blue,'center');
 txt(s,'例：Reached[c4]=[7,8]，新候選也是 [7,8] → 不重建。',105,571,1090,42,27,C.gray);
 
-s=base(27,'虛擬碼 1：逐包規劃與初始化','搜尋不預約資源；接受選定排程後才 Commit。','英文虛擬碼呈現最新候選流程。兩包依固定規劃順序，並非依最終抵達時間排序。SourceBufferFilter 在原型已實作。DestinationFilter 與來源／目的地 Commit 尚未實作，本簡報在相應頁面有明示。');
-codes(s,['for each bundle B in planning order:','    goal ← SearchBundle(B)','    if goal is NONE: record NO_PATH; continue','    schedule ← Backtrack(goal)','    if not ValidateSchedule(schedule): save failure; STOP','    Commit(schedule)','', 'SearchBundle(B):','    Q ← empty priority queue; Reached ← empty','    for each contact c leaving source(B):','        C ← SourceBufferFilter(c, SourceRange(c))','        InsertLabels(c, C, SOURCE)'],90,158,1100,25,33);
+s=base(27,'虛擬碼 1：逐包規劃與初始化','到目的地的候選，先做 DestinationFilter 再建 Label。','英文虛擬碼依新版 ours.py 與 validate.py。兩包依固定規劃順序，不是最終抵達時間排序。來源候選先做 SourceBufferFilter；若 contact 直達目的地，還須做 DestinationFilter，再 InsertLabels。Validate 包含來源、中繼、目的地與時段／期限。Commit 寫入 F 與所有造訪節點的占用。');
+codes(s,['for each bundle B in planning order:','    goal ← SearchBundle(B)','    if goal is NONE: record NO_PATH; continue','    schedule ← Backtrack(goal)','    if not ValidateSchedule(schedule): save failure; STOP','    Commit(schedule)','', 'SearchBundle(B):','    Q ← empty priority queue; Reached ← empty','    for each contact c leaving source(B):','        C ← SourceBufferFilter(c, SourceRange(c))','        if v(c) = destination(B): C ← DestinationFilter(c,C)','        InsertLabels(c, C, SOURCE)'],90,155,1100,24,32);
 
 s=base(28,'虛擬碼 2：取出與延伸 Label','收完整包才轉送；每次只展開目前接收節點的 outgoing contacts。','此頁區間搜尋原型沒有 RELAX、TRACK、Ch，也沒有逐秒迴圈。key 為 lo(I)+d+δ，pop 同 key 時以建立順序分辨。Reached 是在插入時移除已涵蓋時間，不是全域 node visited。沒有以資料證明一般最優性；此頁是目前控制流程。');
-codes(s,['while Q is not empty:','    L1 = (c1, I1, pred1) ← ExtractMin(Q, key)','    if receiver(c1) = destination(B): return L1','    for each contact c2 leaving receiver(c1):','        C ← StartRange(c2, L1)','        C ← BufferFilter(C, L1, c2)','        InsertLabels(c2, C, L1)','return NONE','','InsertLabels(c, C, pred):','    New ← C − Reached[c]; Reached[c] ← Reached[c] ∪ New','    for each connected interval I in New: push (c,I,pred)'],90,158,1100,25,33);
+codes(s,['while Q is not empty:','    L1 = (c1, I1, pred1) ← ExtractMin(Q, key)','    if v(c1) = destination(B): return L1','    for each contact c2 leaving v(c1):','        C ← StartRange(c2, L1)','        C ← BufferFilter(C, L1, c2)','        if v(c2) = destination(B): C ← DestinationFilter(c2,C)','        InsertLabels(c2, C, L1)','return NONE','','InsertLabels(c, C, pred):','    New ← C − Reached[c]; Reached[c] ← Reached[c] ∪ New','    for each connected interval I in New: push (c,I,pred)'],90,155,1100,24,32);
 
 s=base(29,'虛擬碼 3：StartRange 與 SourceRange','未提供 deadline 時，Tail 只使用 contact 結束時間限制。','延伸的 Head 為 max(a(c2),lo(I1)+δ1+d1)，這是 store-and-forward。Tail b−d 確保整包發送在 contact 結束前完成。可選 D* 需要再扣傳播延遲，確保整包抵達不逾期。程式目前的 P.T 是有限上界；此案例為 max(b+δ)=12，不構成額外 deadline。每個 F 預約排除的是開區間 (x−d,y)，允許剛好相接。');
 codes(s,['StartRange(c2, L1):','    Head ← max(a(c2), lo(I1) + δ1 + d1)','    Tail ← b(c2) − d2','    if deadline D* is given: Tail ← min(Tail, D* − d2 − δ2)','    return RemoveBookings([Head,Tail], F[c2], d2)','','SourceRange(c):','    Head ← max(a(c), g); Tail ← b(c) − d(c)','    if deadline D* is given: Tail ← min(Tail, D* − d(c) − δ(c))','    return RemoveBookings([Head,Tail], F[c], d(c))','','RemoveBookings(C,F,d): remove (x−d,y) for every [x,y) in F'],90,155,1100,24,33);
 
-s=base(30,'虛擬碼 4：BufferFilter','同時檢查接收、等待與發送；只接收可行還不夠。','固定下一跳起送 s2 時，前驅允許上界 U=s2−δ1−d1。候選只取 I1 中不超過 U 的最晚起送 s1*，以減少目前節點提前接收占用；此壓縮的充分性仍須正式證明。依背景曲線與分段邊界求可行 s2 區間，不枚舉所有實數。來源已實作的曲線檢查與尚未實作的目的地檢查分開說明。');
+s=base(30,'虛擬碼 4：BufferFilter','來源、中繼、目的地均檢查；目的地收完即交付釋放。','固定下一跳起送 s2 時，前驅允許上界 U=s2−δ1−d1。候選只取 I1 中不超過 U 的最晚起送 s1*，以減少目前節點提前接收占用；此壓縮的充分性仍須正式證明。依背景曲線與分段邊界求可行 s2 區間，不枚舉所有實數。新版已實作 SourceBufferFilter 與 DestinationFilter。目的地接收從 h=s+δ 到 A=s+d+δ，使用 O_dst(t)+Received(t,s)≤M，包含交付前的峰值，A 時交付釋放。');
 codes(s,['U(s2) ← s2 − δ1 − d1','s1* ← latest reachable start in I1 not later than U(s2)','Occ(t,s2) ← O_n(t) + Received(t,s1*) − Sent(t,s2)','', 'BufferFilter(C,L1,c2):','    split C at changes of s1* and occupancy expressions','    solve Occ(t,s2) ≤ M_n throughout each node visit','    return all feasible connected start intervals'],90,165,1100,26,39);
 txt(s,'SourceBufferFilter：從 g 持有整包，傳送時逐 byte 釋放。',95,527,1090,42,27,C.green);
-txt(s,'DestinationFilter：接收期間檢查，交付後釋放（原型尚未實作）。',95,578,1090,42,27,C.red);
+txt(s,'DestinationFilter：接收期間含交付前峰值；收完即釋放。',95,578,1090,42,27,C.green);
 
-s=base(31,'虛擬碼 5：回溯、驗證與提交','前驅最晚取值是目前選擇規則，不保證對後續 bundles 最好。','回溯從目的地 Label 的區間下界起送，逐步求前驅最大可用起送時間。ValidateSchedule 應檢查完整排程與全程 Buffer；原型現有 replay 未檢查目的地。Commit 實際只寫 F 及中繼 O；來源與目的地需補完。這頁不新增未經同意的 RetimePath、incompleteLB 或保護 ε。');
+s=base(31,'虛擬碼 5：回溯、驗證與提交','前驅最晚取值是目前選擇規則，不保證對後續 bundles 最好。','回溯從目的地 Label 的區間下界起送，逐步求前驅最大可用起送時間。ValidateSchedule 對應 validate.py 的 validate：檢查非空排程、來源與目的地、release、路徑相接、時段與期限、不和 F 重疊、store-and-forward 先後條件及來源／中繼／目的地 Buffer。Commit 納入 F 與每次節點造訪的占用：來源從 g 持有整包並逐步送出；中繼接收、等待、送出；目的地接收後交付釋放。');
 txt(s,'Backtrack(goal)',95,168,530,40,31,C.blue);codes(s,['L ← goal; s ← lo(I(L))','schedule ← [(c(L),s)]','while pred(L) ≠ SOURCE:','    P ← pred(L); U ← s − d(c(P)) − δ(c(P))','    s ← max {x in I(P) : x ≤ U}','    prepend (c(P),s); L ← P','return schedule'],95,225,535,21,34);
-txt(s,'Validate → Commit',680,168,500,40,31,C.blue);codes(s,['check connectivity and s2 ≥ A1','check contact windows and F','check Buffer throughout visits','if valid:','    add [s,s+d) to F[c]','    add transit occupancy to O'],680,225,515,23,37);
-txt(s,'待補：目的地檢查，以及來源／目的地的完整占用提交。',95,555,1090,54,30,C.red);
+txt(s,'Validate → Commit',680,168,500,40,31,C.blue);codes(s,['check source, destination and release g','check connectivity and s2 ≥ A1','check windows, deadline D* and F','check Buffer at source, relays and dst','if valid:','    add [s,s+d) to F[c]','    add every node-visit occupancy to O'],680,225,515,21,34);
+txt(s,'Commit：來源持有／送出、中繼接收／等待／送出、目的地接收／交付。',95,555,1090,54,27,C.green);
 
-s=base(32,'目前驗證範圍與下一步','本例已重算核對；一般正確性與完整多包實驗尚未完成。','此簡報本例兩包由現行 store_label.py 求得，逐步鏡像流程與原型結果一致，另用四分之一秒小例窮舉及不共用 ramp/occ/filter 的完整來源、中繼、目的地重放核對。這不是新的研究級實驗或一般證明。GitHub 文件記錄的 3000 例是既有結果，本次未重跑。沒有執行 Alhajj/Corlay baseline；舊網頁與本版方法尚不一致。');
-bullets(s,['本例核對：X→B→D 在 8 秒；A→C→D 在 5 秒','既有紀錄：3,000 個小例與格點窮舉一致，非一般證明','待補：目的地檢查、來源／目的地 Commit、開閉端點','再完成：正式證明、完整實驗矩陣與原論文 baseline'],95,180,1090,31,90);
-txt(s,'候選實作：src/experiments/store_forward/store_label.py',95,575,1090,42,25,C.gray);
+s=base(32,'目前驗證範圍與下一步','小例驗證不是一般證明；主模型仍待老師確認。','依 GitHub 67db7a2 的 ours.py 與 validate.py，兩包重算為 8 秒、5 秒；1/4 秒格點窮舉與完整節點驗證均通過。保存的 validation.jsonl 含 3,000 案例、5,961 次查詢：2,250 次同抵達、3,705 次雙方無解、6 次區間方法較早；沒有較晚、漏解、多解或 replay 失敗。本次只重新統計既有紀錄、核對兩包並重算這 6 個差異案例，沒有重跑全部 3,000 案例。6 次的排程通過驗證，原窮舉用 1/16 秒格點；改為 1/48 秒後抵達時間均相同，支持格點差異解釋，不等於一般正確性證明。尚待完成一般證明、開閉端點與正式多包效能實驗；比較 SR-CGR 與原論文方法，擴大隨機拓樸。store-and-forward、無獨立配額主模型待老師確認；本版假設目的地整包收完即釋放。');
+bullets(s,['本例：X→B→D 在 8 秒；A→C→D 在 5 秒','3,000 案例、5,961 查詢：無較晚、漏解或多解','6 次較 1/16 秒格點早；細化至 1/48 秒後一致','待完成：一般證明、開閉端點、正式多包實驗','對照 SR-CGR／原論文方法，擴大隨機拓樸'],95,155,1090,28,74);
+txt(s,'待老師確認：store-and-forward、無獨立配額；目的地收完即釋放。',95,550,1090,39,23,C.gray);
+txt(s,'實作：src/experiments/dtn_validation/dtn/ours.py',95,595,1090,36,23,C.gray);
 
 await fs.writeFile(path.join(BUILD,'slide_notes.json'),JSON.stringify(notes,null,2));
 await fs.writeFile(path.join(BUILD,'draft.pptx').replace(/\.pptx$/,'.inspection.ndjson'),(await p.inspect({kind:'slide,textbox,table,chart',maxChars:500000})).ndjson);

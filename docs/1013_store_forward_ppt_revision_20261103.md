@@ -103,3 +103,19 @@ python src/experiments/ppt_store_forward_walkthrough_20261103.py
 - P11、P16、P21 的原生散佈圖每個 series 明設 `smooth=false`，將原資料點以斜線／水平線連接，移除造成占用超出資料點的平滑插值。
 - contact 折線、完整 pred、所有時間／占用數值、文字與講者備註保持不變；未修改演算法或執行實驗。
 - 核對：排除重建識別碼後，32 頁 slide／notes XML 相同；chart 指向不變。3 張圖的 8 個 series 僅新增 smooth=0，其他 chart XML 不變。32 頁最終檔渲染與預覽一致；套件、字型、幾何檢查通過。原生 PowerPoint 未驗證。
+
+## v1.2：同步目的地檢查、完整 Commit 與最新驗證
+
+- 方法依據改為 `67db7a2` 的 `dtn_validation/dtn/ours.py`、`validate.py`；舊凍結定義及演算法程式未修改。逐步 Q 的數值仍沿用本例紀錄，另外以新版重算核對兩包。
+- P11、P21 標題與備註說明提交 F 及來源／中繼／目的地占用；圖中仍分別展示 B、C，不將未繪出的端點誤稱未提交。
+- P22、P27、P30、P31、P32 移除已過時的 endpoint 缺口。P27、P28 在來源初始化與延伸時，對目的地 contact 先做 DestinationFilter 再 InsertLabels；P31 補齊起訖、release、期限及全部節點的驗證／提交。
+- P3 保持 `(c,I,pred)` 三項，把 i 與 key 明標為編號／推導值，統一接收端為 v(c)，移除舊 namedtuple 快取說明。
+- P5 加上速率欄，將「初始量」改為「傳輸量上限 r×時長」；P16 改為第 2 秒後即超限、第 3 秒達 8 MB。
+- P22 明說第二包舊稿 12→5 秒來自取消 c7 配額，不能宣稱區間演算法效能改善；P12 提醒第二包重新編號。
+- P1、P32 標示 store-and-forward／無獨立配額主模型待老師確認，並列出目的地收完即交付釋放的假設；P32 加入 SR-CGR 與隨機拓樸實驗。
+- 驗證紀錄實際統計為 3,000 案例、5,961 查詢：2,250 同抵達、3,705 雙方無解、6 次較格點早；沒有較晚、漏解、多解及 replay 失敗。
+- 本次沒有重跑全部 3,000 案例。針對 6 個較早案例重算並將窮舉格點從 1/16 秒細化至 1/48 秒，6 次均與區間結果相同，且排程驗證通過；此為測試證據，非一般證明。
+- 本例兩包用新版搜尋、完整驗證、完整 Commit 和 1/4 秒格點重新核對，抵達仍為 8 與 5 秒；保留完整 Label、原版折線及分段直線 Buffer 圖。
+- 暫維持 P1、P2、P14 隱藏，未擅自改放映設定。v1.1 與 1013 原檔均保留。
+- 核對腳本：`src/presentations/verify_1103_v1_2_sources.py`；結果：`output/ppt_store_forward_20261103/v1_2_source_checks.json`。
+- PPT 驗證：32 頁重新匯入／渲染與作者預覽一致，套件／字型／幾何檢查通過；3 張 chart XML 與 v1.1 相同，pred 展示保留。所有備註版本、DestinationFilter 兩個呼叫點、隱藏頁及原檔雜湊核對通過。原生 PowerPoint 未驗證。

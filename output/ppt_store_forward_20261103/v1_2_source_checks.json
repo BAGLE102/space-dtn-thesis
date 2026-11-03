@@ -1,0 +1,105 @@
+{
+  "algorithm_reference": "67db7a2",
+  "saved_record": "output\\dtn_validation_20261103\\validation.jsonl",
+  "cases": 3000,
+  "queries": 5961,
+  "results": {
+    "both_none": 3705,
+    "same": 2250,
+    "earlier": 6
+  },
+  "replay_failures": 0,
+  "refined_off_grid": [
+    {
+      "case": 765,
+      "bundle": 1,
+      "ours": "139/12",
+      "grid_16": "93/8",
+      "grid_48": "139/12",
+      "replay_ok": true
+    },
+    {
+      "case": 1064,
+      "bundle": 0,
+      "ours": "85/12",
+      "grid_16": "57/8",
+      "grid_48": "85/12",
+      "replay_ok": true
+    },
+    {
+      "case": 1655,
+      "bundle": 1,
+      "ours": "52/3",
+      "grid_16": "139/8",
+      "grid_48": "52/3",
+      "replay_ok": true
+    },
+    {
+      "case": 2032,
+      "bundle": 0,
+      "ours": "113/12",
+      "grid_16": "151/16",
+      "grid_48": "113/12",
+      "replay_ok": true
+    },
+    {
+      "case": 2699,
+      "bundle": 0,
+      "ours": "55/12",
+      "grid_16": "37/8",
+      "grid_48": "55/12",
+      "replay_ok": true
+    },
+    {
+      "case": 2747,
+      "bundle": 0,
+      "ours": "137/12",
+      "grid_16": "183/16",
+      "grid_48": "137/12",
+      "replay_ok": true
+    }
+  ],
+  "fixture": [
+    {
+      "source": "X",
+      "arrival": 8,
+      "schedule": [
+        {
+          "contact": "c1",
+          "start": "2"
+        },
+        {
+          "contact": "c2",
+          "start": "6"
+        }
+      ],
+      "committed_nodes": [
+        "B",
+        "D",
+        "X"
+      ]
+    },
+    {
+      "source": "A",
+      "arrival": 5,
+      "schedule": [
+        {
+          "contact": "c6",
+          "start": "1"
+        },
+        {
+          "contact": "c7",
+          "start": "4"
+        }
+      ],
+      "committed_nodes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "X"
+      ]
+    }
+  ],
+  "limitation": "Saved record counted, not fully rerun; six cases refined; no general proof."
+}

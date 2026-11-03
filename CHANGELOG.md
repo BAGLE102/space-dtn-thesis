@@ -2,6 +2,8 @@
 
 ## 2026-11-03
 
+- 簡報 v1.2 同步 67db7a2 的目的地篩選與所有節點 Commit，修正記法及結果限制；新增簡報來源核對腳本與 6 個格點差異細化結果，保留 v1.1。未修改研究演算法。
+
 - 簡報新版採 v1.x 命名，另存 v1.1；3 張原生 Buffer 圖明設 smooth=false，保留資料點與其他內容，改以分段直線呈現。
 
 - 新增 `src/experiments/dtn_validation/`：本方法、格點窮舉、簡化版 SR-CGR、隨機拓樸、Excel 與圖片輸出。補上 `DestinationFilter`，`Commit` 納入來源與目的地；假設 bundle 收完即離開目的地。完整效能實驗待使用者執行。
