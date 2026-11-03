@@ -6,6 +6,7 @@
 
 - 原稿：使用者提供的 `F:/1013.pptx`；保留原檔，未提交至 GitHub。
 - 新稿：`output/presentations/1103_新版演算法完整流程.pptx`，32 頁。
+- 折線修訂稿：`output/presentations/1103_新版演算法完整流程_原版折線.pptx`，依使用者偏好沿用原 1013 的拓樸折線，保留上述 32 頁文字與數值。
 - 逐頁講稿：`docs/1103_store_forward_slide_notes_20261103.md`；同樣內容已寫入 PPT 講者備註。
 - 案例資料：`output/ppt_store_forward_20261103/walkthrough.json`。
 - 案例重建：`src/experiments/ppt_store_forward_walkthrough_20261103.py`。
@@ -78,3 +79,11 @@ python src/experiments/ppt_store_forward_walkthrough_20261103.py
 ## 使用者下一步
 
 先看 P5 的 c7 模型變更、P12–23 的第二包流程，再看 P27–31 的英文虛擬碼。在 PowerPoint 確認字型、連線、圖表與講者備註。
+
+## 原版折線修訂（同日）
+
+- 從原 1013 的第 6 頁擷取 8 條三點折線的轉折位置與標籤位置，保存於 `src/presentations/1013_topology_link_geometry.json`。
+- 在新版既有節點位置上套用原轉折樣式，恢復平行 contacts 的分離路徑，保留原版開放箭頭與新版路徑配色。
+- 修改全部 15 個含拓樸的頁面（P4、8、9、11–19、21、22、24）；其餘 17 頁預覽保持一致。
+- 比對兩份 PPT：32 頁文字與講者備註、所有表格內容、3 個原生圖表 XML 皆相同；未修改演算法或案例資料，未重跑實驗。
+- 修訂稿仍為可編輯的 native shapes；保留前一份簡報及原始 1013。

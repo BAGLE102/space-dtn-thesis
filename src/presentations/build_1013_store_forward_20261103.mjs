@@ -16,6 +16,7 @@ const SOURCE=process.argv[2] || 'F:/1013.pptx';
 const FONT='DFKai-SB';
 const C={blue:'#3932A8',green:'#187A3E',orange:'#CC6900',red:'#C52327',ink:'#222222',gray:'#747474',light:'#D8D8DF',faint:'#F2F1F7',white:'#FFFFFF'};
 const data=JSON.parse(await fs.readFile(path.join(ROOT,'output/ppt_store_forward_20261103/walkthrough.json'),'utf8'));
+const topologyGeometry=JSON.parse(await fs.readFile(path.join(ROOT,'src/presentations/1013_topology_link_geometry.json'),'utf8'));
 const p=await PresentationFile.importPptx(await FileBlob.load(SOURCE));
 await fs.mkdir(path.join(BUILD,'final-preview'),{recursive:true});
 const notes=[];
@@ -57,20 +58,38 @@ function table(s,values,x,y,w,h,widths,size=25) {
 }
 function graph(s,active={},focus=null) {
  const pos={X:[128,211],A:[128,405],B:[330,248],C:[330,446],D:[546,339]};
- const nn={};
+ const es=[['c1','X','B','[2,3]'],['c2','B','D','[6,7]'],['c3','A','B','[1,2]'],['c4','A','B','[7,9]'],
+ ['c5','B','D','[10,11]'],['c6','A','C','[1,2]'],['c7','C','D','[4,5]'],['c8','C','D','[2,3]']];
+ // Reuse the original three-point polylines; morph only for the existing node positions.
+ const morph=(point,u,v)=>{
+  const a=topologyGeometry.original_node_centers[u],b=topologyGeometry.original_node_centers[v];
+  const dx=b[0]-a[0],dy=b[1]-a[1],t=Math.max(0,Math.min(1,((point[0]-a[0])*dx+(point[1]-a[1])*dy)/(dx*dx+dy*dy)));
+  return [point[0]+(1-t)*(pos[u][0]-a[0])+t*(pos[v][0]-b[0]),point[1]+(1-t)*(pos[u][1]-a[1])+t*(pos[v][1]-b[1])];
+ };
+ const polyline=(points,color,width,name)=>{
+  const left=Math.min(...points.map(q=>q[0])),top=Math.min(...points.map(q=>q[1]));
+  const widthPx=Math.max(.1,Math.max(...points.map(q=>q[0]))-left),heightPx=Math.max(.1,Math.max(...points.map(q=>q[1]))-top);
+  s.shapes.add({geometry:'custom',name,position:{left,top,width:widthPx,height:heightPx},fill:'none',line:{fill:color,width},
+   customPaths:[{width:widthPx,height:heightPx,commands:points.map((q,i)=>({[i?'lineTo':'moveTo']:{x:q[0]-left,y:q[1]-top}}))}]});
+ };
+ for(const e of [...es.filter(e=>!active[e[0]]),...es.filter(e=>active[e[0]])]) {
+  const [id,u,v]=e,col=active[id]||C.light,lw=active[id]?3.8:1.7;
+  const points=topologyGeometry.links[id].points.map(q=>morph(q,u,v));
+  const bend=points[1],end=pos[v],len=Math.hypot(end[0]-bend[0],end[1]-bend[1]);
+  const d=[(end[0]-bend[0])/len,(end[1]-bend[1])/len],tip=[end[0]-d[0]*27.5,end[1]-d[1]*27.5];
+  points[2]=tip;polyline(points,col,lw,`topology-${id}-polyline`);
+  const back=[tip[0]-d[0]*10,tip[1]-d[1]*10];
+  polyline([[back[0]-d[1]*4,back[1]+d[0]*4],tip,[back[0]+d[1]*4,back[1]-d[0]*4]],col,lw,`topology-${id}-arrow`);
+ }
+ // Nodes cover the source-center sections just as in the supplied reference.
  for(const [n,[x,y]]of Object.entries(pos)) {
-  nn[n]=s.shapes.add({geometry:'ellipse',position:{left:x-26,top:y-26,width:52,height:52},fill:C.white,line:{fill:n===focus?C.green:C.blue,width:2.7}});
+  s.shapes.add({geometry:'ellipse',position:{left:x-26,top:y-26,width:52,height:52},fill:C.white,line:{fill:n===focus?C.green:C.blue,width:2.7}});
   txt(s,n,x-22,y-25,44,52,36,n===focus?C.green:C.blue,'center');
  }
- const es=[['c1','X','B','right','left',228,195,'[2,3]'],['c2','B','D','right','top',438,246,'[6,7]'],
- ['c3','A','B','top','left',208,291,'[1,2]'],['c4','A','B','right','bottom',246,348,'[7,9]'],
- ['c5','B','D','right','left',438,304,'[10,11]'],['c6','A','C','right','left',228,435,'[1,2]'],
- ['c7','C','D','right','bottom',445,401,'[4,5]'],['c8','C','D','top','left',419,356,'[2,3]']];
- for(const e of [...es.filter(e=>!active[e[0]]),...es.filter(e=>active[e[0]])]) {
-  const [id,u,v,a,b,x,y,win]=e,col=active[id]||C.light;
-  s.shapes.connect(nn[u],nn[v],{kind:'straight',fromSide:a,toSide:b,line:{fill:col,width:active[id]?3.8:1.7},tail:{type:'triangle',width:'sm',length:'sm'}});
-  txt(s,id,x-23,y-10,58,30,25,active[id]||'#9B9AA6','center');
-  txt(s,win,x-30,y+16,76,24,16,active[id]||'#9B9AA6','center');
+ for(const [id,u,v,win]of es) {
+  const [x,y]=morph(topologyGeometry.links[id].label_center_top,u,v),col=active[id]||'#9B9AA6';
+  txt(s,id,x-29,y,58,30,25,col,'center');
+  txt(s,win,x-38,y+26,76,24,16,col,'center');
  }
 }
 function qline(q) {

@@ -2,6 +2,7 @@
 
 ## 2026-11-03
 
+- 另存 1103 原版折線稿，恢復 1013 拓樸連線的轉折與分離樣式，保留新版配色及全部研究內容；更新排版程式與來源幾何資料，未修改演算法或重跑實驗。
 - 依 1013 原版型另製 32 頁 store-and-forward 區間 Label 完整流程簡報，新增逐頁講稿、修改清單、排版原始碼與兩包可重現核對。取消舊 c7 獨立配額後第二包改走 c6→c7、5 秒抵達；標明原型 endpoint 缺口，不修改演算法或宣稱一般證明。
 
 - 依使用者決定，候選方法改為 store-and-forward，移除 RELAX／TRACK 與自我重疊處理；舊 cut-through 程式保留。新增 `src/experiments/store_forward/`、`docs/store_forward_label_20261103.md` 與 `output/store_forward_20261103/`。
