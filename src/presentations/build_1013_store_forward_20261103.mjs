@@ -94,11 +94,13 @@ function graph(s,active={},focus=null) {
 }
 function qline(q) {
  if(!q||!q.length)return '[]';
- return '[ '+q.map(l=>`${l.id}(${l.contact},[${l.start_intervals[0].join(',')}], key=${l.key})`).join('   →   ')+' ]';
+ const labels=q.map(l=>`${l.id}=(${l.contact},[${l.start_intervals[0].join(',')}],${l.predecessor}), key=${l.key}`);
+ // Show the complete mathematical Label; key is a derived queue priority outside its tuple.
+ return '[ '+labels.map((label,i)=>`${i?(i%2===0?'\n   →   ':'   →   '):''}${label}`).join('')+' ]';
 }
 function queue(s,before,after,comment='') {
- txt(s,'Q 原本',88,530,110,36,25,C.gray);txt(s,typeof before==='string'?before:qline(before),205,530,1000,52,23,C.gray);
- txt(s,'Q 更新',88,584,110,36,25,C.blue);txt(s,typeof after==='string'?after:qline(after),205,584,1000,50,23,C.blue);
+ txt(s,'Q 原本',88,530,110,36,25,C.gray);txt(s,typeof before==='string'?before:qline(before),205,530,1000,52,21,C.gray);
+ txt(s,'Q 更新',88,584,110,36,25,C.blue);txt(s,typeof after==='string'?after:qline(after),205,584,1000,50,21,C.blue);
  if(comment)txt(s,comment,650,474,550,40,23,C.green);
 }
 function timeline(s,rows,{x=765,y=205,w=420,min=0,max=12}={}) {
@@ -142,11 +144,11 @@ for(const [x,head,body]of [[90,'輸入','Contact plan\nBundle requests'],[485,'�
 line(s,371,296,482,296,C.blue,2,true);line(s,812,296,912,296,C.blue,2,true);
 bullets(s,['F[c]：contact 已預約的傳送時段','O_n(t)：已接受 bundles 在節點 n 的占用曲線','傳輸容量由速率與剩餘時段決定，不另加 aggregate quota'],90,440,1110,28,54);
 
-s=base(3,'Label 與優先佇列 Q','I 記錄起送時間區間；Q 比較的是最早完整抵達時間。','L_i 的 i 只是本次搜尋的標籤編號，不是 contact 編號。c 是原始 contact 的識別；I 是在該 contact 上可達的起送時間。pred 指向產生此區間的前驅，來源使用 SOURCE 標記，不新增虛構 contact。key 為區間下界加傳輸時間與傳播延遲；同值按建立順序取出。');
-txt(s,'L = (c, I, pred)',320,155,650,65,43,C.blue,'center');
-table(s,[['欄位','定義'],['c','最後使用的 contact；目前節點是它的接收端'],['I','本候選可行的起送時間區間'],['pred','產生本候選的前驅 Label；來源為 SOURCE']],95,255,1090,230,[170,920],28);
-txt(s,'例：L2 = (c4, [7,8], SOURCE)，不是「contact 2」。',110,518,1080,42,29,C.green);
-txt(s,'key(L) = lo(I) + d(c) + δ(c)；lo(I) 為區間下界',110,575,1080,42,29,C.blue);
+s=base(3,'Label 的完整定義','Label 記錄可達時間與前驅；實際時刻在回溯時決定。','L_i 的 i 是本次單包搜尋中的唯一編號，不是 contact 編號。數學狀態仍為 c、I、pred 三項；key 是可由它們與 bundle 大小計算的推導值，Python 的 namedtuple 另外快取 key，並非新增研究狀態。I 是沿該前驅鏈可達的連通起送區間，不代表可以任意搭配前驅的所有時間。選定 s 後 A(L,s)=s+d(c)+δ(c)。目前範例為閉區間，下界可取到；一般開區間仍未補完。SOURCE 是來源標記，程式用 None，不是假 contact 或另一個 Label。Q 只持有待展開 Label；子 Label 的 pred 引用保留前驅，移出 Q 不等於刪除前驅物件。');
+txt(s,'L_i = (c(L_i), I(L_i), pred(L_i))',125,155,1050,58,38,C.blue,'center');
+table(s,[['項目','定義'],['i','本次搜尋的 Label 唯一編號；與 contact 編號分開'],['c(L)','最後使用的 contact；目前節點為 receiver(c(L))'],['I(L)','沿此前驅鏈可達的起送時間區間；本例為閉區間'],['pred(L)','前驅 Label 的引用；來源用 SOURCE（程式為 None）'],['key(L)','推導值：lo(I(L)) + d(c(L)) + δ(c(L))']],95,225,1090,285,[190,900],25);
+txt(s,'選定 s ∈ I(L) 後：A(L,s) = s + d(c(L)) + δ(c(L))',105,535,1090,43,29,C.green);
+txt(s,'lo(I)：區間下界；d(c)=S/r(c)；key 不鎖定實際起送時刻。',105,589,1090,38,25,C.blue);
 
 s=base(4,'固定拓樸與兩包需求','先規劃 X→D，再規劃 A→D；兩包皆為 4 MB。','沿用 1013 五節點八個 contacts。第一包 release g=0，第二包 g=1。規劃先後不是實際送達先後。新版移除獨立配額後，第二包可走 c6、c7，故結果改為第 5 秒到達。');
 graph(s);txt(s,'第一包：X → D，g=0',650,178,560,45,33,C.orange);txt(s,'第二包：A → D，g=1',650,240,560,45,33,C.blue);
@@ -170,10 +172,11 @@ graph(s,{c1:C.green},'B');txt(s,'c1：I=[2,2]，key=2+1+0=3',650,160,560,50,31,C
 timeline(s,[{label:'X 等待',bars:[[0,2,C.light]]},{label:'X 發送',bars:[[2,3,C.green]]},{label:'B 接收',bars:[[2,3,C.green]]}],{min:0,max:4});
 queue(s,[],b1.trace[0].q_after,'L1 = (c1, [2,2], SOURCE)');
 
-s=base(9,'第一包：從 B 延伸 c2、c5','兩個下一跳都通過時段與 B 的 Buffer 檢查。','取出 c1 的 Label 後只考慮從 B 出發的 contacts。c2 起送集合 [6,6]，完整到 D 為 8；c5 為 [10,10]，完整到 D 為 12。B 接收、等待、發送期間的占用最高 4 MB。這些是替代候選，搜尋期間不各自提交占用。');
+s=base(9,'第一包：從 B 延伸 c2、c5','取出 L1 並完成延伸；L2、L3 的 pred 仍指向 L1。','先從 Q 取出 L1，Q 暫時為空，再對 B 出發的 c2、c5 延伸。c2 起送集合 [6,6]，完整到 D 為 8；c5 為 [10,10]，完整到 D 為 12。B 占用最高 4 MB。L2.pred=L1、L3.pred=L1，所以 L1 雖然離開 Q，仍透過子 Label 的引用保留供回溯。這些是替代候選，搜尋期間不各自提交占用。');
 graph(s,{c1:C.green,c2:C.green,c5:C.blue},'B');
 timeline(s,[{label:'c2 發送',bars:[[6,7,C.green]]},{label:'D 接收',bars:[[7,8,C.green]]},{label:'c5 發送',bars:[[10,11,C.blue]]},{label:'D 接收',bars:[[11,12,C.blue]]}],{y:175,min:6,max:12});
 queue(s,b1.trace[1].q_before,b1.trace[3].q_after);
+txt(s,'取出 L1 後延伸；L2.pred=L1，L3.pred=L1',650,490,550,32,21,C.green);
 
 s=base(10,'第一包：選取目的地並回溯','取出 key=8 的目的地 Label，回推出 c1 在 2、c2 在 6 起送。','本例先取出 c2 的目的地 Label，c5 的另一目的地 Label 尚在 Q 中。回溯先定末跳 s=6，再在 c1 的 [2,2] 內找不超過 6−0−1=5 的最大值，得到 2。未取出的候選不是因 dominance 刪除。本頁只說明候選控制流程，本方法的一般最優性仍待證明。');
 for(const [x,head,body]of [[105,'SOURCE','X，g=0'],[485,'L1：c1','I=[2,2] → s=2'],[865,'L2：c2','I=[6,6] → s=6']]){rect(s,x,240,280,130,C.white,C.green);txt(s,head,x+12,260,256,44,32,C.green,'center');txt(s,body,x+12,318,256,40,27,C.ink,'center');}
@@ -244,7 +247,7 @@ table(s,[['Bundle','路徑','起送時間','整包到 D'],['第一包','X→B→
 txt(s,'預約：c1[2,3)、c2[6,7)',650,455,540,38,26,C.orange);txt(s,'　　　c6[1,2)、c7[4,5)',650,510,540,38,26,C.green);
 
 s=base(23,'第二包：Q 與拒絕原因總表','只有 c3→c5 因 Buffer 拒絕；c2 因預約、c8 因時間拒絕。','本表來自 walkthrough.json 的真實候選控制流程。Label 編號僅在第二包搜尋中有效。初始化先產生 c3、c4、c6，Q 以 key 排序。取出 c3 後試 c2、c5；取出 c6 後試 c7、c8；最後取出 c7 目的地。');
-table(s,[['階段','處理','結果','Q（只列 key）'],['初始化','c3、c4、c6','三個區間 Label','L1:2 → L3:3 → L2:8'],['取出 L1','c3→c2','唯一時段被預約','L3:3 → L2:8'],['同一個 L1','c3→c5','B 占用 8>4','L3:3 → L2:8'],['取出 L3','c6→c7','新增 L4，key=5','L4:5 → L2:8'],['同一個 L3','c6→c8','Head 3>Tail 2','L4:5 → L2:8'],['取出 L4','目的地 D','回溯 c6→c7','L2:8（不再展開）']],90,165,1100,410,[155,215,320,410],25);
+table(s,[['階段','處理','結果','Q 摘要：Label ID:key'],['初始化','c3、c4、c6','三個區間 Label','L1:2 → L3:3 → L2:8'],['取出 L1','c3→c2','唯一時段被預約','L3:3 → L2:8'],['同一個 L1','c3→c5','B 占用 8>4','L3:3 → L2:8'],['取出 L3','c6→c7','新增 L4，key=5','L4:5 → L2:8'],['同一個 L3','c6→c8','Head 3>Tail 2','L4:5 → L2:8'],['取出 L4','目的地 D','回溯 c6→c7','L2:8（不再展開）']],90,165,1100,410,[155,215,320,410],25);
 
 s=base(24,'補充：c4 區間何時變成實際時間','固定 c4→c5 時，回溯會選 c4 的 s=8；這不是本例選中路徑。','這一頁解釋尚未展開的 c4 區間如何用，不把它冒充主搜尋實際發生的步驟。假設固定選 c4→c5，末跳 c5 的 s=10，前一跳上界 10−0−1=9；在 I=[7,8] 取最大值 8，故 B 於 9 收完，再等到 10 發送，D 於 12 收完。s=7 也是可行排程，但候選回溯採最晚前驅；這不表示它對後續 bundles 一定最好。');
 graph(s,{c4:C.blue,c5:C.blue},'B');
@@ -257,16 +260,16 @@ timeline(s,[{label:'contact',bars:[[1,10,C.light]]},{label:'已預約 F',bars:[[
 txt(s,'[1,9] − (2,5) = [1,2] ∪ [5,9]',180,500,970,64,39,C.green,'center');
 txt(s,'一段預約可能把集合分成兩段；不是每個時間點各建 Label。',105,577,1090,43,28,C.ink);
 
-s=base(26,'Reached：只移除同 contact 已涵蓋的時間','不同 contact 到達同一節點，不能只因較晚就刪除。','Reached[c] 是以原始 contact 為索引的已達起送集合。完整重複區間不重建；未涵蓋部分仍保留，連通區間分開建立 Label。本頁用完全覆蓋示例，避免把尚未處理完整的開閉端點假裝已解決。跨歷史狀態壓縮、一般完備性與開區間需另證。');
-table(s,[['對象','處理'],['c3 → B 與 c4 → B','保留：contact 不同，未做同節點早到支配'],['Reached[c4] 已有 [7,8]','新候選也為 [7,8] → 無新增時間'],['只有部分時間已涵蓋','保留尚未涵蓋部分；不同連通區間分開建 Label']],95,190,1090,255,[390,700],28);
-txt(s,'New = C − Reached[c]',140,502,1000,60,39,C.blue,'center');
-txt(s,'一般正確性與開／閉端點處理尚待完成。',105,580,1090,40,27,C.gray);
+s=base(26,'Label、Q 與 Reached 的分工','離開 Q 是取出來展開；被子 Label 引用的前驅仍須保留。','Q 是待展開 Label 的優先佇列，不是所有 Label 的儲存庫。ExtractMin 後取出的 Label 不再排隊，但已建立的子 Label 透過 pred 持有前驅物件，直到回溯不再需要它；不必因此新增研究狀態欄位或假裝程式已有全域 Labels／Processed 集合。Reached[c] 是以原始 contact 為索引的已達起送集合，不是 Label 清單。完整重複區間不重建，未涵蓋部分仍保留；不同 contacts 到同節點不能僅憑早到刪除。一般完備性與開閉端點仍待證。');
+table(s,[['對象','用途'],['Q','只放待展開 Label；ExtractMin 後即離開 Q'],['pred 鏈','子 Label 引用前驅，供之後回溯；例如 L2.pred=L1'],['Reached[c]','記錄同 contact 已涵蓋的起送集合，避免重建'],['c3 → B 與 c4 → B','contact 不同；保留各自候選，不只看誰早到']],95,180,1090,280,[230,860],26);
+txt(s,'New = C − Reached[c]',140,493,1000,55,37,C.blue,'center');
+txt(s,'例：Reached[c4]=[7,8]，新候選也是 [7,8] → 不重建。',105,571,1090,42,27,C.gray);
 
 s=base(27,'虛擬碼 1：逐包規劃與初始化','搜尋不預約資源；接受選定排程後才 Commit。','英文虛擬碼呈現最新候選流程。兩包依固定規劃順序，並非依最終抵達時間排序。SourceBufferFilter 在原型已實作。DestinationFilter 與來源／目的地 Commit 尚未實作，本簡報在相應頁面有明示。');
 codes(s,['for each bundle B in planning order:','    goal ← SearchBundle(B)','    if goal is NONE: record NO_PATH; continue','    schedule ← Backtrack(goal)','    if not ValidateSchedule(schedule): save failure; STOP','    Commit(schedule)','', 'SearchBundle(B):','    Q ← empty priority queue; Reached ← empty','    for each contact c leaving source(B):','        C ← SourceBufferFilter(c, SourceRange(c))','        InsertLabels(c, C, SOURCE)'],90,158,1100,25,33);
 
 s=base(28,'虛擬碼 2：取出與延伸 Label','收完整包才轉送；每次只展開目前接收節點的 outgoing contacts。','此頁區間搜尋原型沒有 RELAX、TRACK、Ch，也沒有逐秒迴圈。key 為 lo(I)+d+δ，pop 同 key 時以建立順序分辨。Reached 是在插入時移除已涵蓋時間，不是全域 node visited。沒有以資料證明一般最優性；此頁是目前控制流程。');
-codes(s,['while Q is not empty:','    L1 ← ExtractMin(Q, key)','    if receiver(c1) = destination(B): return L1','    for each contact c2 leaving receiver(c1):','        C ← StartRange(c2, L1)','        C ← BufferFilter(C, L1, c2)','        InsertLabels(c2, C, L1)','return NONE','','InsertLabels(c, C, pred):','    New ← C − Reached[c]; Reached[c] ← Reached[c] ∪ New','    for each connected interval I in New: push (c,I,pred)'],90,158,1100,25,33);
+codes(s,['while Q is not empty:','    L1 = (c1, I1, pred1) ← ExtractMin(Q, key)','    if receiver(c1) = destination(B): return L1','    for each contact c2 leaving receiver(c1):','        C ← StartRange(c2, L1)','        C ← BufferFilter(C, L1, c2)','        InsertLabels(c2, C, L1)','return NONE','','InsertLabels(c, C, pred):','    New ← C − Reached[c]; Reached[c] ← Reached[c] ∪ New','    for each connected interval I in New: push (c,I,pred)'],90,158,1100,25,33);
 
 s=base(29,'虛擬碼 3：StartRange 與 SourceRange','未提供 deadline 時，Tail 只使用 contact 結束時間限制。','延伸的 Head 為 max(a(c2),lo(I1)+δ1+d1)，這是 store-and-forward。Tail b−d 確保整包發送在 contact 結束前完成。可選 D* 需要再扣傳播延遲，確保整包抵達不逾期。程式目前的 P.T 是有限上界；此案例為 max(b+δ)=12，不構成額外 deadline。每個 F 預約排除的是開區間 (x−d,y)，允許剛好相接。');
 codes(s,['StartRange(c2, L1):','    Head ← max(a(c2), lo(I1) + δ1 + d1)','    Tail ← b(c2) − d2','    if deadline D* is given: Tail ← min(Tail, D* − d2 − δ2)','    return RemoveBookings([Head,Tail], F[c2], d2)','','SourceRange(c):','    Head ← max(a(c), g); Tail ← b(c) − d(c)','    if deadline D* is given: Tail ← min(Tail, D* − d(c) − δ(c))','    return RemoveBookings([Head,Tail], F[c], d(c))','','RemoveBookings(C,F,d): remove (x−d,y) for every [x,y) in F'],90,155,1100,24,33);
@@ -277,7 +280,7 @@ txt(s,'SourceBufferFilter：從 g 持有整包，傳送時逐 byte 釋放。',95
 txt(s,'DestinationFilter：接收期間檢查，交付後釋放（原型尚未實作）。',95,578,1090,42,27,C.red);
 
 s=base(31,'虛擬碼 5：回溯、驗證與提交','前驅最晚取值是目前選擇規則，不保證對後續 bundles 最好。','回溯從目的地 Label 的區間下界起送，逐步求前驅最大可用起送時間。ValidateSchedule 應檢查完整排程與全程 Buffer；原型現有 replay 未檢查目的地。Commit 實際只寫 F 及中繼 O；來源與目的地需補完。這頁不新增未經同意的 RetimePath、incompleteLB 或保護 ε。');
-txt(s,'Backtrack(goal)',95,168,530,40,31,C.blue);codes(s,['s ← lo(I(goal))','while predecessor exists:','    U ← s − δ(prev.c) − d(prev.c)','    s_prev ← max {x in prev.I : x ≤ U}','    prepend (prev.c, s_prev)','    s ← s_prev; move to prev'],95,225,535,23,37);
+txt(s,'Backtrack(goal)',95,168,530,40,31,C.blue);codes(s,['L ← goal; s ← lo(I(L))','schedule ← [(c(L),s)]','while pred(L) ≠ SOURCE:','    P ← pred(L); U ← s − d(c(P)) − δ(c(P))','    s ← max {x in I(P) : x ≤ U}','    prepend (c(P),s); L ← P','return schedule'],95,225,535,21,34);
 txt(s,'Validate → Commit',680,168,500,40,31,C.blue);codes(s,['check connectivity and s2 ≥ A1','check contact windows and F','check Buffer throughout visits','if valid:','    add [s,s+d) to F[c]','    add transit occupancy to O'],680,225,515,23,37);
 txt(s,'待補：目的地檢查，以及來源／目的地的完整占用提交。',95,555,1090,54,30,C.red);
 

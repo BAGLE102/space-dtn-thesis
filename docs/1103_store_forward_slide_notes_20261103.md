@@ -18,10 +18,10 @@
 案例資料：output/ppt_store_forward_20261103/walkthrough.json。
 本簡報呈現候選方法，尚無一般正確性證明。
 
-## P03 Label 與優先佇列 Q
+## P03 Label 的完整定義
 
-L_i 的 i 只是本次搜尋的標籤編號，不是 contact 編號。c 是原始 contact 的識別；I 是在該 contact 上可達的起送時間。pred 指向產生此區間的前驅，來源使用 SOURCE 標記，不新增虛構 contact。key 為區間下界加傳輸時間與傳播延遲；同值按建立順序取出。
-一句重點：I 記錄起送時間區間；Q 比較的是最早完整抵達時間。
+L_i 的 i 是本次單包搜尋中的唯一編號，不是 contact 編號。數學狀態仍為 c、I、pred 三項；key 是可由它們與 bundle 大小計算的推導值，Python 的 namedtuple 另外快取 key，並非新增研究狀態。I 是沿該前驅鏈可達的連通起送區間，不代表可以任意搭配前驅的所有時間。選定 s 後 A(L,s)=s+d(c)+δ(c)。目前範例為閉區間，下界可取到；一般開區間仍未補完。SOURCE 是來源標記，程式用 None，不是假 contact 或另一個 Label。Q 只持有待展開 Label；子 Label 的 pred 引用保留前驅，移出 Q 不等於刪除前驅物件。
+一句重點：Label 記錄可達時間與前驅；實際時刻在回溯時決定。
 方法來源：docs/store_forward_label_20261103.md；GitHub d8ade1c。
 案例資料：output/ppt_store_forward_20261103/walkthrough.json。
 本簡報呈現候選方法，尚無一般正確性證明。
@@ -68,8 +68,8 @@ a(c)、b(c) 是 contact 開始與結束；s 是起送；f 是發送完成；h �
 
 ## P09 第一包：從 B 延伸 c2、c5
 
-取出 c1 的 Label 後只考慮從 B 出發的 contacts。c2 起送集合 [6,6]，完整到 D 為 8；c5 為 [10,10]，完整到 D 為 12。B 接收、等待、發送期間的占用最高 4 MB。這些是替代候選，搜尋期間不各自提交占用。
-一句重點：兩個下一跳都通過時段與 B 的 Buffer 檢查。
+先從 Q 取出 L1，Q 暫時為空，再對 B 出發的 c2、c5 延伸。c2 起送集合 [6,6]，完整到 D 為 8；c5 為 [10,10]，完整到 D 為 12。B 占用最高 4 MB。L2.pred=L1、L3.pred=L1，所以 L1 雖然離開 Q，仍透過子 Label 的引用保留供回溯。這些是替代候選，搜尋期間不各自提交占用。
+一句重點：取出 L1 並完成延伸；L2、L3 的 pred 仍指向 L1。
 方法來源：docs/store_forward_label_20261103.md；GitHub d8ade1c。
 案例資料：output/ppt_store_forward_20261103/walkthrough.json。
 本簡報呈現候選方法，尚無一般正確性證明。
@@ -202,10 +202,10 @@ Q 中是 c7 的 L4(key5)與 c4 的 L2(key8)。先取出 L4 後，搜尋按候選
 案例資料：output/ppt_store_forward_20261103/walkthrough.json。
 本簡報呈現候選方法，尚無一般正確性證明。
 
-## P26 Reached：只移除同 contact 已涵蓋的時間
+## P26 Label、Q 與 Reached 的分工
 
-Reached[c] 是以原始 contact 為索引的已達起送集合。完整重複區間不重建；未涵蓋部分仍保留，連通區間分開建立 Label。本頁用完全覆蓋示例，避免把尚未處理完整的開閉端點假裝已解決。跨歷史狀態壓縮、一般完備性與開區間需另證。
-一句重點：不同 contact 到達同一節點，不能只因較晚就刪除。
+Q 是待展開 Label 的優先佇列，不是所有 Label 的儲存庫。ExtractMin 後取出的 Label 不再排隊，但已建立的子 Label 透過 pred 持有前驅物件，直到回溯不再需要它；不必因此新增研究狀態欄位或假裝程式已有全域 Labels／Processed 集合。Reached[c] 是以原始 contact 為索引的已達起送集合，不是 Label 清單。完整重複區間不重建，未涵蓋部分仍保留；不同 contacts 到同節點不能僅憑早到刪除。一般完備性與開閉端點仍待證。
+一句重點：離開 Q 是取出來展開；被子 Label 引用的前驅仍須保留。
 方法來源：docs/store_forward_label_20261103.md；GitHub d8ade1c。
 案例資料：output/ppt_store_forward_20261103/walkthrough.json。
 本簡報呈現候選方法，尚無一般正確性證明。
