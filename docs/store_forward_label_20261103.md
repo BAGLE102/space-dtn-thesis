@@ -93,7 +93,7 @@ Algorithm 8: Commit(schedule, B)
 將每一跳的 [s, s + d(c)) 加入 F[c]；將每次節點造訪的「已收 − 已送」曲線加入 O
 ```
 
-**程式與上述虛擬碼的差異：** `DestinationFilter` 未實作，回放也未檢查目的地 Buffer；`Commit` 只提交中間節點。
+**程式現況：** `store_forward/` 的舊實驗未含目的地 Buffer，`Commit` 只提交中間節點；`dtn_validation/` 已補上，假設 bundle 收完即離開目的地。下方多包數字來自舊實驗。
 
 ## 單包驗證
 

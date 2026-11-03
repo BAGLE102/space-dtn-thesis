@@ -1,0 +1,17 @@
+{
+  "validation": {"cases": 3000, "first_seed": 1, "grid_denominator": 16},
+  "performance": {
+    "topologies": {
+      "random_20n": {"nodes": 20, "contacts": 600, "horizon": 3600, "min_len": 30, "max_len": 300,
+                     "rates": [1, 2, 5], "delays": [0, 0.1, 0.25, 0.5], "release": 600},
+      "random_40n": {"nodes": 40, "contacts": 1600, "horizon": 3600, "min_len": 30, "max_len": 300,
+                     "rates": [1, 2, 5], "delays": [0, 0.1, 0.25, 0.5], "release": 600}
+    },
+    "bundle_size_mb": 1,
+    "bundles": [100, 300],
+    "buffers_mb": [3, 30],
+    "seeds": 10,
+    "methods": ["ours", "sr1", "sr10"],
+    "time_limit_per_run_sec": null
+  }
+}
