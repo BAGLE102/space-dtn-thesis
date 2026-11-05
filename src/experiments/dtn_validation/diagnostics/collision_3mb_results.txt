@@ -1,0 +1,23 @@
+--- k=1 rejection breakdown, M=3 and independent peak check
+random_20n 100 {'ok': 702, 'rej': 298, 'rej_source': 84, 'rej_relay': 187, 'rej_dest': 27} peak 3.0 ours peak 3.0 wait source 55.5 wait relay 14.8 hops 3.6
+random_20n 300 {'ok': 1419, 'rej': 1581, 'rej_source': 618, 'rej_relay': 800, 'rej_dest': 163} peak 3.0 ours peak 0.0 wait source 49.8 wait relay 12.2 hops 3.3
+random_40n 100 {'ok': 914, 'rej': 86, 'rej_relay': 51, 'rej_source': 23, 'rej_dest': 12} peak 3.0 ours peak 0.0 wait source 30.9 wait relay 6.1 hops 4.8
+random_40n 300 {'ok': 2125, 'rej': 875, 'rej_relay': 505, 'rej_source': 266, 'rej_dest': 104} peak 3.0 ours peak 0.0 wait source 28.5 wait relay 5.5 hops 4.6
+--- unconstrained k=1 (M=1e6): holding and peak bundles per node
+random_20n 100 wait source 52.7 median 0.0 wait relay 17.0 median 0.0 hops 3.9 mean node peak 4.2 share nodes peak>3 0.52
+random_20n 300 wait source 55.2 median 0.0 wait relay 18.4 median 0.0 hops 3.8 mean node peak 11.46 share nodes peak>3 0.93
+random_40n 100 wait source 30.7 median 0.0 wait relay 6.5 median 0.0 hops 4.9 mean node peak 1.87 share nodes peak>3 0.11
+random_40n 300 wait source 29.4 median 0.0 wait relay 7.0 median 0.0 hops 4.9 mean node peak 4.58 share nodes peak>3 0.56
+--- M sweep k=1 delivery %
+3 [70.2, 47.3, 91.4, 70.8]
+4 [78.3, 53.3, 96.1, 78.4]
+5 [84.4, 59.4, 98.2, 84.2]
+6 [89.1, 64.6, 99.0, 88.4]
+8 [94.6, 72.9, 99.5, 94.0]
+10 [98.0, 79.3, 99.8, 97.2]
+15 [99.9, 90.0, 100.0, 99.6]
+30 [100.0, 99.3, 100.0, 100.0]
+--- source not counted, M=3, k=1
+[79.7, 61.8, 95.3, 80.8]
+--- release 0-3000 instead of 600, M=3, k=1
+[96.3, 80.0, 100.0, 98.3]
