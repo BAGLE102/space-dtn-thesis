@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- 新增 `On占用曲線講解_v1.3.pptx`：第 8 頁補範例 ts／ls／rs 與 bisect_left 求 i 的過程（查 18 秒、查 20 秒），數值經程式核對。腳本 `src/presentations/build_on_curve_v1_3.py`。
 - 新增 `On占用曲線講解_v1.2.pptx`：依使用者決定，「轉角」全部改稱「變化點」（breakpoint），第 2 頁加定義：O_n(t) 斜率改變或發生跳躍的時刻，即 ts 中的時刻。腳本 `src/presentations/build_on_curve_v1_2.py`。
 - 新增 `docs/handoff_20261111.md`：給其他 AI 的交接說明（協作規則、問題設定、演算法流程、O_n 實作、SR-CGR 對照組、隨機拓樸與 Iridium 結果、待驗證事項、檔案位置）。
 - 新增 `On占用曲線講解_v1.1.pptx`（23 頁）：在 v1.0 加入 9 頁——兩點之間是直線不是 0（8 MB、2 MB/s 例）、慢慢收進來 vs 突然冒出、為什麼只存轉角（與每秒存比較、_prune）、最後一點之後的值會延續、peak 逐步算、連線預約 F 與 Buffer O_n、同一條連線為什麼不能同時傳兩包、快速判斷與細算、例子（上一包 3 MB 占 105～115，M=3／4）。例子數字皆為程式輸出。腳本 `src/presentations/build_on_curve_v1_1.py`。
