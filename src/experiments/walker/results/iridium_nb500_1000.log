@@ -1,0 +1,10 @@
+iridium_cp.json Nb=500 M=2 ours: delivered 500/500 (100.0%) mean delay 25s wall 262.4s
+iridium_cp.json Nb=500 M=2 sr1: delivered 456/500 (91.2%) mean delay 14s wall 46.5s
+iridium_cp.json Nb=500 M=2 sr10: delivered 466/500 (93.2%) mean delay 20s wall 242.5s
+iridium_cp.json Nb=500 M=5 ours: delivered 500/500 (100.0%) mean delay 25s wall 202.6s
+iridium_cp.json Nb=500 M=5 sr1: delivered 478/500 (95.6%) mean delay 19s wall 47.5s
+iridium_cp.json Nb=500 M=5 sr10: delivered 497/500 (99.4%) mean delay 23s wall 100.9s
+iridium_cp.json Nb=500 M=10 ours: delivered 500/500 (100.0%) mean delay 25s wall 188.3s
+iridium_cp.json Nb=500 M=10 sr1: delivered 495/500 (99.0%) mean delay 23s wall 48.8s
+iridium_cp.json Nb=500 M=10 sr10: delivered 500/500 (100.0%) mean delay 25s wall 54.9s
+iridium_cp.json Nb=1000 M=2 ours: delivered 1000/1000 (100.0%) mean delay 715s wall 5990.0s
