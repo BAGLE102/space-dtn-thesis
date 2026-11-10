@@ -2,6 +2,7 @@
 
 ## 2026-11-10
 
+- 新增同狀態比較 `src/experiments/dtn_validation/diagnostics/same_state/`：照本方法提交順序重放，每包在相同狀態下跑本方法、SR-CGR k=1、k=10 與不限 Buffer 下限（3 MB seed 1–3、30 MB seed 1–2，共 4,000 包）。結果：兩邊都可行時本方法從未較晚；k=1 可行時與本方法完全相同；k=10 有 6～78 包較晚（平均晚 27～74 秒）；不限 Buffer 時 100% 有路。
 - 新增 `回覆老師三個問題_v1.3.pptx`（22 頁）：問題二新增 5 頁 Yen 演算法說明與逐步示範（第二包拓樸 A→D，四條路徑 c6→c7=5、c3→c2=8、c4→c5=12、c3→c5=12，已用 `dtn/srcgr.py` 的 k_routes 核對順序），以及 k=1／k=10 在例子中的差別。腳本 `src/presentations/build_three_questions_v1_3_yen.py`。
 - 新增 `回覆老師三個問題_v1.2.pptx` 與 `1103_新版演算法完整流程_v1.26.pptx`：依 DTN 文獻慣例改以送達率表述，問題一與第 33 頁標題改為「送達率為什麼低」，「拒絕率」只保留為未送達原因的說明；第 37 頁待決事項改為「負載多少合理」。腳本 `src/presentations/build_delivery_wording_rename.py`。
 - 新增 `回覆老師三個問題_v1.1.pptx`：所有藍、綠、紅色文字改為黑色（圖形線條與底色不變）。腳本 `src/presentations/build_three_questions_v1_1_black.py`（以 v1.0 為輸入）。
