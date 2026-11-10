@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- 新增 `output/presentations/On占用曲線講解_v1.0.pptx`（14 頁）：O_n 的資料結構（ts／ls／rs）、查詢（left／right／top、between、peak）、每包 own(t)、commit 寫入與 add／_prune、stay_ok 檢查、搜尋時的快速判斷與 solve_region、程式實際例子（A→B→C、M=1，第 2 包在 B 逐步使用，數字為程式輸出）、模型假設。腳本 `src/presentations/build_on_curve_v1.py`，例子 `src/presentations/on_curve_demo.py`（需在 `src/experiments/dtn_validation` 下執行）。
 - Iridium 實驗結果 `src/experiments/walker/results/iridium_nb500_1000.*`（ns-2 Iridium 設計參數、土魯斯→台北、每包 1 MB、2,000 秒內等間隔產生）。Nb=500：本方法在 M=2/5/10 皆 100%；SR-CGR k=1 為 91.2%/95.6%/99.0%，k=10 為 93.2%/99.4%/100%。Nb=1000 只完成本方法 M=2（100%，平均延遲 715 秒，計算 5,990 秒）；其餘組合與 Nb=2000 因背景執行時間上限中止，未有結果。注意：各方法提交歷史不同，共同送達包的延遲不能直接當作路徑好壞比較。
 
 ## 2026-11-10
