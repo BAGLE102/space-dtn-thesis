@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- 新增 `On占用曲線講解_v1.7.pptx`（18 頁）：聚焦 Buffer 檢查。主線 15 頁（O_n 與檢查位置、own(t)、三個清單、兩種查詢、stay_ok、搜尋篩選、7 頁檢查流程演示），附錄 3 頁（模型假設、每包曲線寫入、來源節點例子）；刪除形狀／直線／只存變化點／延續／疊加／連線預約 F 等頁。腳本 `src/presentations/build_on_curve_v1_7.py`。
 - 新增 `On占用曲線講解_v1.6.pptx`（25 頁）：以 7 頁「Buffer 檢查流程演示」取代原 A→B→C 例子。設定 S=4 MB、M=6 MB、B 已有占用 ts [100,104,112,116]／值 [0,4,4,0]；逐步顯示 candidate_range、source_filter、快速判斷（peak=4，8>6）、各 s₂ 的 relay_ok 檢查、solve_region 切點 108/112/116/120/130 與結果 [114,136]、backtrack（c1 110、c2 114，第 118 秒到）、validate、commit 後 O_B，以及三種規則比較（舊規則 124、整包預留 122、逐步使用 118；後兩者為依規則掃描整數 s₂ 算出）。數值皆由 `src/presentations/on_curve_buffer_flow_demo.py`（在 `src/experiments/dtn_validation` 下執行）輸出。
 - 新增 `On占用曲線講解_v1.5.pptx`：A→B→C 範例改為整數（每包 4 MB、1 MB/s、M = 4 MB，排程不變：第 1 包 15／20 出發、第 2 包 20／25 出發），第 5、6、12、16、17 頁數值與圖改用 MB；數值經程式重跑核對（B 上合計 3、3、3、3、4、0；整包預留 3 + 4 = 7 > 4）。腳本 `src/presentations/build_on_curve_v1_5.py`。
 - 新增 `On占用曲線講解_v1.4.pptx`（20 頁）：重排順序為 在哪裡用 → 一包的占用與模型假設 → 怎麼存 → 怎麼寫入 → 怎麼查 → 怎麼檢查 → 搜尋時篩選 → 例子；合併重複頁（慢慢收進來併入「兩點之間是直線」、peak 兩頁合一、快速判斷併入搜尋篩選頁）；連線預約 F 與連線不能同時傳兩包移到附錄。腳本 `src/presentations/build_on_curve_v1_4.py`。
