@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- 新增 `On占用曲線講解_v1.5.pptx`：A→B→C 範例改為整數（每包 4 MB、1 MB/s、M = 4 MB，排程不變：第 1 包 15／20 出發、第 2 包 20／25 出發），第 5、6、12、16、17 頁數值與圖改用 MB；數值經程式重跑核對（B 上合計 3、3、3、3、4、0；整包預留 3 + 4 = 7 > 4）。腳本 `src/presentations/build_on_curve_v1_5.py`。
 - 新增 `On占用曲線講解_v1.4.pptx`（20 頁）：重排順序為 在哪裡用 → 一包的占用與模型假設 → 怎麼存 → 怎麼寫入 → 怎麼查 → 怎麼檢查 → 搜尋時篩選 → 例子；合併重複頁（慢慢收進來併入「兩點之間是直線」、peak 兩頁合一、快速判斷併入搜尋篩選頁）；連線預約 F 與連線不能同時傳兩包移到附錄。腳本 `src/presentations/build_on_curve_v1_4.py`。
 - 新增 `On占用曲線講解_v1.3.pptx`：第 8 頁補範例 ts／ls／rs 與 bisect_left 求 i 的過程（查 18 秒、查 20 秒），數值經程式核對。腳本 `src/presentations/build_on_curve_v1_3.py`。
 - 新增 `On占用曲線講解_v1.2.pptx`：依使用者決定，「轉角」全部改稱「變化點」（breakpoint），第 2 頁加定義：O_n(t) 斜率改變或發生跳躍的時刻，即 ts 中的時刻。腳本 `src/presentations/build_on_curve_v1_2.py`。
