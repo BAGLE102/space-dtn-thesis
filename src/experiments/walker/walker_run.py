@@ -11,13 +11,18 @@ from dtn.model import Contact, Problem, Curve, arrival
 from run_performance import plan_one
 from dtn import validate as V
 
-def load(path, rate):
-    d = json.load(open(path))
-    cs = [Contact('c%d' % i, u, v, Fr(a), Fr(b), Fr(rate), Fr(dl).limit_denominator(10**6), ()) for i, (u, v, a, b, dl) in enumerate(d['contacts'])]
+RATE_MBPS = {'intra': 25, 'inter': 25, 'gsl': Fr(3, 2)}   # Iridium（ns-2）：ISL 25 Mb/s、上下行 1.5 Mb/s
+
+def load(path, rate, bundle_mb=None):
+    d = json.load(open(path)); kinds = d.get('kind')
+    def r(i):
+        if kinds and bundle_mb: return Fr(RATE_MBPS[kinds[i]]) / (8 * Fr(str(bundle_mb)))   # 包/秒
+        return Fr(rate)
+    cs = [Contact('c%d' % i, u, v, Fr(a), Fr(b), r(i), Fr(dl).limit_denominator(10**6), ()) for i, (u, v, a, b, dl) in enumerate(d['contacts'])]
     return d['nodes'], cs
 
-def run(cp, nb, M, method, rate=Fr(1, 2), horizon=86400, window=2000):
-    nodes, cs = load(cp, rate)
+def run(cp, nb, M, method, rate=Fr(1, 2), horizon=86400, window=2000, bundle_mb=None):
+    nodes, cs = load(cp, rate, bundle_mb)
     big = Fr(10**9)
     O = {n: Curve([Fr(0), Fr(horizon)], [-big, -big], [-big, -big]) for n in nodes if n.startswith('GS')}
     P = Problem(cs, None, None, Fr(0), Fr(1), Fr(M), O, Fr(horizon))
@@ -33,18 +38,19 @@ def run(cp, nb, M, method, rate=Fr(1, 2), horizon=86400, window=2000):
         else:
             row.update(arr=None, hops=0, path="")
         rows.append(row)
-    return {"cp": cp, "Nb": nb, "M": M, "method": method, "wall": round(time.perf_counter() - t0, 2), "rows": rows}
+    return {"cp": cp, "bundle_mb": bundle_mb, "window": window, "Nb": nb, "M": M, "method": method, "wall": round(time.perf_counter() - t0, 2), "rows": rows}
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--cp"); ap.add_argument("--nb", type=int, nargs="+"); ap.add_argument("--M", type=int, nargs="+")
     ap.add_argument("--methods", nargs="+", default=["ours", "sr1", "sr10"]); ap.add_argument("--out")
+    ap.add_argument("--bundle-mb", type=float); ap.add_argument("--window", type=int, default=2000)
     a = ap.parse_args()
     with open(a.out, "a") as fh:
         for nb in a.nb:
             for M in a.M:
                 for me in a.methods:
-                    r = run(a.cp, nb, M, me); fh.write(json.dumps(r) + "\n"); fh.flush()
+                    r = run(a.cp, nb, M, me, window=a.window, bundle_mb=a.bundle_mb); fh.write(json.dumps(r) + "\n"); fh.flush()
                     ok = [x for x in r["rows"] if x["arr"] is not None]
                     dl = sum(x["arr"] - x["g"] for x in ok) / max(1, len(ok))
                     print("%s Nb=%d M=%d %s: delivered %d/%d (%.1f%%) mean delay %.0fs wall %.1fs" % (a.cp.split('/')[-1], nb, M, me, len(ok), nb, 100 * len(ok) / nb, dl, r["wall"]), flush=True)
