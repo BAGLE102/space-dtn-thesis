@@ -2,6 +2,7 @@
 
 ## 2026-11-10
 
+- 新增 `回覆老師三個問題_v1.1.pptx`：所有藍、綠、紅色文字改為黑色（圖形線條與底色不變）。腳本 `src/presentations/build_three_questions_v1_1_black.py`（以 v1.0 為輸入）。
 - 新增 `output/presentations/回覆老師三個問題_v1.0.pptx`（17 頁）：問題一 3 MB 拒絕率診斷（不限 Buffer 的堆積、只改一項、Buffer 掃描）；問題二 SR-CGR 原理、流程、k=1/k=10/本方法比較、與文獻版差異；問題三沿用 Buffer 逐步使用說明。腳本 `src/presentations/build_three_questions_v1.py`。
 - 新增 `output/presentations/Buffer逐步使用修改說明_v1.0.pptx`（9 頁）：說明 Buffer 檢查由「有占用就整段停用」改為「O_n(t)+own(t) ≤ M 逐步使用」的理由、三層條件包含關係、逐 byte 例子、搜尋與提交流程、修改對照與正確性檢查。腳本 `src/presentations/build_buffer_update_v1.py`（以 v1.25 樣板產生）。
 - 新增 `1103_新版演算法完整流程_v1.25.pptx`：「碰撞率」全部改稱「拒絕率」（第 33、37 頁與講稿），第 33 頁講稿補定義：前面已接受的包占走 contact 時段或 Buffer 後找不到可行排程而被拒絕的比例。腳本 `src/presentations/build_1103_v125_rename.py`。
