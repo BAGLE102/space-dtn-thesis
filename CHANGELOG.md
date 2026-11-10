@@ -2,6 +2,7 @@
 
 ## 2026-11-10
 
+- 新增 `output/presentations/回覆老師三個問題_v1.0.pptx`（17 頁）：問題一 3 MB 拒絕率診斷（不限 Buffer 的堆積、只改一項、Buffer 掃描）；問題二 SR-CGR 原理、流程、k=1/k=10/本方法比較、與文獻版差異；問題三沿用 Buffer 逐步使用說明。腳本 `src/presentations/build_three_questions_v1.py`。
 - 新增 `output/presentations/Buffer逐步使用修改說明_v1.0.pptx`（9 頁）：說明 Buffer 檢查由「有占用就整段停用」改為「O_n(t)+own(t) ≤ M 逐步使用」的理由、三層條件包含關係、逐 byte 例子、搜尋與提交流程、修改對照與正確性檢查。腳本 `src/presentations/build_buffer_update_v1.py`（以 v1.25 樣板產生）。
 - 新增 `1103_新版演算法完整流程_v1.25.pptx`：「碰撞率」全部改稱「拒絕率」（第 33、37 頁與講稿），第 33 頁講稿補定義：前面已接受的包占走 contact 時段或 Buffer 後找不到可行排程而被拒絕的比例。腳本 `src/presentations/build_1103_v125_rename.py`。
 - 新增 `output/presentations/1103_新版演算法完整流程_v1.24.pptx`（46 頁）：補文獻版 SR-CGR 會重試、實驗全送達比延遲（第 30、35、38 頁）；新增「3 MB 碰撞率為什麼高」（第 33 頁，使用 `diagnostics/collision_3mb_results.txt` 既有數據）；第 32 頁加註對照組盡早送的影響（k=1 改盡晚送 +2～8 點）；第 35 頁補 15 MB 絕對送達率約 17～72%；第 34 頁講稿計算時間改為 3 MB 數字；第 37 頁新增兩項待決事項；第 29 頁寫明均勻隨機抽 contact；第 8、9、15、17、24 頁文字修正；SearchBundle 拆兩頁放大；刪除重複的 c8 備用頁。圖表字型（標楷體）尚未更新。
