@@ -59,8 +59,32 @@ store-and-forward 時，lag = S/r₁，新的切點集合與檢查點和舊版�
 
 **待決定**：要不要把 `stay_ok` 起點改為不論 own 是否為 0 都檢查 O.right(start) ≤ M。這會改變限制的定義，需要使用者確認。
 
+## 效能比較
+
+隨機 20 節點、Buffer 3 MB、3 個種子（`src/experiments/dtn_validation/results_cut_through/perf_*.jsonl`）：
+
+| 包數 | 方法 | 收完才送 | cut-through |
+|---|---|---|---|
+| 100 | 本方法 | 92.0% | 92.0% |
+| 100 | sr1 | 75.0% | 74.7% |
+| 100 | sr10 | 84.7% | 83.7% |
+| 300 | 本方法 | 62.7% | 63.6% |
+| 300 | sr1 | 46.9% | 45.6% |
+| 300 | sr10 | 51.7% | 52.0% |
+
+本方法兩模式皆送達的包，平均延遲：100 包 106.8 → 104.2 秒；300 包 115.6 → 112.7 秒。
+
+Iridium 500 包、衛星 Buffer 2 包（`src/experiments/walker/results/iridium_nb500_M2_cut_through.jsonl`）：
+
+| 方法 | 收完才送 | cut-through |
+|---|---|---|
+| 本方法 | 100%，平均延遲 24.9 秒 | 100%，23.2 秒 |
+| sr1 | 91.2%，14.2 秒 | 91.0%，12.2 秒 |
+| sr10 | 93.2%，19.5 秒 | 94.6%，18.1 秒 |
+
+兩組都沒有驗證失敗。cut-through 的改善很小；推測是傳一包的時間（約 0.2～5 秒）遠小於等待連線的時間，尚未驗證。
+
 ## 尚未完成
 
 - 單包最早性的正式證明（store-and-forward 與 cut-through 都還沒有）。
-- 隨機拓樸與 Iridium 的 cut-through 效能比較（進行中）。
 - 協定依據：RFC 9171 沒有明定 cut-through，見 `cut_through_literature_and_advisor_brief_20261102.md`。
