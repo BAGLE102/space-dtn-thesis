@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- 重讀兩本學長論文（黃文龍：衛星 DTN 時間槽 LP；吳峻至：SVC 視訊會議 LR），新增 `docs/senior_theses_review_20261111.md`：模型、實驗設定與數值、與本研究的對照與可借用做法。原始 PDF 未納入。
 - cut-through 效能比較：隨機 20 節點（3 MB、3 種子）本方法送達率 100 包 92.0% → 92.0%、300 包 62.7% → 63.6%；Iridium 500 包 M=2 本方法 100% → 100%、平均延遲 24.9 → 23.2 秒。改善小，結果存於 `results_cut_through/` 與 `walker/results/`。
 - 依老師要求與使用者決定，新增 cut-through 模式，與 store-and-forward 共存（`Problem.ct`，各執行程式加 `--cut-through`）。起送條件 s₂ ≥ max(h, A − S/r₂)；修改 `dtn/model.py`、`validate.py`、`ours.py`、`srcgr.py`。驗證：store-and-forward 新舊程式 596 包排程 0 差異；store-and-forward 對窮舉 3,000 案例 0 問題；cut-through 對窮舉 3,000 案例相同 2,352、較早 6、較晚 1（案例 2663，窮舉排程在背景超過 M 的瞬間開始進入節點，屬驗證器起點寬鬆處理，待決定是否收緊）；cut-through 第一包較 store-and-forward 早 289 包、較晚 0。說明見 `docs/cut_through_coexist_20261111.md`。
 - 新增 `On占用曲線講解_v1.16.pptx`（22 頁）：第 13 頁「每段解與合併」簡化為每段一列的關鍵條件與結果，並只示範 [112, 116] 如何解出 s₂ ≥ 114；原本每段每個檢查點的完整數值表移到附錄「演示——每段完整計算」。
