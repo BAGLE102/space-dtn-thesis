@@ -25,6 +25,7 @@ def main():
     ap.add_argument("--config", default="config.json")
     ap.add_argument("--out", default="results/validation.jsonl")
     ap.add_argument("--cases", type=int)
+    ap.add_argument("--cut-through", action="store_true", help="中繼可邊收邊送（P.ct=True）")
     args = ap.parse_args()
     cfg = json.load(open(args.config, encoding="utf-8"))["validation"]
     cases = args.cases or cfg["cases"]
@@ -40,6 +41,7 @@ def main():
             if seed in done:
                 continue
             P, bundles = topology.small_case(seed)
+            P = P._replace(ct=args.cut_through)
             for idx, (u, v, g) in enumerate(bundles):
                 P = P._replace(src=u, dst=v, g=g)
                 t0 = time.perf_counter()

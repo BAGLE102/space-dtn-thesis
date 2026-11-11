@@ -54,11 +54,11 @@ def resources(P, topo_cfg):
     return rows
 
 
-def run_job(name, tc, size, n, m, seed, method, limit):
+def run_job(name, tc, size, n, m, seed, method, limit, ct=False):
     params = {k: tc[k] for k in ("nodes", "contacts", "horizon", "min_len", "max_len", "rates", "delays")}
     cs = topology.random_contacts(seed, **params)
     bundles = topology.random_bundles(seed, n, tc["nodes"], tc["release"])
-    P = Problem(cs, None, None, Fr(0), Fr(str(size)), Fr(str(m)), {}, Fr(tc["horizon"]))
+    P = Problem(cs, None, None, Fr(0), Fr(str(size)), Fr(str(m)), {}, Fr(tc["horizon"]), ct)
     rows, status = [], "complete"
     start = time.perf_counter()
     if limit:
@@ -84,7 +84,7 @@ def run_job(name, tc, size, n, m, seed, method, limit):
     finally:
         if limit:
             signal.alarm(0)
-    return {"topology": name, "N": n, "M": m, "seed": seed, "method": method, "status": status,
+    return {"topology": name, "N": n, "M": m, "seed": seed, "method": method, "cut_through": ct, "status": status,
             "wall": round(time.perf_counter() - start, 3), "rows": rows,
             "resources": resources(P, tc), "contact_sha256": contact_hash(cs)}
 
@@ -95,6 +95,9 @@ def main():
     ap.add_argument("--out", default="results/performance.jsonl")
     ap.add_argument("--seeds", type=int)
     ap.add_argument("--bundles", type=int, nargs="*")
+    ap.add_argument("--cut-through", action="store_true", help="中繼可邊收邊送（本方法與 SR-CGR 同一模型）")
+    ap.add_argument("--buffers", type=float, nargs="*")
+    ap.add_argument("--topologies", nargs="*")
     args = ap.parse_args()
     cfg = json.load(open(args.config, encoding="utf-8"))["performance"]
     seeds = args.seeds or cfg["seeds"]
@@ -106,14 +109,16 @@ def main():
             for line in fh:
                 r = json.loads(line)
                 done.add((r["topology"], r["N"], r["M"], r["seed"], r["method"]))
-    jobs = [(t, n, m, s, me) for t in cfg["topologies"] for n in grid for m in cfg["buffers_mb"]
+    tops = args.topologies or list(cfg["topologies"])
+    bufs = args.buffers or cfg["buffers_mb"]
+    jobs = [(t, n, m, s, me) for t in tops for n in grid for m in bufs
             for s in range(1, seeds + 1) for me in cfg["methods"]]
     todo = [j for j in jobs if j not in done]
     print("jobs:", len(jobs), "remaining:", len(todo), "python:", platform.python_version(), flush=True)
     with open(args.out, "a", encoding="utf-8") as fh:
         for i, (t, n, m, s, me) in enumerate(todo, 1):
             r = run_job(t, cfg["topologies"][t], cfg["bundle_size_mb"], n, m, s, me,
-                        cfg.get("time_limit_per_run_sec"))
+                        cfg.get("time_limit_per_run_sec"), args.cut_through)
             fh.write(json.dumps(r) + "\n")
             fh.flush()
             ok = sum(x["arr"] is not None for x in r["rows"])

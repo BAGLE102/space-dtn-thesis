@@ -2,7 +2,7 @@
 
 比較三種方法，輸出 Excel 與圖片：
 
-- **本方法**：store-and-forward 區間 Label（`dtn/ours.py`）
+- **本方法**：區間 Label（`dtn/ours.py`），兩種轉送模型共存：store-and-forward（預設）與 cut-through（`--cut-through`，`Problem.ct=True`）
 - **窮舉**：1/16 秒格點，單包（`dtn/oracle.py`）
 - **SR-CGR**：簡化版，`sr1` 與 `sr10`（`dtn/srcgr.py`）
 
@@ -63,9 +63,9 @@ python3 make_report.py --results results_test
 
 ## 模型假設
 
-- 收完整包才轉送；同一節點可同時收送。
+- 轉送模型：預設收完整包才轉送（s₂ ≥ A）；`--cut-through` 時中繼可邊收邊送，條件 s₂ ≥ max(h, A − S/r_out)（已開始收，且送不能比收快）。同一節點可同時收送。
 - 來源：從 `g` 起持有整包，邊送邊釋放。
-- 中間節點：邊收累積，收完後可轉送，邊送釋放。
+- 中間節點：邊收累積，邊送釋放（占用 = 已收 − 已送）；store-and-forward 時收完後才開始送。
 - 目的地：邊收累積，**收完的瞬間交付並離開**。交付後的資料不再占用 Buffer。
 - 依固定順序逐包規劃，前面的包不會改動。
 - 窮舉只驗證單包在目前背景下的最早抵達，不是所有包的整體最佳。

@@ -9,7 +9,18 @@ from fractions import Fraction as Fr
 Contact = namedtuple("Contact", "id u v a b r d F")
 # cs: contacts; src,dst,g,S: 目前 bundle; M: 所有節點 buffer 上限
 # O: {node: Curve}; T: 期限 D*; F 存在 Contact 內
-Problem = namedtuple("Problem", "cs src dst g S M O T")
+# ct: True 為 cut-through（邊收邊送）；False（預設）為 store-and-forward（收完才送）
+Problem = namedtuple("Problem", "cs src dst g S M O T ct", defaults=(False,))
+
+
+def lag(P, c1, c2):
+    """前一跳起送 s1 到下一跳最早起送 s2 的最小間隔（不含傳播延遲）。
+
+    store-and-forward：s2 ≥ A = s1 + d + S/r1，間隔 S/r1。
+    cut-through：s2 ≥ max(h, A − S/r2)，間隔 max(0, S/r1 − S/r2)。
+    """
+    d1, d2 = P.S / c1.r, P.S / c2.r
+    return max(Fr(0), d1 - d2) if P.ct else d1
 
 
 class Curve:

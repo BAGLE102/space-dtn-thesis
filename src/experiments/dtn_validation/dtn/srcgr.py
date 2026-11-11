@@ -1,11 +1,12 @@
 """對照組：簡化版 SR-CGR。
 
-來源算完整路徑、收完才轉、簡單路徑、每跳盡早送、選路不看 buffer。
+來源算完整路徑、簡單路徑、每跳盡早送、選路不看 buffer。
+轉送模型跟隨 P.ct：False 收完才轉；True 可 cut-through（與本方法相同規則）。
 k=1 為 sr1；k=10 為 sr10（Yen k 條，依序取第一條通過回放者）。
 這不是完整 CGR：沒有實際運作時的逐跳重算。
 """
 import heapq
-from .model import out_index
+from .model import lag, out_index
 from .validate import validate
 
 
@@ -19,13 +20,15 @@ def fit(c, t, d):
     return s if s + d <= c.b else None
 
 
-def dijkstra(P, out, start, t0, ban_c, ban_n):
+def dijkstra(P, out, start, t0, ban_c, ban_n, prev=None):
+    """prev=(contact, s)：spur 起點前一跳，用來算 cut-through 的最早起送。"""
     pq, best, tick = [], set(), 0
     for c in out.get(start, []):
         if c.id in ban_c or c.v in ban_n:
             continue
         d = P.S / c.r
-        s = fit(c, t0, d)
+        t = prev[1] + prev[0].d + lag(P, prev[0], c) if prev else t0
+        s = fit(c, t, d)
         if s is None or s + d + c.d > P.T:
             continue
         tick += 1
@@ -50,7 +53,7 @@ def dijkstra(P, out, start, t0, ban_c, ban_n):
             if c2.b < A or c2.v in seen or c2.id in ban_c or c2.id in best:
                 continue
             d = P.S / c2.r
-            s2 = fit(c2, A, d)
+            s2 = fit(c2, s + c.d + lag(P, c, c2), d)
             if s2 is None or s2 + d + c2.d > P.T:
                 continue
             tick += 1
@@ -59,14 +62,14 @@ def dijkstra(P, out, start, t0, ban_c, ban_n):
 
 
 def reschedule(P, contacts):
-    t, r = P.g, []
+    r = []
     for c in contacts:
         d = P.S / c.r
+        t = r[-1][1] + r[-1][0].d + lag(P, r[-1][0], c) if r else P.g
         s = fit(c, t, d)
         if s is None:
             return None
         r.append((c, s))
-        t = s + d + c.d
     return r
 
 
@@ -90,7 +93,7 @@ def k_routes(P, out, k):
             n = root[-1].v if root else P.src
             t = pre[-1][1] + P.S / root[-1].r + root[-1].d if root else P.g
             ban_n = {P.src} | {c.v for c in root[:-1]} if root else set()
-            sp = dijkstra(P, out, n, t, ban, ban_n)
+            sp = dijkstra(P, out, n, t, ban, ban_n, pre[-1] if root else None)
             if not sp:
                 continue
             full = (pre or []) + sp[1]

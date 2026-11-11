@@ -1,8 +1,11 @@
-"""本方法：store-and-forward 區間 Label。對應文件 Algorithm 2~6。"""
+"""本方法：區間 Label。對應文件 Algorithm 2~6。
+
+P.ct=False：store-and-forward（收完才送）；P.ct=True：cut-through（邊收邊送，送不能比收快）。
+"""
 import heapq
 from collections import namedtuple
 from fractions import Fraction as Fr
-from .model import Curve, out_index, ramp
+from .model import Curve, lag, out_index, ramp
 from .validate import destination_ok, relay_ok, source_ok
 
 Label = namedtuple("Label", "c lo hi pred")
@@ -137,16 +140,21 @@ def destination_filter(P, c, parts):
 
 
 def buffer_filter(P, parts, L1, c2):
-    """Algorithm 4：中間節點 buffer。每個 s2 只測最晚的 s1*。"""
+    """Algorithm 4：中間節點 buffer。每個 s2 只測最晚的 s1*。
+
+    s1* = min(L1.hi, s2 − dl − lag)；store-and-forward 時 lag = S/r1，
+    cut-through 時 lag = max(0, S/r1 − S/r2)。
+    """
     c1 = L1.c
     n = c1.v
     O = P.O.get(n, Curve())
     d1, d2, dl = P.S / c1.r, P.S / c2.r, c1.d
-    clamp = L1.hi + dl + d1
+    gap = lag(P, c1, c2)
+    clamp = L1.hi + dl + gap
     out = []
 
     def star(s):
-        u = s - dl - d1
+        u = s - dl - gap
         return None if u < L1.lo else min(L1.hi, u)
 
     def feas(s):
@@ -161,16 +169,19 @@ def buffer_filter(P, parts, L1, c2):
         def vals(s, m):
             k = star(s)
             h, A, f = k + dl, k + dl + d1, s + d2
+            own = lambda x: ramp(x, h, A, P.S) - ramp(x, s, f, P.S)
             hm = star(m) + dl
-            res = [O.top(A) + P.S, O.top(s) + P.S]
+            res = [O.top(A) + own(A), O.top(s) + own(s)]
             for x in O.between(hm, m + d2):
-                res.append(O.top(x) + ramp(x, h, A, P.S) - ramp(x, s, f, P.S))
+                res.append(O.top(x) + own(x))
             return res
 
         verts = O.between(L1.lo + dl, hi + d2)
-        bps = [clamp] + [x for x in verts] + [x - d2 for x in verts]
+        # 新包的轉折 h = s − gap、A = s − gap + d1、s、f = s + d2 碰到 O 的變化點 x
+        # clamp 之後 h、A 固定；cut-through 時 s 越過固定的 A，own(A)、own(s) 會折彎
+        bps = [clamp, L1.hi + dl + d1]
         for x in verts:
-            bps += [x + d1]
+            bps += [x, x - d2, x + gap, x + gap - d1]
         out += solve_region(P, lo, hi, bps, feas, vals)
     return merge(out)
 
@@ -202,8 +213,8 @@ def search(P):
         _, _, L1 = heapq.heappop(Q)
         if L1.c.v == P.dst:
             return L1
-        head = L1.lo + L1.c.d + P.S / L1.c.r
         for c2 in out.get(L1.c.v, []):
+            head = L1.lo + L1.c.d + lag(P, L1.c, c2)
             parts = candidate_range(P, c2, head)
             if not parts:
                 continue
@@ -220,7 +231,7 @@ def backtrack(P, goal):
     sch = [(L.c, s)]
     while L.pred is not None:
         q = L.pred
-        k = min(q.hi, s - q.c.d - P.S / q.c.r)
+        k = min(q.hi, s - q.c.d - lag(P, q.c, L.c))
         sch.insert(0, (q.c, k))
         L, s = q, k
     return sch

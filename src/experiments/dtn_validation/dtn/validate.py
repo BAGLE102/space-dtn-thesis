@@ -1,5 +1,7 @@
 """限制的定義：回放檢查與提交。不呼叫任何搜尋或篩選函式。
 
+P.ct 為 True 時中繼可 cut-through：s2 ≥ max(h, A − S/r2)；否則收完才送 s2 ≥ A。
+
 占用檢查取停留期間的上確界。資料在整包收完的瞬間 A 交付並離開目的地。
 """
 from fractions import Fraction as Fr
@@ -33,7 +35,10 @@ def relay_ok(P, c1, s1, c2, s2):
     h = s1 + c1.d
     A = h + d1
     f = s2 + d2
-    if s2 < A:
+    if P.ct:
+        if s2 < h or f < A:          # cut-through：已開始收，且送不能比收快
+            return False
+    elif s2 < A:                     # store-and-forward：收完才送
         return False
     own = lambda t: ramp(t, h, A, P.S) - ramp(t, s2, f, P.S)
     return stay_ok(P.O.get(c1.v, Curve()), P.M, h, f, own, Fr(0), [A, s2])
@@ -89,7 +94,11 @@ def commit(P, sch):
         h = s1 + c1.d
         A = h + S / c1.r
         f = s2 + S / c2.r
-        if A < s2:
+        if P.ct and s2 < A:
+            ts = sorted({h, A, s2, f})
+            vs = [ramp(x, h, A, S) - ramp(x, s2, f, S) for x in ts]
+            put(c1.v, Curve(ts, vs, vs))
+        elif A < s2:
             put(c1.v, Curve([h, A, s2, f], [Fr(0), S, S, Fr(0)], [Fr(0), S, S, Fr(0)]))
         else:
             put(c1.v, Curve([h, A, f], [Fr(0), S, Fr(0)], [Fr(0), S, Fr(0)]))
