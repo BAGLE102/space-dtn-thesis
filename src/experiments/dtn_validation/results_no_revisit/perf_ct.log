@@ -1,0 +1,19 @@
+jobs: 18 remaining: 18 python: 3.13.18
+1/18 random_20n N=100 M=3.0 seed=1 ours: 90/100 delivered, 5.4s, complete
+2/18 random_20n N=100 M=3.0 seed=1 sr1: 71/100 delivered, 0.9s, complete
+3/18 random_20n N=100 M=3.0 seed=1 sr10: 81/100 delivered, 13.0s, complete
+4/18 random_20n N=100 M=3.0 seed=2 ours: 88/100 delivered, 21.5s, complete
+5/18 random_20n N=100 M=3.0 seed=2 sr1: 67/100 delivered, 1.6s, complete
+6/18 random_20n N=100 M=3.0 seed=2 sr10: 76/100 delivered, 10.4s, complete
+7/18 random_20n N=100 M=3.0 seed=3 ours: 98/100 delivered, 7.7s, complete
+8/18 random_20n N=100 M=3.0 seed=3 sr1: 86/100 delivered, 1.0s, complete
+9/18 random_20n N=100 M=3.0 seed=3 sr10: 94/100 delivered, 4.5s, complete
+10/18 random_20n N=300 M=3.0 seed=1 ours: 201/300 delivered, 40.2s, complete
+11/18 random_20n N=300 M=3.0 seed=1 sr1: 139/300 delivered, 3.0s, complete
+12/18 random_20n N=300 M=3.0 seed=1 sr10: 159/300 delivered, 58.9s, complete
+13/18 random_20n N=300 M=3.0 seed=2 ours: 174/300 delivered, 61.9s, complete
+14/18 random_20n N=300 M=3.0 seed=2 sr1: 139/300 delivered, 1.7s, complete
+15/18 random_20n N=300 M=3.0 seed=2 sr10: 153/300 delivered, 29.8s, complete
+16/18 random_20n N=300 M=3.0 seed=3 ours: 199/300 delivered, 45.9s, complete
+17/18 random_20n N=300 M=3.0 seed=3 sr1: 132/300 delivered, 1.5s, complete
+18/18 random_20n N=300 M=3.0 seed=3 sr10: 156/300 delivered, 26.3s, complete
