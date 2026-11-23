@@ -372,7 +372,7 @@ static void buffer_filter(const Problem *P, const IvList *parts, int c1i, Rat L1
 /* 搜尋（Algorithm 2）                                                  */
 /* 像 Dijkstra 一樣用優先佇列，每次取出「最早到達」的 Label；                */
 /* 第一個取出、到達目的地的 Label 就是最早到達。                            */
-/* 注意：去重以連線為單位，沒有禁止重複經過同一節點（邊收邊轉的自我重疊問題）。  */
+/* 路徑不重複經過同一節點；去重仍以連線為單位。                                    */
 /* ================================================================== */
 
 typedef struct {
@@ -453,7 +453,16 @@ static void insert(const Problem *P, Search *S, int c, const IvList *parts, int 
     iv_free(&fresh);
 }
 
-/* 回傳到達目的地的 Label 編號，找不到回傳 -1。結果留在 S 裡給 backtrack 用。 */
+/* 節點 node 是否已在 Label lab 的路徑上（來源，加上每一跳的終點） */
+static int on_path(const Problem *P, const Search *S, int lab, int node) {
+    if (node == P->src) return 1;
+    for (int i = lab; i >= 0; i = S->lab[i].pred)
+        if (P->cs[S->lab[i].c].v == node) return 1;
+    return 0;
+}
+
+/* 回傳到達目的地的 Label 編號，找不到回傳 -1。結果留在 S 裡給 backtrack 用。
+ * 路徑不重複經過同一節點（2026-11-23 使用者決定）。 */
 static int search(const Problem *P, Search *S) {
     if (rgt(P->S, P->M)) return -1;                 /* 包比 Buffer 還大 */
 
@@ -483,6 +492,7 @@ static int search(const Problem *P, Search *S) {
         for (int c = 0; c < P->nc; c++) {
             const Contact *c2 = &P->cs[c];
             if (c2->u != c1->v) continue;
+            if (on_path(P, S, it.lab, c2->v)) continue;   /* 不重複經過同一節點 */
             Rat head = radd(radd(L1.lo, c1->d), lag(P, c1, c2));   /* 下一跳最早可出發 */
             candidate_range(P, c2, head, &a);
             if (a.n == 0) continue;

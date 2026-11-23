@@ -282,14 +282,27 @@ def buffer_filter(P, parts, L1, c2):
 # 搜尋
 # ---------------------------------------------------------------------------
 
+def path_nodes(P, L):
+    """Label L 這條路徑已經過的節點：來源，加上每一跳的終點。
+
+    例：A →(c1) B →(c2) C 的 Label → {A, B, C}
+    """
+    nodes = {P.src}
+    while L is not None:
+        nodes.add(L.c.v)
+        L = L.pred
+    return nodes
+
+
 def search(P):
     """Algorithm 2。回傳到達目的地的 Label，找不到回傳 None。
 
     和 Dijkstra 一樣用優先佇列，每次取出「最早到達」的 Label；
     第一個取出的到達目的地的 Label，就是最早到達。
 
-    注意：去重以「連線」為單位，沒有禁止路徑重複經過同一節點。
-    邊收邊轉時這可能少算自己的占用（自我重疊），處理方式尚未決定。
+    路徑不重複經過同一節點（2026-11-23 使用者決定）。原因：邊收邊轉時，
+    同一包繞回同一節點，兩次停留可能在時間上重疊，檢查會少算自己的占用。
+    去重 reached 仍以連線為單位。
     """
     out = out_index(P.cs)
     Q, tick, reached = [], 0, {}        # tick：同分時維持放入順序
@@ -325,8 +338,11 @@ def search(P):
         _, _, L1 = heapq.heappop(Q)     # 取出最早到達的
         if L1.c.v == P.dst:             # 已到目的地：這就是最早的
             return L1
+        visited = path_nodes(P, L1)
         # 往下一跳展開：從 L1 到達的節點出去的每條連線
         for c2 in out.get(L1.c.v, []):
+            if c2.v in visited:          # 不重複經過同一節點（2026-11-23 使用者決定）
+                continue
             head = L1.lo + L1.c.d + lag(P, L1.c, c2)    # 下一跳最早可出發
             parts = candidate_range(P, c2, head)
             if not parts:

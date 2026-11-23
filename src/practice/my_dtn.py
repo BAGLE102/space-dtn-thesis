@@ -176,7 +176,8 @@ def validate(P, sch):
     """整條排程合法嗎？
 
     1. 非空、第一跳從 src 出發、最後一跳到 dst、第一跳出發 ≥ g
-    2. 相鄰兩跳接得起來（前一跳的 v = 下一跳的 u）
+    2. 相鄰兩跳接得起來（前一跳的 v = 下一跳的 u），且不重複經過同一節點
+       （src 與每一跳的 v 都不能重複）
     3. 每一跳 hop_ok
     4. 第一跳 source_ok、最後一跳 destination_ok
     5. 每對相鄰的跳 relay_ok
@@ -241,6 +242,7 @@ def plan_simple(P, grid=Fr(1, 16)):
       1. 狀態是 (連線, 出發時間 s)。
       2. 起點：從 src 出去的連線，s 為格點、s ≥ g、hop_ok、source_ok。
       3. 展開：從 (c, s) 接 c.v 出去的 c2，試格點 s2，要 hop_ok 且 relay_ok(P, c, s, c2, s2)。
+         路徑不能重複經過同一節點，所以狀態要記住已經過的節點。
       4. 終點：c.v == dst 且 destination_ok，到達時間 = s + S/r + c.d。
       5. 回傳最早到達的排程 [(連線, 出發), ...]；沒有就回傳 None。
     格點時間可以這樣列：從 ceil(c.a / grid) × grid 開始，每次加 grid，直到傳不完為止。
@@ -258,6 +260,7 @@ def plan(P):
     建議順序（每一步都可以先用簡單方法求對，再換成快的方法）：
       1. 先寫 search：優先佇列存 (lo + S/r + d, 計數, Label)，取出到 dst 就結束。
          第一跳：candidate_range(P, c, g)；下一跳：head = L1.lo + L1.c.d + lag。
+         展開時跳過 c2.v 已在路徑上的連線（沿 pred 往回找已經過的節點）。
       2. 寫 backtrack：最後一跳取 lo；往前 k = min(q.hi, s − q.c.d − lag)。
       3. Buffer 篩選（來源、中繼、目的地）：
          先用「快速檢查」peak(視窗) + S ≤ M，通過就整段保留；

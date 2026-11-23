@@ -66,6 +66,9 @@ def validate(P, sch):
     for (a, _), (b, _) in zip(sch, sch[1:]):
         if a.v != b.u:
             return False
+    nodes = [P.src] + [c.v for c, _ in sch]
+    if len(set(nodes)) != len(nodes):            # 不重複經過同一節點
+        return False
     if not all(hop_ok(P, c, s) for c, s in sch):
         return False
     if not source_ok(P, *sch[0]) or not destination_ok(P, *sch[-1]):

@@ -186,8 +186,20 @@ def buffer_filter(P, parts, L1, c2):
     return merge(out)
 
 
+def path_nodes(P, L):
+    """Label L 這條路徑已經過的節點：來源，加上每一跳的終點。"""
+    nodes = {P.src}
+    while L is not None:
+        nodes.add(L.c.v)
+        L = L.pred
+    return nodes
+
+
 def search(P):
-    """Algorithm 2。回傳到目的地的 Label，找不到回傳 None。"""
+    """Algorithm 2。回傳到目的地的 Label，找不到回傳 None。
+
+    路徑不重複經過同一節點。去重 reached 仍以連線為單位。
+    """
     out = out_index(P.cs)
     Q, tick, reached = [], 0, {}
 
@@ -213,7 +225,10 @@ def search(P):
         _, _, L1 = heapq.heappop(Q)
         if L1.c.v == P.dst:
             return L1
+        visited = path_nodes(P, L1)
         for c2 in out.get(L1.c.v, []):
+            if c2.v in visited:          # 不重複經過同一節點（2026-11-23 使用者決定）
+                continue
             head = L1.lo + L1.c.d + lag(P, L1.c, c2)
             parts = candidate_range(P, c2, head)
             if not parts:

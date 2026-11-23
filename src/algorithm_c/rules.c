@@ -122,6 +122,11 @@ int validate(const Problem *P, const Schedule *sch) {
     if (first->u != P->src || last->v != P->dst || rlt(sch->s[0], P->g)) return 0;
     for (int i = 0; i + 1 < sch->n; i++)                     /* 接得起來 */
         if (P->cs[sch->c[i]].v != P->cs[sch->c[i + 1]].u) return 0;
+    for (int i = 0; i < sch->n; i++) {                       /* 不重複經過同一節點 */
+        int v = P->cs[sch->c[i]].v;
+        if (v == P->src) return 0;
+        for (int j = 0; j < i; j++) if (P->cs[sch->c[j]].v == v) return 0;
+    }
     for (int i = 0; i < sch->n; i++)                         /* 每一跳 */
         if (!hop_ok(P, &P->cs[sch->c[i]], sch->s[i])) return 0;
     if (!source_ok(P, first, sch->s[0])) return 0;

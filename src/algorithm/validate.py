@@ -123,7 +123,7 @@ def validate(P, sch):
     """獨立檢查整條排程 sch = [(連線, 出發時間), ...] 是否合法。
 
     1. 從來源出發、到目的地結束、不早於產生時間 g
-    2. 每一跳接得起來（前一跳的終點 = 下一跳的起點）
+    2. 每一跳接得起來（前一跳的終點 = 下一跳的起點），且不重複經過同一節點
     3. 每一跳 hop_ok
     4. 來源、目的地的 Buffer
     5. 每個中繼的轉送條件與 Buffer
@@ -133,6 +133,9 @@ def validate(P, sch):
     for (a, _), (b, _) in zip(sch, sch[1:]):
         if a.v != b.u:
             return False
+    nodes = [P.src] + [c.v for c, _ in sch]
+    if len(set(nodes)) != len(nodes):            # 不重複經過同一節點
+        return False
     if not all(hop_ok(P, c, s) for c, s in sch):
         return False
     if not source_ok(P, *sch[0]) or not destination_ok(P, *sch[-1]):

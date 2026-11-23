@@ -3,6 +3,7 @@
 不使用 Label 或區間，也不呼叫搜尋的篩選函式。收完才轉時，可否接續只看
 相鄰兩跳，所以在 (contact, s) 圖上走訪即可涵蓋全部格點排程。
 只能回答格點上的最早抵達；若最佳解落在格點之間，本方法可能更早。
+路徑不重複經過同一節點，所以狀態帶著已經過的節點集合。
 """
 import math
 from fractions import Fraction as Fr
@@ -32,20 +33,27 @@ def earliest(P, grid=Fr(1, 16)):
             A = s + P.S / c.r + c.d
             best = A if best is None else min(best, A)
 
+    # 狀態加上「已經過的節點」，路徑不重複經過同一節點（2026-11-23 使用者決定）
     for c in out.get(P.src, []):
+        if c.v == P.src:
+            continue
         for s in grid_times[c.id]:
             if s >= P.g and source_ok(P, c, s):
-                seen.add((c.id, s))
-                stack.append((c, s))
+                vis = frozenset((P.src, c.v))
+                seen.add((c.id, s, vis))
+                stack.append((c, s, vis))
                 finish(c, s)
     while stack:
-        c, s = stack.pop()
+        c, s, vis = stack.pop()
         if c.v == P.dst:
             continue
         for c2 in out.get(c.v, []):
+            if c2.v in vis:
+                continue
+            nv = vis | {c2.v}
             for s2 in grid_times[c2.id]:
-                if (c2.id, s2) not in seen and relay_ok(P, c, s, c2, s2):
-                    seen.add((c2.id, s2))
-                    stack.append((c2, s2))
+                if (c2.id, s2, nv) not in seen and relay_ok(P, c, s, c2, s2):
+                    seen.add((c2.id, s2, nv))
+                    stack.append((c2, s2, nv))
                     finish(c2, s2)
     return best
