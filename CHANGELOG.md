@@ -1,5 +1,12 @@
 # 更新紀錄
 
+## 2026-11-23
+
+- 新增 `src/algorithm/`：只含本方法演算法的註解版程式。
+  - 檔案：`model.py`、`validate.py`、`ours.py`，以及可執行的 `example.py`（教材第 4、9 章例子）。
+  - 邏輯與 `src/experiments/dtn_validation/dtn/` 相同：去掉註解後語法樹一致。
+  - 例子輸出：收完才轉 115／125 出發、135 到 C；邊收邊轉 110／110 出發、120 到 C。
+
 ## 2026-11-16
 
 - 新增 `docs/handoff_20261116.md`：給其他 AI 的交接說明。內容包括：
