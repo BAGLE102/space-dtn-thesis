@@ -2,6 +2,10 @@
 
 ## 2026-11-23
 
+- 新增 `src/practice/`：重寫練習。
+  - `my_dtn.py` 為 8 關函式空殼，附說明與例子。
+  - `check.py` 用教材例子、隨機小案例、原版程式與窮舉檢查。
+  - 以正確解測過 8 關全部通過，約 1 分鐘。
 - 新增 `src/algorithm/`：只含本方法演算法的註解版程式。
   - 檔案：`model.py`、`validate.py`、`ours.py`，以及可執行的 `example.py`（教材第 4、9 章例子）。
   - 邏輯與 `src/experiments/dtn_validation/dtn/` 相同：去掉註解後語法樹一致。
