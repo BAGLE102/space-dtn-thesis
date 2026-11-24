@@ -12,18 +12,78 @@
 \algnewcommand{\Fail}{\textsc{無解}}
 
 % ------------------------------------------------------------
-\subsection*{符號}
+\subsection*{符號表}
 
-\begin{tabular}{p{0.36\linewidth}p{0.58\linewidth}}
-$c=(u_c, v_c, a_c, b_c, r_c, d_c)$ & 連線：由 $u_c$ 到 $v_c$，開放於 $[a_c,b_c]$，速率 $r_c$，傳播延遲 $d_c$ \\
+\noindent\textbf{網路與 bundle}
+
+\noindent\begin{tabular}{p{0.34\linewidth}p{0.6\linewidth}}
+\hline
+符號 & 意義 \\
+\hline
+$\mathcal{C}$ & 所有連線的集合 \\
+$c=(u_c, v_c, a_c, b_c, r_c, d_c)$ & 連線：由節點 $u_c$ 到 $v_c$，開放於 $[a_c,b_c]$，速率 $r_c$（MB/s），傳播延遲 $d_c$（秒） \\
 $F_c$ & 連線 $c$ 已被先前 bundle 預約的傳輸時段 $(x,y)$ 之集合 \\
-$(\mathit{src}, \mathit{dst}, g, S, T)$ & 目前 bundle 的來源、目的地、產生時間、大小、期限 \\
-$\tau_c = S / r_c$ & bundle 在連線 $c$ 上的傳輸時間 \\
-$M$ & 每個節點的 Buffer 上限 \\
-$O_n(t)$ & 節點 $n$ 已被先前 bundle 占用的量（分段線性；以變化點的時刻、左極限、右極限儲存） \\
-$\mathrm{ramp}(t,\alpha,\beta)$ & $t\le\alpha$ 時為 $0$；$\alpha<t<\beta$ 時為 $S(t-\alpha)/(\beta-\alpha)$；$t\ge\beta$ 時為 $S$ \\
+$\mathit{src},\ \mathit{dst}$ & 目前 bundle 的來源節點、目的地節點 \\
+$g,\ S,\ T$ & 目前 bundle 的產生時間（秒）、大小（MB）、期限（秒） \\
+$\tau_c = S / r_c$ & bundle 在連線 $c$ 上的傳輸時間（秒） \\
+$M$ & 每個節點的 Buffer 上限（MB） \\
+\hline
+\end{tabular}
+
+\medskip
+\noindent\textbf{時間與占用}
+
+\noindent\begin{tabular}{p{0.34\linewidth}p{0.6\linewidth}}
+\hline
+符號 & 意義 \\
+\hline
+$O_n(t)$ & 節點 $n$ 於時刻 $t$ 已被先前 bundle 占用的量（分段線性；以變化點的時刻、左極限、右極限儲存） \\
+$x_n(t)$ & 目前規劃的 bundle 於時刻 $t$ 在節點 $n$ 的占用量（見表 \ref{tab:buffer-cases}） \\
+$\mathrm{ramp}(t,\alpha,\beta)$ & 由 $\alpha$ 到 $\beta$ 線性傳完 $S$ 時，到時刻 $t$ 已傳的量：$t\le\alpha$ 為 $0$；$\alpha<t<\beta$ 為 $S(t-\alpha)/(\beta-\alpha)$；$t\ge\beta$ 為 $S$ \\
+$s_i$ & 路徑第 $i$ 段連線的開始傳送時間 \\
+$s_1,\ s_2$ & 檢查中繼節點時，進入該節點、離開該節點的連線之開始傳送時間 \\
 $\Delta(c_1,c_2)=\max(0,\ \tau_{c_1}-\tau_{c_2})$ & 中繼節點不送出尚未收到之資料所需的最小等待時間 \\
+$t_0$ & 下一段連線最早可開始傳送的時間 \\
+$s_1^\ast$ & 固定 $s_2$ 時，前一段連線趕得上的最晚開始時間 \\
+$h,\ A,\ f$ & 中繼節點開始收到、收完、送完的時刻：$h=s_1+d_{c_1}$，$A=h+\tau_{c_1}$，$f=s_2+\tau_{c_2}$ \\
+\hline
+\end{tabular}
+
+\medskip
+\noindent\textbf{搜尋}
+
+\noindent\begin{tabular}{p{0.34\linewidth}p{0.6\linewidth}}
+\hline
+符號 & 意義 \\
+\hline
 $L=(c, \mathit{lo}, \mathit{hi}, \mathit{pred})$ & Label：經連線 $c$，可於 $[\mathit{lo},\mathit{hi}]$ 內任一時刻開始傳送，前一個 Label 為 $\mathit{pred}$ \\
+$Q$ & 優先佇列；Label 的鍵值為 $\mathit{lo}+\tau_c+d_c$（以最早時間開始時的到達時間） \\
+$L_1$ & 目前從 $Q$ 取出的 Label；$c_1 = L_1.c$ \\
+$L^\ast$ & 第一個終點為 $\mathit{dst}$ 的 Label \\
+$R[c]$ & 連線 $c$ 已放入過 $Q$ 的開始時間 \\
+$N$ & $L_1$ 這條路徑已經過的節點 \\
+$I,\ J$ & 開始時間的集合，可能由多段區間組成 \\
+$[\alpha,\beta]$ & $I$ 中的一段連續區間 \\
+$\sigma=[(c_1,s_1),\dots,(c_k,s_k)]$ & 輸出的排程：每段連線與其開始傳送時間 \\
+\hline
+\end{tabular}
+
+\medskip
+\noindent\textbf{演算法 \ref{alg:solve} 內使用}
+
+\noindent\begin{tabular}{p{0.34\linewidth}p{0.6\linewidth}}
+\hline
+符號 & 意義 \\
+\hline
+$s$ & 待求的開始傳送時間 \\
+$B$ & 需要分段的開始時間：使 bundle 的轉折時刻恰好落在 $O_n$ 某變化點上的 $s$ \\
+$p_0<p_1<\dots<p_m$ & 分段後的時間點 \\
+$t_j(s)$ & 第 $j$ 個需要檢查的時刻（隨 $s$ 而定） \\
+$v_j(s)$ & 時刻 $t_j(s)$ 的合計占用 $O_n + x_n$ \\
+$e,\ e'$ & 段 $(p_{i-1},p_i)$ 內的 $1/3$、$2/3$ 位置 \\
+$k_j$ & $v_j$ 的斜率：開始時間每晚 1 秒，$v_j$ 的變化量 \\
+$\ell,\ u$ & 該段可行開始時間的下界、上界 \\
+\hline
 \end{tabular}
 
 \medskip
@@ -113,7 +173,7 @@ $L=(c, \mathit{lo}, \mathit{hi}, \mathit{pred})$ & Label：經連線 $c$，可�
     \If{$\max_{t \in [L_1.\mathit{lo} + d_{c_1},\ \beta + \tau_{c_2}]} O_n(t) + S \le M$}
       \State $J \gets J \cup [\alpha, \beta]$ \Comment{以整包大小估計仍不超過上限}
     \Else
-      \State $J \gets J \cup \Call{Solve}{\alpha, \beta, \mathit{own}_n}$ \Comment{演算法 \ref{alg:solve}}
+      \State $J \gets J \cup \Call{Solve}{\alpha, \beta, x_n}$ \Comment{演算法 \ref{alg:solve}}
     \EndIf
   \EndFor
   \State \Return $J$
@@ -122,8 +182,8 @@ $L=(c, \mathit{lo}, \mathit{hi}, \mathit{pred})$ & Label：經連線 $c$，可�
 \Statex 其中，對 $c_2$ 的開始時間 $s_2$：
 \Statex \quad $s_1^\ast = \min(L_1.\mathit{hi},\ s_2 - d_{c_1} - \delta)$；若 $s_1^\ast < L_1.\mathit{lo}$，則 $s_2$ 不可行
 \Statex \quad $h = s_1^\ast + d_{c_1}$，$A = h + \tau_{c_1}$，$f = s_2 + \tau_{c_2}$
-\Statex \quad $\mathit{own}_n(t) = \mathrm{ramp}(t, h, A) - \mathrm{ramp}(t, s_2, f)$，\ $t \in [h, f]$
-\Statex \quad $s_2$ 可行 $\iff$ 對所有 $t\in[h,f]$，$O_n(t) + \mathit{own}_n(t) \le M$（左、右極限皆成立）
+\Statex \quad $x_n(t) = \mathrm{ramp}(t, h, A) - \mathrm{ramp}(t, s_2, f)$，\ $t \in [h, f]$
+\Statex \quad $s_2$ 可行 $\iff$ 對所有 $t\in[h,f]$，$O_n(t) + x_n(t) \le M$（左、右極限皆成立）
 \end{algorithmic}
 \end{algorithm}
 
@@ -132,14 +192,14 @@ $L=(c, \mathit{lo}, \mathit{hi}, \mathit{pred})$ & Label：經連線 $c$，可�
 \caption{在區間內求出所有可行的開始時間}
 \label{alg:solve}
 \begin{algorithmic}[1]
-\Function{Solve}{$\alpha, \beta, \mathit{own}$}
-  \State $B \gets$ 使 $\mathit{own}$ 的轉折時刻恰好落在 $O_n$ 某變化點上的開始時間
+\Function{Solve}{$\alpha, \beta, x$}
+  \State $B \gets$ 使 $x$ 的轉折時刻恰好落在 $O_n$ 某變化點上的開始時間
   \State $P \gets \{\alpha, \beta\} \cup (B \cap (\alpha, \beta))$，由小到大排序為 $p_0 < p_1 < \dots < p_m$
   \State $J \gets \{p \in P : p \text{ 可行}\}$ \Comment{直接依定義檢查}
   \For{$i = 1$ \textbf{to} $m$}
     \State $\ell \gets p_{i-1}$；\ $u \gets p_i$；\ $e \gets p_{i-1} + (p_i - p_{i-1})/3$；\ $e' \gets p_{i-1} + 2(p_i - p_{i-1})/3$
     \ForAll{停留期間內需檢查的時刻 $t_j(s)$}
-      \State $v_j(s) \gets O_n(t_j(s)) + \mathit{own}(t_j(s))$ \Comment{在 $(p_{i-1}, p_i)$ 內為 $s$ 的一次式}
+      \State $v_j(s) \gets O_n(t_j(s)) + x(t_j(s))$ \Comment{在 $(p_{i-1}, p_i)$ 內為 $s$ 的一次式}
       \State $k_j \gets \bigl(v_j(e') - v_j(e)\bigr) / (e' - e)$
       \If{$k_j > 0$} \State $u \gets \min\bigl(u,\ e + (M - v_j(e))/k_j\bigr)$
       \ElsIf{$k_j < 0$} \State $\ell \gets \max\bigl(\ell,\ e + (M - v_j(e))/k_j\bigr)$
@@ -181,7 +241,7 @@ $L=(c, \mathit{lo}, \mathit{hi}, \mathit{pred})$ & Label：經連線 $c$，可�
     \State $F_c \gets F_c \cup \{(s,\ s + \tau_c)\}$
   \EndFor
   \ForAll{$\sigma$ 經過的節點 $n$（來源、各中繼、目的地）}
-    \State $O_n \gets O_n + \mathit{own}_n$ \Comment{變化點取聯集，左極限與右極限分別相加}
+    \State $O_n \gets O_n + x_n$ \Comment{變化點取聯集，左極限與右極限分別相加}
   \EndFor
 \EndFunction
 \end{algorithmic}
@@ -195,7 +255,7 @@ $L=(c, \mathit{lo}, \mathit{hi}, \mathit{pred})$ & Label：經連線 $c$，可�
 \small
 \begin{tabular}{p{0.09\linewidth}p{0.36\linewidth}p{0.2\linewidth}p{0.25\linewidth}}
 \hline
-節點 & 這個 bundle 的占用 $\mathit{own}_n(t)$ & 期間 & 以整包估計時的檢查範圍 \\
+節點 & 這個 bundle 的占用 $x_n(t)$ & 期間 & 以整包估計時的檢查範圍 \\
 \hline
 來源 & $S - \mathrm{ramp}(t, s, s + \tau_c)$ & $[g,\ s + \tau_c]$ & $[g,\ \beta + \tau_c]$ \\
 中繼 & $\mathrm{ramp}(t, h, A) - \mathrm{ramp}(t, s_2, f)$ & $[h,\ f]$ & $[L_1.\mathit{lo} + d_{c_1},\ \beta + \tau_{c_2}]$ \\
