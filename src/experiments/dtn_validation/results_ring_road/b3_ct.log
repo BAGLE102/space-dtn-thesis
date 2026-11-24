@@ -30,3 +30,4 @@ flows=175 seed=10 sr1: 78/175, 9.7s
 flows=175 seed=10 sr10: 89/175, 232.4s
 flows=300 seed=1 ours: 143/300, 137.5s
 flows=300 seed=1 sr1: 98/300, 18.5s
+flows=300 seed=1 sr10: 125/300, 441.5s
