@@ -2,6 +2,8 @@
 
 ## 2026-11-24
 
+- 交接手冊 11-20-00 新增 WARNING：不得自創詞彙，只用有來源的術語或白話描述；程式變數名（如 `lag`）不得直接當論文用語。
+
 - 新增交接手冊 `docs/handover/HANDOVER_ATA100_20261124.md`（ATA 100 編排：章-節-主題、頁段、WARNING／CAUTION／NOTE），README 加入連結。標明 AGENTS.md／README 指向的 v04 基準為舊模型，現行以 `dtn_validation/dtn/` 為準。
 
 - 實驗室伺服器重跑（`results_server_20261124/`）：步驟 1–3 完成，與雲端結果重疊部分逐筆一致；隨機拓樸 10 個種子補齊。3 MB 時本方法比 sr10 多 4.1～13.2 個百分點（成對 95% CI 皆不含 0），30 MB 三種方法皆接近 100%。步驟 4（Ring Road 3 MB）仍在伺服器執行。
