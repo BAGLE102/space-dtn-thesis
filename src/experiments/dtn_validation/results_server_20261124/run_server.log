@@ -1,0 +1,759 @@
+== 1. 窮舉比對（收完才轉 / 邊收邊轉） ==
+validation 100 / 3000 problems: 0
+validation 200 / 3000 problems: 0
+validation 300 / 3000 problems: 0
+validation 400 / 3000 problems: 0
+validation 500 / 3000 problems: 0
+validation 600 / 3000 problems: 0
+validation 700 / 3000 problems: 0
+validation 800 / 3000 problems: 0
+validation 900 / 3000 problems: 0
+validation 1000 / 3000 problems: 0
+validation 1100 / 3000 problems: 0
+validation 1200 / 3000 problems: 0
+validation 1300 / 3000 problems: 0
+validation 1400 / 3000 problems: 0
+validation 1500 / 3000 problems: 0
+validation 1600 / 3000 problems: 0
+validation 1700 / 3000 problems: 0
+validation 1800 / 3000 problems: 0
+validation 1900 / 3000 problems: 0
+validation 2000 / 3000 problems: 0
+validation 2100 / 3000 problems: 0
+validation 2200 / 3000 problems: 0
+validation 2300 / 3000 problems: 0
+validation 2400 / 3000 problems: 0
+validation 2500 / 3000 problems: 0
+validation 2600 / 3000 problems: 0
+validation 2700 / 3000 problems: 0
+validation 2800 / 3000 problems: 0
+validation 2900 / 3000 problems: 0
+validation 3000 / 3000 problems: 0
+validation finished; new problems: 0
+validation 100 / 3000 problems: 0
+validation 200 / 3000 problems: 0
+validation 300 / 3000 problems: 0
+validation 400 / 3000 problems: 0
+validation 500 / 3000 problems: 0
+validation 600 / 3000 problems: 0
+validation 700 / 3000 problems: 0
+validation 800 / 3000 problems: 0
+validation 900 / 3000 problems: 0
+validation 1000 / 3000 problems: 0
+validation 1100 / 3000 problems: 0
+validation 1200 / 3000 problems: 0
+validation 1300 / 3000 problems: 0
+validation 1400 / 3000 problems: 0
+validation 1500 / 3000 problems: 0
+validation 1600 / 3000 problems: 0
+validation 1700 / 3000 problems: 0
+validation 1800 / 3000 problems: 0
+validation 1900 / 3000 problems: 0
+validation 2000 / 3000 problems: 0
+validation 2100 / 3000 problems: 0
+validation 2200 / 3000 problems: 0
+validation 2300 / 3000 problems: 0
+validation 2400 / 3000 problems: 0
+validation 2500 / 3000 problems: 0
+validation 2600 / 3000 problems: 0
+validation 2700 / 3000 problems: 1
+validation 2800 / 3000 problems: 1
+validation 2900 / 3000 problems: 1
+validation 3000 / 3000 problems: 1
+validation finished; new problems: 1
+== 2. 隨機拓樸 20/40 節點，10 個種子 ==
+jobs: 240 remaining: 240 python: 3.8.10
+1/240 random_20n N=100 M=3 seed=1 ours: 90/100 delivered, 6.0s, complete
+2/240 random_20n N=100 M=3 seed=1 sr1: 71/100 delivered, 1.0s, complete
+3/240 random_20n N=100 M=3 seed=1 sr10: 84/100 delivered, 9.0s, complete
+4/240 random_20n N=100 M=3 seed=2 ours: 88/100 delivered, 22.1s, complete
+5/240 random_20n N=100 M=3 seed=2 sr1: 68/100 delivered, 1.0s, complete
+6/240 random_20n N=100 M=3 seed=2 sr10: 76/100 delivered, 8.1s, complete
+7/240 random_20n N=100 M=3 seed=3 ours: 98/100 delivered, 8.6s, complete
+8/240 random_20n N=100 M=3 seed=3 sr1: 86/100 delivered, 1.2s, complete
+9/240 random_20n N=100 M=3 seed=3 sr10: 94/100 delivered, 4.4s, complete
+10/240 random_20n N=100 M=3 seed=4 ours: 89/100 delivered, 9.3s, complete
+11/240 random_20n N=100 M=3 seed=4 sr1: 68/100 delivered, 1.0s, complete
+12/240 random_20n N=100 M=3 seed=4 sr10: 76/100 delivered, 9.8s, complete
+13/240 random_20n N=100 M=3 seed=5 ours: 96/100 delivered, 5.4s, complete
+14/240 random_20n N=100 M=3 seed=5 sr1: 85/100 delivered, 1.1s, complete
+15/240 random_20n N=100 M=3 seed=5 sr10: 92/100 delivered, 5.4s, complete
+16/240 random_20n N=100 M=3 seed=6 ours: 84/100 delivered, 12.8s, complete
+17/240 random_20n N=100 M=3 seed=6 sr1: 63/100 delivered, 1.0s, complete
+18/240 random_20n N=100 M=3 seed=6 sr10: 72/100 delivered, 12.8s, complete
+19/240 random_20n N=100 M=3 seed=7 ours: 95/100 delivered, 10.8s, complete
+20/240 random_20n N=100 M=3 seed=7 sr1: 78/100 delivered, 1.0s, complete
+21/240 random_20n N=100 M=3 seed=7 sr10: 83/100 delivered, 7.7s, complete
+22/240 random_20n N=100 M=3 seed=8 ours: 93/100 delivered, 9.0s, complete
+23/240 random_20n N=100 M=3 seed=8 sr1: 69/100 delivered, 1.0s, complete
+24/240 random_20n N=100 M=3 seed=8 sr10: 77/100 delivered, 11.3s, complete
+25/240 random_20n N=100 M=3 seed=9 ours: 88/100 delivered, 9.5s, complete
+26/240 random_20n N=100 M=3 seed=9 sr1: 69/100 delivered, 1.0s, complete
+27/240 random_20n N=100 M=3 seed=9 sr10: 76/100 delivered, 11.0s, complete
+28/240 random_20n N=100 M=3 seed=10 ours: 69/100 delivered, 17.7s, complete
+29/240 random_20n N=100 M=3 seed=10 sr1: 45/100 delivered, 0.9s, complete
+30/240 random_20n N=100 M=3 seed=10 sr10: 56/100 delivered, 15.0s, complete
+31/240 random_20n N=100 M=30 seed=1 ours: 100/100 delivered, 4.4s, complete
+32/240 random_20n N=100 M=30 seed=1 sr1: 100/100 delivered, 1.3s, complete
+33/240 random_20n N=100 M=30 seed=1 sr10: 100/100 delivered, 1.3s, complete
+34/240 random_20n N=100 M=30 seed=2 ours: 100/100 delivered, 5.6s, complete
+35/240 random_20n N=100 M=30 seed=2 sr1: 100/100 delivered, 1.3s, complete
+36/240 random_20n N=100 M=30 seed=2 sr10: 100/100 delivered, 1.3s, complete
+37/240 random_20n N=100 M=30 seed=3 ours: 100/100 delivered, 4.1s, complete
+38/240 random_20n N=100 M=30 seed=3 sr1: 100/100 delivered, 1.4s, complete
+39/240 random_20n N=100 M=30 seed=3 sr10: 100/100 delivered, 1.4s, complete
+40/240 random_20n N=100 M=30 seed=4 ours: 100/100 delivered, 5.4s, complete
+41/240 random_20n N=100 M=30 seed=4 sr1: 100/100 delivered, 1.3s, complete
+42/240 random_20n N=100 M=30 seed=4 sr10: 100/100 delivered, 1.3s, complete
+43/240 random_20n N=100 M=30 seed=5 ours: 100/100 delivered, 3.9s, complete
+44/240 random_20n N=100 M=30 seed=5 sr1: 100/100 delivered, 1.2s, complete
+45/240 random_20n N=100 M=30 seed=5 sr10: 100/100 delivered, 1.2s, complete
+46/240 random_20n N=100 M=30 seed=6 ours: 100/100 delivered, 5.0s, complete
+47/240 random_20n N=100 M=30 seed=6 sr1: 100/100 delivered, 1.3s, complete
+48/240 random_20n N=100 M=30 seed=6 sr10: 100/100 delivered, 1.3s, complete
+49/240 random_20n N=100 M=30 seed=7 ours: 100/100 delivered, 4.4s, complete
+50/240 random_20n N=100 M=30 seed=7 sr1: 100/100 delivered, 1.3s, complete
+51/240 random_20n N=100 M=30 seed=7 sr10: 100/100 delivered, 1.2s, complete
+52/240 random_20n N=100 M=30 seed=8 ours: 100/100 delivered, 4.4s, complete
+53/240 random_20n N=100 M=30 seed=8 sr1: 100/100 delivered, 1.4s, complete
+54/240 random_20n N=100 M=30 seed=8 sr10: 100/100 delivered, 1.4s, complete
+55/240 random_20n N=100 M=30 seed=9 ours: 100/100 delivered, 5.0s, complete
+56/240 random_20n N=100 M=30 seed=9 sr1: 100/100 delivered, 1.3s, complete
+57/240 random_20n N=100 M=30 seed=9 sr10: 100/100 delivered, 1.3s, complete
+58/240 random_20n N=100 M=30 seed=10 ours: 100/100 delivered, 6.4s, complete
+59/240 random_20n N=100 M=30 seed=10 sr1: 100/100 delivered, 1.3s, complete
+60/240 random_20n N=100 M=30 seed=10 sr10: 100/100 delivered, 1.3s, complete
+61/240 random_20n N=300 M=3 seed=1 ours: 198/300 delivered, 57.9s, complete
+62/240 random_20n N=300 M=3 seed=1 sr1: 138/300 delivered, 2.7s, complete
+63/240 random_20n N=300 M=3 seed=1 sr10: 160/300 delivered, 51.6s, complete
+64/240 random_20n N=300 M=3 seed=2 ours: 169/300 delivered, 101.0s, complete
+65/240 random_20n N=300 M=3 seed=2 sr1: 137/300 delivered, 3.2s, complete
+66/240 random_20n N=300 M=3 seed=2 sr10: 149/300 delivered, 51.7s, complete
+67/240 random_20n N=300 M=3 seed=3 ours: 202/300 delivered, 108.3s, complete
+68/240 random_20n N=300 M=3 seed=3 sr1: 147/300 delivered, 3.5s, complete
+69/240 random_20n N=300 M=3 seed=3 sr10: 156/300 delivered, 49.2s, complete
+70/240 random_20n N=300 M=3 seed=4 ours: 170/300 delivered, 78.3s, complete
+71/240 random_20n N=300 M=3 seed=4 sr1: 138/300 delivered, 3.2s, complete
+72/240 random_20n N=300 M=3 seed=4 sr10: 144/300 delivered, 57.0s, complete
+73/240 random_20n N=300 M=3 seed=5 ours: 226/300 delivered, 74.0s, complete
+74/240 random_20n N=300 M=3 seed=5 sr1: 174/300 delivered, 3.4s, complete
+75/240 random_20n N=300 M=3 seed=5 sr10: 186/300 delivered, 42.5s, complete
+76/240 random_20n N=300 M=3 seed=6 ours: 168/300 delivered, 101.5s, complete
+77/240 random_20n N=300 M=3 seed=6 sr1: 126/300 delivered, 3.0s, complete
+78/240 random_20n N=300 M=3 seed=6 sr10: 130/300 delivered, 61.1s, complete
+79/240 random_20n N=300 M=3 seed=7 ours: 212/300 delivered, 69.7s, complete
+80/240 random_20n N=300 M=3 seed=7 sr1: 170/300 delivered, 3.6s, complete
+81/240 random_20n N=300 M=3 seed=7 sr10: 171/300 delivered, 48.2s, complete
+82/240 random_20n N=300 M=3 seed=8 ours: 212/300 delivered, 53.6s, complete
+83/240 random_20n N=300 M=3 seed=8 sr1: 140/300 delivered, 3.1s, complete
+84/240 random_20n N=300 M=3 seed=8 sr10: 152/300 delivered, 54.5s, complete
+85/240 random_20n N=300 M=3 seed=9 ours: 189/300 delivered, 81.7s, complete
+86/240 random_20n N=300 M=3 seed=9 sr1: 150/300 delivered, 3.2s, complete
+87/240 random_20n N=300 M=3 seed=9 sr10: 155/300 delivered, 51.9s, complete
+88/240 random_20n N=300 M=3 seed=10 ours: 126/300 delivered, 106.5s, complete
+89/240 random_20n N=300 M=3 seed=10 sr1: 99/300 delivered, 2.7s, complete
+90/240 random_20n N=300 M=3 seed=10 sr10: 107/300 delivered, 63.5s, complete
+91/240 random_20n N=300 M=30 seed=1 ours: 300/300 delivered, 25.6s, complete
+92/240 random_20n N=300 M=30 seed=1 sr1: 300/300 delivered, 6.0s, complete
+93/240 random_20n N=300 M=30 seed=1 sr10: 300/300 delivered, 6.0s, complete
+94/240 random_20n N=300 M=30 seed=2 ours: 300/300 delivered, 35.5s, complete
+95/240 random_20n N=300 M=30 seed=2 sr1: 300/300 delivered, 6.1s, complete
+96/240 random_20n N=300 M=30 seed=2 sr10: 300/300 delivered, 6.1s, complete
+97/240 random_20n N=300 M=30 seed=3 ours: 300/300 delivered, 28.9s, complete
+98/240 random_20n N=300 M=30 seed=3 sr1: 300/300 delivered, 7.7s, complete
+99/240 random_20n N=300 M=30 seed=3 sr10: 300/300 delivered, 7.7s, complete
+100/240 random_20n N=300 M=30 seed=4 ours: 300/300 delivered, 36.4s, complete
+101/240 random_20n N=300 M=30 seed=4 sr1: 299/300 delivered, 6.3s, complete
+102/240 random_20n N=300 M=30 seed=4 sr10: 299/300 delivered, 6.6s, complete
+103/240 random_20n N=300 M=30 seed=5 ours: 300/300 delivered, 25.7s, complete
+104/240 random_20n N=300 M=30 seed=5 sr1: 300/300 delivered, 6.1s, complete
+105/240 random_20n N=300 M=30 seed=5 sr10: 300/300 delivered, 6.1s, complete
+106/240 random_20n N=300 M=30 seed=6 ours: 300/300 delivered, 34.1s, complete
+107/240 random_20n N=300 M=30 seed=6 sr1: 283/300 delivered, 5.6s, complete
+108/240 random_20n N=300 M=30 seed=6 sr10: 298/300 delivered, 8.1s, complete
+109/240 random_20n N=300 M=30 seed=7 ours: 300/300 delivered, 24.0s, complete
+110/240 random_20n N=300 M=30 seed=7 sr1: 300/300 delivered, 6.8s, complete
+111/240 random_20n N=300 M=30 seed=7 sr10: 300/300 delivered, 6.8s, complete
+112/240 random_20n N=300 M=30 seed=8 ours: 300/300 delivered, 24.4s, complete
+113/240 random_20n N=300 M=30 seed=8 sr1: 300/300 delivered, 7.0s, complete
+114/240 random_20n N=300 M=30 seed=8 sr10: 300/300 delivered, 7.0s, complete
+115/240 random_20n N=300 M=30 seed=9 ours: 300/300 delivered, 30.4s, complete
+116/240 random_20n N=300 M=30 seed=9 sr1: 300/300 delivered, 6.2s, complete
+117/240 random_20n N=300 M=30 seed=9 sr10: 300/300 delivered, 6.2s, complete
+118/240 random_20n N=300 M=30 seed=10 ours: 300/300 delivered, 35.0s, complete
+119/240 random_20n N=300 M=30 seed=10 sr1: 296/300 delivered, 5.1s, complete
+120/240 random_20n N=300 M=30 seed=10 sr10: 300/300 delivered, 5.8s, complete
+121/240 random_40n N=100 M=3 seed=1 ours: 99/100 delivered, 17.0s, complete
+122/240 random_40n N=100 M=3 seed=1 sr1: 90/100 delivered, 2.6s, complete
+123/240 random_40n N=100 M=3 seed=1 sr10: 97/100 delivered, 11.7s, complete
+124/240 random_40n N=100 M=3 seed=2 ours: 100/100 delivered, 14.9s, complete
+125/240 random_40n N=100 M=3 seed=2 sr1: 94/100 delivered, 3.0s, complete
+126/240 random_40n N=100 M=3 seed=2 sr10: 96/100 delivered, 11.0s, complete
+127/240 random_40n N=100 M=3 seed=3 ours: 97/100 delivered, 14.1s, complete
+128/240 random_40n N=100 M=3 seed=3 sr1: 89/100 delivered, 3.1s, complete
+129/240 random_40n N=100 M=3 seed=3 sr10: 95/100 delivered, 16.5s, complete
+130/240 random_40n N=100 M=3 seed=4 ours: 99/100 delivered, 10.4s, complete
+131/240 random_40n N=100 M=3 seed=4 sr1: 93/100 delivered, 2.6s, complete
+132/240 random_40n N=100 M=3 seed=4 sr10: 95/100 delivered, 7.7s, complete
+133/240 random_40n N=100 M=3 seed=5 ours: 98/100 delivered, 10.2s, complete
+134/240 random_40n N=100 M=3 seed=5 sr1: 95/100 delivered, 2.5s, complete
+135/240 random_40n N=100 M=3 seed=5 sr10: 95/100 delivered, 7.9s, complete
+136/240 random_40n N=100 M=3 seed=6 ours: 94/100 delivered, 12.9s, complete
+137/240 random_40n N=100 M=3 seed=6 sr1: 88/100 delivered, 2.7s, complete
+138/240 random_40n N=100 M=3 seed=6 sr10: 90/100 delivered, 17.5s, complete
+139/240 random_40n N=100 M=3 seed=7 ours: 100/100 delivered, 12.9s, complete
+140/240 random_40n N=100 M=3 seed=7 sr1: 91/100 delivered, 2.5s, complete
+141/240 random_40n N=100 M=3 seed=7 sr10: 92/100 delivered, 11.2s, complete
+142/240 random_40n N=100 M=3 seed=8 ours: 99/100 delivered, 12.9s, complete
+143/240 random_40n N=100 M=3 seed=8 sr1: 87/100 delivered, 2.8s, complete
+144/240 random_40n N=100 M=3 seed=8 sr10: 94/100 delivered, 14.2s, complete
+145/240 random_40n N=100 M=3 seed=9 ours: 98/100 delivered, 12.7s, complete
+146/240 random_40n N=100 M=3 seed=9 sr1: 89/100 delivered, 2.7s, complete
+147/240 random_40n N=100 M=3 seed=9 sr10: 91/100 delivered, 17.6s, complete
+148/240 random_40n N=100 M=3 seed=10 ours: 100/100 delivered, 9.4s, complete
+149/240 random_40n N=100 M=3 seed=10 sr1: 98/100 delivered, 2.4s, complete
+150/240 random_40n N=100 M=3 seed=10 sr10: 98/100 delivered, 4.7s, complete
+151/240 random_40n N=100 M=30 seed=1 ours: 100/100 delivered, 10.6s, complete
+152/240 random_40n N=100 M=30 seed=1 sr1: 100/100 delivered, 2.8s, complete
+153/240 random_40n N=100 M=30 seed=1 sr10: 100/100 delivered, 2.8s, complete
+154/240 random_40n N=100 M=30 seed=2 ours: 100/100 delivered, 11.3s, complete
+155/240 random_40n N=100 M=30 seed=2 sr1: 100/100 delivered, 3.1s, complete
+156/240 random_40n N=100 M=30 seed=2 sr10: 100/100 delivered, 3.1s, complete
+157/240 random_40n N=100 M=30 seed=3 ours: 100/100 delivered, 12.5s, complete
+158/240 random_40n N=100 M=30 seed=3 sr1: 100/100 delivered, 3.2s, complete
+159/240 random_40n N=100 M=30 seed=3 sr10: 100/100 delivered, 3.2s, complete
+160/240 random_40n N=100 M=30 seed=4 ours: 100/100 delivered, 9.2s, complete
+161/240 random_40n N=100 M=30 seed=4 sr1: 100/100 delivered, 2.6s, complete
+162/240 random_40n N=100 M=30 seed=4 sr10: 100/100 delivered, 2.6s, complete
+163/240 random_40n N=100 M=30 seed=5 ours: 100/100 delivered, 8.9s, complete
+164/240 random_40n N=100 M=30 seed=5 sr1: 100/100 delivered, 2.6s, complete
+165/240 random_40n N=100 M=30 seed=5 sr10: 100/100 delivered, 2.6s, complete
+166/240 random_40n N=100 M=30 seed=6 ours: 100/100 delivered, 10.9s, complete
+167/240 random_40n N=100 M=30 seed=6 sr1: 100/100 delivered, 2.8s, complete
+168/240 random_40n N=100 M=30 seed=6 sr10: 100/100 delivered, 2.8s, complete
+169/240 random_40n N=100 M=30 seed=7 ours: 100/100 delivered, 9.1s, complete
+170/240 random_40n N=100 M=30 seed=7 sr1: 100/100 delivered, 2.6s, complete
+171/240 random_40n N=100 M=30 seed=7 sr10: 100/100 delivered, 2.6s, complete
+172/240 random_40n N=100 M=30 seed=8 ours: 100/100 delivered, 10.9s, complete
+173/240 random_40n N=100 M=30 seed=8 sr1: 100/100 delivered, 2.9s, complete
+174/240 random_40n N=100 M=30 seed=8 sr10: 100/100 delivered, 2.9s, complete
+175/240 random_40n N=100 M=30 seed=9 ours: 100/100 delivered, 9.7s, complete
+176/240 random_40n N=100 M=30 seed=9 sr1: 100/100 delivered, 2.9s, complete
+177/240 random_40n N=100 M=30 seed=9 sr10: 100/100 delivered, 2.9s, complete
+178/240 random_40n N=100 M=30 seed=10 ours: 100/100 delivered, 8.5s, complete
+179/240 random_40n N=100 M=30 seed=10 sr1: 100/100 delivered, 2.4s, complete
+180/240 random_40n N=100 M=30 seed=10 sr10: 100/100 delivered, 2.4s, complete
+181/240 random_40n N=300 M=3 seed=1 ours: 263/300 delivered, 157.6s, complete
+182/240 random_40n N=300 M=3 seed=1 sr1: 201/300 delivered, 8.5s, complete
+183/240 random_40n N=300 M=3 seed=1 sr10: 212/300 delivered, 140.4s, complete
+184/240 random_40n N=300 M=3 seed=2 ours: 262/300 delivered, 152.6s, complete
+185/240 random_40n N=300 M=3 seed=2 sr1: 208/300 delivered, 9.6s, complete
+186/240 random_40n N=300 M=3 seed=2 sr10: 231/300 delivered, 123.7s, complete
+187/240 random_40n N=300 M=3 seed=3 ours: 264/300 delivered, 171.7s, complete
+188/240 random_40n N=300 M=3 seed=3 sr1: 213/300 delivered, 9.4s, complete
+189/240 random_40n N=300 M=3 seed=3 sr10: 231/300 delivered, 139.9s, complete
+190/240 random_40n N=300 M=3 seed=4 ours: 273/300 delivered, 122.1s, complete
+191/240 random_40n N=300 M=3 seed=4 sr1: 226/300 delivered, 8.4s, complete
+192/240 random_40n N=300 M=3 seed=4 sr10: 237/300 delivered, 105.7s, complete
+193/240 random_40n N=300 M=3 seed=5 ours: 272/300 delivered, 139.7s, complete
+194/240 random_40n N=300 M=3 seed=5 sr1: 232/300 delivered, 8.7s, complete
+195/240 random_40n N=300 M=3 seed=5 sr10: 238/300 delivered, 100.2s, complete
+196/240 random_40n N=300 M=3 seed=6 ours: 252/300 delivered, 230.9s, complete
+197/240 random_40n N=300 M=3 seed=6 sr1: 178/300 delivered, 8.4s, complete
+198/240 random_40n N=300 M=3 seed=6 sr10: 205/300 delivered, 173.0s, complete
+199/240 random_40n N=300 M=3 seed=7 ours: 283/300 delivered, 88.1s, complete
+200/240 random_40n N=300 M=3 seed=7 sr1: 245/300 delivered, 8.9s, complete
+201/240 random_40n N=300 M=3 seed=7 sr10: 250/300 delivered, 80.1s, complete
+202/240 random_40n N=300 M=3 seed=8 ours: 271/300 delivered, 142.4s, complete
+203/240 random_40n N=300 M=3 seed=8 sr1: 207/300 delivered, 9.4s, complete
+204/240 random_40n N=300 M=3 seed=8 sr10: 226/300 delivered, 137.7s, complete
+205/240 random_40n N=300 M=3 seed=9 ours: 257/300 delivered, 177.6s, complete
+206/240 random_40n N=300 M=3 seed=9 sr1: 195/300 delivered, 9.3s, complete
+207/240 random_40n N=300 M=3 seed=9 sr10: 213/300 delivered, 164.3s, complete
+208/240 random_40n N=300 M=3 seed=10 ours: 263/300 delivered, 104.3s, complete
+209/240 random_40n N=300 M=3 seed=10 sr1: 220/300 delivered, 8.3s, complete
+210/240 random_40n N=300 M=3 seed=10 sr10: 237/300 delivered, 106.5s, complete
+211/240 random_40n N=300 M=30 seed=1 ours: 300/300 delivered, 56.9s, complete
+212/240 random_40n N=300 M=30 seed=1 sr1: 300/300 delivered, 10.9s, complete
+213/240 random_40n N=300 M=30 seed=1 sr10: 300/300 delivered, 10.9s, complete
+214/240 random_40n N=300 M=30 seed=2 ours: 300/300 delivered, 60.8s, complete
+215/240 random_40n N=300 M=30 seed=2 sr1: 300/300 delivered, 12.2s, complete
+216/240 random_40n N=300 M=30 seed=2 sr10: 300/300 delivered, 12.2s, complete
+217/240 random_40n N=300 M=30 seed=3 ours: 300/300 delivered, 59.6s, complete
+218/240 random_40n N=300 M=30 seed=3 sr1: 300/300 delivered, 11.8s, complete
+219/240 random_40n N=300 M=30 seed=3 sr10: 300/300 delivered, 11.8s, complete
+220/240 random_40n N=300 M=30 seed=4 ours: 300/300 delivered, 47.0s, complete
+221/240 random_40n N=300 M=30 seed=4 sr1: 300/300 delivered, 10.1s, complete
+222/240 random_40n N=300 M=30 seed=4 sr10: 300/300 delivered, 10.1s, complete
+223/240 random_40n N=300 M=30 seed=5 ours: 300/300 delivered, 50.2s, complete
+224/240 random_40n N=300 M=30 seed=5 sr1: 300/300 delivered, 10.3s, complete
+225/240 random_40n N=300 M=30 seed=5 sr10: 300/300 delivered, 10.3s, complete
+226/240 random_40n N=300 M=30 seed=6 ours: 300/300 delivered, 67.3s, complete
+227/240 random_40n N=300 M=30 seed=6 sr1: 300/300 delivered, 11.4s, complete
+228/240 random_40n N=300 M=30 seed=6 sr10: 300/300 delivered, 11.4s, complete
+229/240 random_40n N=300 M=30 seed=7 ours: 300/300 delivered, 42.8s, complete
+230/240 random_40n N=300 M=30 seed=7 sr1: 300/300 delivered, 10.3s, complete
+231/240 random_40n N=300 M=30 seed=7 sr10: 300/300 delivered, 10.3s, complete
+232/240 random_40n N=300 M=30 seed=8 ours: 300/300 delivered, 57.0s, complete
+233/240 random_40n N=300 M=30 seed=8 sr1: 300/300 delivered, 11.7s, complete
+234/240 random_40n N=300 M=30 seed=8 sr10: 300/300 delivered, 11.7s, complete
+235/240 random_40n N=300 M=30 seed=9 ours: 300/300 delivered, 54.4s, complete
+236/240 random_40n N=300 M=30 seed=9 sr1: 300/300 delivered, 11.6s, complete
+237/240 random_40n N=300 M=30 seed=9 sr10: 300/300 delivered, 11.7s, complete
+238/240 random_40n N=300 M=30 seed=10 ours: 300/300 delivered, 49.0s, complete
+239/240 random_40n N=300 M=30 seed=10 sr1: 300/300 delivered, 10.4s, complete
+240/240 random_40n N=300 M=30 seed=10 sr10: 300/300 delivered, 10.4s, complete
+jobs: 240 remaining: 240 python: 3.8.10
+1/240 random_20n N=100 M=3 seed=1 ours: 90/100 delivered, 5.6s, complete
+2/240 random_20n N=100 M=3 seed=1 sr1: 71/100 delivered, 1.0s, complete
+3/240 random_20n N=100 M=3 seed=1 sr10: 81/100 delivered, 12.1s, complete
+4/240 random_20n N=100 M=3 seed=2 ours: 88/100 delivered, 15.5s, complete
+5/240 random_20n N=100 M=3 seed=2 sr1: 67/100 delivered, 1.0s, complete
+6/240 random_20n N=100 M=3 seed=2 sr10: 76/100 delivered, 8.8s, complete
+7/240 random_20n N=100 M=3 seed=3 ours: 98/100 delivered, 7.4s, complete
+8/240 random_20n N=100 M=3 seed=3 sr1: 86/100 delivered, 1.1s, complete
+9/240 random_20n N=100 M=3 seed=3 sr10: 94/100 delivered, 4.6s, complete
+10/240 random_20n N=100 M=3 seed=4 ours: 90/100 delivered, 8.2s, complete
+11/240 random_20n N=100 M=3 seed=4 sr1: 70/100 delivered, 1.0s, complete
+12/240 random_20n N=100 M=3 seed=4 sr10: 76/100 delivered, 10.9s, complete
+13/240 random_20n N=100 M=3 seed=5 ours: 96/100 delivered, 4.7s, complete
+14/240 random_20n N=100 M=3 seed=5 sr1: 87/100 delivered, 1.1s, complete
+15/240 random_20n N=100 M=3 seed=5 sr10: 93/100 delivered, 4.9s, complete
+16/240 random_20n N=100 M=3 seed=6 ours: 84/100 delivered, 9.9s, complete
+17/240 random_20n N=100 M=3 seed=6 sr1: 64/100 delivered, 1.0s, complete
+18/240 random_20n N=100 M=3 seed=6 sr10: 71/100 delivered, 14.5s, complete
+19/240 random_20n N=100 M=3 seed=7 ours: 96/100 delivered, 10.6s, complete
+20/240 random_20n N=100 M=3 seed=7 sr1: 78/100 delivered, 1.1s, complete
+21/240 random_20n N=100 M=3 seed=7 sr10: 84/100 delivered, 8.2s, complete
+22/240 random_20n N=100 M=3 seed=8 ours: 97/100 delivered, 8.5s, complete
+23/240 random_20n N=100 M=3 seed=8 sr1: 69/100 delivered, 1.1s, complete
+24/240 random_20n N=100 M=3 seed=8 sr10: 79/100 delivered, 11.6s, complete
+25/240 random_20n N=100 M=3 seed=9 ours: 88/100 delivered, 9.4s, complete
+26/240 random_20n N=100 M=3 seed=9 sr1: 68/100 delivered, 1.0s, complete
+27/240 random_20n N=100 M=3 seed=9 sr10: 76/100 delivered, 12.2s, complete
+28/240 random_20n N=100 M=3 seed=10 ours: 70/100 delivered, 17.6s, complete
+29/240 random_20n N=100 M=3 seed=10 sr1: 45/100 delivered, 1.0s, complete
+30/240 random_20n N=100 M=3 seed=10 sr10: 57/100 delivered, 16.8s, complete
+31/240 random_20n N=100 M=30 seed=1 ours: 100/100 delivered, 4.3s, complete
+32/240 random_20n N=100 M=30 seed=1 sr1: 100/100 delivered, 1.3s, complete
+33/240 random_20n N=100 M=30 seed=1 sr10: 100/100 delivered, 1.3s, complete
+34/240 random_20n N=100 M=30 seed=2 ours: 100/100 delivered, 5.5s, complete
+35/240 random_20n N=100 M=30 seed=2 sr1: 100/100 delivered, 1.3s, complete
+36/240 random_20n N=100 M=30 seed=2 sr10: 100/100 delivered, 1.3s, complete
+37/240 random_20n N=100 M=30 seed=3 ours: 100/100 delivered, 4.0s, complete
+38/240 random_20n N=100 M=30 seed=3 sr1: 100/100 delivered, 1.3s, complete
+39/240 random_20n N=100 M=30 seed=3 sr10: 100/100 delivered, 1.3s, complete
+40/240 random_20n N=100 M=30 seed=4 ours: 100/100 delivered, 4.9s, complete
+41/240 random_20n N=100 M=30 seed=4 sr1: 100/100 delivered, 1.3s, complete
+42/240 random_20n N=100 M=30 seed=4 sr10: 100/100 delivered, 1.3s, complete
+43/240 random_20n N=100 M=30 seed=5 ours: 100/100 delivered, 3.9s, complete
+44/240 random_20n N=100 M=30 seed=5 sr1: 100/100 delivered, 1.2s, complete
+45/240 random_20n N=100 M=30 seed=5 sr10: 100/100 delivered, 1.2s, complete
+46/240 random_20n N=100 M=30 seed=6 ours: 100/100 delivered, 4.9s, complete
+47/240 random_20n N=100 M=30 seed=6 sr1: 100/100 delivered, 1.3s, complete
+48/240 random_20n N=100 M=30 seed=6 sr10: 100/100 delivered, 1.3s, complete
+49/240 random_20n N=100 M=30 seed=7 ours: 100/100 delivered, 4.4s, complete
+50/240 random_20n N=100 M=30 seed=7 sr1: 100/100 delivered, 1.3s, complete
+51/240 random_20n N=100 M=30 seed=7 sr10: 100/100 delivered, 1.3s, complete
+52/240 random_20n N=100 M=30 seed=8 ours: 100/100 delivered, 4.4s, complete
+53/240 random_20n N=100 M=30 seed=8 sr1: 100/100 delivered, 1.4s, complete
+54/240 random_20n N=100 M=30 seed=8 sr10: 100/100 delivered, 1.4s, complete
+55/240 random_20n N=100 M=30 seed=9 ours: 100/100 delivered, 4.9s, complete
+56/240 random_20n N=100 M=30 seed=9 sr1: 100/100 delivered, 1.3s, complete
+57/240 random_20n N=100 M=30 seed=9 sr10: 100/100 delivered, 1.3s, complete
+58/240 random_20n N=100 M=30 seed=10 ours: 100/100 delivered, 6.5s, complete
+59/240 random_20n N=100 M=30 seed=10 sr1: 100/100 delivered, 1.3s, complete
+60/240 random_20n N=100 M=30 seed=10 sr10: 100/100 delivered, 1.3s, complete
+61/240 random_20n N=300 M=3 seed=1 ours: 201/300 delivered, 50.2s, complete
+62/240 random_20n N=300 M=3 seed=1 sr1: 139/300 delivered, 2.8s, complete
+63/240 random_20n N=300 M=3 seed=1 sr10: 159/300 delivered, 59.6s, complete
+64/240 random_20n N=300 M=3 seed=2 ours: 174/300 delivered, 74.4s, complete
+65/240 random_20n N=300 M=3 seed=2 sr1: 139/300 delivered, 3.3s, complete
+66/240 random_20n N=300 M=3 seed=2 sr10: 153/300 delivered, 57.1s, complete
+67/240 random_20n N=300 M=3 seed=3 ours: 199/300 delivered, 91.4s, complete
+68/240 random_20n N=300 M=3 seed=3 sr1: 132/300 delivered, 3.2s, complete
+69/240 random_20n N=300 M=3 seed=3 sr10: 156/300 delivered, 54.4s, complete
+70/240 random_20n N=300 M=3 seed=4 ours: 181/300 delivered, 53.3s, complete
+71/240 random_20n N=300 M=3 seed=4 sr1: 140/300 delivered, 3.3s, complete
+72/240 random_20n N=300 M=3 seed=4 sr10: 149/300 delivered, 62.7s, complete
+73/240 random_20n N=300 M=3 seed=5 ours: 230/300 delivered, 52.1s, complete
+74/240 random_20n N=300 M=3 seed=5 sr1: 180/300 delivered, 3.5s, complete
+75/240 random_20n N=300 M=3 seed=5 sr10: 188/300 delivered, 45.8s, complete
+76/240 random_20n N=300 M=3 seed=6 ours: 159/300 delivered, 71.8s, complete
+77/240 random_20n N=300 M=3 seed=6 sr1: 129/300 delivered, 3.2s, complete
+78/240 random_20n N=300 M=3 seed=6 sr10: 131/300 delivered, 69.2s, complete
+79/240 random_20n N=300 M=3 seed=7 ours: 220/300 delivered, 53.9s, complete
+80/240 random_20n N=300 M=3 seed=7 sr1: 169/300 delivered, 3.6s, complete
+81/240 random_20n N=300 M=3 seed=7 sr10: 175/300 delivered, 51.9s, complete
+82/240 random_20n N=300 M=3 seed=8 ours: 215/300 delivered, 43.0s, complete
+83/240 random_20n N=300 M=3 seed=8 sr1: 143/300 delivered, 3.1s, complete
+84/240 random_20n N=300 M=3 seed=8 sr10: 158/300 delivered, 61.6s, complete
+85/240 random_20n N=300 M=3 seed=9 ours: 201/300 delivered, 66.6s, complete
+86/240 random_20n N=300 M=3 seed=9 sr1: 148/300 delivered, 3.2s, complete
+87/240 random_20n N=300 M=3 seed=9 sr10: 156/300 delivered, 56.3s, complete
+88/240 random_20n N=300 M=3 seed=10 ours: 126/300 delivered, 97.5s, complete
+89/240 random_20n N=300 M=3 seed=10 sr1: 104/300 delivered, 3.0s, complete
+90/240 random_20n N=300 M=3 seed=10 sr10: 109/300 delivered, 70.7s, complete
+91/240 random_20n N=300 M=30 seed=1 ours: 300/300 delivered, 23.9s, complete
+92/240 random_20n N=300 M=30 seed=1 sr1: 300/300 delivered, 5.7s, complete
+93/240 random_20n N=300 M=30 seed=1 sr10: 300/300 delivered, 5.7s, complete
+94/240 random_20n N=300 M=30 seed=2 ours: 300/300 delivered, 32.9s, complete
+95/240 random_20n N=300 M=30 seed=2 sr1: 300/300 delivered, 5.7s, complete
+96/240 random_20n N=300 M=30 seed=2 sr10: 300/300 delivered, 5.7s, complete
+97/240 random_20n N=300 M=30 seed=3 ours: 300/300 delivered, 25.5s, complete
+98/240 random_20n N=300 M=30 seed=3 sr1: 300/300 delivered, 7.0s, complete
+99/240 random_20n N=300 M=30 seed=3 sr10: 300/300 delivered, 7.0s, complete
+100/240 random_20n N=300 M=30 seed=4 ours: 300/300 delivered, 33.1s, complete
+101/240 random_20n N=300 M=30 seed=4 sr1: 299/300 delivered, 6.0s, complete
+102/240 random_20n N=300 M=30 seed=4 sr10: 299/300 delivered, 6.3s, complete
+103/240 random_20n N=300 M=30 seed=5 ours: 300/300 delivered, 23.8s, complete
+104/240 random_20n N=300 M=30 seed=5 sr1: 300/300 delivered, 5.8s, complete
+105/240 random_20n N=300 M=30 seed=5 sr10: 300/300 delivered, 5.8s, complete
+106/240 random_20n N=300 M=30 seed=6 ours: 300/300 delivered, 32.7s, complete
+107/240 random_20n N=300 M=30 seed=6 sr1: 285/300 delivered, 5.6s, complete
+108/240 random_20n N=300 M=30 seed=6 sr10: 297/300 delivered, 8.2s, complete
+109/240 random_20n N=300 M=30 seed=7 ours: 300/300 delivered, 22.8s, complete
+110/240 random_20n N=300 M=30 seed=7 sr1: 300/300 delivered, 6.3s, complete
+111/240 random_20n N=300 M=30 seed=7 sr10: 300/300 delivered, 6.3s, complete
+112/240 random_20n N=300 M=30 seed=8 ours: 300/300 delivered, 22.4s, complete
+113/240 random_20n N=300 M=30 seed=8 sr1: 300/300 delivered, 6.3s, complete
+114/240 random_20n N=300 M=30 seed=8 sr10: 300/300 delivered, 6.3s, complete
+115/240 random_20n N=300 M=30 seed=9 ours: 300/300 delivered, 29.6s, complete
+116/240 random_20n N=300 M=30 seed=9 sr1: 300/300 delivered, 5.9s, complete
+117/240 random_20n N=300 M=30 seed=9 sr10: 300/300 delivered, 5.9s, complete
+118/240 random_20n N=300 M=30 seed=10 ours: 300/300 delivered, 34.6s, complete
+119/240 random_20n N=300 M=30 seed=10 sr1: 296/300 delivered, 5.3s, complete
+120/240 random_20n N=300 M=30 seed=10 sr10: 300/300 delivered, 6.0s, complete
+121/240 random_40n N=100 M=3 seed=1 ours: 98/100 delivered, 15.1s, complete
+122/240 random_40n N=100 M=3 seed=1 sr1: 89/100 delivered, 2.9s, complete
+123/240 random_40n N=100 M=3 seed=1 sr10: 97/100 delivered, 13.6s, complete
+124/240 random_40n N=100 M=3 seed=2 ours: 100/100 delivered, 14.7s, complete
+125/240 random_40n N=100 M=3 seed=2 sr1: 94/100 delivered, 3.2s, complete
+126/240 random_40n N=100 M=3 seed=2 sr10: 95/100 delivered, 12.3s, complete
+127/240 random_40n N=100 M=3 seed=3 ours: 96/100 delivered, 13.8s, complete
+128/240 random_40n N=100 M=3 seed=3 sr1: 90/100 delivered, 3.2s, complete
+129/240 random_40n N=100 M=3 seed=3 sr10: 91/100 delivered, 21.6s, complete
+130/240 random_40n N=100 M=3 seed=4 ours: 99/100 delivered, 10.9s, complete
+131/240 random_40n N=100 M=3 seed=4 sr1: 94/100 delivered, 2.9s, complete
+132/240 random_40n N=100 M=3 seed=4 sr10: 96/100 delivered, 7.8s, complete
+133/240 random_40n N=100 M=3 seed=5 ours: 98/100 delivered, 10.0s, complete
+134/240 random_40n N=100 M=3 seed=5 sr1: 95/100 delivered, 2.6s, complete
+135/240 random_40n N=100 M=3 seed=5 sr10: 95/100 delivered, 9.1s, complete
+136/240 random_40n N=100 M=3 seed=6 ours: 94/100 delivered, 13.2s, complete
+137/240 random_40n N=100 M=3 seed=6 sr1: 88/100 delivered, 2.9s, complete
+138/240 random_40n N=100 M=3 seed=6 sr10: 89/100 delivered, 19.0s, complete
+139/240 random_40n N=100 M=3 seed=7 ours: 100/100 delivered, 11.8s, complete
+140/240 random_40n N=100 M=3 seed=7 sr1: 91/100 delivered, 2.8s, complete
+141/240 random_40n N=100 M=3 seed=7 sr10: 92/100 delivered, 12.8s, complete
+142/240 random_40n N=100 M=3 seed=8 ours: 99/100 delivered, 12.6s, complete
+143/240 random_40n N=100 M=3 seed=8 sr1: 87/100 delivered, 3.0s, complete
+144/240 random_40n N=100 M=3 seed=8 sr10: 93/100 delivered, 17.9s, complete
+145/240 random_40n N=100 M=3 seed=9 ours: 98/100 delivered, 12.1s, complete
+146/240 random_40n N=100 M=3 seed=9 sr1: 86/100 delivered, 3.0s, complete
+147/240 random_40n N=100 M=3 seed=9 sr10: 90/100 delivered, 18.9s, complete
+148/240 random_40n N=100 M=3 seed=10 ours: 100/100 delivered, 9.3s, complete
+149/240 random_40n N=100 M=3 seed=10 sr1: 96/100 delivered, 2.5s, complete
+150/240 random_40n N=100 M=3 seed=10 sr10: 97/100 delivered, 6.3s, complete
+151/240 random_40n N=100 M=30 seed=1 ours: 100/100 delivered, 11.0s, complete
+152/240 random_40n N=100 M=30 seed=1 sr1: 100/100 delivered, 3.0s, complete
+153/240 random_40n N=100 M=30 seed=1 sr10: 100/100 delivered, 3.0s, complete
+154/240 random_40n N=100 M=30 seed=2 ours: 100/100 delivered, 11.3s, complete
+155/240 random_40n N=100 M=30 seed=2 sr1: 100/100 delivered, 3.3s, complete
+156/240 random_40n N=100 M=30 seed=2 sr10: 100/100 delivered, 3.3s, complete
+157/240 random_40n N=100 M=30 seed=3 ours: 100/100 delivered, 12.2s, complete
+158/240 random_40n N=100 M=30 seed=3 sr1: 100/100 delivered, 3.3s, complete
+159/240 random_40n N=100 M=30 seed=3 sr10: 100/100 delivered, 3.3s, complete
+160/240 random_40n N=100 M=30 seed=4 ours: 100/100 delivered, 10.0s, complete
+161/240 random_40n N=100 M=30 seed=4 sr1: 100/100 delivered, 2.9s, complete
+162/240 random_40n N=100 M=30 seed=4 sr10: 100/100 delivered, 2.9s, complete
+163/240 random_40n N=100 M=30 seed=5 ours: 100/100 delivered, 8.8s, complete
+164/240 random_40n N=100 M=30 seed=5 sr1: 100/100 delivered, 2.7s, complete
+165/240 random_40n N=100 M=30 seed=5 sr10: 100/100 delivered, 2.7s, complete
+166/240 random_40n N=100 M=30 seed=6 ours: 100/100 delivered, 10.8s, complete
+167/240 random_40n N=100 M=30 seed=6 sr1: 100/100 delivered, 3.0s, complete
+168/240 random_40n N=100 M=30 seed=6 sr10: 100/100 delivered, 3.0s, complete
+169/240 random_40n N=100 M=30 seed=7 ours: 100/100 delivered, 9.6s, complete
+170/240 random_40n N=100 M=30 seed=7 sr1: 100/100 delivered, 2.8s, complete
+171/240 random_40n N=100 M=30 seed=7 sr10: 100/100 delivered, 2.8s, complete
+172/240 random_40n N=100 M=30 seed=8 ours: 100/100 delivered, 11.1s, complete
+173/240 random_40n N=100 M=30 seed=8 sr1: 100/100 delivered, 3.1s, complete
+174/240 random_40n N=100 M=30 seed=8 sr10: 100/100 delivered, 3.1s, complete
+175/240 random_40n N=100 M=30 seed=9 ours: 100/100 delivered, 10.4s, complete
+176/240 random_40n N=100 M=30 seed=9 sr1: 100/100 delivered, 3.1s, complete
+177/240 random_40n N=100 M=30 seed=9 sr10: 100/100 delivered, 3.1s, complete
+178/240 random_40n N=100 M=30 seed=10 ours: 100/100 delivered, 8.9s, complete
+179/240 random_40n N=100 M=30 seed=10 sr1: 100/100 delivered, 2.5s, complete
+180/240 random_40n N=100 M=30 seed=10 sr10: 100/100 delivered, 2.5s, complete
+181/240 random_40n N=300 M=3 seed=1 ours: 267/300 delivered, 129.2s, complete
+182/240 random_40n N=300 M=3 seed=1 sr1: 202/300 delivered, 8.9s, complete
+183/240 random_40n N=300 M=3 seed=1 sr10: 219/300 delivered, 156.9s, complete
+184/240 random_40n N=300 M=3 seed=2 ours: 260/300 delivered, 134.0s, complete
+185/240 random_40n N=300 M=3 seed=2 sr1: 213/300 delivered, 10.0s, complete
+186/240 random_40n N=300 M=3 seed=2 sr10: 228/300 delivered, 136.4s, complete
+187/240 random_40n N=300 M=3 seed=3 ours: 266/300 delivered, 152.6s, complete
+188/240 random_40n N=300 M=3 seed=3 sr1: 215/300 delivered, 9.7s, complete
+189/240 random_40n N=300 M=3 seed=3 sr10: 233/300 delivered, 158.0s, complete
+190/240 random_40n N=300 M=3 seed=4 ours: 273/300 delivered, 95.5s, complete
+191/240 random_40n N=300 M=3 seed=4 sr1: 228/300 delivered, 8.8s, complete
+192/240 random_40n N=300 M=3 seed=4 sr10: 241/300 delivered, 111.4s, complete
+193/240 random_40n N=300 M=3 seed=5 ours: 271/300 delivered, 115.2s, complete
+194/240 random_40n N=300 M=3 seed=5 sr1: 233/300 delivered, 8.9s, complete
+195/240 random_40n N=300 M=3 seed=5 sr10: 237/300 delivered, 112.2s, complete
+196/240 random_40n N=300 M=3 seed=6 ours: 257/300 delivered, 173.3s, complete
+197/240 random_40n N=300 M=3 seed=6 sr1: 176/300 delivered, 8.9s, complete
+198/240 random_40n N=300 M=3 seed=6 sr10: 197/300 delivered, 207.2s, complete
+199/240 random_40n N=300 M=3 seed=7 ours: 282/300 delivered, 79.9s, complete
+200/240 random_40n N=300 M=3 seed=7 sr1: 245/300 delivered, 9.3s, complete
+201/240 random_40n N=300 M=3 seed=7 sr10: 249/300 delivered, 88.5s, complete
+202/240 random_40n N=300 M=3 seed=8 ours: 273/300 delivered, 129.7s, complete
+203/240 random_40n N=300 M=3 seed=8 sr1: 200/300 delivered, 9.7s, complete
+204/240 random_40n N=300 M=3 seed=8 sr10: 225/300 delivered, 155.1s, complete
+205/240 random_40n N=300 M=3 seed=9 ours: 256/300 delivered, 131.0s, complete
+206/240 random_40n N=300 M=3 seed=9 sr1: 200/300 delivered, 10.1s, complete
+207/240 random_40n N=300 M=3 seed=9 sr10: 212/300 delivered, 186.1s, complete
+208/240 random_40n N=300 M=3 seed=10 ours: 266/300 delivered, 80.0s, complete
+209/240 random_40n N=300 M=3 seed=10 sr1: 224/300 delivered, 8.7s, complete
+210/240 random_40n N=300 M=3 seed=10 sr10: 233/300 delivered, 128.9s, complete
+211/240 random_40n N=300 M=30 seed=1 ours: 300/300 delivered, 53.3s, complete
+212/240 random_40n N=300 M=30 seed=1 sr1: 300/300 delivered, 10.9s, complete
+213/240 random_40n N=300 M=30 seed=1 sr10: 300/300 delivered, 10.9s, complete
+214/240 random_40n N=300 M=30 seed=2 ours: 300/300 delivered, 55.9s, complete
+215/240 random_40n N=300 M=30 seed=2 sr1: 300/300 delivered, 11.9s, complete
+216/240 random_40n N=300 M=30 seed=2 sr10: 300/300 delivered, 11.9s, complete
+217/240 random_40n N=300 M=30 seed=3 ours: 300/300 delivered, 54.4s, complete
+218/240 random_40n N=300 M=30 seed=3 sr1: 300/300 delivered, 11.6s, complete
+219/240 random_40n N=300 M=30 seed=3 sr10: 300/300 delivered, 11.6s, complete
+220/240 random_40n N=300 M=30 seed=4 ours: 300/300 delivered, 46.5s, complete
+221/240 random_40n N=300 M=30 seed=4 sr1: 300/300 delivered, 10.2s, complete
+222/240 random_40n N=300 M=30 seed=4 sr10: 300/300 delivered, 10.2s, complete
+223/240 random_40n N=300 M=30 seed=5 ours: 300/300 delivered, 43.0s, complete
+224/240 random_40n N=300 M=30 seed=5 sr1: 300/300 delivered, 10.2s, complete
+225/240 random_40n N=300 M=30 seed=5 sr10: 300/300 delivered, 10.2s, complete
+226/240 random_40n N=300 M=30 seed=6 ours: 300/300 delivered, 58.2s, complete
+227/240 random_40n N=300 M=30 seed=6 sr1: 300/300 delivered, 11.5s, complete
+228/240 random_40n N=300 M=30 seed=6 sr10: 300/300 delivered, 11.5s, complete
+229/240 random_40n N=300 M=30 seed=7 ours: 300/300 delivered, 41.7s, complete
+230/240 random_40n N=300 M=30 seed=7 sr1: 300/300 delivered, 10.5s, complete
+231/240 random_40n N=300 M=30 seed=7 sr10: 300/300 delivered, 10.5s, complete
+232/240 random_40n N=300 M=30 seed=8 ours: 300/300 delivered, 55.8s, complete
+233/240 random_40n N=300 M=30 seed=8 sr1: 300/300 delivered, 11.8s, complete
+234/240 random_40n N=300 M=30 seed=8 sr10: 300/300 delivered, 11.8s, complete
+235/240 random_40n N=300 M=30 seed=9 ours: 300/300 delivered, 53.3s, complete
+236/240 random_40n N=300 M=30 seed=9 sr1: 300/300 delivered, 12.0s, complete
+237/240 random_40n N=300 M=30 seed=9 sr10: 300/300 delivered, 12.1s, complete
+238/240 random_40n N=300 M=30 seed=10 ours: 300/300 delivered, 47.1s, complete
+239/240 random_40n N=300 M=30 seed=10 sr1: 300/300 delivered, 10.4s, complete
+240/240 random_40n N=300 M=30 seed=10 sr10: 300/300 delivered, 10.4s, complete
+== 3. 學長 ring road，原設定 30 MB ==
+flows=50 seed=1 ours: 50/50, 14.1s
+flows=50 seed=1 sr1: 50/50, 4.7s
+flows=50 seed=1 sr10: 50/50, 4.7s
+flows=50 seed=2 ours: 50/50, 17.6s
+flows=50 seed=2 sr1: 50/50, 5.6s
+flows=50 seed=2 sr10: 50/50, 5.6s
+flows=50 seed=3 ours: 50/50, 12.3s
+flows=50 seed=3 sr1: 50/50, 4.2s
+flows=50 seed=3 sr10: 50/50, 4.2s
+flows=50 seed=4 ours: 50/50, 17.6s
+flows=50 seed=4 sr1: 50/50, 5.7s
+flows=50 seed=4 sr10: 50/50, 5.7s
+flows=50 seed=5 ours: 50/50, 16.9s
+flows=50 seed=5 sr1: 50/50, 5.6s
+flows=50 seed=5 sr10: 50/50, 5.6s
+flows=50 seed=6 ours: 50/50, 18.0s
+flows=50 seed=6 sr1: 50/50, 5.8s
+flows=50 seed=6 sr10: 50/50, 5.8s
+flows=50 seed=7 ours: 50/50, 17.2s
+flows=50 seed=7 sr1: 50/50, 5.4s
+flows=50 seed=7 sr10: 50/50, 5.4s
+flows=50 seed=8 ours: 50/50, 20.4s
+flows=50 seed=8 sr1: 50/50, 6.5s
+flows=50 seed=8 sr10: 50/50, 6.5s
+flows=50 seed=9 ours: 50/50, 17.2s
+flows=50 seed=9 sr1: 50/50, 5.4s
+flows=50 seed=9 sr10: 50/50, 5.4s
+flows=50 seed=10 ours: 50/50, 13.0s
+flows=50 seed=10 sr1: 50/50, 4.3s
+flows=50 seed=10 sr10: 50/50, 4.3s
+flows=100 seed=1 ours: 100/100, 37.3s
+flows=100 seed=1 sr1: 100/100, 10.6s
+flows=100 seed=1 sr10: 100/100, 10.6s
+flows=100 seed=2 ours: 100/100, 39.4s
+flows=100 seed=2 sr1: 100/100, 10.6s
+flows=100 seed=2 sr10: 100/100, 10.6s
+flows=100 seed=3 ours: 100/100, 31.4s
+flows=100 seed=3 sr1: 100/100, 9.2s
+flows=100 seed=3 sr10: 100/100, 9.2s
+flows=100 seed=4 ours: 100/100, 42.7s
+flows=100 seed=4 sr1: 100/100, 12.3s
+flows=100 seed=4 sr10: 100/100, 12.3s
+flows=100 seed=5 ours: 100/100, 41.4s
+flows=100 seed=5 sr1: 100/100, 12.3s
+flows=100 seed=5 sr10: 100/100, 12.3s
+flows=100 seed=6 ours: 100/100, 41.3s
+flows=100 seed=6 sr1: 100/100, 11.8s
+flows=100 seed=6 sr10: 100/100, 11.8s
+flows=100 seed=7 ours: 100/100, 37.5s
+flows=100 seed=7 sr1: 100/100, 10.3s
+flows=100 seed=7 sr10: 100/100, 10.3s
+flows=100 seed=8 ours: 100/100, 38.6s
+flows=100 seed=8 sr1: 100/100, 10.8s
+flows=100 seed=8 sr10: 100/100, 10.7s
+flows=100 seed=9 ours: 100/100, 35.2s
+flows=100 seed=9 sr1: 100/100, 9.8s
+flows=100 seed=9 sr10: 100/100, 9.8s
+flows=100 seed=10 ours: 100/100, 31.2s
+flows=100 seed=10 sr1: 100/100, 8.9s
+flows=100 seed=10 sr10: 100/100, 8.9s
+flows=175 seed=1 ours: 175/175, 76.2s
+flows=175 seed=1 sr1: 175/175, 19.8s
+flows=175 seed=1 sr10: 175/175, 19.8s
+flows=175 seed=2 ours: 175/175, 76.9s
+flows=175 seed=2 sr1: 175/175, 19.1s
+flows=175 seed=2 sr10: 175/175, 19.1s
+flows=175 seed=3 ours: 175/175, 63.2s
+flows=175 seed=3 sr1: 175/175, 16.4s
+flows=175 seed=3 sr10: 175/175, 16.4s
+flows=175 seed=4 ours: 175/175, 88.8s
+flows=175 seed=4 sr1: 175/175, 22.8s
+flows=175 seed=4 sr10: 175/175, 22.8s
+flows=175 seed=5 ours: 175/175, 80.0s
+flows=175 seed=5 sr1: 175/175, 22.1s
+flows=175 seed=5 sr10: 175/175, 22.2s
+flows=175 seed=6 ours: 175/175, 74.7s
+flows=175 seed=6 sr1: 175/175, 19.6s
+flows=175 seed=6 sr10: 175/175, 19.6s
+flows=175 seed=7 ours: 175/175, 74.3s
+flows=175 seed=7 sr1: 175/175, 18.5s
+flows=175 seed=7 sr10: 175/175, 18.5s
+flows=175 seed=8 ours: 175/175, 75.1s
+flows=175 seed=8 sr1: 175/175, 19.1s
+flows=175 seed=8 sr10: 175/175, 19.1s
+flows=175 seed=9 ours: 175/175, 73.8s
+flows=175 seed=9 sr1: 175/175, 18.7s
+flows=175 seed=9 sr10: 175/175, 18.7s
+flows=175 seed=10 ours: 175/175, 67.0s
+flows=175 seed=10 sr1: 175/175, 16.8s
+flows=175 seed=10 sr10: 175/175, 16.8s
+flows=50 seed=1 ours: 50/50, 15.2s
+flows=50 seed=1 sr1: 50/50, 5.2s
+flows=50 seed=1 sr10: 50/50, 5.2s
+flows=50 seed=2 ours: 50/50, 19.2s
+flows=50 seed=2 sr1: 50/50, 6.2s
+flows=50 seed=2 sr10: 50/50, 6.2s
+flows=50 seed=3 ours: 50/50, 13.4s
+flows=50 seed=3 sr1: 50/50, 4.6s
+flows=50 seed=3 sr10: 50/50, 4.6s
+flows=50 seed=4 ours: 50/50, 19.0s
+flows=50 seed=4 sr1: 50/50, 6.3s
+flows=50 seed=4 sr10: 50/50, 6.3s
+flows=50 seed=5 ours: 50/50, 18.3s
+flows=50 seed=5 sr1: 50/50, 6.2s
+flows=50 seed=5 sr10: 50/50, 6.2s
+flows=50 seed=6 ours: 50/50, 19.4s
+flows=50 seed=6 sr1: 50/50, 6.5s
+flows=50 seed=6 sr10: 50/50, 6.4s
+flows=50 seed=7 ours: 50/50, 18.7s
+flows=50 seed=7 sr1: 50/50, 6.0s
+flows=50 seed=7 sr10: 50/50, 6.0s
+flows=50 seed=8 ours: 50/50, 22.0s
+flows=50 seed=8 sr1: 50/50, 7.2s
+flows=50 seed=8 sr10: 50/50, 7.2s
+flows=50 seed=9 ours: 50/50, 18.6s
+flows=50 seed=9 sr1: 50/50, 6.0s
+flows=50 seed=9 sr10: 50/50, 6.0s
+flows=50 seed=10 ours: 50/50, 14.1s
+flows=50 seed=10 sr1: 50/50, 4.8s
+flows=50 seed=10 sr10: 50/50, 4.8s
+flows=100 seed=1 ours: 100/100, 39.5s
+flows=100 seed=1 sr1: 100/100, 11.7s
+flows=100 seed=1 sr10: 100/100, 11.7s
+flows=100 seed=2 ours: 100/100, 41.7s
+flows=100 seed=2 sr1: 100/100, 11.7s
+flows=100 seed=2 sr10: 100/100, 11.7s
+flows=100 seed=3 ours: 100/100, 33.6s
+flows=100 seed=3 sr1: 100/100, 10.2s
+flows=100 seed=3 sr10: 100/100, 10.2s
+flows=100 seed=4 ours: 100/100, 45.4s
+flows=100 seed=4 sr1: 100/100, 13.5s
+flows=100 seed=4 sr10: 100/100, 13.5s
+flows=100 seed=5 ours: 100/100, 44.3s
+flows=100 seed=5 sr1: 100/100, 13.5s
+flows=100 seed=5 sr10: 100/100, 13.5s
+flows=100 seed=6 ours: 100/100, 44.1s
+flows=100 seed=6 sr1: 100/100, 13.0s
+flows=100 seed=6 sr10: 100/100, 13.0s
+flows=100 seed=7 ours: 100/100, 38.4s
+flows=100 seed=7 sr1: 100/100, 11.3s
+flows=100 seed=7 sr10: 100/100, 11.3s
+flows=100 seed=8 ours: 100/100, 41.1s
+flows=100 seed=8 sr1: 100/100, 11.8s
+flows=100 seed=8 sr10: 100/100, 11.8s
+flows=100 seed=9 ours: 100/100, 37.6s
+flows=100 seed=9 sr1: 100/100, 10.8s
+flows=100 seed=9 sr10: 100/100, 10.8s
+flows=100 seed=10 ours: 100/100, 33.3s
+flows=100 seed=10 sr1: 100/100, 9.9s
+flows=100 seed=10 sr10: 100/100, 9.9s
+flows=175 seed=1 ours: 175/175, 80.1s
+flows=175 seed=1 sr1: 175/175, 21.8s
+flows=175 seed=1 sr10: 175/175, 21.8s
+flows=175 seed=2 ours: 175/175, 80.9s
+flows=175 seed=2 sr1: 175/175, 21.0s
+flows=175 seed=2 sr10: 175/175, 21.0s
+flows=175 seed=3 ours: 175/175, 66.8s
+flows=175 seed=3 sr1: 175/175, 18.1s
+flows=175 seed=3 sr10: 175/175, 18.1s
+flows=175 seed=4 ours: 175/175, 91.5s
+flows=175 seed=4 sr1: 175/175, 24.6s
+flows=175 seed=4 sr10: 175/175, 24.6s
+flows=175 seed=5 ours: 175/175, 84.9s
+flows=175 seed=5 sr1: 175/175, 24.3s
+flows=175 seed=5 sr10: 175/175, 24.4s
+flows=175 seed=6 ours: 175/175, 78.7s
+flows=175 seed=6 sr1: 175/175, 21.7s
+flows=175 seed=6 sr10: 175/175, 21.7s
+flows=175 seed=7 ours: 175/175, 77.2s
+flows=175 seed=7 sr1: 175/175, 20.4s
+flows=175 seed=7 sr10: 175/175, 20.4s
+flows=175 seed=8 ours: 175/175, 79.1s
+flows=175 seed=8 sr1: 175/175, 20.9s
+flows=175 seed=8 sr10: 175/175, 20.9s
+flows=175 seed=9 ours: 175/175, 78.3s
+flows=175 seed=9 sr1: 175/175, 20.6s
+flows=175 seed=9 sr10: 175/175, 20.6s
+flows=175 seed=10 ours: 175/175, 70.6s
+flows=175 seed=10 sr1: 175/175, 18.6s
+flows=175 seed=10 sr10: 175/175, 18.6s
+== 4. 學長 ring road，加壓 3 MB ==
+flows=175 seed=1 ours: 104/175, 114.0s
+flows=175 seed=1 sr1: 71/175, 17.8s
+flows=175 seed=1 sr10: 89/175, 345.6s
+flows=175 seed=2 ours: 106/175, 151.4s
+flows=175 seed=2 sr1: 61/175, 17.3s
+flows=175 seed=2 sr10: 80/175, 411.8s
+flows=175 seed=3 ours: 108/175, 123.8s
+flows=175 seed=3 sr1: 67/175, 14.7s
+flows=175 seed=3 sr10: 92/175, 364.6s
+flows=175 seed=4 ours: 101/175, 150.9s
+flows=175 seed=4 sr1: 62/175, 20.3s
+flows=175 seed=4 sr10: 81/175, 431.5s
+flows=175 seed=5 ours: 109/175, 141.2s
+flows=175 seed=5 sr1: 67/175, 20.2s
+flows=175 seed=5 sr10: 85/175, 420.9s
+flows=175 seed=6 ours: 104/175, 144.8s
+flows=175 seed=6 sr1: 71/175, 17.9s
+flows=175 seed=6 sr10: 88/175, 378.8s
+flows=175 seed=7 ours: 111/175, 141.1s
+flows=175 seed=7 sr1: 77/175, 17.0s
+flows=175 seed=7 sr10: 86/175, 385.3s
+flows=175 seed=8 ours: 117/175, 154.5s
+flows=175 seed=8 sr1: 82/175, 17.2s
+flows=175 seed=8 sr10: 98/175, 307.9s
+flows=175 seed=9 ours: 115/175, 171.1s
+flows=175 seed=9 sr1: 79/175, 17.0s
+flows=175 seed=9 sr10: 95/175, 327.8s
+flows=175 seed=10 ours: 109/175, 117.8s
+flows=175 seed=10 sr1: 77/175, 15.4s
+flows=175 seed=10 sr10: 92/175, 332.5s
+flows=300 seed=1 ours: 137/300, 224.6s
