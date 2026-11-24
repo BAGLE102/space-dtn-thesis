@@ -12,7 +12,7 @@ import signal
 import time
 from fractions import Fraction as Fr
 
-from dtn import ours, srcgr, topology, validate as V
+from dtn import ours, runio, srcgr, topology, validate as V
 from dtn.model import Problem, arrival
 
 
@@ -103,12 +103,7 @@ def main():
     seeds = args.seeds or cfg["seeds"]
     grid = args.bundles or cfg["bundles"]
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
-    done = set()
-    if os.path.exists(args.out):
-        with open(args.out, encoding="utf-8") as fh:
-            for line in fh:
-                r = json.loads(line)
-                done.add((r["topology"], r["N"], r["M"], r["seed"], r["method"]))
+    done = runio.load_done(args.out, lambda r: (r["topology"], r["N"], r["M"], r["seed"], r["method"]))
     tops = args.topologies or list(cfg["topologies"])
     bufs = args.buffers or cfg["buffers_mb"]
     jobs = [(t, n, m, s, me) for t in tops for n in grid for m in bufs
@@ -121,6 +116,7 @@ def main():
                         cfg.get("time_limit_per_run_sec"), args.cut_through)
             fh.write(json.dumps(r) + "\n")
             fh.flush()
+            runio.stop_if_validation_failed(r["rows"], "%s N=%s M=%s seed=%s %s" % (t, n, m, s, me))
             ok = sum(x["arr"] is not None for x in r["rows"])
             print("%d/%d %s N=%s M=%s seed=%s %s: %d/%d delivered, %.1fs, %s" % (
                 i, len(todo), t, n, m, s, me, ok, len(r["rows"]), r["wall"], r["status"]), flush=True)

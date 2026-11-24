@@ -21,7 +21,7 @@ import random
 import time
 from fractions import Fraction as Fr
 
-from dtn import ours, srcgr, validate as V
+from dtn import ours, runio, srcgr, validate as V
 from dtn.model import Contact, Problem, arrival
 
 SHA = "fe363dabdd182e292f5e3b74a28558245b2caf9d3aa7730db60d52afdb9763d2"
@@ -104,11 +104,8 @@ def main():
     a = ap.parse_args()
 
     cs = load_contacts(a.plan, a.rate_mbps)
-    done = set()
-    if os.path.exists(a.out):
-        for line in open(a.out):
-            r = json.loads(line)
-            done.add((r["flows"], r["seed"], r["method"]))
+    os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
+    done = runio.load_done(a.out, lambda r: (r["flows"], r["seed"], r["method"]))
     with open(a.out, "a") as fh:
         for n in a.flows:
             for seed in range(1, a.seeds + 1):
@@ -123,6 +120,7 @@ def main():
                                              delivered=ok, total=len(rows), wall=time.perf_counter() - t0,
                                              rows=rows, node_peak_mb=peaks)) + "\n")
                     fh.flush()
+                    runio.stop_if_validation_failed(rows, "flows=%d seed=%d %s" % (n, seed, m))
                     print("flows=%d seed=%d %s: %d/%d, %.1fs" % (n, seed, m, ok, len(rows),
                                                                  time.perf_counter() - t0), flush=True)
 
