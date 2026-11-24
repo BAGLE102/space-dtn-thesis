@@ -80,8 +80,7 @@ $B$ & 需要分段的開始時間：使 bundle 的轉折時刻恰好落在 $O_n$
 $p_0<p_1<\dots<p_m$ & 分段後的時間點 \\
 $t_j(s)$ & 第 $j$ 個需要檢查的時刻（隨 $s$ 而定） \\
 $v_j(s)$ & 時刻 $t_j(s)$ 的合計占用 $O_n + x_n$ \\
-$e,\ e'$ & 段 $(p_{i-1},p_i)$ 內的 $1/3$、$2/3$ 位置 \\
-$k_j$ & $v_j$ 的斜率：開始時間每晚 1 秒，$v_j$ 的變化量 \\
+$a_j,\ k_j$ & 在一段內 $v_j(s) = a_j + k_j s$；$k_j$ 為斜率：開始時間每晚 1 秒，$v_j$ 的變化量 \\
 $\ell,\ u$ & 該段可行開始時間的下界、上界 \\
 \hline
 \end{tabular}
@@ -197,13 +196,13 @@ $\ell,\ u$ & 該段可行開始時間的下界、上界 \\
   \State $P \gets \{\alpha, \beta\} \cup (B \cap (\alpha, \beta))$，由小到大排序為 $p_0 < p_1 < \dots < p_m$
   \State $J \gets \{p \in P : p \text{ 可行}\}$ \Comment{直接依定義檢查}
   \For{$i = 1$ \textbf{to} $m$}
-    \State $\ell \gets p_{i-1}$；\ $u \gets p_i$；\ $e \gets p_{i-1} + (p_i - p_{i-1})/3$；\ $e' \gets p_{i-1} + 2(p_i - p_{i-1})/3$
+    \State $\ell \gets p_{i-1}$；\ $u \gets p_i$
     \ForAll{停留期間內需檢查的時刻 $t_j(s)$}
-      \State $v_j(s) \gets O_n(t_j(s)) + x(t_j(s))$ \Comment{在 $(p_{i-1}, p_i)$ 內為 $s$ 的一次式}
-      \State $k_j \gets \bigl(v_j(e') - v_j(e)\bigr) / (e' - e)$
-      \If{$k_j > 0$} \State $u \gets \min\bigl(u,\ e + (M - v_j(e))/k_j\bigr)$
-      \ElsIf{$k_j < 0$} \State $\ell \gets \max\bigl(\ell,\ e + (M - v_j(e))/k_j\bigr)$
-      \ElsIf{$v_j(e) > M$} \State $\ell \gets +\infty$ \Comment{整段不可行}
+      \State 在 $(p_{i-1}, p_i)$ 內，$v_j(s) = O_n(t_j(s)) + x(t_j(s))$ 為一次函數，寫成 $v_j(s) = a_j + k_j s$
+      % 實作註記：程式以段內兩個不在端點上的點（ours.py 取 1/3、2/3 位置）代入求出 a_j、k_j，結果與直接展開相同；此為實作細節，非方法的一部分。
+      \If{$k_j > 0$} \State $u \gets \min\bigl(u,\ (M - a_j)/k_j\bigr)$ \Comment{$v_j(s) \le M \iff s \le (M-a_j)/k_j$}
+      \ElsIf{$k_j < 0$} \State $\ell \gets \max\bigl(\ell,\ (M - a_j)/k_j\bigr)$ \Comment{$v_j(s) \le M \iff s \ge (M-a_j)/k_j$}
+      \ElsIf{$a_j > M$} \State $\ell \gets +\infty$ \Comment{整段不可行}
       \EndIf
     \EndFor
     \If{$\ell \le u$} \State $J \gets J \cup [\ell, u]$ \EndIf
