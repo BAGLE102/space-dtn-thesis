@@ -81,6 +81,7 @@ $p_0<p_1<\dots<p_m$ & 分段後的時間點 \\
 $t_j(s)$ & 第 $j$ 個需要檢查的時刻（隨 $s$ 而定） \\
 $v_j(s)$ & 時刻 $t_j(s)$ 的合計占用 $O_n + x_n$ \\
 $a_j,\ k_j$ & 在一段內 $v_j(s) = a_j + k_j s$；$k_j$ 為斜率：開始時間每晚 1 秒，$v_j$ 的變化量 \\
+$v_j(p^{+}),\ v_j(p^{-})$ & 開始時間從右側、左側趨近 $p$ 時 $v_j$ 的極限值；端點恰逢占用瞬間跳變（來源產生、目的地交付）時，用靠段內一側的值，避免取到跳變後的值 \\
 $\ell,\ u$ & 該段可行開始時間的下界、上界 \\
 \hline
 \end{tabular}
@@ -198,8 +199,9 @@ $\ell,\ u$ & 該段可行開始時間的下界、上界 \\
   \For{$i = 1$ \textbf{to} $m$}
     \State $\ell \gets p_{i-1}$；\ $u \gets p_i$
     \ForAll{停留期間內需檢查的時刻 $t_j(s)$}
-      \State 在 $(p_{i-1}, p_i)$ 內，$v_j(s) = O_n(t_j(s)) + x(t_j(s))$ 為一次函數，寫成 $v_j(s) = a_j + k_j s$
-      % 實作註記：程式以段內兩個不在端點上的點（ours.py 取 1/3、2/3 位置）代入求出 a_j、k_j，結果與直接展開相同；此為實作細節，非方法的一部分。
+      \State $v_j^{+} \gets v_j(p_{i-1}^{+})$；\ $v_j^{-} \gets v_j(p_i^{-})$ \Comment{兩端點的值，取靠段內一側的極限}
+      \State $k_j \gets (v_j^{-} - v_j^{+}) / (p_i - p_{i-1})$；\ $a_j \gets v_j^{+} - k_j\, p_{i-1}$ \Comment{段內 $v_j(s) = a_j + k_j s$}
+      % 實作註記：ours.py 以段內兩個非端點的點代入求同一條直線，與取端點單側極限的結果相同。
       \If{$k_j > 0$} \State $u \gets \min\bigl(u,\ (M - a_j)/k_j\bigr)$ \Comment{$v_j(s) \le M \iff s \le (M-a_j)/k_j$}
       \ElsIf{$k_j < 0$} \State $\ell \gets \max\bigl(\ell,\ (M - a_j)/k_j\bigr)$ \Comment{$v_j(s) \le M \iff s \ge (M-a_j)/k_j$}
       \ElsIf{$a_j > M$} \State $\ell \gets +\infty$ \Comment{整段不可行}
