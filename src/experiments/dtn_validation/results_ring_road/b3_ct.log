@@ -48,3 +48,13 @@ flows=300 seed=6 sr1: 99/300, 18.9s
 flows=300 seed=6 sr10: 120/300, 460.0s
 flows=300 seed=7 ours: 151/300, 148.0s
 flows=300 seed=7 sr1: 97/300, 20.2s
+flows=300 seed=7 sr10: 121/300, 467.1s
+flows=300 seed=8 ours: 154/300, 157.1s
+flows=300 seed=8 sr1: 108/300, 18.9s
+flows=300 seed=8 sr10: 129/300, 449.2s
+flows=300 seed=9 ours: 155/300, 164.8s
+flows=300 seed=9 sr1: 94/300, 21.6s
+flows=300 seed=9 sr10: 122/300, 466.2s
+flows=300 seed=10 ours: 147/300, 114.4s
+flows=300 seed=10 sr1: 104/300, 17.2s
+flows=300 seed=10 sr10: 131/300, 412.7s
