@@ -34,7 +34,9 @@ def main():
     cases = args.cases or cfg["cases"]
     grid = Fr(1, cfg["grid_denominator"])
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
-    done = runio.load_done(args.out, lambda r: r["case"])
+    # 一個案例要有該案例全部包的紀錄才算完成（包數由 small_case 重新產生，舊檔也適用）
+    done = runio.load_done(args.out, lambda r: r["case"],
+                           lambda rows: len(rows) == len(topology.small_case(rows[0]["case"])[1]))
     bad = 0
     with open(args.out, "a", encoding="utf-8") as fh:
         for seed in range(cfg["first_seed"], cfg["first_seed"] + cases):
@@ -54,10 +56,14 @@ def main():
                 ok = V.validate(P, sch) if sch else None
                 kind = classify(a, o)
                 bad += kind in ("missed", "extra", "later") or ok is False
-                if kind in ("missed", "extra") or ok is False:
-                    sys.exit("驗證失敗，停止：case %d bundle %d，result=%s，replay_ok=%s" % (seed, idx, kind, ok))
+                if kind in ("missed", "extra") or ok is False or (kind == "later" and seed not in args.known_later):
+                    runio.record_failure_and_stop(
+                        args.out, {"case": seed, "bundle": idx, "result": kind, "replay_ok": ok,
+                                   "ours": float(a) if a is not None else None,
+                                   "oracle": float(o) if o is not None else None},
+                        "case %d bundle %d，result=%s，replay_ok=%s" % (seed, idx, kind, ok))
                 lines.append(json.dumps({
-                    "case": seed, "bundle": idx, "src": u, "dst": v, "g": float(g),
+                    "case": seed, "bundle": idx, "n_bundles": len(bundles), "src": u, "dst": v, "g": float(g),
                     "ours": float(a) if a is not None else None,
                     "oracle": float(o) if o is not None else None,
                     "result": kind, "replay_ok": ok,
@@ -69,13 +75,6 @@ def main():
             if (seed - cfg["first_seed"] + 1) % 100 == 0:
                 print("validation", seed - cfg["first_seed"] + 1, "/", cases, "problems:", bad, flush=True)
     print("validation finished; new problems:", bad)
-    with open(args.out, encoding="utf-8") as fh:  # 含之前跑過的部分
-        later = [r["case"] for r in map(json.loads, fh) if r["result"] == "later"]
-    unknown = sorted(set(later) - set(args.known_later))
-    if later:
-        print("later cases:", sorted(set(later)), flush=True)
-    if unknown:
-        sys.exit("出現未解釋的 later 案例，停止：%s" % unknown)
 
 
 if __name__ == "__main__":

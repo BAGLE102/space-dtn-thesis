@@ -5,6 +5,11 @@
 - 執行流程修正（不影響演算法與既有結果）：新增 `dtn/runio.py`，三個執行腳本共用。
   - 驗證失敗即停：本方法排程回放失敗時，`run_performance.py`、`run_ring_road.py` 立刻停止；`run_validation.py` 遇回放失敗、missed、extra 立刻停止，跑完後若有未列在 `--known-later` 的 later 案例也以錯誤結束。
   - 續跑：結果檔最後一行不完整時，連同同一組已寫入的行一起截掉並整組重跑；`run_validation.py` 改為一個案例整批寫入。已測試：截斷後續跑的結果與不中斷時相同（不含計時欄位）。
+  - 第二次修正（依外部檢查）：
+    - 完整性改為逐組判斷：驗證案例要有該案例全部包的紀錄才算完成（包數由 `small_case` 重新產生，舊檔也適用）；不完整的組在啟動時從主檔移除並重跑。
+    - 驗證失敗的組不寫入主檔，改寫到 `<out>.failed.jsonl`，不算完成；主檔中若有帶失敗的組也會被移除。
+    - 未列在 `--known-later` 的 later 改為發現當下就停止。
+    - 已測試：案例中途停在完整行尾、失敗組續跑、未知 later 三種情境；既有 `results_no_revisit/val_ct.jsonl` 3,000 個案例全部判定為完成，未被改動。
 
 - 新增 `src/experiments/dtn_validation/run_ring_road.py`：在黃文龍學長的 cross-linked ring road 拓樸上比較本方法、sr1、sr10。
   - 拓樸：公開 Walker 檔，SHA-256 核對一致；去掉 Server 節點後為 47 節點、3,172 條連線。

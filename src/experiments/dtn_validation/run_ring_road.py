@@ -105,7 +105,7 @@ def main():
 
     cs = load_contacts(a.plan, a.rate_mbps)
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
-    done = runio.load_done(a.out, lambda r: (r["flows"], r["seed"], r["method"]))
+    done = runio.load_done(a.out, lambda r: (r["flows"], r["seed"], r["method"]), runio.no_validation_failure)
     with open(a.out, "a") as fh:
         for n in a.flows:
             for seed in range(1, a.seeds + 1):
@@ -115,12 +115,14 @@ def main():
                     t0 = time.perf_counter()
                     rows, peaks = run_job(cs, seed, n, a.buffer_mb, m, a.cut_through, a.release, Fr(86400))
                     ok = sum(r["arr"] is not None for r in rows)
-                    fh.write(json.dumps(dict(flows=n, seed=seed, method=m, ct=a.cut_through,
-                                             buffer_mb=float(a.buffer_mb), rate_mbps=float(a.rate_mbps),
-                                             delivered=ok, total=len(rows), wall=time.perf_counter() - t0,
-                                             rows=rows, node_peak_mb=peaks)) + "\n")
+                    rec = dict(flows=n, seed=seed, method=m, ct=a.cut_through,
+                               buffer_mb=float(a.buffer_mb), rate_mbps=float(a.rate_mbps),
+                               delivered=ok, total=len(rows), wall=time.perf_counter() - t0,
+                               rows=rows, node_peak_mb=peaks)
+                    if not runio.no_validation_failure([rec]):
+                        runio.record_failure_and_stop(a.out, rec, "flows=%d seed=%d %s" % (n, seed, m))
+                    fh.write(json.dumps(rec) + "\n")
                     fh.flush()
-                    runio.stop_if_validation_failed(rows, "flows=%d seed=%d %s" % (n, seed, m))
                     print("flows=%d seed=%d %s: %d/%d, %.1fs" % (n, seed, m, ok, len(rows),
                                                                  time.perf_counter() - t0), flush=True)
 
