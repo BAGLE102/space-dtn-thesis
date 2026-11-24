@@ -77,7 +77,7 @@ $L=(c, \mathit{lo}, \mathit{hi}, \mathit{pred})$ & Label：經連線 $c$，可�
 \Statex
 \Function{Insert}{$c, I, \mathit{pred}$}
   \State $I \gets I \setminus R[c]$；\ $R[c] \gets R[c] \cup I$
-  \ForAll{$I$ 中的每個最大區間 $[\alpha,\beta]$}
+  \ForAll{$I$ 中的每個最大區間 $[\alpha,\beta]$} \Comment{$I$ 被切成幾段，就建立幾個 Label}
     \State 將 $(c,\alpha,\beta,\mathit{pred})$ 放入 $Q$，鍵值為 $\alpha + \tau_c + d_c$
   \EndFor
 \EndFunction
