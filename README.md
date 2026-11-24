@@ -6,6 +6,7 @@
 
 **目前為有限時間格點與 aggregate quota 模型的演算法原型及正確性驗證階段。** 每次處理一個 bundle；接受後更新資源，再處理下一包。不主張多包聯合最佳化、連續時間最優或已支援 transmission calendar。
 
+- **[交接手冊（ATA 100 格式，2026-11-24）：其他 AI 接手請先讀](docs/handover/HANDOVER_ATA100_20261124.md)**
 - [進度與下一步](PROGRESS.md)
 - [現行研究問題、參數與演算法正式定義](docs/formal_problem_algorithm_definition_v01.md)
 - [研究合理性與風險審查（含兩包傳輸重疊反例）](docs/research_reality_audit_v01.md)

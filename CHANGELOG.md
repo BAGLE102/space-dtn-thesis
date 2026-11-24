@@ -2,6 +2,8 @@
 
 ## 2026-11-24
 
+- 新增交接手冊 `docs/handover/HANDOVER_ATA100_20261124.md`（ATA 100 編排：章-節-主題、頁段、WARNING／CAUTION／NOTE），README 加入連結。標明 AGENTS.md／README 指向的 v04 基準為舊模型，現行以 `dtn_validation/dtn/` 為準。
+
 - 實驗室伺服器重跑（`results_server_20261124/`）：步驟 1–3 完成，與雲端結果重疊部分逐筆一致；隨機拓樸 10 個種子補齊。3 MB 時本方法比 sr10 多 4.1～13.2 個百分點（成對 95% CI 皆不含 0），30 MB 三種方法皆接近 100%。步驟 4（Ring Road 3 MB）仍在伺服器執行。
 
 - 使用者要求立即執行：已上傳 ZIP、核對 SHA256、完成伺服器試跑並啟動正式四組批次（PID 205037）。確認 flock 阻擋第二份、SSH 連線結束後背景仍跑；尚未完成全部模擬。
