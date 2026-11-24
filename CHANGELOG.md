@@ -1,5 +1,15 @@
 # 更新紀錄
 
+## 2026-11-24
+
+- 新增 `src/experiments/dtn_validation/run_ring_road.py`：在黃文龍學長的 cross-linked ring road 拓樸上比較本方法、sr1、sr10。
+  - 拓樸：公開 Walker 檔，SHA-256 核對一致；去掉 Server 節點後為 47 節點、3,172 條連線。
+  - 設定：速率依學長論文 100 KB/s，Buffer 30 MB，延遲 0。
+  - 需求：來源為 cold spot 或衛星，目的地為 hot spot，大小 300～3,000 KB，產生時間 0～38,350 秒。
+  - 原檔放在 `tmp/`，依 .gitignore 不提交。
+  - 試跑：學長原設定（Buffer 30 MB）下三種方法均全部送達。加壓試探（Buffer 3 MB、300 筆、1 個種子）：本方法 137、sr10 126、sr1 97。
+  - 10 個種子的正式結果執行中。
+
 ## 2026-11-23
 
 - 新增 `docs/problem_formulation_current_20261123.md`：依目前程式整理的現行 Problem Formulation。
