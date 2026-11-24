@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-24",
+  "baseline_commit": "cee227e",
+  "regression_tests": 15,
+  "fault_scenario_tests": [
+    {
+      "test": "complete_line_interruption",
+      "passed": true,
+      "detail": {
+        "case": 1,
+        "expected_bundles": 3
+      }
+    },
+    {
+      "test": "torn_json_interruption",
+      "passed": true,
+      "detail": "whole case restored"
+    },
+    {
+      "test": "legacy_validation_replay_failure",
+      "passed": true,
+      "detail": {
+        "exit_code": 0,
+        "failed_record_remains": false
+      }
+    },
+    {
+      "test": "duplicate_bundle_ids",
+      "passed": true,
+      "detail": "row count alone must not imply completeness"
+    },
+    {
+      "test": "unknown_later_stops",
+      "passed": true,
+      "detail": {
+        "exit_code": 1,
+        "separate_failure_log": true
+      }
+    },
+    {
+      "test": "known_later_opt_in",
+      "passed": true,
+      "detail": {
+        "exit_code": 0
+      }
+    },
+    {
+      "test": "legacy_performance_failure_removed",
+      "passed": true,
+      "detail": "failed legacy group removed from completion set"
+    },
+    {
+      "test": "new_performance_failure_separate",
+      "passed": true,
+      "detail": "fake invalid group rejected before main result write"
+    },
+    {
+      "test": "new_ring_failure_separate",
+      "passed": true,
+      "detail": "fake invalid group rejected before main result write"
+    },
+    {
+      "test": "performance_early_exception_persisted",
+      "passed": true
+    },
+    {
+      "test": "ring_early_exception_persisted",
+      "passed": true
+    }
+  ],
+  "existing_results": [
+    {
+      "file": "src/experiments/dtn_validation/results_no_revisit/val_ct.jsonl",
+      "cases": 3000,
+      "complete": 3000,
+      "incomplete": [],
+      "sha256": "d496df5e7070ed8588b55feed48c40c07d64d8d94e362a90921085e23011ab9e"
+    },
+    {
+      "file": "src/experiments/dtn_validation/results_no_revisit/val_sf.jsonl",
+      "cases": 3000,
+      "complete": 3000,
+      "incomplete": [],
+      "sha256": "49116c4634502577fb9d784841294e6787034399359ab73f276ed04d12a68197"
+    }
+  ],
+  "package": {
+    "file": "dtn_sim.zip",
+    "sha256": "fe826b2f5a2417510ca741f3a0f67b600df55acda99724dff6550f6490b85770",
+    "changed_entries": [
+      "dtn_sim/run_validation.py",
+      "dtn_sim/run_ring_road.py",
+      "dtn_sim/run_performance.py"
+    ],
+    "other_entries_unchanged": true
+  },
+  "lock_check": {
+    "status": "static_review_only",
+    "reason": "No available local Linux runtime; flock concurrency not executed."
+  },
+  "limitations": [
+    "No full performance simulation rerun.",
+    "Case 2663 remains an explicit known-later exception, not proof of correctness.",
+    "Incomplete or time_limit performance groups are rerun, not considered complete."
+  ]
+}

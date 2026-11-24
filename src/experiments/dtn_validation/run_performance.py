@@ -24,6 +24,10 @@ def _alarm(*_):
     raise TimeUp()
 
 
+class ScheduleValidationError(RuntimeError):
+    """攜帶失敗紀錄返回入口；不繼續處理本組剩餘 bundles。"""
+
+
 def plan_one(method, P):
     """回傳 (schedule, 未送達原因)。本方法驗證失敗代表演算法有錯，會被標記。"""
     if method == "ours":
@@ -71,6 +75,10 @@ def run_job(name, tc, size, n, m, seed, method, limit, ct=False):
             sch, why = plan_one(method, P)
             sec = time.perf_counter() - t0
             row = {"i": i, "src": u, "dst": v, "g": float(g), "sec": round(sec, 6), "why": why}
+            if why == "VALIDATION_FAILED":
+                raise ScheduleValidationError(dict(
+                    topology=name, N=n, M=m, seed=seed, method=method,
+                    cut_through=ct, status="validation_failed", rows=rows + [row]))
             if sch:
                 row.update(arr=float(arrival(P, sch)), hops=len(sch),
                            path=">".join([str(u)] + [str(c.v) for c, _ in sch]),
@@ -89,6 +97,17 @@ def run_job(name, tc, size, n, m, seed, method, limit, ct=False):
             "resources": resources(P, tc), "contact_sha256": contact_hash(cs)}
 
 
+def complete_job(records):
+    """一組只保留一筆完整結果；拒絕缺包、重複包及驗證失敗紀錄。"""
+    if len(records) != 1 or not runio.no_validation_failure(records):
+        return False
+    record = records[0]
+    rows = record.get("rows", [])
+    return (len(rows) == record["N"]
+            and {r.get("i") for r in rows} == set(range(record["N"]))
+            and record.get("status") == "complete")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="config.json")
@@ -104,7 +123,7 @@ def main():
     grid = args.bundles or cfg["bundles"]
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     done = runio.load_done(args.out, lambda r: (r["topology"], r["N"], r["M"], r["seed"], r["method"]),
-                           runio.no_validation_failure)
+                           complete_job)
     tops = args.topologies or list(cfg["topologies"])
     bufs = args.buffers or cfg["buffers_mb"]
     jobs = [(t, n, m, s, me) for t in tops for n in grid for m in bufs
@@ -113,8 +132,12 @@ def main():
     print("jobs:", len(jobs), "remaining:", len(todo), "python:", platform.python_version(), flush=True)
     with open(args.out, "a", encoding="utf-8") as fh:
         for i, (t, n, m, s, me) in enumerate(todo, 1):
-            r = run_job(t, cfg["topologies"][t], cfg["bundle_size_mb"], n, m, s, me,
-                        cfg.get("time_limit_per_run_sec"), args.cut_through)
+            try:
+                r = run_job(t, cfg["topologies"][t], cfg["bundle_size_mb"], n, m, s, me,
+                            cfg.get("time_limit_per_run_sec"), args.cut_through)
+            except ScheduleValidationError as error:
+                runio.record_failure_and_stop(args.out, error.args[0],
+                                             "%s N=%s M=%s seed=%s %s" % (t, n, m, s, me))
             if not runio.no_validation_failure([r]):
                 runio.record_failure_and_stop(args.out, r, "%s N=%s M=%s seed=%s %s" % (t, n, m, s, me))
             fh.write(json.dumps(r) + "\n")

@@ -2,6 +2,12 @@
 
 ## 2026-11-24
 
+- 第三次執行流程補強：三個 runner 檢查包編號是否完整且不重複；驗證案例同時檢查 replay 與 result，已知 later 仍需明確允許。舊的完整筆數但失敗／重複資料不再被誤判完成。
+- 效能與 ring road 在首個 VALIDATION_FAILED bundle 當下拋出流程例外，入口立即記錄 `<out>.failed.jsonl` 並停止，不再等整組跑完；不改搜尋或容量／Buffer 規則。
+- 已跑 15 個回歸測試與 11 個故障／入口情境，包含真實案例 2663 的未允許停止及明確允許通過；原有 val_sf／val_ct 各 3,000 案例完整性檢查通過，檔案雜湊未變。
+- 更新桌面 `dtn_sim.zip`，僅三個 runner entry 改動，其餘演算法／拓樸／套件項目保持原樣。測試摘要見 `output/script_resume_checks_20261124/summary.json`；原包備份在私有 build 目錄。
+- 限制：未重跑正式效能實驗；本機無可用 Linux，flock 僅靜態核對。續跑時 incomplete／time_limit 的效能組會整組重跑；建議啟動記錄採 `>> run_server.log` 避免第二次啟動先清空日誌。
+
 - 執行流程修正（不影響演算法與既有結果）：新增 `dtn/runio.py`，三個執行腳本共用。
   - 驗證失敗即停：本方法排程回放失敗時，`run_performance.py`、`run_ring_road.py` 立刻停止；`run_validation.py` 遇回放失敗、missed、extra 立刻停止，跑完後若有未列在 `--known-later` 的 later 案例也以錯誤結束。
   - 續跑：結果檔最後一行不完整時，連同同一組已寫入的行一起截掉並整組重跑；`run_validation.py` 改為一個案例整批寫入。已測試：截斷後續跑的結果與不中斷時相同（不含計時欄位）。

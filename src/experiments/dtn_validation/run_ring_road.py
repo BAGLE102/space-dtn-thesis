@@ -56,6 +56,10 @@ def demands(seed, n, release):
     return res
 
 
+class ScheduleValidationError(RuntimeError):
+    """攜帶失敗紀錄返回入口；不繼續處理本組剩餘 bundles。"""
+
+
 def plan_one(method, P):
     if method == "ours":
         sch = ours.plan(P)
@@ -76,6 +80,11 @@ def run_job(cs, seed, n, M, method, ct, release, T):
         t0 = time.perf_counter()
         sch, why = plan_one(method, P)
         sec = time.perf_counter() - t0
+        if why == "VALIDATION_FAILED":
+            raise ScheduleValidationError(dict(
+                flows=n, seed=seed, method=method, ct=ct, buffer_mb=float(M),
+                status="validation_failed", rows=rows + [dict(
+                    i=i, src=u, dst=v, g=float(g), size_mb=float(S), sec=sec, why=why)]))
         if sch:
             arr = arrival(P, sch)
             P = V.commit(P, sch)
@@ -87,6 +96,17 @@ def run_job(cs, seed, n, M, method, ct, release, T):
                              path=None, sec=sec, why=why))
     peaks = {str(n): float(cv.global_peak()[0]) for n, cv in P.O.items()}
     return rows, peaks
+
+
+def complete_job(records):
+    """每組 flows 包都須各有一筆結果，且沒有本方法的驗證失敗。"""
+    if len(records) != 1 or not runio.no_validation_failure(records):
+        return False
+    record = records[0]
+    rows = record.get("rows", [])
+    return (len(rows) == record["flows"]
+            and {r.get("i") for r in rows} == set(range(record["flows"]))
+            and record.get("total") == record["flows"])
 
 
 def main():
@@ -105,7 +125,7 @@ def main():
 
     cs = load_contacts(a.plan, a.rate_mbps)
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
-    done = runio.load_done(a.out, lambda r: (r["flows"], r["seed"], r["method"]), runio.no_validation_failure)
+    done = runio.load_done(a.out, lambda r: (r["flows"], r["seed"], r["method"]), complete_job)
     with open(a.out, "a") as fh:
         for n in a.flows:
             for seed in range(1, a.seeds + 1):
@@ -113,7 +133,11 @@ def main():
                     if (n, seed, m) in done:
                         continue
                     t0 = time.perf_counter()
-                    rows, peaks = run_job(cs, seed, n, a.buffer_mb, m, a.cut_through, a.release, Fr(86400))
+                    try:
+                        rows, peaks = run_job(cs, seed, n, a.buffer_mb, m, a.cut_through, a.release, Fr(86400))
+                    except ScheduleValidationError as error:
+                        runio.record_failure_and_stop(a.out, error.args[0],
+                                                     "flows=%d seed=%d %s" % (n, seed, m))
                     ok = sum(r["arr"] is not None for r in rows)
                     rec = dict(flows=n, seed=seed, method=m, ct=a.cut_through,
                                buffer_mb=float(a.buffer_mb), rate_mbps=float(a.rate_mbps),

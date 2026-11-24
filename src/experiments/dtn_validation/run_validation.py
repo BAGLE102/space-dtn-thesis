@@ -21,6 +21,25 @@ def classify(a, o):
     return "same" if a == o else ("earlier" if a < o else "later")
 
 
+def complete_case(rows, known_later):
+    """只有每包各出現一次、且結果合格的案例，才可在續跑時略過。"""
+    if not rows:
+        return False
+    expected = len(topology.small_case(rows[0]["case"])[1])
+    ids = [r.get("bundle") for r in rows]
+    if len(rows) != expected or set(ids) != set(range(expected)):
+        return False
+    allowed = {"same", "both_none", "earlier"}
+    for row in rows:
+        if row.get("replay_ok") is False:
+            return False
+        if row.get("result") == "later" and row["case"] in known_later:
+            continue
+        if row.get("result") not in allowed:
+            return False
+    return True
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="config.json")
@@ -34,9 +53,9 @@ def main():
     cases = args.cases or cfg["cases"]
     grid = Fr(1, cfg["grid_denominator"])
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
-    # 一個案例要有該案例全部包的紀錄才算完成（包數由 small_case 重新產生，舊檔也適用）
+    # 筆數、包編號與驗證結果都要符合；舊失敗／重複紀錄不算完成。
     done = runio.load_done(args.out, lambda r: r["case"],
-                           lambda rows: len(rows) == len(topology.small_case(rows[0]["case"])[1]))
+                           lambda rows: complete_case(rows, args.known_later))
     bad = 0
     with open(args.out, "a", encoding="utf-8") as fh:
         for seed in range(cfg["first_seed"], cfg["first_seed"] + cases):
