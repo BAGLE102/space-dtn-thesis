@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-24",
+  "server_alias": "lab513",
+  "remote_directory": "/home/lab513/115/dtn_sim",
+  "archive_sha256": "fe826b2f5a2417510ca741f3a0f67b600df55acda99724dff6550f6490b85770",
+  "python": "3.8.10",
+  "quick_test": "passed",
+  "quick_random_jobs": 6,
+  "quick_ring_methods": 3,
+  "launch_pid": 205026,
+  "formal_pid": 205037,
+  "first_validation_pid": 205041,
+  "formal_state": "running",
+  "stage": "store-and-forward validation",
+  "observed_progress": {
+    "cases": 100,
+    "total_cases": 3000,
+    "reported_problems": 0
+  },
+  "server_log": "run_server.log",
+  "quick_test_log": "quick_test.log",
+  "results_directory": "results/",
+  "duplicate_start_lock": "tested: separate flock acquisition refused while formal run active",
+  "ssh_disconnect": "background process checked alive after initial SSH command timed out",
+  "completion": "not yet complete; no full-performance conclusions"
+}

@@ -4,6 +4,8 @@
 
 ## 模擬腳本續跑與失敗保護（2026-11-24）
 
+- 已部署最新版 ZIP 至伺服器並驗證 SHA256；Python 3.8.10 試跑全數通過後啟動正式四組模擬。正式 PID 205037，首次觀察 SF 窮舉驗證 100/3000、problems=0；正式尚未完成。伺服器上確認第二個 flock 無法取得鎖，SSH 中斷後背景程序仍存活。啟動紀錄見 output/script_resume_checks_20261124/server_launch.json。
+
 - 更新 run_validation、run_performance、run_ring_road 的完成判定及逐包失敗停止；未修改演算法或既有結果。
 - 15 個回歸測試、11 個故障情境通過；既有收完才轉／邊收邊轉各 3,000 個驗證案例仍完整，原檔雜湊不變。
 - 已更新桌面 dtn_sim.zip；測試記錄見 output/script_resume_checks_20261124/summary.json。Linux flock 仍待伺服器確認，未重跑正式效能實驗。
