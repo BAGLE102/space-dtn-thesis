@@ -2,6 +2,8 @@
 
 ## 2026-11-24
 
+- 新增論文用虛擬碼 `docs/thesis_pseudocode_20261124.tex`（algorithmicx，7 個演算法 + 三種節點 Buffer 檢查表），對應現行 `ours.py`。依使用者要求不使用自創詞彙：`lag` 以符號 Δ(c₁,c₂)=max(0,τ₁−τ₂) 加白話說明，只保留一條轉送規則，收完才轉僅列為對照方法。以 XeLaTeX 編譯預覽無錯誤。
+
 - 交接手冊 11-20-00 新增 WARNING：不得自創詞彙，只用有來源的術語或白話描述；程式變數名（如 `lag`）不得直接當論文用語。
 
 - 新增交接手冊 `docs/handover/HANDOVER_ATA100_20261124.md`（ATA 100 編排：章-節-主題、頁段、WARNING／CAUTION／NOTE），README 加入連結。標明 AGENTS.md／README 指向的 v04 基準為舊模型，現行以 `dtn_validation/dtn/` 為準。

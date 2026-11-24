@@ -1,0 +1,210 @@
+% ============================================================
+% 論文用虛擬碼（對應 src/experiments/dtn_validation/dtn/ours.py，2026-11-24）
+% 需要套件：algorithm、algpseudocode、amsmath、amssymb
+% 中文需要 xeCJK（或論文模板既有的中文設定）
+% 本檔可直接 \input{} 到論文章節中。
+% ============================================================
+
+\floatname{algorithm}{演算法}
+\renewcommand{\algorithmicrequire}{\textbf{輸入：}}
+\renewcommand{\algorithmicensure}{\textbf{輸出：}}
+\algnewcommand{\Nil}{\textsc{nil}}
+\algnewcommand{\Fail}{\textsc{無解}}
+
+% ------------------------------------------------------------
+\subsection*{符號}
+
+\begin{tabular}{p{0.36\linewidth}p{0.58\linewidth}}
+$c=(u_c, v_c, a_c, b_c, r_c, d_c)$ & 連線：由 $u_c$ 到 $v_c$，開放於 $[a_c,b_c]$，速率 $r_c$，傳播延遲 $d_c$ \\
+$F_c$ & 連線 $c$ 已被先前 bundle 預約的傳輸時段 $(x,y)$ 之集合 \\
+$(\mathit{src}, \mathit{dst}, g, S, T)$ & 目前 bundle 的來源、目的地、產生時間、大小、期限 \\
+$\tau_c = S / r_c$ & bundle 在連線 $c$ 上的傳輸時間 \\
+$M$ & 每個節點的 Buffer 上限 \\
+$O_n(t)$ & 節點 $n$ 已被先前 bundle 占用的量（分段線性；以變化點的時刻、左極限、右極限儲存） \\
+$\mathrm{ramp}(t,\alpha,\beta)$ & $t\le\alpha$ 時為 $0$；$\alpha<t<\beta$ 時為 $S(t-\alpha)/(\beta-\alpha)$；$t\ge\beta$ 時為 $S$ \\
+$\Delta(c_1,c_2)=\max(0,\ \tau_{c_1}-\tau_{c_2})$ & 中繼節點不送出尚未收到之資料所需的最小等待時間 \\
+$L=(c, \mathit{lo}, \mathit{hi}, \mathit{pred})$ & Label：經連線 $c$，可於 $[\mathit{lo},\mathit{hi}]$ 內任一時刻開始傳送，前一個 Label 為 $\mathit{pred}$ \\
+\end{tabular}
+
+\medskip
+\noindent 中繼節點的轉送規則只有一條：任何時刻，送出的累計量不超過收到的累計量。
+因此 $s_{i+1} \ge s_i + d_{c_i} + \Delta(c_i, c_{i+1})$。下一段連線尚未開啟時，資料自然暫存於節點上。
+
+% ------------------------------------------------------------
+\begin{algorithm}[htbp]
+\caption{單一 bundle 的路由與排程}
+\label{alg:plan}
+\begin{algorithmic}[1]
+\Require 連線集合 $\mathcal{C}$（含各 $F_c$）、各節點 $O_n$、$M$、bundle $(\mathit{src},\mathit{dst},g,S,T)$
+\Ensure 排程 $\sigma=[(c_1,s_1),\dots,(c_k,s_k)]$，或 \Fail
+\If{$S > M$} \State \Return \Fail \EndIf
+\State $L^\ast \gets \Call{Search}{\,}$ \Comment{演算法 \ref{alg:search}}
+\If{$L^\ast = \Nil$} \State \Return \Fail \EndIf
+\State $\sigma \gets \Call{Backtrack}{L^\ast}$ \Comment{演算法 \ref{alg:backtrack}}
+\If{$\sigma$ 未通過所有限制的獨立檢查} \State \Return \Fail \EndIf
+\State \Call{Commit}{$\sigma$} \Comment{演算法 \ref{alg:commit}}
+\State \Return $\sigma$
+\end{algorithmic}
+\end{algorithm}
+
+% ------------------------------------------------------------
+\begin{algorithm}[htbp]
+\caption{以區間 Label 搜尋最早到達}
+\label{alg:search}
+\begin{algorithmic}[1]
+\Function{Search}{\,}
+  \State $Q \gets$ 空的優先佇列；對所有 $c$，$R[c] \gets \emptyset$ \Comment{$R[c]$：連線 $c$ 已放入過的時間}
+  \ForAll{$c \in \mathcal{C}$ 且 $u_c = \mathit{src}$}
+    \State $I \gets \Call{Candidate}{c, g}$ \Comment{演算法 \ref{alg:candidate}}
+    \State $I \gets \Call{SourceCheck}{c, I}$ \Comment{表 \ref{tab:buffer-cases}}
+    \If{$v_c = \mathit{dst}$} \State $I \gets \Call{DestinationCheck}{c, I}$ \EndIf
+    \State \Call{Insert}{$c, I, \Nil$}
+  \EndFor
+  \While{$Q \ne \emptyset$}
+    \State $L_1 \gets$ 取出 $Q$ 中鍵值最小者；$c_1 \gets L_1.c$
+    \If{$v_{c_1} = \mathit{dst}$} \State \Return $L_1$ \EndIf
+    \State $N \gets$ 沿 $\mathit{pred}$ 回溯 $L_1$ 所經過的節點
+    \ForAll{$c_2 \in \mathcal{C}$ 且 $u_{c_2} = v_{c_1}$ 且 $v_{c_2} \notin N$}
+      \State $t_0 \gets L_1.\mathit{lo} + d_{c_1} + \Delta(c_1, c_2)$ \Comment{$c_2$ 最早可開始傳送}
+      \State $I \gets \Call{Candidate}{c_2, t_0}$
+      \State $I \gets \Call{RelayCheck}{I, L_1, c_2}$ \Comment{演算法 \ref{alg:relay}}
+      \If{$v_{c_2} = \mathit{dst}$} \State $I \gets \Call{DestinationCheck}{c_2, I}$ \EndIf
+      \State \Call{Insert}{$c_2, I, L_1$}
+    \EndFor
+  \EndWhile
+  \State \Return \Nil
+\EndFunction
+\Statex
+\Function{Insert}{$c, I, \mathit{pred}$}
+  \State $I \gets I \setminus R[c]$；\ $R[c] \gets R[c] \cup I$
+  \ForAll{$I$ 中的每個最大區間 $[\alpha,\beta]$}
+    \State 將 $(c,\alpha,\beta,\mathit{pred})$ 放入 $Q$，鍵值為 $\alpha + \tau_c + d_c$
+  \EndFor
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+% ------------------------------------------------------------
+\begin{algorithm}[htbp]
+\caption{連線的可開始傳送時間（不含 Buffer）}
+\label{alg:candidate}
+\begin{algorithmic}[1]
+\Function{Candidate}{$c, t_0$}
+  \State $\mathit{lo} \gets \max(a_c,\ t_0)$；\ $\mathit{hi} \gets \min(b_c - \tau_c,\ T - \tau_c - d_c)$
+  \If{$\mathit{lo} > \mathit{hi}$} \State \Return $\emptyset$ \EndIf
+  \State $I \gets [\mathit{lo}, \mathit{hi}]$
+  \ForAll{$(x, y) \in F_c$}
+    \State $I \gets I \setminus (x - \tau_c,\ y)$ \Comment{在此開區間內開始會與 $(x,y)$ 重疊}
+  \EndFor
+  \State \Return $I$
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+% ------------------------------------------------------------
+\begin{algorithm}[htbp]
+\caption{中繼節點的 Buffer 檢查}
+\label{alg:relay}
+\begin{algorithmic}[1]
+\Function{RelayCheck}{$I, L_1, c_2$}
+  \State $c_1 \gets L_1.c$；\ $n \gets v_{c_1}$；\ $\delta \gets \Delta(c_1, c_2)$
+  \State $J \gets \emptyset$
+  \ForAll{$I$ 中的每個最大區間 $[\alpha, \beta]$}
+    \If{$\max_{t \in [L_1.\mathit{lo} + d_{c_1},\ \beta + \tau_{c_2}]} O_n(t) + S \le M$}
+      \State $J \gets J \cup [\alpha, \beta]$ \Comment{以整包大小估計仍不超過上限}
+    \Else
+      \State $J \gets J \cup \Call{Solve}{\alpha, \beta, \mathit{own}_n}$ \Comment{演算法 \ref{alg:solve}}
+    \EndIf
+  \EndFor
+  \State \Return $J$
+\EndFunction
+\Statex
+\Statex 其中，對 $c_2$ 的開始時間 $s_2$：
+\Statex \quad $s_1^\ast = \min(L_1.\mathit{hi},\ s_2 - d_{c_1} - \delta)$；若 $s_1^\ast < L_1.\mathit{lo}$，則 $s_2$ 不可行
+\Statex \quad $h = s_1^\ast + d_{c_1}$，$A = h + \tau_{c_1}$，$f = s_2 + \tau_{c_2}$
+\Statex \quad $\mathit{own}_n(t) = \mathrm{ramp}(t, h, A) - \mathrm{ramp}(t, s_2, f)$，\ $t \in [h, f]$
+\Statex \quad $s_2$ 可行 $\iff$ 對所有 $t\in[h,f]$，$O_n(t) + \mathit{own}_n(t) \le M$（左、右極限皆成立）
+\end{algorithmic}
+\end{algorithm}
+
+% ------------------------------------------------------------
+\begin{algorithm}[htbp]
+\caption{在區間內求出所有可行的開始時間}
+\label{alg:solve}
+\begin{algorithmic}[1]
+\Function{Solve}{$\alpha, \beta, \mathit{own}$}
+  \State $B \gets$ 使 $\mathit{own}$ 的轉折時刻恰好落在 $O_n$ 某變化點上的開始時間
+  \State $P \gets \{\alpha, \beta\} \cup (B \cap (\alpha, \beta))$，由小到大排序為 $p_0 < p_1 < \dots < p_m$
+  \State $J \gets \{p \in P : p \text{ 可行}\}$ \Comment{直接依定義檢查}
+  \For{$i = 1$ \textbf{to} $m$}
+    \State $\ell \gets p_{i-1}$；\ $u \gets p_i$；\ $e \gets p_{i-1} + (p_i - p_{i-1})/3$；\ $e' \gets p_{i-1} + 2(p_i - p_{i-1})/3$
+    \ForAll{停留期間內需檢查的時刻 $t_j(s)$}
+      \State $v_j(s) \gets O_n(t_j(s)) + \mathit{own}(t_j(s))$ \Comment{在 $(p_{i-1}, p_i)$ 內為 $s$ 的一次式}
+      \State $k_j \gets \bigl(v_j(e') - v_j(e)\bigr) / (e' - e)$
+      \If{$k_j > 0$} \State $u \gets \min\bigl(u,\ e + (M - v_j(e))/k_j\bigr)$
+      \ElsIf{$k_j < 0$} \State $\ell \gets \max\bigl(\ell,\ e + (M - v_j(e))/k_j\bigr)$
+      \ElsIf{$v_j(e) > M$} \State $\ell \gets +\infty$ \Comment{整段不可行}
+      \EndIf
+    \EndFor
+    \If{$\ell \le u$} \State $J \gets J \cup [\ell, u]$ \EndIf
+  \EndFor
+  \State \Return $J$
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+% ------------------------------------------------------------
+\begin{algorithm}[htbp]
+\caption{回推各段開始時間}
+\label{alg:backtrack}
+\begin{algorithmic}[1]
+\Function{Backtrack}{$L^\ast$}
+  \State $L \gets L^\ast$；\ $s \gets L^\ast.\mathit{lo}$ \Comment{最後一段取最早，決定到達時間}
+  \State $\sigma \gets [(L.c,\ s)]$
+  \While{$L.\mathit{pred} \ne \Nil$}
+    \State $q \gets L.\mathit{pred}$
+    \State $s \gets \min\bigl(q.\mathit{hi},\ s - d_{q.c} - \Delta(q.c, L.c)\bigr)$ \Comment{趕得上下一段的最晚時間}
+    \State 將 $(q.c,\ s)$ 加到 $\sigma$ 最前面；\ $L \gets q$
+  \EndWhile
+  \State \Return $\sigma$
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+% ------------------------------------------------------------
+\begin{algorithm}[htbp]
+\caption{寫入網路狀態}
+\label{alg:commit}
+\begin{algorithmic}[1]
+\Function{Commit}{$\sigma$}
+  \ForAll{$(c, s) \in \sigma$}
+    \State $F_c \gets F_c \cup \{(s,\ s + \tau_c)\}$
+  \EndFor
+  \ForAll{$\sigma$ 經過的節點 $n$（來源、各中繼、目的地）}
+    \State $O_n \gets O_n + \mathit{own}_n$ \Comment{變化點取聯集，左極限與右極限分別相加}
+  \EndFor
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+% ------------------------------------------------------------
+\begin{table}[htbp]
+\centering
+\caption{三種節點的 Buffer 檢查（$s$ 為該段連線的開始時間）}
+\label{tab:buffer-cases}
+\small
+\begin{tabular}{p{0.09\linewidth}p{0.36\linewidth}p{0.2\linewidth}p{0.25\linewidth}}
+\hline
+節點 & 這個 bundle 的占用 $\mathit{own}_n(t)$ & 期間 & 以整包估計時的檢查範圍 \\
+\hline
+來源 & $S - \mathrm{ramp}(t, s, s + \tau_c)$ & $[g,\ s + \tau_c]$ & $[g,\ \beta + \tau_c]$ \\
+中繼 & $\mathrm{ramp}(t, h, A) - \mathrm{ramp}(t, s_2, f)$ & $[h,\ f]$ & $[L_1.\mathit{lo} + d_{c_1},\ \beta + \tau_{c_2}]$ \\
+目的地 & $\mathrm{ramp}(t, s + d_c,\ s + d_c + \tau_c)$；收完時左極限 $S$、右極限 $0$ & $[s + d_c,\ s + d_c + \tau_c]$ & $[\alpha + d_c,\ \beta + d_c + \tau_c]$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent 三種檢查的流程相同：先以整包大小 $S$ 估計，若仍不超過 $M$ 則整段保留；否則以演算法~\ref{alg:solve} 求出可行的部分。
+
+\medskip
+\noindent\textbf{對照方法（中繼須收完整包才可轉送）}：將 $\Delta(c_1,c_2)$ 改為 $\tau_{c_1}$，其餘步驟不變。
